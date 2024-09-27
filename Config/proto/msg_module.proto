@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+/**********************************************************
+*
+*协议文件定义规范, {Module}为模块枚举定义
+*
+*package ProtoMsg/Msg{Module};
+*
+*message MsgModule{Module}
+*{
+	enum Cmd
+	{
+		Msg_{Module}_XXX_Cs 		= 1;
+		Msg_{Module}_XXX_Sc			= 2;
+		Msg_{Module}_XXX_Notify     = 3;
+	}
+}
+**********************************************************/
+
+package ProtoMsg;
+//网络消息模块类型
+enum MsgModule 
+{
+	Begin				= 0;		
+	Mapping				= 1;		//网络模块开始,用作注册CmdMapping
+	Login				= 2;		//登录
+	
+	Hero				= 3;		//英雄角色
+	Friend				= 4;		//好友
+	Mall				= 5;		//商城
+	Mail				= 6;		//邮件
+	Faction				= 7;		//工会
+	Active				= 8;		//活动
+	Ranker				= 9;		//排行榜
+
+	Battle				= 80;		//战斗
+	ServerCommon        = 90;		
+	ServerInner			= 91;		//服务器之间消息
+	ServerBattle		= 92;		//战斗服之间协议
+
+	End					= 100;		
+
+
+}

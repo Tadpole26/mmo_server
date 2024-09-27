@@ -1,0 +1,179 @@
+{%- set FKey = namespace(type='', base='', mem='', part='') -%}
+{%- for field in field_list %}
+{%- if field.m_strFKey == True %}
+{%-set FKey.type = field.m_strType -%}
+{%-set FKey.base = field.m_strBaseName -%}
+{%-set FKey.mem = field.m_strMemName -%}
+{%-set FKey.part = field.m_strPartName -%}
+{%-endif %}
+{%- endfor %}
+
+{%- set SKey = namespace(type='',  base='', mem='', part='') -%}
+{%- for field in field_list %}
+{%- if field.m_strSKey == True %}
+{%-set SKey.type = field.m_strType -%}
+{%-set SKey.base = field.m_strBaseName -%}
+{%-set SKey.mem = field.m_strMemName -%}
+{%-set SKey.part = field.m_strPartName -%}
+{%-endif %}
+{%- endfor %}
+
+{%- macro gen_select_func(type, mem_name, ori_name) %}
+    {%-if type == 'int' -%} 
+        stData.{{mem_name}} = oValue.NumInt("{{ori_name}}"); 
+    {%-elif type == 'uint32_t' -%}    
+        stData.{{mem_name}} = oValue.NumUInt("{{ori_name}}"); 
+    {%-elif type == 'int64_t' -%}    
+        stData.{{mem_name}} = oValue.NumLong("{{ori_name}}"); 
+    {%-elif type == 'time_t' -%}    
+        stData.{{mem_name}} = oValue.Time("{{ori_name}}"); 
+    {%-elif type == 'string' -%}    
+        stData.{{mem_name}} = oValue.Str("{{ori_name}}"); 
+    {%-elif type == 'bool' -%}    
+        stData.{{mem_name}} = oValue.Bool("{{ori_name}}"); 
+    {%- endif %}
+{%- endmacro -%}
+#include "{{ file_name }}.h"
+#include <cassert>
+
+const char* {{ class_name }}::s_strFirstName = "{{ first_name }}";
+const char* {{ class_name }}::s_strSecName = "{{ sec_name }}";
+const char* {{ class_name }}::s_strSecType = "{{ sec_type }}";
+{%- for field in field_list %}
+const char* {{ class_name }}::{{ field.m_strConstName }} = "{{ field.m_strOriName }}";
+{%- endfor %}
+
+{{ class_name }}::~{{class_name}}()
+{
+    if (m_pCache != NULL)
+        m_pCache->m_pRecord = NULL;
+}
+
+int64_t {{ class_name }}::GetUid()
+{
+    return m_llUid;
+}
+{%- if sec_type == 'list'%}
+{{SKey.type}} {{ class_name }}::Get{{SKey.base}}()
+{
+    return {{SKey.mem}};
+}
+{%- endif %}
+
+shared_ptr<sDBRequest> {{ class_name }}::MakeInsertSQL()
+{
+    {%- if sec_type == 'object'%}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_IncUpdate, 
+            {{ class_name }}::s_strFirstName, 
+            {{ class_name }}::s_strSecName, 
+            tagSecTblDesc::eST_Object);
+    pRequest->AddCon("_id", GetUid());
+    {%- else %}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_IncUpdate, 
+            {{ class_name }}::s_strFirstName, 
+            {{ class_name }}::s_strSecName);
+    pRequest->AddCon("_id", GetUid());
+    pRequest->AddCon("id", Get{{SKey.base}}());
+    {%- endif %}
+    for (const auto& content : m_mapInt)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapUint32)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapInt64)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapTime)
+    {
+        pRequest->AddReqTime(content.first, content.second);
+    }
+    for (const auto& content : m_mapString)
+    {
+        pRequest->AddReqStr(content.first, content.second);
+    }
+    for (const auto& content : m_mapBool)
+    {
+        pRequest->AddBool(content.first, content.second);
+    }
+
+    return pRequest;
+}
+
+shared_ptr<sDBRequest> {{ class_name }}::MakeUpdateSQL()
+{
+    {%- if sec_type == 'object'%}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_Update, 
+            {{ class_name }}::s_strFirstName, 
+            {{ class_name }}::s_strSecName, 
+            tagSecTblDesc::eST_Object);
+    pRequest->AddCon("_id", GetUid());
+    {%- else %}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_Update, 
+            {{ class_name }}::s_strFirstName, 
+            {{ class_name }}::s_strSecName);
+    pRequest->AddCon("_id", GetUid());
+    pRequest->AddCon("id", Get{{SKey.base}}());
+    {%- endif %}
+    for (const auto& content : m_mapInt)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapUint32)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapInt64)
+    {
+        pRequest->AddReq(content.first, content.second);
+    }
+    for (const auto& content : m_mapTime)
+    {
+        pRequest->AddReqTime(content.first, content.second);
+    }
+    for (const auto& content : m_mapString)
+    {
+        pRequest->AddReqStr(content.first, content.second);
+    }
+    for (const auto& content : m_mapBool)
+    {
+        pRequest->AddBool(content.first, content.second);
+    }
+
+    return pRequest;
+}
+ 
+shared_ptr<sDBRequest> {{ class_name }}::MakeDeleteSQL()
+{
+    {%- if sec_type == 'object'%}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_DropParam, 
+            {{class_name}}::s_strFirstName);
+    pRequest->AddField({{class_name}}::s_strSecName);
+    {%- else %}
+    std::shared_ptr<sDBRequest> pRequest = std::make_shared<sDBRequest>(eDB_Delete, 
+            {{class_name}}::s_strFirstName, 
+            {{class_name}}::s_strSecName);
+    pRequest->AddCon("_id", GetUid());
+    pRequest->AddCon("id", Get{{SKey.base}}());
+    {%- endif %}
+    return pRequest;
+}
+
+
+std::vector<{{ cache_value_name }}> {{ class_name }}::SelectDataFromDB(int64_t llUid, sDBSecRet& vecData)
+{
+    std::vector<{{ cache_value_name }}> vecRet;
+    for (sDBMap& oValue : vecData)
+    {
+        {{ cache_value_name }} stData;
+        stData.m_llUid = llUid;
+        {%- for field in field_list %}
+        {{ gen_select_func(field.m_strType, field.m_strMemName, field.m_strOriName) }}
+        {%- endfor %}
+        vecRet.push_back(stData);
+    }
+    return vecRet;
+}
