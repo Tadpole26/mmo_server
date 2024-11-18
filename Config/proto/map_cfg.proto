@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package Packet;
+
+//笔刷类型
+enum BrushType
+{
+	BrushType_None = 0;
+	BrushType_RigNPC = 1;							//固定npc
+	BrushType_Teleporter = 2;						//传送
+	BrushType_BlockArea = 3;						//阻挡
+}
+
+
+message BrushInfo
+{
+	//固定npc
+	message RigIdNpc
+	{
+		message NpcUnit
+		{
+			uint32 npcId = 1;
+			float locationOffsetX = 2;
+			float locationOffsetY = 3;
+			float rotationOffsetX = 4;
+			float rotationOffsetY = 5;
+			float rotationOffsetZ = 6;
+			float triggerAreaX = 7;
+			float triggerAreaY = 8;
+			float triggerAreaZ = 9;
+			float triggerAreaOffsetX = 10;
+			float triggerAreaOffsetY = 11;
+		}
+		repeated NpcUnit vecNpcs = 1;							//npc数组
+	}
+
+	//传送
+	message Teleporter
+	{
+		uint32 teleportType = 1;
+		uint32 targetMap = 2;
+
+		float locationX = 3;
+		float locationY = 4;
+
+		float rotationX = 5;
+		float rotationY = 6;
+		float rotationZ = 7;
+
+		float triggerAreaX = 8;
+		float triggerAreaY = 9;
+		float triggerAreaZ = 10;
+		float triggerAreaOffsetX = 11;
+		float triggerAreaOffsetY = 12;
+		uint32 teleportAnim = 13;
+	}
+
+	//阻挡
+	message BlockArea
+	{
+		uint32 blockAreaId = 1;
+
+		float blockAreaX = 2;
+		float blockAreaY = 3;
+		float blockAreaZ = 4;
+		float blockAreaOffsetX = 5;
+		float blockAreaOffsetY = 6;
+	}
+}
+
+//所有笔刷信息
+message BrushAll
+{
+	repeated BushInfo brushInfos = 1;	
+}
+
+//地图单个位置上笔刷
+message BrushInMapInfo
+{
+	//当为范围时,range中记录的是最大坐标,最小坐标记录在BrushInMapInfo.point中
+	message Range
+	{
+		uint32 maxPosX = 3;						//x 坐标
+		uint32 maxPosY = 4;						//y 坐标
+	}
+
+	message Point
+	{
+		uint32 posX = 1;
+		uint32 posY = 2;
+
+		uint32 rotX = 3;						//除以100后为正确数值
+		uint32 rotY = 4;						//除以100后为正确数值
+		uint32 rotZ = 5;						//除以100后为正确数值
+	}
+
+	message PointGroup
+	{
+		repeated Point points = 1;
+	}
+
+	uint32 type = 1;					//0:point 1:range 2:pointgroup
+	uint64 brushId = 2;					//每个格子对应的笔刷id
+	Point point = 3;					
+	PointGroup vecPoint = 4;
+	Range range = 5;
+}

@@ -1,0 +1,78 @@
+syntax = "proto3";
+package packet;
+
+message Grid_Point
+{
+    uint32 PosX = 1;                                    //整数部分 = PosX / 10000, 小数部分 = PosX % 10000
+    uint32 PosY = 2;                                    //整数部分 = PosY / 10000, 小数部分 = PosY % 10000
+}
+
+message Grid_Rotation
+{
+    uint32 RotaX = 1;                                   //整数部分 = RtaX / 10000, 小数部分 = RotaX % 10000
+    uint32 RotaY = 2;                                   //整数部分 = RtaY / 10000, 小数部分 = RtaY % 10000
+    uint32 RotaZ = 3;                                   //整数部分 = RtaZ / 10000, 小数部分 = RtaZ % 10000
+}
+
+
+message Grid_Rect                                       //格子范围
+{
+    Grid_Point minPos = 1;
+    Grid_Point maxPos = 2;
+}
+
+message Grid_RigNPC                                     //固定NPC
+{
+    message Grid_RigNPCUnit
+    {
+        uint32 npcId = 1;
+        Grid_Rect triggerRect = 2;                      //触发范围
+        Grid_Rotation rota = 3;
+        Grid_Point pos = 4;                             //出生位置
+        Grid_Rect triggerRectSecond = 5;                //触发范围
+    }
+    repeated Grid_RigNPCUnit vecRigNpcs = 1;
+}
+
+message Grid_Teleporter                                 //传送
+{
+    uint32 telType = 1;
+    uint32 targetMap = 2;
+    uint32 telAnim = 3;
+    Grid_Rect triggerRect = 4;
+    Grid_Rotaion rota = 5;
+    Grid_Point pos = 6;
+}
+
+message Map_Teleporter
+{
+    repeated Grid_Teleporter vecTels = 1;
+}
+
+message Grid_BlockArea                                  //阻挡
+{
+    uint32 blockAreaId = 1;
+    Grid_Rect blockRect = 2;
+    uint64 instanceId = 3;
+}
+
+message Map_BlockArea
+{
+    repeated Grid_BlockArea vecBlocks = 1;
+}
+
+message Grid_MonsterGroup                               //怪物组
+{
+    message Grid_MonsterGroupUnit
+    {
+        uint32 monsterGroupId = 1;
+        Grid_Rect createRect = 2;                       //触发范围
+        Grid_Rotation rota = 3;
+        Grid_Point pos = 4;                             //出生位置
+    } 
+}
+
+message Map_MonsterGroup
+{
+    repeated Grid_MosnterGroup vecMonsterGrp = 1;
+}
