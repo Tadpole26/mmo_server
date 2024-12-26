@@ -11,6 +11,7 @@ from field_base import FieldTime
 from field_base import FieldString
 from field_base import FieldBool
 import xml.dom.minidom as minidom
+import xlwings as xw
 
 kernel32 = ctypes.windll.kernel32
 kernel32.SetConsoleMode(kernel32.GetStdHandle(-11),7)
@@ -206,5 +207,6 @@ def main(argv):
 
 
 if __name__ == "__main__":
+    xw.Book('fff')
     main(sys.argv)
     time.sleep(5)

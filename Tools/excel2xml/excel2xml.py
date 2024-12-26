@@ -76,6 +76,12 @@ class Excel2Xml:
     def ReadAllSheet(self, stExcel, stXmlDoc):
         stSheets = stExcel.sheets()
         for sheet in stSheets:
+            vecName = sheet.name.split('|')
+            if len(vecName) != 2:
+                strError = 'sheet:' + stSheet.name + ' name is error!'
+                print("\033[31m" + strError + "\033[0m")
+                continue
+            sheet.name = vecName[0]
             self.ReadSheet(sheet, stXmlDoc)
 
     def GetXmlDoc(self):
