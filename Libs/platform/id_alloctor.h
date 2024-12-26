@@ -1,156 +1,57 @@
 #pragma once
 //idÉú³ÉÆ÷
 
-#include <sstream>
+#include <list>
 #include <assert.h>
-
+#ifdef _WIN32
+#undef max
+#endif
 //id·ÖÅäÆ÷
-template <typename T, T MAX_VALUE = 0xffffffff>
+template <typename T = uint32_t>
 class CIdAlloctor
 {
+    static_assert(std::is_unsigned<T>::value, "!is_unsigned");
 public:
-    CIdAlloctor() : _polds(nullptr), _nall(0), _nalloc(0), _pflags(nullptr)
+    CIdAlloctor() : m_tMax(std::numeric_limits<T>::max() - 1) {}
+    CIdAlloctor(T tMax) : m_tMax(tMax) { assert(tMax < std::numeric_limits<T>::max()); }
+    ~CIdAlloctor() {}
+    bool Init(T tMax) 
     {
-    }
-    ~CIdAlloctor()
-    {
-        Release();
-    }
-    bool Init(T nCount, T beginid = 0)
-    {
-        size_t nNum = (size_t)nCount;
-        if (nCount <= 0 || nCount >= MAX_VALUE
-            || beginid >= MAX_VALUE || beginid < 0)
+        if (m_tAutoId != 0)
             return false;
-        _beginid = beginid;
-        _nall = nCount;
-        _nalloc = 0;
-        _polds = new T[nNum];
-        for (T i = 0; i < nCount; ++i)
-        {
-            _polds[i] = i;
-        }
-        _pflags = new bool[nNum];
-        memset(_pflags, 0, sizeof(_pflags[0]) * nNum);
-        return true;
+        m_tMax = tMax; 
+        return true; 
     }
-    void Release()
+public:
+    T alloc()
     {
-        if (_polds != nullptr)
-            delete[] _polds;
-        if (_pflags != nullptr)
-            delete[] _pflags;
-
-        _nall = 0;
-        _nalloc = 0;
-        _polds = nullptr;
-        _pflags = nullptr;
-    }
-    bool Full()
-    {
-        return _nalloc == _nall;
-    }
-    T AllocId()
-    {
-        T id = MAX_VALUE;
-        if (_nalloc < _nall)
+        if (!m_lstFree.empty())
         {
-            id = _polds[_nalloc++];
-            _pflags[id] = true;
-            id += _beginid;
+            auto id = m_lstFree.front();
+            m_lstFree.pop_front();
+            return id;
         }
-        return id;
+        if (m_tAutoId > m_tMax) return m_tAutoId;
+        return ++m_tAutoId;
     }
-    void FreeId(T id)
+    void free(T id)
     {
-        if (id < _beginid)
-            return;
-        id = id - _beginid;
-        if (id >= _nall)
-            return;
-        if (_nalloc > 0)
-        {
-            if (_pflags[id])
-            {
-                _polds[--_nalloc] = id;
-                _pflags[id] = false;
-            }
-        }
+        m_lstFree.push_back(id);
     }
-    bool UseId(T id)
+    bool check(T id) const
     {
-        if (id < _beginid)
-            return false;
-        id = id - _beginid;
-        if (id >= _nall)
-            return false;
-        if (_pflags[id])
-            return true;
-        else
-        {
-            if (_nalloc >= _nall)
-                return false;
-
-            if (*(_polds + _nalloc) != id)
-            {
-                T* pRet = std::find(_polds + _nalloc, _polds + _nall - 1, id);
-                if (pRet == nullptr || *pRet != id) return false;
-                std::swap(*(_polds + _nalloc), *pRet);
-            }
-
-            _nalloc++;
-            _pflags[id] = true;
-            return true;
-        }
-        return false;
+        return id && id <= m_tMax;
     }
-
-    T Size() { return _nalloc; }
-    T MaxValue() { return MAX_VALUE; }
-
-    bool IsValid(T id)
+    bool isFull() const 
     {
-        if (id == MAX_VALUE || id < _beginid)
-            return false;
-        id = id - _beginid;
-        if (id >= _nall)
-            return false;
-        return true;
+        return m_lstFree.empty() && m_tAutoId >= m_tMax;
     }
-
-    void Dump(std::ostream* pStream)
+    size_t size()
     {
-        std::ostream& stream = *pStream;
-
-        stream << "all:" << _nall << ", "
-            << "alloc:" << _nalloc << ", "
-            << "free:" << _nall - _nalloc << std::endl;
-
-        stream << "[alloc_list]: ";
-        for (T i = 0; i < _nall; ++i)
-        {
-            if (_pflags[i])
-                stream << i << " ";
-        }
-        stream << std::endl;
-
-        for (T i = _nalloc; i < _nall; ++i)
-        {
-            assert(!_pflags[_polds[i]]);
-        }
-        T nCalcFreeCount = 0;
-        for (T i = 0; i < _nall; ++i)
-        {
-            if (!_pflags[i])
-                ++nCalcFreeCount;
-        }
-        assert(nCalcFreeCount == (_nall - _nalloc));
+        return (m_tAutoId >= m_lstFree.size() ? (m_tAutoId - m_lstFree.size()) : 0);
     }
-
 private:
-    T*          _polds = nullptr;
-    T           _nall = 0;
-    T           _nalloc = 0;
-    bool*       _pflags = nullptr;
-    T           _beginid = 0;
+    T m_tMax;
+    T m_tAutoId{};
+    std::list<T> m_lstFree;
 };

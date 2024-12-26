@@ -98,7 +98,7 @@ protected:
     conn_oid_t _nMaxConns = 5000;
     CIoThread* _pIoThread = nullptr;
 
-    CIdAlloctor<uint16_t, UINT16_MAX> _IdAlloctor;
+    CIdAlloctor<> _IdAlloctor;
     std::set<uint16_t> _setID;
 
     CTimeEvent _tvdetect;

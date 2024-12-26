@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<agents version="1" signature="1728747704">
+  <agent type="CCmptMonsterAI" base="behaviac::Agent" signature="3219742338">
+    <properties>
+      <property name="m_eCurState" type="AIState" member="false" static="false" defaultvalue="AIState_Idle" />
+      <property name="m_ullRestExpire" type="ullong" member="false" static="false" defaultvalue="0" />
+    </properties>
+  </agent>
+</agents>

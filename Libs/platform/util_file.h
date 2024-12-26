@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <ctype.h>
 #include "util_string.h"
-#include "dtype.h"
+#include "ztype.h"
 #ifdef WIN32
 #include <direct.h>
 #include <io.h>

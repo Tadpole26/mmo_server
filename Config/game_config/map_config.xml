@@ -7,7 +7,7 @@
 		<static>1.0</static>
 		<width>40.0</width>
 		<height>40.0</height>
-		<born_point>627&amp;616|632&amp;613</born_point>
+		<born_point>627&amp;616</born_point>
 		<direct>180.0</direct>
 		<reborn_point>62900&amp;61700</reborn_point>
 		<reborn_direct>180.0</reborn_direct>
@@ -20,7 +20,7 @@
 		<static>0.0</static>
 		<width>256.0</width>
 		<height>256.0</height>
-		<born_point>149&amp;36|150&amp;37</born_point>
+		<born_point>149&amp;36</born_point>
 		<direct>0.0</direct>
 		<reborn_point>100&amp;100</reborn_point>
 		<reborn_direct>0.0</reborn_direct>

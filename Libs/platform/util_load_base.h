@@ -2,6 +2,7 @@
 #include <string>
 #include <functional>
 #include <map>
+#include "sdk.h"
 
 class CUtilLoadBase
 {
@@ -34,6 +35,9 @@ public:
 	double GetDataDouble(const char* pField, const double dDef = 0.0f);
 	time_t GetDataTime(const char* pField, const time_t tDef = 0);
 	int64_t GetDataInt64(const char* pField, const int64_t llDef = 0);
+	bool GetDataItem(const char* pField, std::map<uint32, uint32>& mapResult);
+	bool GetDataPos(const char* pField, zPos& oResult);
+	bool GetDataPos(const char* pField, std::vector<zPos>& vecResult);
 
 public:
 	std::string m_strFile = "";

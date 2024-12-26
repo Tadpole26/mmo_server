@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "dtype.h"
+#include "ztype.h"
 #include "util_load_base.h"
 
 //Íø¹Ø·şÎñÆ÷ÅäÖÃ

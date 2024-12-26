@@ -36,64 +36,64 @@
 //tcp
 typedef struct
 {
-	DWORD dwState;				//连接状态
-	DWORD dwLocalAddr;			//本地地址
-	DWORD dwLocalPort;			//本地端口
-	DWORD dwRemoteAddr;			//远程地址
-	DWORD dwRemotePort;			//远程端口
-	DWORD dwProcessId;			//进程标识
+	uint32 dwState;				//连接状态
+	uint32 dwLocalAddr;			//本地地址
+	uint32 dwLocalPort;			//本地端口
+	uint32 dwRemoteAddr;			//远程地址
+	uint32 dwRemotePort;			//远程端口
+	uint32 dwProcessId;			//进程标识
 }MIB_TCPEXROW, *PMIB_TCPEXROW;
 //udp
 typedef struct
 {
-	DWORD dwLocalAddr;			//本地地址
-	DWORD dwLocalPort;			//本地端口
-	DWORD dwProcessId;			//进程标识
+	uint32 dwLocalAddr;			//本地地址
+	uint32 dwLocalPort;			//本地端口
+	uint32 dwProcessId;			//进程标识
 } MIB_UDPEXROW, * PMIB_UDPEXROW;
 
 typedef struct
 {
-	DWORD dwState;				//连接状态
-	DWORD dwLocdalAddr;			//本地地址
-	DWORD dwLocalPort;			//本地端口
-	DWORD dwRemoteAddr;			//远程地址
-	DWORD dwRemotePort;			//远程端口
-	DWORD dwProcessId;			//进程标识
-	DWORD Unkonwn;				//待定标识
+	uint32 dwState;				//连接状态
+	uint32 dwLocdalAddr;			//本地地址
+	uint32 dwLocalPort;			//本地端口
+	uint32 dwRemoteAddr;			//远程地址
+	uint32 dwRemotePort;			//远程端口
+	uint32 dwProcessId;			//进程标识
+	uint32 Unkonwn;				//待定标识
 }MIB_TCPEXROW_VISTA, *PMIB_TCPEXROW_VISTA;
 
 typedef struct
 {
-	DWORD dwNumEntries;
+	uint32 dwNumEntries;
 	MIB_TCPEXROW table[ANY_SIZE];
 }MIB_TCPEXTABLE, *PMIB_TCPEXTABLE;
 
 typedef struct
 {
-	DWORD dwNumEntries;
+	uint32 dwNumEntries;
 	MIB_TCPEXROW_VISTA table[ANY_SIZE];
 }MIB_TCPEXTABLE_VISTA, * PMIB_TCPEXTABLE_VISTA;	
 
 typedef struct
 {
-	DWORD dwNumEntries;
+	uint32 dwNumEntries;
 	MIB_UDPEXROW table[ANY_SIZE];
 }MIB_UDPEXTABLE, *PMIB_UDPEXTABLE;
 
 
 //该函数在Windows Vista以及windows 7下面有效
-typedef DWORD(WINAPI* PFNInternalGetTcpTable2)(
+typedef uint32(WINAPI* PFNInternalGetTcpTable2)(
 	PMIB_TCPEXTABLE_VISTA* pTcpTable_Vista,
 	HANDLE heap,
-	DWORD flags);
+	uint32 flags);
 
 //该函数在Windows Vista以及windows 7下面有效
-typedef DWORD(WINAPI* PFNInternalGetUdpTableWithOwnerPid)(
+typedef uint32(WINAPI* PFNInternalGetUdpTableWithOwnerPid)(
 	PMIB_UDPEXTABLE* pUdpTable,
 	HANDLE heap,
-	DWORD flags);
+	uint32 flags);
 
-DWORD GetProcessIdByPort(DWORD dwPort, bool bTcp)
+uint32 GetProcessIdByPort(uint32 dwPort, bool bTcp)
 {
 	HMODULE hModule = LoadLibraryW(L"iphlpapi.dll");
 	if (hModule == NULL) return  0;
@@ -126,7 +126,7 @@ DWORD GetProcessIdByPort(DWORD dwPort, bool bTcp)
 			//过滤掉数据, 只查询我们需要的进程数据
 			if (dwPort == ntohs(0x0000FFFF & pTcpExTable->table[i].dwLocalPort))
 			{
-				DWORD dwProcessId = pTcpExTable->table[i].dwProcessId;
+				uint32 dwProcessId = pTcpExTable->table[i].dwProcessId;
 				if (pTcpExTable)
 					HeapFree(GetProcessHeap(), 0, pTcpExTable);
 				FreeLibrary(hModule);
@@ -166,7 +166,7 @@ DWORD GetProcessIdByPort(DWORD dwPort, bool bTcp)
 				//过滤掉数据,只查询我们需要的进程数据
 				if (dwPort == ntohs(0x0000FFFF & pUdpExTable->table[i].dwLocalPort))
 				{
-					DWORD dwProcessId = pUdpExTable->table[i].dwProcessId;
+					uint32 dwProcessId = pUdpExTable->table[i].dwProcessId;
 					if (pUdpExTable)
 						HeapFree(GetProcessHeap(), 0, pUdpExTable);
 					FreeLibrary(hModule);
@@ -225,7 +225,7 @@ std::string run_cmd_res(const std::string& strCmd)
 	return strRet;
 }
 
-bool is_listen_port(DWORD dwPort, bool bTcp /* = true*/)
+bool is_listen_port(uint32 dwPort, bool bTcp /* = true*/)
 {
 	if (dwPort == 0) return false;
 #ifdef _WIN32

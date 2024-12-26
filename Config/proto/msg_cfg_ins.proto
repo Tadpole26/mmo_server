@@ -1,6 +1,15 @@
 syntax = "proto3";
 package packet;
 
+//笔刷类型
+enum BrushType
+{
+	BrushType_None = 0;
+	BrushType_RigNPC = 1;							//固定npc
+	BrushType_Teleporter = 2;						//传送
+	BrushType_BlockArea = 3;						//阻挡
+}
+
 message Grid_Point
 {
     uint32 PosX = 1;                                    //整数部分 = PosX / 10000, 小数部分 = PosX % 10000
@@ -23,15 +32,16 @@ message Grid_Rect                                       //格子范围
 
 message Grid_RigNPC                                     //固定NPC
 {
-    message Grid_RigNPCUnit
-    {
-        uint32 npcId = 1;
-        Grid_Rect triggerRect = 2;                      //触发范围
-        Grid_Rotation rota = 3;
-        Grid_Point pos = 4;                             //出生位置
-        Grid_Rect triggerRectSecond = 5;                //触发范围
-    }
-    repeated Grid_RigNPCUnit vecRigNpcs = 1;
+    uint32 npcId = 1;
+    Grid_Rect triggerRect = 2;                      //触发范围
+    Grid_Rotation rota = 3;
+    Grid_Point pos = 4;                             //出生位置
+    Grid_Rect triggerRectSecond = 5;                //触发范围
+}
+
+message Map_RigNPC
+{
+    repeated Grid_RigNPC vecGrids = 1;
 }
 
 message Grid_Teleporter                                 //传送
@@ -40,13 +50,13 @@ message Grid_Teleporter                                 //传送
     uint32 targetMap = 2;
     uint32 telAnim = 3;
     Grid_Rect triggerRect = 4;
-    Grid_Rotaion rota = 5;
+    Grid_Rotation rota = 5;
     Grid_Point pos = 6;
 }
 
 message Map_Teleporter
 {
-    repeated Grid_Teleporter vecTels = 1;
+    repeated Grid_Teleporter vecGrids = 1;
 }
 
 message Grid_BlockArea                                  //阻挡
@@ -58,7 +68,7 @@ message Grid_BlockArea                                  //阻挡
 
 message Map_BlockArea
 {
-    repeated Grid_BlockArea vecBlocks = 1;
+    repeated Grid_BlockArea vecGrids = 1;
 }
 
 message Grid_MonsterGroup                               //怪物组
@@ -70,9 +80,26 @@ message Grid_MonsterGroup                               //怪物组
         Grid_Rotation rota = 3;
         Grid_Point pos = 4;                             //出生位置
     } 
+    repeated Grid_MonsterGroupUnit vecGroups = 1;
 }
 
 message Map_MonsterGroup
 {
-    repeated Grid_MosnterGroup vecMonsterGrp = 1;
+    repeated Grid_MonsterGroup vecGrids = 1;
 }
+
+message Map_Info
+{
+	uint32 width = 1;
+	uint32 height = 2;
+}
+
+message Map_AllTypes
+{
+    BrushType type = 1;
+    Map_RigNPC mapRigNPC = 2;
+    Map_Teleporter mapTel = 3;
+    Map_BlockArea mapBlock = 4;
+    Map_MonsterGroup mapMonsterGroup = 5;
+}
+

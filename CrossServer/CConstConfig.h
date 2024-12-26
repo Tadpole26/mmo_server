@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "dtype.h"
+#include "ztype.h"
 #include "util_load_base.h"
 //读取本地zk配置(ip port等等)
 class CConstConfig : public CUtilLoadBase

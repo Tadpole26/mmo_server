@@ -1,6 +1,6 @@
 #pragma once
 
-#include "dtype.h"
+#include "ztype.h"
 #include <stdint.h>
 
 class CEnDeCode

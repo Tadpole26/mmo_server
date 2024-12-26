@@ -24,7 +24,7 @@ template <typename T> struct skip_list_node_s
         //该层的前一个节点.主要简化删除时间复杂度
         struct skip_list_node_s* m_pBackward;
         //该层当前节点到该层下一个节点间的节点个数
-        unsigned int                m_uiSpan;
+        size_t                m_uiSpan;
     }skip_list_level_t;
 
     skip_list_node_s() : m_stKey()
@@ -175,7 +175,7 @@ class CTCSkipList
 {
 public:
     static constexpr size_t MAX_SKIPLIST_LEVEL = 32;
-    static constexpr float LEVEL_PROBABILITY = 0.3; //多一层level的概率
+    static constexpr double LEVEL_PROBABILITY = 0.3; //多一层level的概率
 
 public:
     typedef T                                       key_type;
@@ -240,10 +240,10 @@ public:
     bool Empty() const { return (m_uiLength == 0); };
 
     //rank and iterator
-    std::pair<unsigned int, iterator> Insert(const T& stKey)
+    std::pair<size_t, iterator> Insert(const T& stKey)
     {
         node_type* pUpdateNodeList[MAX_SKIPLIST_LEVEL], * pTmp;
-        unsigned int stRankStep[MAX_SKIPLIST_LEVEL];
+        size_t stRankStep[MAX_SKIPLIST_LEVEL];
 
         pTmp = m_pHeader;
         for (int i = (int)(m_uiLevel - 1); i >= 0; i--)
@@ -258,10 +258,10 @@ public:
             pUpdateNodeList[i] = pTmp;
         }
 
-        unsigned int uiLevel = GetRandomLevel();
+        size_t uiLevel = GetRandomLevel();
         if (uiLevel > m_uiLevel)
         {
-            for (unsigned int i = m_uiLevel; i < uiLevel; i++)
+            for (size_t i = m_uiLevel; i < uiLevel; i++)
             {
                 stRankStep[i] = 0;
                 pUpdateNodeList[i] = m_pHeader;
@@ -272,7 +272,7 @@ public:
         }
 
         pTmp = skip_list_node_s<T>::CreateNode(uiLevel, stKey);
-        for (unsigned int i = 0; i < uiLevel; i++)
+        for (size_t i = 0; i < uiLevel; i++)
         {
             pTmp->m_pLevel[i].m_pForward = pUpdateNodeList[i]->m_pLevel[i].m_pForward;
             pTmp->m_pLevel[i].m_pBackward = pUpdateNodeList[i];
@@ -284,20 +284,20 @@ public:
             pUpdateNodeList[i]->m_pLevel[i].m_uiSpan = stRankStep[0] - stRankStep[i] + 1;
         }
 
-        for (unsigned int i = uiLevel; i < m_uiLevel; i++)
+        for (size_t i = uiLevel; i < m_uiLevel; i++)
         {
             pUpdateNodeList[i]->m_pLevel[i].m_uiSpan++;
         }
 
         m_uiLength++;
 
-        return (std::pair<unsigned int, iterator>(stRankStep[0] + 1, iterator(pTmp)));
+        return (std::pair<size_t, iterator>(stRankStep[0] + 1, iterator(pTmp)));
     }
 
-    std::pair<unsigned int, iterator> FindFirst(const T& stKey)
+    std::pair<size_t, iterator> FindFirst(const T& stKey)
     {
         node_type* pTmp = m_pHeader, * pNearest = m_pHeader;
-        unsigned int uiRank = 0, uiNearestRank = 0;
+        size_t uiRank = 0, uiNearestRank = 0;
 
         pTmp = m_pHeader;
         for (int i = (int)(m_uiLevel - 1); i >= 0; i--)
@@ -316,13 +316,13 @@ public:
             }
         }
 
-        return (std::pair<unsigned int, iterator>(uiNearestRank, iterator(pNearest)));
+        return (std::pair<size_t, iterator>(uiNearestRank, iterator(pNearest)));
     }
 
-    std::pair<unsigned int, iterator> FindLast(const T& stKey)
+    std::pair<size_t, iterator> FindLast(const T& stKey)
     {
         node_type* pTmp = m_pHeader, * pFarthest = m_pHeader;
-        unsigned int uiRank = 0, uiFarthest = 0;
+        size_t uiRank = 0, uiFarthest = 0;
 
         pTmp = m_pHeader;
         for (int i = (int)(m_uiLevel - 1); i >= 0; i--)
@@ -341,7 +341,7 @@ public:
             }
         }
 
-        return (std::pair<unsigned int, iterator>(uiFarthest, iterator(pFarthest)));
+        return (std::pair<size_t, iterator>(uiFarthest, iterator(pFarthest)));
     }
 
     iterator Erase(iterator stIT)
@@ -358,8 +358,8 @@ public:
             stIT.m_pNode->m_pLevel[i].m_pForward->m_pLevel[i].m_pBackward = stIT.m_pNode->m_pLevel[i].m_pBackward;
 
             //减去要删除节点
-            unsigned int uiBackwardSpan = stIT.m_pNode->m_pLevel[i].m_pBackward->m_pLevel[i].m_uiSpan - 1;
-            unsigned int uiSelfSpan = stIT.m_pNode->m_pLevel[i].m_uiSpan;
+            size_t uiBackwardSpan = stIT.m_pNode->m_pLevel[i].m_pBackward->m_pLevel[i].m_uiSpan - 1;
+            size_t uiSelfSpan = stIT.m_pNode->m_pLevel[i].m_uiSpan;
             stIT.m_pNode->m_pLevel[i].m_pBackward->m_pLevel[i].m_uiSpan = uiBackwardSpan + uiSelfSpan;
         }
 
@@ -372,7 +372,7 @@ public:
         else
         {
             node_type* pTmp = stIT.m_pNode->m_pLevel[stIT.m_pNode->m_uiLevelNum - 1].m_pBackward;
-            unsigned int uiLevelNum = stIT.m_pNode->m_uiLevelNum;
+            size_t uiLevelNum = stIT.m_pNode->m_uiLevelNum;
             while (uiLevelNum < m_uiLevel)
             {
                 if (pTmp->m_uiLevelNum > uiLevelNum)
@@ -393,9 +393,9 @@ public:
         return (stNextIT);
     }
 
-    unsigned int GetRank(const_iterator stIT) const
+    size_t GetRank(const_iterator stIT) const
     {
-        unsigned int uiRank = 0;
+        size_t uiRank = 0;
         if (stIT != End())
         {
             const node_type* pTmp = stIT.m_pNode;
@@ -409,9 +409,9 @@ public:
         return (uiRank);
     }
 
-    unsigned int GetRank(iterator stIT)
+    size_t GetRank(iterator stIT)
     {
-        unsigned int uiRank = 0;
+        size_t uiRank = 0;
         if (stIT != End())
         {
             node_type* pTmp = stIT.m_pNode;
@@ -425,14 +425,14 @@ public:
         return (uiRank);
     }
 
-    iterator FindByRank(unsigned int uiRank)
+    iterator FindByRank(size_t uiRank)
     {
         if ((0 == m_uiLength) || (0 == uiRank) || (uiRank > m_uiLength))
         {
             return (End());
         }
 
-        unsigned int uiLeftRank = uiRank;
+        size_t uiLeftRank = uiRank;
 
         node_type* pTmp = m_pHeader;
         for (int i = (int)(m_uiLevel - 1); i >= 0; i--)
@@ -457,7 +457,7 @@ public:
         printf("LENGTH:%u|LEVEL:%u\n", m_uiLength, m_uiLevel);
         printf("rnk%s", strSep.c_str());
         node_type* pTmp = m_pHeader->m_pLevel[0].m_pForward;
-        unsigned int uiRank = 1;
+        size_t uiRank = 1;
         while (pTmp != m_pHeader)
         {
             printf("%3u%s", uiRank, strSep.c_str());
@@ -470,13 +470,13 @@ public:
         pTmp = m_pHeader->m_pLevel[0].m_pForward;
         while (pTmp != m_pHeader)
         {
-            printf("%3u%s", (unsigned int)pTmp->m_stKey, strSep.c_str());
+            printf("%3u%s", (size_t)pTmp->m_stKey, strSep.c_str());
             pTmp = pTmp->m_pLevel[0].m_pForward;
         }
 
         printf("\n");
 
-        for (unsigned int i = 0; i < m_uiLevel; i++)
+        for (size_t i = 0; i < m_uiLevel; i++)
         {
             printf("%3u%s", m_pHeader->m_pLevel[i].m_uiSpan, strSep.c_str());
             pTmp = m_pHeader->m_pLevel[i].m_pForward;
@@ -499,12 +499,12 @@ public:
     }
 
 private:
-    unsigned int GetRandomLevel()
+    size_t GetRandomLevel()
     {
         size_t uiLevel = 1;
-        while ((taf::random() & 0xFFFF) < (unsigned int)(LEVEL_PROBABILITY * 0xFFFF))
+        while ((rand() & 0xFFFF) < (size_t)(LEVEL_PROBABILITY * 0xFFFF))
         {
-            if ((++uiLevel) >= (unsigned int)MAX_SKIPLIST_LEVEL)
+            if ((++uiLevel) >= (size_t)MAX_SKIPLIST_LEVEL)
             {
                 break;
             }
@@ -517,7 +517,7 @@ private:
     Comparator                      m_stCmp;
     node_type* m_pHeader;
     size_type                       m_uiLength;
-    unsigned int                    m_uiLevel;
+    size_t                    m_uiLevel;
 };
 
 

@@ -1,7 +1,7 @@
 #pragma once
 
 //core后打印信息
-#include "dtype.h"
+#include "ztype.h"
 #include <string>
 #ifdef _WIN32
 #include <Windows.h>

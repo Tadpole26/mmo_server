@@ -10,7 +10,7 @@ template <class KeyT, class ValT, class ComparatorT = std::greater<int64_t>>
 class RankMap
 {
 public:
-    const static unsigned int DEFAULT_MAX_RANK = 5000;
+    const static size_t DEFAULT_MAX_RANK = 5000;
 
 public:
     typedef int64_t												    score_type;
@@ -34,7 +34,7 @@ public:
 public:
     RankMap() : m_uiMaxRank(DEFAULT_MAX_RANK), m_stRankList(), m_stKeyHash(m_uiMaxRank) {};
 
-    RankMap(unsigned int uiMaxRank) : m_uiMaxRank(uiMaxRank), m_stRankList(), m_stKeyHash(m_uiMaxRank)
+    RankMap(size_t uiMaxRank) : m_uiMaxRank(uiMaxRank), m_stRankList(), m_stKeyHash(m_uiMaxRank)
     {
         if (uiMaxRank < 16) uiMaxRank = 16;
     };
@@ -42,7 +42,7 @@ public:
     /**
      * 返回值:第一个值表示插入后的排名,0表示没有排名第二个值为true表示该用户的不存在表中,false反之。
      */
-    std::pair<unsigned int, bool> Insert(const data_type& stVal, score_type uiScore)
+    std::pair<size_t, bool> Insert(const data_type& stVal, score_type uiScore)
     {
         typename hash_map_type::iterator stIT = m_stKeyHash.find(stVal.first);
         if (stIT == m_stKeyHash.end())
@@ -51,11 +51,11 @@ public:
             {
                 if (uiScore <= m_stRankList.REnd()->second)
                 {
-                    return (std::pair<unsigned int, bool>(0, true));
+                    return (std::pair<size_t, bool>(0, true));
                 }
             }
 
-            std::pair<unsigned int, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
+            std::pair<size_t, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
             m_stKeyHash[stVal.first] = stRet.second;
             if (m_stRankList.Size() > m_uiMaxRank)
             {
@@ -66,16 +66,16 @@ public:
                 m_stRankList.Erase(stMinScoreIT);
             }
 
-            return (std::pair<unsigned int, bool>(stRet.first, true));
+            return (std::pair<size_t, bool>(stRet.first, true));
         }
 
-        return (std::pair<unsigned int, bool>(0, false));
+        return (std::pair<size_t, bool>(0, false));
     }
 
     /**
      * 返回值:第一个值表示修改前的排名,第二个值表示修改后的排名。0:表示没有排名
      */
-    std::pair<unsigned int, unsigned int> UpdateOrInsert(const data_type& stVal, score_type uiScore)
+    std::pair<size_t, size_t> UpdateOrInsert(const data_type& stVal, score_type uiScore)
     {
         typename hash_map_type::iterator stIT = m_stKeyHash.find(stVal.first);
         if (stIT == m_stKeyHash.end())
@@ -84,11 +84,11 @@ public:
             {
                 if (ComparatorT()(m_stRankList.RBegin()->second, uiScore))
                 {
-                    return (std::pair<unsigned int, unsigned int>(0, 0));
+                    return (std::pair<size_t, size_t>(0, 0));
                 }
             }
 
-            std::pair<unsigned int, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
+            std::pair<size_t, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
             m_stKeyHash[stVal.first] = stRet.second;
             if (m_stRankList.Size() > m_uiMaxRank)
             {
@@ -99,22 +99,22 @@ public:
                 m_stRankList.Erase(stMinScoreIT);
             }
 
-            return (std::pair<unsigned int, unsigned int>(0, stRet.first));
+            return (std::pair<size_t, size_t>(0, stRet.first));
         }
         else
         {
-            unsigned int uiPrevRank = m_stRankList.GetRank(stIT->second);
+            size_t uiPrevRank = m_stRankList.GetRank(stIT->second);
             if (uiScore == stIT->second->second)
             {
-                return (std::pair<unsigned int, unsigned int>(uiPrevRank, uiPrevRank));
+                return (std::pair<size_t, size_t>(uiPrevRank, uiPrevRank));
             }
             else
             {
                 m_stRankList.Erase(stIT->second);
-                std::pair<unsigned int, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
+                std::pair<size_t, iterator> stRet = m_stRankList.Insert(std::pair<data_type, score_type>(stVal, uiScore));
                 stIT->second = stRet.second;
 
-                return (std::pair<unsigned int, unsigned int>(uiPrevRank, stRet.first));
+                return (std::pair<size_t, size_t>(uiPrevRank, stRet.first));
             }
         }
     }
@@ -122,9 +122,9 @@ public:
     /**
      * 返回值:名次，0表示没有名次
      */
-    unsigned int GetRank(const KeyT& stKey) const
+    size_t GetRank(const KeyT& stKey) const
     {
-        unsigned int uiRank = 0;
+        size_t uiRank = 0;
         typename hash_map_type::const_iterator stIT = m_stKeyHash.find(stKey);
         if (stIT != m_stKeyHash.end())
         {
@@ -134,7 +134,7 @@ public:
         return (uiRank);
     }
 
-    unsigned int GetRank(iterator stIT) const
+    size_t GetRank(iterator stIT) const
     {
         return m_stRankList.GetRank(stIT);
     }
@@ -150,7 +150,7 @@ public:
         return End();
     }
 
-    inline iterator FindByRank(unsigned int uiRank) { return (m_stRankList.FindByRank(uiRank)); }
+    inline iterator FindByRank(size_t uiRank) { return (m_stRankList.FindByRank(uiRank)); }
 
     inline size_type Size() const { return (m_stKeyHash.size()); };
 
@@ -183,7 +183,7 @@ public:
     }
 
 private:
-    unsigned int                    m_uiMaxRank;
+    size_t                    m_uiMaxRank;
     skip_list_type                  m_stRankList;
     hash_map_type                   m_stKeyHash;
 };

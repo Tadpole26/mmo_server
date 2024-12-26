@@ -212,7 +212,6 @@ int CNetConnPool::release()
         delete[] _pConns;
         _pConns = nullptr;
     }
-    _IdAlloctor.Release();
     _setID.clear();
     return 0;
 }
@@ -239,10 +238,10 @@ CNetConn* CNetConnPool::findconn(conn_oid_t id)
 
 CNetConn* CNetConnPool::newconn(uint32_t maxBuffer)
 {
-    if (_IdAlloctor.Full())
+    if (_IdAlloctor.isFull())
         remove_killed();
 
-    uint16 id = _IdAlloctor.AllocId();
+    uint16 id = _IdAlloctor.alloc();
     if (!is_valid(id))
         return nullptr;
 
@@ -276,12 +275,12 @@ int CNetConnPool::get_ip(conn_oid_t id)
 
 size_t CNetConnPool::conn_size()
 {
-    return _IdAlloctor.Size();
+    return _IdAlloctor.size();
 }
 
 bool CNetConnPool::Full()
 {
-    return _IdAlloctor.Full();
+    return _IdAlloctor.isFull();
 }
 
 void CNetConnPool::remove_killed()
@@ -302,7 +301,7 @@ int CNetConnPool::delconn(conn_oid_t id)
         return -1;
 
     _setID.erase(id);
-    _IdAlloctor.FreeId(id);
+    _IdAlloctor.free(id);
     CNetConn*& pConn = _pConns[id];
     if (pConn)
         pConn->release();

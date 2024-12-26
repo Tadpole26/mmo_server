@@ -2,7 +2,7 @@
 
 #include <string>
 #include "db_struct.h"
-#include "dtype.h"
+#include "ztype.h"
 #include "mongo_base.h"
 #include <exception>
 #include <map>

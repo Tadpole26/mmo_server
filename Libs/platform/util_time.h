@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <string>
 #include <ctime>
-#include "dtype.h"
+#include "ztype.h"
 
 //时间处理函数
 

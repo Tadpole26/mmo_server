@@ -1,5 +1,5 @@
 #pragma once
-#include "dtype.h"
+#include "ztype.h"
 
 #define ACCEPT_BUF_SIZE		131072							//128*1024
 #define SERVER_BUF_SIZE		1048576							//1024*1024e
@@ -25,9 +25,6 @@
 #define MAX_CHANNEL_LEN				13	//最大渠道字长
 
 #define GLOBAL_MAIL_LIST	"g_mail_list"							//全局邮件表,所有game读取
-
-#define SAFE_DELETE(ptr) if(ptr) {delete (ptr); (ptr) = NULL;}
-#define SAFE_FREE(ptr)	if(ptr) { free(ptr); (ptr) = NULL;}
 
 #define MAX_CON_SERVER 50
 

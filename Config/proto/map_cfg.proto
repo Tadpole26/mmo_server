@@ -1,8 +1,9 @@
 syntax = "proto3";
 
-package Packet;
+package packet;
 
 //笔刷类型
+/*
 enum BrushType
 {
 	BrushType_None = 0;
@@ -10,7 +11,7 @@ enum BrushType
 	BrushType_Teleporter = 2;						//传送
 	BrushType_BlockArea = 3;						//阻挡
 }
-
+*/
 
 message BrushInfo
 {
@@ -71,7 +72,7 @@ message BrushInfo
 //所有笔刷信息
 message BrushAll
 {
-	repeated BushInfo brushInfos = 1;	
+	repeated BrushInfo brushInfos = 1;	
 }
 
 //地图单个位置上笔刷

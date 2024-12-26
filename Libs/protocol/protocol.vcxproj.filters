@@ -13,6 +13,7 @@
     <ClInclude Include="msg_module_mail.pb.h" />
     <ClInclude Include="msg_module_battle.pb.h" />
     <ClInclude Include="msg_module_serverbattle.pb.h" />
+    <ClInclude Include="msg_cfg_ins.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="server_common.pb.cc" />
@@ -27,5 +28,6 @@
     <ClCompile Include="msg_module_mail.pb.cc" />
     <ClCompile Include="msg_module_battle.pb.cc" />
     <ClCompile Include="msg_module_serverbattle.pb.cc" />
+    <ClCompile Include="msg_cfg_ins.pb.cc" />
   </ItemGroup>
 </Project>

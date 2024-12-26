@@ -4,6 +4,8 @@
 #include "util_file.h"
 #include <tinyxml.h>
 #include "util_string.h"
+#include "util_strop.h"
+
 
 void CUtilLoadBase::InitSheet(const char* pSheet, fn_read fn, bool bCanEmpty)
 {
@@ -140,6 +142,56 @@ int64_t CUtilLoadBase::GetDataInt64(const char* pField, const int64_t llDef)
 			pField, llRet);
 	return llRet;
 }
+
+bool CUtilLoadBase::GetDataItem(const char* pField, std::map<uint32, uint32>& mapResult)
+{
+	assert(pField);
+	std::string strRet;
+	if (!ReadString(pField, strRet))
+		return false;
+	std::vector<std::string> vecFirst;
+	str_split(strRet, '|', vecFirst);
+	for (const auto& data : vecFirst)
+	{
+		std::vector<std::string> vecSecond;
+		str_split(data, ',', vecSecond);
+		if (vecSecond.size() != 2)
+		{
+			Log_Error("load item value err:%s !", strRet.c_str());
+			return false;
+		}
+		uint32 uiId = atoi(vecSecond[0].c_str());
+		uint32 uiCount = atoi(vecSecond[1].c_str());
+		mapResult.insert(std::make_pair(uiId, uiCount));
+	}
+	return true;
+}
+
+bool CUtilLoadBase::GetDataPos(const char* pField, zPos& oResult)
+{
+	assert(pField);
+	std::string strRet;
+	if (!ReadString(pField, strRet))
+		return false;
+	std::vector<std::string> vecResult;
+	str_split(strRet, '&', vecResult);
+	if (vecResult.size() != 2)
+	{
+		Log_Error("load pos value err:%s !", strRet.c_str());
+		return false;
+	}
+	float fX = (float)atof(vecResult[0].c_str());
+	float fY = (float)atof(vecResult[1].c_str());
+	oResult.setFloatX(fX);
+	oResult.setFloatY(fY);
+	return true;
+}
+
+bool CUtilLoadBase::GetDataPos(const char* pField, std::vector<zPos>& vecResult)
+{
+	return true;
+}
+
 
 bool CUtilLoadBase::LoadCfgFromXml(const char* pXmlFileName)
 {

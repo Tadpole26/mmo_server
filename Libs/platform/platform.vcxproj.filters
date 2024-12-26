@@ -22,6 +22,9 @@
     <Filter Include="common">
       <UniqueIdentifier>{2c2637bc-70a2-4835-9c47-4885c8fef99e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk">
+      <UniqueIdentifier>{a30164db-34f9-4e1f-9537-bbb30c92d908}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lru_hashmap.h">
@@ -120,9 +123,6 @@
     <ClInclude Include="coutclr.h">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="dtype.h">
-      <Filter>server</Filter>
-    </ClInclude>
     <ClInclude Include="en_de_code.h">
       <Filter>server</Filter>
     </ClInclude>
@@ -144,11 +144,41 @@
     <ClInclude Include="map_pool.h">
       <Filter>impl</Filter>
     </ClInclude>
-    <ClInclude Include="..\network\id_alloctor.h">
-      <Filter>impl</Filter>
-    </ClInclude>
     <ClInclude Include="map_pools.h">
       <Filter>impl</Filter>
+    </ClInclude>
+    <ClInclude Include="zType.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="id_alloctor.h">
+      <Filter>impl</Filter>
+    </ClInclude>
+    <ClInclude Include="zMacro.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zPos.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zMisc.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="CUser.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="CGame.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="zMap.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zScreenIndex.h">
+      <Filter>sdk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +265,21 @@
     </ClCompile>
     <ClCompile Include="CBattleCommon.h">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="CUser.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="CGame.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="zMap.cpp">
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="zScreenIndex.cpp">
+      <Filter>sdk</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

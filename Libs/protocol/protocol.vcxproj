@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="msg_cfg_ins.pb.h" />
     <ClInclude Include="msg_common.pb.h" />
     <ClInclude Include="msg_module.pb.h" />
     <ClInclude Include="msg_module_battle.pb.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="server_common.pb.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="msg_cfg_ins.pb.cc" />
     <ClCompile Include="msg_common.pb.cc" />
     <ClCompile Include="msg_module.pb.cc" />
     <ClCompile Include="msg_module_battle.pb.cc" />
