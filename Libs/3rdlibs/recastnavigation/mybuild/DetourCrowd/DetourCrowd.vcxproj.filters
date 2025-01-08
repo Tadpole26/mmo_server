@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourCrowd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourLocalBoundary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourObstacleAvoidance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourPathCorridor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourPathQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\Source\DetourProximityGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\xudunke\navigation\recastnavigation-main\recastnavigation\DetourCrowd\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5DE9E422-21A1-3D1C-8FD1-227CFF39A7A2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
