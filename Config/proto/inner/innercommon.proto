@@ -1,0 +1,222 @@
+syntax = "proto3";
+import "common.proto";
+import "fight3v3common.proto";
+import "fight5v5common.proto";
+import "innerfriend.proto";
+package inner;
+
+//角色inner事件
+message InnerGameEvent
+{
+	oneof type
+	{
+		InnerGameEventDestroy destroy = 1;			//角色删除
+		InnerGameEventLogin	login = 2;				//角色登录
+		InnerGameEventLogout logout = 3;			//角色登出
+		InnerGameEventOnline online = 4;			//角色上线
+		InnerGameEventOffline offline = 5;			//角色离线
+		InnerGameEventChangeMap changemap = 6;		//角色切图
+		InnerGameEventDeath	death = 7;				//角色死亡
+		InnerGameEventRebirth rebirth = 8;			//角色重生
+		InnerGameEventWakeup wakeup = 9;			//角色唤醒
+	}
+}
+
+message InnerGameEventDestroy
+{
+	oneof server
+	{
+		InnerGameEventDestroyTeamsvr teamsvr = 1;
+		InnerGameEventDestryFriendsvr friendsvr = 2;
+		InnerGameEventDestroyFamilysvr familysvr = 3;
+		InnerGameEventDestroyRanksvr ranksvr = 4;
+	}
+}
+
+message InnerGameEventDestroyTeamsvr
+{
+}
+
+message InnerGameEventDestryFriendsvr
+{
+}
+
+message InnerGameEventDestroyFamilysvr
+{
+}
+
+message InnerGameEventDestroyRanksvr
+{
+}
+
+message InnerGameEventLogin
+{
+	oneof server
+	{	
+		InnerGameEventLoginTeamsvr teamsvr = 1;
+		InnerGameEventLoginFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventLoginTeamsvr
+{
+	common.RoleBrief brief = 1;
+	common.RoleExtend1 extd1 = 2;
+	common.RoleExtend2 extd2 = 3;
+	common.RoleExtend3 extd3 = 4;
+	common.ExtendFight3v3 f33 = 5;
+	common.ExtendFight5v5 f55 = 6;
+	uint32 sceneHashId = 7;
+}
+
+message InnerGameEventLoginFriendsvr
+{
+	InnerFriendInfo oInfo = 1;
+	InnerFriendGiftList oGifts = 2;
+	uint64 llTeamId = 3;
+}
+
+message InnerGameEventLogout
+{
+	oneof server
+	{
+		InnerGameEventLogoutTeamvr teamsvr = 1;
+		InnerGameEventLogoutFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventLogoutTeamvr
+{
+}
+
+message InnerGameEventLogoutFriendsvr
+{
+}
+
+message InnerGameEventOnline
+{
+	oneof server
+	{
+		InnerGameEventOnlineTeamsvr teamsvr = 1;
+		InnerGameEventOnlineFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventOnlineTeamsvr
+{
+	common.RoleExtend2 extd2 = 1;
+	common.RoleExtend3 extd3 = 2;
+}
+
+message InnerGameEventOnlineFriendsvr
+{
+	InnerFriendInfo oInfo = 1;
+	InnerFriendGiftList oGifts = 2;
+	uint64 llTeamId = 3;
+}
+
+message InnerGameEventOffline
+{
+	oneof server
+	{
+		InnerGameEventOfflineTeamsvr teamsvr = 1;
+		InnerGameEventOfflineFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventOfflineTeamsvr
+{
+}
+
+message InnerGameEventOfflineFriendsvr
+{
+}
+
+message InnerGameEventChangeMap
+{
+	oneof server
+	{
+		InnerGameEventChangeMapTeamsvr teamsvr = 1;
+		InnerGameEventChangeMapFriendsvr friendsvr = 2;
+	}
+	uint32 uiProcDirect = 100;
+}
+
+message InnerGameEventChangeMapTeamsvr
+{
+	common.RoleBrief brief = 1;
+	common.RoleExtend1 extd1 = 2;
+	common.RoleExtend2 extd2 = 3;
+	common.RoleExtend3 extd3 = 4;
+	common.ExtendFight3v3 f33 = 5;
+	common.ExtendFight5v5 f55 = 6;
+	uint32 sceneHashId = 7;
+}
+
+message InnerGameEventChangeMapFriendsvr
+{
+}
+
+message InnerGameEventDeath
+{
+	oneof server
+	{
+		InnerGameEventDeathTeamsvr teamsvr = 1;
+		InnerGameEventDeathFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventDeathTeamsvr
+{
+	common.RoleExtend3 extd3 = 1;
+}
+
+message InnerGameEventDeathFriendsvr
+{
+}
+
+message InnerGameEventRebirth
+{
+	oneof server
+	{
+		InnerGameEventRebirthTeamsvr teamsvr = 1;
+		InnerGameEventRebirthFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventRebirthTeamsvr
+{
+	common.RoleExtend2 extd2 = 1;
+	common.RoleExtend3 extd3 = 2;
+}
+
+message InnerGameEventRebirthFriendsvr
+{
+}
+
+message InnerGameEventWakeup
+{
+	oneof server
+	{
+		InnerGameEventWakeupTeamsvr teamsvr = 1;
+		InnerGameEventWakeupFriendsvr friendsvr = 2;
+	}
+}
+
+message InnerGameEventWakeupTeamsvr
+{
+	common.RoleBrief brief = 1;
+	common.RoleExtend1 extd1 = 2;
+	common.RoleExtend2 extd2 = 3;
+	common.RoleExtend3 extd3 = 4;
+	common.ExtendFight3v3 f33 = 5;
+	common.ExtendFight5v5 f55 = 6;
+	uint32 sceneHashId = 7;
+}
+
+message InnerGameEventWakeupFriendsvr
+{
+	InnerFriendInfo oInfo = 1;
+	InnerFriendGiftList oGifts = 2;
+	uint64 llTeamId = 3;
+}

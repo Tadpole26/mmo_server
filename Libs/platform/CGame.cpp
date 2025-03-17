@@ -1,6 +1,6 @@
 #include "CGame.h"
 
-namespace CGame
+namespace cGame
 {
 	uint32 uiDBNum						= 8;								
 	uint32 uiDBTableNum					= 32;			

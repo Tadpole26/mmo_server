@@ -1,5 +1,7 @@
 #include "zPos.h"
+#include "CSceneScene.h"
 #include "CCmptView.h"
+#include "CSceneMap.h"
 
 CCmptView::CCmptView() :
 	m_oCurPos(),
@@ -15,6 +17,20 @@ CCmptView::~CCmptView()
 
 void CCmptView::Final()
 {
+}
+
+bool CCmptView::SetPos(const zPos& newPos)
+{
+	auto* pScene = GetScene();
+	assert(pScene != nullptr);
+	if (zMap::oBigWH.x > newPos.x && zMap::oBigWH.y > newPos.y)
+	{
+		m_oCurPos = newPos;
+		m_uiScreenId = pScene->m_pSceneMap->Pos2zPosI(m_oCurPos);
+		return true;
+	}
+	else
+		return false;
 }
 
 bool CCmptView::IsMovingWalking()

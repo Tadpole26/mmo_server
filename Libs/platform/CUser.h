@@ -1,27 +1,27 @@
 #pragma once
 #include "sdk.h"
 
-class CUser
+class cUser
 {
-public:
-	CUser(const uint64 ullRoleId);
-	~CUser();
-	void Final();
-public:
-	uint16 GetZoneId() { return m_usZoneIdFrom; }
-	uint16 GetGroupId() { return m_usGroupId; }
-	uint64 GetRoleId() { return m_ullRoleId; }
-	const std::string& GetNickName() { return m_strNick; }
-	uint64 GetAccId() const;
-	uint32 GetDBId() const;
-	uint32 GetTableId() const;
-	uint32 GetZoneIdB() const;
-	uint32 GetRoleNumId() const;
-	void SetNickName(const std::string& strNickName);
-	void SetZoneIdF(uint32 uiZoneIdF);
 private:
-	uint16 m_usZoneIdFrom = 0;							//来自哪个区(scenesvr有可能为副本服)
-	uint16 m_usGroupId = 0;
-	uint64 m_ullRoleId = 0;
-	std::string m_strNick;
+	zRoleIdType _roleId = 0;
+	std::string _nickName;
+	uint32 _zoneId = 0;
+public:
+	cUser(const uint64 ullRoleId);
+	~cUser();
+	void final();
+public:
+	const std::string& getNickName() { return _nickName; }
+	zRoleIdType getRoleId() { return _roleId; }
+	zAccIdType getAccId() const;
+	uint32 getDBId() const;
+	uint32 getTableId() const;
+	uint32 getZoneIdB() const;
+	uint32 getRoleNumId() const;
+	uint32 getZoneIdF() const;
+	uint32 getGroupIdF() const;
+public:
+	void setNickName(const std::string& nickName);
+	void setZoneIdF(uint32 zoneIdF);
 };

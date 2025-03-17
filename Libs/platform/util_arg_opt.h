@@ -2,7 +2,7 @@
 #ifndef WIN32
 #include <getopt.h>
 #endif
-#include "log_mgr.h"
+#include "cLogMgr.h"
 
 class ArgOpt
 {

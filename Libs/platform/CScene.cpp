@@ -1,92 +1,151 @@
-#include "CScene.h"
+#include "cScene.h"
+#include "cLogMgr.h"
 
-CScene::CScene(const uint64 ullSceneId) : m_uSid(ullSceneId)
+cScene::cScene(const uint64 sceneId) : _uSid(sceneId)
 {
 }
 
-CScene::~CScene()
+cScene::~cScene()
 {
 }
 
-void CScene::Final()
+void cScene::final()
 {
 }
 
-bool CScene::IsValidMapId(const uint32 uiMapId)
+bool cScene::isValidMapId(const uint32 mapId)
 {
-	return uiMapId >= MapIdMin && uiMapId <= MapIdMax;
+	return mapId >= MapIdMin && mapId <= MapIdMax;
 }
 
-bool CScene::IsValidCopyLvId(const uint32 uiCopyLvId)
+bool cScene::isValidCopyLvId(const uint32 copyLvId)
 {
-	return uiCopyLvId >= AutoIdValMin && uiCopyLvId <= AutoIdValMax;
+	return copyLvId >= CopyLvIdMin && copyLvId <= CopyLvIdMax;
 }
 
-bool CScene::IsValidAutoId(const uint32 uiAutoId)
+bool cScene::isValidAutoId(const uint32 autoId)
 {
-	return uiAutoId >= CopyLvIdMin && uiAutoId <= CopyLvIdMax;
+	return autoId >= AutoIdValMin && autoId <= AutoIdValMax;
 }
 
-uint32  CScene::SceneId2MapId(const uint64 ullSceneId)
+uint32 cScene::sceneId2MapId(const zSceneIdType sceneId)
 {
-	union_scene_id_t temp(ullSceneId);
-	return temp.uiMapId;
+	UnionSceneId temp(sceneId);
+	return temp.mapId;
 }
 
-uint32  CScene::SceneId2CopyLvId(const uint64 ullSceneId)
+uint32  cScene::sceneId2CopyLvId(const zSceneIdType sceneId)
 {
-	union_scene_id_t temp(ullSceneId);
-	return temp.uiCopyLvId;
+	UnionSceneId temp(sceneId);
+	return temp.copyLvId;
 }
 
-uint32  CScene::SceneId2Param(const uint64 ullSceneId)
+uint32  cScene::sceneId2Param(const zSceneIdType sceneId)
 {
-	union_scene_id_t temp(ullSceneId);
+	UnionSceneId temp(sceneId);
 	return temp.eParam;
 }
 
-uint32 CScene::SceneId2Eproc(const uint64 ullSceneId)
+uint32 cScene::sceneId2Eproc(const zSceneIdType sceneId)
 {
-	union_scene_id_t temp(ullSceneId);
+	UnionSceneId temp(sceneId);
 	return temp.eProc;
 }
 
-uint32  CScene::SceneId2AutoId(const uint64 ullSceneId)
+uint32 cScene::sceneId2AutoId(const zSceneIdType sceneId)
 {
-	union_scene_id_t temp(ullSceneId);
-	return temp.uiAutoId;
+	UnionSceneId temp(sceneId);
+	return temp.autoId;
 }
 
-uint32  CScene::SceneId2CopyType(const uint64 ullSceneId)
+uint32 cScene::sceneId2CopyType(const zSceneIdType ullSceneId)
 {
 	//uint32 uiCopyLvId = SceneId2CopyLvId(ullSceneId);
 	//if (uiCopyLvId)
 	return 0;
 }
 
-uint64  CScene::UnionSceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiCopyLvId, uint32 uiAutoId)
+zSceneIdType cScene::unionSceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiCopyLvId, uint32 uiAutoId)
 {
-	union_scene_id_t temp;
-	temp.uiMapId = uiMapId;
+	UnionSceneId temp;
+	temp.mapId = uiMapId;
 	temp.eParam = eParam;
 	temp.eProc = eProc;
-	temp.uiCopyLvId = uiCopyLvId;
-	temp.uiAutoId = uiAutoId;
-	return temp.ullSceneId;
+	temp.copyLvId = uiCopyLvId;
+	temp.autoId = uiAutoId;
+	return temp.sceneId;
 }
 
-uint64  CScene::UnionFirstSceneId(uint32 eParam, uint32 eProc)
+zSceneIdType cScene::unionFirstSceneId(uint32 eParam, uint32 eProc)
 {
-	return UnionStaticSceneId(eParam, eProc, FirstMapId, AutoIdValMin);
+	return unionStaticSceneId(eParam, eProc, FirstMapId, AutoIdValMin);
 }
 
-uint64  CScene::UnionStaticSceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiAutoId)
+zSceneIdType cScene::unionStaticSceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiAutoId)
 {
-	return UnionSceneId(eParam, eProc, uiMapId, 0, uiAutoId);
+	return unionSceneId(eParam, eProc, uiMapId, 0, uiAutoId);
 }
 
-uint64  CScene::UnionCopySceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiCopyLvId, uint32 uiAutoId)
+zSceneIdType cScene::unionCopySceneId(uint32 eParam, uint32 eProc, uint32 uiMapId, uint32 uiCopyLvId, uint32 uiAutoId)
 {
-	assert(IsValidAutoId(uiAutoId));
-	return UnionSceneId(eParam, eProc, uiMapId, uiCopyLvId, uiAutoId);
+	assert(isValidAutoId(uiAutoId));
+	return unionSceneId(eParam, eProc, uiMapId, uiCopyLvId, uiAutoId);
+}
+
+const char* cScene::getCopyTypeStr(const uint32 copyType)
+{
+	switch (copyType)
+	{
+	}
+	return "CopyType_Unknow";
+}
+
+const char* cScene::getRunStateStr(const enSceneRunState state)
+{
+	switch (state)
+	{
+	case enSceneRunState_Create:			return "Create";	break;
+	case enSceneRunState_Register:			return "Register";	break;
+	case enSceneRunState_Running:			return "Running";	break;
+	case enSceneRunState_Recycle:			return "Recycle";	break;
+	case enSceneRunState_Remove:			return "Remove";	break;
+	}
+	return "Unknow";
+}
+
+const std::string cScene::sceneIdStr(const zSceneIdType sceneId)
+{
+	UnionSceneId temp(sceneId);
+	return "aaaaaaaaaaa";
+}
+
+void cScene::setRegister()
+{
+	assert(_runstate == enSceneRunState_Create);
+	__setRunState(enSceneRunState_Register);
+}
+
+void cScene::setRunning()
+{
+	assert(_runstate == enSceneRunState_Create || _runstate == enSceneRunState_Register);
+	__setRunState(enSceneRunState_Running);
+}
+
+void cScene::setRecycle()
+{
+	assert(_runstate != enSceneRunState_Recycle && _runstate != enSceneRunState_Remove);
+	__setRunState(enSceneRunState_Recycle);
+}
+
+void cScene::setRemove()
+{
+	assert(_runstate == enSceneRunState_Recycle);
+	__setRunState(enSceneRunState_Remove);
+}
+
+void cScene::__setRunState(const enSceneRunState state)
+{
+	auto old = _runstate;
+	_runstate = state;
+	Log_Info("__setRunState,%s->%s", getRunStateStr(old), getRunStateStr(_runstate));
 }

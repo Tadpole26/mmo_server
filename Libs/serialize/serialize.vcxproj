@@ -141,7 +141,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../protocol;../3rdlibs/libevent/win64/WIN32-Code/nmake;../platform;../network;../3rdlibs/libevent/win64/include;../3rdlibs/protobuf/win64/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../protocol;../3rdlibs/libevent/win64/WIN32-Code/nmake;../platform;../network;../3rdlibs/libevent/win64/include;../3rdlibs/protobuf/win64/;../protocol/client/;../protocol/inner/;../protocol/record/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>

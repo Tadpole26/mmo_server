@@ -1,0 +1,143 @@
+syntax = "proto3";
+import "friendcommon.proto";
+package client;
+
+enum enModuleFriend
+{
+	enModuleFriend_None									= 0;
+	enModuleFriend_Update_Ntf							= 1;				//更新好友数据
+	enModuleFriend_Request_Req							= 2;				//申请添加好友
+	enModuleFriend_Agree_Req							= 3;				//同意好友申请
+	enModuleFriend_Refuse_Req							= 4;				//忽略好友申请
+	enModuleFriend_AgreeAll_Req							= 5;				//同意全部好友申请
+	enModuleFriend_RefuseAll_Req						= 6;				//忽略全部好友申请
+	enModuleFriend_Remove_Req							= 7;				//请求删除好友
+	enModuleFriend_Block_Req							= 8;				//请求屏蔽玩家
+	enModuleFriend_Search_Req							= 9;				//请求搜索玩家
+	enModuleFriend_Search_Ntf							= 10;				//通知搜索玩家
+	enModuleFriend_SetFilter_Req						= 11;				//设置缘分筛选
+	enModuleFriend_Recommend_Req						= 12;				//请求换一批
+	enModuleFriend_Recommend_Ntf						= 13;				//通知推荐列表
+	enModuleFriend_SetMyLabel_Req						= 14;				//设置缘分标签
+	enModuleFriend_SendGift_Req							= 15;				//请求赠送礼物
+	enModuleFriend_GiftMsg_Ntf							= 16;				//通知礼物消息
+	enModuleFriend_ReceiveGift_Req						= 17;				//请求接受礼物
+	enModuleFriend_ReceiveGift_Ntf						= 18;				//通知接受礼物
+	enModuleFriend_TeamId_Ntf							= 19;				//通知新队伍ID
+	enModuleFriend_FriendOnline_Ntf						= 20;				//通知好友在线状态
+	enModuleFriend_RealMax								= 21;				//实际最大
+}
+
+message ModuleFriend_Update_Ntf
+{
+	common.FriendFieldList oFieldList = 1; //新增好友关系
+}
+
+message ModuleFriend_Request_Req
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_Agree_Req
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_Refuse_Req
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_AgreeAll_Req
+{
+	//no param
+}
+
+message ModuleFriend_RefuseAll_Req
+{
+	//no param
+}
+
+message ModuleFriend_Remove_Req
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_Block_Req
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_Search_Req
+{
+	bytes strNick = 1;		//昵称
+}
+
+message ModuleFriend_Search_Ntf
+{
+	uint64 llRoleId = 1;	//角色ID
+}
+
+message ModuleFriend_SetFilter_Req
+{
+	bool bCity = 1;	//是否同城
+	uint32 uiSex = 2;//性别
+	uint32 uiLabel = 3;//标签
+}
+
+message ModuleFriend_Recommend_Req
+{
+	// no param
+}
+
+message ModuleFriend_Recommend_Ntf
+{
+	common.RecommendList oRoleList = 1;//推荐列表
+}
+
+message ModuleFriend_SetMyLabel_Req	
+{
+	uint32 uiCity = 1;//属地
+	bool bAvailable = 2;//是否可被推荐给其他玩家
+	uint32 uiLabel = 3;//缘分筛选标签
+}
+
+message ModuleFriend_SendGift_Req
+{
+	uint64 llRecver = 1;//接受者
+	uint64 llItemId = 2;//道具UID
+	uint32 uiCount = 3;//道具数量
+}
+
+message ModuleFriend_GiftMsg_Ntf
+{
+	uint64 llUid = 1;//礼物UID
+	uint64 llSender = 2;//发送者
+	uint64 llRecver = 3;//接受者
+	uint32 uiItemTid = 4;//道具tid
+	uint32 uiCount = 5;//道具数量
+	uint32 uiTimeStamp = 6;//赠送时间
+}
+
+message ModuleFriend_ReceiveGift_Req
+{
+	uint64 llGiftUid = 1;//礼物UID
+}
+
+message ModuleFriend_ReceiveGift_Ntf
+{
+	uint64 llGiftUid = 1;//礼物UID
+}
+
+message ModuleFriend_TeamId_Ntf
+{
+	uint64 llRoleUid = 1;	//好友
+	uint64 llTeamId = 2;	//队伍
+}
+
+message ModuleFriend_FriendOnline_Ntf	
+{
+	uint64 llRoleUid = 1;//好友
+	bool bOnline = 2;//是否在线
+}	
+

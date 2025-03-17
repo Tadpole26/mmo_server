@@ -10,6 +10,7 @@ struct map_info_t
 	std::string strMapName;							//地图名
 	uint32 uiMapLevel = 0;							//地图要求等级
 	bool bStatic = true;							//是否是静态地图
+	uint32 uiTiny = 0;								//是否是微型地图
 	uint32 uiWidth = 0;								//地图宽度X(8的倍数)
 	uint32 uiHeight = 0;							//地图高度X(8的倍数)
 	zPos oBornPoint;								//出生坐标
@@ -24,6 +25,8 @@ class CMapConfig : public CUtilLoadBase
 {
 public:
 	bool LoadConfig(const std::string& strContent) override;
+
+	map_info_t* GetMapConfig(const uint32 uiTid) const;
 private:
 	bool AddMapInfo();
 

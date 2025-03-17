@@ -1,0 +1,146 @@
+syntax = "proto3";
+package common;
+
+//好有全量数据
+message FriendInfo
+{
+    FriendList oFriend = 1; //好友列表
+    RequestList oRequest = 2;//申请列表
+    BlockList oBlock = 3;//屏蔽列表
+    enFriendFieldType oMsgList = 4;//聊天留言
+    RecommendFilter oFilter = 5;//刷选条件
+    RecommendLabel oLabel = 6;//缘分标签
+    SendGiftTimes oSendTimes = 7;//赠礼次数
+    SendGiftHistory oHistory = 8;//赠礼记录
+}
+
+message FriendList
+{
+    uint32 uiFriendListMax = 1; //好友上限
+    repeated FriendRelation vecFriends = 2;//好友列表
+}
+
+message FriendRelation
+{
+    uint64 llRoleId = 1;    //好有RoleID
+    uint32 uiFriendship = 2;    //亲密度
+    uint32 uiDailyChat = 3; //当日聊天已获亲密度
+    uint64 llTeamId = 4;    //队伍ID
+    bool bOnline = 5;       //是否在线
+}
+
+message RequestList
+{
+    repeated uint64 vecRequest = 1;   //申请列表RoleID
+}
+
+message BlockList
+{
+    repeated uint64 vecBlock = 1;   //屏蔽列表RoleID
+}
+
+message RecommendFilter
+{
+    bool bOnlyCity = 1; //只看同城
+    uint32 uiSex = 2;   //推荐性别
+    uint32 uiBitLabel = 3;//缘分标签
+}
+
+message RecommendLabel
+{
+    uint32 uiCity = 1;  //属地城市
+    uint32 uiBitLabel = 2;  //缘分标签
+    bool bAvailable = 3;    //是否可被推荐给其他玩家
+}
+
+message SendGiftTimes
+{
+    uint32 uiDailySendCount = 1;    //当日已赠礼总次数
+    repeated SingleSendTimes vecSendTimes = 2;  //赠送次数信息
+}
+
+message SendGiftHistory
+{
+    repeated SendGift vecSend = 1;  //赠礼记录
+    repeated RecvGift vecRecv = 2;  //收礼记录
+}
+
+message SingleSendTimes
+{
+    uint64 llRoleId = 1;        //角色ID
+    uint32 uiTimes = 2;         //已赠送次数
+}
+
+message SendGift
+{
+    uint64 llUid = 1;       //礼物UID
+    uint64 llRecver = 2;    //接受者
+    uint32 uiItemTid = 3;   //道具ID
+    uint32 uiCount = 4;     //道具数量
+    uint64 llTimestamp = 5; //赠送时间
+    bool bReceived = 6;     //是否被领取
+}
+
+message RecvGift
+{
+    uint64 llUid = 1;       //礼物UID
+    uint64 llSender = 2;    //发送者
+    uint32 uiItemTid = 3;   //道具tid
+    uint32 uiCount = 4;     //道具数量
+    uint64 llTimeStamp = 5; //赠送时间戳
+}
+
+//标签类型
+enum enFriendLabelType
+{
+    FLType_None = 0;
+    FLType_Max = 31;
+}
+
+//好友域数据增量变化列表
+message FriendFieldList
+{
+    repeated FriendFieldId vecIds = 1;          //id类型的列表
+    repeated FriendFieldStr vecStr = 2;         //bytes类型的列表
+}
+
+//好友域数据增量
+message FriendFieldId
+{
+    uint32 uiType = 1;      //类型 enFriendFieldType
+    uint64 llVal = 2;       //值
+}
+
+//好友域数据增量
+message FriendFieldStr
+{
+    uint32 uiType = 1;      //类型 enFriendFieldType
+    bytes strData = 2;       //值
+}
+
+//好友域数据类型
+enum enFriendFieldType
+{
+    FFType_None = 0;
+    FFType_FriendListMax = 1;               //好友列表上限
+    FFType_Relation = 2;                    //好友关系
+    FFType_RequestList = 3;                 //申请列表
+    FFType_BlockList = 4;                   //屏蔽列表
+    FFType_Filter = 5;                      //筛选条件
+    FFType_Label = 6;                       //缘分标签
+    FFType_SendTimes = 7;                   //送礼次数
+    FFType_Max = 8;                     
+}
+
+message RecommendList
+{
+    repeated Recommend vecRoleList = 1;     //推荐列表
+}
+
+message Recommend
+{
+    uint64 llRoleId = 1;                    //roleId
+    uint32 uiCity = 2;                      //属地城市
+    uint32 uiLabel = 3;                     //缘分刷选标签
+}
+

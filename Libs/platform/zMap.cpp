@@ -58,10 +58,8 @@ uint16 zMap::GetScreenDirect(const zPosI uiSrc, const zPosI uiDst)
 	else if (uiSubX == uiDstX && uiSrcY == uiDstY)
 		return 6;
 	//7(×óÏÂ)
-	else if (uiSubX == uiDstX && uiSubY == uiDstY)
+	else /*if (uiSubX == uiDstX && uiSubY == uiDstY)*/
 		return 7;
-	else 
-		return 9999;
 }
 
 bool zMap::ValidGridId(const uint32 uiGrideId)

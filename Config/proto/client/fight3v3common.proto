@@ -1,0 +1,115 @@
+syntax = "proto3";
+package common;
+
+//江湖比武3v3
+message MatchFight3v3
+{
+    Fight3v3Season season = 1;
+}
+
+//匹配扩展数据
+message ExtendFight3v3
+{
+    uint32 score = 1;       //分数
+    Fight3v3SeasonBase base = 2;    //基础信息
+}
+
+//跨赛季数据
+message Fight3v3Data
+{
+    uint32 expireCancel = 1;        //取消匹配的惩罚到期时间
+    uint32 expireQuit = 2;          //中途中断游戏的惩罚到期时间
+}
+
+//赛季数据
+message Fight3v3Season
+{
+    uint32 seasonId = 1;
+    uint32 score = 2;
+    uint32 point = 3;
+    Fight3v3SeasonBase base = 4;
+    Fight3v3SeasonReward reward = 5;
+    uint32 duanId = 6;
+}
+
+//赛季分数数据
+message Fight3v3SeasonScore
+{
+    uint32 score = 1;   //分数
+    uint32 point = 2;   //胜点
+    uint32 duanId = 3;  //段位id
+}
+
+//赛季基础数据
+message Fight3v3SeasonBase
+{
+    uint32 total = 1;       //总场
+    uint32 win = 2;         //胜场
+    uint32 lose = 3;        //负场
+    uint32 cwin = 4;        //连胜场次
+    uint32 close = 5;       //连负场次
+}
+
+//赛季奖励数据
+message Fight3v3SeasonReward
+{
+    repeated uint32 duanIds = 1;    //已领取奖励的段位id
+    uint32 duanIdMax = 2;           //到过的最大段位Id
+}
+
+//一局里的参与者
+message Fight3v3RoundRole
+{
+    uint64 roleId = 1;
+    bytes nickName = 2;
+    uint32 label = 3;           //标签
+    bool aline = 4;             //是否存活
+    uint32 kill = 5;            //击杀
+    uint32 ctrl = 6;            //控制
+    uint32 hurt = 7;            //输出
+    uint32 hurted = 8;          //承伤
+    uint32 heal = 9;            //治疗
+}
+
+//一局里的组
+message Fight3v3RoundGroup
+{
+    uint32 groupId = 1;
+    repeated Fight3v3RoundRole roles = 2;   //本组成员
+}
+
+//一局统计
+message Fight3v3RoundState
+{
+    uint64 roundId = 1; //局id
+    Fight3v3RoundGroup red = 2;
+    Fight3v3RoundGroup blue = 3;
+    uint32 winId = 4;               //赢的组Id
+    uint32 endTime = 5;         //结束时间
+    uint32 seasonId = 6;        //赛季id
+}
+
+//一个赛季统计
+message Fight3v3SeasonStat
+{
+    uint32 join = 1;        //场次
+    uint32 honor = 2;       //称号
+    uint32 win = 3;         //胜场
+    uint32 alinve = 4;      //生存
+    uint32 kill = 5;        //击杀
+    uint32 killMax = 6;     //单场最高击杀
+    uint32 ctrl = 7;        //控制
+    uint32 ctrlMax = 8;     //单场最高控制
+    uint32 hurt = 9;        //伤害
+    uint32 hurtMax = 10;    //单场最高伤害
+    uint32 hurted = 11;     //承伤
+    uint32 hurtedMax = 12;  //单场最高承伤
+    uint32 heal = 13;       //治疗
+    uint32 healMax = 14;    //单场最高治疗
+}
+
+//玩家当前赛季参与的场次
+message Fight3v3RoundList
+{
+    repeated uint64 roundid = 1;
+}

@@ -1,0 +1,286 @@
+syntax = "proto3";
+import "common.proto";
+import "teamcommon.proto";
+package client;
+
+enum enModuleTeam
+{
+	enModuleTeam_None									= 0;
+	enModuleTeam_Req_CreateTeam							= 1;				//创建队伍
+	enModuleTeam_Ntf_CreateTeam							= 2;
+	enModuleTeam_Ntf_SelfJoinTeam						= 3;				//自己进入队伍
+	enModuleTeam_Ntf_UpdateTeam							= 4;				//更新队伍信息
+	enModuleTeam_Ntf_AddMember							= 5;				//添加一个成员
+	enModuleTeam_Ntf_RemoveMember						= 6;				//移除一个成员
+	enModuleTeam_Ntf_UpdateMember						= 7;				//更新成员信息(成员改名字、换装备等等)
+	enModuleTeam_Req_LeaderFireMember					= 8;				//队长踢人
+	enModuleTeam_Req_LeaderChangeTarget					= 9;				//队长修改目标
+	enModuleTeam_Req_LeaderCancelMatch					= 10;				//队长取消匹配
+	enModuleTeam_Req_LeaderTogetherMember				= 11;				//队长召集
+	enModuleTeam_Req_LeaderAppoint						= 12;				//队长委任
+	enModuleTeam_Req_LeaderRefuseAllApply				= 13;				//队长拒绝全部申请
+	enModuleTeam_Req_LeaderAgreeAllApply				= 14;				//队长同意全部申请
+	enModuleTeam_Req_LeaderRefuseApply					= 15;				//队长拒绝指定申请
+	enModuleTeam_Req_LeaderAgreeApply					= 16;				//队长同意指定申请
+	enModuleTeam_Ntf_LeaderAddApply						= 17;				//通知队长有申请添加
+	enModuleTeam_Ntf_LeaderRemoveApply					= 18;				//通知队长有申请取消
+	enModuleTeam_Ntf_LeaderUpdateApply					= 19;				//通知队长有申请更新
+	enModuleTeam_Req_InviteFriend						= 20;				//邀请好友
+	enModuleTeam_Req_InviteFamily						= 21;				//邀请家族成员
+	enModuleTeam_Req_InvitePlayer						= 22;				//邀请其他玩家
+	enModuleTeam_Ntf_AddInvited							= 23;				//通知一个邀请
+	enModuleTeam_Req_AgreeInvited						= 24;				//同意邀请
+	enModuleTeam_Req_RefuseInvited						= 25;				//拒绝邀请
+	enModuleTeam_Req_LeaveTeam							= 26;				//离开队伍
+	enModuleTeam_Ntf_LeaveTeam							= 27;				
+	enModuleTeam_Req_ApplyTeam							= 28;				//申请队伍
+	enModuleTeam_Req_FollowLeader						= 29;				//跟随
+	enModuleTeam_Req_CancelFollow						= 30;				//取消跟随
+	enModuleTeam_Req_AreeTogether						= 31;				//同意召集
+	enModuleTeam_Req_RefuseTogether						= 32;				//拒绝召集
+	enModuleTeam_Req_ReplaceLeader						= 33;				//顶替队长
+	enModuleTeam_Req_PersonChangeTarget					= 34;				//单人改变目标
+	enModuleTeam_Req_PersonCancelMatch					= 35;				//单人取消匹配
+	enModuleTeam_Ntf_LeaderTogetherMember				= 36;				//通知队长召集
+	enModuleTeam_Ntf_LeaderEmptyApply					= 37;				//通知队长清空申请
+	enModuleTeam_Ntf_TeamRecruitInfo					= 38;				//广播队伍招募信息
+	enModuleTeam_Req_LeaderStartMatch					= 39;				//队长请求招募
+	enModuleTeam_Ntf_VoteBegin							= 40;				//通知队伍顶替队长投票开始
+	enModuleTeam_Req_Vote								= 41;				//请求队伍顶替队长投票
+	enModuleTeam_Ntf_VoteUpdate							= 42;				//通知队伍顶替队长投票更新
+	enModuleTeam_Ntf_VoteEnd							= 43;				//通知队伍顶替队长投票结束
+	enModuleTeam_Ntf_MountTeam							= 44;				//登录、上线、切图挂载队伍
+	enModuleTeam_Req_FollowJumpMap						= 45;				//跟随跳地图
+	enModuleFriend_RealMax								= 46;				//实际最大
+}
+
+message ModuleTeam_Req_CreateTeam
+{
+	uint32 targetId = 1;
+	uint32 minLevel = 2;
+	uint32 maxLevel = 3;
+}
+
+message ModuleTeam_Ntf_CreateTeam
+{
+	common.TeamBase base = 1;
+	common.TeamMemberList memberList = 2;		//队伍成员信息
+	common.NotOwnTeamInfo notteam = 3;
+	common.OwnTeamInfo ownTeam = 4;				
+}
+
+message ModuleTeam_Ntf_SelfJoinTeam
+{
+	common.TeamBase base = 1;
+	common.TeamMemberList memberList = 2;		//队伍成员信息
+	common.NotOwnTeamInfo notteam = 3;
+	common.OwnTeamInfo ownTeam = 4;			
+}
+
+message ModuleTeam_Ntf_UpdateTeam
+{
+	common.TeamFieldList fieldList = 1;
+}
+
+message ModuleTeam_Ntf_AddMember
+{
+	common.TeamMemberList memeberList = 1;
+}
+
+message ModuleTeam_Ntf_RemoveMember		
+{
+	repeated uint64 roleIds = 1;
+}
+
+message ModuleTeam_Ntf_UpdateMember			
+{
+	uint64 roleId = 1;
+	common.TeamMemberFieldList fieldList = 2;
+}
+
+message ModuleTeam_Req_LeaderFireMember			
+{
+	uint64 roleId = 1;
+}
+
+message ModuleTeam_Req_LeaderChangeTarget	
+{
+	uint32 targetId = 1;
+	uint32 minLevel = 2;
+	uint32 maxLevel = 3;
+}
+
+message ModuleTeam_Req_LeaderCancelMatch
+{
+}
+
+message ModuleTeam_Req_LeaderTogetherMember
+{
+	uint64 roleId = 1;//不填充是召集所有人
+}
+
+message ModuleTeam_Req_LeaderAppoint		
+{
+	uint64 roleId = 1;
+}
+
+message ModuleTeam_Req_LeaderRefuseAllApply		
+{
+}
+
+message ModuleTeam_Req_LeaderAgreeAllApply	
+{
+}
+
+message ModuleTeam_Req_LeaderRefuseApply	
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message ModuleTeam_Req_LeaderAgreeApply		
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message ModuleTeam_Ntf_LeaderAddApply		
+{
+	common.TeamApplyList applyList = 1;
+}
+
+message ModuleTeam_Ntf_LeaderRemoveApply	
+{
+	repeated uint64 roleIds = 1;
+}
+
+message ModuleTeam_Ntf_LeaderUpdateApply	
+{
+	common.TeamApplyList applyList = 1;
+}
+
+message ModuleTeam_Req_InviteFriend		
+{
+	uint64 roleId = 1;
+}
+
+message ModuleTeam_Req_InviteFamily		
+{
+	uint64 roleId = 1;
+}
+
+message ModuleTeam_Req_InvitePlayer	
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message ModuleTeam_Ntf_AddInvited	
+{
+	common.TeamInvited invited = 1;
+}
+
+message ModuleTeam_Req_AgreeInvited	
+{
+	uint64 teamId = 1;
+	uint64 leaderSceneId = 2;
+}
+
+message ModuleTeam_Req_RefuseInvited
+{
+	uint64 teamId = 1;
+}
+
+message ModuleTeam_Req_LeaveTeam	
+{
+}
+
+message ModuleTeam_Ntf_LeaveTeam	
+{
+	uint32 type = 1;//enLeaveTeamType
+}
+
+message ModuleTeam_Req_ApplyTeam	
+{
+	uint64 teamId = 1;
+	uint64 leaderSceneId = 2;
+}
+
+message ModuleTeam_Req_FollowLeader		
+{
+}
+
+message ModuleTeam_Req_CancelFollow	
+{
+}
+
+message ModuleTeam_Req_AreeTogether	
+{
+	uint64 teamId = 1;
+}
+
+message ModuleTeam_Req_RefuseTogether
+{
+}
+
+message ModuleTeam_Req_ReplaceLeader
+{
+	uint64 roleId = 1;
+}
+
+message ModuleTeam_Req_PersonChangeTarget	
+{
+	uint32 targerId = 1;
+}
+
+message ModuleTeam_Req_PersonCancelMatch	
+{
+}
+
+message ModuleTeam_Ntf_LeaderTogetherMember	
+{
+}
+
+message ModuleTeam_Ntf_LeaderEmptyApply	
+{
+}
+
+message ModuleTeam_Ntf_TeamRecruitInfo	
+{
+	common.RecruitTeam recruit = 1;
+}
+
+message ModuleTeam_Req_LeaderStartMatch	
+{
+	bytes text = 1;
+}
+
+message ModuleTeam_Ntf_VoteBegin
+{
+	common.TeamVoteBaseData base = 1;
+	common.RoleVoteStateList rolelist = 2;
+}
+
+message ModuleTeam_Req_Vote
+{
+	bool agree = 1;//是否同意
+}
+
+message ModuleTeam_Ntf_VoteUpdate
+{
+	common.RoleVoteState role = 1;
+}
+
+message ModuleTeam_Ntf_VoteEnd
+{
+	bool pass = 1;//是否通过
+}
+
+message ModuleTeam_Ntf_MountTeam	
+{
+	common.ModuleTeam team = 1;
+}
+
+message ModuleTeam_Req_FollowJumpMap
+{
+}

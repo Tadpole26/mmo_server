@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;STATIC_LIBMONGOCLIENT;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;USE_STATIC_LIB;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;../Libs/protocol/client;../Libs/protocol/record;./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -150,17 +150,21 @@
     <ClCompile Include="CCrossNetface.cpp" />
     <ClCompile Include="CDbInstance.cpp" />
     <ClCompile Include="CConstConfig.cpp" />
+    <ClCompile Include="CFriendNetface.cpp" />
     <ClCompile Include="CGameConstConfig.cpp" />
     <ClCompile Include="CGameLogic.cpp" />
     <ClCompile Include="CGameUser.cpp" />
     <ClCompile Include="CGateSession.cpp" />
-    <ClCompile Include="CGlobalMailMgr.cpp" />
     <ClCompile Include="CGlobalNpcMgr.cpp" />
     <ClCompile Include="CGlobalRankerRecord.cpp" />
+    <ClCompile Include="CModule.cpp" />
+    <ClCompile Include="CModuleFriend.cpp" />
+    <ClCompile Include="CMonsterConfig.cpp" />
     <ClCompile Include="CSceneMap.cpp" />
+    <ClCompile Include="CSceneMapMgr.cpp" />
     <ClCompile Include="CSceneScene.cpp" />
+    <ClCompile Include="CSceneScreen.cpp" />
     <ClCompile Include="CSkillConfig.cpp" />
-    <ClCompile Include="CInnerMail.cpp" />
     <ClCompile Include="CNpcConfig.cpp" />
     <ClCompile Include="CNpc.cpp" />
     <ClCompile Include="CNpcMgr.cpp" />
@@ -194,17 +198,21 @@
     <ClInclude Include="CCrossNetface.h" />
     <ClInclude Include="CDbInstance.h" />
     <ClInclude Include="CConstConfig.h" />
+    <ClInclude Include="CFriendNetface.h" />
     <ClInclude Include="CGameConstConfig.h" />
     <ClInclude Include="CGameLogic.h" />
     <ClInclude Include="CGameUser.h" />
     <ClInclude Include="CGateSession.h" />
-    <ClInclude Include="CGlobalMailMgr.h" />
     <ClInclude Include="CGlobalNpcMgr.h" />
     <ClInclude Include="CGlobalRankerRecord.h" />
+    <ClInclude Include="CModule.h" />
+    <ClInclude Include="CModuleFriend.h" />
+    <ClInclude Include="CMonsterConfig.h" />
     <ClInclude Include="CSceneMap.h" />
+    <ClInclude Include="CSceneMapMgr.h" />
     <ClInclude Include="CSceneScene.h" />
+    <ClInclude Include="CSceneScreen.h" />
     <ClInclude Include="CSkillConfig.h" />
-    <ClInclude Include="CInnerMail.h" />
     <ClInclude Include="CNpcConfig.h" />
     <ClInclude Include="CNpcMonster.h" />
     <ClInclude Include="CRankerInfo.h" />

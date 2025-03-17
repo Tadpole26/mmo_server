@@ -161,16 +161,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CGame.h" />
-    <ClInclude Include="CScene.h" />
-    <ClInclude Include="CUser.h" />
+    <ClInclude Include="cGame.h" />
+    <ClInclude Include="cScene.h" />
+    <ClInclude Include="cServer.h" />
+    <ClInclude Include="cUser.h" />
     <ClInclude Include="db_mgr.h" />
     <ClInclude Include="db_struct.h" />
     <ClInclude Include="http_client.h" />
     <ClInclude Include="http_mgr.h" />
     <ClInclude Include="http_param.h" />
     <ClInclude Include="http_request.h" />
-    <ClInclude Include="id_alloctor.h" />
+    <ClInclude Include="cAutoIdAllocator.h" />
     <ClInclude Include="ikcp.h" />
     <ClInclude Include="map_pool.h" />
     <ClInclude Include="map_pools.h" />
@@ -180,7 +181,7 @@
     <ClInclude Include="mysql_mgr.h" />
     <ClInclude Include="sdk.h" />
     <ClInclude Include="server_pool.h" />
-    <ClInclude Include="util_load_base.h" />
+    <ClInclude Include="cLoadBase.h" />
     <ClInclude Include="util_malloc.h" />
     <ClInclude Include="util_arg_opt.h" />
     <ClInclude Include="call_stack.h" />
@@ -191,7 +192,7 @@
     <ClInclude Include="en_de_code.h" />
     <ClInclude Include="func_proc.h" />
     <ClInclude Include="util_string.h" />
-    <ClInclude Include="log_mgr.h" />
+    <ClInclude Include="zLogMgr.h" />
     <ClInclude Include="rank_map.h" />
     <ClInclude Include="util_file.h" />
     <ClInclude Include="mongo_base.h" />
@@ -206,18 +207,22 @@
     <ClInclude Include="util_random.h" />
     <ClInclude Include="win_get_opt.h" />
     <ClInclude Include="singleton.h" />
+    <ClInclude Include="zCallback.h" />
     <ClInclude Include="zMacro.h" />
     <ClInclude Include="zMap.h" />
     <ClInclude Include="zMisc.h" />
     <ClInclude Include="zPos.h" />
+    <ClInclude Include="zRoleMgr.h" />
+    <ClInclude Include="zSceneMgr.h" />
     <ClInclude Include="zScreenIndex.h" />
+    <ClInclude Include="zSTL.h" />
     <ClInclude Include="zType.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBattleCommon.h" />
-    <ClCompile Include="CGame.cpp" />
-    <ClCompile Include="CScene.cpp" />
-    <ClCompile Include="CUser.cpp" />
+    <ClCompile Include="cGame.cpp" />
+    <ClCompile Include="cScene.cpp" />
+    <ClCompile Include="cUser.cpp" />
     <ClCompile Include="db_mgr.cpp" />
     <ClCompile Include="db_struct.cpp" />
     <ClCompile Include="http_client.cpp" />
@@ -237,10 +242,10 @@
     <ClCompile Include="func_proc.cpp" />
     <ClCompile Include="util_file.cpp" />
     <ClCompile Include="mongo_base.cpp" />
-    <ClCompile Include="util_load_base.cpp" />
+    <ClCompile Include="cLoadBase.cpp" />
     <ClCompile Include="util_strop.cpp" />
     <ClCompile Include="util_time.cpp" />
-    <ClCompile Include="log_mgr.cpp" />
+    <ClCompile Include="zLogMgr.cpp" />
     <ClCompile Include="md5.cpp" />
     <ClCompile Include="util_string.cpp" />
     <ClCompile Include="util_random.cpp" />

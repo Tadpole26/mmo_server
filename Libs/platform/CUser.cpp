@@ -1,50 +1,50 @@
-#include "CUser.h"
-#include "CGame.h"
+#include "cUser.h"
+#include "cGame.h"
 
-CUser::CUser(const uint64 ullRoleId) : 
-	m_ullRoleId(ullRoleId)
+cUser::cUser(const zRoleIdType roleId) :
+	_roleId(roleId)
 {
 }
 
-CUser::~CUser()
+cUser::~cUser()
 {
 }
 
-void CUser::Final()
+void cUser::final()
 {
 }
 
-uint64 CUser::GetAccId() const
+zAccIdType cUser::getAccId() const
 {
-	return CGame::RoleId2AccId(m_ullRoleId);
+	return cGame::RoleId2AccId(_roleId);
 }
 
-uint32 CUser::GetDBId() const
+uint32 cUser::getDBId() const
 {
-	return CGame::RoleId2DBId(m_ullRoleId);
+	return cGame::RoleId2DBId(_roleId);
 }
 
-uint32 CUser::GetTableId() const
+uint32 cUser::getTableId() const
 {
-	return CGame::RoleId2TableId(m_ullRoleId);
+	return cGame::RoleId2TableId(_roleId);
 }
 
-uint32 CUser::GetZoneIdB() const
+uint32 cUser::getZoneIdB() const
 {
-	return CGame::RoleId2ZoneId(m_ullRoleId);
+	return cGame::RoleId2ZoneId(_roleId);
 }
 
-uint32 CUser::GetRoleNumId() const
+uint32 cUser::getRoleNumId() const
 {
-	return CGame::RoleId2RoleNumId(m_ullRoleId);
+	return cGame::RoleId2RoleNumId(_roleId);
 }
 
-void CUser::SetNickName(const std::string& strNickName)
+void cUser::setNickName(const std::string& nickName)
 {
-	m_strNick = strNickName;
+	_nickName = nickName;
 }
 
-void CUser::SetZoneIdF(uint32 uiZoneIdF)
+void cUser::setZoneIdF(uint32 uiZoneIdF)
 {
-	m_usZoneIdFrom = uiZoneIdF;
+	_zoneId = uiZoneIdF;
 }

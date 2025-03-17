@@ -328,3 +328,8 @@ typedef zPos3 zPos;
 using zPosI = uint32;
 //存放屏编号的向量
 using zPosIVector = std::vector<zPosI>;
+
+inline zPosI zPos2zPosI(const zPos2& screenWH, const zPos2& pos)
+{
+	return ((screenWH.x+MAX_SCREEN_GRID-1)/ MAX_SCREEN_GRID) * (pos.y/ MAX_SCREEN_GRID) + (pos.x/ MAX_SCREEN_GRID);
+}

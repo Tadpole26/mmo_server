@@ -1,5 +1,4 @@
 #include "CSkillConfig.h"
-#include "CCommonItem.h"
 #include "log_mgr.h"
 #include "util_strop.h"
 #include "sdk.h"

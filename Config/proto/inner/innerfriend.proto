@@ -1,0 +1,36 @@
+syntax = "proto3";
+package inner;
+
+message InnerFriendList
+{
+	repeated InnerFriend vecFriend  = 1;
+}
+
+message InnerFriend
+{
+	uint64 llRoleId = 1;	//角色ID
+	uint32 uiIntimacy = 2;	//亲密度
+}
+
+message InnerFriendInfo
+{
+	uint32 uiCity = 1;
+	uint32 uiSex = 2;
+	uint32 uiLevel = 3;
+	string strNick = 4;
+	bool bFuncOpen = 5;
+}
+
+message InnerFriendGiftList
+{
+	repeated InnerFriendGift vecGifts = 1;
+}
+
+message InnerFriendGift
+{
+	uint64 llRecver = 1;	//角色ID
+	uint32 uiItemID = 2;	//道具ID
+	uint32 uiCount = 3;		//道具数量
+	bool bBind = 4;			//是否绑定
+	uint32 uiVersionId = 5;	//版本号
+}

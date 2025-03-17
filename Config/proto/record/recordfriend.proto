@@ -1,0 +1,108 @@
+syntax = "proto3";
+package record;
+
+message RecordModuleFriend
+{
+	uint64 llRecvGiftUid = 1;											//接受的礼物邮件版本号
+	uint64 llExpiredGiftUid = 2;										//过期退回的礼物邮件版本号
+	RecordSendGiftVersion oSendGift = 3;
+}
+
+message RecordSendGiftVersion
+{
+	uint32 uiVersionId = 1;
+	map<uint32, RecordSendGift> mapSendGifts = 2;
+}
+
+message RecordSendGift
+{
+	uint64 llRecver = 1;
+	uint32 uiItemId = 2;
+	uint64 llItemCount = 3;
+	bool bBind = 4;
+}
+
+message RecordFriendData
+{
+	oneof oData 
+	{
+		RecordFriendSvrBrief oBrief = 1;				//简要信息
+		RecordFriendList oFriends = 2;					//好友列表
+		RecordRequestList oRequest = 3;					//申请列表
+		RecordBlockList oBlock = 4;						//屏蔽列表
+		RecordRecommendFilter oFilter = 5;				//筛选条件
+		RecordRecommendLabel oLabel = 6;				//缘分标签
+		RecordSendGiftTimes oGiftTimes = 7;				//赠礼次数
+	}
+}
+
+message RecordFriendSvrBrief
+{
+	uint32 uiSex = 1;					//性别
+	uint32 uiLevel = 2;					//等级
+	bytes strRoleName = 3;				//名字
+	uint32 uiOfflineTime = 4;			//上次离线时间
+	map<uint32, uint32> mapVersions = 5;//系统变量版本
+	uint32 uiSendGiftVersionId = 6;		//送礼版本号
+	bool bFuncOpen = 7;					//好友功能是否开启
+	uint32 uiOnlineTime = 8;			//上次上线时间
+}
+
+message RecordFriendList
+{
+	uint32 uiFriendListMax = 1;			//好有上限
+	RecordRelationList oFriends = 2;	//好友列表
+}
+
+message RecordRelationList
+{
+	repeated RecordFriendRelation vecRelations = 1;
+}
+
+message RecordFriendRelation
+{
+	uint64 llRoleId = 1;			//好友RoleID
+	uint32 uiFriendShip = 2;		//亲密度
+	uint32 uiDailyChat = 3;			//当日聊天已获亲密度
+}
+
+message RecordRequestList
+{
+	repeated uint64 vecRequestList = 1;	//申请列表RoleID
+}
+
+message RecordBlockList
+{
+	repeated uint64 vecBlockList = 1;	//屏蔽列表RoleID
+}
+
+message RecordRecommendFilter
+{
+	bool bOnlyCity = 1;				//只看同城
+	uint32 uiSex = 2;				//推荐性别
+	uint32 uiBitLabel = 3;			//缘分标签
+}
+
+message RecordRecommendLabel
+{
+	uint32 uiCity = 1;				//属地城市
+	uint32 uiBitLabel = 2;			//缘分标签
+	bool bAvailable = 3;			//是否可被推荐给其它玩家
+}
+
+message RecordSendGiftTimes
+{
+	uint32 uiDailyCount = 1;	//当日已赠礼总次数
+	RecordAllSendTimes oAllSendTimes = 2;	//赠送次数信息
+}
+
+message RecordAllSendTimes
+{
+	repeated RecordOneSendTimes vecSendTimes = 1;
+}
+
+message RecordOneSendTimes
+{
+	uint64 llRoleId = 1;		//角色ID
+	uint32 uiTimes = 2;			//已赠送次数
+}

@@ -1,11 +1,8 @@
 #include "CGateSession.h"
 #include "log_mgr.h"
 #include "parse_pb.h"
-#include "CUserInfo.h"
 #include "msg_module_serverinner.pb.h"
 #include "msg_module_servercommon.pb.h"
-#include "CProcessorBase.h"
-#include "CModuleProFactory.h"
 #include "CUserInfoRecord.h"
 
 CGateSession::CGateSession()
@@ -21,8 +18,6 @@ CGateSession::~CGateSession()
 void CGateSession::on_disconnect()
 {
 	Log_Warning("GateSession %u disconnect!", m_uiServerId);
-	if (m_eServerKind == SERVER_KIND_GATE)
-		g_UserInfoLRUHashmap->Clear();
 	//g_SvrMgr.DelServer(m_eServerKind, m_uiServerId);
 
 	//网关掉发消息
@@ -65,7 +60,7 @@ void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, ResultCode e
 	oLoginRsp.set_brequest(false);
 	oLoginRsp.set_estate(ProtoMsg::ePlayer_Offline);
 	oLoginRsp.set_llopendate(GetCurrTime());
-	this->Send_Msg(&oLoginRsp, MsgModule_ServerInner::Msg_ServerInner_GG_Login_Rsp, MsgModule::ServerInner);
+	this->Send_Msg(&oLoginRsp, MsgModule_ServerInner::Msg_ServerInner_GG_Login_Rsp, client::enModule_ServerInner);
 }
 
 void CGateSession::OnAccountEnter(uchar* pMsg, uint32 uiLen)

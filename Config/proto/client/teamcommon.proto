@@ -1,0 +1,251 @@
+syntax = "proto3";
+import "common.proto";
+package common;
+
+message ModuleTeam
+{
+    NotOwnTeamInfo notteam = 1;//我的个人数据(无队伍)
+    OwnTeamInfo ownTeam = 2;//我的个人数据(有队伍)
+    TeamBase base = 3;//基础信息
+    TeamMemberList memberList = 4;//成员列表
+    TeamApplyList applyList = 5;//申请列表
+}
+
+message ModuleTeamView
+{
+    uint64 teamid = 1;//队长Id
+    uint64 leaderSceneId = 2;//队长所在地图Id
+}
+
+message NotOwnTeamInfo
+{
+    TeamInvited invited = 1;    //我的被邀请信息
+    uint32 apply = 2; //我的申请冷却到期时间
+    uint32 create = 3;//我的创建队伍冷却到期时间
+    uint32 match = 4;//我开启匹配的时间戳
+    uint32 allExpire = 5;//全部目标冷却到期时间
+    repeated uint32 targetIds = 6;  //目标列表
+    repeated uint32 expires = 7;    //目标列表冷却到期时间
+}
+
+message OwnTeamInfo
+{
+    uint32 replace = 1; //我的顶替冷却到期时间
+    uint32 invite = 2;  //我的邀请冷却到期时间
+    uint32 together = 3;//我的召集冷却到期时间
+    uint32 appoint = 4;//我的委任冷却到期时间
+}
+
+message TeamInvited
+{
+    uint64 roleId = 1;//邀请者
+    bytes nickName = 2;//邀请者昵称
+    uint32 expire = 3;//邀请到期时间
+    uint64 teamId = 4;//队伍id
+    uint64 leaderSceneId = 5;//队长地图id
+}
+
+message TeamBase
+{
+    uint64 teamId = 1;//队伍id
+    uint64 leaderId = 2;//队长id
+    uint32 targetId = 3;//队伍目标
+    uint32 minLevel = 4;
+    uint32 maxLevel = 5;
+    uint32 matchTime = 6;//匹配时间戳(0表示不处于匹配中)
+    bytes text = 7;//招募文本
+    uint64 leaderSceneId = 8;//队长所在地图
+}
+
+message TeamMemberList
+{
+    repeated TeamMember members = 1;//成员列表
+}
+
+message TeamApplyList
+{
+    repeated TeamApply applys = 1;//申请列表
+}
+
+message TeamMember
+{
+    RoleBrief role = 1;
+    uint32 index = 2;   //所在队伍位置(1开始)
+    bool state = 3;//状态(是否在线)
+    bool follow = 4;//跟随
+    RoleExtend1 extd1 = 5;
+    RoleExtend2 extd2 = 6;
+    RoleExtend3 extd3 = 7;
+}
+
+message TeamApply
+{
+    RoleBrief role = 1; //角色简介
+    uint32 expire = 2;//申请到期时间
+    uint64 leaderSceneId = 3;//申请时队长的地图id
+}
+
+message RecruitTeam
+{
+    uint64 teamId = 1; //队伍id
+    RecruitTeamLeader leader = 2;
+    repeated RecruitTeamMember members = 3;//当前成员列表
+    uint32 targetId = 4;//队伍目标
+    uint32 minLevel = 5;
+    uint32 maxLevel = 6;
+    bytes text = 7;
+    int64 leaderSceneId = 8;//队长所在地图
+}
+
+message RecruitTeamLeader
+{
+    RecruitTeamMember leader = 1;//队长成员信息
+    uint32 chatFont = 2;//聊天字体
+    uint32 chatFrame = 3;//聊天框
+    bytes nickname = 4;//队长昵称
+}
+
+message RecruitTeamMember
+{
+    uint32 headIcon = 1;//头像
+    uint32 headFrame = 2;//头像框
+    uint32 careerId = 3;//职业
+    uint32 level = 4;//等级
+    uint32 sex = 5;//性别
+}
+
+message PlatAllTeamList
+{
+    repeated PlatTargetTeamList teams = 1;//队伍列表
+}
+
+message PlatTargetTeamList
+{
+    uint32 targetId = 1;//队伍目标
+    repeated PlatTargetTeam teams = 2;//队伍列表
+}
+
+message PlatTargetTeam
+{
+    uint32 teamId = 1;//队伍id
+    bytes leaderName = 2;//队长昵称
+    uint32 minLevel = 3;
+    uint32 maxLevel = 4;
+    bytes text = 5;     //招募文本
+    repeated PlatTeamMember members = 6;//当前成员列表
+    uint64 leaderSceneId = 7;   //队长所在地图Id
+}
+
+message PlatTeamMember
+{
+    uint32 careerId = 1;    //职业
+    uint32 level = 2;//等级
+}
+
+enum enTeamFieldType
+{
+    TFieldType_None = 0;
+    TFieldType_LeaderId = 1;//队长
+    TFieldType_Targetid = 2;//队伍目标
+    TFieldType_MinLevel = 3;
+    TFieldType_MaxLevel = 4;
+    TFieldType_MatchTime = 5;//匹配时间戳
+    TFieldType_Text = 6;//招募文本
+    TFieldType_LeaderSceneId = 7;//队长所在地图id
+    TFieldType_Max = 8;
+}
+
+message TeamFieldId
+{
+    uint32 type = 1;        //enTeamFieldType
+    uint64 val = 2;
+}
+
+message TeamFieldByte
+{
+    uint32 type = 1;        //enTeamFieldType
+    bytes val = 2;
+}
+
+message TeamFieldList
+{
+    repeated TeamFieldId tfid = 1;
+    repeated TeamFieldByte tfbyte = 2;
+}
+
+//投票基信息
+message TeamVoteBaseData
+{
+    uint32 expireTime = 1;  //截止时间
+    uint64 roleId = 2;      //发起人id
+}
+
+enum enTeamMemberFieldType
+{
+    TMFieldType_None = 0;
+    TMFieldType_Invited = 1;    //被邀请信息
+    TMFieldType_Apply = 2;      //申请冷却
+    TMFieldType_Create = 3;     //创建队伍冷却
+    TMFieldType_Match = 4;      //匹配时间戳
+    TMFieldType_AllTarget = 5;  //全部目标冷却
+    TMFieldType_Target = 6;     //指定目标冷却
+    TMFieldType_Replace = 7;    //顶替冷却
+    TMFieldType_Invite = 8;     //邀请冷却
+    TMFieldType_Together = 9;   //召集冷却
+    TMFieldType_Index = 10;     //队伍未知
+    TMFieldType_State = 11;     //状态(在线离线)
+    TMFieldType_Follow = 12;    //跟随
+    TMFieldType_NickName = 13;  //昵称
+    TMFieldType_HeadIcon = 14;  //头像
+    TMFieldType_HeadFrame = 15; //头像框
+    TMFieldType_CareerId = 16;  //职业
+    TMFieldType_Level = 17;     //等级
+    TMFieldType_MapInfo = 18;   //地图
+    TMFieldType_MapPosition = 19;   //地图位置
+    TMFieldType_Appoint = 20;   //委任冷却
+    TMFieldType_Sex = 21;       //性别
+    TMFieldType_Model = 22;     //模型
+    TMFieldType_FightPoint = 23;    //战力
+    TMFieldType_Hp = 24;
+    TMFieldType_MaxHp = 25;
+    TMFieldType_Mp = 26;
+    TMFieldType_MaxMp = 27;
+    TMFieldType_CareerLevel = 28;   //职业等级
+    TMFieldType_Fashion = 29;    //时装
+    TMFieldType_MainHand = 30;  //主手装备
+    TMFieldType_OffHand = 31;   //副手装备
+}
+
+message TeamMemberFieldId
+{
+    uint32 type = 1;        //enTeamMemberFieldType
+    uint64 val = 2;
+}
+
+message TeamMemberFieldBool
+{
+    uint32 type = 1;
+    bool val = 2;
+}
+
+message TeamMemberFieldByte
+{
+    uint32 type = 1;
+    bytes val = 2;
+}
+
+message TeamMemberFieldList
+{
+    repeated TeamMemberFieldId tfid = 1;
+    repeated TeamMemberFieldByte tfbyte = 2;
+    repeated TeamMemberFieldBool tfbool = 3;
+}
+
+enum enLeaveTeamType
+{
+    enLeaveTeamType_None = 0;
+    enLeaveTeamType_Active = 1; //主动离开
+    enLeaveTeamType_Fire = 2;   //开除离开
+    enLeaveTeamType_Dismiss = 3;//解散离开
+    enLeaveTeamType_Max = 4;
+}

@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10msg_module.proto\x12\x08ProtoMsg*\xc7\x01\n\tMsgModule\x12\t\n\x05\x42\x65gin\x10\x00\x12\x0b\n\x07Mapping\x10\x01\x12\t\n\x05Login\x10\x02\x12\x08\n\x04Hero\x10\x03\x12\n\n\x06\x46riend\x10\x04\x12\x08\n\x04Mall\x10\x05\x12\x08\n\x04Mail\x10\x06\x12\x0b\n\x07\x46\x61\x63tion\x10\x07\x12\n\n\x06\x41\x63tive\x10\x08\x12\n\n\x06Ranker\x10\t\x12\n\n\x06\x42\x61ttle\x10P\x12\x10\n\x0cServerCommon\x10Z\x12\x0f\n\x0bServerInner\x10[\x12\x10\n\x0cServerBattle\x10\\\x12\x07\n\x03\x45nd\x10\x64\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10msg_module.proto\x12\x08ProtoMsg*\xdd\x02\n\tMsgModule\x12\x13\n\x0fMsgModule_Begin\x10\x00\x12\x15\n\x11MsgModule_Mapping\x10\x01\x12\x13\n\x0fMsgModule_Login\x10\x02\x12\x12\n\x0eMsgModule_Hero\x10\x03\x12\x14\n\x10MsgModule_Friend\x10\x04\x12\x12\n\x0eMsgModule_Mall\x10\x05\x12\x12\n\x0eMsgModule_Mail\x10\x06\x12\x15\n\x11MsgModule_Faction\x10\x07\x12\x14\n\x10MsgModule_Active\x10\x08\x12\x14\n\x10MsgModule_Ranker\x10\t\x12\x14\n\x10MsgModule_Battle\x10P\x12\x1a\n\x16MsgModule_ServerCommon\x10Z\x12\x19\n\x15MsgModule_ServerInner\x10[\x12\x1a\n\x16MsgModule_ServerBattle\x10\\\x12\x11\n\rMsgModule_End\x10\x64\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'msg_module_pb2', globals())
@@ -21,5 +21,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _MSGMODULE._serialized_start=31
-  _MSGMODULE._serialized_end=230
+  _MSGMODULE._serialized_end=380
 # @@protoc_insertion_point(module_scope)

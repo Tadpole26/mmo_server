@@ -1,33 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="server_common.pb.h" />
-    <ClInclude Include="msg_module.pb.h" />
-    <ClInclude Include="result_code.pb.h" />
-    <ClInclude Include="msg_common.pb.h" />
-    <ClInclude Include="msg_module_login.pb.h" />
-    <ClInclude Include="msg_module_servercommon.pb.h" />
-    <ClInclude Include="msg_module_serverinner.pb.h" />
-    <ClInclude Include="msg_module_http.pb.h" />
-    <ClInclude Include="msg_module_hero.pb.h" />
-    <ClInclude Include="msg_module_mail.pb.h" />
-    <ClInclude Include="msg_module_battle.pb.h" />
-    <ClInclude Include="msg_module_serverbattle.pb.h" />
-    <ClInclude Include="msg_cfg_ins.pb.h" />
+    <ClCompile Include="chatcommon.pb.cc" />
+    <ClCompile Include="common.pb.cc" />
+    <ClCompile Include="fight3v3common.pb.cc" />
+    <ClCompile Include="fight5v5common.pb.cc" />
+    <ClCompile Include="friendcommon.pb.cc" />
+    <ClCompile Include="friendsvr.pb.cc" />
+    <ClCompile Include="friend.pb.cc" />
+    <ClCompile Include="innercommon.pb.cc" />
+    <ClCompile Include="innerfriend.pb.cc" />
+    <ClCompile Include="itemcommon.pb.cc" />
+    <ClCompile Include="map_cfg.pb.cc" />
+    <ClCompile Include="module.pb.cc" />
+    <ClCompile Include="msg_module_ranker.pb.cc" />
+    <ClCompile Include="record.pb.cc" />
+    <ClCompile Include="recordfriend.pb.cc" />
+    <ClCompile Include="scenesvr.pb.cc" />
+    <ClCompile Include="teamsvr.pb.cc" />
+    <ClCompile Include="teamcommon.pb.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="server_common.pb.cc" />
-    <ClCompile Include="result_code.pb.cc" />
-    <ClCompile Include="msg_module.pb.cc" />
-    <ClCompile Include="msg_common.pb.cc" />
-    <ClCompile Include="msg_module_login.pb.cc" />
-    <ClCompile Include="msg_module_servercommon.pb.cc" />
-    <ClCompile Include="msg_module_serverinner.pb.cc" />
-    <ClCompile Include="msg_module_http.pb.cc" />
-    <ClCompile Include="msg_module_hero.pb.cc" />
-    <ClCompile Include="msg_module_mail.pb.cc" />
-    <ClCompile Include="msg_module_battle.pb.cc" />
-    <ClCompile Include="msg_module_serverbattle.pb.cc" />
-    <ClCompile Include="msg_cfg_ins.pb.cc" />
+    <ClInclude Include="chatcommon.pb.h" />
+    <ClInclude Include="common.pb.h" />
+    <ClInclude Include="fight3v3common.pb.h" />
+    <ClInclude Include="fight5v5common.pb.h" />
+    <ClInclude Include="friendcommon.pb.h" />
+    <ClInclude Include="friendsvr.pb.h" />
+    <ClInclude Include="friend.pb.h" />
+    <ClInclude Include="innercommon.pb.h" />
+    <ClInclude Include="innerfriend.pb.h" />
+    <ClInclude Include="itemcommon.pb.h" />
+    <ClInclude Include="map_cfg.pb.h" />
+    <ClInclude Include="module.pb.h" />
+    <ClInclude Include="msg_module_ranker.pb.h" />
+    <ClInclude Include="record.pb.h" />
+    <ClInclude Include="recordfriend.pb.h" />
+    <ClInclude Include="scenesvr.pb.h" />
+    <ClInclude Include="teamsvr.pb.h" />
+    <ClInclude Include="teamcommon.pb.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
 </Project>

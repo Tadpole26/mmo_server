@@ -7,9 +7,8 @@
 #include "CCmptMonsterAI.h"
 
 ///<<< BEGIN WRITING YOUR CODE FILE_INIT
-#include "../../CNpcMonster.h"
-#include "../../CCmptNpcMonsterView.h"
-#include "../../CHatredHandle.h"
+#include "CNpcMonster.h"
+#include "CCmptNpcMonsterView.h"
 ///<<< END WRITING YOUR CODE
 
 CCmptMonsterAI::CCmptMonsterAI()
@@ -55,6 +54,7 @@ CCmptView* CCmptMonsterAI::GetViewByEntity(const Entity& oEntity)
 	{
 		return nullptr;
 	}
+	return nullptr;
 }
 
 std::vector<CCmptMonsterAI::StateHandle> CCmptMonsterAI::kStateHandles

@@ -26,3 +26,11 @@ bool CMapConfig::AddMapInfo()
 	stElem.uiNavmesh = GetDataUInt("height");							//Ñ°Â·ÎÄ¼þ
 	return true;
 }
+
+map_info_t* CMapConfig::GetMapConfig(const uint32 uiTid) const
+{
+	auto iter = m_mapMapInfoCfg.find(uiTid);
+	if (iter == m_mapMapInfoCfg.end())
+		return nullptr;
+	return &(iter->second);
+}

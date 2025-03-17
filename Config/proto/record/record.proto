@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "recordfriend.proto";
+package record;
+
+
+message RecordModuleAll
+{
+	map<uint32, RecordModule> modules = 1;
+}
+
+message RecordModule
+{
+	oneof oModule 
+	{
+		RecordModuleFriend oRecordFriend = 1;				//好友
+	}
+}

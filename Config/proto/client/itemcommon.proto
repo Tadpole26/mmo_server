@@ -1,0 +1,22 @@
+syntax = "proto3";
+package common;
+
+//道具信息-基础
+message ItemBase
+{
+    uint32 uiUid = 1;           //唯一id
+    uint32 uiTid = 2;           //道具表tid
+    uint32 uiCount = 3;         //数量
+    uint32 uiBind = 4;          //绑定状态(0:非绑定 1:绑定)
+    uint32 uiExpire = 5;        //道具过期时间戳,为0不会过期
+    uint32 uiQuality = 6;       //品质
+    uint32 uiTradeExpire = 7;   //交易到期时间,为0不会过期
+    uint32 uiPrice = 8;         //浮动价格
+    bool bNotSorted = 9;        //是否未被排序
+}
+
+//道具信息
+message Item 
+{
+    ItemBase oBase = 1;         //基础
+}

@@ -18,10 +18,10 @@ void CCrossNetface::handle_msg(const tagMsgHead* pNetMsg)
 
 	switch (pNetMsg->usModuleId)
 	{
-	case MsgModule::ServerCommon:
+	case client::enModule_ServerCommon:
 		HandleServerCommon(pNetMsg);
 		break;
-	case MsgModule::ServerInner:
+	case client::enModule_ServerInner:
 		HandleCrossModule(pNetMsg);
 		break;
 	default:
@@ -40,7 +40,7 @@ void CCrossNetface::on_connect()
 	oRegisterReq.set_uiplatid(GAME_LOGIC_INS->m_oConstCfg.m_uiPlatId);
 	oRegisterReq.set_uigroupid(GAME_LOGIC_INS->m_oConstCfg.m_uiGroupId);
 	//oRegisterReq.set_open
-	Send_Msg(&oRegisterReq, MsgModule_ServerCommon::Msg_ServerCommon_Register_Req, MsgModule::ServerCommon);
+	Send_Msg(&oRegisterReq, MsgModule_ServerCommon::Msg_ServerCommon_Register_Req, client::enModule_ServerCommon);
 	CTcpReconn::on_connect();
 }
 
@@ -52,7 +52,7 @@ void CCrossNetface::on_disconnect()
 void CCrossNetface::trigger()
 {
 	static Msg_ServerCommon_BeatHart_Req oBeatReq;
-	Send_Msg(&oBeatReq, MsgModule_ServerCommon::Msg_ServerCommon_BeatHart_Req, MsgModule::ServerCommon);
+	Send_Msg(&oBeatReq, MsgModule_ServerCommon::Msg_ServerCommon_BeatHart_Req, client::enModule_ServerCommon);
 }
 
 void CCrossNetface::HandleServerCommon(const tagMsgHead* pMsgHead)

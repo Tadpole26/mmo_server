@@ -111,9 +111,6 @@
     <ClInclude Include="server_pool.h">
       <Filter>impl</Filter>
     </ClInclude>
-    <ClInclude Include="util_load_base.h">
-      <Filter>util</Filter>
-    </ClInclude>
     <ClInclude Include="call_stack.h">
       <Filter>server</Filter>
     </ClInclude>
@@ -132,9 +129,6 @@
     <ClInclude Include="global_define.h">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="log_mgr.h">
-      <Filter>server</Filter>
-    </ClInclude>
     <ClInclude Include="md5.h">
       <Filter>server</Filter>
     </ClInclude>
@@ -150,9 +144,6 @@
     <ClInclude Include="zType.h">
       <Filter>sdk</Filter>
     </ClInclude>
-    <ClInclude Include="id_alloctor.h">
-      <Filter>impl</Filter>
-    </ClInclude>
     <ClInclude Include="zMacro.h">
       <Filter>sdk</Filter>
     </ClInclude>
@@ -165,19 +156,43 @@
     <ClInclude Include="zMisc.h">
       <Filter>sdk</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
+    <ClInclude Include="cScene.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="CUser.h">
+    <ClInclude Include="cUser.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="CGame.h">
+    <ClInclude Include="cGame.h">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="zMap.h">
       <Filter>sdk</Filter>
     </ClInclude>
     <ClInclude Include="zScreenIndex.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zCallback.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zSTL.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="cServer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="zSceneMgr.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="cAutoIdAllocator.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="cLogMgr.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="cLoadBase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="zRoleMgr.h">
       <Filter>sdk</Filter>
     </ClInclude>
   </ItemGroup>
@@ -236,9 +251,6 @@
     <ClCompile Include="mysql_mgr.cpp">
       <Filter>db</Filter>
     </ClCompile>
-    <ClCompile Include="util_load_base.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
     <ClCompile Include="md5.cpp">
       <Filter>server</Filter>
     </ClCompile>
@@ -257,22 +269,19 @@
     <ClCompile Include="func_proc.cpp">
       <Filter>server</Filter>
     </ClCompile>
-    <ClCompile Include="log_mgr.cpp">
-      <Filter>server</Filter>
-    </ClCompile>
     <ClCompile Include="win_get_opt.cpp">
       <Filter>server</Filter>
     </ClCompile>
     <ClCompile Include="CBattleCommon.h">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
+    <ClCompile Include="cScene.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="CUser.cpp">
+    <ClCompile Include="cUser.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="CGame.cpp">
+    <ClCompile Include="cGame.cpp">
       <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="zMap.cpp">
@@ -280,6 +289,12 @@
     </ClCompile>
     <ClCompile Include="zScreenIndex.cpp">
       <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="cLogMgr.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="cLoadBase.cpp">
+      <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

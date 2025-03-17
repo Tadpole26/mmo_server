@@ -1,0 +1,45 @@
+syntax = "proto3";
+import "common.proto";
+import "innercommon.proto";
+import "fight3v3common.proto";
+import "fight5v5common.proto";
+package inner;
+
+message InnerTeamsvr
+{
+	uint64 fromuser = 1;
+	uint32 fromzone = 2;
+	oneof Fromscene
+	{
+		InnerTeamsvr_Fromscene_Test 								fromscene_test 					= 1401;
+		InnerTeamsvr_Fromscene_GameEvent							fromscene_gameevent 			= 1402;
+		InnerTeamsvr_Fromscene_UpdateUserInfo						fromscene_updateuserinfo		= 1403;
+	}
+}
+
+message InnerTeamsvr_Fromscene_Test
+{
+}
+
+message InnerTeamsvr_Fromscene_GameEvent
+{
+	inner.InnerGameEvent gameEvent = 1;
+}
+
+message InnerTeamsvr_Fromscene_UpdateUserInfo
+{
+	oneof type
+	{
+		common.RoleExtend2 extd2 = 1;
+		common.RoleExtend3 extd3 = 2;
+		string nickName = 3;
+		uint32 headIcon = 4;
+		uint32 headFrame = 5;
+		uint32 careerId = 6;
+		uint32 level = 7;
+		uint32 sex = 8;
+		uint32 careeLevel = 9;
+		common.ExtendFight3v3 f33 = 10;
+		common.ExtendFight5v5 f55 = 11;
+	}
+}

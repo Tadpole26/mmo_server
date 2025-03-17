@@ -11,6 +11,7 @@
 
 ///<<< BEGIN WRITING YOUR CODE FILE_INIT
 #include "sdk.h"
+#include "CHatredHandle.h"
 class CNpcMonster;
 class CCmptView;
 class CHatredHandle;
@@ -52,8 +53,8 @@ public:
 	void Final();
 	CNpcMonster* NpcMonsterPtr() { return m_pNpcMonster; }
 	CNpcMonster& NpcMonsterRef() { return *m_pNpcMonster; }
-	CCmptView* ViewCmptPtr() { return NpcMonsterRef().ViewCmptPtr(); }
-	CCmptView& ViewCmptRef() { return NpcMonsterRef().ViewCmptRef(); }
+	//CCmptView* ViewCmptPtr() { return NpcMonsterRef().ViewCmptPtr(); }
+	//CCmptView& ViewCmptRef() { return NpcMonsterRef().ViewCmptRef(); }
 	CHatredHandle& HatredRef() { return *m_pHatred; }
 	CCmptView* GetViewByEntity(const Entity& oEntity);
 public:

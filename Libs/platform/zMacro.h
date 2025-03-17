@@ -6,6 +6,10 @@
 
 //фа©М╦ъ
 #define MAX_SCREEN_GRID 30
+//фа©М
+#define SCREEN_GRID_WIDTH MAX_SCREEN_GRID
+//фа╦ъ
+#define SCREEN_GRID_HEIGHT MAX_SCREEN_GRID
 
 #define ROLE_TYPE 0
 

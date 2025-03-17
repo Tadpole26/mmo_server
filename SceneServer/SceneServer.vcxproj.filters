@@ -40,6 +40,9 @@
     <Filter Include="Managers\User">
       <UniqueIdentifier>{7463e3cf-5b52-4984-b087-2941d9c17c7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Managers\Module">
+      <UniqueIdentifier>{d508c39d-3fd6-4924-9d08-2d1cebe4ba15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameServer.cpp">
@@ -96,14 +99,8 @@
     <ClCompile Include="CUserMailRecord.cpp">
       <Filter>DB</Filter>
     </ClCompile>
-    <ClCompile Include="CGlobalMailMgr.cpp">
-      <Filter>Managers\Mail</Filter>
-    </ClCompile>
     <ClCompile Include="CGameConstConfig.cpp">
       <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="CInnerMail.cpp">
-      <Filter>Managers\Mail</Filter>
     </ClCompile>
     <ClCompile Include="CGlobalRankerRecord.cpp">
       <Filter>DB</Filter>
@@ -121,9 +118,6 @@
       <Filter>Managers\Npc</Filter>
     </ClCompile>
     <ClCompile Include="CCmptAI.cpp">
-      <Filter>Managers\Cmpt</Filter>
-    </ClCompile>
-    <ClCompile Include="CCmptView.cpp">
       <Filter>Managers\Cmpt</Filter>
     </ClCompile>
     <ClCompile Include="CCmptNpcView.cpp">
@@ -155,6 +149,27 @@
     </ClCompile>
     <ClCompile Include="CSceneMap.cpp">
       <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneScreen.cpp">
+      <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CCmptView.cpp">
+      <Filter>Managers\Cmpt</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonsterConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CModule.cpp">
+      <Filter>Managers\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMapMgr.cpp">
+      <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CModuleFriend.cpp">
+      <Filter>Managers\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CFriendNetface.cpp">
+      <Filter>Netface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -209,14 +224,8 @@
     <ClInclude Include="CUserMailRecord.h">
       <Filter>DB</Filter>
     </ClInclude>
-    <ClInclude Include="CGlobalMailMgr.h">
-      <Filter>Managers\Mail</Filter>
-    </ClInclude>
     <ClInclude Include="CGameConstConfig.h">
       <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="CInnerMail.h">
-      <Filter>Managers\Mail</Filter>
     </ClInclude>
     <ClInclude Include="CGlobalRankerRecord.h">
       <Filter>DB</Filter>
@@ -240,9 +249,6 @@
       <Filter>Managers\Npc</Filter>
     </ClInclude>
     <ClInclude Include="CCmptAI.h">
-      <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="CCmptView.h">
       <Filter>Managers\Cmpt</Filter>
     </ClInclude>
     <ClInclude Include="CCmptNpcView.h">
@@ -286,6 +292,27 @@
     </ClInclude>
     <ClInclude Include="CSceneMap.h">
       <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneScreen.h">
+      <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CCmptView.h">
+      <Filter>Managers\Cmpt</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonsterConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="CModule.h">
+      <Filter>Managers\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMapMgr.h">
+      <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CModuleFriend.h">
+      <Filter>Managers\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CFriendNetface.h">
+      <Filter>Netface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

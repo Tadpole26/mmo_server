@@ -12,4 +12,9 @@
 #include "zMisc.h"
 #include "zMap.h"
 #include "zScreenIndex.h"
+#include "zSceneMgr.h"
+#include "zCallback.h"
+#include "zSTL.h"
+#include "zRoleMgr.h"
+#include "zLogMgr.h"
 

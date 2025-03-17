@@ -13,6 +13,7 @@
 
 
 class CGateSession;
+class CFriendNetface;
 class CGameLogic
 {
 public:
@@ -37,7 +38,8 @@ public:
 
 	CConstConfig  m_oConstCfg;
 	ArgOpt		 m_stArgOpt;						//命令行参数信息
-
+public:
+	CFriendNetface* GetFriendNetface() { return m_pFriendNetface; }
 private:
 	bool LoadDataFromMongo();
 private:
@@ -45,6 +47,7 @@ private:
 	ZkOperation				m_stZkOpt;
 	CSvrLogicFace* m_pInterface = nullptr;
 	CSvrLogicFace* m_pClientLIF = nullptr;
+	CFriendNetface* m_pFriendNetface = nullptr;
 
 };
 

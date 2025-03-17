@@ -1,7 +1,7 @@
 #pragma once
 #include "sdk.h"
 
-namespace CGame
+namespace cGame
 {
 	extern uint32 uiDBNum;								//账号库个数
 	extern uint32 uiDBTableNum;							//每个库表个数

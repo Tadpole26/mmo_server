@@ -28,6 +28,9 @@ public:
 public:
 	CCmptNpcView* ViewCmptPtr() { return m_pViewCmpt; }
 	CCmptNpcView& ViewCmptRef() { return *m_pViewCmpt; }
+public:
+	virtual bool IsNpcM() const { return false; }
+	virtual bool IsNpcB() const { return false; }
 private:
 	uint32 m_uiUid = 0;
 	CNpcMgr& m_oNpcMgr;			

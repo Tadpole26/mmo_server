@@ -1,0 +1,159 @@
+syntax = "proto3";
+package common;
+
+//主角模型部位信息
+message ModelPart
+{
+    uint32 partId = 1;//部位Id
+    uint32 partVal = 2;//部位信息
+}
+
+//主角模型部位列表
+message ModelPartList
+{
+    repeated ModelPart parts = 1;//部位列表
+}
+
+message OneFashionStain
+{
+    uint32 part = 1;//部位
+    uint32 color = 2;//颜色
+}
+
+message FashionStain
+{
+    repeated OneFashionStain onestain = 1;  //染色
+}
+
+message FashionView
+{
+    uint32 current = 1;//当前选中
+    FashionStain stain = 2;//当前染色
+}
+
+//主角时装信息
+message ModuleViewFashion
+{
+    FashionView head = 1;//饰品-头
+    FashionView face = 2;//饰品-脸
+    FashionView mouth = 3;//饰品-嘴
+    FashionView cloth = 4;//衣服
+    FashionView back = 5;//背
+    FashionView tail = 6;//饰品-尾
+    FashionView hair = 7;//头发
+    FashionView weapon = 8;//武器
+}
+
+//场景Id
+message ClientSceneId
+{
+    uint32 mapId = 1;//地图id
+    uint32 procType = 2;
+    uint32 procParam = 3;
+
+}
+
+//静态场景Id
+message ClientStaticScene
+{
+    uint32 lineId = 1;          //线Id
+}
+
+//副本场景Id
+message ClientCopyScene
+{
+    uint32 copyLvId = 1;        //副本关卡表id
+    uint32 autoId = 2;          //副本实例id
+}
+
+//坐标信息
+message ClientPos 
+{
+    uint32 poxX = 1;    //x坐标
+    uint32 posY = 2;    //y坐标
+    uint32 offsetX = 3; //x坐标偏移
+    uint32 offsetY = 4; //y坐标偏移    
+}
+
+//坐标信息及方向
+message ClientPosDirect
+{
+    ClientPos cpos = 1; //坐标
+    uint32 direct = 2;  //方向
+}
+
+//移动目标坐标列表
+message ClientPosTerminate
+{
+    uint64 servertime = 1;//服务器时间
+    repeated ClientPos posList = 2;//目标坐标列表
+}
+
+//装备视野数据
+message EquipView
+{
+    uint32 equipTid = 1;
+    uint32 strengthLevel = 2;   //强化等级
+}
+
+//角色简介
+message RoleBrief
+{
+    uint64 roleId = 1;//主角ID
+    bytes nickname = 2;//主角昵称
+    uint32 headIcon = 3;//头像
+    uint32 headFrame = 4;//头像框
+    uint32 careerId = 5;//职业
+    uint32 level = 6;//等级
+    uint32 sex = 7;//性别
+    uint32 careerLevel = 8;//职业登记
+    uint32 zoneIdF = 9;//所属区
+}
+
+message RoleExtend1
+{
+    uint64 teamId = 1;//队伍Id
+    uint64 familyId = 2;//家族Id
+    ModelPartList mpList = 3;//模型
+    string familyName = 4;//家族名
+    uint64 leaderSceneId = 5;//队长所在地图
+    uint32 fightPoint = 6;//战力
+    ModuleViewFashion fashion = 7;//时装
+    EquipView mainHand = 8;     //主手装备
+    EquipView offHand = 9;  //副手装备
+    uint32 chatFont = 10;
+    uint32 chatFrame = 11;
+    uint32 loginTime = 12;  //登入时间
+    uint32 logoutTime = 13; //登出时间
+    uint32 offlineTime = 14;//掉线时间
+    uint32 onlineTime = 15;//上线时间
+}
+
+//角色简介扩展2
+message RoleExtend2
+{
+    ClientSceneId sceneId = 1;//当前地图
+    ClientPos cpos = 2; //当前坐标
+}
+
+//角色简介扩展3
+message RoleExtend3
+{
+    uint32 hp = 1;
+    uint32 maxHp = 2;
+    uint32 mp = 3;
+    uint32 maxMp = 4;
+}
+
+//投票状态
+message RoleVoteState
+{
+    uint64 roleId = 1;
+    uint32 state = 2;//0.待定 1.赞成 2.反对
+}
+
+//投票状态列表
+message RoleVoteStateList
+{
+    repeated RoleVoteState roles = 1;
+}

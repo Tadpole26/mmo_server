@@ -15,6 +15,7 @@ public:
 	virtual uint64 GetSceneId();		//³¡¾°id
 	virtual uint32 GetMapID();		//µØÍ¼id
 	virtual uint32 GetSpeed() { return 10000; }
+	virtual CSceneScene* GetScene();
 
 public:
 	CNpc *NpcPtr() { return &m_oNpc; }

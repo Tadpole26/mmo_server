@@ -1,0 +1,76 @@
+syntax = "proto3";
+package inner;
+import "innerfriend.proto";
+
+message InnerScenesvr
+{
+	uint64 llFromUser = 1;
+	oneof Fromfriend
+	{
+		InnerScenesvr_Fromfriend_Test 								fromfriend_test 					= 101;
+        InnerScenesvr_Fromfriend_ReturnItem                         fromfriend_returnitem               = 102;
+        InnerScenesvr_Fromfriend_GiftReceived                       fromfriend_giftreceived             = 103;
+        InnerScenesvr_Fromfriend_GiftEmail                          fromfriend_giftemail                = 104;
+        InnerScenesvr_Fromfriend_GiftExpire                         fromfriend_giftexpire               = 105;
+        InnerScenesvr_Fromfriend_GiftVersion                        fromfriend_giftversion              = 106;
+        InnerScenesvr_Fromfriend_FriendList                         fromfriend_friendlist               = 107;
+        InnerScenesvr_Fromfriend_FriendUpdate                       fromfriend_friendupdate             = 108;
+	}
+}
+
+message InnerScenesvr_Fromfriend_Test
+{
+}
+
+message InnerScenesvr_Fromfriend_ReturnItem
+{
+    uint64 llToUser = 1;
+    uint32 uiItemId = 2;    //消耗道具ID
+    uint32 uiCount = 3;     //总数量
+    bool bBind  = 4;        //是否绑定
+}
+
+message InnerScenesvr_Fromfriend_GiftReceived
+{
+    repeated uint64 vecToRoleList = 1;
+    uint64 llGiftUid = 2;               //礼物UID
+    uint64 llRecver = 3;                //接受者
+    uint32 uiItemId = 4;                //道具ID
+    uint32 uiCount = 5;                 //数量
+}
+
+message InnerScenesvr_Fromfriend_GiftEmail
+{
+    uint64 llToUser = 1;                
+    uint64 llSender = 2;                //发送者
+    uint32 uiItemId = 3;                //道具ID
+    uint32 uiCount = 4;                 //数量
+    uint64 llGiftUd = 5;                //礼物UD
+}
+
+message InnerScenesvr_Fromfriend_GiftExpire 
+{
+    uint64 llToUser = 1;
+    uint64 llRecver = 2;                //接受者
+    uint32 uiItemId = 3;                //道具ID
+    uint32 uiCount = 4;                 //数量
+    uint64 llGiftUid = 5;               //礼物UID
+}
+
+message InnerScenesvr_Fromfriend_GiftVersion
+{
+    uint64 llToUser = 1;
+    uint32 uiVersionId = 2;
+}
+
+message InnerScenesvr_Fromfriend_FriendList
+{
+    uint64 llToUser = 1;
+    inner.InnerFriendList vecFriendList = 2;
+}
+
+message InnerScenesvr_Fromfriend_FriendUpdate
+{
+    uint64 llToUser = 1;
+    inner.InnerFriend oOneFriend = 2; 
+}

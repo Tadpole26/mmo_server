@@ -1,0 +1,86 @@
+syntax = "proto3";
+import "common.proto";
+import "itemcommon.proto";
+package common;
+
+//上行内容
+message ChatTypeContextUp
+{
+    uint64 llRecverId = 1;  //接受者
+    repeated ChatParamUp vecContexts = 2;//内容
+}
+
+//下行内容
+message ChatTypeContextDown
+{
+    uint64 llTimestamp = 1; //时间戳
+    ChatRole oSender = 2;   //发送者
+    repeated ChatParamDown vecContexts = 3; //内容
+}
+
+//主角
+message ChatRole
+{
+    RoleBrief oBrief = 1;   //简要信息
+    uint32 uiOfficial = 2;  //官职
+    uint32 uiChatFrame = 3;//聊天框
+    uint32 uiChatFont = 4;//聊天文字
+    uint32 uiChatBgd = 5;//聊天背景
+}
+
+//上行参数
+message ChatParamUp
+{
+    ChatString oChat = 1;//文字
+    ChatVoice oVoice = 2;//语音
+    ChatSmile oSmile = 3;//表情
+    ChatItem oItem = 4;//物品
+    ChatAtId oTid = 5;//@ID
+}
+
+//下行参数
+message ChatParamDown
+{
+    ChatString oChat = 1; //文字
+    ChatVoice oVoice = 2;//语音
+    ChatSmile oSmile = 3;//表情
+    ChatItem oItem = 4;//物品
+    ChatAtName oAtName = 5;//@名
+}
+
+//聊天文字
+message ChatString
+{
+    bytes strChars = 1; //文字
+}
+
+//聊天语音
+message ChatVoice
+{
+    bytes strVoices = 1;//语音
+}
+
+//聊天物品
+message ChatItem
+{
+    Item oItem = 1; //道具
+}
+
+//聊天表情
+message ChatSmile
+{
+    uint32 uiId = 1;    //表情表ID
+}
+
+//被@者ID
+message ChatAtId
+{
+    uint64 llRoleId = 1;    //roleId
+}
+
+//被@者名字
+message ChatAtName
+{
+    uint64 llRoleId = 1;    //roleId
+    string strNick = 2;     //nickname
+}

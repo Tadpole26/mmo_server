@@ -8,7 +8,6 @@
 #include "mongo_base.h"
 #include "CDbInstance.h"
 #include <fstream>
-#include "CGlobalMailMgr.h"
 
 bool CGameLogic::Arg(int argc, char* argv[])
 {
@@ -192,5 +191,5 @@ bool CGameLogic::Launch()
 
 bool CGameLogic::LoadDataFromMongo()
 {
-	return GLOBAL_MAIL_INS->GetGlobalMailFromDB();
+	return true;
 }

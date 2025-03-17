@@ -41,3 +41,8 @@ uint32 CCmptNpcView::GetMapID()
 {
 	return 0;
 }
+
+CSceneScene* CCmptNpcView::GetScene()
+{
+	return nullptr;
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="CServerNetface.cpp" />
+    <ClCompile Include="TeamLogic.cpp" />
+    <ClCompile Include="TeamServer.cpp" />
+    <ClCompile Include="TeamUser.cpp" />
+    <ClCompile Include="NetMsgFromScene.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamUserMgr.cpp" />
+    <ClCompile Include="EventGameUser.cpp">
+      <Filter>event</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamMember.cpp" />
+    <ClCompile Include="TeamLeader.cpp" />
+    <ClCompile Include="TeamApply.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CServerNetface.h" />
+    <ClInclude Include="TeamLogic.h" />
+    <ClInclude Include="TeamUser.h" />
+    <ClInclude Include="NetMsgFromScene.h">
+      <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamUserMgr.h" />
+    <ClInclude Include="TeamMember.h" />
+    <ClInclude Include="TeamLeader.h" />
+    <ClInclude Include="TeamApply.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Netface">
+      <UniqueIdentifier>{4cb153b4-5700-48ab-ab3f-03d5d70e56cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="event">
+      <UniqueIdentifier>{6fff7f07-a655-4c0f-b5a8-af4391319dbe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -22,7 +22,7 @@ public:
 	virtual ~zMap();
 	virtual void Final();
 
-	inline uint32 GetMapId() { return m_uiMapId; }
+	inline uint32 GetMapId() const { return m_uiMapId; }
 	inline const zPos2 GetPosWH() { return m_oPosWH; }
 	//»ñÈ¡µØÍ¼¿í
 	inline const uint32 GetWidth() { return m_oPosWH.x; }

@@ -1,0 +1,171 @@
+syntax = "proto3";
+package inner;
+import "innercommon.proto";
+import "chatcommon.proto";
+import "innerfriend.proto";
+
+message InnerFriendsvr
+{
+	uint64 llFromUser = 1;
+	oneof Fromscene
+	{
+		InnerFriendsvr_Fromscene_Test 								fromscene_test 					= 101;
+		InnerFriendsvr_Fromscene_GameEvent							fromscene_gameevent 			= 102;
+		InnerFriendsvr_Fromscene_UpdateUserInfo						fromscene_updateuserinfo		= 103;
+		InnerFriendsvr_Fromscene_OpenFunc							fromscene_open					= 104;
+		InnerFriendsvr_Fromscene_Request							fromscene_request				= 105;
+		InnerFriendsvr_Fromscene_Agree								fromscene_agree_request			= 106;
+		InnerFriendsvr_Fromscene_Refuse								fromscene_refuse_request		= 107;
+		InnerFriendsvr_Fromscene_AgreeAll							fromscene_agree_all				= 108;
+		InnerFriendsvr_Fromscene_RefuseAll							fromscene_refuse_all			= 109;
+		InnerFriendsvr_Fromscene_Remove								fromscene_remove_friend			= 110;
+		InnerFriendsvr_Fromscene_Block								fromscene_block_someone			= 111;
+		InnerFriendsvr_Fromscene_Chat								fromscene_chat_msg_up			= 112;
+		InnerFriendsvr_Fromscene_Expand								fromscene_expand_list			= 113;
+		InnerFriendsvr_Fromscene_Search								fromscene_search_role			= 114;
+		InnerFriendsvr_Fromscene_Recommend							fromscene_recommend_req			= 115;
+		InnerFriendsvr_Fromscene_Filter								fromscene_set_filter			= 116;
+		InnerFriendsvr_Fromscene_Labels								fromscene_set_labels			= 117;
+		InnerFriendsvr_Fromscene_SendGift							fromscene_send_gift				= 118;
+		InnerFriendsvr_Fromscene_ReceiveGift						fromscene_receive_gift			= 119;
+		InnerFriendsvr_Fromscene_UserLogin							fromscene_userlogin				= 120;
+		InnerFriendsvr_Fromscene_UserLogout							fromscene_userlogout			= 121;
+		InnerFriendsvr_Fromscene_UserOnline							fromscene_useronline			= 122;
+		InnerFriendsvr_Fromscene_UserOffline						fromscene_useroffline			= 123;
+		InnerFriendsvr_Fromscene_RecvMail							fromscene_recvmail				= 124;
+		InnerFriendsvr_Fromscene_ExpiredMail						fromscene_expiredmail			= 125;
+		InnerFriendsvr_Fromscene_MailFull							fromscene_mailfull				= 126;
+	}
+}
+
+message InnerFriendsvr_Fromscene_Test
+{
+}
+
+message InnerFriendsvr_Fromscene_GameEvent
+{
+	inner.InnerGameEvent oGameEvent = 1;
+}
+
+message InnerFriendsvr_Fromscene_UpdateUserInfo
+{
+	oneof oType
+	{
+		string strNick = 1;
+		uint32 uiLevel = 2;
+		uint64 llTeamId = 3;
+	}
+}
+
+message InnerFriendsvr_Fromscene_OpenFunc
+{
+	inner.InnerFriendInfo oInfo = 1;
+}
+
+message InnerFriendsvr_Fromscene_Request
+{
+	uint64 llRoleId = 1;
+}
+
+message InnerFriendsvr_Fromscene_Agree
+{
+	uint64 llRoleId = 1;
+}
+
+message InnerFriendsvr_Fromscene_Refuse
+{
+	uint64 llRoleId = 1;
+}
+
+message InnerFriendsvr_Fromscene_AgreeAll
+{
+}
+
+message InnerFriendsvr_Fromscene_RefuseAll
+{
+}
+
+message InnerFriendsvr_Fromscene_Remove
+{
+	uint64 llRoleId = 1;
+}
+
+message InnerFriendsvr_Fromscene_Block
+{
+	uint64 llRoleId = 1;
+}
+
+message InnerFriendsvr_Fromscene_Chat
+{
+	uint64 llRecver = 1;	//接受者
+	uint32 uiChattype = 2;	//频道
+	common.ChatTypeContextDown oContext = 3;//下行聊天内容
+}
+
+message InnerFriendsvr_Fromscene_Expand
+{
+	uint32 uiItemId = 1;	//使用的扩容道具ID
+	bool bBind = 2;			//是否绑定
+	uint32 uiAddValue = 3;	//扩容的大小
+}
+
+message InnerFriendsvr_Fromscene_Search
+{
+	bytes strRoleName = 1;		//角色名
+}
+
+message InnerFriendsvr_Fromscene_Recommend
+{
+}
+
+message InnerFriendsvr_Fromscene_Filter
+{
+	bool bCity = 1;//是否同城
+	uint32 uiSex = 2;//性别
+	uint32 uiLabel = 3;//筛选标签
+}
+
+message InnerFriendsvr_Fromscene_Labels
+{
+	uint32 uiCity = 1;//属地
+	bool bAvailable = 2;//是否可被推荐给其他玩家
+	uint32 uiLabel = 3;//缘分筛选标签
+}
+
+message InnerFriendsvr_Fromscene_SendGift
+{
+	inner.InnerFriendGift oGift = 1;	//一件礼物
+}
+
+message InnerFriendsvr_Fromscene_ReceiveGift
+{
+	uint64 llGiftUid = 1;
+}
+
+message InnerFriendsvr_Fromscene_UserLogin	
+{
+}
+
+message InnerFriendsvr_Fromscene_UserLogout
+{
+}
+
+message InnerFriendsvr_Fromscene_UserOnline
+{
+}
+
+message InnerFriendsvr_Fromscene_UserOffline
+{
+}
+
+message InnerFriendsvr_Fromscene_RecvMail
+{
+}
+
+message InnerFriendsvr_Fromscene_ExpiredMail
+{
+}
+
+message InnerFriendsvr_Fromscene_MailFull
+{
+}

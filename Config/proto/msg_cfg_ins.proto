@@ -8,6 +8,7 @@ enum BrushType
 	BrushType_RigNPC = 1;							//固定npc
 	BrushType_Teleporter = 2;						//传送
 	BrushType_BlockArea = 3;						//阻挡
+    BrushType_MonsterGroup = 4;                     //怪物组
 }
 
 message Grid_Point
