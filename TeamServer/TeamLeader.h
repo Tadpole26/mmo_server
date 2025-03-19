@@ -2,6 +2,12 @@
 
 #include "sdk.h"
 
+namespace common
+{
+	class TeamApplyList;
+	class RecruitTeamLeader;
+}
+
 class TeamApply;
 class TeamUser;
 class TeamMember;
@@ -28,8 +34,8 @@ public:
 	bool isApplyFull();
 	bool hasApply(TeamUser* pUser);
 public:
-	//void fill(common::TeamApplyList &out);
-	//void fill(common::RecruitTeamLead &out);
+	void fill(common::TeamApplyList &out);
+	void fill(common::RecruitTeamLeader &out);
 	bool foreachApply(std::function<bool(TeamApply* pApply)> func);
 public:
 	void createApply(TeamUser* pUser);

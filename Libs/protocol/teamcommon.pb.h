@@ -155,7 +155,7 @@ namespace common {
 enum enTeamFieldType : int {
   TFieldType_None = 0,
   TFieldType_LeaderId = 1,
-  TFieldType_Targetid = 2,
+  TFieldType_TargetId = 2,
   TFieldType_MinLevel = 3,
   TFieldType_MaxLevel = 4,
   TFieldType_MatchTime = 5,

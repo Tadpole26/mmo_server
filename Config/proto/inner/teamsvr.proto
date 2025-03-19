@@ -14,6 +14,10 @@ message InnerTeamsvr
 		InnerTeamsvr_Fromscene_Test 								fromscene_test 					= 1401;
 		InnerTeamsvr_Fromscene_GameEvent							fromscene_gameevent 			= 1402;
 		InnerTeamsvr_Fromscene_UpdateUserInfo						fromscene_updateuserinfo		= 1403;
+		InnerTeamsvr_Fromscene_PersonChangeTarget					fromscene_personchangetarget	= 1404;			//个人匹配寻找队伍
+		InnerTeamsvr_Fromscene_PersonCancelMatch					fromscene_personcancelmatch		= 1405;
+		InnerTeamsvr_Fromscene_LeaderStartMatch 					fromscene_leaderstartmatch		= 1406;			//队伍招募寻找队员
+		InnerTeamsvr_Fromscene_LeaderCancelMatch					fromscene_leadercancelmatch		= 1407;
 	}
 }
 
@@ -42,4 +46,23 @@ message InnerTeamsvr_Fromscene_UpdateUserInfo
 		common.ExtendFight3v3 f33 = 10;
 		common.ExtendFight5v5 f55 = 11;
 	}
+}
+
+message InnerTeamsvr_Fromscene_PersonChangeTarget
+{
+	uint32 targetId = 1;
+}
+
+message InnerTeamsvr_Fromscene_PersonCancelMatch
+{
+}
+
+message InnerTeamsvr_Fromscene_LeaderStartMatch
+{
+	bytes text = 1;
+	uint32 languageId = 2;
+}
+
+message InnerTeamsvr_Fromscene_LeaderCancelMatch
+{
 }

@@ -33,7 +33,7 @@ namespace config
 		bool AddMapInfo();
 
 	private:
-		std::map<uint32_t, map_info_t> _MapInfoCfg;
+		std::map<uint32_t, map_info_t> _mapInfoCfg;
 	};
 }
 #define gMapCfg Singleton<config::MapConfig>::getInstance()

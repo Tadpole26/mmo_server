@@ -22,11 +22,13 @@
     <ClCompile Include="CopyConfig.cpp" />
     <ClCompile Include="MapConfig.cpp" />
     <ClCompile Include="ParamConfig.cpp" />
+    <ClCompile Include="TeamConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CopyConfig.h" />
     <ClInclude Include="MapConfig.h" />
     <ClInclude Include="ParamConfig.h" />
+    <ClInclude Include="TeamConfig.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

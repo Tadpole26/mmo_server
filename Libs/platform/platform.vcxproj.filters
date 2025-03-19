@@ -186,14 +186,15 @@
     <ClInclude Include="cAutoIdAllocator.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="cLogMgr.h">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="cLoadBase.h">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="zRoleMgr.h">
       <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="zLogMgr.h" />
+    <ClInclude Include="cTeam.h">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -290,11 +291,9 @@
     <ClCompile Include="zScreenIndex.cpp">
       <Filter>sdk</Filter>
     </ClCompile>
-    <ClCompile Include="cLogMgr.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="cLoadBase.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="zLogMgr.cpp" />
   </ItemGroup>
 </Project>

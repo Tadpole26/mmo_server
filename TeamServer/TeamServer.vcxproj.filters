@@ -4,7 +4,6 @@
     <ClCompile Include="CServerNetface.cpp" />
     <ClCompile Include="TeamLogic.cpp" />
     <ClCompile Include="TeamServer.cpp" />
-    <ClCompile Include="TeamUser.cpp" />
     <ClCompile Include="NetMsgFromScene.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
@@ -15,11 +14,19 @@
     <ClCompile Include="TeamMember.cpp" />
     <ClCompile Include="TeamLeader.cpp" />
     <ClCompile Include="TeamApply.cpp" />
+    <ClCompile Include="SessionTeam.cpp" />
+    <ClCompile Include="TeamUser.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTeam.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamMgr.cpp" />
+    <ClCompile Include="TeamQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServerNetface.h" />
     <ClInclude Include="TeamLogic.h" />
-    <ClInclude Include="TeamUser.h" />
     <ClInclude Include="NetMsgFromScene.h">
       <Filter>Netface</Filter>
     </ClInclude>
@@ -27,6 +34,12 @@
     <ClInclude Include="TeamMember.h" />
     <ClInclude Include="TeamLeader.h" />
     <ClInclude Include="TeamApply.h" />
+    <ClInclude Include="SessionTeam.h" />
+    <ClInclude Include="TeamUser.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamMgr.h" />
+    <ClInclude Include="TeamDefine.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Netface">
@@ -34,6 +47,9 @@
     </Filter>
     <Filter Include="event">
       <UniqueIdentifier>{6fff7f07-a655-4c0f-b5a8-af4391319dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="User">
+      <UniqueIdentifier>{e95bbfcd-71ae-41ae-b0d0-ebad3a7570cc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

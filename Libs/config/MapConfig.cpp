@@ -13,7 +13,7 @@ namespace config
 	bool MapConfig::AddMapInfo()
 	{
 		uint32 uiUid = GetDataUInt("id");
-		map_info_t& stElem = _MapInfoCfg[uiUid];
+		map_info_t& stElem = _mapInfoCfg[uiUid];
 		stElem.uiUid = GetDataUInt("id");
 		stElem.strMapName = GetDataChr("comment");							//地图名
 		stElem.uiMapLevel = GetDataUInt("level");							//地图要求等级
@@ -30,8 +30,8 @@ namespace config
 
 	map_info_t* MapConfig::GetMapConfig(const uint32 tid)
 	{
-		auto iter = _MapInfoCfg.find(tid);
-		if (iter == _MapInfoCfg.end())
+		auto iter = _mapInfoCfg.find(tid);
+		if (iter == _mapInfoCfg.end())
 			return nullptr;
 		return &(iter->second);
 	}

@@ -28,6 +28,7 @@
     <ClCompile Include="friendsvr.pb.cc" />
     <ClCompile Include="innercommon.pb.cc" />
     <ClCompile Include="innerfriend.pb.cc" />
+    <ClCompile Include="innerteam.pb.cc" />
     <ClCompile Include="itemcommon.pb.cc" />
     <ClCompile Include="map_cfg.pb.cc" />
     <ClCompile Include="module.pb.cc" />
@@ -48,6 +49,7 @@
     <ClInclude Include="friendsvr.pb.h" />
     <ClInclude Include="innercommon.pb.h" />
     <ClInclude Include="innerfriend.pb.h" />
+    <ClInclude Include="innerteam.pb.h" />
     <ClInclude Include="itemcommon.pb.h" />
     <ClInclude Include="map_cfg.pb.h" />
     <ClInclude Include="module.pb.h" />

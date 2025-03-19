@@ -114,6 +114,7 @@ message RecruitTeamMember
     uint32 sex = 5;//性别
 }
 
+//拉去平台队伍列表,这边客户端走http拉去,为了分担secne压力
 message PlatAllTeamList
 {
     repeated PlatTargetTeamList teams = 1;//队伍列表
@@ -146,7 +147,7 @@ enum enTeamFieldType
 {
     TFieldType_None = 0;
     TFieldType_LeaderId = 1;//队长
-    TFieldType_Targetid = 2;//队伍目标
+    TFieldType_TargetId = 2;//队伍目标
     TFieldType_MinLevel = 3;
     TFieldType_MaxLevel = 4;
     TFieldType_MatchTime = 5;//匹配时间戳

@@ -1,5 +1,5 @@
 #include "cScene.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 
 cScene::cScene(const uint64 sceneId) : _uSid(sceneId)
 {

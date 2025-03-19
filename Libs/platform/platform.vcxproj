@@ -164,6 +164,7 @@
     <ClInclude Include="cGame.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cServer.h" />
+    <ClInclude Include="cTeam.h" />
     <ClInclude Include="cUser.h" />
     <ClInclude Include="db_mgr.h" />
     <ClInclude Include="db_struct.h" />

@@ -132,11 +132,15 @@
   <ItemGroup>
     <ClCompile Include="CServerNetface.cpp" />
     <ClCompile Include="EventGameUser.cpp" />
+    <ClCompile Include="MyTeam.cpp" />
     <ClCompile Include="NetMsgFromScene.cpp" />
+    <ClCompile Include="SessionTeam.cpp" />
     <ClCompile Include="TeamApply.cpp" />
     <ClCompile Include="TeamLeader.cpp" />
     <ClCompile Include="TeamLogic.cpp" />
     <ClCompile Include="TeamMember.cpp" />
+    <ClCompile Include="TeamMgr.cpp" />
+    <ClCompile Include="TeamQueue.cpp" />
     <ClCompile Include="TeamServer.cpp" />
     <ClCompile Include="TeamUser.cpp" />
     <ClCompile Include="TeamUserMgr.cpp" />
@@ -144,10 +148,13 @@
   <ItemGroup>
     <ClInclude Include="CServerNetface.h" />
     <ClInclude Include="NetMsgFromScene.h" />
+    <ClInclude Include="SessionTeam.h" />
     <ClInclude Include="TeamApply.h" />
+    <ClInclude Include="TeamDefine.h" />
     <ClInclude Include="TeamLeader.h" />
     <ClInclude Include="TeamLogic.h" />
     <ClInclude Include="TeamMember.h" />
+    <ClInclude Include="TeamMgr.h" />
     <ClInclude Include="TeamUser.h" />
     <ClInclude Include="TeamUserMgr.h" />
   </ItemGroup>

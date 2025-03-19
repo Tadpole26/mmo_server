@@ -1,0 +1,78 @@
+syntax = "proto3";
+package inner;
+
+message InnerTeamList
+{
+	repeated InnerTeam teams = 1;
+}
+
+message InnerTeam 
+{
+	uint64 teamId = 1;//队伍id
+	uint64 leadId = 2;//队长id
+	InnerTeamBase base = 3;
+	map<uint64, InnerTeamMember> mlist = 4;//成员列表
+}
+
+message InnerTeamBase
+{
+	uint32 targetId = 1;//队伍目标
+	uint32 minLevel = 2;//最小等级
+	uint32 maxLevel = 3;//最大等级
+	uint32 matchTime = 4;//匹配时间戳
+	bool midwayJoin = 5;//中途补人
+}
+
+message InnerTeamMember
+{
+	uint32 index = 1;			//所在队伍位置(从1开始)
+	bool state = 2;				//状态(true在线,false离线)
+	bool follow = 3;			//跟随(true跟随,false暂离)
+	uint64 sceneId = 4;			//所在地图
+}
+
+enum InnerTeamFieldType
+{
+	TFType_None = 0;
+	TFType_LeaderId = 1;
+	TFType_TargetId = 2;
+	TFType_MinLevel = 3;
+	TFType_MaxLevel = 4;
+	TFType_MatchTime = 5;
+	TFType_Text = 6;
+	TFType_MidwayJoin = 7;
+}
+
+message InnerTeamField
+{
+	oneof field 
+	{
+		uint64 leaderId = 1;
+		uint32 targetId = 2;
+		uint32 minLevel = 3;
+		uint32 maxLevel = 4;
+		uint32 matchTime = 5;
+		string text = 6;
+		bool midwayJoin = 7;
+	}
+}
+
+enum InnerTeamMemberFieldType
+{
+	TMFType_None = 0;
+	TMFType_Index = 1;
+	TMFType_State = 2;
+	TMFType_Follow = 3;
+	TMFType_SceneId = 4;
+}
+
+message InnerTeamMemberField
+{
+	oneof field 
+	{
+		uint32 index = 1;
+		bool state = 2;
+		bool follow = 3;
+		uint64 sceneId = 4;
+	}
+}

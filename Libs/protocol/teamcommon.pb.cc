@@ -755,7 +755,7 @@ const char descriptor_table_protodef_teamcommon_2eproto[] PROTOBUF_SECTION_VARIA
   "rFieldByte\022+\n\006tfbool\030\003 \003(\0132\033.common.Team"
   "MemberFieldBool*\353\001\n\017enTeamFieldType\022\023\n\017T"
   "FieldType_None\020\000\022\027\n\023TFieldType_LeaderId\020"
-  "\001\022\027\n\023TFieldType_Targetid\020\002\022\027\n\023TFieldType"
+  "\001\022\027\n\023TFieldType_TargetId\020\002\022\027\n\023TFieldType"
   "_MinLevel\020\003\022\027\n\023TFieldType_MaxLevel\020\004\022\030\n\024"
   "TFieldType_MatchTime\020\005\022\023\n\017TFieldType_Tex"
   "t\020\006\022\034\n\030TFieldType_LeaderSceneId\020\007\022\022\n\016TFi"

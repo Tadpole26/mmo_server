@@ -20,6 +20,34 @@ void TeamLeader::final()
 	__deleteApplyAll();
 }
 
+void  TeamLeader::fill(common::TeamApplyList& out)
+{
+	for (auto* pApply : _applyList)
+	{
+		pApply->fill(*out.add_applys());
+	}
+}
+
+void  TeamLeader::fill(common::RecruitTeamLeader& out)
+{
+	out.set_nickname(_pMem->pUser->getNickName());
+	out.set_chatfont(_pMem->pUser->getChatFont());
+	out.set_chatframe(_pMem->pUser->getChatFrame());
+	_pMem->fill(*out.mutable_leader());
+}
+
+bool  TeamLeader::foreachApply(std::function<bool(TeamApply* pApply)> func)
+{
+	for (auto iter = _applyList.begin(); iter != _applyList.end();)
+	{
+		auto del = iter++;
+		auto* pApply = *del;
+		if (!func(pApply))
+			return false;
+	}
+	return true;
+}
+
 bool TeamLeader::isApplyFull()
 {
 	return _applyList.size() >= gParamCfg->teamApplyCountMax;

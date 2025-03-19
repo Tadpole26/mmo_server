@@ -4,10 +4,12 @@
     <ClCompile Include="MapConfig.cpp" />
     <ClCompile Include="CopyConfig.cpp" />
     <ClCompile Include="ParamConfig.cpp" />
+    <ClCompile Include="TeamConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MapConfig.h" />
     <ClInclude Include="CopyConfig.h" />
     <ClInclude Include="ParamConfig.h" />
+    <ClInclude Include="TeamConfig.h" />
   </ItemGroup>
 </Project>

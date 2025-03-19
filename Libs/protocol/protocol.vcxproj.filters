@@ -19,6 +19,7 @@
     <ClCompile Include="scenesvr.pb.cc" />
     <ClCompile Include="teamsvr.pb.cc" />
     <ClCompile Include="teamcommon.pb.cc" />
+    <ClCompile Include="innerteam.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="scenesvr.pb.h" />
     <ClInclude Include="teamsvr.pb.h" />
     <ClInclude Include="teamcommon.pb.h" />
+    <ClInclude Include="innerteam.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

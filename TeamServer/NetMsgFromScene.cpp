@@ -29,6 +29,10 @@ void NetMsgFromScene::handle_msg(const tagMsgHead* pNetMsg)
 	if (innerReq.fromzone() && innerReq.fromuser())
 	{
 		pUser = gTeamUserMgr->tryCreateRole(innerReq.fromzone(), innerReq.fromuser());
+		if (pUser == nullptr)
+		{
+			Log_Error("tryCreateRole.%s,%s", innerReq.GetTypeName().c_str(), innerReq.ShortDebugString().c_str());
+		}
 	}
 	switch (innerReq.Fromscene_case())
 	{
@@ -66,6 +70,27 @@ void NetMsgFromScene::handle_msg(const tagMsgHead* pNetMsg)
 		case inner::InnerTeamsvr_Fromscene_UpdateUserInfo::kF33:break;
 		case inner::InnerTeamsvr_Fromscene_UpdateUserInfo::kF55:break;
 		}
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromscenePersonchangetarget:
+	{
+		const auto& req = innerReq.fromscene_personchangetarget();
+		pUser->innerPersonChangeTarget(req.targetid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromscenePersoncancelmatch:
+	{
+		const auto& req = innerReq.fromscene_personcancelmatch();
+		pUser->innerPersonCancelMatch();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderstartmatch:
+	{
+		const auto& req = innerReq.fromscene_leaderstartmatch();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeadercancelmatch:
+	{
 	}
 	break;
 	default:

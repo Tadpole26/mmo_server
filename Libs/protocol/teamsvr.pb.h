@@ -56,6 +56,18 @@ extern InnerTeamsvrDefaultTypeInternal _InnerTeamsvr_default_instance_;
 class InnerTeamsvr_Fromscene_GameEvent;
 struct InnerTeamsvr_Fromscene_GameEventDefaultTypeInternal;
 extern InnerTeamsvr_Fromscene_GameEventDefaultTypeInternal _InnerTeamsvr_Fromscene_GameEvent_default_instance_;
+class InnerTeamsvr_Fromscene_LeaderCancelMatch;
+struct InnerTeamsvr_Fromscene_LeaderCancelMatchDefaultTypeInternal;
+extern InnerTeamsvr_Fromscene_LeaderCancelMatchDefaultTypeInternal _InnerTeamsvr_Fromscene_LeaderCancelMatch_default_instance_;
+class InnerTeamsvr_Fromscene_LeaderStartMatch;
+struct InnerTeamsvr_Fromscene_LeaderStartMatchDefaultTypeInternal;
+extern InnerTeamsvr_Fromscene_LeaderStartMatchDefaultTypeInternal _InnerTeamsvr_Fromscene_LeaderStartMatch_default_instance_;
+class InnerTeamsvr_Fromscene_PersonCancelMatch;
+struct InnerTeamsvr_Fromscene_PersonCancelMatchDefaultTypeInternal;
+extern InnerTeamsvr_Fromscene_PersonCancelMatchDefaultTypeInternal _InnerTeamsvr_Fromscene_PersonCancelMatch_default_instance_;
+class InnerTeamsvr_Fromscene_PersonChangeTarget;
+struct InnerTeamsvr_Fromscene_PersonChangeTargetDefaultTypeInternal;
+extern InnerTeamsvr_Fromscene_PersonChangeTargetDefaultTypeInternal _InnerTeamsvr_Fromscene_PersonChangeTarget_default_instance_;
 class InnerTeamsvr_Fromscene_Test;
 struct InnerTeamsvr_Fromscene_TestDefaultTypeInternal;
 extern InnerTeamsvr_Fromscene_TestDefaultTypeInternal _InnerTeamsvr_Fromscene_Test_default_instance_;
@@ -66,6 +78,10 @@ extern InnerTeamsvr_Fromscene_UpdateUserInfoDefaultTypeInternal _InnerTeamsvr_Fr
 PROTOBUF_NAMESPACE_OPEN
 template<> ::inner::InnerTeamsvr* Arena::CreateMaybeMessage<::inner::InnerTeamsvr>(Arena*);
 template<> ::inner::InnerTeamsvr_Fromscene_GameEvent* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_GameEvent>(Arena*);
+template<> ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch>(Arena*);
+template<> ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_LeaderStartMatch>(Arena*);
+template<> ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_PersonCancelMatch>(Arena*);
+template<> ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_PersonChangeTarget>(Arena*);
 template<> ::inner::InnerTeamsvr_Fromscene_Test* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_Test>(Arena*);
 template<> ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* Arena::CreateMaybeMessage<::inner::InnerTeamsvr_Fromscene_UpdateUserInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -120,6 +136,10 @@ class InnerTeamsvr final :
     kFromsceneTest = 1401,
     kFromsceneGameevent = 1402,
     kFromsceneUpdateuserinfo = 1403,
+    kFromscenePersonchangetarget = 1404,
+    kFromscenePersoncancelmatch = 1405,
+    kFromsceneLeaderstartmatch = 1406,
+    kFromsceneLeadercancelmatch = 1407,
     FROMSCENE_NOT_SET = 0,
   };
 
@@ -204,6 +224,10 @@ class InnerTeamsvr final :
     kFromsceneTestFieldNumber = 1401,
     kFromsceneGameeventFieldNumber = 1402,
     kFromsceneUpdateuserinfoFieldNumber = 1403,
+    kFromscenePersonchangetargetFieldNumber = 1404,
+    kFromscenePersoncancelmatchFieldNumber = 1405,
+    kFromsceneLeaderstartmatchFieldNumber = 1406,
+    kFromsceneLeadercancelmatchFieldNumber = 1407,
   };
   // uint64 fromuser = 1;
   void clear_fromuser();
@@ -277,6 +301,78 @@ class InnerTeamsvr final :
       ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* fromscene_updateuserinfo);
   ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* unsafe_arena_release_fromscene_updateuserinfo();
 
+  // .inner.InnerTeamsvr_Fromscene_PersonChangeTarget fromscene_personchangetarget = 1404;
+  bool has_fromscene_personchangetarget() const;
+  private:
+  bool _internal_has_fromscene_personchangetarget() const;
+  public:
+  void clear_fromscene_personchangetarget();
+  const ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget& fromscene_personchangetarget() const;
+  PROTOBUF_NODISCARD ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* release_fromscene_personchangetarget();
+  ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* mutable_fromscene_personchangetarget();
+  void set_allocated_fromscene_personchangetarget(::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* fromscene_personchangetarget);
+  private:
+  const ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget& _internal_fromscene_personchangetarget() const;
+  ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* _internal_mutable_fromscene_personchangetarget();
+  public:
+  void unsafe_arena_set_allocated_fromscene_personchangetarget(
+      ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* fromscene_personchangetarget);
+  ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* unsafe_arena_release_fromscene_personchangetarget();
+
+  // .inner.InnerTeamsvr_Fromscene_PersonCancelMatch fromscene_personcancelmatch = 1405;
+  bool has_fromscene_personcancelmatch() const;
+  private:
+  bool _internal_has_fromscene_personcancelmatch() const;
+  public:
+  void clear_fromscene_personcancelmatch();
+  const ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch& fromscene_personcancelmatch() const;
+  PROTOBUF_NODISCARD ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* release_fromscene_personcancelmatch();
+  ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* mutable_fromscene_personcancelmatch();
+  void set_allocated_fromscene_personcancelmatch(::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* fromscene_personcancelmatch);
+  private:
+  const ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch& _internal_fromscene_personcancelmatch() const;
+  ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* _internal_mutable_fromscene_personcancelmatch();
+  public:
+  void unsafe_arena_set_allocated_fromscene_personcancelmatch(
+      ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* fromscene_personcancelmatch);
+  ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* unsafe_arena_release_fromscene_personcancelmatch();
+
+  // .inner.InnerTeamsvr_Fromscene_LeaderStartMatch fromscene_leaderstartmatch = 1406;
+  bool has_fromscene_leaderstartmatch() const;
+  private:
+  bool _internal_has_fromscene_leaderstartmatch() const;
+  public:
+  void clear_fromscene_leaderstartmatch();
+  const ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch& fromscene_leaderstartmatch() const;
+  PROTOBUF_NODISCARD ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* release_fromscene_leaderstartmatch();
+  ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* mutable_fromscene_leaderstartmatch();
+  void set_allocated_fromscene_leaderstartmatch(::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* fromscene_leaderstartmatch);
+  private:
+  const ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch& _internal_fromscene_leaderstartmatch() const;
+  ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* _internal_mutable_fromscene_leaderstartmatch();
+  public:
+  void unsafe_arena_set_allocated_fromscene_leaderstartmatch(
+      ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* fromscene_leaderstartmatch);
+  ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* unsafe_arena_release_fromscene_leaderstartmatch();
+
+  // .inner.InnerTeamsvr_Fromscene_LeaderCancelMatch fromscene_leadercancelmatch = 1407;
+  bool has_fromscene_leadercancelmatch() const;
+  private:
+  bool _internal_has_fromscene_leadercancelmatch() const;
+  public:
+  void clear_fromscene_leadercancelmatch();
+  const ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch& fromscene_leadercancelmatch() const;
+  PROTOBUF_NODISCARD ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* release_fromscene_leadercancelmatch();
+  ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* mutable_fromscene_leadercancelmatch();
+  void set_allocated_fromscene_leadercancelmatch(::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* fromscene_leadercancelmatch);
+  private:
+  const ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch& _internal_fromscene_leadercancelmatch() const;
+  ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* _internal_mutable_fromscene_leadercancelmatch();
+  public:
+  void unsafe_arena_set_allocated_fromscene_leadercancelmatch(
+      ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* fromscene_leadercancelmatch);
+  ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* unsafe_arena_release_fromscene_leadercancelmatch();
+
   void clear_Fromscene();
   FromsceneCase Fromscene_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr)
@@ -285,6 +381,10 @@ class InnerTeamsvr final :
   void set_has_fromscene_test();
   void set_has_fromscene_gameevent();
   void set_has_fromscene_updateuserinfo();
+  void set_has_fromscene_personchangetarget();
+  void set_has_fromscene_personcancelmatch();
+  void set_has_fromscene_leaderstartmatch();
+  void set_has_fromscene_leadercancelmatch();
 
   inline bool has_Fromscene() const;
   inline void clear_has_Fromscene();
@@ -300,6 +400,10 @@ class InnerTeamsvr final :
     ::inner::InnerTeamsvr_Fromscene_Test* fromscene_test_;
     ::inner::InnerTeamsvr_Fromscene_GameEvent* fromscene_gameevent_;
     ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* fromscene_updateuserinfo_;
+    ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* fromscene_personchangetarget_;
+    ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* fromscene_personcancelmatch_;
+    ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* fromscene_leaderstartmatch_;
+    ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* fromscene_leadercancelmatch_;
   } Fromscene_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -933,6 +1037,540 @@ class InnerTeamsvr_Fromscene_UpdateUserInfo final :
 
   friend struct ::TableStruct_teamsvr_2eproto;
 };
+// -------------------------------------------------------------------
+
+class InnerTeamsvr_Fromscene_PersonChangeTarget final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_PersonChangeTarget) */ {
+ public:
+  inline InnerTeamsvr_Fromscene_PersonChangeTarget() : InnerTeamsvr_Fromscene_PersonChangeTarget(nullptr) {}
+  ~InnerTeamsvr_Fromscene_PersonChangeTarget() override;
+  explicit PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_PersonChangeTarget(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerTeamsvr_Fromscene_PersonChangeTarget(const InnerTeamsvr_Fromscene_PersonChangeTarget& from);
+  InnerTeamsvr_Fromscene_PersonChangeTarget(InnerTeamsvr_Fromscene_PersonChangeTarget&& from) noexcept
+    : InnerTeamsvr_Fromscene_PersonChangeTarget() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerTeamsvr_Fromscene_PersonChangeTarget& operator=(const InnerTeamsvr_Fromscene_PersonChangeTarget& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerTeamsvr_Fromscene_PersonChangeTarget& operator=(InnerTeamsvr_Fromscene_PersonChangeTarget&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerTeamsvr_Fromscene_PersonChangeTarget& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerTeamsvr_Fromscene_PersonChangeTarget* internal_default_instance() {
+    return reinterpret_cast<const InnerTeamsvr_Fromscene_PersonChangeTarget*>(
+               &_InnerTeamsvr_Fromscene_PersonChangeTarget_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(InnerTeamsvr_Fromscene_PersonChangeTarget& a, InnerTeamsvr_Fromscene_PersonChangeTarget& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerTeamsvr_Fromscene_PersonChangeTarget* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerTeamsvr_Fromscene_PersonChangeTarget* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerTeamsvr_Fromscene_PersonChangeTarget* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerTeamsvr_Fromscene_PersonChangeTarget>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerTeamsvr_Fromscene_PersonChangeTarget& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerTeamsvr_Fromscene_PersonChangeTarget& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerTeamsvr_Fromscene_PersonChangeTarget* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerTeamsvr_Fromscene_PersonChangeTarget";
+  }
+  protected:
+  explicit InnerTeamsvr_Fromscene_PersonChangeTarget(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTargetIdFieldNumber = 1,
+  };
+  // uint32 targetId = 1;
+  void clear_targetid();
+  uint32_t targetid() const;
+  void set_targetid(uint32_t value);
+  private:
+  uint32_t _internal_targetid() const;
+  void _internal_set_targetid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr_Fromscene_PersonChangeTarget)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t targetid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_teamsvr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerTeamsvr_Fromscene_PersonCancelMatch final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_PersonCancelMatch) */ {
+ public:
+  inline InnerTeamsvr_Fromscene_PersonCancelMatch() : InnerTeamsvr_Fromscene_PersonCancelMatch(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_PersonCancelMatch(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerTeamsvr_Fromscene_PersonCancelMatch(const InnerTeamsvr_Fromscene_PersonCancelMatch& from);
+  InnerTeamsvr_Fromscene_PersonCancelMatch(InnerTeamsvr_Fromscene_PersonCancelMatch&& from) noexcept
+    : InnerTeamsvr_Fromscene_PersonCancelMatch() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerTeamsvr_Fromscene_PersonCancelMatch& operator=(const InnerTeamsvr_Fromscene_PersonCancelMatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerTeamsvr_Fromscene_PersonCancelMatch& operator=(InnerTeamsvr_Fromscene_PersonCancelMatch&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerTeamsvr_Fromscene_PersonCancelMatch& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerTeamsvr_Fromscene_PersonCancelMatch* internal_default_instance() {
+    return reinterpret_cast<const InnerTeamsvr_Fromscene_PersonCancelMatch*>(
+               &_InnerTeamsvr_Fromscene_PersonCancelMatch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(InnerTeamsvr_Fromscene_PersonCancelMatch& a, InnerTeamsvr_Fromscene_PersonCancelMatch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerTeamsvr_Fromscene_PersonCancelMatch* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerTeamsvr_Fromscene_PersonCancelMatch* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerTeamsvr_Fromscene_PersonCancelMatch* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerTeamsvr_Fromscene_PersonCancelMatch>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerTeamsvr_Fromscene_PersonCancelMatch& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerTeamsvr_Fromscene_PersonCancelMatch& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerTeamsvr_Fromscene_PersonCancelMatch";
+  }
+  protected:
+  explicit InnerTeamsvr_Fromscene_PersonCancelMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr_Fromscene_PersonCancelMatch)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_teamsvr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerTeamsvr_Fromscene_LeaderStartMatch final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_LeaderStartMatch) */ {
+ public:
+  inline InnerTeamsvr_Fromscene_LeaderStartMatch() : InnerTeamsvr_Fromscene_LeaderStartMatch(nullptr) {}
+  ~InnerTeamsvr_Fromscene_LeaderStartMatch() override;
+  explicit PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_LeaderStartMatch(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerTeamsvr_Fromscene_LeaderStartMatch(const InnerTeamsvr_Fromscene_LeaderStartMatch& from);
+  InnerTeamsvr_Fromscene_LeaderStartMatch(InnerTeamsvr_Fromscene_LeaderStartMatch&& from) noexcept
+    : InnerTeamsvr_Fromscene_LeaderStartMatch() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerTeamsvr_Fromscene_LeaderStartMatch& operator=(const InnerTeamsvr_Fromscene_LeaderStartMatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerTeamsvr_Fromscene_LeaderStartMatch& operator=(InnerTeamsvr_Fromscene_LeaderStartMatch&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerTeamsvr_Fromscene_LeaderStartMatch& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerTeamsvr_Fromscene_LeaderStartMatch* internal_default_instance() {
+    return reinterpret_cast<const InnerTeamsvr_Fromscene_LeaderStartMatch*>(
+               &_InnerTeamsvr_Fromscene_LeaderStartMatch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(InnerTeamsvr_Fromscene_LeaderStartMatch& a, InnerTeamsvr_Fromscene_LeaderStartMatch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerTeamsvr_Fromscene_LeaderStartMatch* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerTeamsvr_Fromscene_LeaderStartMatch* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerTeamsvr_Fromscene_LeaderStartMatch* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerTeamsvr_Fromscene_LeaderStartMatch>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerTeamsvr_Fromscene_LeaderStartMatch& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerTeamsvr_Fromscene_LeaderStartMatch& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerTeamsvr_Fromscene_LeaderStartMatch* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerTeamsvr_Fromscene_LeaderStartMatch";
+  }
+  protected:
+  explicit InnerTeamsvr_Fromscene_LeaderStartMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTextFieldNumber = 1,
+    kLanguageIdFieldNumber = 2,
+  };
+  // bytes text = 1;
+  void clear_text();
+  const std::string& text() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_text(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_text();
+  PROTOBUF_NODISCARD std::string* release_text();
+  void set_allocated_text(std::string* text);
+  private:
+  const std::string& _internal_text() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_text(const std::string& value);
+  std::string* _internal_mutable_text();
+  public:
+
+  // uint32 languageId = 2;
+  void clear_languageid();
+  uint32_t languageid() const;
+  void set_languageid(uint32_t value);
+  private:
+  uint32_t _internal_languageid() const;
+  void _internal_set_languageid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr_Fromscene_LeaderStartMatch)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
+  uint32_t languageid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_teamsvr_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerTeamsvr_Fromscene_LeaderCancelMatch final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_LeaderCancelMatch) */ {
+ public:
+  inline InnerTeamsvr_Fromscene_LeaderCancelMatch() : InnerTeamsvr_Fromscene_LeaderCancelMatch(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_LeaderCancelMatch(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerTeamsvr_Fromscene_LeaderCancelMatch(const InnerTeamsvr_Fromscene_LeaderCancelMatch& from);
+  InnerTeamsvr_Fromscene_LeaderCancelMatch(InnerTeamsvr_Fromscene_LeaderCancelMatch&& from) noexcept
+    : InnerTeamsvr_Fromscene_LeaderCancelMatch() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerTeamsvr_Fromscene_LeaderCancelMatch& operator=(const InnerTeamsvr_Fromscene_LeaderCancelMatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerTeamsvr_Fromscene_LeaderCancelMatch& operator=(InnerTeamsvr_Fromscene_LeaderCancelMatch&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerTeamsvr_Fromscene_LeaderCancelMatch& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerTeamsvr_Fromscene_LeaderCancelMatch* internal_default_instance() {
+    return reinterpret_cast<const InnerTeamsvr_Fromscene_LeaderCancelMatch*>(
+               &_InnerTeamsvr_Fromscene_LeaderCancelMatch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(InnerTeamsvr_Fromscene_LeaderCancelMatch& a, InnerTeamsvr_Fromscene_LeaderCancelMatch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerTeamsvr_Fromscene_LeaderCancelMatch* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerTeamsvr_Fromscene_LeaderCancelMatch* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerTeamsvr_Fromscene_LeaderCancelMatch* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerTeamsvr_Fromscene_LeaderCancelMatch>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerTeamsvr_Fromscene_LeaderCancelMatch& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerTeamsvr_Fromscene_LeaderCancelMatch& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerTeamsvr_Fromscene_LeaderCancelMatch";
+  }
+  protected:
+  explicit InnerTeamsvr_Fromscene_LeaderCancelMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr_Fromscene_LeaderCancelMatch)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_teamsvr_2eproto;
+};
 // ===================================================================
 
 
@@ -1203,6 +1841,302 @@ inline ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* InnerTeamsvr::_internal_m
 inline ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* InnerTeamsvr::mutable_fromscene_updateuserinfo() {
   ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo* _msg = _internal_mutable_fromscene_updateuserinfo();
   // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr.fromscene_updateuserinfo)
+  return _msg;
+}
+
+// .inner.InnerTeamsvr_Fromscene_PersonChangeTarget fromscene_personchangetarget = 1404;
+inline bool InnerTeamsvr::_internal_has_fromscene_personchangetarget() const {
+  return Fromscene_case() == kFromscenePersonchangetarget;
+}
+inline bool InnerTeamsvr::has_fromscene_personchangetarget() const {
+  return _internal_has_fromscene_personchangetarget();
+}
+inline void InnerTeamsvr::set_has_fromscene_personchangetarget() {
+  _oneof_case_[0] = kFromscenePersonchangetarget;
+}
+inline void InnerTeamsvr::clear_fromscene_personchangetarget() {
+  if (_internal_has_fromscene_personchangetarget()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete Fromscene_.fromscene_personchangetarget_;
+    }
+    clear_has_Fromscene();
+  }
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* InnerTeamsvr::release_fromscene_personchangetarget() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr.fromscene_personchangetarget)
+  if (_internal_has_fromscene_personchangetarget()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* temp = Fromscene_.fromscene_personchangetarget_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    Fromscene_.fromscene_personchangetarget_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget& InnerTeamsvr::_internal_fromscene_personchangetarget() const {
+  return _internal_has_fromscene_personchangetarget()
+      ? *Fromscene_.fromscene_personchangetarget_
+      : reinterpret_cast< ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget&>(::inner::_InnerTeamsvr_Fromscene_PersonChangeTarget_default_instance_);
+}
+inline const ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget& InnerTeamsvr::fromscene_personchangetarget() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr.fromscene_personchangetarget)
+  return _internal_fromscene_personchangetarget();
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* InnerTeamsvr::unsafe_arena_release_fromscene_personchangetarget() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerTeamsvr.fromscene_personchangetarget)
+  if (_internal_has_fromscene_personchangetarget()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* temp = Fromscene_.fromscene_personchangetarget_;
+    Fromscene_.fromscene_personchangetarget_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerTeamsvr::unsafe_arena_set_allocated_fromscene_personchangetarget(::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* fromscene_personchangetarget) {
+  clear_Fromscene();
+  if (fromscene_personchangetarget) {
+    set_has_fromscene_personchangetarget();
+    Fromscene_.fromscene_personchangetarget_ = fromscene_personchangetarget;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerTeamsvr.fromscene_personchangetarget)
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* InnerTeamsvr::_internal_mutable_fromscene_personchangetarget() {
+  if (!_internal_has_fromscene_personchangetarget()) {
+    clear_Fromscene();
+    set_has_fromscene_personchangetarget();
+    Fromscene_.fromscene_personchangetarget_ = CreateMaybeMessage< ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget >(GetArenaForAllocation());
+  }
+  return Fromscene_.fromscene_personchangetarget_;
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* InnerTeamsvr::mutable_fromscene_personchangetarget() {
+  ::inner::InnerTeamsvr_Fromscene_PersonChangeTarget* _msg = _internal_mutable_fromscene_personchangetarget();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr.fromscene_personchangetarget)
+  return _msg;
+}
+
+// .inner.InnerTeamsvr_Fromscene_PersonCancelMatch fromscene_personcancelmatch = 1405;
+inline bool InnerTeamsvr::_internal_has_fromscene_personcancelmatch() const {
+  return Fromscene_case() == kFromscenePersoncancelmatch;
+}
+inline bool InnerTeamsvr::has_fromscene_personcancelmatch() const {
+  return _internal_has_fromscene_personcancelmatch();
+}
+inline void InnerTeamsvr::set_has_fromscene_personcancelmatch() {
+  _oneof_case_[0] = kFromscenePersoncancelmatch;
+}
+inline void InnerTeamsvr::clear_fromscene_personcancelmatch() {
+  if (_internal_has_fromscene_personcancelmatch()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete Fromscene_.fromscene_personcancelmatch_;
+    }
+    clear_has_Fromscene();
+  }
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* InnerTeamsvr::release_fromscene_personcancelmatch() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr.fromscene_personcancelmatch)
+  if (_internal_has_fromscene_personcancelmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* temp = Fromscene_.fromscene_personcancelmatch_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    Fromscene_.fromscene_personcancelmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch& InnerTeamsvr::_internal_fromscene_personcancelmatch() const {
+  return _internal_has_fromscene_personcancelmatch()
+      ? *Fromscene_.fromscene_personcancelmatch_
+      : reinterpret_cast< ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch&>(::inner::_InnerTeamsvr_Fromscene_PersonCancelMatch_default_instance_);
+}
+inline const ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch& InnerTeamsvr::fromscene_personcancelmatch() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr.fromscene_personcancelmatch)
+  return _internal_fromscene_personcancelmatch();
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* InnerTeamsvr::unsafe_arena_release_fromscene_personcancelmatch() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerTeamsvr.fromscene_personcancelmatch)
+  if (_internal_has_fromscene_personcancelmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* temp = Fromscene_.fromscene_personcancelmatch_;
+    Fromscene_.fromscene_personcancelmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerTeamsvr::unsafe_arena_set_allocated_fromscene_personcancelmatch(::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* fromscene_personcancelmatch) {
+  clear_Fromscene();
+  if (fromscene_personcancelmatch) {
+    set_has_fromscene_personcancelmatch();
+    Fromscene_.fromscene_personcancelmatch_ = fromscene_personcancelmatch;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerTeamsvr.fromscene_personcancelmatch)
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* InnerTeamsvr::_internal_mutable_fromscene_personcancelmatch() {
+  if (!_internal_has_fromscene_personcancelmatch()) {
+    clear_Fromscene();
+    set_has_fromscene_personcancelmatch();
+    Fromscene_.fromscene_personcancelmatch_ = CreateMaybeMessage< ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch >(GetArenaForAllocation());
+  }
+  return Fromscene_.fromscene_personcancelmatch_;
+}
+inline ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* InnerTeamsvr::mutable_fromscene_personcancelmatch() {
+  ::inner::InnerTeamsvr_Fromscene_PersonCancelMatch* _msg = _internal_mutable_fromscene_personcancelmatch();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr.fromscene_personcancelmatch)
+  return _msg;
+}
+
+// .inner.InnerTeamsvr_Fromscene_LeaderStartMatch fromscene_leaderstartmatch = 1406;
+inline bool InnerTeamsvr::_internal_has_fromscene_leaderstartmatch() const {
+  return Fromscene_case() == kFromsceneLeaderstartmatch;
+}
+inline bool InnerTeamsvr::has_fromscene_leaderstartmatch() const {
+  return _internal_has_fromscene_leaderstartmatch();
+}
+inline void InnerTeamsvr::set_has_fromscene_leaderstartmatch() {
+  _oneof_case_[0] = kFromsceneLeaderstartmatch;
+}
+inline void InnerTeamsvr::clear_fromscene_leaderstartmatch() {
+  if (_internal_has_fromscene_leaderstartmatch()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete Fromscene_.fromscene_leaderstartmatch_;
+    }
+    clear_has_Fromscene();
+  }
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* InnerTeamsvr::release_fromscene_leaderstartmatch() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr.fromscene_leaderstartmatch)
+  if (_internal_has_fromscene_leaderstartmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* temp = Fromscene_.fromscene_leaderstartmatch_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    Fromscene_.fromscene_leaderstartmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch& InnerTeamsvr::_internal_fromscene_leaderstartmatch() const {
+  return _internal_has_fromscene_leaderstartmatch()
+      ? *Fromscene_.fromscene_leaderstartmatch_
+      : reinterpret_cast< ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch&>(::inner::_InnerTeamsvr_Fromscene_LeaderStartMatch_default_instance_);
+}
+inline const ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch& InnerTeamsvr::fromscene_leaderstartmatch() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr.fromscene_leaderstartmatch)
+  return _internal_fromscene_leaderstartmatch();
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* InnerTeamsvr::unsafe_arena_release_fromscene_leaderstartmatch() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerTeamsvr.fromscene_leaderstartmatch)
+  if (_internal_has_fromscene_leaderstartmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* temp = Fromscene_.fromscene_leaderstartmatch_;
+    Fromscene_.fromscene_leaderstartmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerTeamsvr::unsafe_arena_set_allocated_fromscene_leaderstartmatch(::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* fromscene_leaderstartmatch) {
+  clear_Fromscene();
+  if (fromscene_leaderstartmatch) {
+    set_has_fromscene_leaderstartmatch();
+    Fromscene_.fromscene_leaderstartmatch_ = fromscene_leaderstartmatch;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerTeamsvr.fromscene_leaderstartmatch)
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* InnerTeamsvr::_internal_mutable_fromscene_leaderstartmatch() {
+  if (!_internal_has_fromscene_leaderstartmatch()) {
+    clear_Fromscene();
+    set_has_fromscene_leaderstartmatch();
+    Fromscene_.fromscene_leaderstartmatch_ = CreateMaybeMessage< ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch >(GetArenaForAllocation());
+  }
+  return Fromscene_.fromscene_leaderstartmatch_;
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* InnerTeamsvr::mutable_fromscene_leaderstartmatch() {
+  ::inner::InnerTeamsvr_Fromscene_LeaderStartMatch* _msg = _internal_mutable_fromscene_leaderstartmatch();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr.fromscene_leaderstartmatch)
+  return _msg;
+}
+
+// .inner.InnerTeamsvr_Fromscene_LeaderCancelMatch fromscene_leadercancelmatch = 1407;
+inline bool InnerTeamsvr::_internal_has_fromscene_leadercancelmatch() const {
+  return Fromscene_case() == kFromsceneLeadercancelmatch;
+}
+inline bool InnerTeamsvr::has_fromscene_leadercancelmatch() const {
+  return _internal_has_fromscene_leadercancelmatch();
+}
+inline void InnerTeamsvr::set_has_fromscene_leadercancelmatch() {
+  _oneof_case_[0] = kFromsceneLeadercancelmatch;
+}
+inline void InnerTeamsvr::clear_fromscene_leadercancelmatch() {
+  if (_internal_has_fromscene_leadercancelmatch()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete Fromscene_.fromscene_leadercancelmatch_;
+    }
+    clear_has_Fromscene();
+  }
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* InnerTeamsvr::release_fromscene_leadercancelmatch() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr.fromscene_leadercancelmatch)
+  if (_internal_has_fromscene_leadercancelmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* temp = Fromscene_.fromscene_leadercancelmatch_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    Fromscene_.fromscene_leadercancelmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch& InnerTeamsvr::_internal_fromscene_leadercancelmatch() const {
+  return _internal_has_fromscene_leadercancelmatch()
+      ? *Fromscene_.fromscene_leadercancelmatch_
+      : reinterpret_cast< ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch&>(::inner::_InnerTeamsvr_Fromscene_LeaderCancelMatch_default_instance_);
+}
+inline const ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch& InnerTeamsvr::fromscene_leadercancelmatch() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr.fromscene_leadercancelmatch)
+  return _internal_fromscene_leadercancelmatch();
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* InnerTeamsvr::unsafe_arena_release_fromscene_leadercancelmatch() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerTeamsvr.fromscene_leadercancelmatch)
+  if (_internal_has_fromscene_leadercancelmatch()) {
+    clear_has_Fromscene();
+    ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* temp = Fromscene_.fromscene_leadercancelmatch_;
+    Fromscene_.fromscene_leadercancelmatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerTeamsvr::unsafe_arena_set_allocated_fromscene_leadercancelmatch(::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* fromscene_leadercancelmatch) {
+  clear_Fromscene();
+  if (fromscene_leadercancelmatch) {
+    set_has_fromscene_leadercancelmatch();
+    Fromscene_.fromscene_leadercancelmatch_ = fromscene_leadercancelmatch;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerTeamsvr.fromscene_leadercancelmatch)
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* InnerTeamsvr::_internal_mutable_fromscene_leadercancelmatch() {
+  if (!_internal_has_fromscene_leadercancelmatch()) {
+    clear_Fromscene();
+    set_has_fromscene_leadercancelmatch();
+    Fromscene_.fromscene_leadercancelmatch_ = CreateMaybeMessage< ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch >(GetArenaForAllocation());
+  }
+  return Fromscene_.fromscene_leadercancelmatch_;
+}
+inline ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* InnerTeamsvr::mutable_fromscene_leadercancelmatch() {
+  ::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch* _msg = _internal_mutable_fromscene_leadercancelmatch();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr.fromscene_leadercancelmatch)
   return _msg;
 }
 
@@ -1890,9 +2824,123 @@ inline void InnerTeamsvr_Fromscene_UpdateUserInfo::clear_has_type() {
 inline InnerTeamsvr_Fromscene_UpdateUserInfo::TypeCase InnerTeamsvr_Fromscene_UpdateUserInfo::type_case() const {
   return InnerTeamsvr_Fromscene_UpdateUserInfo::TypeCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// InnerTeamsvr_Fromscene_PersonChangeTarget
+
+// uint32 targetId = 1;
+inline void InnerTeamsvr_Fromscene_PersonChangeTarget::clear_targetid() {
+  targetid_ = 0u;
+}
+inline uint32_t InnerTeamsvr_Fromscene_PersonChangeTarget::_internal_targetid() const {
+  return targetid_;
+}
+inline uint32_t InnerTeamsvr_Fromscene_PersonChangeTarget::targetid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Fromscene_PersonChangeTarget.targetId)
+  return _internal_targetid();
+}
+inline void InnerTeamsvr_Fromscene_PersonChangeTarget::_internal_set_targetid(uint32_t value) {
+  
+  targetid_ = value;
+}
+inline void InnerTeamsvr_Fromscene_PersonChangeTarget::set_targetid(uint32_t value) {
+  _internal_set_targetid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Fromscene_PersonChangeTarget.targetId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerTeamsvr_Fromscene_PersonCancelMatch
+
+// -------------------------------------------------------------------
+
+// InnerTeamsvr_Fromscene_LeaderStartMatch
+
+// bytes text = 1;
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::clear_text() {
+  text_.ClearToEmpty();
+}
+inline const std::string& InnerTeamsvr_Fromscene_LeaderStartMatch::text() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.text)
+  return _internal_text();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void InnerTeamsvr_Fromscene_LeaderStartMatch::set_text(ArgT0&& arg0, ArgT... args) {
+ 
+ text_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.text)
+}
+inline std::string* InnerTeamsvr_Fromscene_LeaderStartMatch::mutable_text() {
+  std::string* _s = _internal_mutable_text();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.text)
+  return _s;
+}
+inline const std::string& InnerTeamsvr_Fromscene_LeaderStartMatch::_internal_text() const {
+  return text_.Get();
+}
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::_internal_set_text(const std::string& value) {
+  
+  text_.Set(value, GetArenaForAllocation());
+}
+inline std::string* InnerTeamsvr_Fromscene_LeaderStartMatch::_internal_mutable_text() {
+  
+  return text_.Mutable(GetArenaForAllocation());
+}
+inline std::string* InnerTeamsvr_Fromscene_LeaderStartMatch::release_text() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.text)
+  return text_.Release();
+}
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::set_allocated_text(std::string* text) {
+  if (text != nullptr) {
+    
+  } else {
+    
+  }
+  text_.SetAllocated(text, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (text_.IsDefault()) {
+    text_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.text)
+}
+
+// uint32 languageId = 2;
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::clear_languageid() {
+  languageid_ = 0u;
+}
+inline uint32_t InnerTeamsvr_Fromscene_LeaderStartMatch::_internal_languageid() const {
+  return languageid_;
+}
+inline uint32_t InnerTeamsvr_Fromscene_LeaderStartMatch::languageid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.languageId)
+  return _internal_languageid();
+}
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::_internal_set_languageid(uint32_t value) {
+  
+  languageid_ = value;
+}
+inline void InnerTeamsvr_Fromscene_LeaderStartMatch::set_languageid(uint32_t value) {
+  _internal_set_languageid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Fromscene_LeaderStartMatch.languageId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerTeamsvr_Fromscene_LeaderCancelMatch
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -10,16 +10,25 @@ namespace common
 	class TeamMemberFieldList;
 }
 
+namespace inner
+{
+	class InnerTeamMember;
+	class InnerTeamMemberField;
+}
+
 class TeamUser;
 class SessionTeam;
 class TeamMember
 {
 public:
+	friend class SessionTeam;
 	TeamMember();
 	~TeamMember();
 	void final();
 	//bool sendCmdToMe();
+	//发送给自己
 	bool sendChgFieldToMe(std::initializer_list<uint32> changes);
+	//队伍内成员广播
 	bool sendChgFieldToTeam(std::initializer_list<uint32> changes);
 	void fill(common::PlatTeamMember& out);
 	void fill(common::TeamMember& out);
@@ -27,8 +36,10 @@ public:
 	void fillShare(common::TeamMemberFieldList& out, uint32 fieldId);
 	void fillSelf(common::TeamMemberFieldList& out, uint32 fieldId);
 public:
+	//需要广播,每个线的玩家都能看到队伍成员信息
 	bool broadChgFieldToScene(std::initializer_list<uint32> changes);
-	//void fill(inner::InnerTeamMemeber);
+	void fill(inner::InnerTeamMember& out);
+	void fill(inner::InnerTeamMemberField& out, uint32 fieldId);
 public:
 	inline SessionTeam* teamPtr() { return _team; }
 	inline SessionTeam& teamRef() { return *_team; }
@@ -61,7 +72,10 @@ public:
 	void resetExpireAppoint();
 	void tryExpireRemove();
 	void jumpToLeader(uint32 eJumpTo, uint32 sceneHashId);
-private:
+protected:
+	void __setTeam(SessionTeam* team);
+	void __setNotTeam();
+public:
 	TeamUser* pUser = nullptr;
 private:
 	SessionTeam* _team = nullptr;

@@ -39,7 +39,7 @@ enum enModuleTeam
 	enModuleTeam_Req_AreeTogether						= 31;				//同意召集
 	enModuleTeam_Req_RefuseTogether						= 32;				//拒绝召集
 	enModuleTeam_Req_ReplaceLeader						= 33;				//顶替队长
-	enModuleTeam_Req_PersonChangeTarget					= 34;				//单人改变目标
+	enModuleTeam_Req_PersonChangeTarget					= 34;				//单人改变目标匹配队伍
 	enModuleTeam_Req_PersonCancelMatch					= 35;				//单人取消匹配
 	enModuleTeam_Ntf_LeaderTogetherMember				= 36;				//通知队长召集
 	enModuleTeam_Ntf_LeaderEmptyApply					= 37;				//通知队长清空申请
