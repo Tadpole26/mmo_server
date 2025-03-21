@@ -1,9 +1,8 @@
 #include "CServerNetface.h"
-#include "msg_module_servercommon.pb.h"
 #include "module.pb.h"
 #include "parse_pb.h"
 #include "msg_make.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 #include "global_define.h"
 
 CClientLogic::CClientLogic() { }

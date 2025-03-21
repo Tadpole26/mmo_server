@@ -1,6 +1,14 @@
 #include "TeamUserMgr.h"
 #include "TeamUser.h"
 
+TeamUserMgr::TeamUserMgr()
+{
+}
+
+TeamUserMgr::~TeamUserMgr()
+{
+}
+
 TeamUser* TeamUserMgr::tryCreateRole(uint32 zoneIdF, zRoleIdType roleId)
 {
 	auto* pUser = getRole(roleId);

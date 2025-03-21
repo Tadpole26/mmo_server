@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\Bin\$(TargetFileName)</OutDir>
+    <IntDir>..\BuildBin\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -144,6 +148,7 @@
     <ClCompile Include="TeamServer.cpp" />
     <ClCompile Include="TeamUser.cpp" />
     <ClCompile Include="TeamUserMgr.cpp" />
+    <ClCompile Include="TeamVote.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServerNetface.h" />
@@ -157,6 +162,7 @@
     <ClInclude Include="TeamMgr.h" />
     <ClInclude Include="TeamUser.h" />
     <ClInclude Include="TeamUserMgr.h" />
+    <ClInclude Include="TeamVote.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

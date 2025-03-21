@@ -1,5 +1,13 @@
+#include "innercommon.pb.h"
+#include "teamcommon.pb.h"
+#include "team.pb.h"
+#include "innerteam.pb.h"
+
+#include "TeamUser.h"
+#include "TeamUserMgr.h"
 #include "TeamMgr.h"
 #include "SessionTeam.h"
+#include "TeamVote.h"
 #include "TeamConfig.h"
 
 bool TeamMgr::validMatchSize(uint32 sz)
@@ -60,12 +68,42 @@ bool TeamMgr::init()
 	return true;
 }
 
+void TeamMgr::tick()
+{
+	//队伍匹配个人填充队伍
+	if (!_activeLvQueue.empty())
+	{
+		for (auto iter = _activeLvQueue.begin(); iter != _activeLvQueue.end();)
+		{
+			auto del = iter++;
+			auto* pLvQueue = *del;
+			if (pLvQueue->tick())
+				break;
+		}
+	}
+	//投票过期
+	if (!_allVoteQueue.empty())
+	{
+		for (auto iter = _allVoteQueue.begin(); iter != _allVoteQueue.end();)
+		{
+			auto del = iter++;
+			auto* pVote = *del;
+			if (!pVote->tick()) continue;
+			_allVoteQueue.erase(del);
+			_allVote.erase(pVote->getUid());
+			pVote->final();
+			SAFE_DELETE(pVote);
+		}
+	}
+}
+
 SessionTeam* TeamMgr::createTeam()
 {
 	auto* team = new SessionTeam(__createTeamId());
 	assert(team != nullptr);
 	_allTeam[team->getTeamId()] = team;
 	Log_Info("createTeam,%lu", team->getTeamId());
+	return team;
 }
 
 SessionTeam* TeamMgr::getTeam(zTeamIdType teamId)
@@ -95,12 +133,33 @@ void TeamMgr::batDestroyTeam(std::initializer_list<zTeamIdType> teamList)
 {
 }
 
-void TeamMgr::batLeaveTeam()
+void TeamMgr::batLeaveTeam(const inner::InnerRoleIdList& roleList)
 {
+	std::vector<TeamUser*> vecRoleList;
+	for (auto i = 0; i < roleList.roleids_size(); ++i)
+	{
+		auto roleId = roleList.roleids(i);
+		auto* pUser = gTeamUserMgr->getRole(roleId);
+		assert(pUser != nullptr);
+		if (pUser->pMem)
+		{
+			vecRoleList.push_back(pUser);
+		}
+	}
+	if (!vecRoleList.empty())
+	{
+		batLeaveTeam(vector_to_initializer_list<TeamUser*>(vecRoleList), common::enLeaveTeamType_Active);
+	}
 }
 
 void TeamMgr::batLeaveTeam(std::initializer_list<TeamUser*> roleList, uint32 eLeave)
 {
+	for (auto* pUser : roleList)
+	{
+		if (pUser->pMem != nullptr)
+			pUser->leaveTeam(eLeave);
+			
+	}
 }
 
 bool TeamMgr::createTargetQueue(const config::team_info_t& cfg)
@@ -150,6 +209,57 @@ void TeamMgr::removeLvQueueFromActive(TeamLevelQueue* pLvQueue)
 	}
 }
 
+TeamVote* TeamMgr::createVote()
+{
+	return createVote(0, true);
+}
+
+TeamVote* TeamMgr::createVote(uint32 lastingTime, bool agreeByDefault)
+{
+	auto uid = __createVoteId();
+	if (_allVote.find(uid) != _allVote.end())
+	{
+		return nullptr;
+	}
+	auto* pVote = new TeamVote(uid);
+	if (!addTeamVote(pVote))
+	{
+		pVote->final();
+		SAFE_DELETE(pVote);
+		return nullptr;
+	}
+	pVote->setLastingTime(lastingTime);
+	pVote->setAgreeByDefault(agreeByDefault);
+	return pVote;
+}
+
+TeamVote* TeamMgr::getVote(zVoteIdType voteUid)
+{
+	auto iter = _allVote.find(voteUid);
+	if (iter == _allVote.end()) return nullptr;
+	return iter->second;
+}
+
+bool TeamMgr::addTeamVote(TeamVote* pVote)
+{
+	assert(pVote != nullptr);
+	assert(pVote->listIt == getVoteItEnd());;
+	if (!_allVote.emplace(pVote->getUid(), pVote).second)
+		return false;
+	_allVoteQueue.push_back(pVote);
+	pVote->setListIt(--_allVoteQueue.end());
+	return true;
+}
+
+void TeamMgr::removeTeamVote(TeamVote* pVote)
+{
+	assert(pVote != nullptr);
+	assert(pVote->listIt != getVoteItEnd());
+	_allVote.erase(pVote->getUid());
+	_allVoteQueue.erase(pVote->listIt);
+	pVote->setListIt(getVoteItEnd());
+}
+
 zTeamIdType TeamMgr::__createTeamId()
 {
 	if (_idpair.first != GetCurrTime())
@@ -158,4 +268,10 @@ zTeamIdType TeamMgr::__createTeamId()
 		_idpair.second = 1;
 	}
 	return cTeam::unionTeamId(520, _idpair.first, _idpair.second++);
+}
+
+zVoteIdType TeamMgr::__createVoteId()
+{
+	while (!++_voteIncreaseId);
+	return _voteIncreaseId;
 }

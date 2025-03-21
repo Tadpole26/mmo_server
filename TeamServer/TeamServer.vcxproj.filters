@@ -1,55 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CServerNetface.cpp" />
     <ClCompile Include="TeamLogic.cpp" />
     <ClCompile Include="TeamServer.cpp" />
     <ClCompile Include="NetMsgFromScene.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
-    <ClCompile Include="TeamUserMgr.cpp" />
     <ClCompile Include="EventGameUser.cpp">
-      <Filter>event</Filter>
+      <Filter>Event</Filter>
     </ClCompile>
     <ClCompile Include="TeamMember.cpp" />
     <ClCompile Include="TeamLeader.cpp" />
     <ClCompile Include="TeamApply.cpp" />
-    <ClCompile Include="SessionTeam.cpp" />
     <ClCompile Include="TeamUser.cpp">
       <Filter>User</Filter>
     </ClCompile>
     <ClCompile Include="MyTeam.cpp">
       <Filter>User</Filter>
     </ClCompile>
-    <ClCompile Include="TeamMgr.cpp" />
-    <ClCompile Include="TeamQueue.cpp" />
+    <ClCompile Include="TeamUserMgr.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamMgr.cpp">
+      <Filter>Team</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionTeam.cpp">
+      <Filter>Team</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerNetface.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamQueue.cpp">
+      <Filter>Team</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamVote.cpp">
+      <Filter>Vote</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CServerNetface.h" />
     <ClInclude Include="TeamLogic.h" />
     <ClInclude Include="NetMsgFromScene.h">
       <Filter>Netface</Filter>
     </ClInclude>
-    <ClInclude Include="TeamUserMgr.h" />
     <ClInclude Include="TeamMember.h" />
     <ClInclude Include="TeamLeader.h" />
     <ClInclude Include="TeamApply.h" />
-    <ClInclude Include="SessionTeam.h" />
     <ClInclude Include="TeamUser.h">
       <Filter>User</Filter>
     </ClInclude>
-    <ClInclude Include="TeamMgr.h" />
     <ClInclude Include="TeamDefine.h" />
+    <ClInclude Include="TeamUserMgr.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamMgr.h">
+      <Filter>Team</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionTeam.h">
+      <Filter>Team</Filter>
+    </ClInclude>
+    <ClInclude Include="CServerNetface.h">
+      <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamVote.h">
+      <Filter>Vote</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Netface">
       <UniqueIdentifier>{4cb153b4-5700-48ab-ab3f-03d5d70e56cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="event">
-      <UniqueIdentifier>{6fff7f07-a655-4c0f-b5a8-af4391319dbe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="User">
       <UniqueIdentifier>{e95bbfcd-71ae-41ae-b0d0-ebad3a7570cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Team">
+      <UniqueIdentifier>{08513c8b-33a5-42c7-aa9a-4fda48256cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{6fff7f07-a655-4c0f-b5a8-af4391319dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vote">
+      <UniqueIdentifier>{5e926a09-4390-4a71-8d0c-bf8bd8a84026}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

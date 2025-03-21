@@ -3,6 +3,7 @@
 #include "logic_thread.h"
 #include "server_logic_face.h"
 #include "util_arg_opt.h"
+#include "sdk.h"
 
 
 class CGateSession;

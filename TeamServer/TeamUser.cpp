@@ -8,8 +8,36 @@
 #include "TeamMember.h"
 #include "TeamLeader.h"
 #include "SessionTeam.h"
+#include "TeamUserMgr.h"
 #include "ParamConfig.h"
 #include "TeamConfig.h"
+
+TeamUser::TeamUser(const zRoleIdType roleId) :
+	cUser(roleId)
+{
+	_brief = new common::RoleBrief();
+	_extd1 = new common::RoleExtend1();
+	_extd2 = new common::RoleExtend2();
+	_extd3 = new common::RoleExtend3();
+	_f33 = new common::ExtendFight3v3();
+	_f55 = new common::ExtendFight5v5();
+}
+
+TeamUser::~TeamUser()
+{
+}
+
+void TeamUser::final()
+{
+	gTeamUserMgr->removeRole(this);
+	SAFE_DELETE(_brief);
+	SAFE_DELETE(_extd1);
+	SAFE_DELETE(_extd2);
+	SAFE_DELETE(_extd3);
+	SAFE_DELETE(_f33);
+	SAFE_DELETE(_f55);
+	cUser::final();
+}
 
 void TeamUser::setSceneHashId(uint32 hashId)
 {
@@ -191,4 +219,10 @@ void TeamUser::tryExpireRemove()
 	if (isExpireCreate()) resetExpireCreate();
 	if (isExpireInvite()) resetInvite();
 	//if (isExpireTotal()) 
+}
+
+void TeamUser::setVotePtr(TeamVote* vote)
+{
+	assert((bool)vote == !isVoting());
+	_vote = vote;
 }

@@ -87,10 +87,166 @@ void NetMsgFromScene::handle_msg(const tagMsgHead* pNetMsg)
 	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderstartmatch:
 	{
 		const auto& req = innerReq.fromscene_leaderstartmatch();
+		pUser->innerLeaderStartMatch(req.text(), req.languageid());
 	}
 	break;
 	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeadercancelmatch:
 	{
+		const auto& req = innerReq.fromscene_leadercancelmatch();
+		pUser->innerLeaderCancelMatch();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneTargetteamlist:
+	{
+		//tr队伍列表拉去走http
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneCreateteam:
+	{
+		const auto& req = innerReq.fromscene_createteam();
+		pUser->innerCreateTeam(req.targetid(), req.minlevel(), req.maxlevel());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneFiremember:
+	{
+		const auto& req = innerReq.fromscene_firemember();
+		pUser->innerLeaderFireMember(req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderchangetarget:
+	{
+		const auto& req = innerReq.fromscene_leaderchangetarget();
+		pUser->innerLeaderChangeTarget(req.targetid(), req.minlevel(), req.maxlevel());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeadertogethermember:
+	{
+		const auto& req = innerReq.fromscene_leadertogethermember();
+		pUser->innerLeaderTogetherMember(req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderappoint:
+	{
+		const auto& req = innerReq.fromscene_leaderappoint();
+		pUser->innerleaderAppoint(req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderrefuseallapply:
+	{
+		const auto& req = innerReq.fromscene_leaderrefuseallapply();
+		pUser->innerLeaderRefuseAllApply();
+	}
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderagreeallapply:
+	{
+		const auto& req = innerReq.fromscene_leaderagreeallapply();
+		pUser->innerLeaderAgreeAllApply();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderrefuseapply:
+	{
+		const auto& req = innerReq.fromscene_leaderrefuseapply();
+		pUser->innerLeaderRefuseApply(req.zoneidf(), req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneLeaderagreeapply:
+	{
+		const auto& req = innerReq.fromscene_leaderagreeapply();
+		pUser->innerLeaderAgreeApply(req.zoneidf(), req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneInvitefriend:
+	{
+		const auto& req = innerReq.fromscene_invitefriend();
+		pUser->innerInviteFriend(req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneInvitefamily:
+	{
+		const auto& req = innerReq.fromscene_invitefamily();
+		pUser->innerInviteFamily(req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneInviteplayer:
+	{
+		const auto& req = innerReq.fromscene_inviteplayer();
+		pUser->innerInvitePlayer(req.zoneidf(), req.roleid());
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneAgreeinvited:
+	{
+		const auto& req = innerReq.fromscene_agreeinvited();
+		pUser->innerAgreeInvited(1);
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneRefuseinvited:
+	{
+		const auto& req = innerReq.fromscene_refuseinvited();
+		pUser->innerRefuseInvited();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneBatleaveteam:
+	{
+		const auto& req = innerReq.fromscene_batleaveteam();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneApplyteam:
+	{
+		const auto& req = innerReq.fromscene_applyteam();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneFollowleader:
+	{
+		const auto& req = innerReq.fromscene_followleader();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneCancelfollow:
+	{
+		const auto& req = innerReq.fromscene_cancelfollow();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneAgreetogether:
+	{
+		const auto& req = innerReq.fromscene_agreetogether();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneRefusetogether:
+	{
+		const auto& req = innerReq.fromscene_refusetogether();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneReplaceleader:
+	{
+		const auto& req = innerReq.fromscene_replaceleader();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromscenePersonvote:
+	{
+		const auto& req = innerReq.fromscene_personvote();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneEnterbyvote:
+	{
+		const auto& req = innerReq.fromscene_enterbyvote();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneChatteam:
+	{
+		const auto& req = innerReq.fromscene_chatteam();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneBatcreateteam:
+	{
+		const auto& req = innerReq.fromscene_batcreateteam();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneBatdestroyteam:
+	{
+		const auto& req = innerReq.fromscene_batdestroyteam();
+	}
+	break;
+	case inner::InnerTeamsvr::FromsceneCase::kFromsceneJumptoleader:
+	{
+		const auto& req = innerReq.fromscene_jumptoleader();
 	}
 	break;
 	default:

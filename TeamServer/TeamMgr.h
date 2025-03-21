@@ -8,6 +8,11 @@ namespace common
 	class PlatTargetTeamList;
 }
 
+namespace inner
+{
+	class InnerRoleIdList;
+}
+
 class TeamSizeQueueTarget
 {
 public:
@@ -118,13 +123,15 @@ public:
 	using TeamIdPairT = std::pair<uint32, uint32>;
 	using AllTeamMapT = std::unordered_map<zTeamIdType, SessionTeam*>;
 	using AllTargetMapT = std::unordered_map<uint32, TeamTargetQueue*>;
+	using TeamVoteMapT = std::unordered_map<zVoteIdType, TeamVote*> ;
+	using TeamVoteListT = std::list<TeamVote*>;
 public:
 	SessionTeam* createTeam();
 	SessionTeam* getTeam(zTeamIdType teamId);
 	void destroyTeam(zTeamIdType teamId);
 	//void batCreateTeam(uint32 sceneHashId, const inner::InnerCopyTeamList* in);
 	void batDestroyTeam(std::initializer_list<zTeamIdType> teamList);
-	void batLeaveTeam();
+	void batLeaveTeam(const inner::InnerRoleIdList& roleList);
 	void batLeaveTeam(std::initializer_list<TeamUser*> roleList, uint32 eLeave);
 	//void batLeaveCopy(uint32 sceneHashId);
 public:
@@ -135,14 +142,23 @@ public:
 	TeamTargetQueue& tgQueueRef(uint32 targetId);
 	void addLvQueueToActive(TeamLevelQueue* pLvQueue);
 	void removeLvQueueFromActive(TeamLevelQueue* pLvQueue);
+	TeamVote* createVote();
+	TeamVote* createVote(uint32 lastingTime, bool agreeByDefault);
+	TeamVote* getVote(zVoteIdType voteUid);
+	bool addTeamVote(TeamVote* pVote);
+	void removeTeamVote(TeamVote* pVote);
+	TeamVoteListItT getVoteItEnd() { return _allVoteQueue.end(); }
 private:
 	zTeamIdType __createTeamId();
-
+	zVoteIdType __createVoteId();
 private:
 	TeamIdPairT _idpair;							//队伍id生成器
 	AllTeamMapT _allTeam;							//所有创建的队伍
 	AllTargetMapT _allTgQueue;						//所有目标对应队伍(用于界面展示)
 	TeamLevelQueueListT _activeLvQueue;				//激活相同等级匹配
+	TeamVoteMapT _allVote;						
+	TeamVoteListT _allVoteQueue;
+	zVoteIdType _voteIncreaseId = 0;
 };
 
 #define gTeamMgr Singleton<TeamMgr>::getInstance()

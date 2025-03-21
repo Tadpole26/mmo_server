@@ -1,9 +1,11 @@
 #include "team.pb.h"
+#include "innerteam.pb.h"
 
 #include "TeamUser.h"
 #include "TeamMember.h"
 #include "TeamLeader.h"
 #include "TeamApply.h"
+#include "SessionTeam.h"
 #include "ParamConfig.h"
 
 TeamLeader::TeamLeader(TeamMember* pMember) 
@@ -102,23 +104,138 @@ void TeamLeader::tryExpireRemove()
 void TeamLeader::agreeApply(TeamUser* pUser)
 {
 	assert(pUser != nullptr);
+	if (pUser->isTeamPersonMatching())
+	{
+		pUser->cancelMatchPerson();
+	}
+	auto* pTeam = memberRef().teamPtr();
+	if (!pTeam->isMemberFull())
+	{
+		assert(pUser->pMem == nullptr);
+		pTeam->createMember(pUser);
+		deleteApply(pUser);
+		//pUser->pMem->jumpToLeader();				//跳转到队长旁边
+	}
 
 }
 
 void TeamLeader::refuseApply(TeamUser* pUser)
 {
+	assert(pUser != nullptr);
+	deleteApply(pUser);
 }
 
 void TeamLeader::togetherMember(TeamMember* pMember)
 {
+	_pMem->setExpireTogether();
+	_pMem->sendChgFieldToMe({common::TMFieldType_Together});
+	client::ModuleTeam_Ntf_LeaderTogetherMember ntf;
+	if (pMember != nullptr && _pMem->pUser->getEproc() == pMember->pUser->getEproc())
+	{
+		//pMember->sendCmdtToMe(client::enClientFirst_Team, client::enSecondTeam_Ntf_LeaderTogetherMember, ntf);
+	}
+	else
+	{
+		_pMem->teamRef().foreachMem([&](auto& memRef)->bool
+			{
+				if (memRef.isLeader()) return true;
+				if (memRef.pUser->getEproc() != _pMem->pUser->getEproc()) return true;
+				//memRef.sendCmeToMe(client::enClientFirst_Team, client::enSecondTeam_Ntf_LeaderTogetherMember, ntf);
+				return true;
+			});
+	}
 }
 
 void TeamLeader::appointLeader(TeamMember* pMember)
 {
+	assert(pMember != _pMem);
+	auto* pTeam = _pMem->teamPtr();
+	assert(pMember->teamPtr() == pTeam);
+
+	auto idx1 = _pMem->getIndex();
+	auto idx2 = pMember->getIndex();
+
+	_pMem->setIndex(idx2);
+	pMember->setIndex(idx1);
+	pMember->setExpireAppoint();
+	auto* pOld = _pMem;
+	_pMem = pMember;
+
+	std::vector<uint32> v2{ common::TFieldType_LeaderId };
+	if (pOld->pUser->getSceneId() != _pMem->pUser->getSceneId())
+	{
+		v2.push_back(common::TFieldType_LeaderSceneId);
+	}
+	pTeam->broadChgFieldToScene({ inner::TFType_LeaderId });
+	pTeam->sendChgFieldToTeam(vector_to_initializer_list<uint32>(v2));
+
+	pOld->broadChgFieldToScene({ inner::TMFType_Index });
+	pOld->sendChgFieldToTeam({ common::TMFieldType_Index });
+
+	std::vector<uint32> v3{ inner::TMFType_Index };
+	std::vector<uint32> v4{ common::TMFieldType_Index };
+	if (_pMem->isFollow())
+	{
+		_pMem->resetFollow();
+		v3.push_back(inner::TMFType_Follow);
+		v4.push_back(common::TMFieldType_Follow);
+	}
+	_pMem->broadChgFieldToScene(vector_to_initializer_list<uint32>(v3));
+	_pMem->sendChgFieldToTeam(vector_to_initializer_list<uint32>(v4));
+	//通知清空前队长申请列表
+	client::ModuleTeam_Ntf_LeaderEmptyApply ntf1;
+	//pOld->sendChgFieldToMe(client::enClientFirst_Team, client::enModuleTeam_Ntf_LeaderEmptyApply, ntf1);
+
+	client::ModuleTeam_Ntf_LeaderAddApply ntf2;
+	fill(*ntf2.mutable_applylist());
+	//_pMem->sendChgFieldToMe(client::enClientFirst_Team, client::enModuleTeam_Ntf_LeaderAddApply, ntf2);
+	_pMem->sendChgFieldToMe({ common::TMFieldType_Appoint });
 }
 
 void TeamLeader::replaceLeader(TeamMember* pMember)
 {
+	assert(pMember != _pMem);
+	auto* pTeam = _pMem->teamPtr();
+	assert(pMember->teamPtr() == pTeam);
+
+	auto idx1 = _pMem->getIndex();
+	auto idx2 = pMember->getIndex();
+
+	_pMem->setIndex(idx2);
+	pMember->setIndex(idx1);
+	pMember->setExpireReplace();
+	auto* pOld = _pMem;
+	_pMem = pMember;
+
+	std::vector<uint32> v2{common::TFieldType_LeaderId};
+	if (pOld->pUser->getSceneId() != _pMem->pUser->getSceneId())
+	{
+		v2.push_back(common::TFieldType_LeaderSceneId);
+	}
+	pTeam->broadChgFieldToScene({inner::TFType_LeaderId});
+	pTeam->sendChgFieldToTeam(vector_to_initializer_list<uint32>(v2));
+
+	pOld->broadChgFieldToScene({inner::TMFType_Index});
+	pOld->sendChgFieldToTeam({common::TMFieldType_Index});
+
+	std::vector<uint32> v3{inner::TMFType_Index};
+	std::vector<uint32> v4{common::TMFieldType_Index};
+	if (_pMem->isFollow())
+	{
+		_pMem->resetFollow();
+		v3.push_back(inner::TMFType_Follow);
+		v4.push_back(common::TMFieldType_Follow);
+	}
+	_pMem->broadChgFieldToScene(vector_to_initializer_list<uint32>(v3));
+	_pMem->sendChgFieldToTeam(vector_to_initializer_list<uint32>(v4));
+	//通知清空前队长申请列表
+	client::ModuleTeam_Ntf_LeaderEmptyApply ntf1;
+	//pOld->sendChgFieldToMe(client::enClientFirst_Team, client::enModuleTeam_Ntf_LeaderEmptyApply, ntf1);
+
+	client::ModuleTeam_Ntf_LeaderAddApply ntf2;
+	fill(*ntf2.mutable_applylist());
+	//_pMem->sendChgFieldToMe(client::enClientFirst_Team, client::enModuleTeam_Ntf_LeaderAddApply, ntf2);
+	_pMem->sendChgFieldToMe({common::TMFieldType_Replace});
 }
 
 void TeamLeader::__addApply(TeamApply* pApply)

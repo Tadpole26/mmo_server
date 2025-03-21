@@ -7,6 +7,8 @@
 namespace inner
 {
 	class InnerGameEvent;
+	class InnerCopyPve;
+	class InnerCopyEnter;
 }
 
 namespace common
@@ -36,6 +38,10 @@ class TeamUser : public cUser
 {
 public:
 	using LevelQueuePairT = std::pair<TeamLevelQueue*, TeamSingleListItT>;
+public:
+	TeamUser(const zRoleIdType roleId);
+	virtual ~TeamUser();
+	void final() override;
 private:
 	uint32 _sceneHashId = 0;
 	common::RoleBrief* _brief = nullptr;
@@ -53,10 +59,15 @@ private:
 	uint32 _apply = 0;								//主动申请(过期时间)
 	uint32 _create = 0;								//创建队伍(过期时间)	
 	uint32 _match = 0;								//主动匹配队伍
+	TeamVote* _vote = nullptr;						//投票中
 public:
 	LevelQueuePairT lvQueuePair;					//是否个人匹配队伍
 	TeamMember* pMem = nullptr;						//队伍成员
 	MatchUnit* pUnit = nullptr;						//当前正在pvp匹配
+public:
+	TeamVote* votePtr() const { return _vote; }
+	bool isVoting() const { return votePtr() != nullptr; }
+	void setVotePtr(TeamVote* vote);
 public:
 	void fill(common::RoleBrief& out);
 	void fill(common::RoleExtend1& out);
@@ -89,7 +100,7 @@ public:
 	uint32 getFightPoint();
 	uint32 getChatFont();
 	uint32 getChatFrame();
-	uint32 getEproc() { }
+	uint32 getEproc() { return 0; }
 	uint32 getSceneHashId() { return _sceneHashId; }
 	zSceneIdType getSceneId();
 public:
@@ -142,9 +153,33 @@ public:
 	void evGameChangeMap(const inner::InnerGameEvent& in);
 public:
 	void mountTeam();
+	void leaveTeam(uint32 eLeave);
 public:
 	bool innerPersonChangeTarget(uint32 targetId);
 	bool innerPersonCancelMatch();
 	bool innerLeaderStartMatch(const std::string& text, uint32 languageId, uint32 teamId = 0);
 	bool innerLeaderCancelMatch();
+	bool innerCreateTeam(uint32 targetId, uint32 minLevel, uint32 maxLevel);
+	bool innerLeaderChangeTarget(uint32 targetId, uint32 minLevel, uint32 maxLevel);
+	bool innerLeaderFireMember(zRoleIdType roleId);
+	bool innerLeaderTogetherMember(zRoleIdType roleId);
+	bool innerleaderAppoint(zRoleIdType roleId);
+	bool innerLeaderRefuseAllApply();
+	bool innerLeaderAgreeAllApply();
+	bool innerLeaderRefuseApply(uint32 zoneIdF, zRoleIdType roleId);
+	bool innerLeaderAgreeApply(uint32 zoneIdF, zRoleIdType roleId);
+	bool innerInviteFriend(zRoleIdType roleId);
+	bool innerInviteFamily(zRoleIdType roleId);
+	bool innerInvitePlayer(uint32 zoneIdF, zRoleIdType roleId);
+	bool innerAgreeInvited(uint32 sceneHashId);
+	bool innerRefuseInvited();
+	bool innerApplyTeam(uint32 sceneHashId, zTeamIdType teamId, zSceneIdType leaderSceneId);
+	bool innerFollowLeader();
+	bool innerCancelFollow();
+	bool innerAgreeTogether(uint32 sceneHashId);
+	bool innerRefuseTogether();
+	bool innerReplaceLeader();
+	bool innerJumpToLeader(uint32 sceneHashId, uint32 eJumpTo);
+	bool innerEnterByVote(const inner::InnerCopyPve& pve, const inner::InnerCopyEnter& enter);
+	bool innerPersonVote(bool agree);
 };

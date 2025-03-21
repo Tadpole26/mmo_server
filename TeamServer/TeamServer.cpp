@@ -1,5 +1,5 @@
 #include  "TeamLogic.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 #include "func_proc.h"
 
 int main(int argc, char* argv[])

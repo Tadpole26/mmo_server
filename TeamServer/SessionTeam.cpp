@@ -11,7 +11,7 @@
 
 SessionTeam::SessionTeam(zTeamIdType teamId) : _teamId(teamId)
 {
-	for (auto idx = 1; idx <= gTeamCfg->maxTeamPlayer; ++idx)
+	for (uint32 idx = 1; idx <= gTeamCfg->maxTeamPlayer; ++idx)
 	{
 		_indexs.push_back(idx);
 	}
@@ -120,6 +120,7 @@ bool SessionTeam::broadRecruitToWorld()
 	setRecruitExpire();
 	client::ModuleTeam_Ntf_TeamRecruitInfo ntf;
 	fill(*ntf.mutable_recruit());
+	return true;
 }
 
 bool SessionTeam::sendCmdToTeam(const uint32 first, const uint32 second, const google::protobuf::Message& in)
@@ -145,6 +146,7 @@ bool SessionTeam::sendChgFieldToTeam(std::initializer_list<uint32> changes)
 		fill(*ntf.mutable_fieldlist(), fieldId);
 	}
 	//return sendCmdToTeam(client::enClientFirt_Team, client::enSecondTeam_Ntf_UpdateTeam, ntf);
+	return true;
 }
 
 void SessionTeam::fill(inner::InnerTeam& out)
@@ -155,7 +157,7 @@ void SessionTeam::fill(inner::InnerTeam& out)
 	auto& mmap = *out.mutable_mlist();
 	foreachMem([&](auto& memRef)->bool
 	{
-		memRef.fill(mmap[memRef.pUser->getRoleId]);
+		memRef.fill(mmap[memRef.pUser->getRoleId()]);
 		return true;
 	});
 }
@@ -241,6 +243,7 @@ bool SessionTeam::isRecruitExpire()
 
 bool SessionTeam::checkMidwayJoin(zSceneIdType leaderSceneId)
 {
+	return true;
 }
 
 zRoleIdType SessionTeam::getLeaderId()
@@ -250,11 +253,22 @@ zRoleIdType SessionTeam::getLeaderId()
 
 TeamMember* SessionTeam::getMember(zRoleIdType roleId)
 {
+	TeamMember* pFind = nullptr;
+	foreachMem([&](auto& memRef)->bool 
+	{
+		if (memRef.pUser->getRoleId() == roleId)
+		{
+			pFind = &memRef;
+			return false;
+		}
+		return true;
+	});
+	return pFind;
 }
 
 TeamMember* SessionTeam::leaderPtr()
 {
-	_leader->memberPtr();
+	return _leader->memberPtr();
 }
 
 void SessionTeam::createLeader(TeamUser* pUser)

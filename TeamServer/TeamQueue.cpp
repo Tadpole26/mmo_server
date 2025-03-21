@@ -125,11 +125,13 @@ bool TeamLevelQueue::tick()
 		{
 			auto* pUser = _allUser.front();
 			auto* pTeam = pSzQueueLv->front();
-			//pUser->
+			pUser->cancelMatchPerson();
 				//匹配队伍成功
 			pTeam->createMember(pUser);
+			return true;
 		}
 	}
+	return false;
 }
 
 //既有队伍匹配,也有单个玩家在匹配,激活队列

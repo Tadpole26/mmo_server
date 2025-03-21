@@ -4,6 +4,7 @@
 
 #include "TeamUser.h"
 #include "TeamMember.h"
+#include "SessionTeam.h"
 #include "ParamConfig.h"
 
 TeamMember::TeamMember()
@@ -21,7 +22,7 @@ void TeamMember::final()
 bool TeamMember::isLeader()
 {
 	assert(_team != nullptr);
-	//return _team->isLeader(this);
+	return _team->isLeader(this);
 }
 
 bool TeamMember::isExpireReplace()
@@ -201,7 +202,7 @@ void TeamMember::fill(inner::InnerTeamMemberField& out, uint32 fieldId)
 	{
 	case inner::TMFType_Index: { out.set_index(getIndex()); } break;
 	case inner::TMFType_State: { out.set_state(getState()); } break;
-	case inner::TMFType_Follow: { out.set_follow(getFollow); } break;
+	case inner::TMFType_Follow: { out.set_follow(getFollow()); } break;
 	case inner::TMFType_SceneId: { out.set_sceneid(pUser->getSceneId()); } break;
 	defaut: { assert(false); } break;
 	}
@@ -220,7 +221,7 @@ void TeamMember::__setNotTeam()
 	_team = nullptr;
 }
 
-bool  TeamMember::sendChgFieldToMe(std::initializer_list<uint32> changes)
+bool TeamMember::sendChgFieldToMe(std::initializer_list<uint32> changes)
 {
 	client::ModuleTeam_Ntf_UpdateMember ntf;
 	ntf.set_roleid(pUser->getRoleId());
@@ -229,9 +230,10 @@ bool  TeamMember::sendChgFieldToMe(std::initializer_list<uint32> changes)
 		fillSelf(*ntf.mutable_fieldlist(), fieldId);
 	}
 	//return sendCmdToMe(client::enClientFirst_Team, client::enSecondTeam_Ntf_UpdateMember, ntf);
+	return true;
 }
 
-bool  TeamMember::sendChgFieldToTeam(std::initializer_list<uint32> changes)
+bool TeamMember::sendChgFieldToTeam(std::initializer_list<uint32> changes)
 {
 	client::ModuleTeam_Ntf_UpdateMember ntf;
 	ntf.set_roleid(pUser->getRoleId());
@@ -240,9 +242,10 @@ bool  TeamMember::sendChgFieldToTeam(std::initializer_list<uint32> changes)
 		fillShare(*ntf.mutable_fieldlist(), fieldId);
 	}
 	//return teamRef().sendCmdToTeam(client::enClientFirst_Team, client::enSecondTeam_Ntf_UpdateMember, ntf);
+	return true;
 }
 
-bool  TeamMember::broadChgFieldToScene(std::initializer_list<uint32> changes)
+bool TeamMember::broadChgFieldToScene(std::initializer_list<uint32> changes)
 {
 	/*
 	return NetInterface::get().broadCmdSceneSvrAuto([&](auto &out)
@@ -256,4 +259,5 @@ bool  TeamMember::broadChgFieldToScene(std::initializer_list<uint32> changes)
 		}
 	})
 	*/
+	return true;
 }

@@ -11,6 +11,7 @@ class TeamTargetQueue;
 class TeamSizeQueueTarget;
 class TeamSizeQueueLevel;
 class TeamSizeQueueAllTarget;
+class TeamVote;
 
 using TeamSizeListT = std::list<SessionTeam*>;
 using TeamSizeQueueItT = TeamSizeListT::iterator;
@@ -20,3 +21,5 @@ using TeamLevelQueueListT = std::list<TeamLevelQueue*>;
 using TeamLevelQueueListItT = TeamLevelQueueListT::iterator;
 using AutoRecruitTeamListT = std::list<SessionTeam>;
 using AutoRecruitTeamListItT = AutoRecruitTeamListT::iterator;
+using TeamVoteListT = std::list<TeamVote*>;
+using TeamVoteListItT = TeamVoteListT::iterator;

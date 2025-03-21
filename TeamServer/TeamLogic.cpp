@@ -1,5 +1,5 @@
 #include "TeamLogic.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 #include "coredump_x.h"
 #include "util_file.h"
 #include "func_proc.h"
@@ -87,4 +87,8 @@ void TeamLogic::fini()
 		CLogicThread::del(m_pLogic);
 		m_pLogic = nullptr;
 	}
+}
+
+void TeamLogic::tick(uint32 uiSec)
+{
 }
