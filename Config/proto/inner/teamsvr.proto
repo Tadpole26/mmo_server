@@ -3,6 +3,7 @@ import "common.proto";
 import "innercommon.proto";
 import "fight3v3common.proto";
 import "fight5v5common.proto";
+import "chatcommon.proto";
 package inner;
 
 message InnerTeamsvr
@@ -18,6 +19,34 @@ message InnerTeamsvr
 		InnerTeamsvr_Fromscene_PersonCancelMatch					fromscene_personcancelmatch		= 1405;
 		InnerTeamsvr_Fromscene_LeaderStartMatch 					fromscene_leaderstartmatch		= 1406;			//队伍招募寻找队员
 		InnerTeamsvr_Fromscene_LeaderCancelMatch					fromscene_leadercancelmatch		= 1407;
+		InnerTeamsvr_Fromscene_TargetTeamList						fromscene_targetteamlist		= 1408;			//获取所有目标队伍
+		InnerTeamsvr_Fromscene_CreateTeam							fromscene_createteam			= 1409;			//创建队伍
+		InnerTeamsvr_Fromscene_LeaderFireMember						fromscene_firemember			= 1410;			//解雇成员
+		InnerTeamsvr_Fromscene_LeaderChangeTarget					fromscene_leaderchangetarget	= 1411;			//队长改变目标
+		InnerTeamsvr_Fromscene_LeaderTogetherMember					fromscene_leadertogethermember	= 1412;			//队长召集指定队员
+		InnerTeamsvr_Fromscene_LeaderAppoint						fromscene_leaderappoint			= 1413;			//队长任命
+		InnerTeamsvr_Fromscene_LeaderRefuseAllApply					fromscene_leaderrefuseallapply	= 1414;			//队长拒绝所有申请
+		InnerTeamsvr_Fromscene_LeaderAgreeAllApply					fromscene_leaderagreeallapply	= 1415;			//队长同意所有申请
+		InnerTeamsvr_Fromscene_LeaderRefuseApply					fromscene_leaderrefuseapply		= 1416;			//队长拒绝指定申请
+		InnerTeamsvr_Fromscene_LeaderAgreeApply						fromscene_leaderagreeapply		= 1417;			//队长同意指定申请
+		InnerTeamsvr_Fromscene_InviteFriend							fromscene_invitefriend			= 1418;			//邀请好友
+		InnerTeamsvr_Fromscene_InviteFamily							fromscene_invitefamily			= 1419;			//邀请家族成员
+		InnerTeamsvr_Fromscene_InvitePlayer							fromscene_inviteplayer			= 1420;			//邀请玩家
+		InnerTeamsvr_Fromscene_AgreeInvited							fromscene_agreeinvited			= 1421;			//同意邀请
+		InnerTeamsvr_Fromscene_RefuseInvited						fromscene_refuseinvited			= 1422;			//拒绝邀请
+		InnerTeamsvr_Fromscene_BatLeaveTeam							fromscene_batleaveteam			= 1423;			//离开队伍
+		InnerTeamsvr_Fromscene_ApplyTeam							fromscene_applyteam				= 1424;			//申请加入队伍
+		InnerTeamsvr_Fromscene_FollowLeader							fromscene_followleader			= 1425;			//跟随队长
+		InnerTeamsvr_Fromscene_CancelFollow							fromscene_cancelfollow			= 1426;			//取消跟随
+		InnerTeamsvr_Fromscene_AgreeTogether						fromscene_agreetogether			= 1427;			//同意召集
+		InnerTeamsvr_Fromscene_RefuseTogether						fromscene_refusetogether		= 1428;			//拒绝召集
+		InnerTeamsvr_Fromscene_ReplaceLeader						fromscene_replaceleader			= 1429;			//替换队长(队长在队伍中,队长离开队伍,队长自动给队伍成员)
+		InnerTeamsvr_Fromscene_PersonVote							fromscene_personvote			= 1430;			//队员投票
+		InnerTeamsvr_Fromscene_EnterByVote							fromscene_enterbyvote			= 1431;			//进入副本投票
+		InnerTeamsvr_Fromscene_ChatTeam								fromscene_chatteam				= 1432;			//队伍聊天
+		InnerTeamsvr_Fromscene_BatCreateTeam						fromscene_batcreateteam			= 1433;			
+		InnerTeamsvr_Fromscene_BatDstroyTeam						fromscene_batdestroyteam		= 1434;
+		InnerTeamsvr_Fromscene_JumpToLeader							fromscene_jumptoleader			= 1435;
 	}
 }
 
@@ -65,4 +94,142 @@ message InnerTeamsvr_Fromscene_LeaderStartMatch
 
 message InnerTeamsvr_Fromscene_LeaderCancelMatch
 {
+}
+
+message InnerTeamsvr_Fromscene_TargetTeamList
+{
+	uint32 targetId = 1;
+}
+
+message InnerTeamsvr_Fromscene_CreateTeam
+{
+	uint32 targetId = 1;
+	uint32 minLevel = 2;				//队伍最小等级可以手动调控
+	uint32 maxLevel = 3;				//队伍最大等级可以手动调控
+}
+
+message InnerTeamsvr_Fromscene_LeaderFireMember
+{
+	uint64 roleId = 1;
+}
+
+message InnerTeamsvr_Fromscene_LeaderChangeTarget
+{
+	uint32 targetId = 1;
+	uint32 minLevel = 2;
+	uint32 maxLevel = 3;
+}
+
+message InnerTeamsvr_Fromscene_LeaderTogetherMember	
+{
+	uint64 roleId = 1;
+}
+
+message InnerTeamsvr_Fromscene_LeaderAppoint
+{
+	uint64 roleId = 1;
+}
+
+message InnerTeamsvr_Fromscene_LeaderRefuseAllApply
+{
+}
+
+message InnerTeamsvr_Fromscene_LeaderAgreeAllApply
+{
+}
+
+message InnerTeamsvr_Fromscene_LeaderRefuseApply
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message InnerTeamsvr_Fromscene_LeaderAgreeApply
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message InnerTeamsvr_Fromscene_InviteFriend	
+{
+	uint64 roleId = 1;
+}
+
+message InnerTeamsvr_Fromscene_InviteFamily
+{
+	uint64 roleId = 1;
+}
+
+message InnerTeamsvr_Fromscene_InvitePlayer	
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message InnerTeamsvr_Fromscene_AgreeInvited	
+{
+}
+
+message InnerTeamsvr_Fromscene_RefuseInvited
+{
+}
+
+message InnerTeamsvr_Fromscene_BatLeaveTeam	
+{
+	inner.InnerRoleIdList onlyTeam = 1;
+	inner.InnerRoleIdList copyTeam = 2;
+}
+
+message InnerTeamsvr_Fromscene_ApplyTeam
+{
+	uint64 teamId = 1;
+	uint64 leaderSceneId = 2;
+}
+
+message InnerTeamsvr_Fromscene_FollowLeader	
+{
+}
+
+message InnerTeamsvr_Fromscene_CancelFollow	
+{
+}
+
+message InnerTeamsvr_Fromscene_AgreeTogether
+{
+}
+
+message InnerTeamsvr_Fromscene_RefuseTogether
+{
+}
+
+message InnerTeamsvr_Fromscene_ReplaceLeader
+{
+}
+
+message InnerTeamsvr_Fromscene_PersonVote	
+{
+	bool agree = 1;
+}
+
+message InnerTeamsvr_Fromscene_EnterByVote	
+{
+}
+
+message InnerTeamsvr_Fromscene_ChatTeam			
+{
+	common.ChatTypeContextDown context = 1;
+}
+
+message InnerTeamsvr_Fromscene_BatCreateTeam	
+{
+}
+
+message InnerTeamsvr_Fromscene_BatDstroyTeam	
+{
+	repeated uint64 teamIds = 1;
+}
+
+message InnerTeamsvr_Fromscene_JumpToLeader		
+{
+	uint32 eJumpTo = 1;
 }

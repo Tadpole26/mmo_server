@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "svr_client.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "global_define.h"
 
 svr_session::svr_session() {}
 svr_session::~svr_session() {}
 
 bool svr_session::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	if (pMsg == nullptr)
@@ -29,14 +29,14 @@ bool svr_session::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
 }
 
 bool svr_session::Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	return Send_Msg((const uchar*)strMsg.c_str(), strMsg.size(), usProtocol, usModule, code, seqid);
 }
 
 bool svr_session::Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	tagMsgHead* pNetMsgHead = MakeHeadMsg((const char*)buf, size, usModule, usProtocol, seqid, code);
@@ -98,7 +98,7 @@ svr_reconn::~svr_reconn()
 }
 
 bool svr_reconn::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	if (pMsg == nullptr)
@@ -119,7 +119,7 @@ bool svr_reconn::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
 }
 
 bool svr_reconn::Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	return Send_Msg((const uchar*)strMsg.c_str()
@@ -127,7 +127,7 @@ bool svr_reconn::Send_Msg(const std::string& strMsg, msg_id_t usProtocol
 }
 
 bool svr_reconn::Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-	, msg_id_t usModule, ProtoMsg::ResultCode code
+	, msg_id_t usModule, uint32 code
 	, uint32 seqid)
 {
 	tagMsgHead* pNetMsgHead = MakeHeadMsg((const char*)buf, size, usModule, usProtocol, seqid, code);

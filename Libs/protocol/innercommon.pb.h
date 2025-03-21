@@ -50,6 +50,48 @@ struct TableStruct_innercommon_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_innercommon_2eproto;
 namespace inner {
+class InnerCopyCrit;
+struct InnerCopyCritDefaultTypeInternal;
+extern InnerCopyCritDefaultTypeInternal _InnerCopyCrit_default_instance_;
+class InnerCopyEnter;
+struct InnerCopyEnterDefaultTypeInternal;
+extern InnerCopyEnterDefaultTypeInternal _InnerCopyEnter_default_instance_;
+class InnerCopyEnterByChgLvId;
+struct InnerCopyEnterByChgLvIdDefaultTypeInternal;
+extern InnerCopyEnterByChgLvIdDefaultTypeInternal _InnerCopyEnterByChgLvId_default_instance_;
+class InnerCopyEnterByHome;
+struct InnerCopyEnterByHomeDefaultTypeInternal;
+extern InnerCopyEnterByHomeDefaultTypeInternal _InnerCopyEnterByHome_default_instance_;
+class InnerCopyEnterByTeam;
+struct InnerCopyEnterByTeamDefaultTypeInternal;
+extern InnerCopyEnterByTeamDefaultTypeInternal _InnerCopyEnterByTeam_default_instance_;
+class InnerCopyPve;
+struct InnerCopyPveDefaultTypeInternal;
+extern InnerCopyPveDefaultTypeInternal _InnerCopyPve_default_instance_;
+class InnerCopyPvp;
+struct InnerCopyPvpDefaultTypeInternal;
+extern InnerCopyPvpDefaultTypeInternal _InnerCopyPvp_default_instance_;
+class InnerCopyTeam;
+struct InnerCopyTeamDefaultTypeInternal;
+extern InnerCopyTeamDefaultTypeInternal _InnerCopyTeam_default_instance_;
+class InnerCopyTeamList;
+struct InnerCopyTeamListDefaultTypeInternal;
+extern InnerCopyTeamListDefaultTypeInternal _InnerCopyTeamList_default_instance_;
+class InnerCopyTeamMem;
+struct InnerCopyTeamMemDefaultTypeInternal;
+extern InnerCopyTeamMemDefaultTypeInternal _InnerCopyTeamMem_default_instance_;
+class InnerCopyType;
+struct InnerCopyTypeDefaultTypeInternal;
+extern InnerCopyTypeDefaultTypeInternal _InnerCopyType_default_instance_;
+class InnerCopyWay;
+struct InnerCopyWayDefaultTypeInternal;
+extern InnerCopyWayDefaultTypeInternal _InnerCopyWay_default_instance_;
+class InnerCopyWayByMatch;
+struct InnerCopyWayByMatchDefaultTypeInternal;
+extern InnerCopyWayByMatchDefaultTypeInternal _InnerCopyWayByMatch_default_instance_;
+class InnerCopyWayByTeam;
+struct InnerCopyWayByTeamDefaultTypeInternal;
+extern InnerCopyWayByTeamDefaultTypeInternal _InnerCopyWayByTeam_default_instance_;
 class InnerGameEvent;
 struct InnerGameEventDefaultTypeInternal;
 extern InnerGameEventDefaultTypeInternal _InnerGameEvent_default_instance_;
@@ -140,8 +182,25 @@ extern InnerGameEventWakeupFriendsvrDefaultTypeInternal _InnerGameEventWakeupFri
 class InnerGameEventWakeupTeamsvr;
 struct InnerGameEventWakeupTeamsvrDefaultTypeInternal;
 extern InnerGameEventWakeupTeamsvrDefaultTypeInternal _InnerGameEventWakeupTeamsvr_default_instance_;
+class InnerRoleIdList;
+struct InnerRoleIdListDefaultTypeInternal;
+extern InnerRoleIdListDefaultTypeInternal _InnerRoleIdList_default_instance_;
 }  // namespace inner
 PROTOBUF_NAMESPACE_OPEN
+template<> ::inner::InnerCopyCrit* Arena::CreateMaybeMessage<::inner::InnerCopyCrit>(Arena*);
+template<> ::inner::InnerCopyEnter* Arena::CreateMaybeMessage<::inner::InnerCopyEnter>(Arena*);
+template<> ::inner::InnerCopyEnterByChgLvId* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByChgLvId>(Arena*);
+template<> ::inner::InnerCopyEnterByHome* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByHome>(Arena*);
+template<> ::inner::InnerCopyEnterByTeam* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByTeam>(Arena*);
+template<> ::inner::InnerCopyPve* Arena::CreateMaybeMessage<::inner::InnerCopyPve>(Arena*);
+template<> ::inner::InnerCopyPvp* Arena::CreateMaybeMessage<::inner::InnerCopyPvp>(Arena*);
+template<> ::inner::InnerCopyTeam* Arena::CreateMaybeMessage<::inner::InnerCopyTeam>(Arena*);
+template<> ::inner::InnerCopyTeamList* Arena::CreateMaybeMessage<::inner::InnerCopyTeamList>(Arena*);
+template<> ::inner::InnerCopyTeamMem* Arena::CreateMaybeMessage<::inner::InnerCopyTeamMem>(Arena*);
+template<> ::inner::InnerCopyType* Arena::CreateMaybeMessage<::inner::InnerCopyType>(Arena*);
+template<> ::inner::InnerCopyWay* Arena::CreateMaybeMessage<::inner::InnerCopyWay>(Arena*);
+template<> ::inner::InnerCopyWayByMatch* Arena::CreateMaybeMessage<::inner::InnerCopyWayByMatch>(Arena*);
+template<> ::inner::InnerCopyWayByTeam* Arena::CreateMaybeMessage<::inner::InnerCopyWayByTeam>(Arena*);
 template<> ::inner::InnerGameEvent* Arena::CreateMaybeMessage<::inner::InnerGameEvent>(Arena*);
 template<> ::inner::InnerGameEventChangeMap* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMap>(Arena*);
 template<> ::inner::InnerGameEventChangeMapFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMapFriendsvr>(Arena*);
@@ -172,10 +231,2395 @@ template<> ::inner::InnerGameEventRebirthTeamsvr* Arena::CreateMaybeMessage<::in
 template<> ::inner::InnerGameEventWakeup* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeup>(Arena*);
 template<> ::inner::InnerGameEventWakeupFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventWakeupTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupTeamsvr>(Arena*);
+template<> ::inner::InnerRoleIdList* Arena::CreateMaybeMessage<::inner::InnerRoleIdList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace inner {
 
 // ===================================================================
+
+class InnerRoleIdList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerRoleIdList) */ {
+ public:
+  inline InnerRoleIdList() : InnerRoleIdList(nullptr) {}
+  ~InnerRoleIdList() override;
+  explicit PROTOBUF_CONSTEXPR InnerRoleIdList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerRoleIdList(const InnerRoleIdList& from);
+  InnerRoleIdList(InnerRoleIdList&& from) noexcept
+    : InnerRoleIdList() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerRoleIdList& operator=(const InnerRoleIdList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerRoleIdList& operator=(InnerRoleIdList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerRoleIdList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerRoleIdList* internal_default_instance() {
+    return reinterpret_cast<const InnerRoleIdList*>(
+               &_InnerRoleIdList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(InnerRoleIdList& a, InnerRoleIdList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerRoleIdList* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerRoleIdList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerRoleIdList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerRoleIdList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerRoleIdList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerRoleIdList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerRoleIdList* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerRoleIdList";
+  }
+  protected:
+  explicit InnerRoleIdList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRoleIdsFieldNumber = 1,
+  };
+  // repeated uint64 roleIds = 1;
+  int roleids_size() const;
+  private:
+  int _internal_roleids_size() const;
+  public:
+  void clear_roleids();
+  private:
+  uint64_t _internal_roleids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+      _internal_roleids() const;
+  void _internal_add_roleids(uint64_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+      _internal_mutable_roleids();
+  public:
+  uint64_t roleids(int index) const;
+  void set_roleids(int index, uint64_t value);
+  void add_roleids(uint64_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+      roleids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+      mutable_roleids();
+
+  // @@protoc_insertion_point(class_scope:inner.InnerRoleIdList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t > roleids_;
+  mutable std::atomic<int> _roleids_cached_byte_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyTeamMem final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyTeamMem) */ {
+ public:
+  inline InnerCopyTeamMem() : InnerCopyTeamMem(nullptr) {}
+  ~InnerCopyTeamMem() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyTeamMem(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyTeamMem(const InnerCopyTeamMem& from);
+  InnerCopyTeamMem(InnerCopyTeamMem&& from) noexcept
+    : InnerCopyTeamMem() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyTeamMem& operator=(const InnerCopyTeamMem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyTeamMem& operator=(InnerCopyTeamMem&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyTeamMem& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyTeamMem* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyTeamMem*>(
+               &_InnerCopyTeamMem_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(InnerCopyTeamMem& a, InnerCopyTeamMem& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyTeamMem* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyTeamMem* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyTeamMem* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyTeamMem>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyTeamMem& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyTeamMem& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyTeamMem* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyTeamMem";
+  }
+  protected:
+  explicit InnerCopyTeamMem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRoleIdFieldNumber = 1,
+    kZoneIdFFieldNumber = 2,
+  };
+  // uint64 roleId = 1;
+  void clear_roleid();
+  uint64_t roleid() const;
+  void set_roleid(uint64_t value);
+  private:
+  uint64_t _internal_roleid() const;
+  void _internal_set_roleid(uint64_t value);
+  public:
+
+  // uint32 zoneIdF = 2;
+  void clear_zoneidf();
+  uint32_t zoneidf() const;
+  void set_zoneidf(uint32_t value);
+  private:
+  uint32_t _internal_zoneidf() const;
+  void _internal_set_zoneidf(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyTeamMem)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t roleid_;
+  uint32_t zoneidf_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyTeam final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyTeam) */ {
+ public:
+  inline InnerCopyTeam() : InnerCopyTeam(nullptr) {}
+  ~InnerCopyTeam() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyTeam(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyTeam(const InnerCopyTeam& from);
+  InnerCopyTeam(InnerCopyTeam&& from) noexcept
+    : InnerCopyTeam() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyTeam& operator=(const InnerCopyTeam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyTeam& operator=(InnerCopyTeam&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyTeam& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyTeam* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyTeam*>(
+               &_InnerCopyTeam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(InnerCopyTeam& a, InnerCopyTeam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyTeam* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyTeam* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyTeam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyTeam>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyTeam& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyTeam& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyTeam* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyTeam";
+  }
+  protected:
+  explicit InnerCopyTeam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRolesFieldNumber = 1,
+    kRobotsFieldNumber = 2,
+  };
+  // repeated .inner.InnerCopyTeamMem roles = 1;
+  int roles_size() const;
+  private:
+  int _internal_roles_size() const;
+  public:
+  void clear_roles();
+  ::inner::InnerCopyTeamMem* mutable_roles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >*
+      mutable_roles();
+  private:
+  const ::inner::InnerCopyTeamMem& _internal_roles(int index) const;
+  ::inner::InnerCopyTeamMem* _internal_add_roles();
+  public:
+  const ::inner::InnerCopyTeamMem& roles(int index) const;
+  ::inner::InnerCopyTeamMem* add_roles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >&
+      roles() const;
+
+  // repeated .inner.InnerCopyTeamMem robots = 2;
+  int robots_size() const;
+  private:
+  int _internal_robots_size() const;
+  public:
+  void clear_robots();
+  ::inner::InnerCopyTeamMem* mutable_robots(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >*
+      mutable_robots();
+  private:
+  const ::inner::InnerCopyTeamMem& _internal_robots(int index) const;
+  ::inner::InnerCopyTeamMem* _internal_add_robots();
+  public:
+  const ::inner::InnerCopyTeamMem& robots(int index) const;
+  ::inner::InnerCopyTeamMem* add_robots();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >&
+      robots() const;
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyTeam)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem > roles_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem > robots_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyTeamList final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyTeamList) */ {
+ public:
+  inline InnerCopyTeamList() : InnerCopyTeamList(nullptr) {}
+  ~InnerCopyTeamList() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyTeamList(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyTeamList(const InnerCopyTeamList& from);
+  InnerCopyTeamList(InnerCopyTeamList&& from) noexcept
+    : InnerCopyTeamList() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyTeamList& operator=(const InnerCopyTeamList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyTeamList& operator=(InnerCopyTeamList&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyTeamList& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyTeamList* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyTeamList*>(
+               &_InnerCopyTeamList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(InnerCopyTeamList& a, InnerCopyTeamList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyTeamList* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyTeamList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyTeamList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyTeamList>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyTeamList& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyTeamList& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyTeamList* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyTeamList";
+  }
+  protected:
+  explicit InnerCopyTeamList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTeamsFieldNumber = 2,
+    kTargetIdFieldNumber = 1,
+  };
+  // repeated .inner.InnerCopyTeam teams = 2;
+  int teams_size() const;
+  private:
+  int _internal_teams_size() const;
+  public:
+  void clear_teams();
+  ::inner::InnerCopyTeam* mutable_teams(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeam >*
+      mutable_teams();
+  private:
+  const ::inner::InnerCopyTeam& _internal_teams(int index) const;
+  ::inner::InnerCopyTeam* _internal_add_teams();
+  public:
+  const ::inner::InnerCopyTeam& teams(int index) const;
+  ::inner::InnerCopyTeam* add_teams();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeam >&
+      teams() const;
+
+  // uint32 targetId = 1;
+  void clear_targetid();
+  uint32_t targetid() const;
+  void set_targetid(uint32_t value);
+  private:
+  uint32_t _internal_targetid() const;
+  void _internal_set_targetid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyTeamList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeam > teams_;
+  uint32_t targetid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyEnterByTeam final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyEnterByTeam) */ {
+ public:
+  inline InnerCopyEnterByTeam() : InnerCopyEnterByTeam(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyEnterByTeam(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyEnterByTeam(const InnerCopyEnterByTeam& from);
+  InnerCopyEnterByTeam(InnerCopyEnterByTeam&& from) noexcept
+    : InnerCopyEnterByTeam() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyEnterByTeam& operator=(const InnerCopyEnterByTeam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyEnterByTeam& operator=(InnerCopyEnterByTeam&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyEnterByTeam& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyEnterByTeam* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyEnterByTeam*>(
+               &_InnerCopyEnterByTeam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(InnerCopyEnterByTeam& a, InnerCopyEnterByTeam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyEnterByTeam* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyEnterByTeam* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyEnterByTeam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyEnterByTeam>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyEnterByTeam& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyEnterByTeam& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyEnterByTeam";
+  }
+  protected:
+  explicit InnerCopyEnterByTeam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyEnterByTeam)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyEnterByChgLvId final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyEnterByChgLvId) */ {
+ public:
+  inline InnerCopyEnterByChgLvId() : InnerCopyEnterByChgLvId(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyEnterByChgLvId(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyEnterByChgLvId(const InnerCopyEnterByChgLvId& from);
+  InnerCopyEnterByChgLvId(InnerCopyEnterByChgLvId&& from) noexcept
+    : InnerCopyEnterByChgLvId() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyEnterByChgLvId& operator=(const InnerCopyEnterByChgLvId& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyEnterByChgLvId& operator=(InnerCopyEnterByChgLvId&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyEnterByChgLvId& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyEnterByChgLvId* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyEnterByChgLvId*>(
+               &_InnerCopyEnterByChgLvId_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(InnerCopyEnterByChgLvId& a, InnerCopyEnterByChgLvId& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyEnterByChgLvId* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyEnterByChgLvId* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyEnterByChgLvId* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyEnterByChgLvId>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyEnterByChgLvId& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyEnterByChgLvId& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyEnterByChgLvId";
+  }
+  protected:
+  explicit InnerCopyEnterByChgLvId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyEnterByChgLvId)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyEnterByHome final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyEnterByHome) */ {
+ public:
+  inline InnerCopyEnterByHome() : InnerCopyEnterByHome(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyEnterByHome(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyEnterByHome(const InnerCopyEnterByHome& from);
+  InnerCopyEnterByHome(InnerCopyEnterByHome&& from) noexcept
+    : InnerCopyEnterByHome() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyEnterByHome& operator=(const InnerCopyEnterByHome& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyEnterByHome& operator=(InnerCopyEnterByHome&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyEnterByHome& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyEnterByHome* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyEnterByHome*>(
+               &_InnerCopyEnterByHome_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(InnerCopyEnterByHome& a, InnerCopyEnterByHome& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyEnterByHome* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyEnterByHome* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyEnterByHome* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyEnterByHome>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyEnterByHome& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyEnterByHome& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyEnterByHome";
+  }
+  protected:
+  explicit InnerCopyEnterByHome(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyEnterByHome)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyEnter final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyEnter) */ {
+ public:
+  inline InnerCopyEnter() : InnerCopyEnter(nullptr) {}
+  ~InnerCopyEnter() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyEnter(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyEnter(const InnerCopyEnter& from);
+  InnerCopyEnter(InnerCopyEnter&& from) noexcept
+    : InnerCopyEnter() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyEnter& operator=(const InnerCopyEnter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyEnter& operator=(InnerCopyEnter&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyEnter& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kTeam = 11,
+    kChgLvId = 12,
+    kHome = 13,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyEnter* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyEnter*>(
+               &_InnerCopyEnter_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(InnerCopyEnter& a, InnerCopyEnter& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyEnter* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyEnter* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyEnter* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyEnter>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyEnter& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyEnter& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyEnter* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyEnter";
+  }
+  protected:
+  explicit InnerCopyEnter(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTeamListFieldNumber = 5,
+    kCopyLvIdFieldNumber = 1,
+    kEProcFieldNumber = 2,
+    kThreeIdFieldNumber = 3,
+    kVoteIdFieldNumber = 4,
+    kTeamFieldNumber = 11,
+    kChgLvIdFieldNumber = 12,
+    kHomeFieldNumber = 13,
+  };
+  // .inner.InnerCopyTeamList teamList = 5;
+  bool has_teamlist() const;
+  private:
+  bool _internal_has_teamlist() const;
+  public:
+  void clear_teamlist();
+  const ::inner::InnerCopyTeamList& teamlist() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyTeamList* release_teamlist();
+  ::inner::InnerCopyTeamList* mutable_teamlist();
+  void set_allocated_teamlist(::inner::InnerCopyTeamList* teamlist);
+  private:
+  const ::inner::InnerCopyTeamList& _internal_teamlist() const;
+  ::inner::InnerCopyTeamList* _internal_mutable_teamlist();
+  public:
+  void unsafe_arena_set_allocated_teamlist(
+      ::inner::InnerCopyTeamList* teamlist);
+  ::inner::InnerCopyTeamList* unsafe_arena_release_teamlist();
+
+  // uint32 copyLvId = 1;
+  void clear_copylvid();
+  uint32_t copylvid() const;
+  void set_copylvid(uint32_t value);
+  private:
+  uint32_t _internal_copylvid() const;
+  void _internal_set_copylvid(uint32_t value);
+  public:
+
+  // uint32 eProc = 2;
+  void clear_eproc();
+  uint32_t eproc() const;
+  void set_eproc(uint32_t value);
+  private:
+  uint32_t _internal_eproc() const;
+  void _internal_set_eproc(uint32_t value);
+  public:
+
+  // uint32 threeId = 3;
+  void clear_threeid();
+  uint32_t threeid() const;
+  void set_threeid(uint32_t value);
+  private:
+  uint32_t _internal_threeid() const;
+  void _internal_set_threeid(uint32_t value);
+  public:
+
+  // uint32 voteId = 4;
+  void clear_voteid();
+  uint32_t voteid() const;
+  void set_voteid(uint32_t value);
+  private:
+  uint32_t _internal_voteid() const;
+  void _internal_set_voteid(uint32_t value);
+  public:
+
+  // .inner.InnerCopyEnterByTeam team = 11;
+  bool has_team() const;
+  private:
+  bool _internal_has_team() const;
+  public:
+  void clear_team();
+  const ::inner::InnerCopyEnterByTeam& team() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyEnterByTeam* release_team();
+  ::inner::InnerCopyEnterByTeam* mutable_team();
+  void set_allocated_team(::inner::InnerCopyEnterByTeam* team);
+  private:
+  const ::inner::InnerCopyEnterByTeam& _internal_team() const;
+  ::inner::InnerCopyEnterByTeam* _internal_mutable_team();
+  public:
+  void unsafe_arena_set_allocated_team(
+      ::inner::InnerCopyEnterByTeam* team);
+  ::inner::InnerCopyEnterByTeam* unsafe_arena_release_team();
+
+  // .inner.InnerCopyEnterByChgLvId chgLvId = 12;
+  bool has_chglvid() const;
+  private:
+  bool _internal_has_chglvid() const;
+  public:
+  void clear_chglvid();
+  const ::inner::InnerCopyEnterByChgLvId& chglvid() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyEnterByChgLvId* release_chglvid();
+  ::inner::InnerCopyEnterByChgLvId* mutable_chglvid();
+  void set_allocated_chglvid(::inner::InnerCopyEnterByChgLvId* chglvid);
+  private:
+  const ::inner::InnerCopyEnterByChgLvId& _internal_chglvid() const;
+  ::inner::InnerCopyEnterByChgLvId* _internal_mutable_chglvid();
+  public:
+  void unsafe_arena_set_allocated_chglvid(
+      ::inner::InnerCopyEnterByChgLvId* chglvid);
+  ::inner::InnerCopyEnterByChgLvId* unsafe_arena_release_chglvid();
+
+  // .inner.InnerCopyEnterByHome home = 13;
+  bool has_home() const;
+  private:
+  bool _internal_has_home() const;
+  public:
+  void clear_home();
+  const ::inner::InnerCopyEnterByHome& home() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyEnterByHome* release_home();
+  ::inner::InnerCopyEnterByHome* mutable_home();
+  void set_allocated_home(::inner::InnerCopyEnterByHome* home);
+  private:
+  const ::inner::InnerCopyEnterByHome& _internal_home() const;
+  ::inner::InnerCopyEnterByHome* _internal_mutable_home();
+  public:
+  void unsafe_arena_set_allocated_home(
+      ::inner::InnerCopyEnterByHome* home);
+  ::inner::InnerCopyEnterByHome* unsafe_arena_release_home();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyEnter)
+ private:
+  class _Internal;
+  void set_has_team();
+  void set_has_chglvid();
+  void set_has_home();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::inner::InnerCopyTeamList* teamlist_;
+  uint32_t copylvid_;
+  uint32_t eproc_;
+  uint32_t threeid_;
+  uint32_t voteid_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyEnterByTeam* team_;
+    ::inner::InnerCopyEnterByChgLvId* chglvid_;
+    ::inner::InnerCopyEnterByHome* home_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyWayByMatch final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyWayByMatch) */ {
+ public:
+  inline InnerCopyWayByMatch() : InnerCopyWayByMatch(nullptr) {}
+  ~InnerCopyWayByMatch() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyWayByMatch(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyWayByMatch(const InnerCopyWayByMatch& from);
+  InnerCopyWayByMatch(InnerCopyWayByMatch&& from) noexcept
+    : InnerCopyWayByMatch() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyWayByMatch& operator=(const InnerCopyWayByMatch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyWayByMatch& operator=(InnerCopyWayByMatch&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyWayByMatch& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyWayByMatch* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyWayByMatch*>(
+               &_InnerCopyWayByMatch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(InnerCopyWayByMatch& a, InnerCopyWayByMatch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyWayByMatch* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyWayByMatch* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyWayByMatch* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyWayByMatch>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyWayByMatch& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyWayByMatch& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyWayByMatch* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyWayByMatch";
+  }
+  protected:
+  explicit InnerCopyWayByMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMtypeFieldNumber = 1,
+    kSeasonIdFieldNumber = 2,
+    kDayIdFieldNumber = 3,
+  };
+  // uint32 mtype = 1;
+  void clear_mtype();
+  uint32_t mtype() const;
+  void set_mtype(uint32_t value);
+  private:
+  uint32_t _internal_mtype() const;
+  void _internal_set_mtype(uint32_t value);
+  public:
+
+  // uint32 seasonId = 2;
+  void clear_seasonid();
+  uint32_t seasonid() const;
+  void set_seasonid(uint32_t value);
+  private:
+  uint32_t _internal_seasonid() const;
+  void _internal_set_seasonid(uint32_t value);
+  public:
+
+  // uint32 dayId = 3;
+  void clear_dayid();
+  uint32_t dayid() const;
+  void set_dayid(uint32_t value);
+  private:
+  uint32_t _internal_dayid() const;
+  void _internal_set_dayid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyWayByMatch)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t mtype_;
+  uint32_t seasonid_;
+  uint32_t dayid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyWayByTeam final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyWayByTeam) */ {
+ public:
+  inline InnerCopyWayByTeam() : InnerCopyWayByTeam(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyWayByTeam(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyWayByTeam(const InnerCopyWayByTeam& from);
+  InnerCopyWayByTeam(InnerCopyWayByTeam&& from) noexcept
+    : InnerCopyWayByTeam() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyWayByTeam& operator=(const InnerCopyWayByTeam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyWayByTeam& operator=(InnerCopyWayByTeam&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyWayByTeam& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyWayByTeam* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyWayByTeam*>(
+               &_InnerCopyWayByTeam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(InnerCopyWayByTeam& a, InnerCopyWayByTeam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyWayByTeam* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyWayByTeam* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyWayByTeam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyWayByTeam>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyWayByTeam& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyWayByTeam& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyWayByTeam";
+  }
+  protected:
+  explicit InnerCopyWayByTeam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyWayByTeam)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyWay final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyWay) */ {
+ public:
+  inline InnerCopyWay() : InnerCopyWay(nullptr) {}
+  ~InnerCopyWay() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyWay(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyWay(const InnerCopyWay& from);
+  InnerCopyWay(InnerCopyWay&& from) noexcept
+    : InnerCopyWay() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyWay& operator=(const InnerCopyWay& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyWay& operator=(InnerCopyWay&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyWay& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kByMatch = 11,
+    kByTeam = 12,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyWay* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyWay*>(
+               &_InnerCopyWay_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(InnerCopyWay& a, InnerCopyWay& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyWay* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyWay* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyWay* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyWay>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyWay& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyWay& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyWay* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyWay";
+  }
+  protected:
+  explicit InnerCopyWay(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTeamListFieldNumber = 1,
+    kByMatchFieldNumber = 11,
+    kByTeamFieldNumber = 12,
+  };
+  // .inner.InnerCopyTeamList teamList = 1;
+  bool has_teamlist() const;
+  private:
+  bool _internal_has_teamlist() const;
+  public:
+  void clear_teamlist();
+  const ::inner::InnerCopyTeamList& teamlist() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyTeamList* release_teamlist();
+  ::inner::InnerCopyTeamList* mutable_teamlist();
+  void set_allocated_teamlist(::inner::InnerCopyTeamList* teamlist);
+  private:
+  const ::inner::InnerCopyTeamList& _internal_teamlist() const;
+  ::inner::InnerCopyTeamList* _internal_mutable_teamlist();
+  public:
+  void unsafe_arena_set_allocated_teamlist(
+      ::inner::InnerCopyTeamList* teamlist);
+  ::inner::InnerCopyTeamList* unsafe_arena_release_teamlist();
+
+  // .inner.InnerCopyWayByMatch byMatch = 11;
+  bool has_bymatch() const;
+  private:
+  bool _internal_has_bymatch() const;
+  public:
+  void clear_bymatch();
+  const ::inner::InnerCopyWayByMatch& bymatch() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyWayByMatch* release_bymatch();
+  ::inner::InnerCopyWayByMatch* mutable_bymatch();
+  void set_allocated_bymatch(::inner::InnerCopyWayByMatch* bymatch);
+  private:
+  const ::inner::InnerCopyWayByMatch& _internal_bymatch() const;
+  ::inner::InnerCopyWayByMatch* _internal_mutable_bymatch();
+  public:
+  void unsafe_arena_set_allocated_bymatch(
+      ::inner::InnerCopyWayByMatch* bymatch);
+  ::inner::InnerCopyWayByMatch* unsafe_arena_release_bymatch();
+
+  // .inner.InnerCopyWayByTeam byTeam = 12;
+  bool has_byteam() const;
+  private:
+  bool _internal_has_byteam() const;
+  public:
+  void clear_byteam();
+  const ::inner::InnerCopyWayByTeam& byteam() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyWayByTeam* release_byteam();
+  ::inner::InnerCopyWayByTeam* mutable_byteam();
+  void set_allocated_byteam(::inner::InnerCopyWayByTeam* byteam);
+  private:
+  const ::inner::InnerCopyWayByTeam& _internal_byteam() const;
+  ::inner::InnerCopyWayByTeam* _internal_mutable_byteam();
+  public:
+  void unsafe_arena_set_allocated_byteam(
+      ::inner::InnerCopyWayByTeam* byteam);
+  ::inner::InnerCopyWayByTeam* unsafe_arena_release_byteam();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyWay)
+ private:
+  class _Internal;
+  void set_has_bymatch();
+  void set_has_byteam();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::inner::InnerCopyTeamList* teamlist_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyWayByMatch* bymatch_;
+    ::inner::InnerCopyWayByTeam* byteam_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyPvp final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvp) */ {
+ public:
+  inline InnerCopyPvp() : InnerCopyPvp(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPvp(const InnerCopyPvp& from);
+  InnerCopyPvp(InnerCopyPvp&& from) noexcept
+    : InnerCopyPvp() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPvp& operator=(const InnerCopyPvp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPvp& operator=(InnerCopyPvp&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPvp& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyPvp* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPvp*>(
+               &_InnerCopyPvp_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(InnerCopyPvp& a, InnerCopyPvp& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPvp* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPvp* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPvp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPvp>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyPvp& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyPvp& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPvp";
+  }
+  protected:
+  explicit InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPvp)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyPve final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyPve) */ {
+ public:
+  inline InnerCopyPve() : InnerCopyPve(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerCopyPve(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPve(const InnerCopyPve& from);
+  InnerCopyPve(InnerCopyPve&& from) noexcept
+    : InnerCopyPve() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPve& operator=(const InnerCopyPve& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPve& operator=(InnerCopyPve&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPve& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyPve* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPve*>(
+               &_InnerCopyPve_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(InnerCopyPve& a, InnerCopyPve& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPve* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPve* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPve* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPve>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerCopyPve& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerCopyPve& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPve";
+  }
+  protected:
+  explicit InnerCopyPve(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPve)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyType final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyType) */ {
+ public:
+  inline InnerCopyType() : InnerCopyType(nullptr) {}
+  ~InnerCopyType() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyType(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyType(const InnerCopyType& from);
+  InnerCopyType(InnerCopyType&& from) noexcept
+    : InnerCopyType() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyType& operator=(const InnerCopyType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyType& operator=(InnerCopyType&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyType& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kPvp = 11,
+    kPve = 12,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyType* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyType*>(
+               &_InnerCopyType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(InnerCopyType& a, InnerCopyType& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyType* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyType* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyType* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyType>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyType& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyType& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyType* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyType";
+  }
+  protected:
+  explicit InnerCopyType(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCopyLvIdFieldNumber = 1,
+    kEProcFieldNumber = 2,
+    kThreeIdFieldNumber = 3,
+    kPvpFieldNumber = 11,
+    kPveFieldNumber = 12,
+  };
+  // uint32 copyLvId = 1;
+  void clear_copylvid();
+  uint32_t copylvid() const;
+  void set_copylvid(uint32_t value);
+  private:
+  uint32_t _internal_copylvid() const;
+  void _internal_set_copylvid(uint32_t value);
+  public:
+
+  // uint32 eProc = 2;
+  void clear_eproc();
+  uint32_t eproc() const;
+  void set_eproc(uint32_t value);
+  private:
+  uint32_t _internal_eproc() const;
+  void _internal_set_eproc(uint32_t value);
+  public:
+
+  // uint32 threeId = 3;
+  void clear_threeid();
+  uint32_t threeid() const;
+  void set_threeid(uint32_t value);
+  private:
+  uint32_t _internal_threeid() const;
+  void _internal_set_threeid(uint32_t value);
+  public:
+
+  // .inner.InnerCopyPvp pvp = 11;
+  bool has_pvp() const;
+  private:
+  bool _internal_has_pvp() const;
+  public:
+  void clear_pvp();
+  const ::inner::InnerCopyPvp& pvp() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPvp* release_pvp();
+  ::inner::InnerCopyPvp* mutable_pvp();
+  void set_allocated_pvp(::inner::InnerCopyPvp* pvp);
+  private:
+  const ::inner::InnerCopyPvp& _internal_pvp() const;
+  ::inner::InnerCopyPvp* _internal_mutable_pvp();
+  public:
+  void unsafe_arena_set_allocated_pvp(
+      ::inner::InnerCopyPvp* pvp);
+  ::inner::InnerCopyPvp* unsafe_arena_release_pvp();
+
+  // .inner.InnerCopyPve pve = 12;
+  bool has_pve() const;
+  private:
+  bool _internal_has_pve() const;
+  public:
+  void clear_pve();
+  const ::inner::InnerCopyPve& pve() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPve* release_pve();
+  ::inner::InnerCopyPve* mutable_pve();
+  void set_allocated_pve(::inner::InnerCopyPve* pve);
+  private:
+  const ::inner::InnerCopyPve& _internal_pve() const;
+  ::inner::InnerCopyPve* _internal_mutable_pve();
+  public:
+  void unsafe_arena_set_allocated_pve(
+      ::inner::InnerCopyPve* pve);
+  ::inner::InnerCopyPve* unsafe_arena_release_pve();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyType)
+ private:
+  class _Internal;
+  void set_has_pvp();
+  void set_has_pve();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t copylvid_;
+  uint32_t eproc_;
+  uint32_t threeid_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyPvp* pvp_;
+    ::inner::InnerCopyPve* pve_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyCrit final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyCrit) */ {
+ public:
+  inline InnerCopyCrit() : InnerCopyCrit(nullptr) {}
+  ~InnerCopyCrit() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyCrit(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyCrit(const InnerCopyCrit& from);
+  InnerCopyCrit(InnerCopyCrit&& from) noexcept
+    : InnerCopyCrit() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyCrit& operator=(const InnerCopyCrit& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyCrit& operator=(InnerCopyCrit&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyCrit& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyCrit* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyCrit*>(
+               &_InnerCopyCrit_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(InnerCopyCrit& a, InnerCopyCrit& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyCrit* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyCrit* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyCrit* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyCrit>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyCrit& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyCrit& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyCrit* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyCrit";
+  }
+  protected:
+  explicit InnerCopyCrit(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCritIdFieldNumber = 2,
+    kHashIdFFieldNumber = 1,
+    kExpireFieldNumber = 3,
+  };
+  // uint64 critId = 2;
+  void clear_critid();
+  uint64_t critid() const;
+  void set_critid(uint64_t value);
+  private:
+  uint64_t _internal_critid() const;
+  void _internal_set_critid(uint64_t value);
+  public:
+
+  // uint32 hashIdF = 1;
+  void clear_hashidf();
+  uint32_t hashidf() const;
+  void set_hashidf(uint32_t value);
+  private:
+  uint32_t _internal_hashidf() const;
+  void _internal_set_hashidf(uint32_t value);
+  public:
+
+  // uint32 expire = 3;
+  void clear_expire();
+  uint32_t expire() const;
+  void set_expire(uint32_t value);
+  private:
+  uint32_t _internal_expire() const;
+  void _internal_set_expire(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyCrit)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t critid_;
+  uint32_t hashidf_;
+  uint32_t expire_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
 
 class InnerGameEvent final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEvent) */ {
@@ -238,7 +2682,7 @@ class InnerGameEvent final :
                &_InnerGameEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    15;
 
   friend void swap(InnerGameEvent& a, InnerGameEvent& b) {
     a.Swap(&b);
@@ -578,7 +3022,7 @@ class InnerGameEventDestroy final :
                &_InnerGameEventDestroy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    16;
 
   friend void swap(InnerGameEventDestroy& a, InnerGameEventDestroy& b) {
     a.Swap(&b);
@@ -804,7 +3248,7 @@ class InnerGameEventDestroyTeamsvr final :
                &_InnerGameEventDestroyTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    17;
 
   friend void swap(InnerGameEventDestroyTeamsvr& a, InnerGameEventDestroyTeamsvr& b) {
     a.Swap(&b);
@@ -920,7 +3364,7 @@ class InnerGameEventDestryFriendsvr final :
                &_InnerGameEventDestryFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    18;
 
   friend void swap(InnerGameEventDestryFriendsvr& a, InnerGameEventDestryFriendsvr& b) {
     a.Swap(&b);
@@ -1036,7 +3480,7 @@ class InnerGameEventDestroyFamilysvr final :
                &_InnerGameEventDestroyFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    19;
 
   friend void swap(InnerGameEventDestroyFamilysvr& a, InnerGameEventDestroyFamilysvr& b) {
     a.Swap(&b);
@@ -1152,7 +3596,7 @@ class InnerGameEventDestroyRanksvr final :
                &_InnerGameEventDestroyRanksvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    20;
 
   friend void swap(InnerGameEventDestroyRanksvr& a, InnerGameEventDestroyRanksvr& b) {
     a.Swap(&b);
@@ -1275,7 +3719,7 @@ class InnerGameEventLogin final :
                &_InnerGameEventLogin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    21;
 
   friend void swap(InnerGameEventLogin& a, InnerGameEventLogin& b) {
     a.Swap(&b);
@@ -1460,7 +3904,7 @@ class InnerGameEventLoginTeamsvr final :
                &_InnerGameEventLoginTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    22;
 
   friend void swap(InnerGameEventLoginTeamsvr& a, InnerGameEventLoginTeamsvr& b) {
     a.Swap(&b);
@@ -1723,7 +4167,7 @@ class InnerGameEventLoginFriendsvr final :
                &_InnerGameEventLoginFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    23;
 
   friend void swap(InnerGameEventLoginFriendsvr& a, InnerGameEventLoginFriendsvr& b) {
     a.Swap(&b);
@@ -1912,7 +4356,7 @@ class InnerGameEventLogout final :
                &_InnerGameEventLogout_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    24;
 
   friend void swap(InnerGameEventLogout& a, InnerGameEventLogout& b) {
     a.Swap(&b);
@@ -2096,7 +4540,7 @@ class InnerGameEventLogoutTeamvr final :
                &_InnerGameEventLogoutTeamvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    25;
 
   friend void swap(InnerGameEventLogoutTeamvr& a, InnerGameEventLogoutTeamvr& b) {
     a.Swap(&b);
@@ -2212,7 +4656,7 @@ class InnerGameEventLogoutFriendsvr final :
                &_InnerGameEventLogoutFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    26;
 
   friend void swap(InnerGameEventLogoutFriendsvr& a, InnerGameEventLogoutFriendsvr& b) {
     a.Swap(&b);
@@ -2335,7 +4779,7 @@ class InnerGameEventOnline final :
                &_InnerGameEventOnline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    27;
 
   friend void swap(InnerGameEventOnline& a, InnerGameEventOnline& b) {
     a.Swap(&b);
@@ -2520,7 +4964,7 @@ class InnerGameEventOnlineTeamsvr final :
                &_InnerGameEventOnlineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    28;
 
   friend void swap(InnerGameEventOnlineTeamsvr& a, InnerGameEventOnlineTeamsvr& b) {
     a.Swap(&b);
@@ -2692,7 +5136,7 @@ class InnerGameEventOnlineFriendsvr final :
                &_InnerGameEventOnlineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    29;
 
   friend void swap(InnerGameEventOnlineFriendsvr& a, InnerGameEventOnlineFriendsvr& b) {
     a.Swap(&b);
@@ -2881,7 +5325,7 @@ class InnerGameEventOffline final :
                &_InnerGameEventOffline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    30;
 
   friend void swap(InnerGameEventOffline& a, InnerGameEventOffline& b) {
     a.Swap(&b);
@@ -3065,7 +5509,7 @@ class InnerGameEventOfflineTeamsvr final :
                &_InnerGameEventOfflineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    31;
 
   friend void swap(InnerGameEventOfflineTeamsvr& a, InnerGameEventOfflineTeamsvr& b) {
     a.Swap(&b);
@@ -3181,7 +5625,7 @@ class InnerGameEventOfflineFriendsvr final :
                &_InnerGameEventOfflineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    32;
 
   friend void swap(InnerGameEventOfflineFriendsvr& a, InnerGameEventOfflineFriendsvr& b) {
     a.Swap(&b);
@@ -3304,7 +5748,7 @@ class InnerGameEventChangeMap final :
                &_InnerGameEventChangeMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    33;
 
   friend void swap(InnerGameEventChangeMap& a, InnerGameEventChangeMap& b) {
     a.Swap(&b);
@@ -3500,7 +5944,7 @@ class InnerGameEventChangeMapTeamsvr final :
                &_InnerGameEventChangeMapTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    34;
 
   friend void swap(InnerGameEventChangeMapTeamsvr& a, InnerGameEventChangeMapTeamsvr& b) {
     a.Swap(&b);
@@ -3762,7 +6206,7 @@ class InnerGameEventChangeMapFriendsvr final :
                &_InnerGameEventChangeMapFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    35;
 
   friend void swap(InnerGameEventChangeMapFriendsvr& a, InnerGameEventChangeMapFriendsvr& b) {
     a.Swap(&b);
@@ -3885,7 +6329,7 @@ class InnerGameEventDeath final :
                &_InnerGameEventDeath_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    36;
 
   friend void swap(InnerGameEventDeath& a, InnerGameEventDeath& b) {
     a.Swap(&b);
@@ -4070,7 +6514,7 @@ class InnerGameEventDeathTeamsvr final :
                &_InnerGameEventDeathTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    37;
 
   friend void swap(InnerGameEventDeathTeamsvr& a, InnerGameEventDeathTeamsvr& b) {
     a.Swap(&b);
@@ -4221,7 +6665,7 @@ class InnerGameEventDeathFriendsvr final :
                &_InnerGameEventDeathFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    38;
 
   friend void swap(InnerGameEventDeathFriendsvr& a, InnerGameEventDeathFriendsvr& b) {
     a.Swap(&b);
@@ -4344,7 +6788,7 @@ class InnerGameEventRebirth final :
                &_InnerGameEventRebirth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    39;
 
   friend void swap(InnerGameEventRebirth& a, InnerGameEventRebirth& b) {
     a.Swap(&b);
@@ -4529,7 +6973,7 @@ class InnerGameEventRebirthTeamsvr final :
                &_InnerGameEventRebirthTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    40;
 
   friend void swap(InnerGameEventRebirthTeamsvr& a, InnerGameEventRebirthTeamsvr& b) {
     a.Swap(&b);
@@ -4700,7 +7144,7 @@ class InnerGameEventRebirthFriendsvr final :
                &_InnerGameEventRebirthFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    41;
 
   friend void swap(InnerGameEventRebirthFriendsvr& a, InnerGameEventRebirthFriendsvr& b) {
     a.Swap(&b);
@@ -4823,7 +7267,7 @@ class InnerGameEventWakeup final :
                &_InnerGameEventWakeup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    42;
 
   friend void swap(InnerGameEventWakeup& a, InnerGameEventWakeup& b) {
     a.Swap(&b);
@@ -5008,7 +7452,7 @@ class InnerGameEventWakeupTeamsvr final :
                &_InnerGameEventWakeupTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    43;
 
   friend void swap(InnerGameEventWakeupTeamsvr& a, InnerGameEventWakeupTeamsvr& b) {
     a.Swap(&b);
@@ -5271,7 +7715,7 @@ class InnerGameEventWakeupFriendsvr final :
                &_InnerGameEventWakeupFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    44;
 
   friend void swap(InnerGameEventWakeupFriendsvr& a, InnerGameEventWakeupFriendsvr& b) {
     a.Swap(&b);
@@ -5413,6 +7857,1278 @@ class InnerGameEventWakeupFriendsvr final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// InnerRoleIdList
+
+// repeated uint64 roleIds = 1;
+inline int InnerRoleIdList::_internal_roleids_size() const {
+  return roleids_.size();
+}
+inline int InnerRoleIdList::roleids_size() const {
+  return _internal_roleids_size();
+}
+inline void InnerRoleIdList::clear_roleids() {
+  roleids_.Clear();
+}
+inline uint64_t InnerRoleIdList::_internal_roleids(int index) const {
+  return roleids_.Get(index);
+}
+inline uint64_t InnerRoleIdList::roleids(int index) const {
+  // @@protoc_insertion_point(field_get:inner.InnerRoleIdList.roleIds)
+  return _internal_roleids(index);
+}
+inline void InnerRoleIdList::set_roleids(int index, uint64_t value) {
+  roleids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:inner.InnerRoleIdList.roleIds)
+}
+inline void InnerRoleIdList::_internal_add_roleids(uint64_t value) {
+  roleids_.Add(value);
+}
+inline void InnerRoleIdList::add_roleids(uint64_t value) {
+  _internal_add_roleids(value);
+  // @@protoc_insertion_point(field_add:inner.InnerRoleIdList.roleIds)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+InnerRoleIdList::_internal_roleids() const {
+  return roleids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >&
+InnerRoleIdList::roleids() const {
+  // @@protoc_insertion_point(field_list:inner.InnerRoleIdList.roleIds)
+  return _internal_roleids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+InnerRoleIdList::_internal_mutable_roleids() {
+  return &roleids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint64_t >*
+InnerRoleIdList::mutable_roleids() {
+  // @@protoc_insertion_point(field_mutable_list:inner.InnerRoleIdList.roleIds)
+  return _internal_mutable_roleids();
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyTeamMem
+
+// uint64 roleId = 1;
+inline void InnerCopyTeamMem::clear_roleid() {
+  roleid_ = uint64_t{0u};
+}
+inline uint64_t InnerCopyTeamMem::_internal_roleid() const {
+  return roleid_;
+}
+inline uint64_t InnerCopyTeamMem::roleid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeamMem.roleId)
+  return _internal_roleid();
+}
+inline void InnerCopyTeamMem::_internal_set_roleid(uint64_t value) {
+  
+  roleid_ = value;
+}
+inline void InnerCopyTeamMem::set_roleid(uint64_t value) {
+  _internal_set_roleid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyTeamMem.roleId)
+}
+
+// uint32 zoneIdF = 2;
+inline void InnerCopyTeamMem::clear_zoneidf() {
+  zoneidf_ = 0u;
+}
+inline uint32_t InnerCopyTeamMem::_internal_zoneidf() const {
+  return zoneidf_;
+}
+inline uint32_t InnerCopyTeamMem::zoneidf() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeamMem.zoneIdF)
+  return _internal_zoneidf();
+}
+inline void InnerCopyTeamMem::_internal_set_zoneidf(uint32_t value) {
+  
+  zoneidf_ = value;
+}
+inline void InnerCopyTeamMem::set_zoneidf(uint32_t value) {
+  _internal_set_zoneidf(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyTeamMem.zoneIdF)
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyTeam
+
+// repeated .inner.InnerCopyTeamMem roles = 1;
+inline int InnerCopyTeam::_internal_roles_size() const {
+  return roles_.size();
+}
+inline int InnerCopyTeam::roles_size() const {
+  return _internal_roles_size();
+}
+inline void InnerCopyTeam::clear_roles() {
+  roles_.Clear();
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::mutable_roles(int index) {
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyTeam.roles)
+  return roles_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >*
+InnerCopyTeam::mutable_roles() {
+  // @@protoc_insertion_point(field_mutable_list:inner.InnerCopyTeam.roles)
+  return &roles_;
+}
+inline const ::inner::InnerCopyTeamMem& InnerCopyTeam::_internal_roles(int index) const {
+  return roles_.Get(index);
+}
+inline const ::inner::InnerCopyTeamMem& InnerCopyTeam::roles(int index) const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeam.roles)
+  return _internal_roles(index);
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::_internal_add_roles() {
+  return roles_.Add();
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::add_roles() {
+  ::inner::InnerCopyTeamMem* _add = _internal_add_roles();
+  // @@protoc_insertion_point(field_add:inner.InnerCopyTeam.roles)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >&
+InnerCopyTeam::roles() const {
+  // @@protoc_insertion_point(field_list:inner.InnerCopyTeam.roles)
+  return roles_;
+}
+
+// repeated .inner.InnerCopyTeamMem robots = 2;
+inline int InnerCopyTeam::_internal_robots_size() const {
+  return robots_.size();
+}
+inline int InnerCopyTeam::robots_size() const {
+  return _internal_robots_size();
+}
+inline void InnerCopyTeam::clear_robots() {
+  robots_.Clear();
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::mutable_robots(int index) {
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyTeam.robots)
+  return robots_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >*
+InnerCopyTeam::mutable_robots() {
+  // @@protoc_insertion_point(field_mutable_list:inner.InnerCopyTeam.robots)
+  return &robots_;
+}
+inline const ::inner::InnerCopyTeamMem& InnerCopyTeam::_internal_robots(int index) const {
+  return robots_.Get(index);
+}
+inline const ::inner::InnerCopyTeamMem& InnerCopyTeam::robots(int index) const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeam.robots)
+  return _internal_robots(index);
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::_internal_add_robots() {
+  return robots_.Add();
+}
+inline ::inner::InnerCopyTeamMem* InnerCopyTeam::add_robots() {
+  ::inner::InnerCopyTeamMem* _add = _internal_add_robots();
+  // @@protoc_insertion_point(field_add:inner.InnerCopyTeam.robots)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeamMem >&
+InnerCopyTeam::robots() const {
+  // @@protoc_insertion_point(field_list:inner.InnerCopyTeam.robots)
+  return robots_;
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyTeamList
+
+// uint32 targetId = 1;
+inline void InnerCopyTeamList::clear_targetid() {
+  targetid_ = 0u;
+}
+inline uint32_t InnerCopyTeamList::_internal_targetid() const {
+  return targetid_;
+}
+inline uint32_t InnerCopyTeamList::targetid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeamList.targetId)
+  return _internal_targetid();
+}
+inline void InnerCopyTeamList::_internal_set_targetid(uint32_t value) {
+  
+  targetid_ = value;
+}
+inline void InnerCopyTeamList::set_targetid(uint32_t value) {
+  _internal_set_targetid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyTeamList.targetId)
+}
+
+// repeated .inner.InnerCopyTeam teams = 2;
+inline int InnerCopyTeamList::_internal_teams_size() const {
+  return teams_.size();
+}
+inline int InnerCopyTeamList::teams_size() const {
+  return _internal_teams_size();
+}
+inline void InnerCopyTeamList::clear_teams() {
+  teams_.Clear();
+}
+inline ::inner::InnerCopyTeam* InnerCopyTeamList::mutable_teams(int index) {
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyTeamList.teams)
+  return teams_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeam >*
+InnerCopyTeamList::mutable_teams() {
+  // @@protoc_insertion_point(field_mutable_list:inner.InnerCopyTeamList.teams)
+  return &teams_;
+}
+inline const ::inner::InnerCopyTeam& InnerCopyTeamList::_internal_teams(int index) const {
+  return teams_.Get(index);
+}
+inline const ::inner::InnerCopyTeam& InnerCopyTeamList::teams(int index) const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyTeamList.teams)
+  return _internal_teams(index);
+}
+inline ::inner::InnerCopyTeam* InnerCopyTeamList::_internal_add_teams() {
+  return teams_.Add();
+}
+inline ::inner::InnerCopyTeam* InnerCopyTeamList::add_teams() {
+  ::inner::InnerCopyTeam* _add = _internal_add_teams();
+  // @@protoc_insertion_point(field_add:inner.InnerCopyTeamList.teams)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::inner::InnerCopyTeam >&
+InnerCopyTeamList::teams() const {
+  // @@protoc_insertion_point(field_list:inner.InnerCopyTeamList.teams)
+  return teams_;
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyEnterByTeam
+
+// -------------------------------------------------------------------
+
+// InnerCopyEnterByChgLvId
+
+// -------------------------------------------------------------------
+
+// InnerCopyEnterByHome
+
+// -------------------------------------------------------------------
+
+// InnerCopyEnter
+
+// uint32 copyLvId = 1;
+inline void InnerCopyEnter::clear_copylvid() {
+  copylvid_ = 0u;
+}
+inline uint32_t InnerCopyEnter::_internal_copylvid() const {
+  return copylvid_;
+}
+inline uint32_t InnerCopyEnter::copylvid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.copyLvId)
+  return _internal_copylvid();
+}
+inline void InnerCopyEnter::_internal_set_copylvid(uint32_t value) {
+  
+  copylvid_ = value;
+}
+inline void InnerCopyEnter::set_copylvid(uint32_t value) {
+  _internal_set_copylvid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyEnter.copyLvId)
+}
+
+// uint32 eProc = 2;
+inline void InnerCopyEnter::clear_eproc() {
+  eproc_ = 0u;
+}
+inline uint32_t InnerCopyEnter::_internal_eproc() const {
+  return eproc_;
+}
+inline uint32_t InnerCopyEnter::eproc() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.eProc)
+  return _internal_eproc();
+}
+inline void InnerCopyEnter::_internal_set_eproc(uint32_t value) {
+  
+  eproc_ = value;
+}
+inline void InnerCopyEnter::set_eproc(uint32_t value) {
+  _internal_set_eproc(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyEnter.eProc)
+}
+
+// uint32 threeId = 3;
+inline void InnerCopyEnter::clear_threeid() {
+  threeid_ = 0u;
+}
+inline uint32_t InnerCopyEnter::_internal_threeid() const {
+  return threeid_;
+}
+inline uint32_t InnerCopyEnter::threeid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.threeId)
+  return _internal_threeid();
+}
+inline void InnerCopyEnter::_internal_set_threeid(uint32_t value) {
+  
+  threeid_ = value;
+}
+inline void InnerCopyEnter::set_threeid(uint32_t value) {
+  _internal_set_threeid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyEnter.threeId)
+}
+
+// uint32 voteId = 4;
+inline void InnerCopyEnter::clear_voteid() {
+  voteid_ = 0u;
+}
+inline uint32_t InnerCopyEnter::_internal_voteid() const {
+  return voteid_;
+}
+inline uint32_t InnerCopyEnter::voteid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.voteId)
+  return _internal_voteid();
+}
+inline void InnerCopyEnter::_internal_set_voteid(uint32_t value) {
+  
+  voteid_ = value;
+}
+inline void InnerCopyEnter::set_voteid(uint32_t value) {
+  _internal_set_voteid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyEnter.voteId)
+}
+
+// .inner.InnerCopyTeamList teamList = 5;
+inline bool InnerCopyEnter::_internal_has_teamlist() const {
+  return this != internal_default_instance() && teamlist_ != nullptr;
+}
+inline bool InnerCopyEnter::has_teamlist() const {
+  return _internal_has_teamlist();
+}
+inline void InnerCopyEnter::clear_teamlist() {
+  if (GetArenaForAllocation() == nullptr && teamlist_ != nullptr) {
+    delete teamlist_;
+  }
+  teamlist_ = nullptr;
+}
+inline const ::inner::InnerCopyTeamList& InnerCopyEnter::_internal_teamlist() const {
+  const ::inner::InnerCopyTeamList* p = teamlist_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyTeamList&>(
+      ::inner::_InnerCopyTeamList_default_instance_);
+}
+inline const ::inner::InnerCopyTeamList& InnerCopyEnter::teamlist() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.teamList)
+  return _internal_teamlist();
+}
+inline void InnerCopyEnter::unsafe_arena_set_allocated_teamlist(
+    ::inner::InnerCopyTeamList* teamlist) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(teamlist_);
+  }
+  teamlist_ = teamlist;
+  if (teamlist) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyEnter.teamList)
+}
+inline ::inner::InnerCopyTeamList* InnerCopyEnter::release_teamlist() {
+  
+  ::inner::InnerCopyTeamList* temp = teamlist_;
+  teamlist_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyEnter::unsafe_arena_release_teamlist() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyEnter.teamList)
+  
+  ::inner::InnerCopyTeamList* temp = teamlist_;
+  teamlist_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyEnter::_internal_mutable_teamlist() {
+  
+  if (teamlist_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyTeamList>(GetArenaForAllocation());
+    teamlist_ = p;
+  }
+  return teamlist_;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyEnter::mutable_teamlist() {
+  ::inner::InnerCopyTeamList* _msg = _internal_mutable_teamlist();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyEnter.teamList)
+  return _msg;
+}
+inline void InnerCopyEnter::set_allocated_teamlist(::inner::InnerCopyTeamList* teamlist) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete teamlist_;
+  }
+  if (teamlist) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(teamlist);
+    if (message_arena != submessage_arena) {
+      teamlist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, teamlist, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  teamlist_ = teamlist;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerCopyEnter.teamList)
+}
+
+// .inner.InnerCopyEnterByTeam team = 11;
+inline bool InnerCopyEnter::_internal_has_team() const {
+  return type_case() == kTeam;
+}
+inline bool InnerCopyEnter::has_team() const {
+  return _internal_has_team();
+}
+inline void InnerCopyEnter::set_has_team() {
+  _oneof_case_[0] = kTeam;
+}
+inline void InnerCopyEnter::clear_team() {
+  if (_internal_has_team()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.team_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyEnterByTeam* InnerCopyEnter::release_team() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyEnter.team)
+  if (_internal_has_team()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByTeam* temp = type_.team_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.team_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyEnterByTeam& InnerCopyEnter::_internal_team() const {
+  return _internal_has_team()
+      ? *type_.team_
+      : reinterpret_cast< ::inner::InnerCopyEnterByTeam&>(::inner::_InnerCopyEnterByTeam_default_instance_);
+}
+inline const ::inner::InnerCopyEnterByTeam& InnerCopyEnter::team() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.team)
+  return _internal_team();
+}
+inline ::inner::InnerCopyEnterByTeam* InnerCopyEnter::unsafe_arena_release_team() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyEnter.team)
+  if (_internal_has_team()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByTeam* temp = type_.team_;
+    type_.team_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyEnter::unsafe_arena_set_allocated_team(::inner::InnerCopyEnterByTeam* team) {
+  clear_type();
+  if (team) {
+    set_has_team();
+    type_.team_ = team;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyEnter.team)
+}
+inline ::inner::InnerCopyEnterByTeam* InnerCopyEnter::_internal_mutable_team() {
+  if (!_internal_has_team()) {
+    clear_type();
+    set_has_team();
+    type_.team_ = CreateMaybeMessage< ::inner::InnerCopyEnterByTeam >(GetArenaForAllocation());
+  }
+  return type_.team_;
+}
+inline ::inner::InnerCopyEnterByTeam* InnerCopyEnter::mutable_team() {
+  ::inner::InnerCopyEnterByTeam* _msg = _internal_mutable_team();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyEnter.team)
+  return _msg;
+}
+
+// .inner.InnerCopyEnterByChgLvId chgLvId = 12;
+inline bool InnerCopyEnter::_internal_has_chglvid() const {
+  return type_case() == kChgLvId;
+}
+inline bool InnerCopyEnter::has_chglvid() const {
+  return _internal_has_chglvid();
+}
+inline void InnerCopyEnter::set_has_chglvid() {
+  _oneof_case_[0] = kChgLvId;
+}
+inline void InnerCopyEnter::clear_chglvid() {
+  if (_internal_has_chglvid()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.chglvid_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyEnterByChgLvId* InnerCopyEnter::release_chglvid() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyEnter.chgLvId)
+  if (_internal_has_chglvid()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByChgLvId* temp = type_.chglvid_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.chglvid_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyEnterByChgLvId& InnerCopyEnter::_internal_chglvid() const {
+  return _internal_has_chglvid()
+      ? *type_.chglvid_
+      : reinterpret_cast< ::inner::InnerCopyEnterByChgLvId&>(::inner::_InnerCopyEnterByChgLvId_default_instance_);
+}
+inline const ::inner::InnerCopyEnterByChgLvId& InnerCopyEnter::chglvid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.chgLvId)
+  return _internal_chglvid();
+}
+inline ::inner::InnerCopyEnterByChgLvId* InnerCopyEnter::unsafe_arena_release_chglvid() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyEnter.chgLvId)
+  if (_internal_has_chglvid()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByChgLvId* temp = type_.chglvid_;
+    type_.chglvid_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyEnter::unsafe_arena_set_allocated_chglvid(::inner::InnerCopyEnterByChgLvId* chglvid) {
+  clear_type();
+  if (chglvid) {
+    set_has_chglvid();
+    type_.chglvid_ = chglvid;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyEnter.chgLvId)
+}
+inline ::inner::InnerCopyEnterByChgLvId* InnerCopyEnter::_internal_mutable_chglvid() {
+  if (!_internal_has_chglvid()) {
+    clear_type();
+    set_has_chglvid();
+    type_.chglvid_ = CreateMaybeMessage< ::inner::InnerCopyEnterByChgLvId >(GetArenaForAllocation());
+  }
+  return type_.chglvid_;
+}
+inline ::inner::InnerCopyEnterByChgLvId* InnerCopyEnter::mutable_chglvid() {
+  ::inner::InnerCopyEnterByChgLvId* _msg = _internal_mutable_chglvid();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyEnter.chgLvId)
+  return _msg;
+}
+
+// .inner.InnerCopyEnterByHome home = 13;
+inline bool InnerCopyEnter::_internal_has_home() const {
+  return type_case() == kHome;
+}
+inline bool InnerCopyEnter::has_home() const {
+  return _internal_has_home();
+}
+inline void InnerCopyEnter::set_has_home() {
+  _oneof_case_[0] = kHome;
+}
+inline void InnerCopyEnter::clear_home() {
+  if (_internal_has_home()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.home_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyEnterByHome* InnerCopyEnter::release_home() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyEnter.home)
+  if (_internal_has_home()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByHome* temp = type_.home_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.home_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyEnterByHome& InnerCopyEnter::_internal_home() const {
+  return _internal_has_home()
+      ? *type_.home_
+      : reinterpret_cast< ::inner::InnerCopyEnterByHome&>(::inner::_InnerCopyEnterByHome_default_instance_);
+}
+inline const ::inner::InnerCopyEnterByHome& InnerCopyEnter::home() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyEnter.home)
+  return _internal_home();
+}
+inline ::inner::InnerCopyEnterByHome* InnerCopyEnter::unsafe_arena_release_home() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyEnter.home)
+  if (_internal_has_home()) {
+    clear_has_type();
+    ::inner::InnerCopyEnterByHome* temp = type_.home_;
+    type_.home_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyEnter::unsafe_arena_set_allocated_home(::inner::InnerCopyEnterByHome* home) {
+  clear_type();
+  if (home) {
+    set_has_home();
+    type_.home_ = home;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyEnter.home)
+}
+inline ::inner::InnerCopyEnterByHome* InnerCopyEnter::_internal_mutable_home() {
+  if (!_internal_has_home()) {
+    clear_type();
+    set_has_home();
+    type_.home_ = CreateMaybeMessage< ::inner::InnerCopyEnterByHome >(GetArenaForAllocation());
+  }
+  return type_.home_;
+}
+inline ::inner::InnerCopyEnterByHome* InnerCopyEnter::mutable_home() {
+  ::inner::InnerCopyEnterByHome* _msg = _internal_mutable_home();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyEnter.home)
+  return _msg;
+}
+
+inline bool InnerCopyEnter::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyEnter::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyEnter::TypeCase InnerCopyEnter::type_case() const {
+  return InnerCopyEnter::TypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// InnerCopyWayByMatch
+
+// uint32 mtype = 1;
+inline void InnerCopyWayByMatch::clear_mtype() {
+  mtype_ = 0u;
+}
+inline uint32_t InnerCopyWayByMatch::_internal_mtype() const {
+  return mtype_;
+}
+inline uint32_t InnerCopyWayByMatch::mtype() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWayByMatch.mtype)
+  return _internal_mtype();
+}
+inline void InnerCopyWayByMatch::_internal_set_mtype(uint32_t value) {
+  
+  mtype_ = value;
+}
+inline void InnerCopyWayByMatch::set_mtype(uint32_t value) {
+  _internal_set_mtype(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyWayByMatch.mtype)
+}
+
+// uint32 seasonId = 2;
+inline void InnerCopyWayByMatch::clear_seasonid() {
+  seasonid_ = 0u;
+}
+inline uint32_t InnerCopyWayByMatch::_internal_seasonid() const {
+  return seasonid_;
+}
+inline uint32_t InnerCopyWayByMatch::seasonid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWayByMatch.seasonId)
+  return _internal_seasonid();
+}
+inline void InnerCopyWayByMatch::_internal_set_seasonid(uint32_t value) {
+  
+  seasonid_ = value;
+}
+inline void InnerCopyWayByMatch::set_seasonid(uint32_t value) {
+  _internal_set_seasonid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyWayByMatch.seasonId)
+}
+
+// uint32 dayId = 3;
+inline void InnerCopyWayByMatch::clear_dayid() {
+  dayid_ = 0u;
+}
+inline uint32_t InnerCopyWayByMatch::_internal_dayid() const {
+  return dayid_;
+}
+inline uint32_t InnerCopyWayByMatch::dayid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWayByMatch.dayId)
+  return _internal_dayid();
+}
+inline void InnerCopyWayByMatch::_internal_set_dayid(uint32_t value) {
+  
+  dayid_ = value;
+}
+inline void InnerCopyWayByMatch::set_dayid(uint32_t value) {
+  _internal_set_dayid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyWayByMatch.dayId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyWayByTeam
+
+// -------------------------------------------------------------------
+
+// InnerCopyWay
+
+// .inner.InnerCopyTeamList teamList = 1;
+inline bool InnerCopyWay::_internal_has_teamlist() const {
+  return this != internal_default_instance() && teamlist_ != nullptr;
+}
+inline bool InnerCopyWay::has_teamlist() const {
+  return _internal_has_teamlist();
+}
+inline void InnerCopyWay::clear_teamlist() {
+  if (GetArenaForAllocation() == nullptr && teamlist_ != nullptr) {
+    delete teamlist_;
+  }
+  teamlist_ = nullptr;
+}
+inline const ::inner::InnerCopyTeamList& InnerCopyWay::_internal_teamlist() const {
+  const ::inner::InnerCopyTeamList* p = teamlist_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyTeamList&>(
+      ::inner::_InnerCopyTeamList_default_instance_);
+}
+inline const ::inner::InnerCopyTeamList& InnerCopyWay::teamlist() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWay.teamList)
+  return _internal_teamlist();
+}
+inline void InnerCopyWay::unsafe_arena_set_allocated_teamlist(
+    ::inner::InnerCopyTeamList* teamlist) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(teamlist_);
+  }
+  teamlist_ = teamlist;
+  if (teamlist) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyWay.teamList)
+}
+inline ::inner::InnerCopyTeamList* InnerCopyWay::release_teamlist() {
+  
+  ::inner::InnerCopyTeamList* temp = teamlist_;
+  teamlist_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyWay::unsafe_arena_release_teamlist() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyWay.teamList)
+  
+  ::inner::InnerCopyTeamList* temp = teamlist_;
+  teamlist_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyWay::_internal_mutable_teamlist() {
+  
+  if (teamlist_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyTeamList>(GetArenaForAllocation());
+    teamlist_ = p;
+  }
+  return teamlist_;
+}
+inline ::inner::InnerCopyTeamList* InnerCopyWay::mutable_teamlist() {
+  ::inner::InnerCopyTeamList* _msg = _internal_mutable_teamlist();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyWay.teamList)
+  return _msg;
+}
+inline void InnerCopyWay::set_allocated_teamlist(::inner::InnerCopyTeamList* teamlist) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete teamlist_;
+  }
+  if (teamlist) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(teamlist);
+    if (message_arena != submessage_arena) {
+      teamlist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, teamlist, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  teamlist_ = teamlist;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerCopyWay.teamList)
+}
+
+// .inner.InnerCopyWayByMatch byMatch = 11;
+inline bool InnerCopyWay::_internal_has_bymatch() const {
+  return type_case() == kByMatch;
+}
+inline bool InnerCopyWay::has_bymatch() const {
+  return _internal_has_bymatch();
+}
+inline void InnerCopyWay::set_has_bymatch() {
+  _oneof_case_[0] = kByMatch;
+}
+inline void InnerCopyWay::clear_bymatch() {
+  if (_internal_has_bymatch()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.bymatch_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyWayByMatch* InnerCopyWay::release_bymatch() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyWay.byMatch)
+  if (_internal_has_bymatch()) {
+    clear_has_type();
+    ::inner::InnerCopyWayByMatch* temp = type_.bymatch_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.bymatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyWayByMatch& InnerCopyWay::_internal_bymatch() const {
+  return _internal_has_bymatch()
+      ? *type_.bymatch_
+      : reinterpret_cast< ::inner::InnerCopyWayByMatch&>(::inner::_InnerCopyWayByMatch_default_instance_);
+}
+inline const ::inner::InnerCopyWayByMatch& InnerCopyWay::bymatch() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWay.byMatch)
+  return _internal_bymatch();
+}
+inline ::inner::InnerCopyWayByMatch* InnerCopyWay::unsafe_arena_release_bymatch() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyWay.byMatch)
+  if (_internal_has_bymatch()) {
+    clear_has_type();
+    ::inner::InnerCopyWayByMatch* temp = type_.bymatch_;
+    type_.bymatch_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyWay::unsafe_arena_set_allocated_bymatch(::inner::InnerCopyWayByMatch* bymatch) {
+  clear_type();
+  if (bymatch) {
+    set_has_bymatch();
+    type_.bymatch_ = bymatch;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyWay.byMatch)
+}
+inline ::inner::InnerCopyWayByMatch* InnerCopyWay::_internal_mutable_bymatch() {
+  if (!_internal_has_bymatch()) {
+    clear_type();
+    set_has_bymatch();
+    type_.bymatch_ = CreateMaybeMessage< ::inner::InnerCopyWayByMatch >(GetArenaForAllocation());
+  }
+  return type_.bymatch_;
+}
+inline ::inner::InnerCopyWayByMatch* InnerCopyWay::mutable_bymatch() {
+  ::inner::InnerCopyWayByMatch* _msg = _internal_mutable_bymatch();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyWay.byMatch)
+  return _msg;
+}
+
+// .inner.InnerCopyWayByTeam byTeam = 12;
+inline bool InnerCopyWay::_internal_has_byteam() const {
+  return type_case() == kByTeam;
+}
+inline bool InnerCopyWay::has_byteam() const {
+  return _internal_has_byteam();
+}
+inline void InnerCopyWay::set_has_byteam() {
+  _oneof_case_[0] = kByTeam;
+}
+inline void InnerCopyWay::clear_byteam() {
+  if (_internal_has_byteam()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.byteam_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyWayByTeam* InnerCopyWay::release_byteam() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyWay.byTeam)
+  if (_internal_has_byteam()) {
+    clear_has_type();
+    ::inner::InnerCopyWayByTeam* temp = type_.byteam_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.byteam_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyWayByTeam& InnerCopyWay::_internal_byteam() const {
+  return _internal_has_byteam()
+      ? *type_.byteam_
+      : reinterpret_cast< ::inner::InnerCopyWayByTeam&>(::inner::_InnerCopyWayByTeam_default_instance_);
+}
+inline const ::inner::InnerCopyWayByTeam& InnerCopyWay::byteam() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyWay.byTeam)
+  return _internal_byteam();
+}
+inline ::inner::InnerCopyWayByTeam* InnerCopyWay::unsafe_arena_release_byteam() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyWay.byTeam)
+  if (_internal_has_byteam()) {
+    clear_has_type();
+    ::inner::InnerCopyWayByTeam* temp = type_.byteam_;
+    type_.byteam_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyWay::unsafe_arena_set_allocated_byteam(::inner::InnerCopyWayByTeam* byteam) {
+  clear_type();
+  if (byteam) {
+    set_has_byteam();
+    type_.byteam_ = byteam;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyWay.byTeam)
+}
+inline ::inner::InnerCopyWayByTeam* InnerCopyWay::_internal_mutable_byteam() {
+  if (!_internal_has_byteam()) {
+    clear_type();
+    set_has_byteam();
+    type_.byteam_ = CreateMaybeMessage< ::inner::InnerCopyWayByTeam >(GetArenaForAllocation());
+  }
+  return type_.byteam_;
+}
+inline ::inner::InnerCopyWayByTeam* InnerCopyWay::mutable_byteam() {
+  ::inner::InnerCopyWayByTeam* _msg = _internal_mutable_byteam();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyWay.byTeam)
+  return _msg;
+}
+
+inline bool InnerCopyWay::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyWay::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyWay::TypeCase InnerCopyWay::type_case() const {
+  return InnerCopyWay::TypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// InnerCopyPvp
+
+// -------------------------------------------------------------------
+
+// InnerCopyPve
+
+// -------------------------------------------------------------------
+
+// InnerCopyType
+
+// uint32 copyLvId = 1;
+inline void InnerCopyType::clear_copylvid() {
+  copylvid_ = 0u;
+}
+inline uint32_t InnerCopyType::_internal_copylvid() const {
+  return copylvid_;
+}
+inline uint32_t InnerCopyType::copylvid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.copyLvId)
+  return _internal_copylvid();
+}
+inline void InnerCopyType::_internal_set_copylvid(uint32_t value) {
+  
+  copylvid_ = value;
+}
+inline void InnerCopyType::set_copylvid(uint32_t value) {
+  _internal_set_copylvid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.copyLvId)
+}
+
+// uint32 eProc = 2;
+inline void InnerCopyType::clear_eproc() {
+  eproc_ = 0u;
+}
+inline uint32_t InnerCopyType::_internal_eproc() const {
+  return eproc_;
+}
+inline uint32_t InnerCopyType::eproc() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.eProc)
+  return _internal_eproc();
+}
+inline void InnerCopyType::_internal_set_eproc(uint32_t value) {
+  
+  eproc_ = value;
+}
+inline void InnerCopyType::set_eproc(uint32_t value) {
+  _internal_set_eproc(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.eProc)
+}
+
+// uint32 threeId = 3;
+inline void InnerCopyType::clear_threeid() {
+  threeid_ = 0u;
+}
+inline uint32_t InnerCopyType::_internal_threeid() const {
+  return threeid_;
+}
+inline uint32_t InnerCopyType::threeid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.threeId)
+  return _internal_threeid();
+}
+inline void InnerCopyType::_internal_set_threeid(uint32_t value) {
+  
+  threeid_ = value;
+}
+inline void InnerCopyType::set_threeid(uint32_t value) {
+  _internal_set_threeid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.threeId)
+}
+
+// .inner.InnerCopyPvp pvp = 11;
+inline bool InnerCopyType::_internal_has_pvp() const {
+  return type_case() == kPvp;
+}
+inline bool InnerCopyType::has_pvp() const {
+  return _internal_has_pvp();
+}
+inline void InnerCopyType::set_has_pvp() {
+  _oneof_case_[0] = kPvp;
+}
+inline void InnerCopyType::clear_pvp() {
+  if (_internal_has_pvp()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.pvp_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPvp* InnerCopyType::release_pvp() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyType.pvp)
+  if (_internal_has_pvp()) {
+    clear_has_type();
+    ::inner::InnerCopyPvp* temp = type_.pvp_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.pvp_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPvp& InnerCopyType::_internal_pvp() const {
+  return _internal_has_pvp()
+      ? *type_.pvp_
+      : reinterpret_cast< ::inner::InnerCopyPvp&>(::inner::_InnerCopyPvp_default_instance_);
+}
+inline const ::inner::InnerCopyPvp& InnerCopyType::pvp() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.pvp)
+  return _internal_pvp();
+}
+inline ::inner::InnerCopyPvp* InnerCopyType::unsafe_arena_release_pvp() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyType.pvp)
+  if (_internal_has_pvp()) {
+    clear_has_type();
+    ::inner::InnerCopyPvp* temp = type_.pvp_;
+    type_.pvp_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyType::unsafe_arena_set_allocated_pvp(::inner::InnerCopyPvp* pvp) {
+  clear_type();
+  if (pvp) {
+    set_has_pvp();
+    type_.pvp_ = pvp;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyType.pvp)
+}
+inline ::inner::InnerCopyPvp* InnerCopyType::_internal_mutable_pvp() {
+  if (!_internal_has_pvp()) {
+    clear_type();
+    set_has_pvp();
+    type_.pvp_ = CreateMaybeMessage< ::inner::InnerCopyPvp >(GetArenaForAllocation());
+  }
+  return type_.pvp_;
+}
+inline ::inner::InnerCopyPvp* InnerCopyType::mutable_pvp() {
+  ::inner::InnerCopyPvp* _msg = _internal_mutable_pvp();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyType.pvp)
+  return _msg;
+}
+
+// .inner.InnerCopyPve pve = 12;
+inline bool InnerCopyType::_internal_has_pve() const {
+  return type_case() == kPve;
+}
+inline bool InnerCopyType::has_pve() const {
+  return _internal_has_pve();
+}
+inline void InnerCopyType::set_has_pve() {
+  _oneof_case_[0] = kPve;
+}
+inline void InnerCopyType::clear_pve() {
+  if (_internal_has_pve()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.pve_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPve* InnerCopyType::release_pve() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyType.pve)
+  if (_internal_has_pve()) {
+    clear_has_type();
+    ::inner::InnerCopyPve* temp = type_.pve_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.pve_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPve& InnerCopyType::_internal_pve() const {
+  return _internal_has_pve()
+      ? *type_.pve_
+      : reinterpret_cast< ::inner::InnerCopyPve&>(::inner::_InnerCopyPve_default_instance_);
+}
+inline const ::inner::InnerCopyPve& InnerCopyType::pve() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.pve)
+  return _internal_pve();
+}
+inline ::inner::InnerCopyPve* InnerCopyType::unsafe_arena_release_pve() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyType.pve)
+  if (_internal_has_pve()) {
+    clear_has_type();
+    ::inner::InnerCopyPve* temp = type_.pve_;
+    type_.pve_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyType::unsafe_arena_set_allocated_pve(::inner::InnerCopyPve* pve) {
+  clear_type();
+  if (pve) {
+    set_has_pve();
+    type_.pve_ = pve;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyType.pve)
+}
+inline ::inner::InnerCopyPve* InnerCopyType::_internal_mutable_pve() {
+  if (!_internal_has_pve()) {
+    clear_type();
+    set_has_pve();
+    type_.pve_ = CreateMaybeMessage< ::inner::InnerCopyPve >(GetArenaForAllocation());
+  }
+  return type_.pve_;
+}
+inline ::inner::InnerCopyPve* InnerCopyType::mutable_pve() {
+  ::inner::InnerCopyPve* _msg = _internal_mutable_pve();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyType.pve)
+  return _msg;
+}
+
+inline bool InnerCopyType::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyType::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyType::TypeCase InnerCopyType::type_case() const {
+  return InnerCopyType::TypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// InnerCopyCrit
+
+// uint32 hashIdF = 1;
+inline void InnerCopyCrit::clear_hashidf() {
+  hashidf_ = 0u;
+}
+inline uint32_t InnerCopyCrit::_internal_hashidf() const {
+  return hashidf_;
+}
+inline uint32_t InnerCopyCrit::hashidf() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCrit.hashIdF)
+  return _internal_hashidf();
+}
+inline void InnerCopyCrit::_internal_set_hashidf(uint32_t value) {
+  
+  hashidf_ = value;
+}
+inline void InnerCopyCrit::set_hashidf(uint32_t value) {
+  _internal_set_hashidf(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyCrit.hashIdF)
+}
+
+// uint64 critId = 2;
+inline void InnerCopyCrit::clear_critid() {
+  critid_ = uint64_t{0u};
+}
+inline uint64_t InnerCopyCrit::_internal_critid() const {
+  return critid_;
+}
+inline uint64_t InnerCopyCrit::critid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCrit.critId)
+  return _internal_critid();
+}
+inline void InnerCopyCrit::_internal_set_critid(uint64_t value) {
+  
+  critid_ = value;
+}
+inline void InnerCopyCrit::set_critid(uint64_t value) {
+  _internal_set_critid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyCrit.critId)
+}
+
+// uint32 expire = 3;
+inline void InnerCopyCrit::clear_expire() {
+  expire_ = 0u;
+}
+inline uint32_t InnerCopyCrit::_internal_expire() const {
+  return expire_;
+}
+inline uint32_t InnerCopyCrit::expire() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCrit.expire)
+  return _internal_expire();
+}
+inline void InnerCopyCrit::_internal_set_expire(uint32_t value) {
+  
+  expire_ = value;
+}
+inline void InnerCopyCrit::set_expire(uint32_t value) {
+  _internal_set_expire(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyCrit.expire)
+}
+
+// -------------------------------------------------------------------
+
 // InnerGameEvent
 
 // .inner.InnerGameEventDestroy destroy = 1;
@@ -10375,6 +14091,36 @@ inline void InnerGameEventWakeupFriendsvr::set_llteamid(uint64_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

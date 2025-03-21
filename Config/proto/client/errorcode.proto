@@ -1,0 +1,23 @@
+syntax = "proto3";
+package client;
+
+enum enErrorCode
+{
+	ECode_Success					= 0; 		//成功
+	
+	ECode_Login_RoleNameCollision		= 1001;		//创建角色重名
+	ECode_Login_NoRole					= 1002;		//没有角色数据
+	ECode_Login_RoleInGame				= 1003;		//角色已经再游戏中
+	ECode_Login_CheckOften				= 1004;		//查看玩家数据太频繁
+	ECode_Login_NoInGame					= 1005;		//玩家当前不在线
+	ECode_Login_NameTooLong				= 1006;		//名字过长
+	ECode_Login_NameNotRight				= 1007;		//名字中有非法字符
+	ECode_Login_DeviceNotSame			= 1008;		//重新登陆设备不一致失败
+	ECode_Login_ReloginTimeout			= 1009;		//重新登录超时
+	ECode_Login_Failure					= 1010;		//登录失败
+
+	ECode_Match_RoomRelease				= 2001;		//获取房间信息时,房间已解散
+	ECode_Match_NotEnterRoom				= 2002;		//未进入房间
+	ECode_Match_FullRoom					= 2003;
+}
+

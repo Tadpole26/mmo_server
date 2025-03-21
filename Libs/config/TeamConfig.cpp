@@ -25,6 +25,14 @@ namespace config
 		return &(iter->second);
 	}
 
+	vote_info_t* TeamConfig::getVoteConfig(const uint32 tid)
+	{
+		auto iter = _voteInfoCfg.find(tid);
+		if (iter == _voteInfoCfg.end())
+			return nullptr;
+		return &(iter->second);
+	}
+
 	bool TeamConfig::foreach(std::function<bool(team_info_t&)> func)
 	{
 		for (auto& pair : _teamInfoCfg)

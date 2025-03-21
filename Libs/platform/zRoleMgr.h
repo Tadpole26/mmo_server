@@ -20,12 +20,12 @@ public:
 public:
 	bool addRole(T* pRole)
 	{
-		auto iter = _rolemap.find(pRole->getRoleId);
+		auto iter = _rolemap.find(pRole->getRoleId());
 		if (iter != _rolemap.end())
 		{
 			return false;
 		}
-		_rolemap[pRole->getRoleId] = pRole;
+		_rolemap[pRole->getRoleId()] = pRole;
 		_accmap[pRole->getAccId()].push_back(pRole);
 		return true;
 	}

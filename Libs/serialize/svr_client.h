@@ -2,7 +2,7 @@
 #include "logic_interface.h"
 #include "tcp_client.h"
 #include "msg_make.h"
-#include "result_code.pb.h"
+#include "errorcode.pb.h"
 #include "module.pb.h"
 #include "global_define.h"
 /*
@@ -19,15 +19,15 @@ public:
 	~svr_session();
 
 	virtual bool Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual bool Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual bool Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual void Init();
@@ -55,15 +55,15 @@ public:
 	~svr_reconn();
 
 	virtual bool Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual bool Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual bool Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-		, msg_id_t usModule = client::enModule_ServerCommon, ProtoMsg::ResultCode code = ProtoMsg::ResultCode::Code_Common_Success
+		, msg_id_t usModule = client::enModule_ServerCommon, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
 
 	virtual bool Send(const tagMsgHead* pMsg);

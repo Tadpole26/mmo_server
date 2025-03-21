@@ -9,8 +9,8 @@ private:
 	uint32 _zoneId = 0;
 public:
 	cUser(const uint64 ullRoleId);
-	~cUser();
-	void final();
+	virtual ~cUser();
+	virtual void final();
 public:
 	const std::string& getNickName() { return _nickName; }
 	zRoleIdType getRoleId() { return _roleId; }

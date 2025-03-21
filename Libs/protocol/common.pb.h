@@ -102,6 +102,9 @@ extern RoleVoteStateDefaultTypeInternal _RoleVoteState_default_instance_;
 class RoleVoteStateList;
 struct RoleVoteStateListDefaultTypeInternal;
 extern RoleVoteStateListDefaultTypeInternal _RoleVoteStateList_default_instance_;
+class VoteBaseData;
+struct VoteBaseDataDefaultTypeInternal;
+extern VoteBaseDataDefaultTypeInternal _VoteBaseData_default_instance_;
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
 template<> ::common::ClientCopyScene* Arena::CreateMaybeMessage<::common::ClientCopyScene>(Arena*);
@@ -123,6 +126,7 @@ template<> ::common::RoleExtend2* Arena::CreateMaybeMessage<::common::RoleExtend
 template<> ::common::RoleExtend3* Arena::CreateMaybeMessage<::common::RoleExtend3>(Arena*);
 template<> ::common::RoleVoteState* Arena::CreateMaybeMessage<::common::RoleVoteState>(Arena*);
 template<> ::common::RoleVoteStateList* Arena::CreateMaybeMessage<::common::RoleVoteStateList>(Arena*);
+template<> ::common::VoteBaseData* Arena::CreateMaybeMessage<::common::VoteBaseData>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace common {
 
@@ -3235,6 +3239,160 @@ class RoleExtend3 final :
 };
 // -------------------------------------------------------------------
 
+class VoteBaseData final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.VoteBaseData) */ {
+ public:
+  inline VoteBaseData() : VoteBaseData(nullptr) {}
+  ~VoteBaseData() override;
+  explicit PROTOBUF_CONSTEXPR VoteBaseData(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VoteBaseData(const VoteBaseData& from);
+  VoteBaseData(VoteBaseData&& from) noexcept
+    : VoteBaseData() {
+    *this = ::std::move(from);
+  }
+
+  inline VoteBaseData& operator=(const VoteBaseData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VoteBaseData& operator=(VoteBaseData&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VoteBaseData& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VoteBaseData* internal_default_instance() {
+    return reinterpret_cast<const VoteBaseData*>(
+               &_VoteBaseData_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(VoteBaseData& a, VoteBaseData& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VoteBaseData* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VoteBaseData* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VoteBaseData* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VoteBaseData>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VoteBaseData& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const VoteBaseData& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VoteBaseData* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.VoteBaseData";
+  }
+  protected:
+  explicit VoteBaseData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kExpireTimeFieldNumber = 1,
+    kLastingTimeFieldNumber = 2,
+  };
+  // uint32 expireTime = 1;
+  void clear_expiretime();
+  uint32_t expiretime() const;
+  void set_expiretime(uint32_t value);
+  private:
+  uint32_t _internal_expiretime() const;
+  void _internal_set_expiretime(uint32_t value);
+  public:
+
+  // uint32 lastingTime = 2;
+  void clear_lastingtime();
+  uint32_t lastingtime() const;
+  void set_lastingtime(uint32_t value);
+  private:
+  uint32_t _internal_lastingtime() const;
+  void _internal_set_lastingtime(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:common.VoteBaseData)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t expiretime_;
+  uint32_t lastingtime_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_common_2eproto;
+};
+// -------------------------------------------------------------------
+
 class RoleVoteState final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.RoleVoteState) */ {
  public:
@@ -3283,7 +3441,7 @@ class RoleVoteState final :
                &_RoleVoteState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(RoleVoteState& a, RoleVoteState& b) {
     a.Swap(&b);
@@ -3437,7 +3595,7 @@ class RoleVoteStateList final :
                &_RoleVoteStateList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(RoleVoteStateList& a, RoleVoteStateList& b) {
     a.Swap(&b);
@@ -6096,6 +6254,50 @@ inline void RoleExtend3::set_maxmp(uint32_t value) {
 
 // -------------------------------------------------------------------
 
+// VoteBaseData
+
+// uint32 expireTime = 1;
+inline void VoteBaseData::clear_expiretime() {
+  expiretime_ = 0u;
+}
+inline uint32_t VoteBaseData::_internal_expiretime() const {
+  return expiretime_;
+}
+inline uint32_t VoteBaseData::expiretime() const {
+  // @@protoc_insertion_point(field_get:common.VoteBaseData.expireTime)
+  return _internal_expiretime();
+}
+inline void VoteBaseData::_internal_set_expiretime(uint32_t value) {
+  
+  expiretime_ = value;
+}
+inline void VoteBaseData::set_expiretime(uint32_t value) {
+  _internal_set_expiretime(value);
+  // @@protoc_insertion_point(field_set:common.VoteBaseData.expireTime)
+}
+
+// uint32 lastingTime = 2;
+inline void VoteBaseData::clear_lastingtime() {
+  lastingtime_ = 0u;
+}
+inline uint32_t VoteBaseData::_internal_lastingtime() const {
+  return lastingtime_;
+}
+inline uint32_t VoteBaseData::lastingtime() const {
+  // @@protoc_insertion_point(field_get:common.VoteBaseData.lastingTime)
+  return _internal_lastingtime();
+}
+inline void VoteBaseData::_internal_set_lastingtime(uint32_t value) {
+  
+  lastingtime_ = value;
+}
+inline void VoteBaseData::set_lastingtime(uint32_t value) {
+  _internal_set_lastingtime(value);
+  // @@protoc_insertion_point(field_set:common.VoteBaseData.lastingTime)
+}
+
+// -------------------------------------------------------------------
+
 // RoleVoteState
 
 // uint64 roleId = 1;
@@ -6185,6 +6387,8 @@ RoleVoteStateList::roles() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

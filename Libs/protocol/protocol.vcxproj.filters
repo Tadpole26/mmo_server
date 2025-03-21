@@ -20,6 +20,7 @@
     <ClCompile Include="teamsvr.pb.cc" />
     <ClCompile Include="teamcommon.pb.cc" />
     <ClCompile Include="innerteam.pb.cc" />
+    <ClCompile Include="errorcode.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -41,6 +42,7 @@
     <ClInclude Include="teamsvr.pb.h" />
     <ClInclude Include="teamcommon.pb.h" />
     <ClInclude Include="innerteam.pb.h" />
+    <ClInclude Include="errorcode.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

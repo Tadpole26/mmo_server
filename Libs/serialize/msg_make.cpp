@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "msg_make.h"
 #include "parse_pb.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "google/protobuf/message_lite.h"
 
 CMsgMake::CMsgMake() {}
@@ -9,7 +9,7 @@ CMsgMake::~CMsgMake() {}
 
 tagMsgHead* CMsgMake::MakeHeadMsg(google::protobuf::Message* pMessage
 	, msg_id_t usModule, msg_id_t usProtocol, uint32_t uiSequence
-	, ProtoMsg::ResultCode eCode)
+	, uint32_t eCode)
 {
 	if (pMessage == nullptr) return nullptr;
 	size_t nSize = pMessage->ByteSizeLong();
@@ -34,14 +34,14 @@ ERROR1:
 
 tagMsgHead* CMsgMake::MakeHeadMsg(const std::string& strMsg
 	, msg_id_t usModule, msg_id_t usProtocol, uint32_t uiSequence
-	, ProtoMsg::ResultCode eCode)
+	, uint32_t eCode)
 {
 	return MakeHeadMsg(strMsg.c_str(), strMsg.length(), usModule, usProtocol, uiSequence, eCode);
 }
 
 tagMsgHead* CMsgMake::MakeHeadMsg(const char* buf, size_t size
 	, msg_id_t usModule, msg_id_t usProtocol, uint32_t uiSequence
-	, ProtoMsg::ResultCode eCode)
+	, uint32_t eCode)
 {
 	tagMsgHead* pRet = nullptr;
 	if (!ResetSend(size)) goto ERROR1;

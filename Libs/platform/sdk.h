@@ -7,6 +7,7 @@
 #include <fstream>
 
 #include "zType.h"
+#include "zConvert.h"
 #include "zPos.h"
 #include "zMacro.h"
 #include "zMisc.h"

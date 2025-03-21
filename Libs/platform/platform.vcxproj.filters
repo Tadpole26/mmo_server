@@ -196,6 +196,9 @@
     <ClInclude Include="cTeam.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="zConvert.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="util_random.cpp">

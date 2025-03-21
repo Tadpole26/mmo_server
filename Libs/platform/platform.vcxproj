@@ -193,6 +193,7 @@
     <ClInclude Include="en_de_code.h" />
     <ClInclude Include="func_proc.h" />
     <ClInclude Include="util_string.h" />
+    <ClInclude Include="zConvert.h" />
     <ClInclude Include="zLogMgr.h" />
     <ClInclude Include="rank_map.h" />
     <ClInclude Include="util_file.h" />

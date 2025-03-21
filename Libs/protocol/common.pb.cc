@@ -270,6 +270,19 @@ struct RoleExtend3DefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RoleExtend3DefaultTypeInternal _RoleExtend3_default_instance_;
+PROTOBUF_CONSTEXPR VoteBaseData::VoteBaseData(
+    ::_pbi::ConstantInitialized)
+  : expiretime_(0u)
+  , lastingtime_(0u){}
+struct VoteBaseDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VoteBaseDataDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VoteBaseDataDefaultTypeInternal() {}
+  union {
+    VoteBaseData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VoteBaseDataDefaultTypeInternal _VoteBaseData_default_instance_;
 PROTOBUF_CONSTEXPR RoleVoteState::RoleVoteState(
     ::_pbi::ConstantInitialized)
   : roleid_(uint64_t{0u})
@@ -296,7 +309,7 @@ struct RoleVoteStateListDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RoleVoteStateListDefaultTypeInternal _RoleVoteStateList_default_instance_;
 }  // namespace common
-static ::_pb::Metadata file_level_metadata_common_2eproto[19];
+static ::_pb::Metadata file_level_metadata_common_2eproto[20];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_common_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_common_2eproto = nullptr;
 
@@ -466,6 +479,14 @@ const uint32_t TableStruct_common_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   PROTOBUF_FIELD_OFFSET(::common::RoleExtend3, mp_),
   PROTOBUF_FIELD_OFFSET(::common::RoleExtend3, maxmp_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::VoteBaseData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::common::VoteBaseData, expiretime_),
+  PROTOBUF_FIELD_OFFSET(::common::VoteBaseData, lastingtime_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::common::RoleVoteState, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -499,8 +520,9 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 125, -1, -1, sizeof(::common::RoleExtend1)},
   { 146, -1, -1, sizeof(::common::RoleExtend2)},
   { 154, -1, -1, sizeof(::common::RoleExtend3)},
-  { 164, -1, -1, sizeof(::common::RoleVoteState)},
-  { 172, -1, -1, sizeof(::common::RoleVoteStateList)},
+  { 164, -1, -1, sizeof(::common::VoteBaseData)},
+  { 172, -1, -1, sizeof(::common::RoleVoteState)},
+  { 180, -1, -1, sizeof(::common::RoleVoteStateList)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -521,6 +543,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::common::_RoleExtend1_default_instance_._instance,
   &::common::_RoleExtend2_default_instance_._instance,
   &::common::_RoleExtend3_default_instance_._instance,
+  &::common::_VoteBaseData_default_instance_._instance,
   &::common::_RoleVoteState_default_instance_._instance,
   &::common::_RoleVoteStateList_default_instance_._instance,
 };
@@ -569,16 +592,17 @@ const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "tend2\022&\n\007sceneId\030\001 \001(\0132\025.common.ClientSc"
   "eneId\022\037\n\004cpos\030\002 \001(\0132\021.common.ClientPos\"C"
   "\n\013RoleExtend3\022\n\n\002hp\030\001 \001(\r\022\r\n\005maxHp\030\002 \001(\r"
-  "\022\n\n\002mp\030\003 \001(\r\022\r\n\005maxMp\030\004 \001(\r\".\n\rRoleVoteS"
-  "tate\022\016\n\006roleId\030\001 \001(\004\022\r\n\005state\030\002 \001(\r\"9\n\021R"
-  "oleVoteStateList\022$\n\005roles\030\001 \003(\0132\025.common"
-  ".RoleVoteStateb\006proto3"
+  "\022\n\n\002mp\030\003 \001(\r\022\r\n\005maxMp\030\004 \001(\r\"7\n\014VoteBaseD"
+  "ata\022\022\n\nexpireTime\030\001 \001(\r\022\023\n\013lastingTime\030\002"
+  " \001(\r\".\n\rRoleVoteState\022\016\n\006roleId\030\001 \001(\004\022\r\n"
+  "\005state\030\002 \001(\r\"9\n\021RoleVoteStateList\022$\n\005rol"
+  "es\030\001 \003(\0132\025.common.RoleVoteStateb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_common_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_common_2eproto = {
-    false, false, 1862, descriptor_table_protodef_common_2eproto,
+    false, false, 1919, descriptor_table_protodef_common_2eproto,
     "common.proto",
-    &descriptor_table_common_2eproto_once, nullptr, 0, 19,
+    &descriptor_table_common_2eproto_once, nullptr, 0, 20,
     schemas, file_default_instances, TableStruct_common_2eproto::offsets,
     file_level_metadata_common_2eproto, file_level_enum_descriptors_common_2eproto,
     file_level_service_descriptors_common_2eproto,
@@ -4990,6 +5014,211 @@ void RoleExtend3::InternalSwap(RoleExtend3* other) {
 
 // ===================================================================
 
+class VoteBaseData::_Internal {
+ public:
+};
+
+VoteBaseData::VoteBaseData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:common.VoteBaseData)
+}
+VoteBaseData::VoteBaseData(const VoteBaseData& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&expiretime_, &from.expiretime_,
+    static_cast<size_t>(reinterpret_cast<char*>(&lastingtime_) -
+    reinterpret_cast<char*>(&expiretime_)) + sizeof(lastingtime_));
+  // @@protoc_insertion_point(copy_constructor:common.VoteBaseData)
+}
+
+inline void VoteBaseData::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&expiretime_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&lastingtime_) -
+    reinterpret_cast<char*>(&expiretime_)) + sizeof(lastingtime_));
+}
+
+VoteBaseData::~VoteBaseData() {
+  // @@protoc_insertion_point(destructor:common.VoteBaseData)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void VoteBaseData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void VoteBaseData::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void VoteBaseData::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.VoteBaseData)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&expiretime_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&lastingtime_) -
+      reinterpret_cast<char*>(&expiretime_)) + sizeof(lastingtime_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* VoteBaseData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 expireTime = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          expiretime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 lastingTime = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          lastingtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* VoteBaseData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.VoteBaseData)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 expireTime = 1;
+  if (this->_internal_expiretime() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_expiretime(), target);
+  }
+
+  // uint32 lastingTime = 2;
+  if (this->_internal_lastingtime() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_lastingtime(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.VoteBaseData)
+  return target;
+}
+
+size_t VoteBaseData::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.VoteBaseData)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 expireTime = 1;
+  if (this->_internal_expiretime() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_expiretime());
+  }
+
+  // uint32 lastingTime = 2;
+  if (this->_internal_lastingtime() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_lastingtime());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VoteBaseData::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    VoteBaseData::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VoteBaseData::GetClassData() const { return &_class_data_; }
+
+void VoteBaseData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<VoteBaseData *>(to)->MergeFrom(
+      static_cast<const VoteBaseData &>(from));
+}
+
+
+void VoteBaseData::MergeFrom(const VoteBaseData& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.VoteBaseData)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_expiretime() != 0) {
+    _internal_set_expiretime(from._internal_expiretime());
+  }
+  if (from._internal_lastingtime() != 0) {
+    _internal_set_lastingtime(from._internal_lastingtime());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VoteBaseData::CopyFrom(const VoteBaseData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.VoteBaseData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VoteBaseData::IsInitialized() const {
+  return true;
+}
+
+void VoteBaseData::InternalSwap(VoteBaseData* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VoteBaseData, lastingtime_)
+      + sizeof(VoteBaseData::lastingtime_)
+      - PROTOBUF_FIELD_OFFSET(VoteBaseData, expiretime_)>(
+          reinterpret_cast<char*>(&expiretime_),
+          reinterpret_cast<char*>(&other->expiretime_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata VoteBaseData::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_common_2eproto_getter, &descriptor_table_common_2eproto_once,
+      file_level_metadata_common_2eproto[17]);
+}
+
+// ===================================================================
+
 class RoleVoteState::_Internal {
  public:
 };
@@ -5190,7 +5419,7 @@ void RoleVoteState::InternalSwap(RoleVoteState* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RoleVoteState::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_common_2eproto_getter, &descriptor_table_common_2eproto_once,
-      file_level_metadata_common_2eproto[17]);
+      file_level_metadata_common_2eproto[18]);
 }
 
 // ===================================================================
@@ -5368,7 +5597,7 @@ void RoleVoteStateList::InternalSwap(RoleVoteStateList* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RoleVoteStateList::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_common_2eproto_getter, &descriptor_table_common_2eproto_once,
-      file_level_metadata_common_2eproto[18]);
+      file_level_metadata_common_2eproto[19]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -5441,6 +5670,10 @@ Arena::CreateMaybeMessage< ::common::RoleExtend2 >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::common::RoleExtend3*
 Arena::CreateMaybeMessage< ::common::RoleExtend3 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::RoleExtend3 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::VoteBaseData*
+Arena::CreateMaybeMessage< ::common::VoteBaseData >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::VoteBaseData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::common::RoleVoteState*
 Arena::CreateMaybeMessage< ::common::RoleVoteState >(Arena* arena) {

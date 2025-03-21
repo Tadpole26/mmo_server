@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="chatcommon.pb.cc" />
     <ClCompile Include="common.pb.cc" />
+    <ClCompile Include="errorcode.pb.cc" />
     <ClCompile Include="fight3v3common.pb.cc" />
     <ClCompile Include="fight5v5common.pb.cc" />
     <ClCompile Include="friend.pb.cc" />
@@ -42,6 +43,7 @@
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
     <ClInclude Include="common.pb.h" />
+    <ClInclude Include="errorcode.pb.h" />
     <ClInclude Include="fight3v3common.pb.h" />
     <ClInclude Include="fight5v5common.pb.h" />
     <ClInclude Include="friend.pb.h" />

@@ -3,6 +3,7 @@
 #include "sdk.h"
 #include "cServer.h"
 
+using zVoteIdType = uint32;
 using zTeamIdType = uint64;
 
 namespace cTeam
@@ -11,7 +12,7 @@ namespace cTeam
 	inline zTeamIdType unionTeamId(uint32 threeId, uint32 timestamp, uint32 autoId)
 	{
 		assert(autoId <= (1 << 13));
-		return ((uint64)threeId <<46) + ((uint64)timestamp <<14 + (uint64)autoId);
+		return ((uint64)threeId <<46) + ((uint64)timestamp << 14) + ((uint64)autoId);
 	}
 	inline uint32 splitThreeIdTeamId(zTeamIdType teamId)
 	{

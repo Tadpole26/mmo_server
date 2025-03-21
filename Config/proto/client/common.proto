@@ -145,6 +145,13 @@ message RoleExtend3
     uint32 maxMp = 4;
 }
 
+//投票基本信息
+message VoteBaseData
+{
+    uint32 expireTime = 1;//截止时间
+    uint32 lastingTime = 2;//持续时间
+}
+
 //投票状态
 message RoleVoteState
 {

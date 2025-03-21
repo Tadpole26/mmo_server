@@ -5,6 +5,106 @@ import "fight5v5common.proto";
 import "innerfriend.proto";
 package inner;
 
+message InnerRoleIdList
+{
+	repeated uint64 roleIds = 1;					//角色Id列表
+}
+
+message InnerCopyTeamMem
+{
+	uint64 roleId = 1;
+	uint32 zoneIdF = 2;
+}
+
+message InnerCopyTeam
+{
+	repeated InnerCopyTeamMem roles = 1;
+	repeated InnerCopyTeamMem robots = 2;
+}
+
+message InnerCopyTeamList
+{
+	uint32 targetId = 1;
+	repeated InnerCopyTeam teams = 2;
+}
+
+message InnerCopyEnterByTeam
+{
+}
+
+message InnerCopyEnterByChgLvId
+{
+}
+
+message InnerCopyEnterByHome
+{
+}
+
+//副本进入方式
+message InnerCopyEnter
+{
+	uint32 copyLvId = 1;//副本关卡
+	uint32 eProc = 2;	//玩法范围
+	uint32 threeId = 3;//副本范围
+	uint32 voteId = 4;//表格投票id
+	InnerCopyTeamList teamList = 5;//队伍信息
+	oneof type
+	{
+		InnerCopyEnterByTeam team = 11;						//队伍模式
+		InnerCopyEnterByChgLvId chgLvId = 12;				//切关
+		InnerCopyEnterByHome home = 13;						//进家园
+	}
+}
+
+message InnerCopyWayByMatch
+{
+	uint32 mtype = 1;//匹配类型
+	uint32 seasonId = 2;//赛季id
+	uint32 dayId = 3;//场次id
+}
+
+message InnerCopyWayByTeam 
+{
+}
+
+message InnerCopyWay
+{
+	InnerCopyTeamList  teamList = 1;				//队伍信息
+	oneof type
+	{
+		InnerCopyWayByMatch byMatch = 11;			//匹配服
+		InnerCopyWayByTeam byTeam = 12;				//队伍服
+	}
+}
+
+message InnerCopyPvp
+{
+}
+
+message InnerCopyPve
+{
+}
+
+//进入副本带入副本基础信息
+message InnerCopyType
+{
+	uint32 copyLvId = 1;		//副本关卡
+	uint32 eProc = 2;//玩法范围
+	uint32 threeId = 3;//副本范围
+	oneof type
+	{
+		InnerCopyPvp pvp = 11;
+		InnerCopyPve pve = 12;
+	}
+}
+
+message InnerCopyCrit
+{
+	uint32 hashIdF = 1;//来自哪个服
+	uint64 critId = 2;//凭证id
+	uint32 expire = 3;//凭证到期
+}
+
 //角色inner事件
 message InnerGameEvent
 {
