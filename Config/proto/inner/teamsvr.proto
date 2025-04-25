@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "common.proto";
 import "innercommon.proto";
+import "innermatch.proto";
 import "fight3v3common.proto";
 import "fight5v5common.proto";
 import "chatcommon.proto";
@@ -10,6 +11,17 @@ message InnerTeamsvr
 {
 	uint64 fromuser = 1;
 	uint32 fromzone = 2;
+	oneof Frommatch
+	{
+		InnerTeamsvr_Frommatch_Test									frommatch_test					= 1201;
+		InnerTeamsvr_Frommatch_StartMatch							frommatch_startmatch			= 1202;
+		InnerTeamsvr_Frommatch_RestartMatch							frommatch_restartmatch			= 1203;
+		InnerTeamsvr_Frommatch_CancelMatch							frommatch_cancelmatch			= 1204;
+		InnerTeamsvr_Frommatch_PunishMatch							frommatch_punishmatch			= 1205;
+		InnerTeamsvr_Frommatch_StartConfirm							frommatch_startconfirm			= 1206;
+		InnerTeamsvr_Frommatch_RoleConfirmOk						frommatch_roleconfirmok			= 1207;
+		InnerTeamsvr_Frommatch_StartLoading							frommatch_startloading			= 1208;
+	}
 	oneof Fromscene
 	{
 		InnerTeamsvr_Fromscene_Test 								fromscene_test 					= 1401;
@@ -48,6 +60,53 @@ message InnerTeamsvr
 		InnerTeamsvr_Fromscene_BatDstroyTeam						fromscene_batdestroyteam		= 1434;
 		InnerTeamsvr_Fromscene_JumpToLeader							fromscene_jumptoleader			= 1435;
 	}
+}
+
+message InnerTeamsvr_Frommatch_Test
+{
+}
+
+message InnerTeamsvr_Frommatch_StartMatch
+{
+	uint32 mtype = 1;
+	uint64 uinitId = 2;
+	inner.InnerMatchMatchList matchList = 3;
+}
+
+message InnerTeamsvr_Frommatch_RestartMatch
+{
+	uint32 type = 1;
+	uint64 unitId = 2;
+}
+
+message InnerTeamsvr_Frommatch_CancelMatch
+{
+	uint32 mtype = 1;
+	uint64 uinitId = 2;
+}
+
+message InnerTeamsvr_Frommatch_PunishMatch
+{
+	uint64 unitId = 1;
+	inner.InnerMatchPunishList punishList = 2;
+}
+
+message InnerTeamsvr_Frommatch_StartConfirm
+{
+	inner.InnerMatchRoom room = 1;
+	uint32 expire = 2;
+}
+
+message InnerTeamsvr_Frommatch_RoleConfirmOk
+{
+	uint64 roomId = 1;
+}
+
+message InnerTeamsvr_Frommatch_StartLoading
+{
+	uint64 roomId = 1;
+	inner.InnerMatchRoomCopyScene copyscene = 2;
+	inner.InnerCopyCreateBy createBy = 3;
 }
 
 message InnerTeamsvr_Fromscene_Test

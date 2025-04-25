@@ -77,8 +77,17 @@ message InnerCopyWay
 	}
 }
 
+message InnerCopyPvpF55
+{
+	uint32 copyId = 1;
+}
+
 message InnerCopyPvp
 {
+	oneof type 
+	{
+		InnerCopyPvpF55 f55 = 11;					//5v5
+	}
 }
 
 message InnerCopyPve
@@ -89,13 +98,20 @@ message InnerCopyPve
 message InnerCopyType
 {
 	uint32 copyLvId = 1;		//副本关卡
-	uint32 eProc = 2;//玩法范围
-	uint32 threeId = 3;//副本范围
+	uint32 eProc = 2;			//玩法范围
+	uint32 threeId = 3;			//副本范围
 	oneof type
 	{
 		InnerCopyPvp pvp = 11;
 		InnerCopyPve pve = 12;
 	}
+}
+
+message InnerCopyCreateBy
+{
+	InnerCopyCrit crit = 1;		//凭证
+	InnerCopyType copy = 2;		//副本
+	InnerCopyWay way = 3;		//创建方式
 }
 
 message InnerCopyCrit

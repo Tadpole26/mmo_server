@@ -1,0 +1,50 @@
+syntax = "proto3";
+import "innercommon.proto";
+import "innermatch.proto";
+package inner;
+
+message InnerMatchsvr
+{
+	uint64 fromuser = 1;
+	uint32 fromzone = 2;
+	oneof Fromteam
+	{
+		InnerMatchsvr_Fromteam_Test 								fromteam_test 					= 1301;
+		InnerMatchsvr_Fromteam_StartMatch							fromteam_startmatch				= 1302;	
+		InnerMatchsvr_Fromteam_CancelMatch							fromteam_cancelmatch			= 1303;
+		InnerMatchsvr_Fromteam_ConfirmOk							fromteam_confirmok				= 1304;
+		InnerMatchsvr_Fromteam_RefuseOk								fromteam_refuseok				= 1305;
+		InnerMatchsvr_Fromteam_ForceCancel							fromteam_forcecancel			= 1306;	
+	}
+}
+
+message InnerMatchsvr_Fromteam_Test
+{
+}
+
+message InnerMatchsvr_Fromteam_StartMatch
+{
+	uint32 mtype 								= 1;			//匹配模式
+	inner.InnerCopyType copy 					= 4;
+	map<uint64, inner.InnerMatchMatcher> roles	= 5;
+}
+
+message InnerMatchsvr_Fromteam_CancelMatch
+{
+	uint64 unitId 								= 1;			//匹配单元唯一id
+}
+
+message InnerMatchsvr_Fromteam_ConfirmOk
+{
+}
+
+
+message InnerMatchsvr_Fromteam_RefuseOk
+{
+}
+
+
+message InnerMatchsvr_Fromteam_ForceCancel
+{
+}
+

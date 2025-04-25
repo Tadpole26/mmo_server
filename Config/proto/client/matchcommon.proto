@@ -1,0 +1,65 @@
+syntax = "proto3";
+import "common.proto";
+import "fight3v3common.proto";
+import "fight5v5common.proto";
+package common;
+
+message ModuleMatch
+{
+    MatchTypeData mdata = 1;        //匹配类型数据
+    MatchStatus mstatus = 2;        //匹配状态(对象不为空才有意义)
+    MatchGroupList groupList = 3;   //匹配组列表(对象不为空才有意义)
+}
+
+//匹配模块类型数据
+message MatchTypeData
+{
+    common.MatchFight3v3 fight3v3 = 1;  //3v3
+    common.MatchFight5v5 fight5v5 = 2;  //5v5
+}
+
+//匹配结果所处阶段
+enum enStageId
+{
+    enStateId_None = 0;
+    enStageId_Confirm = 1;          //确认阶段
+    enStageId_Loading = 2;          //载入阶段
+    enStageId_Max = 3;
+}
+
+//匹配状态
+message MatchStatus
+{
+    uint32 mtype = 1;               //匹配类型
+    uint32 mtime = 2;               //匹配时间
+}
+
+//匹配组列表
+message MatchGroupList
+{
+    MatchGroup red = 1;             //红方
+    MatchGroup blue = 2;            //蓝方
+    uint32 expire = 3;              //到期时间
+    uint32 stageId = 4;             //当前阶段enStateId
+}
+
+//匹配组
+message MatchGroup
+{
+    repeated MatchFighter fighters = 1; //组的匹配者
+}
+
+//一个匹配者
+message MatchFighter
+{
+    common.RoleBrief brief = 1;     //基础信息
+    MatchFighterExtend extd = 2;    //扩展信息
+    bool isok = 3;                  //是否已ok
+}
+
+//匹配者扩展数据
+message MatchFighterExtend
+{
+    common.ExtendFight3v3 fight3v3 = 1; //江湖比武3v3
+    common.ExtendFight5v5 fight5v5 = 2; //江湖比武5v5
+}

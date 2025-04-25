@@ -1,0 +1,84 @@
+syntax = "proto3";
+import "matchcommon.proto";
+//import "fight3v3common.proto";
+//import "fight5v5common.proto";
+package client;
+
+enum enModuleMatch
+{
+	enModuleMatch_None									= 0;
+	enModuleMatch_Req_StartMacth						= 1;				//请求匹配
+	enModuleMatch_Req_CancelMatch						= 2;				//取消匹配
+	enModuleMatch_Ntf_OpenMatchPanel					= 3;				//打开匹配面板
+	enModuleMatch_Ntf_CloseMatchPanel					= 4;				//关闭匹配面板
+	enModuleMatch_Ntf_MatchResult						= 5;				//匹配结果
+	enModuleMatch_Req_ConfirmOk							= 6;				//请求确认
+	enModuleMatch_Ntf_ConfirmOk							= 7;				//通知确认
+	enModuleMatch_Req_RefuseOk							= 8;				//请求拒绝
+	enModuleMatch_Ntf_RefuseOk							= 9;				//通知拒绝
+	enModuleMatch_Ntf_CloseConfirmPanel					= 10;				//关闭确认面板
+	enModuleMatch_Ntf_MountMatch						= 11;				//挂载匹配
+	enModuleMatch_Req_CopyMatchOpCancel					= 12;				//请求取消副本中的匹配操作
+	enModuleMatch_Ntf_CopyMatchOpCancel					= 13;				//通知取消副本中的匹配操作
+	enModuleMatch_RealMax								= 14;				//实际最大
+}
+
+message ModuleMatch_Req_StartMacth
+{
+	uint32 type = 1;		//enMatchType
+}
+
+message ModuleMatch_Req_CancelMatch
+{
+}
+
+message ModuleMatch_Ntf_OpenMatchPanel
+{
+	uint32 type = 1;	//enMatchType
+	uint32 matchtime = 2;//开始时间戳
+}
+
+message ModuleMatch_Ntf_CloseMatchPanel	
+{
+}
+
+message ModuleMatch_Ntf_MatchResult	
+{
+	uint32 type = 1;//enMatchType
+	common.MatchGroupList groups = 2;
+}
+
+message ModuleMatch_Req_ConfirmOk
+{
+}
+
+message ModuleMatch_Ntf_ConfirmOk	
+{
+	uint64 roleId = 1;
+}
+
+message ModuleMatch_Req_RefuseOk	
+{
+}
+
+message ModuleMatch_Ntf_RefuseOk
+{
+}
+
+message ModuleMatch_Ntf_CloseConfirmPanel	
+{
+}
+
+message ModuleMatch_Ntf_MountMatch					
+{
+	common.MatchStatus mstatus = 1;//匹配状态(对象不为空才有意义)
+	common.MatchGroupList groupList = 2;//匹配组列表(对象不为空才有意义)
+}
+
+message ModuleMatch_Req_CopyMatchOpCancel	
+{
+}
+
+message ModuleMatch_Ntf_CopyMatchOpCancel	
+{
+}

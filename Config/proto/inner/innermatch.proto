@@ -1,0 +1,61 @@
+syntax = "proto3";
+import "common.proto";
+import "matchcommon.proto";
+package inner;
+
+//一个匹配者
+message InnerMatchMatcher
+{
+	common.RoleBrief brief = 1;//基础数据
+	common.MatchFighterExtend extd = 2;//匹配扩展数据
+	uint64 localLeaderId = 3;	//本服队长Id
+}
+
+//开始匹配
+message InnerMatchMatchList
+{
+	repeated uint64 roleIds = 1;//匹配者
+}
+
+//惩罚列表
+message InnerMatchPunishList
+{
+	repeated uint64 roleIds = 1;//惩罚者
+}
+
+//一个战斗者
+message InnerMatchFighter
+{
+	common.RoleBrief brief = 1;	//基础信息
+	common.MatchFighterExtend extd = 2;//匹配扩展信息
+	uint64 localLeaderId = 4;	//本服队长id
+}
+
+//一个匹配单元
+message InnerMatchUnit
+{
+	map<uint64, InnerMatchFighter> roles = 1;//战斗者列表
+	map<uint64, InnerMatchFighter> robots = 2;//战斗者列表
+}
+
+//一个组对象
+message InnerMatchGroup
+{
+	map<uint64, InnerMatchUnit> units = 1;	//匹配单元列表
+}
+
+//一个房间对象
+message InnerMatchRoom
+{
+	uint64 roomId = 1;//房间Id
+	uint32 mType = 2;//匹配类型
+	map<uint32, InnerMatchGroup> groups = 5;//组列表
+}
+
+//一个战斗副本信息
+message InnerMatchRoomCopyScene
+{
+	uint32 expire = 1;//到期时间
+	uint64 sceneId = 2;//副本实例
+	uint32 hashId = 3;//进程实例
+}
