@@ -29,9 +29,13 @@
     <ClCompile Include="friendsvr.pb.cc" />
     <ClCompile Include="innercommon.pb.cc" />
     <ClCompile Include="innerfriend.pb.cc" />
+    <ClCompile Include="innermatch.pb.cc" />
     <ClCompile Include="innerteam.pb.cc" />
     <ClCompile Include="itemcommon.pb.cc" />
     <ClCompile Include="map_cfg.pb.cc" />
+    <ClCompile Include="match.pb.cc" />
+    <ClCompile Include="matchcommon.pb.cc" />
+    <ClCompile Include="matchsvr.pb.cc" />
     <ClCompile Include="module.pb.cc" />
     <ClCompile Include="msg_module_ranker.pb.cc" />
     <ClCompile Include="record.pb.cc" />
@@ -51,9 +55,13 @@
     <ClInclude Include="friendsvr.pb.h" />
     <ClInclude Include="innercommon.pb.h" />
     <ClInclude Include="innerfriend.pb.h" />
+    <ClInclude Include="innermatch.pb.h" />
     <ClInclude Include="innerteam.pb.h" />
     <ClInclude Include="itemcommon.pb.h" />
     <ClInclude Include="map_cfg.pb.h" />
+    <ClInclude Include="match.pb.h" />
+    <ClInclude Include="matchcommon.pb.h" />
+    <ClInclude Include="matchsvr.pb.h" />
     <ClInclude Include="module.pb.h" />
     <ClInclude Include="msg_module_ranker.pb.h" />
     <ClInclude Include="record.pb.h" />

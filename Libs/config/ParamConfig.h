@@ -12,6 +12,13 @@ namespace config
 	private:
 		bool AddParamInfo();
 	public:
+		bool canMatchRobot(uint32 score);
+		uint32 getMinIdRobot();
+		uint32 getMaxIdRobot();
+		uint32 getMatchRobotWaitTimeMin();
+		uint32 getMatchRobotWaitTimeMax();
+		uint32 getMatchRobotWaitTimeByCLose(uint32 cLose);
+	public:
 		uint32 teamInviteExpireSec = 10;				//队伍-邀请到期时间
 		uint32 teamApplyExpireSec = 30;					//队伍-申请到期时间
 		uint32 teamCreateColdSec = 5;					//队伍-创建冷却
@@ -26,6 +33,12 @@ namespace config
 		uint32 teamTextMaxLength = 30;					//队伍-招募文本最大长度
 		uint32 teamAutoRecruitCold = 10;				//队伍-系统自动招募冷却
 		uint32 teamOnceRecruitCount = 3;				//队伍-系统发布招募频道一次条数
+
+		uint32 matchRobotMaxScore = 0;
+		std::vector<std::pair<uint32, uint32>>	matchRobotWaitTime; //120&60|80&50|60&40|50&30|40&20|15&5
+		std::vector<uint32> extdWaitTime{4, 4, 4, 4};
+		uint32 lvIdScoreOffset = 0;
+		uint32 lvIdExtdOffset = 2;
 	};
 }
 #define gParamCfg Singleton<config::ParamConfig>::getInstance()

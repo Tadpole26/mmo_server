@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "mysql_db.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 //#include "mysql.h"
 #include "util_file.h"
 #include "util_strop.h"

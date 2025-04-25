@@ -26,7 +26,7 @@ namespace config
 		auto iter = _copyInfos.find(tid);
 		if (iter == _copyInfos.end())
 			return nullptr;
-		return &(iter->second);
+		return iter->second;
 	}
 
 	copy_level_info_t* CopyConfig::getCopyLevelConfig(const uint32 tid)
@@ -35,5 +35,18 @@ namespace config
 		if (iter == _copyLevelInfos.end())
 			return nullptr;
 		return &(iter->second);
+	}
+
+	bool CopyConfig::foreachCopyId(uint32 eCopyType, std::function<bool(const copy_info_t&)> f)
+	{
+		auto iterFind = _typeCopys.find(eCopyType);
+		if (iterFind != _typeCopys.end())
+		{
+			for (const auto* cfg : iterFind->second)
+			{
+				if (!f(*cfg)) return false;
+			}
+		}
+		return true;
 	}
 }

@@ -26,11 +26,13 @@ namespace config
 
 		copy_info_t* getCopyConfig(const uint32 tid);
 		copy_level_info_t* getCopyLevelConfig(const uint32 tid);
+		bool foreachCopyId(uint32 eCopyType, std::function<bool(const copy_info_t&)> f);
 	private:
 		bool addCopyInfo();
 		bool addCopyLevelInfo();
 	private:
-		std::unordered_map<uint32_t, copy_info_t> _copyInfos;
+		std::unordered_map<uint32_t, copy_info_t*> _copyInfos;
+		std::unordered_map<uint32, std::vector<copy_info_t*>> _typeCopys;
 		std::unordered_map<uint32_t, copy_level_info_t> _copyLevelInfos;
 	};
 }

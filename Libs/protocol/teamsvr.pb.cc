@@ -35,6 +35,109 @@ struct InnerTeamsvrDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvrDefaultTypeInternal _InnerTeamsvr_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_Test::InnerTeamsvr_Frommatch_Test(
+    ::_pbi::ConstantInitialized){}
+struct InnerTeamsvr_Frommatch_TestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_TestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_TestDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_Test _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_TestDefaultTypeInternal _InnerTeamsvr_Frommatch_Test_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartMatch::InnerTeamsvr_Frommatch_StartMatch(
+    ::_pbi::ConstantInitialized)
+  : matchlist_(nullptr)
+  , uinitid_(uint64_t{0u})
+  , mtype_(0u){}
+struct InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_StartMatch _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal _InnerTeamsvr_Frommatch_StartMatch_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_RestartMatch::InnerTeamsvr_Frommatch_RestartMatch(
+    ::_pbi::ConstantInitialized)
+  : unitid_(uint64_t{0u})
+  , type_(0u){}
+struct InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_RestartMatch _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal _InnerTeamsvr_Frommatch_RestartMatch_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(
+    ::_pbi::ConstantInitialized)
+  : uinitid_(uint64_t{0u})
+  , mtype_(0u){}
+struct InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_CancelMatch _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal _InnerTeamsvr_Frommatch_CancelMatch_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_PunishMatch::InnerTeamsvr_Frommatch_PunishMatch(
+    ::_pbi::ConstantInitialized)
+  : punishlist_(nullptr)
+  , unitid_(uint64_t{0u}){}
+struct InnerTeamsvr_Frommatch_PunishMatchDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_PunishMatchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_PunishMatchDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_PunishMatch _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_PunishMatchDefaultTypeInternal _InnerTeamsvr_Frommatch_PunishMatch_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartConfirm::InnerTeamsvr_Frommatch_StartConfirm(
+    ::_pbi::ConstantInitialized)
+  : room_(nullptr)
+  , expire_(0u){}
+struct InnerTeamsvr_Frommatch_StartConfirmDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartConfirmDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_StartConfirmDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_StartConfirm _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_StartConfirmDefaultTypeInternal _InnerTeamsvr_Frommatch_StartConfirm_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_RoleConfirmOk::InnerTeamsvr_Frommatch_RoleConfirmOk(
+    ::_pbi::ConstantInitialized)
+  : roomid_(uint64_t{0u}){}
+struct InnerTeamsvr_Frommatch_RoleConfirmOkDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_RoleConfirmOkDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_RoleConfirmOkDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_RoleConfirmOk _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_RoleConfirmOkDefaultTypeInternal _InnerTeamsvr_Frommatch_RoleConfirmOk_default_instance_;
+PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartLoading::InnerTeamsvr_Frommatch_StartLoading(
+    ::_pbi::ConstantInitialized)
+  : copyscene_(nullptr)
+  , createby_(nullptr)
+  , roomid_(uint64_t{0u}){}
+struct InnerTeamsvr_Frommatch_StartLoadingDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartLoadingDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerTeamsvr_Frommatch_StartLoadingDefaultTypeInternal() {}
+  union {
+    InnerTeamsvr_Frommatch_StartLoading _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_StartLoadingDefaultTypeInternal _InnerTeamsvr_Frommatch_StartLoading_default_instance_;
 PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_Test::InnerTeamsvr_Fromscene_Test(
     ::_pbi::ConstantInitialized){}
 struct InnerTeamsvr_Fromscene_TestDefaultTypeInternal {
@@ -453,7 +556,7 @@ struct InnerTeamsvr_Fromscene_JumpToLeaderDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Fromscene_JumpToLeaderDefaultTypeInternal _InnerTeamsvr_Fromscene_JumpToLeader_default_instance_;
 }  // namespace inner
-static ::_pb::Metadata file_level_metadata_teamsvr_2eproto[36];
+static ::_pb::Metadata file_level_metadata_teamsvr_2eproto[44];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_teamsvr_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_teamsvr_2eproto = nullptr;
 
@@ -501,7 +604,79 @@ const uint32_t TableStruct_teamsvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr, Frommatch_),
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr, Fromscene_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_Test, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, mtype_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, uinitid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, matchlist_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RestartMatch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RestartMatch, type_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RestartMatch, unitid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, mtype_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, uinitid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_PunishMatch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_PunishMatch, unitid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_PunishMatch, punishlist_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartConfirm, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartConfirm, room_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartConfirm, expire_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RoleConfirmOk, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RoleConfirmOk, roomid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartLoading, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartLoading, roomid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartLoading, copyscene_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartLoading, createby_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Fromscene_Test, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -757,45 +932,61 @@ const uint32_t TableStruct_teamsvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::inner::InnerTeamsvr)},
-  { 44, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_Test)},
-  { 50, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_GameEvent)},
-  { 57, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_UpdateUserInfo)},
-  { 75, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonChangeTarget)},
-  { 82, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonCancelMatch)},
-  { 88, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderStartMatch)},
-  { 96, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch)},
-  { 102, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_TargetTeamList)},
-  { 109, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_CreateTeam)},
-  { 118, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderFireMember)},
-  { 125, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderChangeTarget)},
-  { 134, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderTogetherMember)},
-  { 141, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAppoint)},
-  { 148, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderRefuseAllApply)},
-  { 154, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAgreeAllApply)},
-  { 160, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderRefuseApply)},
-  { 168, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAgreeApply)},
-  { 176, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InviteFriend)},
-  { 183, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InviteFamily)},
-  { 190, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InvitePlayer)},
-  { 198, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_AgreeInvited)},
-  { 204, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_RefuseInvited)},
-  { 210, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatLeaveTeam)},
-  { 218, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ApplyTeam)},
-  { 226, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_FollowLeader)},
-  { 232, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_CancelFollow)},
-  { 238, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_AgreeTogether)},
-  { 244, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_RefuseTogether)},
-  { 250, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ReplaceLeader)},
-  { 256, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonVote)},
-  { 263, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_EnterByVote)},
-  { 269, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ChatTeam)},
-  { 276, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatCreateTeam)},
-  { 282, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatDstroyTeam)},
-  { 289, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_JumpToLeader)},
+  { 53, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_Test)},
+  { 59, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_StartMatch)},
+  { 68, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_RestartMatch)},
+  { 76, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_CancelMatch)},
+  { 84, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_PunishMatch)},
+  { 92, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_StartConfirm)},
+  { 100, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_RoleConfirmOk)},
+  { 107, -1, -1, sizeof(::inner::InnerTeamsvr_Frommatch_StartLoading)},
+  { 116, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_Test)},
+  { 122, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_GameEvent)},
+  { 129, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_UpdateUserInfo)},
+  { 147, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonChangeTarget)},
+  { 154, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonCancelMatch)},
+  { 160, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderStartMatch)},
+  { 168, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderCancelMatch)},
+  { 174, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_TargetTeamList)},
+  { 181, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_CreateTeam)},
+  { 190, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderFireMember)},
+  { 197, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderChangeTarget)},
+  { 206, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderTogetherMember)},
+  { 213, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAppoint)},
+  { 220, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderRefuseAllApply)},
+  { 226, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAgreeAllApply)},
+  { 232, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderRefuseApply)},
+  { 240, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_LeaderAgreeApply)},
+  { 248, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InviteFriend)},
+  { 255, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InviteFamily)},
+  { 262, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_InvitePlayer)},
+  { 270, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_AgreeInvited)},
+  { 276, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_RefuseInvited)},
+  { 282, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatLeaveTeam)},
+  { 290, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ApplyTeam)},
+  { 298, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_FollowLeader)},
+  { 304, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_CancelFollow)},
+  { 310, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_AgreeTogether)},
+  { 316, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_RefuseTogether)},
+  { 322, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ReplaceLeader)},
+  { 328, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonVote)},
+  { 335, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_EnterByVote)},
+  { 341, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ChatTeam)},
+  { 348, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatCreateTeam)},
+  { 354, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatDstroyTeam)},
+  { 361, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_JumpToLeader)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::inner::_InnerTeamsvr_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_Test_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_StartMatch_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_RestartMatch_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_CancelMatch_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_PunishMatch_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_StartConfirm_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_RoleConfirmOk_default_instance_._instance,
+  &::inner::_InnerTeamsvr_Frommatch_StartLoading_default_instance_._instance,
   &::inner::_InnerTeamsvr_Fromscene_Test_default_instance_._instance,
   &::inner::_InnerTeamsvr_Fromscene_GameEvent_default_instance_._instance,
   &::inner::_InnerTeamsvr_Fromscene_UpdateUserInfo_default_instance_._instance,
@@ -835,153 +1026,187 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_teamsvr_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\rteamsvr.proto\022\005inner\032\014common.proto\032\021in"
-  "nercommon.proto\032\024fight3v3common.proto\032\024f"
-  "ight5v5common.proto\032\020chatcommon.proto\"\355\026"
-  "\n\014InnerTeamsvr\022\020\n\010fromuser\030\001 \001(\004\022\020\n\010from"
-  "zone\030\002 \001(\r\022=\n\016fromscene_test\030\371\n \001(\0132\".in"
-  "ner.InnerTeamsvr_Fromscene_TestH\000\022G\n\023fro"
-  "mscene_gameevent\030\372\n \001(\0132\'.inner.InnerTea"
-  "msvr_Fromscene_GameEventH\000\022Q\n\030fromscene_"
-  "updateuserinfo\030\373\n \001(\0132,.inner.InnerTeams"
-  "vr_Fromscene_UpdateUserInfoH\000\022Y\n\034fromsce"
-  "ne_personchangetarget\030\374\n \001(\01320.inner.Inn"
-  "erTeamsvr_Fromscene_PersonChangeTargetH\000"
-  "\022W\n\033fromscene_personcancelmatch\030\375\n \001(\0132/"
-  ".inner.InnerTeamsvr_Fromscene_PersonCanc"
-  "elMatchH\000\022U\n\032fromscene_leaderstartmatch\030"
-  "\376\n \001(\0132..inner.InnerTeamsvr_Fromscene_Le"
-  "aderStartMatchH\000\022W\n\033fromscene_leadercanc"
-  "elmatch\030\377\n \001(\0132/.inner.InnerTeamsvr_From"
-  "scene_LeaderCancelMatchH\000\022Q\n\030fromscene_t"
-  "argetteamlist\030\200\013 \001(\0132,.inner.InnerTeamsv"
-  "r_Fromscene_TargetTeamListH\000\022I\n\024fromscen"
-  "e_createteam\030\201\013 \001(\0132(.inner.InnerTeamsvr"
-  "_Fromscene_CreateTeamH\000\022O\n\024fromscene_fir"
-  "emember\030\202\013 \001(\0132..inner.InnerTeamsvr_From"
-  "scene_LeaderFireMemberH\000\022Y\n\034fromscene_le"
-  "aderchangetarget\030\203\013 \001(\01320.inner.InnerTea"
-  "msvr_Fromscene_LeaderChangeTargetH\000\022]\n\036f"
-  "romscene_leadertogethermember\030\204\013 \001(\01322.i"
-  "nner.InnerTeamsvr_Fromscene_LeaderTogeth"
-  "erMemberH\000\022O\n\027fromscene_leaderappoint\030\205\013"
-  " \001(\0132+.inner.InnerTeamsvr_Fromscene_Lead"
-  "erAppointH\000\022]\n\036fromscene_leaderrefuseall"
-  "apply\030\206\013 \001(\01322.inner.InnerTeamsvr_Fromsc"
-  "ene_LeaderRefuseAllApplyH\000\022[\n\035fromscene_"
-  "leaderagreeallapply\030\207\013 \001(\01321.inner.Inner"
-  "Teamsvr_Fromscene_LeaderAgreeAllApplyH\000\022"
-  "W\n\033fromscene_leaderrefuseapply\030\210\013 \001(\0132/."
-  "inner.InnerTeamsvr_Fromscene_LeaderRefus"
-  "eApplyH\000\022U\n\032fromscene_leaderagreeapply\030\211"
-  "\013 \001(\0132..inner.InnerTeamsvr_Fromscene_Lea"
-  "derAgreeApplyH\000\022M\n\026fromscene_invitefrien"
-  "d\030\212\013 \001(\0132*.inner.InnerTeamsvr_Fromscene_"
-  "InviteFriendH\000\022M\n\026fromscene_invitefamily"
-  "\030\213\013 \001(\0132*.inner.InnerTeamsvr_Fromscene_I"
-  "nviteFamilyH\000\022M\n\026fromscene_inviteplayer\030"
-  "\214\013 \001(\0132*.inner.InnerTeamsvr_Fromscene_In"
-  "vitePlayerH\000\022M\n\026fromscene_agreeinvited\030\215"
-  "\013 \001(\0132*.inner.InnerTeamsvr_Fromscene_Agr"
-  "eeInvitedH\000\022O\n\027fromscene_refuseinvited\030\216"
-  "\013 \001(\0132+.inner.InnerTeamsvr_Fromscene_Ref"
-  "useInvitedH\000\022M\n\026fromscene_batleaveteam\030\217"
-  "\013 \001(\0132*.inner.InnerTeamsvr_Fromscene_Bat"
-  "LeaveTeamH\000\022G\n\023fromscene_applyteam\030\220\013 \001("
-  "\0132\'.inner.InnerTeamsvr_Fromscene_ApplyTe"
-  "amH\000\022M\n\026fromscene_followleader\030\221\013 \001(\0132*."
-  "inner.InnerTeamsvr_Fromscene_FollowLeade"
-  "rH\000\022M\n\026fromscene_cancelfollow\030\222\013 \001(\0132*.i"
-  "nner.InnerTeamsvr_Fromscene_CancelFollow"
-  "H\000\022O\n\027fromscene_agreetogether\030\223\013 \001(\0132+.i"
-  "nner.InnerTeamsvr_Fromscene_AgreeTogethe"
-  "rH\000\022Q\n\030fromscene_refusetogether\030\224\013 \001(\0132,"
-  ".inner.InnerTeamsvr_Fromscene_RefuseToge"
-  "therH\000\022O\n\027fromscene_replaceleader\030\225\013 \001(\013"
-  "2+.inner.InnerTeamsvr_Fromscene_ReplaceL"
-  "eaderH\000\022I\n\024fromscene_personvote\030\226\013 \001(\0132("
-  ".inner.InnerTeamsvr_Fromscene_PersonVote"
-  "H\000\022K\n\025fromscene_enterbyvote\030\227\013 \001(\0132).inn"
-  "er.InnerTeamsvr_Fromscene_EnterByVoteH\000\022"
-  "E\n\022fromscene_chatteam\030\230\013 \001(\0132&.inner.Inn"
-  "erTeamsvr_Fromscene_ChatTeamH\000\022O\n\027fromsc"
-  "ene_batcreateteam\030\231\013 \001(\0132+.inner.InnerTe"
-  "amsvr_Fromscene_BatCreateTeamH\000\022P\n\030froms"
-  "cene_batdestroyteam\030\232\013 \001(\0132+.inner.Inner"
-  "Teamsvr_Fromscene_BatDstroyTeamH\000\022M\n\026fro"
-  "mscene_jumptoleader\030\233\013 \001(\0132*.inner.Inner"
-  "Teamsvr_Fromscene_JumpToLeaderH\000B\013\n\tFrom"
-  "scene\"\035\n\033InnerTeamsvr_Fromscene_Test\"L\n "
-  "InnerTeamsvr_Fromscene_GameEvent\022(\n\tgame"
-  "Event\030\001 \001(\0132\025.inner.InnerGameEvent\"\320\002\n%I"
-  "nnerTeamsvr_Fromscene_UpdateUserInfo\022$\n\005"
-  "extd2\030\001 \001(\0132\023.common.RoleExtend2H\000\022$\n\005ex"
-  "td3\030\002 \001(\0132\023.common.RoleExtend3H\000\022\022\n\010nick"
-  "Name\030\003 \001(\tH\000\022\022\n\010headIcon\030\004 \001(\rH\000\022\023\n\thead"
-  "Frame\030\005 \001(\rH\000\022\022\n\010careerId\030\006 \001(\rH\000\022\017\n\005lev"
-  "el\030\007 \001(\rH\000\022\r\n\003sex\030\010 \001(\rH\000\022\024\n\ncareeLevel\030"
-  "\t \001(\rH\000\022%\n\003f33\030\n \001(\0132\026.common.ExtendFigh"
-  "t3v3H\000\022%\n\003f55\030\013 \001(\0132\026.common.ExtendFight"
-  "5v5H\000B\006\n\004type\"=\n)InnerTeamsvr_Fromscene_"
-  "PersonChangeTarget\022\020\n\010targetId\030\001 \001(\r\"*\n("
-  "InnerTeamsvr_Fromscene_PersonCancelMatch"
-  "\"K\n\'InnerTeamsvr_Fromscene_LeaderStartMa"
-  "tch\022\014\n\004text\030\001 \001(\014\022\022\n\nlanguageId\030\002 \001(\r\"*\n"
-  "(InnerTeamsvr_Fromscene_LeaderCancelMatc"
-  "h\"9\n%InnerTeamsvr_Fromscene_TargetTeamLi"
-  "st\022\020\n\010targetId\030\001 \001(\r\"Y\n!InnerTeamsvr_Fro"
-  "mscene_CreateTeam\022\020\n\010targetId\030\001 \001(\r\022\020\n\010m"
-  "inLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"9\n\'Inner"
-  "Teamsvr_Fromscene_LeaderFireMember\022\016\n\006ro"
-  "leId\030\001 \001(\004\"a\n)InnerTeamsvr_Fromscene_Lea"
-  "derChangeTarget\022\020\n\010targetId\030\001 \001(\r\022\020\n\010min"
-  "Level\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"=\n+InnerTe"
-  "amsvr_Fromscene_LeaderTogetherMember\022\016\n\006"
-  "roleId\030\001 \001(\004\"6\n$InnerTeamsvr_Fromscene_L"
-  "eaderAppoint\022\016\n\006roleId\030\001 \001(\004\"-\n+InnerTea"
-  "msvr_Fromscene_LeaderRefuseAllApply\",\n*I"
-  "nnerTeamsvr_Fromscene_LeaderAgreeAllAppl"
-  "y\"K\n(InnerTeamsvr_Fromscene_LeaderRefuse"
-  "Apply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001(\r\"J"
-  "\n\'InnerTeamsvr_Fromscene_LeaderAgreeAppl"
-  "y\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001(\r\"5\n#In"
-  "nerTeamsvr_Fromscene_InviteFriend\022\016\n\006rol"
-  "eId\030\001 \001(\004\"5\n#InnerTeamsvr_Fromscene_Invi"
-  "teFamily\022\016\n\006roleId\030\001 \001(\004\"F\n#InnerTeamsvr"
-  "_Fromscene_InvitePlayer\022\016\n\006roleId\030\001 \001(\004\022"
-  "\017\n\007zoneIdF\030\002 \001(\r\"%\n#InnerTeamsvr_Fromsce"
-  "ne_AgreeInvited\"&\n$InnerTeamsvr_Fromscen"
-  "e_RefuseInvited\"y\n#InnerTeamsvr_Fromscen"
-  "e_BatLeaveTeam\022(\n\010onlyTeam\030\001 \001(\0132\026.inner"
-  ".InnerRoleIdList\022(\n\010copyTeam\030\002 \001(\0132\026.inn"
-  "er.InnerRoleIdList\"I\n InnerTeamsvr_Froms"
-  "cene_ApplyTeam\022\016\n\006teamId\030\001 \001(\004\022\025\n\rleader"
-  "SceneId\030\002 \001(\004\"%\n#InnerTeamsvr_Fromscene_"
-  "FollowLeader\"%\n#InnerTeamsvr_Fromscene_C"
-  "ancelFollow\"&\n$InnerTeamsvr_Fromscene_Ag"
-  "reeTogether\"\'\n%InnerTeamsvr_Fromscene_Re"
-  "fuseTogether\"&\n$InnerTeamsvr_Fromscene_R"
-  "eplaceLeader\"2\n!InnerTeamsvr_Fromscene_P"
-  "ersonVote\022\r\n\005agree\030\001 \001(\010\"$\n\"InnerTeamsvr"
-  "_Fromscene_EnterByVote\"O\n\037InnerTeamsvr_F"
-  "romscene_ChatTeam\022,\n\007context\030\001 \001(\0132\033.com"
-  "mon.ChatTypeContextDown\"&\n$InnerTeamsvr_"
-  "Fromscene_BatCreateTeam\"7\n$InnerTeamsvr_"
-  "Fromscene_BatDstroyTeam\022\017\n\007teamIds\030\001 \003(\004"
-  "\"6\n#InnerTeamsvr_Fromscene_JumpToLeader\022"
-  "\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
+  "nercommon.proto\032\020innermatch.proto\032\024fight"
+  "3v3common.proto\032\024fight5v5common.proto\032\020c"
+  "hatcommon.proto\"\334\033\n\014InnerTeamsvr\022\020\n\010from"
+  "user\030\001 \001(\004\022\020\n\010fromzone\030\002 \001(\r\022=\n\016frommatc"
+  "h_test\030\261\t \001(\0132\".inner.InnerTeamsvr_Fromm"
+  "atch_TestH\000\022I\n\024frommatch_startmatch\030\262\t \001"
+  "(\0132(.inner.InnerTeamsvr_Frommatch_StartM"
+  "atchH\000\022M\n\026frommatch_restartmatch\030\263\t \001(\0132"
+  "*.inner.InnerTeamsvr_Frommatch_RestartMa"
+  "tchH\000\022K\n\025frommatch_cancelmatch\030\264\t \001(\0132)."
+  "inner.InnerTeamsvr_Frommatch_CancelMatch"
+  "H\000\022K\n\025frommatch_punishmatch\030\265\t \001(\0132).inn"
+  "er.InnerTeamsvr_Frommatch_PunishMatchH\000\022"
+  "M\n\026frommatch_startconfirm\030\266\t \001(\0132*.inner"
+  ".InnerTeamsvr_Frommatch_StartConfirmH\000\022O"
+  "\n\027frommatch_roleconfirmok\030\267\t \001(\0132+.inner"
+  ".InnerTeamsvr_Frommatch_RoleConfirmOkH\000\022"
+  "M\n\026frommatch_startloading\030\270\t \001(\0132*.inner"
+  ".InnerTeamsvr_Frommatch_StartLoadingH\000\022="
+  "\n\016fromscene_test\030\371\n \001(\0132\".inner.InnerTea"
+  "msvr_Fromscene_TestH\001\022G\n\023fromscene_gamee"
+  "vent\030\372\n \001(\0132\'.inner.InnerTeamsvr_Fromsce"
+  "ne_GameEventH\001\022Q\n\030fromscene_updateuserin"
+  "fo\030\373\n \001(\0132,.inner.InnerTeamsvr_Fromscene"
+  "_UpdateUserInfoH\001\022Y\n\034fromscene_personcha"
+  "ngetarget\030\374\n \001(\01320.inner.InnerTeamsvr_Fr"
+  "omscene_PersonChangeTargetH\001\022W\n\033fromscen"
+  "e_personcancelmatch\030\375\n \001(\0132/.inner.Inner"
+  "Teamsvr_Fromscene_PersonCancelMatchH\001\022U\n"
+  "\032fromscene_leaderstartmatch\030\376\n \001(\0132..inn"
+  "er.InnerTeamsvr_Fromscene_LeaderStartMat"
+  "chH\001\022W\n\033fromscene_leadercancelmatch\030\377\n \001"
+  "(\0132/.inner.InnerTeamsvr_Fromscene_Leader"
+  "CancelMatchH\001\022Q\n\030fromscene_targetteamlis"
+  "t\030\200\013 \001(\0132,.inner.InnerTeamsvr_Fromscene_"
+  "TargetTeamListH\001\022I\n\024fromscene_createteam"
+  "\030\201\013 \001(\0132(.inner.InnerTeamsvr_Fromscene_C"
+  "reateTeamH\001\022O\n\024fromscene_firemember\030\202\013 \001"
+  "(\0132..inner.InnerTeamsvr_Fromscene_Leader"
+  "FireMemberH\001\022Y\n\034fromscene_leaderchangeta"
+  "rget\030\203\013 \001(\01320.inner.InnerTeamsvr_Fromsce"
+  "ne_LeaderChangeTargetH\001\022]\n\036fromscene_lea"
+  "dertogethermember\030\204\013 \001(\01322.inner.InnerTe"
+  "amsvr_Fromscene_LeaderTogetherMemberH\001\022O"
+  "\n\027fromscene_leaderappoint\030\205\013 \001(\0132+.inner"
+  ".InnerTeamsvr_Fromscene_LeaderAppointH\001\022"
+  "]\n\036fromscene_leaderrefuseallapply\030\206\013 \001(\013"
+  "22.inner.InnerTeamsvr_Fromscene_LeaderRe"
+  "fuseAllApplyH\001\022[\n\035fromscene_leaderagreea"
+  "llapply\030\207\013 \001(\01321.inner.InnerTeamsvr_From"
+  "scene_LeaderAgreeAllApplyH\001\022W\n\033fromscene"
+  "_leaderrefuseapply\030\210\013 \001(\0132/.inner.InnerT"
+  "eamsvr_Fromscene_LeaderRefuseApplyH\001\022U\n\032"
+  "fromscene_leaderagreeapply\030\211\013 \001(\0132..inne"
+  "r.InnerTeamsvr_Fromscene_LeaderAgreeAppl"
+  "yH\001\022M\n\026fromscene_invitefriend\030\212\013 \001(\0132*.i"
+  "nner.InnerTeamsvr_Fromscene_InviteFriend"
+  "H\001\022M\n\026fromscene_invitefamily\030\213\013 \001(\0132*.in"
+  "ner.InnerTeamsvr_Fromscene_InviteFamilyH"
+  "\001\022M\n\026fromscene_inviteplayer\030\214\013 \001(\0132*.inn"
+  "er.InnerTeamsvr_Fromscene_InvitePlayerH\001"
+  "\022M\n\026fromscene_agreeinvited\030\215\013 \001(\0132*.inne"
+  "r.InnerTeamsvr_Fromscene_AgreeInvitedH\001\022"
+  "O\n\027fromscene_refuseinvited\030\216\013 \001(\0132+.inne"
+  "r.InnerTeamsvr_Fromscene_RefuseInvitedH\001"
+  "\022M\n\026fromscene_batleaveteam\030\217\013 \001(\0132*.inne"
+  "r.InnerTeamsvr_Fromscene_BatLeaveTeamH\001\022"
+  "G\n\023fromscene_applyteam\030\220\013 \001(\0132\'.inner.In"
+  "nerTeamsvr_Fromscene_ApplyTeamH\001\022M\n\026from"
+  "scene_followleader\030\221\013 \001(\0132*.inner.InnerT"
+  "eamsvr_Fromscene_FollowLeaderH\001\022M\n\026froms"
+  "cene_cancelfollow\030\222\013 \001(\0132*.inner.InnerTe"
+  "amsvr_Fromscene_CancelFollowH\001\022O\n\027fromsc"
+  "ene_agreetogether\030\223\013 \001(\0132+.inner.InnerTe"
+  "amsvr_Fromscene_AgreeTogetherH\001\022Q\n\030froms"
+  "cene_refusetogether\030\224\013 \001(\0132,.inner.Inner"
+  "Teamsvr_Fromscene_RefuseTogetherH\001\022O\n\027fr"
+  "omscene_replaceleader\030\225\013 \001(\0132+.inner.Inn"
+  "erTeamsvr_Fromscene_ReplaceLeaderH\001\022I\n\024f"
+  "romscene_personvote\030\226\013 \001(\0132(.inner.Inner"
+  "Teamsvr_Fromscene_PersonVoteH\001\022K\n\025fromsc"
+  "ene_enterbyvote\030\227\013 \001(\0132).inner.InnerTeam"
+  "svr_Fromscene_EnterByVoteH\001\022E\n\022fromscene"
+  "_chatteam\030\230\013 \001(\0132&.inner.InnerTeamsvr_Fr"
+  "omscene_ChatTeamH\001\022O\n\027fromscene_batcreat"
+  "eteam\030\231\013 \001(\0132+.inner.InnerTeamsvr_Fromsc"
+  "ene_BatCreateTeamH\001\022P\n\030fromscene_batdest"
+  "royteam\030\232\013 \001(\0132+.inner.InnerTeamsvr_From"
+  "scene_BatDstroyTeamH\001\022M\n\026fromscene_jumpt"
+  "oleader\030\233\013 \001(\0132*.inner.InnerTeamsvr_From"
+  "scene_JumpToLeaderH\001B\013\n\tFrommatchB\013\n\tFro"
+  "mscene\"\035\n\033InnerTeamsvr_Frommatch_Test\"r\n"
+  "!InnerTeamsvr_Frommatch_StartMatch\022\r\n\005mt"
+  "ype\030\001 \001(\r\022\017\n\007uinitId\030\002 \001(\004\022-\n\tmatchList\030"
+  "\003 \001(\0132\032.inner.InnerMatchMatchList\"C\n#Inn"
+  "erTeamsvr_Frommatch_RestartMatch\022\014\n\004type"
+  "\030\001 \001(\r\022\016\n\006unitId\030\002 \001(\004\"D\n\"InnerTeamsvr_F"
+  "rommatch_CancelMatch\022\r\n\005mtype\030\001 \001(\r\022\017\n\007u"
+  "initId\030\002 \001(\004\"e\n\"InnerTeamsvr_Frommatch_P"
+  "unishMatch\022\016\n\006unitId\030\001 \001(\004\022/\n\npunishList"
+  "\030\002 \001(\0132\033.inner.InnerMatchPunishList\"Z\n#I"
+  "nnerTeamsvr_Frommatch_StartConfirm\022#\n\004ro"
+  "om\030\001 \001(\0132\025.inner.InnerMatchRoom\022\016\n\006expir"
+  "e\030\002 \001(\r\"6\n$InnerTeamsvr_Frommatch_RoleCo"
+  "nfirmOk\022\016\n\006roomId\030\001 \001(\004\"\224\001\n#InnerTeamsvr"
+  "_Frommatch_StartLoading\022\016\n\006roomId\030\001 \001(\004\022"
+  "1\n\tcopyscene\030\002 \001(\0132\036.inner.InnerMatchRoo"
+  "mCopyScene\022*\n\010createBy\030\003 \001(\0132\030.inner.Inn"
+  "erCopyCreateBy\"\035\n\033InnerTeamsvr_Fromscene"
+  "_Test\"L\n InnerTeamsvr_Fromscene_GameEven"
+  "t\022(\n\tgameEvent\030\001 \001(\0132\025.inner.InnerGameEv"
+  "ent\"\320\002\n%InnerTeamsvr_Fromscene_UpdateUse"
+  "rInfo\022$\n\005extd2\030\001 \001(\0132\023.common.RoleExtend"
+  "2H\000\022$\n\005extd3\030\002 \001(\0132\023.common.RoleExtend3H"
+  "\000\022\022\n\010nickName\030\003 \001(\tH\000\022\022\n\010headIcon\030\004 \001(\rH"
+  "\000\022\023\n\theadFrame\030\005 \001(\rH\000\022\022\n\010careerId\030\006 \001(\r"
+  "H\000\022\017\n\005level\030\007 \001(\rH\000\022\r\n\003sex\030\010 \001(\rH\000\022\024\n\nca"
+  "reeLevel\030\t \001(\rH\000\022%\n\003f33\030\n \001(\0132\026.common.E"
+  "xtendFight3v3H\000\022%\n\003f55\030\013 \001(\0132\026.common.Ex"
+  "tendFight5v5H\000B\006\n\004type\"=\n)InnerTeamsvr_F"
+  "romscene_PersonChangeTarget\022\020\n\010targetId\030"
+  "\001 \001(\r\"*\n(InnerTeamsvr_Fromscene_PersonCa"
+  "ncelMatch\"K\n\'InnerTeamsvr_Fromscene_Lead"
+  "erStartMatch\022\014\n\004text\030\001 \001(\014\022\022\n\nlanguageId"
+  "\030\002 \001(\r\"*\n(InnerTeamsvr_Fromscene_LeaderC"
+  "ancelMatch\"9\n%InnerTeamsvr_Fromscene_Tar"
+  "getTeamList\022\020\n\010targetId\030\001 \001(\r\"Y\n!InnerTe"
+  "amsvr_Fromscene_CreateTeam\022\020\n\010targetId\030\001"
+  " \001(\r\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r"
+  "\"9\n\'InnerTeamsvr_Fromscene_LeaderFireMem"
+  "ber\022\016\n\006roleId\030\001 \001(\004\"a\n)InnerTeamsvr_From"
+  "scene_LeaderChangeTarget\022\020\n\010targetId\030\001 \001"
+  "(\r\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"="
+  "\n+InnerTeamsvr_Fromscene_LeaderTogetherM"
+  "ember\022\016\n\006roleId\030\001 \001(\004\"6\n$InnerTeamsvr_Fr"
+  "omscene_LeaderAppoint\022\016\n\006roleId\030\001 \001(\004\"-\n"
+  "+InnerTeamsvr_Fromscene_LeaderRefuseAllA"
+  "pply\",\n*InnerTeamsvr_Fromscene_LeaderAgr"
+  "eeAllApply\"K\n(InnerTeamsvr_Fromscene_Lea"
+  "derRefuseApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneId"
+  "F\030\002 \001(\r\"J\n\'InnerTeamsvr_Fromscene_Leader"
+  "AgreeApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030\002 "
+  "\001(\r\"5\n#InnerTeamsvr_Fromscene_InviteFrie"
+  "nd\022\016\n\006roleId\030\001 \001(\004\"5\n#InnerTeamsvr_Froms"
+  "cene_InviteFamily\022\016\n\006roleId\030\001 \001(\004\"F\n#Inn"
+  "erTeamsvr_Fromscene_InvitePlayer\022\016\n\006role"
+  "Id\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001(\r\"%\n#InnerTeamsv"
+  "r_Fromscene_AgreeInvited\"&\n$InnerTeamsvr"
+  "_Fromscene_RefuseInvited\"y\n#InnerTeamsvr"
+  "_Fromscene_BatLeaveTeam\022(\n\010onlyTeam\030\001 \001("
+  "\0132\026.inner.InnerRoleIdList\022(\n\010copyTeam\030\002 "
+  "\001(\0132\026.inner.InnerRoleIdList\"I\n InnerTeam"
+  "svr_Fromscene_ApplyTeam\022\016\n\006teamId\030\001 \001(\004\022"
+  "\025\n\rleaderSceneId\030\002 \001(\004\"%\n#InnerTeamsvr_F"
+  "romscene_FollowLeader\"%\n#InnerTeamsvr_Fr"
+  "omscene_CancelFollow\"&\n$InnerTeamsvr_Fro"
+  "mscene_AgreeTogether\"\'\n%InnerTeamsvr_Fro"
+  "mscene_RefuseTogether\"&\n$InnerTeamsvr_Fr"
+  "omscene_ReplaceLeader\"2\n!InnerTeamsvr_Fr"
+  "omscene_PersonVote\022\r\n\005agree\030\001 \001(\010\"$\n\"Inn"
+  "erTeamsvr_Fromscene_EnterByVote\"O\n\037Inner"
+  "Teamsvr_Fromscene_ChatTeam\022,\n\007context\030\001 "
+  "\001(\0132\033.common.ChatTypeContextDown\"&\n$Inne"
+  "rTeamsvr_Fromscene_BatCreateTeam\"7\n$Inne"
+  "rTeamsvr_Fromscene_BatDstroyTeam\022\017\n\007team"
+  "Ids\030\001 \003(\004\"6\n#InnerTeamsvr_Fromscene_Jump"
+  "ToLeader\022\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_deps[5] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_deps[6] = {
   &::descriptor_table_chatcommon_2eproto,
   &::descriptor_table_common_2eproto,
   &::descriptor_table_fight3v3common_2eproto,
   &::descriptor_table_fight5v5common_2eproto,
   &::descriptor_table_innercommon_2eproto,
+  &::descriptor_table_innermatch_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_teamsvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_teamsvr_2eproto = {
-    false, false, 5384, descriptor_table_protodef_teamsvr_2eproto,
+    false, false, 6713, descriptor_table_protodef_teamsvr_2eproto,
     "teamsvr.proto",
-    &descriptor_table_teamsvr_2eproto_once, descriptor_table_teamsvr_2eproto_deps, 5, 36,
+    &descriptor_table_teamsvr_2eproto_once, descriptor_table_teamsvr_2eproto_deps, 6, 44,
     schemas, file_default_instances, TableStruct_teamsvr_2eproto::offsets,
     file_level_metadata_teamsvr_2eproto, file_level_enum_descriptors_teamsvr_2eproto,
     file_level_service_descriptors_teamsvr_2eproto,
@@ -998,6 +1223,14 @@ namespace inner {
 
 class InnerTeamsvr::_Internal {
  public:
+  static const ::inner::InnerTeamsvr_Frommatch_Test& frommatch_test(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_StartMatch& frommatch_startmatch(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_RestartMatch& frommatch_restartmatch(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_CancelMatch& frommatch_cancelmatch(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_PunishMatch& frommatch_punishmatch(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_StartConfirm& frommatch_startconfirm(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_RoleConfirmOk& frommatch_roleconfirmok(const InnerTeamsvr* msg);
+  static const ::inner::InnerTeamsvr_Frommatch_StartLoading& frommatch_startloading(const InnerTeamsvr* msg);
   static const ::inner::InnerTeamsvr_Fromscene_Test& fromscene_test(const InnerTeamsvr* msg);
   static const ::inner::InnerTeamsvr_Fromscene_GameEvent& fromscene_gameevent(const InnerTeamsvr* msg);
   static const ::inner::InnerTeamsvr_Fromscene_UpdateUserInfo& fromscene_updateuserinfo(const InnerTeamsvr* msg);
@@ -1035,6 +1268,38 @@ class InnerTeamsvr::_Internal {
   static const ::inner::InnerTeamsvr_Fromscene_JumpToLeader& fromscene_jumptoleader(const InnerTeamsvr* msg);
 };
 
+const ::inner::InnerTeamsvr_Frommatch_Test&
+InnerTeamsvr::_Internal::frommatch_test(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_test_;
+}
+const ::inner::InnerTeamsvr_Frommatch_StartMatch&
+InnerTeamsvr::_Internal::frommatch_startmatch(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_startmatch_;
+}
+const ::inner::InnerTeamsvr_Frommatch_RestartMatch&
+InnerTeamsvr::_Internal::frommatch_restartmatch(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_restartmatch_;
+}
+const ::inner::InnerTeamsvr_Frommatch_CancelMatch&
+InnerTeamsvr::_Internal::frommatch_cancelmatch(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_cancelmatch_;
+}
+const ::inner::InnerTeamsvr_Frommatch_PunishMatch&
+InnerTeamsvr::_Internal::frommatch_punishmatch(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_punishmatch_;
+}
+const ::inner::InnerTeamsvr_Frommatch_StartConfirm&
+InnerTeamsvr::_Internal::frommatch_startconfirm(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_startconfirm_;
+}
+const ::inner::InnerTeamsvr_Frommatch_RoleConfirmOk&
+InnerTeamsvr::_Internal::frommatch_roleconfirmok(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_roleconfirmok_;
+}
+const ::inner::InnerTeamsvr_Frommatch_StartLoading&
+InnerTeamsvr::_Internal::frommatch_startloading(const InnerTeamsvr* msg) {
+  return *msg->Frommatch_.frommatch_startloading_;
+}
 const ::inner::InnerTeamsvr_Fromscene_Test&
 InnerTeamsvr::_Internal::fromscene_test(const InnerTeamsvr* msg) {
   return *msg->Fromscene_.fromscene_test_;
@@ -1174,6 +1439,126 @@ InnerTeamsvr::_Internal::fromscene_batdestroyteam(const InnerTeamsvr* msg) {
 const ::inner::InnerTeamsvr_Fromscene_JumpToLeader&
 InnerTeamsvr::_Internal::fromscene_jumptoleader(const InnerTeamsvr* msg) {
   return *msg->Fromscene_.fromscene_jumptoleader_;
+}
+void InnerTeamsvr::set_allocated_frommatch_test(::inner::InnerTeamsvr_Frommatch_Test* frommatch_test) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_test) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_test);
+    if (message_arena != submessage_arena) {
+      frommatch_test = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_test, submessage_arena);
+    }
+    set_has_frommatch_test();
+    Frommatch_.frommatch_test_ = frommatch_test;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_test)
+}
+void InnerTeamsvr::set_allocated_frommatch_startmatch(::inner::InnerTeamsvr_Frommatch_StartMatch* frommatch_startmatch) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_startmatch) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_startmatch);
+    if (message_arena != submessage_arena) {
+      frommatch_startmatch = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_startmatch, submessage_arena);
+    }
+    set_has_frommatch_startmatch();
+    Frommatch_.frommatch_startmatch_ = frommatch_startmatch;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_startmatch)
+}
+void InnerTeamsvr::set_allocated_frommatch_restartmatch(::inner::InnerTeamsvr_Frommatch_RestartMatch* frommatch_restartmatch) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_restartmatch) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_restartmatch);
+    if (message_arena != submessage_arena) {
+      frommatch_restartmatch = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_restartmatch, submessage_arena);
+    }
+    set_has_frommatch_restartmatch();
+    Frommatch_.frommatch_restartmatch_ = frommatch_restartmatch;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_restartmatch)
+}
+void InnerTeamsvr::set_allocated_frommatch_cancelmatch(::inner::InnerTeamsvr_Frommatch_CancelMatch* frommatch_cancelmatch) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_cancelmatch) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_cancelmatch);
+    if (message_arena != submessage_arena) {
+      frommatch_cancelmatch = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_cancelmatch, submessage_arena);
+    }
+    set_has_frommatch_cancelmatch();
+    Frommatch_.frommatch_cancelmatch_ = frommatch_cancelmatch;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_cancelmatch)
+}
+void InnerTeamsvr::set_allocated_frommatch_punishmatch(::inner::InnerTeamsvr_Frommatch_PunishMatch* frommatch_punishmatch) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_punishmatch) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_punishmatch);
+    if (message_arena != submessage_arena) {
+      frommatch_punishmatch = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_punishmatch, submessage_arena);
+    }
+    set_has_frommatch_punishmatch();
+    Frommatch_.frommatch_punishmatch_ = frommatch_punishmatch;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_punishmatch)
+}
+void InnerTeamsvr::set_allocated_frommatch_startconfirm(::inner::InnerTeamsvr_Frommatch_StartConfirm* frommatch_startconfirm) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_startconfirm) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_startconfirm);
+    if (message_arena != submessage_arena) {
+      frommatch_startconfirm = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_startconfirm, submessage_arena);
+    }
+    set_has_frommatch_startconfirm();
+    Frommatch_.frommatch_startconfirm_ = frommatch_startconfirm;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_startconfirm)
+}
+void InnerTeamsvr::set_allocated_frommatch_roleconfirmok(::inner::InnerTeamsvr_Frommatch_RoleConfirmOk* frommatch_roleconfirmok) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_roleconfirmok) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_roleconfirmok);
+    if (message_arena != submessage_arena) {
+      frommatch_roleconfirmok = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_roleconfirmok, submessage_arena);
+    }
+    set_has_frommatch_roleconfirmok();
+    Frommatch_.frommatch_roleconfirmok_ = frommatch_roleconfirmok;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_roleconfirmok)
+}
+void InnerTeamsvr::set_allocated_frommatch_startloading(::inner::InnerTeamsvr_Frommatch_StartLoading* frommatch_startloading) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Frommatch();
+  if (frommatch_startloading) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(frommatch_startloading);
+    if (message_arena != submessage_arena) {
+      frommatch_startloading = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, frommatch_startloading, submessage_arena);
+    }
+    set_has_frommatch_startloading();
+    Frommatch_.frommatch_startloading_ = frommatch_startloading;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr.frommatch_startloading)
 }
 void InnerTeamsvr::set_allocated_fromscene_test(::inner::InnerTeamsvr_Fromscene_Test* fromscene_test) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1712,6 +2097,44 @@ InnerTeamsvr::InnerTeamsvr(const InnerTeamsvr& from)
   ::memcpy(&fromuser_, &from.fromuser_,
     static_cast<size_t>(reinterpret_cast<char*>(&fromzone_) -
     reinterpret_cast<char*>(&fromuser_)) + sizeof(fromzone_));
+  clear_has_Frommatch();
+  switch (from.Frommatch_case()) {
+    case kFrommatchTest: {
+      _internal_mutable_frommatch_test()->::inner::InnerTeamsvr_Frommatch_Test::MergeFrom(from._internal_frommatch_test());
+      break;
+    }
+    case kFrommatchStartmatch: {
+      _internal_mutable_frommatch_startmatch()->::inner::InnerTeamsvr_Frommatch_StartMatch::MergeFrom(from._internal_frommatch_startmatch());
+      break;
+    }
+    case kFrommatchRestartmatch: {
+      _internal_mutable_frommatch_restartmatch()->::inner::InnerTeamsvr_Frommatch_RestartMatch::MergeFrom(from._internal_frommatch_restartmatch());
+      break;
+    }
+    case kFrommatchCancelmatch: {
+      _internal_mutable_frommatch_cancelmatch()->::inner::InnerTeamsvr_Frommatch_CancelMatch::MergeFrom(from._internal_frommatch_cancelmatch());
+      break;
+    }
+    case kFrommatchPunishmatch: {
+      _internal_mutable_frommatch_punishmatch()->::inner::InnerTeamsvr_Frommatch_PunishMatch::MergeFrom(from._internal_frommatch_punishmatch());
+      break;
+    }
+    case kFrommatchStartconfirm: {
+      _internal_mutable_frommatch_startconfirm()->::inner::InnerTeamsvr_Frommatch_StartConfirm::MergeFrom(from._internal_frommatch_startconfirm());
+      break;
+    }
+    case kFrommatchRoleconfirmok: {
+      _internal_mutable_frommatch_roleconfirmok()->::inner::InnerTeamsvr_Frommatch_RoleConfirmOk::MergeFrom(from._internal_frommatch_roleconfirmok());
+      break;
+    }
+    case kFrommatchStartloading: {
+      _internal_mutable_frommatch_startloading()->::inner::InnerTeamsvr_Frommatch_StartLoading::MergeFrom(from._internal_frommatch_startloading());
+      break;
+    }
+    case FROMMATCH_NOT_SET: {
+      break;
+    }
+  }
   clear_has_Fromscene();
   switch (from.Fromscene_case()) {
     case kFromsceneTest: {
@@ -1866,6 +2289,7 @@ inline void InnerTeamsvr::SharedCtor() {
     reinterpret_cast<char*>(&fromuser_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&fromzone_) -
     reinterpret_cast<char*>(&fromuser_)) + sizeof(fromzone_));
+clear_has_Frommatch();
 clear_has_Fromscene();
 }
 
@@ -1880,6 +2304,9 @@ InnerTeamsvr::~InnerTeamsvr() {
 
 inline void InnerTeamsvr::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_Frommatch()) {
+    clear_Frommatch();
+  }
   if (has_Fromscene()) {
     clear_Fromscene();
   }
@@ -1887,6 +2314,64 @@ inline void InnerTeamsvr::SharedDtor() {
 
 void InnerTeamsvr::SetCachedSize(int size) const {
   _cached_size_.Set(size);
+}
+
+void InnerTeamsvr::clear_Frommatch() {
+// @@protoc_insertion_point(one_of_clear_start:inner.InnerTeamsvr)
+  switch (Frommatch_case()) {
+    case kFrommatchTest: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_test_;
+      }
+      break;
+    }
+    case kFrommatchStartmatch: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_startmatch_;
+      }
+      break;
+    }
+    case kFrommatchRestartmatch: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_restartmatch_;
+      }
+      break;
+    }
+    case kFrommatchCancelmatch: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_cancelmatch_;
+      }
+      break;
+    }
+    case kFrommatchPunishmatch: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_punishmatch_;
+      }
+      break;
+    }
+    case kFrommatchStartconfirm: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_startconfirm_;
+      }
+      break;
+    }
+    case kFrommatchRoleconfirmok: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_roleconfirmok_;
+      }
+      break;
+    }
+    case kFrommatchStartloading: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Frommatch_.frommatch_startloading_;
+      }
+      break;
+    }
+    case FROMMATCH_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = FROMMATCH_NOT_SET;
 }
 
 void InnerTeamsvr::clear_Fromscene() {
@@ -2106,7 +2591,7 @@ void InnerTeamsvr::clear_Fromscene() {
       break;
     }
   }
-  _oneof_case_[0] = FROMSCENE_NOT_SET;
+  _oneof_case_[1] = FROMSCENE_NOT_SET;
 }
 
 
@@ -2119,6 +2604,7 @@ void InnerTeamsvr::Clear() {
   ::memset(&fromuser_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&fromzone_) -
       reinterpret_cast<char*>(&fromuser_)) + sizeof(fromzone_));
+  clear_Frommatch();
   clear_Fromscene();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2141,6 +2627,70 @@ const char* InnerTeamsvr::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           fromzone_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_Test frommatch_test = 1201;
+      case 1201:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_test(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_StartMatch frommatch_startmatch = 1202;
+      case 1202:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_startmatch(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_RestartMatch frommatch_restartmatch = 1203;
+      case 1203:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_restartmatch(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_CancelMatch frommatch_cancelmatch = 1204;
+      case 1204:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_cancelmatch(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_PunishMatch frommatch_punishmatch = 1205;
+      case 1205:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_punishmatch(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_StartConfirm frommatch_startconfirm = 1206;
+      case 1206:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_startconfirm(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_RoleConfirmOk frommatch_roleconfirmok = 1207;
+      case 1207:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_roleconfirmok(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerTeamsvr_Frommatch_StartLoading frommatch_startloading = 1208;
+      case 1208:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
+          ptr = ctx->ParseMessage(_internal_mutable_frommatch_startloading(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2466,6 +3016,62 @@ uint8_t* InnerTeamsvr::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fromzone(), target);
   }
 
+  // .inner.InnerTeamsvr_Frommatch_Test frommatch_test = 1201;
+  if (_internal_has_frommatch_test()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1201, _Internal::frommatch_test(this),
+        _Internal::frommatch_test(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_StartMatch frommatch_startmatch = 1202;
+  if (_internal_has_frommatch_startmatch()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1202, _Internal::frommatch_startmatch(this),
+        _Internal::frommatch_startmatch(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_RestartMatch frommatch_restartmatch = 1203;
+  if (_internal_has_frommatch_restartmatch()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1203, _Internal::frommatch_restartmatch(this),
+        _Internal::frommatch_restartmatch(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_CancelMatch frommatch_cancelmatch = 1204;
+  if (_internal_has_frommatch_cancelmatch()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1204, _Internal::frommatch_cancelmatch(this),
+        _Internal::frommatch_cancelmatch(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_PunishMatch frommatch_punishmatch = 1205;
+  if (_internal_has_frommatch_punishmatch()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1205, _Internal::frommatch_punishmatch(this),
+        _Internal::frommatch_punishmatch(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_StartConfirm frommatch_startconfirm = 1206;
+  if (_internal_has_frommatch_startconfirm()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1206, _Internal::frommatch_startconfirm(this),
+        _Internal::frommatch_startconfirm(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_RoleConfirmOk frommatch_roleconfirmok = 1207;
+  if (_internal_has_frommatch_roleconfirmok()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1207, _Internal::frommatch_roleconfirmok(this),
+        _Internal::frommatch_roleconfirmok(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerTeamsvr_Frommatch_StartLoading frommatch_startloading = 1208;
+  if (_internal_has_frommatch_startloading()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1208, _Internal::frommatch_startloading(this),
+        _Internal::frommatch_startloading(this).GetCachedSize(), target, stream);
+  }
+
   // .inner.InnerTeamsvr_Fromscene_Test fromscene_test = 1401;
   if (_internal_has_fromscene_test()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2737,6 +3343,67 @@ size_t InnerTeamsvr::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fromzone());
   }
 
+  switch (Frommatch_case()) {
+    // .inner.InnerTeamsvr_Frommatch_Test frommatch_test = 1201;
+    case kFrommatchTest: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_test_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_StartMatch frommatch_startmatch = 1202;
+    case kFrommatchStartmatch: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_startmatch_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_RestartMatch frommatch_restartmatch = 1203;
+    case kFrommatchRestartmatch: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_restartmatch_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_CancelMatch frommatch_cancelmatch = 1204;
+    case kFrommatchCancelmatch: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_cancelmatch_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_PunishMatch frommatch_punishmatch = 1205;
+    case kFrommatchPunishmatch: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_punishmatch_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_StartConfirm frommatch_startconfirm = 1206;
+    case kFrommatchStartconfirm: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_startconfirm_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_RoleConfirmOk frommatch_roleconfirmok = 1207;
+    case kFrommatchRoleconfirmok: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_roleconfirmok_);
+      break;
+    }
+    // .inner.InnerTeamsvr_Frommatch_StartLoading frommatch_startloading = 1208;
+    case kFrommatchStartloading: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Frommatch_.frommatch_startloading_);
+      break;
+    }
+    case FROMMATCH_NOT_SET: {
+      break;
+    }
+  }
   switch (Fromscene_case()) {
     // .inner.InnerTeamsvr_Fromscene_Test fromscene_test = 1401;
     case kFromsceneTest: {
@@ -3015,6 +3682,43 @@ void InnerTeamsvr::MergeFrom(const InnerTeamsvr& from) {
   if (from._internal_fromzone() != 0) {
     _internal_set_fromzone(from._internal_fromzone());
   }
+  switch (from.Frommatch_case()) {
+    case kFrommatchTest: {
+      _internal_mutable_frommatch_test()->::inner::InnerTeamsvr_Frommatch_Test::MergeFrom(from._internal_frommatch_test());
+      break;
+    }
+    case kFrommatchStartmatch: {
+      _internal_mutable_frommatch_startmatch()->::inner::InnerTeamsvr_Frommatch_StartMatch::MergeFrom(from._internal_frommatch_startmatch());
+      break;
+    }
+    case kFrommatchRestartmatch: {
+      _internal_mutable_frommatch_restartmatch()->::inner::InnerTeamsvr_Frommatch_RestartMatch::MergeFrom(from._internal_frommatch_restartmatch());
+      break;
+    }
+    case kFrommatchCancelmatch: {
+      _internal_mutable_frommatch_cancelmatch()->::inner::InnerTeamsvr_Frommatch_CancelMatch::MergeFrom(from._internal_frommatch_cancelmatch());
+      break;
+    }
+    case kFrommatchPunishmatch: {
+      _internal_mutable_frommatch_punishmatch()->::inner::InnerTeamsvr_Frommatch_PunishMatch::MergeFrom(from._internal_frommatch_punishmatch());
+      break;
+    }
+    case kFrommatchStartconfirm: {
+      _internal_mutable_frommatch_startconfirm()->::inner::InnerTeamsvr_Frommatch_StartConfirm::MergeFrom(from._internal_frommatch_startconfirm());
+      break;
+    }
+    case kFrommatchRoleconfirmok: {
+      _internal_mutable_frommatch_roleconfirmok()->::inner::InnerTeamsvr_Frommatch_RoleConfirmOk::MergeFrom(from._internal_frommatch_roleconfirmok());
+      break;
+    }
+    case kFrommatchStartloading: {
+      _internal_mutable_frommatch_startloading()->::inner::InnerTeamsvr_Frommatch_StartLoading::MergeFrom(from._internal_frommatch_startloading());
+      break;
+    }
+    case FROMMATCH_NOT_SET: {
+      break;
+    }
+  }
   switch (from.Fromscene_case()) {
     case kFromsceneTest: {
       _internal_mutable_fromscene_test()->::inner::InnerTeamsvr_Fromscene_Test::MergeFrom(from._internal_fromscene_test());
@@ -3183,14 +3887,1608 @@ void InnerTeamsvr::InternalSwap(InnerTeamsvr* other) {
       - PROTOBUF_FIELD_OFFSET(InnerTeamsvr, fromuser_)>(
           reinterpret_cast<char*>(&fromuser_),
           reinterpret_cast<char*>(&other->fromuser_));
+  swap(Frommatch_, other->Frommatch_);
   swap(Fromscene_, other->Fromscene_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
+  swap(_oneof_case_[1], other->_oneof_case_[1]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
       file_level_metadata_teamsvr_2eproto[0]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_Test::_Internal {
+ public:
+};
+
+InnerTeamsvr_Frommatch_Test::InnerTeamsvr_Frommatch_Test(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_Test)
+}
+InnerTeamsvr_Frommatch_Test::InnerTeamsvr_Frommatch_Test(const InnerTeamsvr_Frommatch_Test& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_Test)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_Test::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_Test::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_Test::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[1]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_StartMatch::_Internal {
+ public:
+  static const ::inner::InnerMatchMatchList& matchlist(const InnerTeamsvr_Frommatch_StartMatch* msg);
+};
+
+const ::inner::InnerMatchMatchList&
+InnerTeamsvr_Frommatch_StartMatch::_Internal::matchlist(const InnerTeamsvr_Frommatch_StartMatch* msg) {
+  return *msg->matchlist_;
+}
+void InnerTeamsvr_Frommatch_StartMatch::clear_matchlist() {
+  if (GetArenaForAllocation() == nullptr && matchlist_ != nullptr) {
+    delete matchlist_;
+  }
+  matchlist_ = nullptr;
+}
+InnerTeamsvr_Frommatch_StartMatch::InnerTeamsvr_Frommatch_StartMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_StartMatch)
+}
+InnerTeamsvr_Frommatch_StartMatch::InnerTeamsvr_Frommatch_StartMatch(const InnerTeamsvr_Frommatch_StartMatch& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_matchlist()) {
+    matchlist_ = new ::inner::InnerMatchMatchList(*from.matchlist_);
+  } else {
+    matchlist_ = nullptr;
+  }
+  ::memcpy(&uinitid_, &from.uinitid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
+    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_StartMatch)
+}
+
+inline void InnerTeamsvr_Frommatch_StartMatch::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&matchlist_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
+    reinterpret_cast<char*>(&matchlist_)) + sizeof(mtype_));
+}
+
+InnerTeamsvr_Frommatch_StartMatch::~InnerTeamsvr_Frommatch_StartMatch() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_StartMatch)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_StartMatch::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete matchlist_;
+}
+
+void InnerTeamsvr_Frommatch_StartMatch::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_StartMatch::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_StartMatch)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && matchlist_ != nullptr) {
+    delete matchlist_;
+  }
+  matchlist_ = nullptr;
+  ::memset(&uinitid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mtype_) -
+      reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_StartMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 mtype = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          mtype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 uinitId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uinitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerMatchMatchList matchList = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_matchlist(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_StartMatch::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_StartMatch)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 mtype = 1;
+  if (this->_internal_mtype() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_mtype(), target);
+  }
+
+  // uint64 uinitId = 2;
+  if (this->_internal_uinitid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_uinitid(), target);
+  }
+
+  // .inner.InnerMatchMatchList matchList = 3;
+  if (this->_internal_has_matchlist()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::matchlist(this),
+        _Internal::matchlist(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_StartMatch)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_StartMatch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_StartMatch)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerMatchMatchList matchList = 3;
+  if (this->_internal_has_matchlist()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *matchlist_);
+  }
+
+  // uint64 uinitId = 2;
+  if (this->_internal_uinitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_uinitid());
+  }
+
+  // uint32 mtype = 1;
+  if (this->_internal_mtype() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtype());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_StartMatch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_StartMatch::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_StartMatch::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_StartMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_StartMatch *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_StartMatch &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_StartMatch::MergeFrom(const InnerTeamsvr_Frommatch_StartMatch& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_StartMatch)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_matchlist()) {
+    _internal_mutable_matchlist()->::inner::InnerMatchMatchList::MergeFrom(from._internal_matchlist());
+  }
+  if (from._internal_uinitid() != 0) {
+    _internal_set_uinitid(from._internal_uinitid());
+  }
+  if (from._internal_mtype() != 0) {
+    _internal_set_mtype(from._internal_mtype());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_StartMatch::CopyFrom(const InnerTeamsvr_Frommatch_StartMatch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_StartMatch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_StartMatch::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_StartMatch::InternalSwap(InnerTeamsvr_Frommatch_StartMatch* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartMatch, mtype_)
+      + sizeof(InnerTeamsvr_Frommatch_StartMatch::mtype_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartMatch, matchlist_)>(
+          reinterpret_cast<char*>(&matchlist_),
+          reinterpret_cast<char*>(&other->matchlist_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_StartMatch::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[2]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_RestartMatch::_Internal {
+ public:
+};
+
+InnerTeamsvr_Frommatch_RestartMatch::InnerTeamsvr_Frommatch_RestartMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_RestartMatch)
+}
+InnerTeamsvr_Frommatch_RestartMatch::InnerTeamsvr_Frommatch_RestartMatch(const InnerTeamsvr_Frommatch_RestartMatch& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&unitid_, &from.unitid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&unitid_)) + sizeof(type_));
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_RestartMatch)
+}
+
+inline void InnerTeamsvr_Frommatch_RestartMatch::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&unitid_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&unitid_)) + sizeof(type_));
+}
+
+InnerTeamsvr_Frommatch_RestartMatch::~InnerTeamsvr_Frommatch_RestartMatch() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_RestartMatch::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void InnerTeamsvr_Frommatch_RestartMatch::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_RestartMatch::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&unitid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&unitid_)) + sizeof(type_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_RestartMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 unitId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          unitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_RestartMatch::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 type = 1;
+  if (this->_internal_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_type(), target);
+  }
+
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_unitid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_RestartMatch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_unitid());
+  }
+
+  // uint32 type = 1;
+  if (this->_internal_type() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_type());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_RestartMatch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_RestartMatch::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_RestartMatch::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_RestartMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_RestartMatch *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_RestartMatch &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_RestartMatch::MergeFrom(const InnerTeamsvr_Frommatch_RestartMatch& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_unitid() != 0) {
+    _internal_set_unitid(from._internal_unitid());
+  }
+  if (from._internal_type() != 0) {
+    _internal_set_type(from._internal_type());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_RestartMatch::CopyFrom(const InnerTeamsvr_Frommatch_RestartMatch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_RestartMatch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_RestartMatch::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_RestartMatch::InternalSwap(InnerTeamsvr_Frommatch_RestartMatch* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_RestartMatch, type_)
+      + sizeof(InnerTeamsvr_Frommatch_RestartMatch::type_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_RestartMatch, unitid_)>(
+          reinterpret_cast<char*>(&unitid_),
+          reinterpret_cast<char*>(&other->unitid_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_RestartMatch::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[3]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_CancelMatch::_Internal {
+ public:
+};
+
+InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_CancelMatch)
+}
+InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(const InnerTeamsvr_Frommatch_CancelMatch& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&uinitid_, &from.uinitid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
+    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_CancelMatch)
+}
+
+inline void InnerTeamsvr_Frommatch_CancelMatch::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&uinitid_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
+    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+}
+
+InnerTeamsvr_Frommatch_CancelMatch::~InnerTeamsvr_Frommatch_CancelMatch() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_CancelMatch::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void InnerTeamsvr_Frommatch_CancelMatch::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_CancelMatch::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&uinitid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mtype_) -
+      reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_CancelMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 mtype = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          mtype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 uinitId = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uinitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_CancelMatch::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 mtype = 1;
+  if (this->_internal_mtype() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_mtype(), target);
+  }
+
+  // uint64 uinitId = 2;
+  if (this->_internal_uinitid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_uinitid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_CancelMatch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 uinitId = 2;
+  if (this->_internal_uinitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_uinitid());
+  }
+
+  // uint32 mtype = 1;
+  if (this->_internal_mtype() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mtype());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_CancelMatch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_CancelMatch::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_CancelMatch::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_CancelMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_CancelMatch *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_CancelMatch &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_CancelMatch::MergeFrom(const InnerTeamsvr_Frommatch_CancelMatch& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_uinitid() != 0) {
+    _internal_set_uinitid(from._internal_uinitid());
+  }
+  if (from._internal_mtype() != 0) {
+    _internal_set_mtype(from._internal_mtype());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_CancelMatch::CopyFrom(const InnerTeamsvr_Frommatch_CancelMatch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_CancelMatch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_CancelMatch::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_CancelMatch::InternalSwap(InnerTeamsvr_Frommatch_CancelMatch* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_CancelMatch, mtype_)
+      + sizeof(InnerTeamsvr_Frommatch_CancelMatch::mtype_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_CancelMatch, uinitid_)>(
+          reinterpret_cast<char*>(&uinitid_),
+          reinterpret_cast<char*>(&other->uinitid_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_CancelMatch::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[4]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_PunishMatch::_Internal {
+ public:
+  static const ::inner::InnerMatchPunishList& punishlist(const InnerTeamsvr_Frommatch_PunishMatch* msg);
+};
+
+const ::inner::InnerMatchPunishList&
+InnerTeamsvr_Frommatch_PunishMatch::_Internal::punishlist(const InnerTeamsvr_Frommatch_PunishMatch* msg) {
+  return *msg->punishlist_;
+}
+void InnerTeamsvr_Frommatch_PunishMatch::clear_punishlist() {
+  if (GetArenaForAllocation() == nullptr && punishlist_ != nullptr) {
+    delete punishlist_;
+  }
+  punishlist_ = nullptr;
+}
+InnerTeamsvr_Frommatch_PunishMatch::InnerTeamsvr_Frommatch_PunishMatch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_PunishMatch)
+}
+InnerTeamsvr_Frommatch_PunishMatch::InnerTeamsvr_Frommatch_PunishMatch(const InnerTeamsvr_Frommatch_PunishMatch& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_punishlist()) {
+    punishlist_ = new ::inner::InnerMatchPunishList(*from.punishlist_);
+  } else {
+    punishlist_ = nullptr;
+  }
+  unitid_ = from.unitid_;
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_PunishMatch)
+}
+
+inline void InnerTeamsvr_Frommatch_PunishMatch::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&punishlist_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&unitid_) -
+    reinterpret_cast<char*>(&punishlist_)) + sizeof(unitid_));
+}
+
+InnerTeamsvr_Frommatch_PunishMatch::~InnerTeamsvr_Frommatch_PunishMatch() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_PunishMatch::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete punishlist_;
+}
+
+void InnerTeamsvr_Frommatch_PunishMatch::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_PunishMatch::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && punishlist_ != nullptr) {
+    delete punishlist_;
+  }
+  punishlist_ = nullptr;
+  unitid_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_PunishMatch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 unitId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          unitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerMatchPunishList punishList = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_punishlist(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_PunishMatch::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 unitId = 1;
+  if (this->_internal_unitid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_unitid(), target);
+  }
+
+  // .inner.InnerMatchPunishList punishList = 2;
+  if (this->_internal_has_punishlist()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::punishlist(this),
+        _Internal::punishlist(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_PunishMatch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerMatchPunishList punishList = 2;
+  if (this->_internal_has_punishlist()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *punishlist_);
+  }
+
+  // uint64 unitId = 1;
+  if (this->_internal_unitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_unitid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_PunishMatch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_PunishMatch::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_PunishMatch::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_PunishMatch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_PunishMatch *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_PunishMatch &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_PunishMatch::MergeFrom(const InnerTeamsvr_Frommatch_PunishMatch& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_punishlist()) {
+    _internal_mutable_punishlist()->::inner::InnerMatchPunishList::MergeFrom(from._internal_punishlist());
+  }
+  if (from._internal_unitid() != 0) {
+    _internal_set_unitid(from._internal_unitid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_PunishMatch::CopyFrom(const InnerTeamsvr_Frommatch_PunishMatch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_PunishMatch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_PunishMatch::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_PunishMatch::InternalSwap(InnerTeamsvr_Frommatch_PunishMatch* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_PunishMatch, unitid_)
+      + sizeof(InnerTeamsvr_Frommatch_PunishMatch::unitid_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_PunishMatch, punishlist_)>(
+          reinterpret_cast<char*>(&punishlist_),
+          reinterpret_cast<char*>(&other->punishlist_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_PunishMatch::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[5]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_StartConfirm::_Internal {
+ public:
+  static const ::inner::InnerMatchRoom& room(const InnerTeamsvr_Frommatch_StartConfirm* msg);
+};
+
+const ::inner::InnerMatchRoom&
+InnerTeamsvr_Frommatch_StartConfirm::_Internal::room(const InnerTeamsvr_Frommatch_StartConfirm* msg) {
+  return *msg->room_;
+}
+void InnerTeamsvr_Frommatch_StartConfirm::clear_room() {
+  if (GetArenaForAllocation() == nullptr && room_ != nullptr) {
+    delete room_;
+  }
+  room_ = nullptr;
+}
+InnerTeamsvr_Frommatch_StartConfirm::InnerTeamsvr_Frommatch_StartConfirm(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_StartConfirm)
+}
+InnerTeamsvr_Frommatch_StartConfirm::InnerTeamsvr_Frommatch_StartConfirm(const InnerTeamsvr_Frommatch_StartConfirm& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_room()) {
+    room_ = new ::inner::InnerMatchRoom(*from.room_);
+  } else {
+    room_ = nullptr;
+  }
+  expire_ = from.expire_;
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_StartConfirm)
+}
+
+inline void InnerTeamsvr_Frommatch_StartConfirm::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&room_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&expire_) -
+    reinterpret_cast<char*>(&room_)) + sizeof(expire_));
+}
+
+InnerTeamsvr_Frommatch_StartConfirm::~InnerTeamsvr_Frommatch_StartConfirm() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_StartConfirm::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete room_;
+}
+
+void InnerTeamsvr_Frommatch_StartConfirm::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_StartConfirm::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && room_ != nullptr) {
+    delete room_;
+  }
+  room_ = nullptr;
+  expire_ = 0u;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_StartConfirm::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .inner.InnerMatchRoom room = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_room(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 expire = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          expire_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_StartConfirm::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .inner.InnerMatchRoom room = 1;
+  if (this->_internal_has_room()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::room(this),
+        _Internal::room(this).GetCachedSize(), target, stream);
+  }
+
+  // uint32 expire = 2;
+  if (this->_internal_expire() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_expire(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_StartConfirm::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerMatchRoom room = 1;
+  if (this->_internal_has_room()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *room_);
+  }
+
+  // uint32 expire = 2;
+  if (this->_internal_expire() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_expire());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_StartConfirm::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_StartConfirm::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_StartConfirm::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_StartConfirm::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_StartConfirm *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_StartConfirm &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_StartConfirm::MergeFrom(const InnerTeamsvr_Frommatch_StartConfirm& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_room()) {
+    _internal_mutable_room()->::inner::InnerMatchRoom::MergeFrom(from._internal_room());
+  }
+  if (from._internal_expire() != 0) {
+    _internal_set_expire(from._internal_expire());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_StartConfirm::CopyFrom(const InnerTeamsvr_Frommatch_StartConfirm& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_StartConfirm)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_StartConfirm::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_StartConfirm::InternalSwap(InnerTeamsvr_Frommatch_StartConfirm* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartConfirm, expire_)
+      + sizeof(InnerTeamsvr_Frommatch_StartConfirm::expire_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartConfirm, room_)>(
+          reinterpret_cast<char*>(&room_),
+          reinterpret_cast<char*>(&other->room_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_StartConfirm::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[6]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_RoleConfirmOk::_Internal {
+ public:
+};
+
+InnerTeamsvr_Frommatch_RoleConfirmOk::InnerTeamsvr_Frommatch_RoleConfirmOk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+}
+InnerTeamsvr_Frommatch_RoleConfirmOk::InnerTeamsvr_Frommatch_RoleConfirmOk(const InnerTeamsvr_Frommatch_RoleConfirmOk& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  roomid_ = from.roomid_;
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+}
+
+inline void InnerTeamsvr_Frommatch_RoleConfirmOk::SharedCtor() {
+roomid_ = uint64_t{0u};
+}
+
+InnerTeamsvr_Frommatch_RoleConfirmOk::~InnerTeamsvr_Frommatch_RoleConfirmOk() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_RoleConfirmOk::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  roomid_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_RoleConfirmOk::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 roomId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          roomid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_RoleConfirmOk::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 roomId = 1;
+  if (this->_internal_roomid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_roomid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_RoleConfirmOk::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 roomId = 1;
+  if (this->_internal_roomid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_roomid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_RoleConfirmOk::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_RoleConfirmOk::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_RoleConfirmOk::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_RoleConfirmOk *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_RoleConfirmOk &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::MergeFrom(const InnerTeamsvr_Frommatch_RoleConfirmOk& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_roomid() != 0) {
+    _internal_set_roomid(from._internal_roomid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::CopyFrom(const InnerTeamsvr_Frommatch_RoleConfirmOk& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_RoleConfirmOk)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_RoleConfirmOk::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_RoleConfirmOk::InternalSwap(InnerTeamsvr_Frommatch_RoleConfirmOk* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(roomid_, other->roomid_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_RoleConfirmOk::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[7]);
+}
+
+// ===================================================================
+
+class InnerTeamsvr_Frommatch_StartLoading::_Internal {
+ public:
+  static const ::inner::InnerMatchRoomCopyScene& copyscene(const InnerTeamsvr_Frommatch_StartLoading* msg);
+  static const ::inner::InnerCopyCreateBy& createby(const InnerTeamsvr_Frommatch_StartLoading* msg);
+};
+
+const ::inner::InnerMatchRoomCopyScene&
+InnerTeamsvr_Frommatch_StartLoading::_Internal::copyscene(const InnerTeamsvr_Frommatch_StartLoading* msg) {
+  return *msg->copyscene_;
+}
+const ::inner::InnerCopyCreateBy&
+InnerTeamsvr_Frommatch_StartLoading::_Internal::createby(const InnerTeamsvr_Frommatch_StartLoading* msg) {
+  return *msg->createby_;
+}
+void InnerTeamsvr_Frommatch_StartLoading::clear_copyscene() {
+  if (GetArenaForAllocation() == nullptr && copyscene_ != nullptr) {
+    delete copyscene_;
+  }
+  copyscene_ = nullptr;
+}
+void InnerTeamsvr_Frommatch_StartLoading::clear_createby() {
+  if (GetArenaForAllocation() == nullptr && createby_ != nullptr) {
+    delete createby_;
+  }
+  createby_ = nullptr;
+}
+InnerTeamsvr_Frommatch_StartLoading::InnerTeamsvr_Frommatch_StartLoading(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Frommatch_StartLoading)
+}
+InnerTeamsvr_Frommatch_StartLoading::InnerTeamsvr_Frommatch_StartLoading(const InnerTeamsvr_Frommatch_StartLoading& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_copyscene()) {
+    copyscene_ = new ::inner::InnerMatchRoomCopyScene(*from.copyscene_);
+  } else {
+    copyscene_ = nullptr;
+  }
+  if (from._internal_has_createby()) {
+    createby_ = new ::inner::InnerCopyCreateBy(*from.createby_);
+  } else {
+    createby_ = nullptr;
+  }
+  roomid_ = from.roomid_;
+  // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_StartLoading)
+}
+
+inline void InnerTeamsvr_Frommatch_StartLoading::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&copyscene_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&roomid_) -
+    reinterpret_cast<char*>(&copyscene_)) + sizeof(roomid_));
+}
+
+InnerTeamsvr_Frommatch_StartLoading::~InnerTeamsvr_Frommatch_StartLoading() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Frommatch_StartLoading)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerTeamsvr_Frommatch_StartLoading::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete copyscene_;
+  if (this != internal_default_instance()) delete createby_;
+}
+
+void InnerTeamsvr_Frommatch_StartLoading::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Frommatch_StartLoading::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Frommatch_StartLoading)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && copyscene_ != nullptr) {
+    delete copyscene_;
+  }
+  copyscene_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && createby_ != nullptr) {
+    delete createby_;
+  }
+  createby_ = nullptr;
+  roomid_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Frommatch_StartLoading::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 roomId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          roomid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerMatchRoomCopyScene copyscene = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_copyscene(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerCopyCreateBy createBy = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_createby(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Frommatch_StartLoading::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Frommatch_StartLoading)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 roomId = 1;
+  if (this->_internal_roomid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_roomid(), target);
+  }
+
+  // .inner.InnerMatchRoomCopyScene copyscene = 2;
+  if (this->_internal_has_copyscene()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::copyscene(this),
+        _Internal::copyscene(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerCopyCreateBy createBy = 3;
+  if (this->_internal_has_createby()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::createby(this),
+        _Internal::createby(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Frommatch_StartLoading)
+  return target;
+}
+
+size_t InnerTeamsvr_Frommatch_StartLoading::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Frommatch_StartLoading)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerMatchRoomCopyScene copyscene = 2;
+  if (this->_internal_has_copyscene()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *copyscene_);
+  }
+
+  // .inner.InnerCopyCreateBy createBy = 3;
+  if (this->_internal_has_createby()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *createby_);
+  }
+
+  // uint64 roomId = 1;
+  if (this->_internal_roomid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_roomid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Frommatch_StartLoading::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Frommatch_StartLoading::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Frommatch_StartLoading::GetClassData() const { return &_class_data_; }
+
+void InnerTeamsvr_Frommatch_StartLoading::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Frommatch_StartLoading *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Frommatch_StartLoading &>(from));
+}
+
+
+void InnerTeamsvr_Frommatch_StartLoading::MergeFrom(const InnerTeamsvr_Frommatch_StartLoading& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Frommatch_StartLoading)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_copyscene()) {
+    _internal_mutable_copyscene()->::inner::InnerMatchRoomCopyScene::MergeFrom(from._internal_copyscene());
+  }
+  if (from._internal_has_createby()) {
+    _internal_mutable_createby()->::inner::InnerCopyCreateBy::MergeFrom(from._internal_createby());
+  }
+  if (from._internal_roomid() != 0) {
+    _internal_set_roomid(from._internal_roomid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerTeamsvr_Frommatch_StartLoading::CopyFrom(const InnerTeamsvr_Frommatch_StartLoading& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Frommatch_StartLoading)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerTeamsvr_Frommatch_StartLoading::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Frommatch_StartLoading::InternalSwap(InnerTeamsvr_Frommatch_StartLoading* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartLoading, roomid_)
+      + sizeof(InnerTeamsvr_Frommatch_StartLoading::roomid_)
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_StartLoading, copyscene_)>(
+          reinterpret_cast<char*>(&copyscene_),
+          reinterpret_cast<char*>(&other->copyscene_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_StartLoading::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
+      file_level_metadata_teamsvr_2eproto[8]);
 }
 
 // ===================================================================
@@ -3229,7 +5527,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_Test::G
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_Test::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[1]);
+      file_level_metadata_teamsvr_2eproto[9]);
 }
 
 // ===================================================================
@@ -3422,7 +5720,7 @@ void InnerTeamsvr_Fromscene_GameEvent::InternalSwap(InnerTeamsvr_Fromscene_GameE
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_GameEvent::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[2]);
+      file_level_metadata_teamsvr_2eproto[10]);
 }
 
 // ===================================================================
@@ -4086,7 +6384,7 @@ void InnerTeamsvr_Fromscene_UpdateUserInfo::InternalSwap(InnerTeamsvr_Fromscene_
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_UpdateUserInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[3]);
+      file_level_metadata_teamsvr_2eproto[11]);
 }
 
 // ===================================================================
@@ -4257,7 +6555,7 @@ void InnerTeamsvr_Fromscene_PersonChangeTarget::InternalSwap(InnerTeamsvr_Fromsc
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_PersonChangeTarget::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[4]);
+      file_level_metadata_teamsvr_2eproto[12]);
 }
 
 // ===================================================================
@@ -4296,7 +6594,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_PersonC
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_PersonCancelMatch::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[5]);
+      file_level_metadata_teamsvr_2eproto[13]);
 }
 
 // ===================================================================
@@ -4512,7 +6810,7 @@ void InnerTeamsvr_Fromscene_LeaderStartMatch::InternalSwap(InnerTeamsvr_Fromscen
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderStartMatch::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[6]);
+      file_level_metadata_teamsvr_2eproto[14]);
 }
 
 // ===================================================================
@@ -4551,7 +6849,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_LeaderC
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderCancelMatch::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[7]);
+      file_level_metadata_teamsvr_2eproto[15]);
 }
 
 // ===================================================================
@@ -4722,7 +7020,7 @@ void InnerTeamsvr_Fromscene_TargetTeamList::InternalSwap(InnerTeamsvr_Fromscene_
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_TargetTeamList::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[8]);
+      file_level_metadata_teamsvr_2eproto[16]);
 }
 
 // ===================================================================
@@ -4949,7 +7247,7 @@ void InnerTeamsvr_Fromscene_CreateTeam::InternalSwap(InnerTeamsvr_Fromscene_Crea
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_CreateTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[9]);
+      file_level_metadata_teamsvr_2eproto[17]);
 }
 
 // ===================================================================
@@ -5120,7 +7418,7 @@ void InnerTeamsvr_Fromscene_LeaderFireMember::InternalSwap(InnerTeamsvr_Fromscen
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderFireMember::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[10]);
+      file_level_metadata_teamsvr_2eproto[18]);
 }
 
 // ===================================================================
@@ -5347,7 +7645,7 @@ void InnerTeamsvr_Fromscene_LeaderChangeTarget::InternalSwap(InnerTeamsvr_Fromsc
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderChangeTarget::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[11]);
+      file_level_metadata_teamsvr_2eproto[19]);
 }
 
 // ===================================================================
@@ -5518,7 +7816,7 @@ void InnerTeamsvr_Fromscene_LeaderTogetherMember::InternalSwap(InnerTeamsvr_From
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderTogetherMember::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[12]);
+      file_level_metadata_teamsvr_2eproto[20]);
 }
 
 // ===================================================================
@@ -5689,7 +7987,7 @@ void InnerTeamsvr_Fromscene_LeaderAppoint::InternalSwap(InnerTeamsvr_Fromscene_L
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderAppoint::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[13]);
+      file_level_metadata_teamsvr_2eproto[21]);
 }
 
 // ===================================================================
@@ -5728,7 +8026,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_LeaderR
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderRefuseAllApply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[14]);
+      file_level_metadata_teamsvr_2eproto[22]);
 }
 
 // ===================================================================
@@ -5767,7 +8065,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_LeaderA
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderAgreeAllApply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[15]);
+      file_level_metadata_teamsvr_2eproto[23]);
 }
 
 // ===================================================================
@@ -5972,7 +8270,7 @@ void InnerTeamsvr_Fromscene_LeaderRefuseApply::InternalSwap(InnerTeamsvr_Fromsce
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderRefuseApply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[16]);
+      file_level_metadata_teamsvr_2eproto[24]);
 }
 
 // ===================================================================
@@ -6177,7 +8475,7 @@ void InnerTeamsvr_Fromscene_LeaderAgreeApply::InternalSwap(InnerTeamsvr_Fromscen
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_LeaderAgreeApply::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[17]);
+      file_level_metadata_teamsvr_2eproto[25]);
 }
 
 // ===================================================================
@@ -6348,7 +8646,7 @@ void InnerTeamsvr_Fromscene_InviteFriend::InternalSwap(InnerTeamsvr_Fromscene_In
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_InviteFriend::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[18]);
+      file_level_metadata_teamsvr_2eproto[26]);
 }
 
 // ===================================================================
@@ -6519,7 +8817,7 @@ void InnerTeamsvr_Fromscene_InviteFamily::InternalSwap(InnerTeamsvr_Fromscene_In
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_InviteFamily::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[19]);
+      file_level_metadata_teamsvr_2eproto[27]);
 }
 
 // ===================================================================
@@ -6724,7 +9022,7 @@ void InnerTeamsvr_Fromscene_InvitePlayer::InternalSwap(InnerTeamsvr_Fromscene_In
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_InvitePlayer::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[20]);
+      file_level_metadata_teamsvr_2eproto[28]);
 }
 
 // ===================================================================
@@ -6763,7 +9061,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_AgreeIn
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_AgreeInvited::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[21]);
+      file_level_metadata_teamsvr_2eproto[29]);
 }
 
 // ===================================================================
@@ -6802,7 +9100,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_RefuseI
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_RefuseInvited::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[22]);
+      file_level_metadata_teamsvr_2eproto[30]);
 }
 
 // ===================================================================
@@ -7049,7 +9347,7 @@ void InnerTeamsvr_Fromscene_BatLeaveTeam::InternalSwap(InnerTeamsvr_Fromscene_Ba
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_BatLeaveTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[23]);
+      file_level_metadata_teamsvr_2eproto[31]);
 }
 
 // ===================================================================
@@ -7254,7 +9552,7 @@ void InnerTeamsvr_Fromscene_ApplyTeam::InternalSwap(InnerTeamsvr_Fromscene_Apply
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_ApplyTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[24]);
+      file_level_metadata_teamsvr_2eproto[32]);
 }
 
 // ===================================================================
@@ -7293,7 +9591,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_FollowL
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_FollowLeader::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[25]);
+      file_level_metadata_teamsvr_2eproto[33]);
 }
 
 // ===================================================================
@@ -7332,7 +9630,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_CancelF
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_CancelFollow::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[26]);
+      file_level_metadata_teamsvr_2eproto[34]);
 }
 
 // ===================================================================
@@ -7371,7 +9669,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_AgreeTo
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_AgreeTogether::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[27]);
+      file_level_metadata_teamsvr_2eproto[35]);
 }
 
 // ===================================================================
@@ -7410,7 +9708,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_RefuseT
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_RefuseTogether::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[28]);
+      file_level_metadata_teamsvr_2eproto[36]);
 }
 
 // ===================================================================
@@ -7449,7 +9747,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_Replace
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_ReplaceLeader::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[29]);
+      file_level_metadata_teamsvr_2eproto[37]);
 }
 
 // ===================================================================
@@ -7620,7 +9918,7 @@ void InnerTeamsvr_Fromscene_PersonVote::InternalSwap(InnerTeamsvr_Fromscene_Pers
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_PersonVote::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[30]);
+      file_level_metadata_teamsvr_2eproto[38]);
 }
 
 // ===================================================================
@@ -7659,7 +9957,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_EnterBy
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_EnterByVote::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[31]);
+      file_level_metadata_teamsvr_2eproto[39]);
 }
 
 // ===================================================================
@@ -7852,7 +10150,7 @@ void InnerTeamsvr_Fromscene_ChatTeam::InternalSwap(InnerTeamsvr_Fromscene_ChatTe
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_ChatTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[32]);
+      file_level_metadata_teamsvr_2eproto[40]);
 }
 
 // ===================================================================
@@ -7891,7 +10189,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_BatCrea
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_BatCreateTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[33]);
+      file_level_metadata_teamsvr_2eproto[41]);
 }
 
 // ===================================================================
@@ -8075,7 +10373,7 @@ void InnerTeamsvr_Fromscene_BatDstroyTeam::InternalSwap(InnerTeamsvr_Fromscene_B
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_BatDstroyTeam::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[34]);
+      file_level_metadata_teamsvr_2eproto[42]);
 }
 
 // ===================================================================
@@ -8246,7 +10544,7 @@ void InnerTeamsvr_Fromscene_JumpToLeader::InternalSwap(InnerTeamsvr_Fromscene_Ju
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_JumpToLeader::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_teamsvr_2eproto_getter, &descriptor_table_teamsvr_2eproto_once,
-      file_level_metadata_teamsvr_2eproto[35]);
+      file_level_metadata_teamsvr_2eproto[43]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -8255,6 +10553,38 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr*
 Arena::CreateMaybeMessage< ::inner::InnerTeamsvr >(Arena* arena) {
   return Arena::CreateMessageInternal< ::inner::InnerTeamsvr >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_Test*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_Test >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_Test >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_StartMatch*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_StartMatch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_StartMatch >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_RestartMatch*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_RestartMatch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_RestartMatch >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_CancelMatch*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_CancelMatch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_CancelMatch >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_PunishMatch*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_PunishMatch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_PunishMatch >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_StartConfirm*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_StartConfirm >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_StartConfirm >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_RoleConfirmOk*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_RoleConfirmOk >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_RoleConfirmOk >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Frommatch_StartLoading*
+Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Frommatch_StartLoading >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerTeamsvr_Frommatch_StartLoading >(arena);
 }
 template<> PROTOBUF_NOINLINE ::inner::InnerTeamsvr_Fromscene_Test*
 Arena::CreateMaybeMessage< ::inner::InnerTeamsvr_Fromscene_Test >(Arena* arena) {

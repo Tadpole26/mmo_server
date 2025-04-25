@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "cLoadBase.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 #include "util_file.h"
 #include <tinyxml.h>
 #include "util_string.h"

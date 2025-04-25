@@ -19,15 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MonsterConfig.cpp" />
+    <ClCompile Include="NpcConfig.cpp" />
     <ClCompile Include="CopyConfig.cpp" />
+    <ClCompile Include="SkillConfig.cpp" />
     <ClCompile Include="MapConfig.cpp" />
+    <ClCompile Include="MatchConfig.cpp" />
     <ClCompile Include="ParamConfig.cpp" />
+    <ClCompile Include="RobotConfig.cpp" />
     <ClCompile Include="TeamConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MonsterConfig.h" />
+    <ClInclude Include="NpcConfig.h" />
     <ClInclude Include="CopyConfig.h" />
+    <ClInclude Include="SkillConfig.h" />
     <ClInclude Include="MapConfig.h" />
+    <ClInclude Include="MatchConfig.h" />
     <ClInclude Include="ParamConfig.h" />
+    <ClInclude Include="RobotConfig.h" />
     <ClInclude Include="TeamConfig.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

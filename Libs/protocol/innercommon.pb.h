@@ -50,6 +50,9 @@ struct TableStruct_innercommon_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_innercommon_2eproto;
 namespace inner {
+class InnerCopyCreateBy;
+struct InnerCopyCreateByDefaultTypeInternal;
+extern InnerCopyCreateByDefaultTypeInternal _InnerCopyCreateBy_default_instance_;
 class InnerCopyCrit;
 struct InnerCopyCritDefaultTypeInternal;
 extern InnerCopyCritDefaultTypeInternal _InnerCopyCrit_default_instance_;
@@ -71,6 +74,9 @@ extern InnerCopyPveDefaultTypeInternal _InnerCopyPve_default_instance_;
 class InnerCopyPvp;
 struct InnerCopyPvpDefaultTypeInternal;
 extern InnerCopyPvpDefaultTypeInternal _InnerCopyPvp_default_instance_;
+class InnerCopyPvpF55;
+struct InnerCopyPvpF55DefaultTypeInternal;
+extern InnerCopyPvpF55DefaultTypeInternal _InnerCopyPvpF55_default_instance_;
 class InnerCopyTeam;
 struct InnerCopyTeamDefaultTypeInternal;
 extern InnerCopyTeamDefaultTypeInternal _InnerCopyTeam_default_instance_;
@@ -187,6 +193,7 @@ struct InnerRoleIdListDefaultTypeInternal;
 extern InnerRoleIdListDefaultTypeInternal _InnerRoleIdList_default_instance_;
 }  // namespace inner
 PROTOBUF_NAMESPACE_OPEN
+template<> ::inner::InnerCopyCreateBy* Arena::CreateMaybeMessage<::inner::InnerCopyCreateBy>(Arena*);
 template<> ::inner::InnerCopyCrit* Arena::CreateMaybeMessage<::inner::InnerCopyCrit>(Arena*);
 template<> ::inner::InnerCopyEnter* Arena::CreateMaybeMessage<::inner::InnerCopyEnter>(Arena*);
 template<> ::inner::InnerCopyEnterByChgLvId* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByChgLvId>(Arena*);
@@ -194,6 +201,7 @@ template<> ::inner::InnerCopyEnterByHome* Arena::CreateMaybeMessage<::inner::Inn
 template<> ::inner::InnerCopyEnterByTeam* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByTeam>(Arena*);
 template<> ::inner::InnerCopyPve* Arena::CreateMaybeMessage<::inner::InnerCopyPve>(Arena*);
 template<> ::inner::InnerCopyPvp* Arena::CreateMaybeMessage<::inner::InnerCopyPvp>(Arena*);
+template<> ::inner::InnerCopyPvpF55* Arena::CreateMaybeMessage<::inner::InnerCopyPvpF55>(Arena*);
 template<> ::inner::InnerCopyTeam* Arena::CreateMaybeMessage<::inner::InnerCopyTeam>(Arena*);
 template<> ::inner::InnerCopyTeamList* Arena::CreateMaybeMessage<::inner::InnerCopyTeamList>(Arena*);
 template<> ::inner::InnerCopyTeamMem* Arena::CreateMaybeMessage<::inner::InnerCopyTeamMem>(Arena*);
@@ -2000,10 +2008,154 @@ class InnerCopyWay final :
 };
 // -------------------------------------------------------------------
 
+class InnerCopyPvpF55 final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvpF55) */ {
+ public:
+  inline InnerCopyPvpF55() : InnerCopyPvpF55(nullptr) {}
+  ~InnerCopyPvpF55() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPvpF55(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPvpF55(const InnerCopyPvpF55& from);
+  InnerCopyPvpF55(InnerCopyPvpF55&& from) noexcept
+    : InnerCopyPvpF55() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPvpF55& operator=(const InnerCopyPvpF55& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPvpF55& operator=(InnerCopyPvpF55&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPvpF55& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyPvpF55* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPvpF55*>(
+               &_InnerCopyPvpF55_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(InnerCopyPvpF55& a, InnerCopyPvpF55& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPvpF55* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPvpF55* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPvpF55* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPvpF55>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyPvpF55& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyPvpF55& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyPvpF55* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPvpF55";
+  }
+  protected:
+  explicit InnerCopyPvpF55(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCopyIdFieldNumber = 1,
+  };
+  // uint32 copyId = 1;
+  void clear_copyid();
+  uint32_t copyid() const;
+  void set_copyid(uint32_t value);
+  private:
+  uint32_t _internal_copyid() const;
+  void _internal_set_copyid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPvpF55)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t copyid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerCopyPvp final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvp) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvp) */ {
  public:
   inline InnerCopyPvp() : InnerCopyPvp(nullptr) {}
+  ~InnerCopyPvp() override;
   explicit PROTOBUF_CONSTEXPR InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   InnerCopyPvp(const InnerCopyPvp& from);
@@ -2042,12 +2194,17 @@ class InnerCopyPvp final :
   static const InnerCopyPvp& default_instance() {
     return *internal_default_instance();
   }
+  enum TypeCase {
+    kF55 = 11,
+    TYPE_NOT_SET = 0,
+  };
+
   static inline const InnerCopyPvp* internal_default_instance() {
     return reinterpret_cast<const InnerCopyPvp*>(
                &_InnerCopyPvp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(InnerCopyPvp& a, InnerCopyPvp& b) {
     a.Swap(&b);
@@ -2076,15 +2233,27 @@ class InnerCopyPvp final :
   InnerCopyPvp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerCopyPvp>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerCopyPvp& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerCopyPvp& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyPvp& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyPvp& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyPvp* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -2105,13 +2274,48 @@ class InnerCopyPvp final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kF55FieldNumber = 11,
+  };
+  // .inner.InnerCopyPvpF55 f55 = 11;
+  bool has_f55() const;
+  private:
+  bool _internal_has_f55() const;
+  public:
+  void clear_f55();
+  const ::inner::InnerCopyPvpF55& f55() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPvpF55* release_f55();
+  ::inner::InnerCopyPvpF55* mutable_f55();
+  void set_allocated_f55(::inner::InnerCopyPvpF55* f55);
+  private:
+  const ::inner::InnerCopyPvpF55& _internal_f55() const;
+  ::inner::InnerCopyPvpF55* _internal_mutable_f55();
+  public:
+  void unsafe_arena_set_allocated_f55(
+      ::inner::InnerCopyPvpF55* f55);
+  ::inner::InnerCopyPvpF55* unsafe_arena_release_f55();
+
+  void clear_type();
+  TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerCopyPvp)
  private:
   class _Internal;
+  void set_has_f55();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyPvpF55* f55_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
   friend struct ::TableStruct_innercommon_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2163,7 +2367,7 @@ class InnerCopyPve final :
                &_InnerCopyPve_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(InnerCopyPve& a, InnerCopyPve& b) {
     a.Swap(&b);
@@ -2286,7 +2490,7 @@ class InnerCopyType final :
                &_InnerCopyType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(InnerCopyType& a, InnerCopyType& b) {
     a.Swap(&b);
@@ -2456,6 +2660,198 @@ class InnerCopyType final :
 };
 // -------------------------------------------------------------------
 
+class InnerCopyCreateBy final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyCreateBy) */ {
+ public:
+  inline InnerCopyCreateBy() : InnerCopyCreateBy(nullptr) {}
+  ~InnerCopyCreateBy() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyCreateBy(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyCreateBy(const InnerCopyCreateBy& from);
+  InnerCopyCreateBy(InnerCopyCreateBy&& from) noexcept
+    : InnerCopyCreateBy() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyCreateBy& operator=(const InnerCopyCreateBy& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyCreateBy& operator=(InnerCopyCreateBy&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyCreateBy& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyCreateBy* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyCreateBy*>(
+               &_InnerCopyCreateBy_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(InnerCopyCreateBy& a, InnerCopyCreateBy& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyCreateBy* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyCreateBy* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyCreateBy* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyCreateBy>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyCreateBy& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyCreateBy& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyCreateBy* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyCreateBy";
+  }
+  protected:
+  explicit InnerCopyCreateBy(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCritFieldNumber = 1,
+    kCopyFieldNumber = 2,
+    kWayFieldNumber = 3,
+  };
+  // .inner.InnerCopyCrit crit = 1;
+  bool has_crit() const;
+  private:
+  bool _internal_has_crit() const;
+  public:
+  void clear_crit();
+  const ::inner::InnerCopyCrit& crit() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyCrit* release_crit();
+  ::inner::InnerCopyCrit* mutable_crit();
+  void set_allocated_crit(::inner::InnerCopyCrit* crit);
+  private:
+  const ::inner::InnerCopyCrit& _internal_crit() const;
+  ::inner::InnerCopyCrit* _internal_mutable_crit();
+  public:
+  void unsafe_arena_set_allocated_crit(
+      ::inner::InnerCopyCrit* crit);
+  ::inner::InnerCopyCrit* unsafe_arena_release_crit();
+
+  // .inner.InnerCopyType copy = 2;
+  bool has_copy() const;
+  private:
+  bool _internal_has_copy() const;
+  public:
+  void clear_copy();
+  const ::inner::InnerCopyType& copy() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyType* release_copy();
+  ::inner::InnerCopyType* mutable_copy();
+  void set_allocated_copy(::inner::InnerCopyType* copy);
+  private:
+  const ::inner::InnerCopyType& _internal_copy() const;
+  ::inner::InnerCopyType* _internal_mutable_copy();
+  public:
+  void unsafe_arena_set_allocated_copy(
+      ::inner::InnerCopyType* copy);
+  ::inner::InnerCopyType* unsafe_arena_release_copy();
+
+  // .inner.InnerCopyWay way = 3;
+  bool has_way() const;
+  private:
+  bool _internal_has_way() const;
+  public:
+  void clear_way();
+  const ::inner::InnerCopyWay& way() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyWay* release_way();
+  ::inner::InnerCopyWay* mutable_way();
+  void set_allocated_way(::inner::InnerCopyWay* way);
+  private:
+  const ::inner::InnerCopyWay& _internal_way() const;
+  ::inner::InnerCopyWay* _internal_mutable_way();
+  public:
+  void unsafe_arena_set_allocated_way(
+      ::inner::InnerCopyWay* way);
+  ::inner::InnerCopyWay* unsafe_arena_release_way();
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyCreateBy)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::inner::InnerCopyCrit* crit_;
+  ::inner::InnerCopyType* copy_;
+  ::inner::InnerCopyWay* way_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerCopyCrit final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyCrit) */ {
  public:
@@ -2504,7 +2900,7 @@ class InnerCopyCrit final :
                &_InnerCopyCrit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(InnerCopyCrit& a, InnerCopyCrit& b) {
     a.Swap(&b);
@@ -2682,7 +3078,7 @@ class InnerGameEvent final :
                &_InnerGameEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(InnerGameEvent& a, InnerGameEvent& b) {
     a.Swap(&b);
@@ -3022,7 +3418,7 @@ class InnerGameEventDestroy final :
                &_InnerGameEventDestroy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(InnerGameEventDestroy& a, InnerGameEventDestroy& b) {
     a.Swap(&b);
@@ -3248,7 +3644,7 @@ class InnerGameEventDestroyTeamsvr final :
                &_InnerGameEventDestroyTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(InnerGameEventDestroyTeamsvr& a, InnerGameEventDestroyTeamsvr& b) {
     a.Swap(&b);
@@ -3364,7 +3760,7 @@ class InnerGameEventDestryFriendsvr final :
                &_InnerGameEventDestryFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(InnerGameEventDestryFriendsvr& a, InnerGameEventDestryFriendsvr& b) {
     a.Swap(&b);
@@ -3480,7 +3876,7 @@ class InnerGameEventDestroyFamilysvr final :
                &_InnerGameEventDestroyFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(InnerGameEventDestroyFamilysvr& a, InnerGameEventDestroyFamilysvr& b) {
     a.Swap(&b);
@@ -3596,7 +3992,7 @@ class InnerGameEventDestroyRanksvr final :
                &_InnerGameEventDestroyRanksvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(InnerGameEventDestroyRanksvr& a, InnerGameEventDestroyRanksvr& b) {
     a.Swap(&b);
@@ -3719,7 +4115,7 @@ class InnerGameEventLogin final :
                &_InnerGameEventLogin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(InnerGameEventLogin& a, InnerGameEventLogin& b) {
     a.Swap(&b);
@@ -3904,7 +4300,7 @@ class InnerGameEventLoginTeamsvr final :
                &_InnerGameEventLoginTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(InnerGameEventLoginTeamsvr& a, InnerGameEventLoginTeamsvr& b) {
     a.Swap(&b);
@@ -4167,7 +4563,7 @@ class InnerGameEventLoginFriendsvr final :
                &_InnerGameEventLoginFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(InnerGameEventLoginFriendsvr& a, InnerGameEventLoginFriendsvr& b) {
     a.Swap(&b);
@@ -4356,7 +4752,7 @@ class InnerGameEventLogout final :
                &_InnerGameEventLogout_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(InnerGameEventLogout& a, InnerGameEventLogout& b) {
     a.Swap(&b);
@@ -4540,7 +4936,7 @@ class InnerGameEventLogoutTeamvr final :
                &_InnerGameEventLogoutTeamvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(InnerGameEventLogoutTeamvr& a, InnerGameEventLogoutTeamvr& b) {
     a.Swap(&b);
@@ -4656,7 +5052,7 @@ class InnerGameEventLogoutFriendsvr final :
                &_InnerGameEventLogoutFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(InnerGameEventLogoutFriendsvr& a, InnerGameEventLogoutFriendsvr& b) {
     a.Swap(&b);
@@ -4779,7 +5175,7 @@ class InnerGameEventOnline final :
                &_InnerGameEventOnline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(InnerGameEventOnline& a, InnerGameEventOnline& b) {
     a.Swap(&b);
@@ -4964,7 +5360,7 @@ class InnerGameEventOnlineTeamsvr final :
                &_InnerGameEventOnlineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(InnerGameEventOnlineTeamsvr& a, InnerGameEventOnlineTeamsvr& b) {
     a.Swap(&b);
@@ -5136,7 +5532,7 @@ class InnerGameEventOnlineFriendsvr final :
                &_InnerGameEventOnlineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(InnerGameEventOnlineFriendsvr& a, InnerGameEventOnlineFriendsvr& b) {
     a.Swap(&b);
@@ -5325,7 +5721,7 @@ class InnerGameEventOffline final :
                &_InnerGameEventOffline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(InnerGameEventOffline& a, InnerGameEventOffline& b) {
     a.Swap(&b);
@@ -5509,7 +5905,7 @@ class InnerGameEventOfflineTeamsvr final :
                &_InnerGameEventOfflineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(InnerGameEventOfflineTeamsvr& a, InnerGameEventOfflineTeamsvr& b) {
     a.Swap(&b);
@@ -5625,7 +6021,7 @@ class InnerGameEventOfflineFriendsvr final :
                &_InnerGameEventOfflineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(InnerGameEventOfflineFriendsvr& a, InnerGameEventOfflineFriendsvr& b) {
     a.Swap(&b);
@@ -5748,7 +6144,7 @@ class InnerGameEventChangeMap final :
                &_InnerGameEventChangeMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(InnerGameEventChangeMap& a, InnerGameEventChangeMap& b) {
     a.Swap(&b);
@@ -5944,7 +6340,7 @@ class InnerGameEventChangeMapTeamsvr final :
                &_InnerGameEventChangeMapTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(InnerGameEventChangeMapTeamsvr& a, InnerGameEventChangeMapTeamsvr& b) {
     a.Swap(&b);
@@ -6206,7 +6602,7 @@ class InnerGameEventChangeMapFriendsvr final :
                &_InnerGameEventChangeMapFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(InnerGameEventChangeMapFriendsvr& a, InnerGameEventChangeMapFriendsvr& b) {
     a.Swap(&b);
@@ -6329,7 +6725,7 @@ class InnerGameEventDeath final :
                &_InnerGameEventDeath_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(InnerGameEventDeath& a, InnerGameEventDeath& b) {
     a.Swap(&b);
@@ -6514,7 +6910,7 @@ class InnerGameEventDeathTeamsvr final :
                &_InnerGameEventDeathTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(InnerGameEventDeathTeamsvr& a, InnerGameEventDeathTeamsvr& b) {
     a.Swap(&b);
@@ -6665,7 +7061,7 @@ class InnerGameEventDeathFriendsvr final :
                &_InnerGameEventDeathFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(InnerGameEventDeathFriendsvr& a, InnerGameEventDeathFriendsvr& b) {
     a.Swap(&b);
@@ -6788,7 +7184,7 @@ class InnerGameEventRebirth final :
                &_InnerGameEventRebirth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(InnerGameEventRebirth& a, InnerGameEventRebirth& b) {
     a.Swap(&b);
@@ -6973,7 +7369,7 @@ class InnerGameEventRebirthTeamsvr final :
                &_InnerGameEventRebirthTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(InnerGameEventRebirthTeamsvr& a, InnerGameEventRebirthTeamsvr& b) {
     a.Swap(&b);
@@ -7144,7 +7540,7 @@ class InnerGameEventRebirthFriendsvr final :
                &_InnerGameEventRebirthFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(InnerGameEventRebirthFriendsvr& a, InnerGameEventRebirthFriendsvr& b) {
     a.Swap(&b);
@@ -7267,7 +7663,7 @@ class InnerGameEventWakeup final :
                &_InnerGameEventWakeup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(InnerGameEventWakeup& a, InnerGameEventWakeup& b) {
     a.Swap(&b);
@@ -7452,7 +7848,7 @@ class InnerGameEventWakeupTeamsvr final :
                &_InnerGameEventWakeupTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(InnerGameEventWakeupTeamsvr& a, InnerGameEventWakeupTeamsvr& b) {
     a.Swap(&b);
@@ -7715,7 +8111,7 @@ class InnerGameEventWakeupFriendsvr final :
                &_InnerGameEventWakeupFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(InnerGameEventWakeupFriendsvr& a, InnerGameEventWakeupFriendsvr& b) {
     a.Swap(&b);
@@ -8836,8 +9232,115 @@ inline InnerCopyWay::TypeCase InnerCopyWay::type_case() const {
 }
 // -------------------------------------------------------------------
 
+// InnerCopyPvpF55
+
+// uint32 copyId = 1;
+inline void InnerCopyPvpF55::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyPvpF55::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyPvpF55::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPvpF55.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyPvpF55::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyPvpF55::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPvpF55.copyId)
+}
+
+// -------------------------------------------------------------------
+
 // InnerCopyPvp
 
+// .inner.InnerCopyPvpF55 f55 = 11;
+inline bool InnerCopyPvp::_internal_has_f55() const {
+  return type_case() == kF55;
+}
+inline bool InnerCopyPvp::has_f55() const {
+  return _internal_has_f55();
+}
+inline void InnerCopyPvp::set_has_f55() {
+  _oneof_case_[0] = kF55;
+}
+inline void InnerCopyPvp::clear_f55() {
+  if (_internal_has_f55()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.f55_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::release_f55() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyPvp.f55)
+  if (_internal_has_f55()) {
+    clear_has_type();
+    ::inner::InnerCopyPvpF55* temp = type_.f55_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.f55_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::_internal_f55() const {
+  return _internal_has_f55()
+      ? *type_.f55_
+      : reinterpret_cast< ::inner::InnerCopyPvpF55&>(::inner::_InnerCopyPvpF55_default_instance_);
+}
+inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::f55() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPvp.f55)
+  return _internal_f55();
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::unsafe_arena_release_f55() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPvp.f55)
+  if (_internal_has_f55()) {
+    clear_has_type();
+    ::inner::InnerCopyPvpF55* temp = type_.f55_;
+    type_.f55_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyPvp::unsafe_arena_set_allocated_f55(::inner::InnerCopyPvpF55* f55) {
+  clear_type();
+  if (f55) {
+    set_has_f55();
+    type_.f55_ = f55;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPvp.f55)
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::_internal_mutable_f55() {
+  if (!_internal_has_f55()) {
+    clear_type();
+    set_has_f55();
+    type_.f55_ = CreateMaybeMessage< ::inner::InnerCopyPvpF55 >(GetArenaForAllocation());
+  }
+  return type_.f55_;
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::mutable_f55() {
+  ::inner::InnerCopyPvpF55* _msg = _internal_mutable_f55();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPvp.f55)
+  return _msg;
+}
+
+inline bool InnerCopyPvp::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyPvp::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyPvp::TypeCase InnerCopyPvp::type_case() const {
+  return InnerCopyPvp::TypeCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // InnerCopyPve
@@ -9063,6 +9566,280 @@ inline void InnerCopyType::clear_has_type() {
 inline InnerCopyType::TypeCase InnerCopyType::type_case() const {
   return InnerCopyType::TypeCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// InnerCopyCreateBy
+
+// .inner.InnerCopyCrit crit = 1;
+inline bool InnerCopyCreateBy::_internal_has_crit() const {
+  return this != internal_default_instance() && crit_ != nullptr;
+}
+inline bool InnerCopyCreateBy::has_crit() const {
+  return _internal_has_crit();
+}
+inline void InnerCopyCreateBy::clear_crit() {
+  if (GetArenaForAllocation() == nullptr && crit_ != nullptr) {
+    delete crit_;
+  }
+  crit_ = nullptr;
+}
+inline const ::inner::InnerCopyCrit& InnerCopyCreateBy::_internal_crit() const {
+  const ::inner::InnerCopyCrit* p = crit_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyCrit&>(
+      ::inner::_InnerCopyCrit_default_instance_);
+}
+inline const ::inner::InnerCopyCrit& InnerCopyCreateBy::crit() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCreateBy.crit)
+  return _internal_crit();
+}
+inline void InnerCopyCreateBy::unsafe_arena_set_allocated_crit(
+    ::inner::InnerCopyCrit* crit) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(crit_);
+  }
+  crit_ = crit;
+  if (crit) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyCreateBy.crit)
+}
+inline ::inner::InnerCopyCrit* InnerCopyCreateBy::release_crit() {
+  
+  ::inner::InnerCopyCrit* temp = crit_;
+  crit_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerCopyCrit* InnerCopyCreateBy::unsafe_arena_release_crit() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyCreateBy.crit)
+  
+  ::inner::InnerCopyCrit* temp = crit_;
+  crit_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyCrit* InnerCopyCreateBy::_internal_mutable_crit() {
+  
+  if (crit_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyCrit>(GetArenaForAllocation());
+    crit_ = p;
+  }
+  return crit_;
+}
+inline ::inner::InnerCopyCrit* InnerCopyCreateBy::mutable_crit() {
+  ::inner::InnerCopyCrit* _msg = _internal_mutable_crit();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyCreateBy.crit)
+  return _msg;
+}
+inline void InnerCopyCreateBy::set_allocated_crit(::inner::InnerCopyCrit* crit) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete crit_;
+  }
+  if (crit) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(crit);
+    if (message_arena != submessage_arena) {
+      crit = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, crit, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  crit_ = crit;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerCopyCreateBy.crit)
+}
+
+// .inner.InnerCopyType copy = 2;
+inline bool InnerCopyCreateBy::_internal_has_copy() const {
+  return this != internal_default_instance() && copy_ != nullptr;
+}
+inline bool InnerCopyCreateBy::has_copy() const {
+  return _internal_has_copy();
+}
+inline void InnerCopyCreateBy::clear_copy() {
+  if (GetArenaForAllocation() == nullptr && copy_ != nullptr) {
+    delete copy_;
+  }
+  copy_ = nullptr;
+}
+inline const ::inner::InnerCopyType& InnerCopyCreateBy::_internal_copy() const {
+  const ::inner::InnerCopyType* p = copy_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyType&>(
+      ::inner::_InnerCopyType_default_instance_);
+}
+inline const ::inner::InnerCopyType& InnerCopyCreateBy::copy() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCreateBy.copy)
+  return _internal_copy();
+}
+inline void InnerCopyCreateBy::unsafe_arena_set_allocated_copy(
+    ::inner::InnerCopyType* copy) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(copy_);
+  }
+  copy_ = copy;
+  if (copy) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyCreateBy.copy)
+}
+inline ::inner::InnerCopyType* InnerCopyCreateBy::release_copy() {
+  
+  ::inner::InnerCopyType* temp = copy_;
+  copy_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerCopyType* InnerCopyCreateBy::unsafe_arena_release_copy() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyCreateBy.copy)
+  
+  ::inner::InnerCopyType* temp = copy_;
+  copy_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyType* InnerCopyCreateBy::_internal_mutable_copy() {
+  
+  if (copy_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyType>(GetArenaForAllocation());
+    copy_ = p;
+  }
+  return copy_;
+}
+inline ::inner::InnerCopyType* InnerCopyCreateBy::mutable_copy() {
+  ::inner::InnerCopyType* _msg = _internal_mutable_copy();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyCreateBy.copy)
+  return _msg;
+}
+inline void InnerCopyCreateBy::set_allocated_copy(::inner::InnerCopyType* copy) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete copy_;
+  }
+  if (copy) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(copy);
+    if (message_arena != submessage_arena) {
+      copy = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, copy, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  copy_ = copy;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerCopyCreateBy.copy)
+}
+
+// .inner.InnerCopyWay way = 3;
+inline bool InnerCopyCreateBy::_internal_has_way() const {
+  return this != internal_default_instance() && way_ != nullptr;
+}
+inline bool InnerCopyCreateBy::has_way() const {
+  return _internal_has_way();
+}
+inline void InnerCopyCreateBy::clear_way() {
+  if (GetArenaForAllocation() == nullptr && way_ != nullptr) {
+    delete way_;
+  }
+  way_ = nullptr;
+}
+inline const ::inner::InnerCopyWay& InnerCopyCreateBy::_internal_way() const {
+  const ::inner::InnerCopyWay* p = way_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyWay&>(
+      ::inner::_InnerCopyWay_default_instance_);
+}
+inline const ::inner::InnerCopyWay& InnerCopyCreateBy::way() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyCreateBy.way)
+  return _internal_way();
+}
+inline void InnerCopyCreateBy::unsafe_arena_set_allocated_way(
+    ::inner::InnerCopyWay* way) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(way_);
+  }
+  way_ = way;
+  if (way) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyCreateBy.way)
+}
+inline ::inner::InnerCopyWay* InnerCopyCreateBy::release_way() {
+  
+  ::inner::InnerCopyWay* temp = way_;
+  way_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerCopyWay* InnerCopyCreateBy::unsafe_arena_release_way() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyCreateBy.way)
+  
+  ::inner::InnerCopyWay* temp = way_;
+  way_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyWay* InnerCopyCreateBy::_internal_mutable_way() {
+  
+  if (way_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyWay>(GetArenaForAllocation());
+    way_ = p;
+  }
+  return way_;
+}
+inline ::inner::InnerCopyWay* InnerCopyCreateBy::mutable_way() {
+  ::inner::InnerCopyWay* _msg = _internal_mutable_way();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyCreateBy.way)
+  return _msg;
+}
+inline void InnerCopyCreateBy::set_allocated_way(::inner::InnerCopyWay* way) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete way_;
+  }
+  if (way) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(way);
+    if (message_arena != submessage_arena) {
+      way = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, way, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  way_ = way;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerCopyCreateBy.way)
+}
+
 // -------------------------------------------------------------------
 
 // InnerCopyCrit
@@ -14091,6 +14868,10 @@ inline void InnerGameEventWakeupFriendsvr::set_llteamid(uint64_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

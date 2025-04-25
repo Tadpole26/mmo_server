@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "util_malloc.h"
 #include "util_file.h"
 #ifdef WIN32

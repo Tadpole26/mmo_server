@@ -5,8 +5,147 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="User">
+      <UniqueIdentifier>{f4ebda30-bc89-4bc4-a7f4-696ea12361c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainLogic">
+      <UniqueIdentifier>{7a183bb2-eb7b-41b2-8d49-4368694633be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue">
+      <UniqueIdentifier>{46a2a199-c6d3-4208-a401-964f1ed3a5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Netface">
+      <UniqueIdentifier>{5cba1065-779a-4255-8273-729f0c684190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QueueMgr">
+      <UniqueIdentifier>{91340b5d-f2dc-4994-a6d3-abc252ede285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unit">
+      <UniqueIdentifier>{8e4ec143-6e9c-4743-a979-97f16abe7930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Group">
+      <UniqueIdentifier>{4c566c34-3119-4945-945f-06872dee0975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Room">
+      <UniqueIdentifier>{9801f5cd-672e-4ec9-9de5-c8196f590daf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MatchServer.cpp" />
+    <ClCompile Include="MatchServer.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchLogic.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerNetface.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueMgrF55.cpp">
+      <Filter>QueueMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchQueueMgr.cpp">
+      <Filter>QueueMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchQueue.cpp">
+      <Filter>Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchUnit.cpp">
+      <Filter>Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchMem.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueF55.cpp">
+      <Filter>Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="MemRoleF55.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitF55.cpp">
+      <Filter>Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchGroup.cpp">
+      <Filter>Group</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchRoom.cpp">
+      <Filter>Room</Filter>
+    </ClCompile>
+    <ClCompile Include="NetMsgFromTeam.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchMgr.cpp" />
+    <ClCompile Include="MatchRoomMgr.cpp">
+      <Filter>Room</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchMemMgr.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchUnitMgr.cpp">
+      <Filter>Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="MemRobotF55.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomF55.cpp">
+      <Filter>Room</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MatchDefine.h" />
+    <ClInclude Include="MatchLogic.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="CServerNetface.h">
+      <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueMgrF55.h">
+      <Filter>QueueMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchQueueMgr.h">
+      <Filter>QueueMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchQueue.h">
+      <Filter>Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchUnit.h">
+      <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchMem.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueF55.h">
+      <Filter>Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="MemRoleF55.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitF55.h">
+      <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchGroup.h">
+      <Filter>Group</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchRoom.h">
+      <Filter>Room</Filter>
+    </ClInclude>
+    <ClInclude Include="NetMsgFromTeam.h">
+      <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchMgr.h" />
+    <ClInclude Include="MatchRoomMgr.h">
+      <Filter>Room</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchMemMgr.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchUnitMgr.h">
+      <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="MemRobotF55.h">
+      <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomF55.h">
+      <Filter>Room</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

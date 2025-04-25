@@ -21,6 +21,10 @@
     <ClCompile Include="teamcommon.pb.cc" />
     <ClCompile Include="innerteam.pb.cc" />
     <ClCompile Include="errorcode.pb.cc" />
+    <ClCompile Include="innermatch.pb.cc" />
+    <ClCompile Include="match.pb.cc" />
+    <ClCompile Include="matchcommon.pb.cc" />
+    <ClCompile Include="matchsvr.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -43,6 +47,10 @@
     <ClInclude Include="teamcommon.pb.h" />
     <ClInclude Include="innerteam.pb.h" />
     <ClInclude Include="errorcode.pb.h" />
+    <ClInclude Include="innermatch.pb.h" />
+    <ClInclude Include="match.pb.h" />
+    <ClInclude Include="matchcommon.pb.h" />
+    <ClInclude Include="matchsvr.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

@@ -7,10 +7,11 @@ enum
 {
 	eProcThreeLocal = 0,					//three类别:本服
 	eProcThreeGroup = 1,					//three类别:跨组
-	eProcThreeMax = 2,						//three类别最大
+	eProcThreeKuafu = 2,					//three类别:跨服
+	eProcThreeMax = 3,						//three类别最大
 	eProcZone = eProcThreeMax,				//zone类别
-	eProcPlat = 3,							//Plat类别
-	eProcMax = 4							//类别最大
+	eProcPlat = 4,							//Plat类别
+	eProcMax = 5							//类别最大
 };
 
 //服务器类型
@@ -154,7 +155,29 @@ inline bool isGroupByEproc(uint32 eProc)
 inline bool isMapSvr(uint32 eServer) { return eServer == eServerMap; }
 inline bool isGatewaySvr(uint32 eServer) { return eServer == eServerGateway; }
 inline bool isSceneSvr(uint32 eServer) { return eServer == eServerScene; }
-
 inline bool isSceneSvrLocal(uint32 hashId) { return isLocalByEproc(splitEprocHashId(hashId)) && isSceneSvr(splitEserverHashId(hashId)); }
-
 inline bool isSceneSvrGroup(uint32 hashId) { return isGroupByEproc(splitEprocHashId(hashId)) && isSceneSvr(splitEserverHashId(hashId)); }
+
+inline std::string eProc2Str(uint32 eProc)
+{
+	switch (eProc)
+	{
+	case eProcThreeLocal: return "Local"; break;
+	case eProcThreeGroup: return "Group"; break;
+	case eProcThreeKuafu: return "Kuafu"; break;
+	case eProcZone:		  return "Zone"; break;
+	case eProcPlat:		  return "Plat"; break;
+	}
+	return "UnknowProc";
+}
+
+inline std::string eProcThree2ChnStr(uint32 eProc)
+{
+	switch (eProc)
+	{
+	case eProcThreeLocal: return "本服"; break;
+	case eProcThreeGroup: return "跨小组"; break;
+	case eProcThreeKuafu: return "跨全服"; break;
+	}
+	return "UnknowProcThree";
+}

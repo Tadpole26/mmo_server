@@ -5,7 +5,7 @@
 
 namespace config
 {
-	struct team_info_t
+	struct robot_info_t
 	{
 		uint32 tid = 0;
 		uint32 type = 0;
@@ -23,6 +23,10 @@ namespace config
 		bool defaultVote = true;		//д╛хом╗╧Щ
 	};
 
+	struct team_info_t
+	{
+		uint32 tid = 0;
+	};
 
 	class TeamConfig : public cLoadBase
 	{

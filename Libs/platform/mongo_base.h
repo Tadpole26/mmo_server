@@ -10,7 +10,7 @@
 #include <bsoncxx/stdx/optional.hpp>
 #include <thread>
 #include <mutex>
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "db_struct.h"
 using namespace bsoncxx::builder::stream;
 using namespace bsoncxx::builder;

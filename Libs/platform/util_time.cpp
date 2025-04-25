@@ -2,7 +2,7 @@
 #include "util_time.h"
 #include "util_string.h"
 #include <sys/timeb.h>
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "util_strop.h"
 
 #define DaySeconds 86400

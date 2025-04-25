@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "func_proc.h"
-#include "log_mgr.h"
+#include "sdk.h"
 #include "util_file.h"
 #include "util_string.h"
 #include <stdio.h>

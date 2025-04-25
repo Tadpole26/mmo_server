@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "http_mgr.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 #include "util_time.h"
 
 CHttpMgr::CHttpMgr()

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "db_mgr.h"
-#include "log_mgr.h"
+#include "zLogMgr.h"
 
 DBMgr::DBMgr()
 {

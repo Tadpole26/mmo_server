@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "coredump_x.h"
-#include "log_mgr.h"
+#include "sdk.h"
 #include "util_file.h"
 #include "util_time.h"
 #include "call_stack.h"

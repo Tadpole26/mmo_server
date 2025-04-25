@@ -66,15 +66,6 @@
     <ClCompile Include="CConstConfig.cpp">
       <Filter>Config</Filter>
     </ClCompile>
-    <ClCompile Include="CZkOperation.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="CSkillConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="CMapConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
     <ClCompile Include="CCrossNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
@@ -90,17 +81,11 @@
     <ClCompile Include="CUserCardRecord.cpp">
       <Filter>DB</Filter>
     </ClCompile>
-    <ClCompile Include="CNpcConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
     <ClCompile Include="CUserItemRecord.cpp">
       <Filter>DB</Filter>
     </ClCompile>
     <ClCompile Include="CUserMailRecord.cpp">
       <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CGameConstConfig.cpp">
-      <Filter>Config</Filter>
     </ClCompile>
     <ClCompile Include="CGlobalRankerRecord.cpp">
       <Filter>DB</Filter>
@@ -156,9 +141,6 @@
     <ClCompile Include="CCmptView.cpp">
       <Filter>Managers\Cmpt</Filter>
     </ClCompile>
-    <ClCompile Include="CMonsterConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
     <ClCompile Include="CModule.cpp">
       <Filter>Managers\Module</Filter>
     </ClCompile>
@@ -191,15 +173,6 @@
     <ClInclude Include="CConstConfig.h">
       <Filter>Config</Filter>
     </ClInclude>
-    <ClInclude Include="CZkOperation.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="CSkillConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="CMapConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
     <ClInclude Include="CCrossNetface.h">
       <Filter>Netface</Filter>
     </ClInclude>
@@ -215,17 +188,11 @@
     <ClInclude Include="CUserCardRecord.h">
       <Filter>DB</Filter>
     </ClInclude>
-    <ClInclude Include="CNpcConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
     <ClInclude Include="CUserItemRecord.h">
       <Filter>DB</Filter>
     </ClInclude>
     <ClInclude Include="CUserMailRecord.h">
       <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CGameConstConfig.h">
-      <Filter>Config</Filter>
     </ClInclude>
     <ClInclude Include="CGlobalRankerRecord.h">
       <Filter>DB</Filter>
@@ -298,9 +265,6 @@
     </ClInclude>
     <ClInclude Include="CCmptView.h">
       <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="CMonsterConfig.h">
-      <Filter>Config</Filter>
     </ClInclude>
     <ClInclude Include="CModule.h">
       <Filter>Managers\Module</Filter>

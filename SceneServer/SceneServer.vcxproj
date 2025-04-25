@@ -151,7 +151,6 @@
     <ClCompile Include="CDbInstance.cpp" />
     <ClCompile Include="CConstConfig.cpp" />
     <ClCompile Include="CFriendNetface.cpp" />
-    <ClCompile Include="CGameConstConfig.cpp" />
     <ClCompile Include="CGameLogic.cpp" />
     <ClCompile Include="CGameUser.cpp" />
     <ClCompile Include="CGateSession.cpp" />
@@ -159,13 +158,10 @@
     <ClCompile Include="CGlobalRankerRecord.cpp" />
     <ClCompile Include="CModule.cpp" />
     <ClCompile Include="CModuleFriend.cpp" />
-    <ClCompile Include="CMonsterConfig.cpp" />
     <ClCompile Include="CSceneMap.cpp" />
     <ClCompile Include="CSceneMapMgr.cpp" />
     <ClCompile Include="CSceneScene.cpp" />
     <ClCompile Include="CSceneScreen.cpp" />
-    <ClCompile Include="CSkillConfig.cpp" />
-    <ClCompile Include="CNpcConfig.cpp" />
     <ClCompile Include="CNpc.cpp" />
     <ClCompile Include="CNpcMgr.cpp" />
     <ClCompile Include="CNpcMonster.cpp" />
@@ -175,11 +171,9 @@
     <ClCompile Include="CTableRecordBase.cpp" />
     <ClCompile Include="CTableRecordCache.cpp" />
     <ClCompile Include="CUserCardRecord.cpp" />
-    <ClCompile Include="CMapConfig.cpp" />
     <ClCompile Include="CUserInfoRecord.cpp" />
     <ClCompile Include="CUserItemRecord.cpp" />
     <ClCompile Include="CUserMailRecord.cpp" />
-    <ClCompile Include="CZkOperation.cpp" />
     <ClCompile Include="GameServer.cpp" />
     <ClCompile Include="CHatredHandle.cpp" />
   </ItemGroup>
@@ -199,7 +193,6 @@
     <ClInclude Include="CDbInstance.h" />
     <ClInclude Include="CConstConfig.h" />
     <ClInclude Include="CFriendNetface.h" />
-    <ClInclude Include="CGameConstConfig.h" />
     <ClInclude Include="CGameLogic.h" />
     <ClInclude Include="CGameUser.h" />
     <ClInclude Include="CGateSession.h" />
@@ -207,13 +200,10 @@
     <ClInclude Include="CGlobalRankerRecord.h" />
     <ClInclude Include="CModule.h" />
     <ClInclude Include="CModuleFriend.h" />
-    <ClInclude Include="CMonsterConfig.h" />
     <ClInclude Include="CSceneMap.h" />
     <ClInclude Include="CSceneMapMgr.h" />
     <ClInclude Include="CSceneScene.h" />
     <ClInclude Include="CSceneScreen.h" />
-    <ClInclude Include="CSkillConfig.h" />
-    <ClInclude Include="CNpcConfig.h" />
     <ClInclude Include="CNpcMonster.h" />
     <ClInclude Include="CRankerInfo.h" />
     <ClInclude Include="CRankerMgr.h" />
@@ -224,11 +214,9 @@
     <ClInclude Include="CTableRecordBase.h" />
     <ClInclude Include="CTableRecordCache.h" />
     <ClInclude Include="CUserCardRecord.h" />
-    <ClInclude Include="CMapConfig.h" />
     <ClInclude Include="CUserInfoRecord.h" />
     <ClInclude Include="CUserItemRecord.h" />
     <ClInclude Include="CUserMailRecord.h" />
-    <ClInclude Include="CZkOperation.h" />
     <ClInclude Include="CNpc.h" />
     <ClInclude Include="CHatredHandle.h" />
   </ItemGroup>

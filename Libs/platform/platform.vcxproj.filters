@@ -199,6 +199,9 @@
     <ClInclude Include="zConvert.h">
       <Filter>sdk</Filter>
     </ClInclude>
+    <ClInclude Include="cMatch.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="util_random.cpp">
@@ -275,9 +278,6 @@
     </ClCompile>
     <ClCompile Include="win_get_opt.cpp">
       <Filter>server</Filter>
-    </ClCompile>
-    <ClCompile Include="CBattleCommon.h">
-      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="cScene.cpp">
       <Filter>common</Filter>

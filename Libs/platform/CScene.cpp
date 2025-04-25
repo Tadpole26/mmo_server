@@ -96,6 +96,7 @@ const char* cScene::getCopyTypeStr(const uint32 copyType)
 {
 	switch (copyType)
 	{
+	default: return "aaa"; break;
 	}
 	return "CopyType_Unknow";
 }

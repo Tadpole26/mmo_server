@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -19,7 +19,48 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CServerNetface.cpp" />
+    <ClCompile Include="MatchGroup.cpp" />
+    <ClCompile Include="MatchLogic.cpp" />
+    <ClCompile Include="MatchMem.cpp" />
+    <ClCompile Include="MatchMemMgr.cpp" />
+    <ClCompile Include="MatchMgr.cpp" />
+    <ClCompile Include="MatchQueue.cpp" />
+    <ClCompile Include="MatchQueueMgr.cpp" />
+    <ClCompile Include="MatchRoom.cpp" />
+    <ClCompile Include="MatchRoomMgr.cpp" />
     <ClCompile Include="MatchServer.cpp" />
+    <ClCompile Include="MatchUnit.cpp" />
+    <ClCompile Include="MatchUnitMgr.cpp" />
+    <ClCompile Include="MemRobotF55.cpp" />
+    <ClCompile Include="MemRoleF55.cpp" />
+    <ClCompile Include="NetMsgFromTeam.cpp" />
+    <ClCompile Include="QueueMgrF55.cpp" />
+    <ClCompile Include="QueueF55.cpp" />
+    <ClCompile Include="RoomF55.cpp" />
+    <ClCompile Include="UnitF55.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CServerNetface.h" />
+    <ClInclude Include="MatchDefine.h" />
+    <ClInclude Include="MatchGroup.h" />
+    <ClInclude Include="MatchLogic.h" />
+    <ClInclude Include="MatchMem.h" />
+    <ClInclude Include="MatchMemMgr.h" />
+    <ClInclude Include="MatchMgr.h" />
+    <ClInclude Include="MatchQueue.h" />
+    <ClInclude Include="MatchQueueMgr.h" />
+    <ClInclude Include="MatchRoom.h" />
+    <ClInclude Include="MatchRoomMgr.h" />
+    <ClInclude Include="MatchUnit.h" />
+    <ClInclude Include="MatchUnitMgr.h" />
+    <ClInclude Include="MemRobotF55.h" />
+    <ClInclude Include="MemRoleF55.h" />
+    <ClInclude Include="NetMsgFromTeam.h" />
+    <ClInclude Include="QueueMgrF55.h" />
+    <ClInclude Include="QueueF55.h" />
+    <ClInclude Include="RoomF55.h" />
+    <ClInclude Include="UnitF55.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -2,8 +2,7 @@
 #ifndef WIN32
 #include <getopt.h>
 #endif
-#include <string>
-#include <map>
+#include "zLogMgr.h"
 
 class ArgOpt
 {

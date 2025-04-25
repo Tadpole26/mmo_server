@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cGame.h" />
+    <ClInclude Include="cMatch.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cServer.h" />
     <ClInclude Include="cTeam.h" />
@@ -221,7 +222,6 @@
     <ClInclude Include="zType.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CBattleCommon.h" />
     <ClCompile Include="cGame.cpp" />
     <ClCompile Include="cScene.cpp" />
     <ClCompile Include="cUser.cpp" />
