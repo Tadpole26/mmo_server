@@ -49,7 +49,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartMatch::InnerTeamsvr_Frommatch_StartMatch(
     ::_pbi::ConstantInitialized)
   : matchlist_(nullptr)
-  , uinitid_(uint64_t{0u})
+  , unitid_(uint64_t{0u})
   , mtype_(0u){}
 struct InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_StartMatchDefaultTypeInternal()
@@ -75,7 +75,7 @@ struct InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Frommatch_RestartMatchDefaultTypeInternal _InnerTeamsvr_Frommatch_RestartMatch_default_instance_;
 PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(
     ::_pbi::ConstantInitialized)
-  : uinitid_(uint64_t{0u})
+  : unitid_(uint64_t{0u})
   , mtype_(0u){}
 struct InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerTeamsvr_Frommatch_CancelMatchDefaultTypeInternal()
@@ -627,7 +627,7 @@ const uint32_t TableStruct_teamsvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, mtype_),
-  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, uinitid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, unitid_),
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_StartMatch, matchlist_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_RestartMatch, _internal_metadata_),
@@ -644,7 +644,7 @@ const uint32_t TableStruct_teamsvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, mtype_),
-  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, uinitid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_CancelMatch, unitid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Frommatch_PunishMatch, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1117,82 +1117,82 @@ const char descriptor_table_protodef_teamsvr_2eproto[] PROTOBUF_SECTION_VARIABLE
   "scene_BatDstroyTeamH\001\022M\n\026fromscene_jumpt"
   "oleader\030\233\013 \001(\0132*.inner.InnerTeamsvr_From"
   "scene_JumpToLeaderH\001B\013\n\tFrommatchB\013\n\tFro"
-  "mscene\"\035\n\033InnerTeamsvr_Frommatch_Test\"r\n"
+  "mscene\"\035\n\033InnerTeamsvr_Frommatch_Test\"q\n"
   "!InnerTeamsvr_Frommatch_StartMatch\022\r\n\005mt"
-  "ype\030\001 \001(\r\022\017\n\007uinitId\030\002 \001(\004\022-\n\tmatchList\030"
-  "\003 \001(\0132\032.inner.InnerMatchMatchList\"C\n#Inn"
-  "erTeamsvr_Frommatch_RestartMatch\022\014\n\004type"
-  "\030\001 \001(\r\022\016\n\006unitId\030\002 \001(\004\"D\n\"InnerTeamsvr_F"
-  "rommatch_CancelMatch\022\r\n\005mtype\030\001 \001(\r\022\017\n\007u"
-  "initId\030\002 \001(\004\"e\n\"InnerTeamsvr_Frommatch_P"
-  "unishMatch\022\016\n\006unitId\030\001 \001(\004\022/\n\npunishList"
-  "\030\002 \001(\0132\033.inner.InnerMatchPunishList\"Z\n#I"
-  "nnerTeamsvr_Frommatch_StartConfirm\022#\n\004ro"
-  "om\030\001 \001(\0132\025.inner.InnerMatchRoom\022\016\n\006expir"
-  "e\030\002 \001(\r\"6\n$InnerTeamsvr_Frommatch_RoleCo"
-  "nfirmOk\022\016\n\006roomId\030\001 \001(\004\"\224\001\n#InnerTeamsvr"
-  "_Frommatch_StartLoading\022\016\n\006roomId\030\001 \001(\004\022"
-  "1\n\tcopyscene\030\002 \001(\0132\036.inner.InnerMatchRoo"
-  "mCopyScene\022*\n\010createBy\030\003 \001(\0132\030.inner.Inn"
-  "erCopyCreateBy\"\035\n\033InnerTeamsvr_Fromscene"
-  "_Test\"L\n InnerTeamsvr_Fromscene_GameEven"
-  "t\022(\n\tgameEvent\030\001 \001(\0132\025.inner.InnerGameEv"
-  "ent\"\320\002\n%InnerTeamsvr_Fromscene_UpdateUse"
-  "rInfo\022$\n\005extd2\030\001 \001(\0132\023.common.RoleExtend"
-  "2H\000\022$\n\005extd3\030\002 \001(\0132\023.common.RoleExtend3H"
-  "\000\022\022\n\010nickName\030\003 \001(\tH\000\022\022\n\010headIcon\030\004 \001(\rH"
-  "\000\022\023\n\theadFrame\030\005 \001(\rH\000\022\022\n\010careerId\030\006 \001(\r"
-  "H\000\022\017\n\005level\030\007 \001(\rH\000\022\r\n\003sex\030\010 \001(\rH\000\022\024\n\nca"
-  "reeLevel\030\t \001(\rH\000\022%\n\003f33\030\n \001(\0132\026.common.E"
-  "xtendFight3v3H\000\022%\n\003f55\030\013 \001(\0132\026.common.Ex"
-  "tendFight5v5H\000B\006\n\004type\"=\n)InnerTeamsvr_F"
-  "romscene_PersonChangeTarget\022\020\n\010targetId\030"
-  "\001 \001(\r\"*\n(InnerTeamsvr_Fromscene_PersonCa"
-  "ncelMatch\"K\n\'InnerTeamsvr_Fromscene_Lead"
-  "erStartMatch\022\014\n\004text\030\001 \001(\014\022\022\n\nlanguageId"
-  "\030\002 \001(\r\"*\n(InnerTeamsvr_Fromscene_LeaderC"
-  "ancelMatch\"9\n%InnerTeamsvr_Fromscene_Tar"
-  "getTeamList\022\020\n\010targetId\030\001 \001(\r\"Y\n!InnerTe"
-  "amsvr_Fromscene_CreateTeam\022\020\n\010targetId\030\001"
-  " \001(\r\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r"
-  "\"9\n\'InnerTeamsvr_Fromscene_LeaderFireMem"
-  "ber\022\016\n\006roleId\030\001 \001(\004\"a\n)InnerTeamsvr_From"
-  "scene_LeaderChangeTarget\022\020\n\010targetId\030\001 \001"
-  "(\r\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"="
-  "\n+InnerTeamsvr_Fromscene_LeaderTogetherM"
-  "ember\022\016\n\006roleId\030\001 \001(\004\"6\n$InnerTeamsvr_Fr"
-  "omscene_LeaderAppoint\022\016\n\006roleId\030\001 \001(\004\"-\n"
-  "+InnerTeamsvr_Fromscene_LeaderRefuseAllA"
-  "pply\",\n*InnerTeamsvr_Fromscene_LeaderAgr"
-  "eeAllApply\"K\n(InnerTeamsvr_Fromscene_Lea"
-  "derRefuseApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneId"
-  "F\030\002 \001(\r\"J\n\'InnerTeamsvr_Fromscene_Leader"
-  "AgreeApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030\002 "
-  "\001(\r\"5\n#InnerTeamsvr_Fromscene_InviteFrie"
-  "nd\022\016\n\006roleId\030\001 \001(\004\"5\n#InnerTeamsvr_Froms"
-  "cene_InviteFamily\022\016\n\006roleId\030\001 \001(\004\"F\n#Inn"
-  "erTeamsvr_Fromscene_InvitePlayer\022\016\n\006role"
-  "Id\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001(\r\"%\n#InnerTeamsv"
-  "r_Fromscene_AgreeInvited\"&\n$InnerTeamsvr"
-  "_Fromscene_RefuseInvited\"y\n#InnerTeamsvr"
-  "_Fromscene_BatLeaveTeam\022(\n\010onlyTeam\030\001 \001("
-  "\0132\026.inner.InnerRoleIdList\022(\n\010copyTeam\030\002 "
-  "\001(\0132\026.inner.InnerRoleIdList\"I\n InnerTeam"
-  "svr_Fromscene_ApplyTeam\022\016\n\006teamId\030\001 \001(\004\022"
-  "\025\n\rleaderSceneId\030\002 \001(\004\"%\n#InnerTeamsvr_F"
-  "romscene_FollowLeader\"%\n#InnerTeamsvr_Fr"
-  "omscene_CancelFollow\"&\n$InnerTeamsvr_Fro"
-  "mscene_AgreeTogether\"\'\n%InnerTeamsvr_Fro"
-  "mscene_RefuseTogether\"&\n$InnerTeamsvr_Fr"
-  "omscene_ReplaceLeader\"2\n!InnerTeamsvr_Fr"
-  "omscene_PersonVote\022\r\n\005agree\030\001 \001(\010\"$\n\"Inn"
-  "erTeamsvr_Fromscene_EnterByVote\"O\n\037Inner"
-  "Teamsvr_Fromscene_ChatTeam\022,\n\007context\030\001 "
-  "\001(\0132\033.common.ChatTypeContextDown\"&\n$Inne"
-  "rTeamsvr_Fromscene_BatCreateTeam\"7\n$Inne"
-  "rTeamsvr_Fromscene_BatDstroyTeam\022\017\n\007team"
-  "Ids\030\001 \003(\004\"6\n#InnerTeamsvr_Fromscene_Jump"
-  "ToLeader\022\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
+  "ype\030\001 \001(\r\022\016\n\006unitId\030\002 \001(\004\022-\n\tmatchList\030\003"
+  " \001(\0132\032.inner.InnerMatchMatchList\"C\n#Inne"
+  "rTeamsvr_Frommatch_RestartMatch\022\014\n\004type\030"
+  "\001 \001(\r\022\016\n\006unitId\030\002 \001(\004\"C\n\"InnerTeamsvr_Fr"
+  "ommatch_CancelMatch\022\r\n\005mtype\030\001 \001(\r\022\016\n\006un"
+  "itId\030\002 \001(\004\"e\n\"InnerTeamsvr_Frommatch_Pun"
+  "ishMatch\022\016\n\006unitId\030\001 \001(\004\022/\n\npunishList\030\002"
+  " \001(\0132\033.inner.InnerMatchPunishList\"Z\n#Inn"
+  "erTeamsvr_Frommatch_StartConfirm\022#\n\004room"
+  "\030\001 \001(\0132\025.inner.InnerMatchRoom\022\016\n\006expire\030"
+  "\002 \001(\r\"6\n$InnerTeamsvr_Frommatch_RoleConf"
+  "irmOk\022\016\n\006roomId\030\001 \001(\004\"\224\001\n#InnerTeamsvr_F"
+  "rommatch_StartLoading\022\016\n\006roomId\030\001 \001(\004\0221\n"
+  "\tcopyscene\030\002 \001(\0132\036.inner.InnerMatchRoomC"
+  "opyScene\022*\n\010createBy\030\003 \001(\0132\030.inner.Inner"
+  "CopyCreateBy\"\035\n\033InnerTeamsvr_Fromscene_T"
+  "est\"L\n InnerTeamsvr_Fromscene_GameEvent\022"
+  "(\n\tgameEvent\030\001 \001(\0132\025.inner.InnerGameEven"
+  "t\"\320\002\n%InnerTeamsvr_Fromscene_UpdateUserI"
+  "nfo\022$\n\005extd2\030\001 \001(\0132\023.common.RoleExtend2H"
+  "\000\022$\n\005extd3\030\002 \001(\0132\023.common.RoleExtend3H\000\022"
+  "\022\n\010nickName\030\003 \001(\tH\000\022\022\n\010headIcon\030\004 \001(\rH\000\022"
+  "\023\n\theadFrame\030\005 \001(\rH\000\022\022\n\010careerId\030\006 \001(\rH\000"
+  "\022\017\n\005level\030\007 \001(\rH\000\022\r\n\003sex\030\010 \001(\rH\000\022\024\n\ncare"
+  "eLevel\030\t \001(\rH\000\022%\n\003f33\030\n \001(\0132\026.common.Ext"
+  "endFight3v3H\000\022%\n\003f55\030\013 \001(\0132\026.common.Exte"
+  "ndFight5v5H\000B\006\n\004type\"=\n)InnerTeamsvr_Fro"
+  "mscene_PersonChangeTarget\022\020\n\010targetId\030\001 "
+  "\001(\r\"*\n(InnerTeamsvr_Fromscene_PersonCanc"
+  "elMatch\"K\n\'InnerTeamsvr_Fromscene_Leader"
+  "StartMatch\022\014\n\004text\030\001 \001(\014\022\022\n\nlanguageId\030\002"
+  " \001(\r\"*\n(InnerTeamsvr_Fromscene_LeaderCan"
+  "celMatch\"9\n%InnerTeamsvr_Fromscene_Targe"
+  "tTeamList\022\020\n\010targetId\030\001 \001(\r\"Y\n!InnerTeam"
+  "svr_Fromscene_CreateTeam\022\020\n\010targetId\030\001 \001"
+  "(\r\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"9"
+  "\n\'InnerTeamsvr_Fromscene_LeaderFireMembe"
+  "r\022\016\n\006roleId\030\001 \001(\004\"a\n)InnerTeamsvr_Fromsc"
+  "ene_LeaderChangeTarget\022\020\n\010targetId\030\001 \001(\r"
+  "\022\020\n\010minLevel\030\002 \001(\r\022\020\n\010maxLevel\030\003 \001(\r\"=\n+"
+  "InnerTeamsvr_Fromscene_LeaderTogetherMem"
+  "ber\022\016\n\006roleId\030\001 \001(\004\"6\n$InnerTeamsvr_From"
+  "scene_LeaderAppoint\022\016\n\006roleId\030\001 \001(\004\"-\n+I"
+  "nnerTeamsvr_Fromscene_LeaderRefuseAllApp"
+  "ly\",\n*InnerTeamsvr_Fromscene_LeaderAgree"
+  "AllApply\"K\n(InnerTeamsvr_Fromscene_Leade"
+  "rRefuseApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030"
+  "\002 \001(\r\"J\n\'InnerTeamsvr_Fromscene_LeaderAg"
+  "reeApply\022\016\n\006roleId\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001("
+  "\r\"5\n#InnerTeamsvr_Fromscene_InviteFriend"
+  "\022\016\n\006roleId\030\001 \001(\004\"5\n#InnerTeamsvr_Fromsce"
+  "ne_InviteFamily\022\016\n\006roleId\030\001 \001(\004\"F\n#Inner"
+  "Teamsvr_Fromscene_InvitePlayer\022\016\n\006roleId"
+  "\030\001 \001(\004\022\017\n\007zoneIdF\030\002 \001(\r\"%\n#InnerTeamsvr_"
+  "Fromscene_AgreeInvited\"&\n$InnerTeamsvr_F"
+  "romscene_RefuseInvited\"y\n#InnerTeamsvr_F"
+  "romscene_BatLeaveTeam\022(\n\010onlyTeam\030\001 \001(\0132"
+  "\026.inner.InnerRoleIdList\022(\n\010copyTeam\030\002 \001("
+  "\0132\026.inner.InnerRoleIdList\"I\n InnerTeamsv"
+  "r_Fromscene_ApplyTeam\022\016\n\006teamId\030\001 \001(\004\022\025\n"
+  "\rleaderSceneId\030\002 \001(\004\"%\n#InnerTeamsvr_Fro"
+  "mscene_FollowLeader\"%\n#InnerTeamsvr_From"
+  "scene_CancelFollow\"&\n$InnerTeamsvr_Froms"
+  "cene_AgreeTogether\"\'\n%InnerTeamsvr_Froms"
+  "cene_RefuseTogether\"&\n$InnerTeamsvr_From"
+  "scene_ReplaceLeader\"2\n!InnerTeamsvr_From"
+  "scene_PersonVote\022\r\n\005agree\030\001 \001(\010\"$\n\"Inner"
+  "Teamsvr_Fromscene_EnterByVote\"O\n\037InnerTe"
+  "amsvr_Fromscene_ChatTeam\022,\n\007context\030\001 \001("
+  "\0132\033.common.ChatTypeContextDown\"&\n$InnerT"
+  "eamsvr_Fromscene_BatCreateTeam\"7\n$InnerT"
+  "eamsvr_Fromscene_BatDstroyTeam\022\017\n\007teamId"
+  "s\030\001 \003(\004\"6\n#InnerTeamsvr_Fromscene_JumpTo"
+  "Leader\022\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_deps[6] = {
   &::descriptor_table_chatcommon_2eproto,
@@ -1204,7 +1204,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_dep
 };
 static ::_pbi::once_flag descriptor_table_teamsvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_teamsvr_2eproto = {
-    false, false, 6713, descriptor_table_protodef_teamsvr_2eproto,
+    false, false, 6711, descriptor_table_protodef_teamsvr_2eproto,
     "teamsvr.proto",
     &descriptor_table_teamsvr_2eproto_once, descriptor_table_teamsvr_2eproto_deps, 6, 44,
     schemas, file_default_instances, TableStruct_teamsvr_2eproto::offsets,
@@ -3969,9 +3969,9 @@ InnerTeamsvr_Frommatch_StartMatch::InnerTeamsvr_Frommatch_StartMatch(const Inner
   } else {
     matchlist_ = nullptr;
   }
-  ::memcpy(&uinitid_, &from.uinitid_,
+  ::memcpy(&unitid_, &from.unitid_,
     static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
-    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+    reinterpret_cast<char*>(&unitid_)) + sizeof(mtype_));
   // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_StartMatch)
 }
 
@@ -4010,9 +4010,9 @@ void InnerTeamsvr_Frommatch_StartMatch::Clear() {
     delete matchlist_;
   }
   matchlist_ = nullptr;
-  ::memset(&uinitid_, 0, static_cast<size_t>(
+  ::memset(&unitid_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&mtype_) -
-      reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+      reinterpret_cast<char*>(&unitid_)) + sizeof(mtype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4030,10 +4030,10 @@ const char* InnerTeamsvr_Frommatch_StartMatch::_InternalParse(const char* ptr, :
         } else
           goto handle_unusual;
         continue;
-      // uint64 uinitId = 2;
+      // uint64 unitId = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uinitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          unitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4081,10 +4081,10 @@ uint8_t* InnerTeamsvr_Frommatch_StartMatch::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_mtype(), target);
   }
 
-  // uint64 uinitId = 2;
-  if (this->_internal_uinitid() != 0) {
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_uinitid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_unitid(), target);
   }
 
   // .inner.InnerMatchMatchList matchList = 3;
@@ -4117,9 +4117,9 @@ size_t InnerTeamsvr_Frommatch_StartMatch::ByteSizeLong() const {
         *matchlist_);
   }
 
-  // uint64 uinitId = 2;
-  if (this->_internal_uinitid() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_uinitid());
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_unitid());
   }
 
   // uint32 mtype = 1;
@@ -4152,8 +4152,8 @@ void InnerTeamsvr_Frommatch_StartMatch::MergeFrom(const InnerTeamsvr_Frommatch_S
   if (from._internal_has_matchlist()) {
     _internal_mutable_matchlist()->::inner::InnerMatchMatchList::MergeFrom(from._internal_matchlist());
   }
-  if (from._internal_uinitid() != 0) {
-    _internal_set_uinitid(from._internal_uinitid());
+  if (from._internal_unitid() != 0) {
+    _internal_set_unitid(from._internal_unitid());
   }
   if (from._internal_mtype() != 0) {
     _internal_set_mtype(from._internal_mtype());
@@ -4409,17 +4409,17 @@ InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(::PROTOBU
 InnerTeamsvr_Frommatch_CancelMatch::InnerTeamsvr_Frommatch_CancelMatch(const InnerTeamsvr_Frommatch_CancelMatch& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&uinitid_, &from.uinitid_,
+  ::memcpy(&unitid_, &from.unitid_,
     static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
-    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+    reinterpret_cast<char*>(&unitid_)) + sizeof(mtype_));
   // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Frommatch_CancelMatch)
 }
 
 inline void InnerTeamsvr_Frommatch_CancelMatch::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&uinitid_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&unitid_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&mtype_) -
-    reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+    reinterpret_cast<char*>(&unitid_)) + sizeof(mtype_));
 }
 
 InnerTeamsvr_Frommatch_CancelMatch::~InnerTeamsvr_Frommatch_CancelMatch() {
@@ -4445,9 +4445,9 @@ void InnerTeamsvr_Frommatch_CancelMatch::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&uinitid_, 0, static_cast<size_t>(
+  ::memset(&unitid_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&mtype_) -
-      reinterpret_cast<char*>(&uinitid_)) + sizeof(mtype_));
+      reinterpret_cast<char*>(&unitid_)) + sizeof(mtype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4465,10 +4465,10 @@ const char* InnerTeamsvr_Frommatch_CancelMatch::_InternalParse(const char* ptr, 
         } else
           goto handle_unusual;
         continue;
-      // uint64 uinitId = 2;
+      // uint64 unitId = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uinitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          unitid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4508,10 +4508,10 @@ uint8_t* InnerTeamsvr_Frommatch_CancelMatch::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_mtype(), target);
   }
 
-  // uint64 uinitId = 2;
-  if (this->_internal_uinitid() != 0) {
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_uinitid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_unitid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4530,9 +4530,9 @@ size_t InnerTeamsvr_Frommatch_CancelMatch::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 uinitId = 2;
-  if (this->_internal_uinitid() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_uinitid());
+  // uint64 unitId = 2;
+  if (this->_internal_unitid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_unitid());
   }
 
   // uint32 mtype = 1;
@@ -4562,8 +4562,8 @@ void InnerTeamsvr_Frommatch_CancelMatch::MergeFrom(const InnerTeamsvr_Frommatch_
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_uinitid() != 0) {
-    _internal_set_uinitid(from._internal_uinitid());
+  if (from._internal_unitid() != 0) {
+    _internal_set_unitid(from._internal_unitid());
   }
   if (from._internal_mtype() != 0) {
     _internal_set_mtype(from._internal_mtype());
@@ -4588,9 +4588,9 @@ void InnerTeamsvr_Frommatch_CancelMatch::InternalSwap(InnerTeamsvr_Frommatch_Can
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_CancelMatch, mtype_)
       + sizeof(InnerTeamsvr_Frommatch_CancelMatch::mtype_)
-      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_CancelMatch, uinitid_)>(
-          reinterpret_cast<char*>(&uinitid_),
-          reinterpret_cast<char*>(&other->uinitid_));
+      - PROTOBUF_FIELD_OFFSET(InnerTeamsvr_Frommatch_CancelMatch, unitid_)>(
+          reinterpret_cast<char*>(&unitid_),
+          reinterpret_cast<char*>(&other->unitid_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Frommatch_CancelMatch::GetMetadata() const {

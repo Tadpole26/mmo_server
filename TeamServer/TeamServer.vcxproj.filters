@@ -40,6 +40,12 @@
     <ClCompile Include="TeamServer.cpp">
       <Filter>MainLogic</Filter>
     </ClCompile>
+    <ClCompile Include="NetMsgFromMatch.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchUnitMgr.cpp" />
+    <ClCompile Include="MatchRoomMgr.cpp" />
+    <ClCompile Include="MyMatch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetMsgFromScene.h">
@@ -70,6 +76,11 @@
     <ClInclude Include="TeamLogic.h">
       <Filter>MainLogic</Filter>
     </ClInclude>
+    <ClInclude Include="NetMsgFromMatch.h">
+      <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchUnitMgr.h" />
+    <ClInclude Include="MatchRoomMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Netface">

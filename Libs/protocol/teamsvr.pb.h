@@ -1599,7 +1599,7 @@ class InnerTeamsvr_Frommatch_StartMatch final :
 
   enum : int {
     kMatchListFieldNumber = 3,
-    kUinitIdFieldNumber = 2,
+    kUnitIdFieldNumber = 2,
     kMtypeFieldNumber = 1,
   };
   // .inner.InnerMatchMatchList matchList = 3;
@@ -1620,13 +1620,13 @@ class InnerTeamsvr_Frommatch_StartMatch final :
       ::inner::InnerMatchMatchList* matchlist);
   ::inner::InnerMatchMatchList* unsafe_arena_release_matchlist();
 
-  // uint64 uinitId = 2;
-  void clear_uinitid();
-  uint64_t uinitid() const;
-  void set_uinitid(uint64_t value);
+  // uint64 unitId = 2;
+  void clear_unitid();
+  uint64_t unitid() const;
+  void set_unitid(uint64_t value);
   private:
-  uint64_t _internal_uinitid() const;
-  void _internal_set_uinitid(uint64_t value);
+  uint64_t _internal_unitid() const;
+  void _internal_set_unitid(uint64_t value);
   public:
 
   // uint32 mtype = 1;
@@ -1646,7 +1646,7 @@ class InnerTeamsvr_Frommatch_StartMatch final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::inner::InnerMatchMatchList* matchlist_;
-  uint64_t uinitid_;
+  uint64_t unitid_;
   uint32_t mtype_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_teamsvr_2eproto;
@@ -1926,16 +1926,16 @@ class InnerTeamsvr_Frommatch_CancelMatch final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUinitIdFieldNumber = 2,
+    kUnitIdFieldNumber = 2,
     kMtypeFieldNumber = 1,
   };
-  // uint64 uinitId = 2;
-  void clear_uinitid();
-  uint64_t uinitid() const;
-  void set_uinitid(uint64_t value);
+  // uint64 unitId = 2;
+  void clear_unitid();
+  uint64_t unitid() const;
+  void set_unitid(uint64_t value);
   private:
-  uint64_t _internal_uinitid() const;
-  void _internal_set_uinitid(uint64_t value);
+  uint64_t _internal_unitid() const;
+  void _internal_set_unitid(uint64_t value);
   public:
 
   // uint32 mtype = 1;
@@ -1954,7 +1954,7 @@ class InnerTeamsvr_Frommatch_CancelMatch final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t uinitid_;
+  uint64_t unitid_;
   uint32_t mtype_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_teamsvr_2eproto;
@@ -10898,24 +10898,24 @@ inline void InnerTeamsvr_Frommatch_StartMatch::set_mtype(uint32_t value) {
   // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_StartMatch.mtype)
 }
 
-// uint64 uinitId = 2;
-inline void InnerTeamsvr_Frommatch_StartMatch::clear_uinitid() {
-  uinitid_ = uint64_t{0u};
+// uint64 unitId = 2;
+inline void InnerTeamsvr_Frommatch_StartMatch::clear_unitid() {
+  unitid_ = uint64_t{0u};
 }
-inline uint64_t InnerTeamsvr_Frommatch_StartMatch::_internal_uinitid() const {
-  return uinitid_;
+inline uint64_t InnerTeamsvr_Frommatch_StartMatch::_internal_unitid() const {
+  return unitid_;
 }
-inline uint64_t InnerTeamsvr_Frommatch_StartMatch::uinitid() const {
-  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Frommatch_StartMatch.uinitId)
-  return _internal_uinitid();
+inline uint64_t InnerTeamsvr_Frommatch_StartMatch::unitid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Frommatch_StartMatch.unitId)
+  return _internal_unitid();
 }
-inline void InnerTeamsvr_Frommatch_StartMatch::_internal_set_uinitid(uint64_t value) {
+inline void InnerTeamsvr_Frommatch_StartMatch::_internal_set_unitid(uint64_t value) {
   
-  uinitid_ = value;
+  unitid_ = value;
 }
-inline void InnerTeamsvr_Frommatch_StartMatch::set_uinitid(uint64_t value) {
-  _internal_set_uinitid(value);
-  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_StartMatch.uinitId)
+inline void InnerTeamsvr_Frommatch_StartMatch::set_unitid(uint64_t value) {
+  _internal_set_unitid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_StartMatch.unitId)
 }
 
 // .inner.InnerMatchMatchList matchList = 3;
@@ -11071,24 +11071,24 @@ inline void InnerTeamsvr_Frommatch_CancelMatch::set_mtype(uint32_t value) {
   // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_CancelMatch.mtype)
 }
 
-// uint64 uinitId = 2;
-inline void InnerTeamsvr_Frommatch_CancelMatch::clear_uinitid() {
-  uinitid_ = uint64_t{0u};
+// uint64 unitId = 2;
+inline void InnerTeamsvr_Frommatch_CancelMatch::clear_unitid() {
+  unitid_ = uint64_t{0u};
 }
-inline uint64_t InnerTeamsvr_Frommatch_CancelMatch::_internal_uinitid() const {
-  return uinitid_;
+inline uint64_t InnerTeamsvr_Frommatch_CancelMatch::_internal_unitid() const {
+  return unitid_;
 }
-inline uint64_t InnerTeamsvr_Frommatch_CancelMatch::uinitid() const {
-  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Frommatch_CancelMatch.uinitId)
-  return _internal_uinitid();
+inline uint64_t InnerTeamsvr_Frommatch_CancelMatch::unitid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Frommatch_CancelMatch.unitId)
+  return _internal_unitid();
 }
-inline void InnerTeamsvr_Frommatch_CancelMatch::_internal_set_uinitid(uint64_t value) {
+inline void InnerTeamsvr_Frommatch_CancelMatch::_internal_set_unitid(uint64_t value) {
   
-  uinitid_ = value;
+  unitid_ = value;
 }
-inline void InnerTeamsvr_Frommatch_CancelMatch::set_uinitid(uint64_t value) {
-  _internal_set_uinitid(value);
-  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_CancelMatch.uinitId)
+inline void InnerTeamsvr_Frommatch_CancelMatch::set_unitid(uint64_t value) {
+  _internal_set_unitid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerTeamsvr_Frommatch_CancelMatch.unitId)
 }
 
 // -------------------------------------------------------------------

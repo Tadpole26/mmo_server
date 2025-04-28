@@ -69,7 +69,7 @@ message InnerTeamsvr_Frommatch_Test
 message InnerTeamsvr_Frommatch_StartMatch
 {
 	uint32 mtype = 1;
-	uint64 uinitId = 2;
+	uint64 unitId = 2;
 	inner.InnerMatchMatchList matchList = 3;
 }
 
@@ -82,7 +82,7 @@ message InnerTeamsvr_Frommatch_RestartMatch
 message InnerTeamsvr_Frommatch_CancelMatch
 {
 	uint32 mtype = 1;
-	uint64 uinitId = 2;
+	uint64 unitId = 2;
 }
 
 message InnerTeamsvr_Frommatch_PunishMatch

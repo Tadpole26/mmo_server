@@ -10,7 +10,7 @@ namespace cMatch
 	constexpr uint32 szMaxKeepSeason = 2;			//保留历史赛季个数
 	enum
 	{
-		ePunishEscapre = 1,								//逃跑
+		ePunishEscape = 1,								//逃跑
 		ePunishRefuse,									//拒绝确认
 		ePunishReset,									//惩罚重置
 	};

@@ -136,7 +136,11 @@
   <ItemGroup>
     <ClCompile Include="CServerNetface.cpp" />
     <ClCompile Include="EventGameUser.cpp" />
+    <ClCompile Include="MatchRoomMgr.cpp" />
+    <ClCompile Include="MatchUnitMgr.cpp" />
+    <ClCompile Include="MyMatch.cpp" />
     <ClCompile Include="MyTeam.cpp" />
+    <ClCompile Include="NetMsgFromMatch.cpp" />
     <ClCompile Include="NetMsgFromScene.cpp" />
     <ClCompile Include="SessionTeam.cpp" />
     <ClCompile Include="TeamApply.cpp" />
@@ -152,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServerNetface.h" />
+    <ClInclude Include="MatchRoomMgr.h" />
+    <ClInclude Include="MatchUnitMgr.h" />
+    <ClInclude Include="NetMsgFromMatch.h" />
     <ClInclude Include="NetMsgFromScene.h" />
     <ClInclude Include="SessionTeam.h" />
     <ClInclude Include="TeamApply.h" />

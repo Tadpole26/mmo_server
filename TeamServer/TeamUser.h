@@ -9,6 +9,7 @@ namespace inner
 	class InnerGameEvent;
 	class InnerCopyPve;
 	class InnerCopyEnter;
+	class InnterCopyType;
 }
 
 namespace common
@@ -64,6 +65,8 @@ public:
 	LevelQueuePairT lvQueuePair;					//是否个人匹配队伍
 	TeamMember* pMem = nullptr;						//队伍成员
 	MatchUnit* pUnit = nullptr;						//当前正在pvp匹配
+public:
+	uint32 _punishExpire = 0;
 public:
 	TeamVote* votePtr() const { return _vote; }
 	bool isVoting() const { return votePtr() != nullptr; }
@@ -154,6 +157,22 @@ public:
 public:
 	void mountTeam();
 	void leaveTeam(uint32 eLeave);
+public:
+	void mountMatch();
+	void forceCancelToMatch();
+	bool isPunishExpire();
+	uint32 getPunishExpire();
+	void setMatchPunish(uint32 ePunish);
+	void openMatchPanelNtf();
+	void closeMatchPanelNtf();
+	void closeConfirmPanelNtf();
+public:
+	bool innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtype);
+	bool innerMatchCancelMatch();
+	bool innerMatchConfirmOk();
+	bool innerMatchRefuseOk();
+	bool innerMatchPunish(uint32 ePunish);
+	bool innerMatchOpCancel();
 public:
 	bool innerPersonChangeTarget(uint32 targetId);
 	bool innerPersonCancelMatch();

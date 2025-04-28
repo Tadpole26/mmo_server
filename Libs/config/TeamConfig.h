@@ -26,6 +26,10 @@ namespace config
 	struct team_info_t
 	{
 		uint32 tid = 0;
+		uint32 mixTeamPeoPlenum = 0;	//队伍人数下限
+		uint32 maxTeamPeoPlenum = 0;	//队伍人数上限
+		uint32 lvMin = 0;				//等级下限
+		uint32 lvMax = 0;				//等级上限
 	};
 
 	class TeamConfig : public cLoadBase

@@ -33,6 +33,8 @@ namespace config
 		uint32 teamTextMaxLength = 30;					//队伍-招募文本最大长度
 		uint32 teamAutoRecruitCold = 10;				//队伍-系统自动招募冷却
 		uint32 teamOnceRecruitCount = 3;				//队伍-系统发布招募频道一次条数
+		uint32 refusePunishSec = 0;
+		uint32 escaprePunishSec = 0;
 
 		uint32 matchRobotMaxScore = 0;
 		std::vector<std::pair<uint32, uint32>>	matchRobotWaitTime; //120&60|80&50|60&40|50&30|40&20|15&5
