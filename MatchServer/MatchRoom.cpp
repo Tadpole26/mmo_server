@@ -77,7 +77,7 @@ void MatchRoom::__addBlue(MatchUnit* pUnit)
 	assert(pUnit->sizeQueue() == 0);
 	assert(pUnit->room == nullptr);
 
-	_groups[cMatch::ePunishEscapre - 1].push_back(pUnit);
+	_groups[cMatch::ePunishEscape - 1].push_back(pUnit);
 	pUnit->room = this;
 	_initsize += pUnit->sizeMember();
 	_cursize += pUnit->sizeMember();

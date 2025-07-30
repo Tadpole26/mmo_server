@@ -16,42 +16,42 @@ static bool GetDirectIndex(uint32_t x, uint32_t y, uint32_t direct, uint32_t& in
 	if (direct == 0)						//下屏
 	{
 		if (y <= 0) return false;
-		index = (y - 1) * zMap::uiMaxScreenX + x;
+		index = (y - 1) * zMap::screenX + x;
 	}
 	else if (direct == 1)					//右下屏
 	{
-		if (x >= (zMap::uiMaxScreenX - 1) || y <= 0) return false;
-		index = (y - 1) * zMap::uiMaxScreenX + (x + 1);
+		if (x >= (zMap::screenX - 1) || y <= 0) return false;
+		index = (y - 1) * zMap::screenX + (x + 1);
 	}
 	else if (direct == 2)					//右
 	{
-		if (x >= (zMap::uiMaxScreenX - 1)) return false;
-		index = y * zMap::uiMaxScreenX + (x + 1);
+		if (x >= (zMap::screenX - 1)) return false;
+		index = y * zMap::screenX + (x + 1);
 	}
 	else if (direct == 3)					//右上
 	{
-		if (x >= (zMap::uiMaxScreenX - 1) || y >= (zMap::uiMaxScreenX - 1)) return false;
-		index = (y + 1) * zMap::uiMaxScreenX + (x + 1);
+		if (x >= (zMap::screenX - 1) || y >= (zMap::screenX - 1)) return false;
+		index = (y + 1) * zMap::screenX + (x + 1);
 	}
 	else if (direct == 4)					//上
 	{
-		if (y >= (zMap::uiMaxScreenX - 1)) return false;
-		index = (y + 1) * zMap::uiMaxScreenX + x;
+		if (y >= (zMap::screenX - 1)) return false;
+		index = (y + 1) * zMap::screenX + x;
 	}
 	else if (direct == 5)					//左上
 	{
-		if (x <= 0 || y >= (zMap::uiMaxScreenX - 1)) return false;
-		index = (y + 1) * zMap::uiMaxScreenX + (x - 1);
+		if (x <= 0 || y >= (zMap::screenX - 1)) return false;
+		index = (y + 1) * zMap::screenX + (x - 1);
 	}
 	else if (direct == 6)					//左
 	{
 		if (x <= 0) return false;
-		index = y * zMap::uiMaxScreenX + (x - 1);
+		index = y * zMap::screenX + (x - 1);
 	}
 	else if (direct == 7)					//左下
 	{
 		if (x <= 0 || y <= 0) return false;
-		index = (y - 1) * zMap::uiMaxScreenX + (x - 1);
+		index = (y - 1) * zMap::screenX + (x - 1);
 	}
 	else
 		return false;
@@ -61,16 +61,16 @@ static bool GetDirectIndex(uint32_t x, uint32_t y, uint32_t direct, uint32_t& in
 bool zScreenIndex::Init()
 {
 	//初始化地图最大坐标,和地图最大数
-	zMap::oBigWH.x = 2048;
-	zMap::oBigWH.y = 2048;
-	zMap::uiMaxScreenX = 69;
-	zMap::uiMaxScreenY = 69;
+	zMap::bigWH.x = 2048;
+	zMap::bigWH.y = 2048;
+	zMap::screenX = 69;
+	zMap::screenX = 69;
 
-	for (uint32 y = 0; y < zMap::uiMaxScreenY; ++y)
+	for (uint32 y = 0; y < zMap::screenX; ++y)
 	{
-		for (uint32 x = 0; x < zMap::uiMaxScreenX; ++x)
+		for (uint32 x = 0; x < zMap::screenX; ++x)
 		{
-			uint32 uiCurIndex = y * zMap::uiMaxScreenX + x;
+			uint32 uiCurIndex = y * zMap::screenX + x;
 			//向下(前向屏索引)
 			{
 				std::vector<uint32_t>& vecIndex = direct_screen[0][uiCurIndex];

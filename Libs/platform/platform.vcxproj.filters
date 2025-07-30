@@ -192,7 +192,6 @@
     <ClInclude Include="zRoleMgr.h">
       <Filter>sdk</Filter>
     </ClInclude>
-    <ClInclude Include="zLogMgr.h" />
     <ClInclude Include="cTeam.h">
       <Filter>common</Filter>
     </ClInclude>
@@ -200,6 +199,15 @@
       <Filter>sdk</Filter>
     </ClInclude>
     <ClInclude Include="cMatch.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="cServerInfoMgr.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="zLogMgr.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="cNetService.h">
       <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
@@ -297,6 +305,17 @@
     <ClCompile Include="cLoadBase.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="zLogMgr.cpp" />
+    <ClCompile Include="zServerMgr.h">
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="cServerInfoMgr.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="zLogMgr.cpp">
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="cNetService.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,0 +1,209 @@
+syntax = "proto3";
+import "common.proto";
+import "scenecommon.proto";
+package client;
+
+enum enModuleScene
+{
+	enModuleScene_None									= 0;
+	enModuleScene_Ntf_IntoFirstScene					= 1;				//主角进入scene第一条消息
+	enModuleScene_Ntf_IntoFirstSession					= 2;				//主角进入session第一条消息
+	enModuleScene_Ntf_ModuleData						= 3;				//主角全量数据(数据过大时会发多条)
+	enModuleScene_Ntf_IntoFinishScene					= 4;				//主角进入scene完毕
+	enModuleScene_Ntf_InfoFinishSession					= 5;				//主角进入session完毕
+
+	enModuleScene_Ntf_StaticViewAll						= 6;				//静态视野
+	enModuleScene_Ntf_DynamicViewAll					= 7;				//动态视野
+	enModuleScene_Ntf_ViewObjectAdd						= 8;				//添加视野对象
+	enModuleScene_Ntf_ViewObjectRemove					= 9;				//删除视野对象
+	enModuleScene_Ntf_ChgViewField						= 10;				//视野物件的数据域变更
+	enModuleScene_Req_VisitNpc							= 11;				//访问npc
+	enModuleScene_Req_CloseChat							= 12;				//对话结束
+	enModuleScene_Req_UserMove							= 13;				//用户移动上行
+	enModuleScene_Ntf_UserMove							= 14;
+	enModuleScene_Ntf_MonsterMove						= 15;				//怪物移动下行
+	enModuleScene_Req_MoveStop							= 16;				//停止移动
+	enModuleScene_Ntf_MoveStop							= 17;
+	enModuleScene_Req_TurnDirect						= 18;				//请求转向
+	enModuleScene_Ntf_TurnDirect						= 19;			
+	enModuleScene_Req_Rebirth							= 20;				//请求重生
+	enModuleScene_Ntf_Rebirth							= 21;		
+	enModuleScene_Ntf_RebirthInfo						= 22;				//通知复活信息
+	enModuleScene_Req_GoToBirthPos						= 23;				//请求去出生点
+	enModuleScene_Req_SelectViewId						= 24;				//请求选中	
+	enModuleScene_Ntf_PerformanceStart					= 25;				//通知开始表演
+	enModuleScene_Req_FinishPerformance					= 26;				//请求结束表演
+	enModuleScene_Req_PrivateTrigger					= 27;				//请求触发个人触发器
+	enModuleScene_Ntf_MapMarkAdd						= 28;				//添加地图图标添加
+	enModuleScene_Ntf_MapMarkUpdate						= 29;				//地图图标更新
+	enModuleScene_Ntf_MapMarkRemove						= 30;				//地图图标删除
+
+	enModuleScene_RealMax								= 31;				//实际最大
+}
+
+message ModuleScene_Ntf_IntoFirstScene
+{
+	common.ClientSceneId sceneId 						= 1;				//message形态的场景id
+	common.ClientPosDirect curpos						= 2;				//当前坐标及方向
+	common.ReconnectInfo reconnect 						= 3;				//重连信息
+	common.ViewObject object 							= 4;				//主角视野数据
+}
+
+message ModuleScene_Ntf_IntoFirstSession
+{
+}
+
+message ModuleScene_Ntf_ModuleData
+{
+	repeated common.ModuleDataByte modules = 1;
+}
+
+message ModuleScene_Ntf_IntoFinishScene		
+{
+}
+
+message ModuleScene_Ntf_InfoFinishSession	
+{
+}
+
+
+message ModuleScene_Ntf_StaticViewAll	
+{
+	common.StaticViewList npcList = 1;
+}
+
+message ModuleScene_Ntf_DynamicViewAll	
+{
+	common.ViewObjectList objList = 1;
+}
+
+message ModuleScene_Ntf_ViewObjectAdd
+{
+	common.ViewObjectNpc object = 1;
+}
+
+message ModuleScene_Ntf_ViewObjectRemove	
+{
+	common.ViewObjectIdList objidList = 1;
+}
+
+message ModuleScene_Ntf_ChgViewField
+{
+	uint64 viewId = 1;//视野物件id
+	common.ViewFieldList fieldList = 2;//视野物件域列表
+	bool isfight = 3;
+}
+
+message ModuleScene_Req_VisitNpc
+{
+	uint32 npcuid = 1;
+	uint32 eventid = 2;
+	uint32 param = 3;
+}
+
+message ModuleScene_Req_CloseChat	
+{
+	uint32 npcuid = 1;
+	uint32 chatid = 2;
+	uint32 param = 3;
+}
+
+message ModuleScene_Req_UserMove
+{
+	uint32 clientType = 1;//0寻路最佳posList,1遥感,2改变路径覆盖posList
+	common.ClientPosTerminate posList = 2;//目标坐标列表
+}
+
+message ModuleScene_Ntf_UserMove	
+{
+	uint64 roleId = 1;
+	common.ClientPosTogether posto = 2;//坐标集合
+}
+
+message ModuleScene_Ntf_MonsterMove
+{
+	uint64 viewId = 1;//怪物uid
+	common.ClientPosTogether posto = 2;//坐标集合
+}
+
+message ModuleScene_Req_MoveStop
+{
+	common.ClientPosDirect curpos = 1;	//当前坐标
+	uint64 servertime = 2;
+}
+
+message ModuleScene_Ntf_MoveStop
+{
+	uint64 viewId = 1;//
+	common.ClientPosDirect curpos = 2;//当前坐标
+}
+
+message ModuleScene_Req_TurnDirect		
+{
+	uint32 direct = 1;//方向
+}
+
+message ModuleScene_Ntf_TurnDirect	
+{
+	uint64 viewId = 1;
+	uint32 direct = 2;//方向
+}
+
+message ModuleScene_Req_Rebirth
+{
+	uint32 type = 1;//复活类型 enRoleRebirthType
+	uint64 roleid = 2;//复活对象
+}
+
+message ModuleScene_Ntf_Rebirth	
+{
+	uint64 fromid = 1;
+	uint64 rebirthid = 2;
+	uint32 rebirthCnt = 3;
+}
+
+message ModuleScene_Ntf_RebirthInfo		
+{
+	common.RebirthInfo info = 1;
+}
+
+message ModuleScene_Req_GoToBirthPos	
+{
+}
+
+message ModuleScene_Req_SelectViewId
+{
+	uint64 selectId = 1;//选中的视野物件Id(0就是取消)
+}
+
+message ModuleScene_Ntf_PerformanceStart	
+{
+	uint32 type = 1;//表演类型scenecommon.proto:enPerformanceType
+	uint32 id = 2;//表演id
+}
+
+message ModuleScene_Req_FinishPerformance
+{
+	uint32 type = 1;//表演类型scenecommon.proto:enPerformanceType
+	uint32 id = 2;//表演id
+}
+
+message ModuleScene_Req_PrivateTrigger
+{
+	uint64 instanceId = 1;//触发器uid:mapcfginstance.proto:Grid_EventTrigger
+}
+
+message ModuleScene_Ntf_MapMarkAdd		
+{
+	repeated common.MapMark npcs = 1;
+}
+
+message ModuleScene_Ntf_MapMarkUpdate	
+{
+	common.MapMark npc = 1;
+}
+
+message ModuleScene_Ntf_MapMarkRemove
+{
+	repeated uint64 uids = 1;
+}

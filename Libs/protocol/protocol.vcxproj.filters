@@ -25,6 +25,9 @@
     <ClCompile Include="match.pb.cc" />
     <ClCompile Include="matchcommon.pb.cc" />
     <ClCompile Include="matchsvr.pb.cc" />
+    <ClCompile Include="scene.pb.cc" />
+    <ClCompile Include="scenecommon.pb.cc" />
+    <ClCompile Include="innerserver.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -51,6 +54,9 @@
     <ClInclude Include="match.pb.h" />
     <ClInclude Include="matchcommon.pb.h" />
     <ClInclude Include="matchsvr.pb.h" />
+    <ClInclude Include="scene.pb.h" />
+    <ClInclude Include="scenecommon.pb.h" />
+    <ClInclude Include="innerserver.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

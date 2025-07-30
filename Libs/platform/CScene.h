@@ -72,7 +72,6 @@ public:
 public:
 	cScene(const uint64 ullSceneId);
 	virtual ~cScene();
-	virtual bool init() = 0;
 	virtual void final();
 	virtual void setRegister();
 	virtual void setRunning();

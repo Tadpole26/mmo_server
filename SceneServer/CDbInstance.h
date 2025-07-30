@@ -1,4 +1,5 @@
 #pragma once
+#include "sdk.h"
 #include "mongo_db.h"
 #include "mongo_mgr.h"
 #include "singleton.h"

@@ -8,7 +8,7 @@
 #include "thread_dispatcher.h"
 #include "io_thread.h"
 #include "net_opt.h"
-#include "../platform/log_mgr.h"
+#include "zLogMgr.h"
 
 CLogicSession::CLogicSession()
     : m_soid(invalid_session_oid)

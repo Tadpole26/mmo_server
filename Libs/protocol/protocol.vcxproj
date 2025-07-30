@@ -30,6 +30,7 @@
     <ClCompile Include="innercommon.pb.cc" />
     <ClCompile Include="innerfriend.pb.cc" />
     <ClCompile Include="innermatch.pb.cc" />
+    <ClCompile Include="innerserver.pb.cc" />
     <ClCompile Include="innerteam.pb.cc" />
     <ClCompile Include="itemcommon.pb.cc" />
     <ClCompile Include="map_cfg.pb.cc" />
@@ -40,6 +41,8 @@
     <ClCompile Include="msg_module_ranker.pb.cc" />
     <ClCompile Include="record.pb.cc" />
     <ClCompile Include="recordfriend.pb.cc" />
+    <ClCompile Include="scene.pb.cc" />
+    <ClCompile Include="scenecommon.pb.cc" />
     <ClCompile Include="scenesvr.pb.cc" />
     <ClCompile Include="teamcommon.pb.cc" />
     <ClCompile Include="teamsvr.pb.cc" />
@@ -56,6 +59,7 @@
     <ClInclude Include="innercommon.pb.h" />
     <ClInclude Include="innerfriend.pb.h" />
     <ClInclude Include="innermatch.pb.h" />
+    <ClInclude Include="innerserver.pb.h" />
     <ClInclude Include="innerteam.pb.h" />
     <ClInclude Include="itemcommon.pb.h" />
     <ClInclude Include="map_cfg.pb.h" />
@@ -66,6 +70,8 @@
     <ClInclude Include="msg_module_ranker.pb.h" />
     <ClInclude Include="record.pb.h" />
     <ClInclude Include="recordfriend.pb.h" />
+    <ClInclude Include="scene.pb.h" />
+    <ClInclude Include="scenecommon.pb.h" />
     <ClInclude Include="scenesvr.pb.h" />
     <ClInclude Include="teamcommon.pb.h" />
     <ClInclude Include="teamsvr.pb.h" />

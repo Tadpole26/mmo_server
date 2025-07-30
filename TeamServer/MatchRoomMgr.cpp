@@ -164,6 +164,7 @@ void MatchRoom::setConfirmOk(zRoleIdType roleId)
 			return unit.foreach([&](auto& member)->bool
 			{
 					//return member.sendCmdToMe(client::enClientFirst_Match, client::enSecondMatch_Ntf_ConfirmOk, ntf);
+					return true;
 			});
 	});
 	auto* pUser = gTeamUserMgr->getRole(roleId);

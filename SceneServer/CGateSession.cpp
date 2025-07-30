@@ -1,9 +1,5 @@
 #include "CGateSession.h"
-#include "log_mgr.h"
 #include "parse_pb.h"
-#include "msg_module_serverinner.pb.h"
-#include "msg_module_servercommon.pb.h"
-#include "CUserInfoRecord.h"
 
 CGateSession::CGateSession()
 {
@@ -36,23 +32,17 @@ void CGateSession::handle_msg(const tagMsgHead* pNetMsg)
 
 	switch (pNetMsg->uiCmdId)
 	{
-	case MsgModule_ServerInner::Msg_ServerInner_GG_Login_Req:
-		OnAccountEnter(pBuf, uiLen);
-	break;
-	case MsgModule_ServerInner::Msg_ServerInner_GG_Create_Req:
-		OnCreatePlayer(pBuf, uiLen);
-	break;
-	case MsgModule_ServerInner::Msg_ServerInner_GG_Save_Ntf:
-		OnSavePlayer(pBuf, uiLen);
-	break;
+	case 1:
+		break;
 	default:
 		Log_Error("undefined module %d!", pNetMsg->usModuleId);
 	break;
 	}
 }
 
-void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, ResultCode eCode)
+void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode)
 {
+	/*
 	Msg_ServerInner_GG_Login_Rsp oLoginRsp;
 	oLoginRsp.set_lluserid(llUid);
 	oLoginRsp.set_iflag(eCode);
@@ -61,6 +51,7 @@ void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, ResultCode e
 	oLoginRsp.set_estate(ProtoMsg::ePlayer_Offline);
 	oLoginRsp.set_llopendate(GetCurrTime());
 	this->Send_Msg(&oLoginRsp, MsgModule_ServerInner::Msg_ServerInner_GG_Login_Rsp, client::enModule_ServerInner);
+	*/
 }
 
 void CGateSession::OnAccountEnter(uchar* pMsg, uint32 uiLen)
@@ -116,9 +107,11 @@ void CGateSession::OnCreatePlayer(uchar* pMsg, uint32 uiLen)
 
 void CGateSession::OnSavePlayer(uchar* pMsg, uint32 uiLen)
 {
+	/*
 	assert(pMsg);
 	Msg_ServerInner_GG_Save_Ntf oSaveReq;
 	PARSE_PTL(oSaveReq, pMsg, uiLen);
+	*/
 }
 
 void CGateSession::HandleTransmitData(const tagMsgHead* pNetMsg)

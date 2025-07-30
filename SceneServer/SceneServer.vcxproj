@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;STATIC_LIBMONGOCLIENT;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;USE_STATIC_LIB;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;../Libs/protocol/client;../Libs/protocol/record;./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;../Libs/protocol/client;../Libs/protocol/record;./;../Libs/config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -140,85 +140,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_meta.cpp" />
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_customized_types.cpp" />
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\CCmptMonsterAI.cpp" />
-    <ClCompile Include="CCmptAI.cpp" />
-    <ClCompile Include="CCmptNpcMonsterView.cpp" />
-    <ClCompile Include="CCmptNpcView.cpp" />
-    <ClCompile Include="CCmptView.cpp" />
-    <ClCompile Include="CCrossNetface.cpp" />
     <ClCompile Include="CDbInstance.cpp" />
-    <ClCompile Include="CConstConfig.cpp" />
-    <ClCompile Include="CFriendNetface.cpp" />
-    <ClCompile Include="CGameLogic.cpp" />
-    <ClCompile Include="CGameUser.cpp" />
+    <ClCompile Include="SceneLogic.cpp" />
+    <ClCompile Include="GameUser.cpp" />
     <ClCompile Include="CGateSession.cpp" />
-    <ClCompile Include="CGlobalNpcMgr.cpp" />
-    <ClCompile Include="CGlobalRankerRecord.cpp" />
-    <ClCompile Include="CModule.cpp" />
-    <ClCompile Include="CModuleFriend.cpp" />
-    <ClCompile Include="CSceneMap.cpp" />
-    <ClCompile Include="CSceneMapMgr.cpp" />
-    <ClCompile Include="CSceneScene.cpp" />
-    <ClCompile Include="CSceneScreen.cpp" />
-    <ClCompile Include="CNpc.cpp" />
-    <ClCompile Include="CNpcMgr.cpp" />
-    <ClCompile Include="CNpcMonster.cpp" />
-    <ClCompile Include="CServerNetface.cpp" />
-    <ClCompile Include="CStaticScene.cpp" />
-    <ClCompile Include="CSysNetface.cpp" />
-    <ClCompile Include="CTableRecordBase.cpp" />
-    <ClCompile Include="CTableRecordCache.cpp" />
-    <ClCompile Include="CUserCardRecord.cpp" />
-    <ClCompile Include="CUserInfoRecord.cpp" />
-    <ClCompile Include="CUserItemRecord.cpp" />
-    <ClCompile Include="CUserMailRecord.cpp" />
-    <ClCompile Include="GameServer.cpp" />
-    <ClCompile Include="CHatredHandle.cpp" />
+    <ClCompile Include="GameModule.cpp" />
+    <ClCompile Include="ModuleFriend.cpp" />
+    <ClCompile Include="ServerNetface.cpp" />
+    <ClCompile Include="SceneServer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\behaviac_types.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_headers.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_member_visitor.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_meta.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_customized_types.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_headers.h" />
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\CCmptMonsterAI.h" />
-    <ClInclude Include="CCmptAI.h" />
-    <ClInclude Include="CCmptNpcMonsterView.h" />
-    <ClInclude Include="CCmptNpcView.h" />
-    <ClInclude Include="CCmptView.h" />
-    <ClInclude Include="CCrossNetface.h" />
     <ClInclude Include="CDbInstance.h" />
-    <ClInclude Include="CConstConfig.h" />
-    <ClInclude Include="CFriendNetface.h" />
-    <ClInclude Include="CGameLogic.h" />
-    <ClInclude Include="CGameUser.h" />
+    <ClInclude Include="SceneLogic.h" />
+    <ClInclude Include="GameUser.h" />
     <ClInclude Include="CGateSession.h" />
-    <ClInclude Include="CGlobalNpcMgr.h" />
-    <ClInclude Include="CGlobalRankerRecord.h" />
-    <ClInclude Include="CModule.h" />
-    <ClInclude Include="CModuleFriend.h" />
-    <ClInclude Include="CSceneMap.h" />
-    <ClInclude Include="CSceneMapMgr.h" />
-    <ClInclude Include="CSceneScene.h" />
-    <ClInclude Include="CSceneScreen.h" />
-    <ClInclude Include="CNpcMonster.h" />
+    <ClInclude Include="GameModule.h" />
+    <ClInclude Include="ModuleFriend.h" />
     <ClInclude Include="CRankerInfo.h" />
     <ClInclude Include="CRankerMgr.h" />
-    <ClInclude Include="CNpcMgr.h" />
-    <ClInclude Include="CServerNetface.h" />
-    <ClInclude Include="CStaticScene.h" />
-    <ClInclude Include="CSysNetface.h" />
-    <ClInclude Include="CTableRecordBase.h" />
-    <ClInclude Include="CTableRecordCache.h" />
-    <ClInclude Include="CUserCardRecord.h" />
-    <ClInclude Include="CUserInfoRecord.h" />
-    <ClInclude Include="CUserItemRecord.h" />
-    <ClInclude Include="CUserMailRecord.h" />
-    <ClInclude Include="CNpc.h" />
-    <ClInclude Include="CHatredHandle.h" />
+    <ClInclude Include="ServerNetface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

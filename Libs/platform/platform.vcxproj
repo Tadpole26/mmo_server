@@ -130,7 +130,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../3rdlibs/zookeeper/win64;../3rdlibs/libevent/win64/include;../3rdlibs/libevent/win64/WIN32-Code/nmake;../3rdlibs/mongo/win64/mongocxx/v_noabi;../3rdlibs/mysqlpp/win64;../3rdlibs/mysql/win64;../3rdlibs/curl/win64;../3rdlibs/boost/win64;../tinyxml;../network;../3rdlibs/mongo/win64/libmongoc-1.0;../3rdlibs/mongo/win64/bsoncxx/v_noabi;../3rdlibs/libevent/win64/compat/sys;../3rdlibs/mongo/win64/libbson-1.0;../mysql;../protocol</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../3rdlibs/zookeeper/win64;../3rdlibs/libevent/win64/include;../3rdlibs/libevent/win64/WIN32-Code/nmake;../3rdlibs/mongo/win64/mongocxx/v_noabi;../3rdlibs/mysqlpp/win64;../3rdlibs/mysql/win64;../3rdlibs/curl/win64;../3rdlibs/boost/win64;../tinyxml;../network;../3rdlibs/mongo/win64/libmongoc-1.0;../3rdlibs/mongo/win64/bsoncxx/v_noabi;../3rdlibs/libevent/win64/compat/sys;../3rdlibs/mongo/win64/libbson-1.0;../mysql;../protocol;../3rdlibs/protobuf/win64/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -163,8 +163,10 @@
   <ItemGroup>
     <ClInclude Include="cGame.h" />
     <ClInclude Include="cMatch.h" />
+    <ClInclude Include="cNetService.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cServer.h" />
+    <ClInclude Include="cServerInfoMgr.h" />
     <ClInclude Include="cTeam.h" />
     <ClInclude Include="cUser.h" />
     <ClInclude Include="db_mgr.h" />
@@ -223,7 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cGame.cpp" />
+    <ClCompile Include="cNetService.cpp" />
     <ClCompile Include="cScene.cpp" />
+    <ClCompile Include="cServerInfoMgr.cpp" />
     <ClCompile Include="cUser.cpp" />
     <ClCompile Include="db_mgr.cpp" />
     <ClCompile Include="db_struct.cpp" />
@@ -254,6 +258,7 @@
     <ClCompile Include="win_get_opt.cpp" />
     <ClCompile Include="zMap.cpp" />
     <ClCompile Include="zScreenIndex.cpp" />
+    <ClCompile Include="zServerMgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

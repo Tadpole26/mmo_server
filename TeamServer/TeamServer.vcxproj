@@ -134,7 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CServerNetface.cpp" />
+    <ClCompile Include="ServerNetface.cpp" />
     <ClCompile Include="EventGameUser.cpp" />
     <ClCompile Include="MatchRoomMgr.cpp" />
     <ClCompile Include="MatchUnitMgr.cpp" />
@@ -155,7 +155,7 @@
     <ClCompile Include="TeamVote.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CServerNetface.h" />
+    <ClInclude Include="ServerNetface.h" />
     <ClInclude Include="MatchRoomMgr.h" />
     <ClInclude Include="MatchUnitMgr.h" />
     <ClInclude Include="NetMsgFromMatch.h" />

@@ -1,0 +1,283 @@
+syntax = "proto3";
+import "common.proto";
+package common;
+
+//模块数据的byte化,支持单type的data推送多次
+message ModuleDataByte
+{
+    uint32 type = 1;    //模块类型enClientFirst
+    uint32 total = 2;   //模块数据总大小
+    bytes data = 3;     //模块数据
+}
+
+//scene模块数据
+message ModuleScene 
+{
+    RebirthInfo rebirth = 1;
+}
+
+//scene模块视野数据
+message ModuleSceneView
+{
+    ViewObjectState state = 1;  //视野状态ViewObjectState
+    uint32 speed = 2;           //基础移速,美标移动的offset
+    common.ClientPosTogether postto = 3;//坐标集合
+    uint64 selectId = 4;        //选中的视野物件Id
+    ProgressBar bar = 5;        //进度条
+    ViewEffectList effectList = 6;//特效
+}
+
+//视野大类
+enum enViewType
+{
+    enViewType_Role = 0;    //主角
+    enViewType_Npc = 1;     //Npc
+
+    enViewType_Max = 2;     //最大
+}
+
+//Npc视野类型
+enum enNpcViewType
+{
+    enNpcViewType_None = 0;     
+    enNpcViewType_Func = 1;         //功能Npc
+    enNpcViewType_Monster = 2;      //普通怪
+    enNpcViewType_Collection = 3;   //采集物
+    enNpcViewType_Skill = 4;        //碰撞盒
+    enNpcViewType_Pet = 5;          //宠物
+    enNpcViewType_Trigger = 6;      //触发器
+    enNpcViewType_Block = 7;        //阻挡
+    enNpcViewType_Regional = 8;     //区域占领
+
+    enNpcViewType_Max = 9;          //最大
+}
+
+//视野对象的状态枚举
+enum enViewObjectState
+{
+    enViewObjectState_None = 0;
+    enViewObjectState_Born = 1;//出生状态
+    enViewObjectState_Normal = 2;//正常状态
+    enViewObjectState_Death_Leave = 3;//退场状态
+    enViewObjectState_Death_Fall = 4;//倒下状态
+    enViewObjectState_Death_Normal = 5;//尸体状态
+    enViewObjectState_Hidden = 6;//隐身状态
+    enViewObjectState_Max = 7;
+}
+
+//视野对象状态
+message ViewObjectState
+{
+    uint32 state = 1;       //enViewObjectState
+    uint64 stateTimeBegin = 2;//状态开始时间
+}
+
+//静态视野列表
+message StaticViewList
+{
+    repeated ViewObject objects = 1;//FuncNpc列表
+}
+
+//主角视野数据
+message ViewObjectRole
+{
+    uint64 roleId = 1;//主角Id
+    uint32 zoneIdF = 2;//所属区
+    //ModuleLoginVew
+    //ModuleSceneView
+    //ModulePropView
+    //ModuleItemView
+}
+
+//Npc视野数据
+message ViewObjectNpc
+{
+    uint32 uid = 1;//怪物唯一id
+    uint32 type = 2;//Npc类型enNpcViewType
+    uint32 tid = 3;//表格id
+    ViewObjectState state = 4;//视野状态ViewObjectState
+    common.ClientPosTogether posto = 5;//坐标集合
+    ViewObjectNpcFunc npcf = 100;//功能Npc
+    ViewObjectNpcMonster npcm = 101;//怪物
+    ViewObjectNpcCollection npcc = 102;//采集物
+    ViewObjectNpcSkill npcs = 103;//技能盒子
+    ViewObjectNpcTrigger npct = 104;//触发器
+    ViewObjectNpcBlock npcb = 105;//阻挡
+    ViewObjectNpcRegional npcr = 106;//区域占领
+}
+
+//Npc视野数据-功能Npc
+message ViewObjectNpcFunc
+{
+    //TODO
+}
+
+//Npc视野数据-怪物
+message ViewObjectNpcMonster
+{
+    uint32 hp = 1;
+    uint32 hpmax = 2;
+    uint32 level = 3;
+    uint64 selectId = 4;//选中的视野物件Id
+    uint32 speed = 5;//基础移速,每秒移动的offset
+    uint32 mp = 6;//蓝量
+    uint32 mpmax = 7;
+    uint32 shield = 8;//护盾
+    uint64 packId = 9;//归属id
+    uint32 erosion = 10;//侵蚀条
+    common.NpcSpeak speak = 11;//npc喊话
+    common.ProgressBar bar = 12;//进度条
+    common.NpcCountDownList countdown = 13;//npc倒计时
+    common.NpcHatredList hatredlist = 14;//仇恨列表
+}
+
+//Npc视野数据-采集物
+message ViewObjectNpcCollection
+{
+    uint32 collectstatus = 1;//采集状态
+}
+
+//Npc视野数据-碰撞盒子
+message ViewObjectNpcSkill
+{
+    uint64 lasttime = 1;//持续时间戳
+    uint64 expre = 2;//生效时间戳
+    uint32 speed = 3;//基础移速,每秒移动的offset
+    //SkillTargetEntity master = 4;//归属
+}
+
+//Npc视野数据-触发器
+message ViewObjectNpcTrigger
+{
+    uint64 instanceid = 1;//触发器笔刷uid
+}
+
+//Npc视野数据-阻挡
+message ViewObjectNpcBlock
+{
+    uint64 instanceid = 1;//阻挡笔刷uid
+}
+
+//Npc视野数据-区域占领
+message ViewObjectNpcRegional
+{
+    uint64 instanceid = 1;//区域占领笔刷uid
+    OccupyViewData data = 2;//占领数据
+}
+
+//视野域枚举
+enum enViewFieldType
+{
+    ViewFieldType_None = 0;    
+    enViewFieldType_NickName = 1;//名字
+    enViewFieldType_Level = 2;//等级
+    enViewFieldType_CareerId = 3;//职业Id
+    enViewFieldType_TeamId = 4;//所属队伍
+    enViewFieldType_FamilyId = 5;//所属家族
+    enViewFieldType_FamilyName = 6;//家族名
+    enViewFieldType_LeaderSceneId = 7;//队长所在地图id
+    enViewFieldType_Hp = 8;
+    enViewFieldType_MaxHp = 9;
+    enViewFieldType_SelectId = 10;//我选中的物件Id
+    enViewFieldType_RoleFunc = 11;//角色功能字段enRoleBitFunc
+    enViewFieldType_State = 12;//视野状态ViewObjectState
+    enViewFieldType_Speed = 13;//速度
+    enViewFieldType_MPartList = 14;//模型部位列表(发的列表全量)
+    enViewFieldType_Mp = 15;
+    enViewFieldType_MaxMp = 16;
+    enViewFieldType_Shield = 17;//护盾
+    enViewFieldType_NpcSpeak = 18;//npc喊话common.proto:NpcSpeak
+    enViewFieldType_ProgressBar = 19;//进度条common.proto:ProgressBar
+    enViewFieldType_FightStatus = 20;//战斗状态
+    enViewFieldType_CountDown = 21;//npc倒计时common.proto:NpcCountDownList
+    enViewFieldType_HeadIcon = 22;//头像
+    enViewFieldType_HeadFrame = 23;//头像框
+    enViewFieldType_ViewObject = 24;//视野对象ViewObject
+    enViewFieldType_CollectStatus = 25;//采集状态
+
+    enViewFieldType_Max = 26;
+}
+
+//视野对象
+message ViewObject
+{
+    ViewObjectRole role = 1;//role
+    ViewObjectNpc npc = 2;//npc
+}
+
+//视野对象列表
+message ViewObjectList
+{
+    repeated ViewObject objects = 1;//对象列表
+}
+
+//视野对象Id列表
+message ViewObjectIdList
+{
+    repeated uint64 uids = 1;//唯一Id列表
+}
+
+//表演类型枚举
+enum enPerformanceType
+{
+    enPerformanceType_None = 0;
+    enPerformanceType_Chat = 1;//对话
+    enPerformanceType_CutScene = 2;//
+    enPerformanceType_Chapter = 3;//章节
+    enPerformanceType_Caption = 4;//字幕
+    enPerformanceType_Dialog = 5;//对白
+    enPerformanceType_Warning = 6;//警示
+    enPerformanceType_Max = 7;
+}
+
+message RebirthInfo 
+{
+    uint32 canRebirth = 1;//允许复活
+    uint32 rebornParam = 2;//复活表id
+    uint32 deathTimes = 3;//死亡时间(s)
+    uint32 useRebirthCnt = 4;//使用复活次数
+}
+
+message MapMark
+{
+    uint32 uid = 1;//npc唯一id
+    uint32 type = 2;//npc类型enNpcViewType
+    uint32 tid = 3;
+    uint32 state = 4;//视野状态enViewObjectState
+    common.ClientPosTogether posto = 5;//坐标集合
+}
+
+message OccupyViewData
+{
+    message OccupyProgress
+    {
+        uint32 campId = 1;//占领进度方Id
+        uint32 progress = 2;//进度
+    }
+    uint32 occupyCampId = 1;//占领方id
+    OccupyProgress progress = 2;//占领进度
+}
+
+message ViewEffect
+{
+    uint32 effectId = 1;
+    uint32 beginTime = 2;
+}
+
+message ViewEffectList
+{
+    repeated ViewEffect effects = 1;
+}
+
+message ViewSpeed
+{
+    uint32 curSpeed = 1;
+    uint32 readySpeed = 2;
+}
+
+message ViewHitProgress
+{
+    uint32 transformId = 1;
+    uint32 progress = 2;
+}
+

@@ -89,6 +89,55 @@ message ClientPosTerminate
     repeated ClientPos posList = 2;//目标坐标列表
 }
 
+//移动类型
+enum enMoveType
+{
+    enMoveType_None = 0;
+    enMoveType_Walk = 1;//走
+    enMoveType_Sunc = 2;//同步当前坐标
+    enMoveType_Max = 3;
+}
+
+//移动信息集合
+message ClientPosTogether
+{
+    uint32 mvtype = 1;//移动类型enMoveType
+    ClientPosDirect curpos = 2;//当前坐标以及方向
+    ClientPosTerminate terpos = 3;//目标坐标列表
+}
+
+//玩家重生类型
+enum enRoleRebirthType
+{
+    enRoleRebirthType_None = 0;
+    enRoleRebirthType_Item = 1;//道具
+    enRoleRebirthType_Point = 2;//复活点复活
+    enRoleRebirthType_Skill = 3;//节能复活
+
+    enRoleRebirthType_Max = 4;
+}
+
+//视野域数据增量
+message ViewFieldId
+{
+    uint32 type = 1;//类型 enViewFieldType
+    uint64 val = 2;//值
+}
+
+//视野域数据增量
+message ViewFieldStr
+{
+    uint32 type = 1;// enViewFieldType
+    bytes data = 2;
+}
+
+//视野域数据增量变化列表
+message ViewFieldList
+{
+    repeated ViewFieldId idfields = 1;//id类型列表
+    repeated ViewFieldStr strfields = 2;//bytes类型列表
+}
+
 //装备视野数据
 message EquipView
 {
@@ -163,4 +212,63 @@ message RoleVoteState
 message RoleVoteStateList
 {
     repeated RoleVoteState roles = 1;
+}
+
+//npc喊话
+message NpcSpeak
+{
+    uint32 textId = 1;//语言表id
+    uint32 voiceId = 2;//AI音频表id
+    uint32 actionId = 3;//动作表id
+}
+
+//进度条
+message ProgressBar
+{
+    uint32 barId = 1;//进度条表id
+    uint32 param = 2;//进度条参数
+    uint64 param64 = 3;//进度条参数64
+    uint64 expire = 4;//进度条结束时间
+}
+
+//npc倒计时
+message NpcCountDown
+{
+    uint32 id = 1;//语言表id
+    uint32 expire = 2;//到期时间戳
+}
+
+//npc倒计时列表
+message NpcCountDownList
+{
+    repeated NpcCountDown countDownList = 1;
+}
+
+//npc仇恨单元
+message NpcHatredUnit
+{
+    uint64 roleId = 1;      //玩家id
+    uint32 value = 2;       //仇恨值
+}
+
+//npc仇恨单元列表
+message NpcHatredUnitList
+{
+    repeated NpcHatredUnit units = 1;
+}
+
+//npc仇恨列表
+message NpcHatredList
+{
+    NpcHatredUnitList total = 1;
+    NpcHatredUnitList update = 2;
+    repeated uint64 remove = 3;
+}
+
+//重连信息
+message ReconnectInfo
+{
+    uint32 reconnectNum = 1;//重连次数
+    uint32 reconnectTick = 2;//重连间隔(秒)
+    uint32 continueTick = 3;//继续间隔(秒)
 }

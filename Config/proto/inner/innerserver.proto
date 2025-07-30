@@ -1,0 +1,28 @@
+syntax = "proto3";
+package inner;
+
+message InnerServerInfo
+{
+    string inIp         = 1;//内网IP
+    uint32 inPort       = 2;//内网端口
+    string outIp        = 3;//外网IP
+    uint32 tcpPort      = 4;//外网端口
+    uint32 wsPort       = 5;
+    uint32 wssPort      = 6;
+}
+
+message InnerZoneInfo
+{
+    uint32 zoneId       = 1;//区服id
+    uint32 groupId      = 2;//所属组
+    string zoneName     = 3;//区服名字
+    uint32 openTime     = 4;//开服时间
+    string redisUrl     = 5;
+    string mysqlUrl     = 6;
+}
+
+message InnerGroupInfo
+{
+    uint32 groupId      = 1;//组id
+    string groupName    = 2;//组名
+}

@@ -7,49 +7,50 @@ class zMap
 
 public:
 	//最大坐标(估算的所有地图最大坐标)
-	static zPos2 oBigWH;
+	static zPos2 bigWH;
 	//横向多少屏(估算的所有地图最大屏数)
-	static uint32 uiMaxScreenX;
+	static uint32 screenX;
 	//纵向多少屏(估算的所有地图最大屏数)
-	static uint32 uiMaxScreenY;
+	static uint32 screenY;
 public:
 	//检查两个屏索引是否有视野关系
-	static bool CheckScreenIdInView(const zPosI uiOld, const zPosI uiNew);
+	static bool checkScreenIdInView(const zPosI uiOld, const zPosI uiNew);
 	//根据两个屏索引得到屏方向[0(下)|1(右下)|2(右)|3(右上)|4(上)|5(左上)|6(左)|7(左下)]
-	static uint16 GetScreenDirect(const zPosI uiSrc, const zPosI uiDst);
+	static uint16 getScreenDirect(const zPosI uiSrc, const zPosI uiDst);
 public:
 	zMap(uint32 uiMapId);
 	virtual ~zMap();
-	virtual void Final();
+	virtual void final();
 
-	inline uint32 GetMapId() const { return m_uiMapId; }
-	inline const zPos2 GetPosWH() { return m_oPosWH; }
+	inline uint32 getMapId() const { return _mapId; }
+	inline const zPos2 getPosWH() { return _posWH; }
 	//获取地图宽
-	inline const uint32 GetWidth() { return m_oPosWH.x; }
+	inline const uint32 getWidth() { return _posWH.x; }
 	//获取地图高
-	inline const uint32 GetHeight() { return m_oPosWH.y; }
+	inline const uint32 getHeight() { return _posWH.y; }
 	//是否有效的x
-	bool ValidX(const uint32 uiX) { return uiX <= m_oPosWH.x; }
+	bool validX(const uint32 uiX) { return uiX <= _posWH.x; }
 	//是否有效的y
-	bool ValidY(const uint32 uiY) { return uiY <= m_oPosWH.y; }
+	bool validY(const uint32 uiY) { return uiY <= _posWH.y; }
 	//是否有效的zPos
-	bool ValidPos(const zPos& oPos) { return (oPos.x <= m_oPosWH.x && oPos.y <= m_oPosWH.y); }
+	bool validPos(const zPos& oPos) { return (oPos.x <= _posWH.x && oPos.y <= _posWH.y); }
 	//是否有效的grideId
-	bool ValidGridId(const uint32 uiGrideId);
+	bool validGridId(const uint32 uiGrideId);
 	//x,y转gridId
-	const uint32 Xy2GridId(const uint32 uiX, const uint32 uiY);
+	const uint32 xy2GridId(const uint32 uiX, const uint32 uiY);
 	//zPos转gridId
-	const uint32 Pos2GridId(const zPos& oPos);
+	const uint32 pos2GridId(const zPos& oPos);
 	//gridId转x
-	const uint32 GridId2X(const uint32 uiGridId);
+	const uint32 gridId2X(const uint32 uiGridId);
 	//grideId转y
-	const uint32 GridId2Y(const uint32 uiGridId);
+	const uint32 gridId2Y(const uint32 uiGridId);
+protected:
 	//设置宽
-	void SetWidth(const uint32 uiWidth) { m_oPosWH.x = uiWidth; }
+	void setWidth(const uint32 uiWidth) { _posWH.x = uiWidth; }
 	//设置高
-	void SetHeight(const uint32 uiHeight) { m_oPosWH.y = uiHeight; }
+	void setHeight(const uint32 uiHeight) { _posWH.y = uiHeight; }
 private:
-	uint32 m_uiMapId = 0;
+	uint32 _mapId = 0;
 	//地图实际最大坐标 
-	zPos2 m_oPosWH;
+	zPos2 _posWH;
 };

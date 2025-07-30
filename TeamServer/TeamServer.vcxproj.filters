@@ -25,7 +25,7 @@
     <ClCompile Include="SessionTeam.cpp">
       <Filter>Team</Filter>
     </ClCompile>
-    <ClCompile Include="CServerNetface.cpp">
+    <ClCompile Include="ServerNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
     <ClCompile Include="TeamQueue.cpp">
@@ -67,7 +67,7 @@
     <ClInclude Include="SessionTeam.h">
       <Filter>Team</Filter>
     </ClInclude>
-    <ClInclude Include="CServerNetface.h">
+    <ClInclude Include="ServerNetface.h">
       <Filter>Netface</Filter>
     </ClInclude>
     <ClInclude Include="TeamVote.h">

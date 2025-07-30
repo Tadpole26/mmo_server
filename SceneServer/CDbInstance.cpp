@@ -1,6 +1,5 @@
 #include "CDbInstance.h"
-#include "CGameLogic.h"
-#include "log_mgr.h"
+#include "SceneLogic.h"
 
 CDbInstance::CDbInstance()
 {
@@ -17,21 +16,21 @@ bool CDbInstance::Init()
 
 	for (size_t i = 0; i < DB_THREAD_NUM; ++i)
 	{
-		bRet = m_oQueryThread[i].Init(GAME_LOGIC_INS->m_oConstCfg.m_strMongoHost
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoUser, GAME_LOGIC_INS->m_oConstCfg.m_strMongoPasswd
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoGameDb, GAME_LOGIC_INS->m_oConstCfg.m_strMongoAuth);
+		bRet = m_oQueryThread[i].Init(gSceneLogic->m_oConstCfg.m_strMongoHost
+		, gSceneLogic->m_oConstCfg.m_strMongoUser, gSceneLogic->m_oConstCfg.m_strMongoPasswd
+		, gSceneLogic->m_oConstCfg.m_strMongoGameDb, gSceneLogic->m_oConstCfg.m_strMongoAuth);
 		if (!bRet) return false;
 	}
 
-	bRet = m_oQuery.Init(GAME_LOGIC_INS->m_oConstCfg.m_strMongoHost
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoUser, GAME_LOGIC_INS->m_oConstCfg.m_strMongoPasswd
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoGameDb, GAME_LOGIC_INS->m_oConstCfg.m_strMongoAuth);
+	bRet = m_oQuery.Init(gSceneLogic->m_oConstCfg.m_strMongoHost
+		, gSceneLogic->m_oConstCfg.m_strMongoUser, gSceneLogic->m_oConstCfg.m_strMongoPasswd
+		, gSceneLogic->m_oConstCfg.m_strMongoGameDb, gSceneLogic->m_oConstCfg.m_strMongoAuth);
 
 	if (!bRet) return false;
 
-	bRet = m_oMailQuery.Init(GAME_LOGIC_INS->m_oConstCfg.m_strMongoHost
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoUser, GAME_LOGIC_INS->m_oConstCfg.m_strMongoPasswd
-		, GAME_LOGIC_INS->m_oConstCfg.m_strMongoMailDb, GAME_LOGIC_INS->m_oConstCfg.m_strMongoAuth, false);
+	bRet = m_oMailQuery.Init(gSceneLogic->m_oConstCfg.m_strMongoHost
+		, gSceneLogic->m_oConstCfg.m_strMongoUser, gSceneLogic->m_oConstCfg.m_strMongoPasswd
+		, gSceneLogic->m_oConstCfg.m_strMongoMailDb, gSceneLogic->m_oConstCfg.m_strMongoAuth, false);
 
 	if (!bRet) return false;
 

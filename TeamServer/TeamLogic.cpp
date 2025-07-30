@@ -5,7 +5,7 @@
 #include "func_proc.h"
 #include "global_define.h"
 #include "zMacro.h"
-#include "CServerNetface.h"
+#include "ServerNetface.h"
 
 bool TeamLogic::init()
 {
@@ -50,7 +50,7 @@ bool TeamLogic::init()
 		return false;
 	}
 
-	m_pClientLIF = new CClientLogic();
+	m_pClientLIF = new ClientLogic();
 	assert(m_pClientLIF);
 	m_pLogic->reg_interface_listen(m_pClientLIF);
 

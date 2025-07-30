@@ -1,6 +1,6 @@
 #include "zMap.h"
 
-zMap::zMap(uint32 uiMapId) : m_uiMapId(uiMapId)
+zMap::zMap(uint32 uiMapId) : _mapId(uiMapId)
 {
 }
 
@@ -8,29 +8,29 @@ zMap::~zMap()
 {
 }
 
-void zMap::Final()
+void zMap::final()
 {
 }
 
-bool zMap::CheckScreenIdInView(const zPosI uiOld, const zPosI uiNew)
+bool zMap::checkScreenIdInView(const zPosI uiOld, const zPosI uiNew)
 {
-	uint32 uiOldX = uiOld % zMap::uiMaxScreenX;
-	uint32 uiOldY = uiOld / zMap::uiMaxScreenX;
+	uint32 uiOldX = uiOld % zMap::screenX;
+	uint32 uiOldY = uiOld / zMap::screenX;
 	uint32 uiMaxOldX = uiOldX + 1;
 	uint32 uiMinOldX = uiOldX > 1 ? uiOldX - 1 : 0;
 	uint32 uiMaxOldY = uiOldY + 1;
 	uint32 uiMinOldY = uiOldY > 1 ? uiOldY - 1 : 0;
-	uint32 uiNewX = uiNew % zMap::uiMaxScreenX;
-	uint32 uiNewY = uiNew / zMap::uiMaxScreenX;
+	uint32 uiNewX = uiNew % zMap::screenX;
+	uint32 uiNewY = uiNew / zMap::screenX;
 	return (uiNewX >= uiMinOldX && uiNewX <= uiMaxOldX && uiNewY >= uiMinOldY && uiNewY <= uiMaxOldX);
 }
 
-uint16 zMap::GetScreenDirect(const zPosI uiSrc, const zPosI uiDst)
+uint16 zMap::getScreenDirect(const zPosI uiSrc, const zPosI uiDst)
 {
-	uint32 uiSrcX = uiSrc % zMap::uiMaxScreenX;
-	uint32 uiSrcY = uiSrc / zMap::uiMaxScreenX;
-	uint32 uiDstX = uiDst % zMap::uiMaxScreenX;
-	uint32 uiDstY = uiDst / zMap::uiMaxScreenX;
+	uint32 uiSrcX = uiSrc % zMap::screenX;
+	uint32 uiSrcY = uiSrc / zMap::screenX;
+	uint32 uiDstX = uiDst % zMap::screenX;
+	uint32 uiDstY = uiDst / zMap::screenX;
 
 	uint32 uiSubY = uiSrcY > 1 ? uiSrcY - 1 : 0;
 	uint32 uiAddY = uiSrcY + 1;
@@ -62,30 +62,30 @@ uint16 zMap::GetScreenDirect(const zPosI uiSrc, const zPosI uiDst)
 		return 7;
 }
 
-bool zMap::ValidGridId(const uint32 uiGrideId)
+bool zMap::validGridId(const uint32 uiGrideId)
 {
-	uint32 uiSubY = m_oPosWH.y > 1 ? m_oPosWH.y - 1 : 0;
-	return uiGrideId < (uiSubY * m_oPosWH.x + m_oPosWH.x);
+	uint32 uiSubY = _posWH.y > 1 ? _posWH.y - 1 : 0;
+	return uiGrideId < (uiSubY * _posWH.x + _posWH.x);
 }
 
-const uint32 zMap::Xy2GridId(const uint32 uiX, const uint32 uiY)
+const uint32 zMap::xy2GridId(const uint32 uiX, const uint32 uiY)
 {
 	uint32 uiSubY = uiY > 1 ? uiY - 1 : 0;
-	return (uiSubY * m_oPosWH.x + uiX);
+	return (uiSubY * _posWH.x + uiX);
 }
 
-const uint32 zMap::Pos2GridId(const zPos& oPos)
+const uint32 zMap::pos2GridId(const zPos& oPos)
 {
 	uint32 uiSubY = oPos.y > 1 ? oPos.y - 1 : 0;
-	return (uiSubY * m_oPosWH.x + oPos.x);
+	return (uiSubY * _posWH.x + oPos.x);
 }
 
-const uint32 zMap::GridId2X(const uint32 uiGridId)
+const uint32 zMap::gridId2X(const uint32 uiGridId)
 {
-	return uiGridId % m_oPosWH.x;
+	return uiGridId % _posWH.x;
 }
 
-const uint32 zMap::GridId2Y(const uint32 uiGridId)
+const uint32 zMap::gridId2Y(const uint32 uiGridId)
 {
-	return (uiGridId / m_oPosWH.x + 1);
+	return (uiGridId / _posWH.x + 1);
 }

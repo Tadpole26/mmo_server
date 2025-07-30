@@ -6,6 +6,7 @@
 
 #include "TeamMember.h"
 #include "TeamUser.h"
+#include "TeamLeader.h"
 #include "SessionTeam.h"
 #include "MatchUnitMgr.h"
 #include "MatchRoomMgr.h"
@@ -58,6 +59,7 @@ void TeamUser::setMatchPunish(uint32 ePunish)
 
 bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtype)
 {
+	/*
 	auto funcNotTeam = ([&]()->bool 
 	{
 			if (pUnit != nullptr)
@@ -74,7 +76,7 @@ bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtyp
 			{
 				return false;
 			}
-			*/
+
 			if (isTeamPersonMatching())
 			{
 				Log_Error("innerMatchStartMatch.funcNotTeam");
@@ -95,7 +97,7 @@ bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtyp
 				* auto& roles = *ntf.mutable_roles();
 				* fill(mtype, roles[getRoleId()]);
 			});
-			*/
+			
 	});
 	auto funcHasTeam = ([&](SessionTeam& team)->bool 
 	{
@@ -125,14 +127,14 @@ bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtyp
 		}
 		if (!team.foreachMem([&](auto& memRef)->bool
 		{
-			if (memRef.pUser->isInStaticScene())
-			{
-				return true;
-			}
-			if (!memRef.pUser->isInCopyScene(mtype))
-			{
-				return true;
-			}
+			//if (memRef.pUser->isInStaticScene())
+			//{
+			//	return true;
+			//}
+			//if (!memRef.pUser->isInCopyScene(mtype))
+			//{
+			//	return true;
+			//}
 			if (team.teamLeaderRef().getSceneHashId() != memRef.pUser->getSceneHashId())
 			{
 				return true;
@@ -195,7 +197,7 @@ bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtyp
 					return true;
 				});
 			});
-			*/
+			
 	});
 	if (pMem == nullptr)
 	{
@@ -215,6 +217,8 @@ bool TeamUser::innerMatchStartMatch(const inner::InnterCopyType& in, uint32 mtyp
 		Log_Error("innerMatchStartMatch");
 		return false;
 	}
+	*/
+		return true;
 }
 
 bool TeamUser::innerMatchCancelMatch()

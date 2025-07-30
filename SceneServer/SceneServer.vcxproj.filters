@@ -13,14 +13,8 @@
     <Filter Include="DB">
       <UniqueIdentifier>{89a571f3-66d9-4917-ae68-a5fef6f5d697}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Config">
-      <UniqueIdentifier>{f0816dcf-20ab-492d-9fd0-8a662d44730b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Managers">
       <UniqueIdentifier>{21c3d062-38ca-4eb7-980a-f4bfe060f93f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Managers\Mail">
-      <UniqueIdentifier>{bf0650aa-7c8f-40c2-927b-9985f5d0d3a5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Managers\Ranker">
       <UniqueIdentifier>{95ad73b5-2b44-4b17-ae3e-3651a6c9dadd}</UniqueIdentifier>
@@ -37,164 +31,47 @@
     <Filter Include="Managers\Scene">
       <UniqueIdentifier>{a79f7793-e3e2-4272-bdd0-89352aeef8dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Managers\User">
-      <UniqueIdentifier>{7463e3cf-5b52-4984-b087-2941d9c17c7e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Managers\Module">
       <UniqueIdentifier>{d508c39d-3fd6-4924-9d08-2d1cebe4ba15}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameServer.cpp">
+    <ClCompile Include="SceneServer.cpp">
       <Filter>MainLogic</Filter>
     </ClCompile>
-    <ClCompile Include="CGameLogic.cpp">
+    <ClCompile Include="SceneLogic.cpp">
       <Filter>MainLogic</Filter>
     </ClCompile>
     <ClCompile Include="CGateSession.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
-    <ClCompile Include="CServerNetface.cpp">
-      <Filter>Netface</Filter>
-    </ClCompile>
-    <ClCompile Include="CSysNetface.cpp">
+    <ClCompile Include="ServerNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
     <ClCompile Include="CDbInstance.cpp">
       <Filter>DB</Filter>
     </ClCompile>
-    <ClCompile Include="CConstConfig.cpp">
-      <Filter>Config</Filter>
-    </ClCompile>
-    <ClCompile Include="CCrossNetface.cpp">
-      <Filter>Netface</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserInfoRecord.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CTableRecordBase.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CTableRecordCache.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserCardRecord.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserItemRecord.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserMailRecord.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CGlobalRankerRecord.cpp">
-      <Filter>DB</Filter>
-    </ClCompile>
-    <ClCompile Include="CNpc.cpp">
-      <Filter>Managers\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="CNpcMgr.cpp">
-      <Filter>Managers\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="CGlobalNpcMgr.cpp">
-      <Filter>Managers\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="CNpcMonster.cpp">
-      <Filter>Managers\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="CCmptAI.cpp">
-      <Filter>Managers\Cmpt</Filter>
-    </ClCompile>
-    <ClCompile Include="CCmptNpcView.cpp">
-      <Filter>Managers\Cmpt</Filter>
-    </ClCompile>
-    <ClCompile Include="CCmptNpcMonsterView.cpp">
-      <Filter>Managers\Cmpt</Filter>
-    </ClCompile>
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_meta.cpp">
-      <Filter>Behaviac</Filter>
-    </ClCompile>
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_customized_types.cpp">
-      <Filter>Behaviac</Filter>
-    </ClCompile>
-    <ClCompile Include="Behaviac\exported\behaviac_generated\types\internal\CCmptMonsterAI.cpp">
-      <Filter>Behaviac</Filter>
-    </ClCompile>
-    <ClCompile Include="CHatredHandle.cpp">
-      <Filter>Managers\Npc</Filter>
-    </ClCompile>
-    <ClCompile Include="CStaticScene.cpp">
-      <Filter>Managers\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CSceneScene.cpp">
-      <Filter>Managers\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CGameUser.cpp">
-      <Filter>Managers\User</Filter>
-    </ClCompile>
-    <ClCompile Include="CSceneMap.cpp">
-      <Filter>Managers\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CSceneScreen.cpp">
-      <Filter>Managers\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CCmptView.cpp">
-      <Filter>Managers\Cmpt</Filter>
-    </ClCompile>
-    <ClCompile Include="CModule.cpp">
+    <ClCompile Include="GameModule.cpp">
       <Filter>Managers\Module</Filter>
     </ClCompile>
-    <ClCompile Include="CSceneMapMgr.cpp">
-      <Filter>Managers\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CModuleFriend.cpp">
+    <ClCompile Include="ModuleFriend.cpp">
       <Filter>Managers\Module</Filter>
     </ClCompile>
-    <ClCompile Include="CFriendNetface.cpp">
-      <Filter>Netface</Filter>
+    <ClCompile Include="GameUser.cpp">
+      <Filter>User</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CGameLogic.h">
+    <ClInclude Include="SceneLogic.h">
       <Filter>MainLogic</Filter>
     </ClInclude>
     <ClInclude Include="CGateSession.h">
       <Filter>Netface</Filter>
     </ClInclude>
-    <ClInclude Include="CServerNetface.h">
-      <Filter>Netface</Filter>
-    </ClInclude>
-    <ClInclude Include="CSysNetface.h">
+    <ClInclude Include="ServerNetface.h">
       <Filter>Netface</Filter>
     </ClInclude>
     <ClInclude Include="CDbInstance.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CConstConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
-    <ClInclude Include="CCrossNetface.h">
-      <Filter>Netface</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserInfoRecord.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CTableRecordBase.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CTableRecordCache.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserCardRecord.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserItemRecord.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserMailRecord.h">
-      <Filter>DB</Filter>
-    </ClInclude>
-    <ClInclude Include="CGlobalRankerRecord.h">
       <Filter>DB</Filter>
     </ClInclude>
     <ClInclude Include="CRankerMgr.h">
@@ -203,80 +80,14 @@
     <ClInclude Include="CRankerInfo.h">
       <Filter>Managers\Ranker</Filter>
     </ClInclude>
-    <ClInclude Include="CNpc.h">
-      <Filter>Managers\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="CNpcMgr.h">
-      <Filter>Managers\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="CGlobalNpcMgr.h">
-      <Filter>Managers\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="CNpcMonster.h">
-      <Filter>Managers\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="CCmptAI.h">
-      <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="CCmptNpcView.h">
-      <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="CCmptNpcMonsterView.h">
-      <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_headers.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_member_visitor.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_agent_meta.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_customized_types.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\behaviac_headers.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\internal\CCmptMonsterAI.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviac\exported\behaviac_generated\types\behaviac_types.h">
-      <Filter>Behaviac</Filter>
-    </ClInclude>
-    <ClInclude Include="CHatredHandle.h">
-      <Filter>Managers\Npc</Filter>
-    </ClInclude>
-    <ClInclude Include="CStaticScene.h">
-      <Filter>Managers\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneScene.h">
-      <Filter>Managers\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CGameUser.h">
-      <Filter>Managers\User</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneMap.h">
-      <Filter>Managers\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CSceneScreen.h">
-      <Filter>Managers\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CCmptView.h">
-      <Filter>Managers\Cmpt</Filter>
-    </ClInclude>
-    <ClInclude Include="CModule.h">
+    <ClInclude Include="GameModule.h">
       <Filter>Managers\Module</Filter>
     </ClInclude>
-    <ClInclude Include="CSceneMapMgr.h">
-      <Filter>Managers\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="CModuleFriend.h">
+    <ClInclude Include="ModuleFriend.h">
       <Filter>Managers\Module</Filter>
     </ClInclude>
-    <ClInclude Include="CFriendNetface.h">
-      <Filter>Netface</Filter>
+    <ClInclude Include="GameUser.h">
+      <Filter>User</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

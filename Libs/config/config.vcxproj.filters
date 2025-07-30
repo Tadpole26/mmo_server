@@ -10,6 +10,7 @@
     <ClCompile Include="MonsterConfig.cpp" />
     <ClCompile Include="NpcConfig.cpp" />
     <ClCompile Include="SkillConfig.cpp" />
+    <ClCompile Include="ZoneConstConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MapConfig.h" />
@@ -21,5 +22,6 @@
     <ClInclude Include="MonsterConfig.h" />
     <ClInclude Include="NpcConfig.h" />
     <ClInclude Include="SkillConfig.h" />
+    <ClInclude Include="ZoneConstConfig.h" />
   </ItemGroup>
 </Project>

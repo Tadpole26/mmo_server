@@ -28,6 +28,7 @@
     <ClCompile Include="ParamConfig.cpp" />
     <ClCompile Include="RobotConfig.cpp" />
     <ClCompile Include="TeamConfig.cpp" />
+    <ClCompile Include="ZoneConstConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonsterConfig.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="ParamConfig.h" />
     <ClInclude Include="RobotConfig.h" />
     <ClInclude Include="TeamConfig.h" />
+    <ClInclude Include="ZoneConstConfig.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

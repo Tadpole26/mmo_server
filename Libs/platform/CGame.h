@@ -42,7 +42,7 @@ namespace cGame
 	}
 
 	//zoneId是否有效
-	inline bool ZoneIdValid(const uint32 uiZoneId)
+	inline bool zoneIdValid(const uint32 uiZoneId)
 	{
 		return uiZoneId <= zoneIdValMax;
 	}
@@ -130,14 +130,14 @@ namespace cGame
 	//合成robot的roleId
 	inline uint64 UnionRobotId(const uint32 uiZoneId, const uint32 uiAutoId)
 	{
-		assert(ZoneIdValid(uiZoneId));
+		assert(zoneIdValid(uiZoneId));
 		return (((uint64)uiZoneId) << (accIdBitMax + roleNumIdBitMax)) + uiAutoId;
 
 	}
 	//合成roleId
 	inline uint64 UnionRoleId(const uint32 uiZoneId, const uint64 ullAccId, const uint32 uiRoleNumId)
 	{
-		assert(ZoneIdValid(uiZoneId));
+		assert(zoneIdValid(uiZoneId));
 		assert(AccIdValid(ullAccId));
 		assert(RoleNumIdValid(uiRoleNumId));
 		return (((uint64)uiZoneId) << (accIdBitMax + roleNumIdBitMax)) + (uint64)(ullAccId << roleNumIdBitMax) + (uint64)uiRoleNumId;

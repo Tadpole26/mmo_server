@@ -1,8 +1,8 @@
 #pragma once
+#include "sdk.h"
 #include "logic_interface.h"
 #include "svr_client.h"
 #include "server_pool.h"
-using namespace ProtoMsg;
 
 class CGateSession : public svr_session
 {
@@ -15,7 +15,7 @@ public:
 	virtual void on_disconnect();
 
 	void HandleTransmitData(const tagMsgHead* pNetMsg);
-	void SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, ResultCode eCode);
+	void SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode);
 
 private:
 	void OnAccountEnter(uchar* pMsg, uint32 uiLen);

@@ -9,7 +9,7 @@ enum
 	eProcThreeGroup = 1,					//three类别:跨组
 	eProcThreeKuafu = 2,					//three类别:跨服
 	eProcThreeMax = 3,						//three类别最大
-	eProcZone = eProcThreeMax,				//zone类别
+	eProcZone = eProcThreeMax,				//zone类别(本区 = local,之所以区分因为local进程支持到group类别)
 	eProcPlat = 4,							//Plat类别
 	eProcMax = 5							//类别最大
 };
@@ -19,9 +19,11 @@ enum
 {
 	eServerNone = 0,
 	eServerMap = 1,			//地图服务器
-	eServerGateway = 2,		//网关服务器
-	eServerScene = 3,		//场景服务器
-	eServerMax = 4,			//最大
+
+	eServerForward = 2,		//转发服务器(内部server路由)
+	eServerGateway = 3,		//网关服务器(外部clinet路由)
+	eServerScene = 4,		//场景服务器
+	eServerMax = 5,			//最大
 };
 
 enum
@@ -106,7 +108,7 @@ inline uint32 unionProcId(uint32 eProc, uint32 eParam)
 	return (eProc << 16) + eParam;
 }
 
-inline uint32 spoitEprocProocId(uint32 procId)
+inline uint32 spiltEprocProcId(uint32 procId)
 {
 	return procId >> 16;
 }
@@ -147,9 +149,19 @@ inline bool isLocalByEproc(uint32 eProc)
 	return eProcThreeLocal == eProc;
 }
 
+inline bool isZoneByEproc(int32 eProc)
+{
+	return eProcZone == eProc;
+}
+
 inline bool isGroupByEproc(uint32 eProc)
 {
 	return eProcThreeGroup == eProc;
+}
+
+inline bool isPlatByEproc(uint32 eProc)
+{
+	return eProcPlat == eProc;
 }
 
 inline bool isMapSvr(uint32 eServer) { return eServer == eServerMap; }
