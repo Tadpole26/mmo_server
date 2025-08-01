@@ -2,7 +2,7 @@
 #include "zk_event.h"
 #include "listen_thread.h"
 #include "event_thread.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 //zk关注数据变化回调
 static void zkEvent_cb(evutil_socket_t fd, short event, void* arg)

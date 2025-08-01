@@ -1,0 +1,42 @@
+syntax = "proto3";
+import "logincommon.proto";
+package client;
+
+enum enModuleLogin
+{
+	enModuleLogin_None									    = 0;
+    enModuleLogin_Req_LoginGateway                          = 1;//登录网关
+    enModuleLogin_Ntf_LoginGateway                          = 2;
+    enModuleLogin_Req_KeepHeart                             = 3;
+    enModuleLogin_Ntf_KeepHeart                             = 4;
+    enModuleLogin_Req_CreateRole                            = 5;//创角
+    enModuleLogin_Ntf_CreateRole                            = 6;
+	enModuleLogin_RealMax								    = 7;//实际最大
+}
+
+message ModuleLogin_Req_LoginGateway
+{
+    uint64 accId = 1;//账号id
+}
+
+message ModuleLogin_Ntf_LoginGateway
+{
+}
+
+message ModuleLogin_Req_KeepHeart
+{
+}
+
+message ModuleLogin_Ntf_KeepHeart
+{
+    uint64 serverTime = 1;//毫秒
+}
+
+message ModuleLogin_Req_CreateRole
+{
+    common.ZoneCreateRole role = 1;//创角信息
+}
+
+message ModuleLogin_Ntf_CreateRole
+{
+}

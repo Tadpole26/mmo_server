@@ -1,3 +1,5 @@
+#include "scenesvr.pb.h"
+
 #include "CGateSession.h"
 #include "parse_pb.h"
 
@@ -14,14 +16,6 @@ CGateSession::~CGateSession()
 void CGateSession::on_disconnect()
 {
 	Log_Warning("GateSession %u disconnect!", m_uiServerId);
-	//g_SvrMgr.DelServer(m_eServerKind, m_uiServerId);
-
-	//网关掉发消息
-	//if (GAME_LOGIC_INS->IsExit())
-	//{
-	//	CLoadData::GetInstance()->ServerExitRet(gGameLogic->GetAreanNo(), GetServerKind());
-	//	gGameLogic->SetServerState(GetServerKind(), 2);
-	//}
 }
 
 void CGateSession::handle_msg(const tagMsgHead* pNetMsg)
@@ -114,13 +108,28 @@ void CGateSession::OnSavePlayer(uchar* pMsg, uint32 uiLen)
 	*/
 }
 
+bool CGateSession::netMsgFromGate(const tagMsgHead* pNetMsg)
+{
+	inner::InnerScenesvr innerReq;
+	PARSE_PTL_HEAD(innerReq, pNetMsg);
+
+	zRoleIdType roleId = innerReq.fromuser();
+	switch (innerReq.Fromgate_case())
+	{
+	case inner::InnerScenesvr::FromgateCase::kFromgatewayClientmsg:
+	}
+}
+
 void CGateSession::HandleTransmitData(const tagMsgHead* pNetMsg)
 {
-	/*
-	Msg_ServerCommon_Transmit oTransmit;
-	PARSE_PTL_HEAD(oTransmit, pNetMsg);
+	inner::InnerGatesvr innerReq;
+	PARSE_PTL_HEAD(innerReq, pNetMsg);
 
-	ResultCode eCode = ResultCode::Code_Common_Success;
+	zRoleIdType roleId = innerReq.fromuser();
+	switch (innerReq.Fromscene_case())
+	{
+		case inner::InnersCENE
+	}
 	CUserInfo* pUserInfo = CCommonUser::GetInCacheUserInfo(oTransmit.lluid());
 	if (!pUserInfo)
 	{
@@ -132,6 +141,6 @@ void CGateSession::HandleTransmitData(const tagMsgHead* pNetMsg)
 	//处理普通消息包
 	processor_base_ptr_type pProcessor = PROCESSOR_FACTORY_INS.GetProcessor(oTransmit.uimoduleid());
 	pProcessor->SetUserBaseInfo(pUserInfo, oTransmit.uicmd());
-	pProcessor->DoProcess(oTransmit.strcmdmsg());*/
+	pProcessor->DoProcess(oTransmit.strcmdmsg());
 	return;
 }

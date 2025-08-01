@@ -175,7 +175,7 @@
     <ClInclude Include="http_mgr.h" />
     <ClInclude Include="http_param.h" />
     <ClInclude Include="http_request.h" />
-    <ClInclude Include="cAutoIdAllocator.h" />
+    <ClInclude Include="cIdAllocator.h" />
     <ClInclude Include="ikcp.h" />
     <ClInclude Include="map_pool.h" />
     <ClInclude Include="map_pools.h" />

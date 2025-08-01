@@ -2,7 +2,7 @@
 #include "msg_parser.h"
 #include "io_thread.h"
 #include "thread_dispatcher.h"
-#include "../platform/log_mgr.h"
+#include "../platform/zLogMgr.h"
 #include "../platform/util_malloc.h"
 #include <event2/bufferevent.h>
 #include <event2/buffer.h>

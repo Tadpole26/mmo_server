@@ -9,7 +9,7 @@
 #include <mutex>
 #include <thread>
 #include <condition_variable>
-#include "../platform/log_mgr.h"
+#include "../platform/zLogMgr.h"
 #include "../platform/util_malloc.h"
 #include "msg_interface.h"
 

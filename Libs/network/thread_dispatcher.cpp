@@ -12,9 +12,8 @@
 #include <mutex>
 #include "event_thread.h"
 #include "io_thread.h"
-#include "id_alloctor.h"
 #include "util_malloc.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 unsigned SP_THREAD_CALL io_thread_fn(void* args)
 {

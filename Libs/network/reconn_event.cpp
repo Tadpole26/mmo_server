@@ -8,7 +8,7 @@
 #include "io_thread.h"
 #include "thread_dispatcher.h"
 #include "net_opt.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 void connect_cb(struct bufferevent* bev, short events, void* arg)
 {

@@ -19,7 +19,7 @@
 #define DB_THREAD_NUM 1	//游戏服开启数据库处理线程数
 
 
-#define CONST_CONFIG		"../Config/const_config.xml"		//全部本地配置(服务器、数据库、zk等配置信息)
+#define CONST_CONFIG		"../Config/zone_const_config.xml"		//全部本地配置(服务器、数据库、zk等配置信息)
 
 #define MAX_PALYER_NAME_LEN			21	//最大角色名称长
 #define MAX_CHANNEL_LEN				13	//最大渠道字长

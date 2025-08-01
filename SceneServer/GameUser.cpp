@@ -1,6 +1,6 @@
 #include "GameUser.h"
 #include "GameModule.h"
-#include "module.pb.h"
+#include "client.pb.h"
 
 GameUser::GameUser(const uint64 ullRoleId) :
 	cUser(ullRoleId),

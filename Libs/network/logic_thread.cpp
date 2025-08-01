@@ -7,7 +7,7 @@
 #include <thread>
 #include <chrono>
 #include "func_proc.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 CLogicThread::CLogicThread()
 {

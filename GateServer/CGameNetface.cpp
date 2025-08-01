@@ -1,14 +1,12 @@
+#include "gatesvr.pb.h"
+
 #include "CGameNetface.h"
-#include "../protocol/msg_module_serverinner.pb.h"
-#include "../protocol/msg_module_servercommon.pb.h"
-#include "../protocol/msg_module_login.pb.h"
-#include "../protocol/server_common.pb.h"
 #include "util_time.h"
 #include "CGateLogic.h"
 #include "global_define.h"
 #include "parse_pb.h"
 #include "PlayerProxy.h"
-#include "CUser.h"
+#include "GateUser.h"
 #include "CServerNetface.h"
 #include "CSysNetface.h"
 
@@ -24,50 +22,40 @@ void CGameNetface::handle_msg(const tagMsgHead* pMsg)
 {
 	if (nullptr == pMsg) return;
 
-	switch (pMsg->usModuleId)
-	{
-		//GameServer过来的通用消息(game->gate->client)
-	case ProtoMsg::MsgModule::ServerCommon:
-		HandleServerCommon(pMsg);
-		break;
-		//GameServer过来的内部消息(game->gate)
-	case ProtoMsg::MsgModule::ServerInner:
-		HandleGameModule(pMsg);
-		break;
-	default:
-		Log_Error("undefined module %u!", pMsg->usModuleId);
-		break;
-	}
+	//switch (pMsg->usModuleId)
+	//{
+	//default:
+	//	Log_Error("undefined module %u!", pMsg->usModuleId);
+	//	break;
+	//}
 }
 
 void CGameNetface::on_connect()
 {
-	if (get_dicon_time() != 0) GATE_LOGIC_INS->SendWChatMsg("Gate", "Game", "connect");
-
-	Msg_ServerCommon_Register_Req oRegisterReq;
-	oRegisterReq.set_uiserverid(GetServerID());
-	oRegisterReq.set_uiserverkind(SERVER_KIND_GATE);
-	oRegisterReq.set_uiplatid(GATE_LOGIC_INS->m_oConstConfig.m_uiPlatId);
-	oRegisterReq.set_uiindex(GATE_LOGIC_INS->GetIndex());
-	oRegisterReq.set_uigroupid(GATE_LOGIC_INS->m_oConstConfig.m_uiGroupId);
-	Send_Msg(&oRegisterReq, MsgModule_ServerCommon::Msg_ServerCommon_Register_Req, MsgModule::ServerCommon);
+	//Msg_ServerCommon_Register_Req oRegisterReq;
+	//oRegisterReq.set_uiserverid(GetServerID());
+	//oRegisterReq.set_uiserverkind(SERVER_KIND_GATE);
+	//oRegisterReq.set_uiplatid(GATE_LOGIC_INS->m_oConstConfig.m_uiPlatId);
+	//oRegisterReq.set_uiindex(GATE_LOGIC_INS->GetIndex());
+	//oRegisterReq.set_uigroupid(GATE_LOGIC_INS->m_oConstConfig.m_uiGroupId);
+	//Send_Msg(&oRegisterReq, MsgModule_ServerCommon::Msg_ServerCommon_Register_Req, MsgModule::ServerCommon);
 	CTcpReconn::on_connect();
 }
 
 void CGameNetface::on_disconnect()
 {
-	GATE_LOGIC_INS->SendWChatMsg("Gate", "Game", "disconnect");
 	Log_Warning("game server disconnect!");
 }
 
 void CGameNetface::trigger()
 {
-	static ProtoMsg::Msg_ServerCommon_BeatHart_Req oBeatHartReq;
-	Send_Msg(&oBeatHartReq, MsgModule_ServerCommon::Msg_ServerCommon_BeatHart_Req, MsgModule::ServerCommon);
+	//static ProtoMsg::Msg_ServerCommon_BeatHart_Req oBeatHartReq;
+	//Send_Msg(&oBeatHartReq, MsgModule_ServerCommon::Msg_ServerCommon_BeatHart_Req, MsgModule::ServerCommon);
 }
 
 void CGameNetface::HandleServerCommon(const tagMsgHead* pMsgHead)
 {
+	/*
 	switch (pMsgHead->uiCmdId)
 	{
 	case ProtoMsg::MsgModule_ServerCommon::Msg_ServerCommon_Register_Rsp:
@@ -90,11 +78,12 @@ void CGameNetface::HandleServerCommon(const tagMsgHead* pMsgHead)
 	default:
 		Log_Error("undefined cmd %u!", pMsgHead->uiCmdId);
 		break;
-	}
+	}*/
 }
 
 void CGameNetface::HandleGameModule(const tagMsgHead* pNetMsgHead)
 {
+	/*
 	switch (pNetMsgHead->uiCmdId)
 	{
 	case ProtoMsg::MsgModule_ServerInner::Msg_ServerInner_GG_Login_Rsp:
@@ -112,11 +101,12 @@ void CGameNetface::HandleGameModule(const tagMsgHead* pNetMsgHead)
 	default:
 		Log_Error("undefined cmd %u!", pNetMsgHead->uiCmdId);
 		break;
-	}
+	}*/
 }
 
 void CGameNetface::OnAccountLoginRet(const tagMsgHead* pNetMsgHead)
 {
+	/*
 	Msg_ServerInner_GG_Login_Rsp oLoginRsp;
 	PARSE_PTL_HEAD(oLoginRsp, pNetMsgHead);
 
@@ -161,11 +151,12 @@ void CGameNetface::OnAccountLoginRet(const tagMsgHead* pNetMsgHead)
 			pUser->m_strAccName.c_str(), oLoginRsp.lluserid(),
 			pUser->m_oBeginTime.Ms(), oLoginRsp.iflag());
 	}
-	pUser->m_oBeginTime.ResetEnd();
+	pUser->m_oBeginTime.ResetEnd();*/
 }
 
 void CGameNetface::OnCreateRoleRet(const tagMsgHead* pNetMsgHead)
 {
+	/*
 	Msg_ServerInner_GG_Create_Rsp oSysCreateRsp;
 	PARSE_PTL_HEAD(oSysCreateRsp, pNetMsgHead);
 
@@ -207,11 +198,12 @@ void CGameNetface::OnCreateRoleRet(const tagMsgHead* pNetMsgHead)
 		{
 			Log_Error("addid:%lld, error:%d", pUser->m_llUid, oSysCreateRsp.iretcode());
 		}
-	}
+	}*/
 }
 
 void CGameNetface::OnKickPlayer(const tagMsgHead* pNetMsgHead)
 {
+	/*
 	Msg_ServerInner_GG_Kich_Notify oKickNotify;
 	PARSE_PTL_HEAD(oKickNotify, pNetMsgHead);
 
@@ -228,11 +220,12 @@ void CGameNetface::OnKickPlayer(const tagMsgHead* pNetMsgHead)
 	//	ProtoMsg::MsgModule_Login::Msg_Login_KickRole_Notify, 0, oKickNotify.ecode());
 	Log_Warning("disconnect last connection! account name:%s, user id :%lld",
 		pUser->m_strAccName.c_str(), pUser->m_llUid);
-	GATE_LOGIC_INS->m_pClientLIF->OnKickConnect(pUser, true);
+	GATE_LOGIC_INS->m_pClientLIF->OnKickConnect(pUser, true);*/
 }
 
 void CGameNetface::OnNoticePush(const tagMsgHead* pNetMsgHead)
 {
+	/*
 	Msg_ServerInner_GG_Msg_Notify oMsgNotify;
 	PARSE_PTL_HEAD(oMsgNotify, pNetMsgHead);
 
@@ -261,4 +254,5 @@ void CGameNetface::OnNoticePush(const tagMsgHead* pNetMsgHead)
 			GATE_LOGIC_INS->m_oUserMgr.SendNoticeAllPlayer(oMsgNotify.strcmdmsg(),
 				oMsgNotify.uimoduleid(), oMsgNotify.uicmdid(), oMsgNotify.uiinterval());
 	}
+	*/
 }

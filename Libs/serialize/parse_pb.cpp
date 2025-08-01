@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "parse_pb.h"
-#include "cLogMgr.h"
+#include "zLogMgr.h"
 
 
 bool SerToString(const google::protobuf::MessageLite* pMsg, void* pStr, size_t len)

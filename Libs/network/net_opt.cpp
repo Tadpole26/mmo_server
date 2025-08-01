@@ -13,7 +13,7 @@
 #endif 
 #include <event2/listener.h>
 #include <event2/event.h>
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 CNetOpt::CNetOpt() {}
 

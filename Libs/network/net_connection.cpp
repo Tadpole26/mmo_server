@@ -4,7 +4,7 @@
 #include <event2/bufferevent.h>
 #include <event2/buffer.h>
 #include "listen_thread.h"
-#include "id_alloctor.h"
+#include "../platform/cIdAllocator.h"
 #include "msg_interface.h"
 #include "event_thread.h"
 #include "io_thread.h"
@@ -12,7 +12,7 @@
 #include <functional>
 #include "net_opt.h"
 #include "msg_parser.h"
-#include "../platform/log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 //收到消息分包处理函数
 static fn_io_recv_msg g_io_recv_msg_fn = nullptr;
@@ -238,10 +238,10 @@ CNetConn* CNetConnPool::findconn(conn_oid_t id)
 
 CNetConn* CNetConnPool::newconn(uint32_t maxBuffer)
 {
-    if (_IdAlloctor.isFull())
+    if (_IdAlloctor.Full())
         remove_killed();
 
-    uint16 id = _IdAlloctor.alloc();
+    uint16 id = _IdAlloctor.AllocId();
     if (!is_valid(id))
         return nullptr;
 
@@ -275,12 +275,12 @@ int CNetConnPool::get_ip(conn_oid_t id)
 
 size_t CNetConnPool::conn_size()
 {
-    return _IdAlloctor.size();
+    return _IdAlloctor.Size();
 }
 
 bool CNetConnPool::Full()
 {
-    return _IdAlloctor.isFull();
+    return _IdAlloctor.Full();
 }
 
 void CNetConnPool::remove_killed()
@@ -301,7 +301,7 @@ int CNetConnPool::delconn(conn_oid_t id)
         return -1;
 
     _setID.erase(id);
-    _IdAlloctor.free(id);
+    _IdAlloctor.FreeId(id);
     CNetConn*& pConn = _pConns[id];
     if (pConn)
         pConn->release();

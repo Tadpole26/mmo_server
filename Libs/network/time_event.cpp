@@ -2,7 +2,7 @@
 #include "time_event.h"
 #include "listen_thread.h"
 #include "event_thread.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 static void timeout_cb(evutil_socket_t fd, short event, void* arg)
 {
     CTimeEvent* pTimeEvent = (CTimeEvent*)arg;

@@ -8,7 +8,7 @@
 #include "logic_interface.h"
 #include "thread_dispatcher.h"
 #include "net_opt.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 CIoThread::CIoThread()
 {

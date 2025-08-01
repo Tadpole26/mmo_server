@@ -1,3 +1,5 @@
+#include "ZoneConstConfig.h"
+
 #include "SceneLogic.h"
 #include "global_define.h"
 #include "zLogMgr.h"
@@ -25,7 +27,7 @@ void SceneLogic::WritePidFile()
 #endif
 	create_dir(strFilePath.c_str());
 	strFilePath += "_";
-	strFilePath += std::to_string(m_oConstCfg.m_uiGroupId);
+	strFilePath += std::to_string(gZoneCfg->m_uiGroupId);
 	strFilePath += ".pid";
 
 	std::ofstream _ofs;
@@ -46,9 +48,9 @@ bool SceneLogic::init()
 	SetConsoleInfo(std::bind(&SceneLogic::stop, this));
 
 	//读取本地配置
-	if (!m_oConstCfg.Init())
+	if (!gZoneCfg->init())
 	{
-		Log_Error("load const config error!");
+		Log_Error("load zone config error!");
 		return false;
 	}
 
@@ -59,34 +61,28 @@ bool SceneLogic::init()
 	GetLogMgrInstance()->SetTargetLevel(eTarConsole, eLevelWarning);
 #endif
 	GetLogMgrInstance()->SetTargetLevel(eTarFile, eLevelDebug);
-	if (!GetLogMgrInstance()->Init(m_oConstCfg.m_uiGroupId, m_stArgOpt.GetIndex()))
+	if (!GetLogMgrInstance()->Init(gZoneCfg->m_uiGroupId, m_stArgOpt.GetIndex()))
 	{
 		Log_Error("log init error!!!");
 		return false;
 	}
-	//初始化连接zk
-	//if (!m_stZkOpt.InitZookeeper(m_oConstCfg.m_strZkHost, m_oConstCfg.m_strNormalConfigPath))
-	//{
-	//	Log_Error("init zookeeper error !!!");
-	//	return false;
-	//}
 
 	//初始化连接mongo
-	MongoBase::initialize(m_oConstCfg.m_uiGroupId);
+	MongoBase::initialize(gZoneCfg->m_uiGroupId);
 	if (!GAME_DB_INS->Init())
 	{
 		Log_Error("init mongo db instance error!!!");
 		return false;
 	}
 	
-	if (is_listen_port(m_oConstCfg.m_uiGamePort))
+	if (is_listen_port(gZoneCfg->m_uiGamePort))
 	{
-		Log_Error("listen port exsit %u!!!", m_oConstCfg.m_uiGamePort);
+		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiGamePort);
 		return false;
 	}
 
 	net_setting stNetConfig;
-	stNetConfig.m_nListenPort = m_oConstCfg.m_uiGamePort;
+	stNetConfig.m_nListenPort = gZoneCfg->m_uiGamePort;
 	//线程数量,每个线程可连接数量,接受,输入,输出包大小限制
 	stNetConfig.m_ioThread.Init(1, 4096, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
 	stNetConfig.m_reThread.Init(get_cpu_num(), 20, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
@@ -120,20 +116,8 @@ bool SceneLogic::init()
 
 	regfn_io_recv_msg(my_io_recv_msg);
 	regfn_io_send_msg(my_io_send_msg);
-	//m_pUpdateConfigEvent = new CZkEvent(m_pLogic->evthread()->Base(), true, m_stZkOpt.m_pZooHandle, 1000, nullptr);
-	//if (m_pUpdateConfigEvent == nullptr)
-	//{
-	//	Log_Error("zookeeper event add failed!");
-	//	return false;
-	//}
 
-	//if (!m_pUpdateConfigEvent->init())
-	//{
-	//	Log_Error("zookeeper event init failed!");
-	//	return false;
-	//}
-
-	Log_Info("success platid:%u, groupid:%u", m_oConstCfg.m_uiPlatId, m_oConstCfg.m_uiGroupId);
+	Log_Info("success groupid:%u", gZoneCfg->m_uiGroupId);
 	return true;
 }
 
@@ -160,7 +144,6 @@ void SceneLogic::fini()
 	//SAFE_DELETE(m_pCrossNetFace);
 	SAFE_DELETE(m_pGateSession);
 	SAFE_DELETE(m_pInterface);
-	SAFE_DELETE(m_pGateSession);
 	
 	if (m_pLogic)
 	{
@@ -169,4 +152,7 @@ void SceneLogic::fini()
 	}
 }
 
+void SceneLogic::OnTimer(uint32 uiSec)
+{
+}
 

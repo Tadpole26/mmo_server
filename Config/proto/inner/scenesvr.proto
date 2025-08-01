@@ -4,18 +4,34 @@ import "innerfriend.proto";
 
 message InnerScenesvr
 {
-	uint64 llFromUser = 1;
+	uint64 fromUser = 1;
+    oneof Fromgate
+    {
+        InnerScenesvr_Fromgateway_Test                              fromgateway_test                    = 101;
+        InnerScenesvr_Fromgateway_ClientMsg                         fromgateway_clientmsg               = 102;
+    }
 	oneof Fromfriend
 	{
-		InnerScenesvr_Fromfriend_Test 								fromfriend_test 					= 101;
-        InnerScenesvr_Fromfriend_ReturnItem                         fromfriend_returnitem               = 102;
-        InnerScenesvr_Fromfriend_GiftReceived                       fromfriend_giftreceived             = 103;
-        InnerScenesvr_Fromfriend_GiftEmail                          fromfriend_giftemail                = 104;
-        InnerScenesvr_Fromfriend_GiftExpire                         fromfriend_giftexpire               = 105;
-        InnerScenesvr_Fromfriend_GiftVersion                        fromfriend_giftversion              = 106;
-        InnerScenesvr_Fromfriend_FriendList                         fromfriend_friendlist               = 107;
-        InnerScenesvr_Fromfriend_FriendUpdate                       fromfriend_friendupdate             = 108;
+		InnerScenesvr_Fromfriend_Test 								fromfriend_test 					= 201;
+        InnerScenesvr_Fromfriend_ReturnItem                         fromfriend_returnitem               = 202;
+        InnerScenesvr_Fromfriend_GiftReceived                       fromfriend_giftreceived             = 203;
+        InnerScenesvr_Fromfriend_GiftEmail                          fromfriend_giftemail                = 204;
+        InnerScenesvr_Fromfriend_GiftExpire                         fromfriend_giftexpire               = 205;
+        InnerScenesvr_Fromfriend_GiftVersion                        fromfriend_giftversion              = 206;
+        InnerScenesvr_Fromfriend_FriendList                         fromfriend_friendlist               = 207;
+        InnerScenesvr_Fromfriend_FriendUpdate                       fromfriend_friendupdate             = 208;
 	}
+}
+
+message InnerScenesvr_Fromgateway_Test
+{
+}
+
+message InnerScenesvr_Fromgateway_ClientMsg
+{
+    uint32 module = 1;
+    uint32 cmd = 2;
+    bytes data = 3;
 }
 
 message InnerScenesvr_Fromfriend_Test

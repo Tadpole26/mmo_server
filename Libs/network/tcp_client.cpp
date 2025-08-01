@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "tcp_client.h"
 #include "msg_parser.h"
-#include "log_mgr.h"
+#include "../platform/zLogMgr.h"
 
 bool CTcpSession::_Send(const tagMsgHead* pMsg)
 {

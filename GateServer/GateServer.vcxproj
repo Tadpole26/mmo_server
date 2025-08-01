@@ -119,13 +119,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Libs/platform;../Libs/protocol;../Libs/serialize;../Libs/tinyxml;../Libs/network;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Libs/platform;../Libs/protocol;../Libs/serialize;../Libs/tinyxml;../Libs/network;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Bin\Libs\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>network_d.lib;platform_d.lib;protocol_d.lib;serialize_d.lib;tinyxml_d.lib;event.lib;event_core.lib;event_extra.lib;event_openssl.lib;libprotobufd.lib;ws2_32.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>network_d.lib;platform_d.lib;protocol_d.lib;serialize_d.lib;tinyxml_d.lib;config_d.lib;event.lib;event_core.lib;event_extra.lib;event_openssl.lib;libprotobufd.lib;ws2_32.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>expat_d.lib;LIBCMT.lib;LIBCMTD.lib;libcpmtd.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -147,24 +147,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CServerNetface.cpp" />
-    <ClCompile Include="CSysNetface.cpp" />
     <ClCompile Include="CGameNetface.cpp" />
-    <ClCompile Include="CUser.cpp" />
-    <ClCompile Include="CUserManager.cpp" />
-    <ClCompile Include="CConstConfig.cpp" />
+    <ClCompile Include="GateUser.cpp" />
+    <ClCompile Include="GateUserMgr.cpp" />
     <ClCompile Include="CGateLogic.cpp" />
     <ClCompile Include="GateServer.cpp" />
-    <ClCompile Include="PlayerProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServerNetface.h" />
-    <ClInclude Include="CSysNetface.h" />
     <ClInclude Include="CGameNetface.h" />
-    <ClInclude Include="CUser.h" />
-    <ClInclude Include="CUserManager.h" />
-    <ClInclude Include="CConstConfig.h" />
+    <ClInclude Include="GateUser.h" />
+    <ClInclude Include="GateUserMgr.h" />
     <ClInclude Include="CGateLogic.h" />
-    <ClInclude Include="PlayerProxy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

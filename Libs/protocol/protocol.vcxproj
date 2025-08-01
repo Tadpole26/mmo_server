@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chatcommon.pb.cc" />
+    <ClCompile Include="client.pb.cc" />
     <ClCompile Include="common.pb.cc" />
     <ClCompile Include="errorcode.pb.cc" />
     <ClCompile Include="fight3v3common.pb.cc" />
@@ -27,17 +28,19 @@
     <ClCompile Include="friend.pb.cc" />
     <ClCompile Include="friendcommon.pb.cc" />
     <ClCompile Include="friendsvr.pb.cc" />
+    <ClCompile Include="gatesvr.pb.cc" />
     <ClCompile Include="innercommon.pb.cc" />
     <ClCompile Include="innerfriend.pb.cc" />
     <ClCompile Include="innermatch.pb.cc" />
     <ClCompile Include="innerserver.pb.cc" />
     <ClCompile Include="innerteam.pb.cc" />
     <ClCompile Include="itemcommon.pb.cc" />
+    <ClCompile Include="login.pb.cc" />
+    <ClCompile Include="logincommon.pb.cc" />
     <ClCompile Include="map_cfg.pb.cc" />
     <ClCompile Include="match.pb.cc" />
     <ClCompile Include="matchcommon.pb.cc" />
     <ClCompile Include="matchsvr.pb.cc" />
-    <ClCompile Include="module.pb.cc" />
     <ClCompile Include="msg_module_ranker.pb.cc" />
     <ClCompile Include="record.pb.cc" />
     <ClCompile Include="recordfriend.pb.cc" />
@@ -49,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
+    <ClInclude Include="client.pb.h" />
     <ClInclude Include="common.pb.h" />
     <ClInclude Include="errorcode.pb.h" />
     <ClInclude Include="fight3v3common.pb.h" />
@@ -56,17 +60,19 @@
     <ClInclude Include="friend.pb.h" />
     <ClInclude Include="friendcommon.pb.h" />
     <ClInclude Include="friendsvr.pb.h" />
+    <ClInclude Include="gatesvr.pb.h" />
     <ClInclude Include="innercommon.pb.h" />
     <ClInclude Include="innerfriend.pb.h" />
     <ClInclude Include="innermatch.pb.h" />
     <ClInclude Include="innerserver.pb.h" />
     <ClInclude Include="innerteam.pb.h" />
     <ClInclude Include="itemcommon.pb.h" />
+    <ClInclude Include="login.pb.h" />
+    <ClInclude Include="logincommon.pb.h" />
     <ClInclude Include="map_cfg.pb.h" />
     <ClInclude Include="match.pb.h" />
     <ClInclude Include="matchcommon.pb.h" />
     <ClInclude Include="matchsvr.pb.h" />
-    <ClInclude Include="module.pb.h" />
     <ClInclude Include="msg_module_ranker.pb.h" />
     <ClInclude Include="record.pb.h" />
     <ClInclude Include="recordfriend.pb.h" />

@@ -12,7 +12,6 @@
     <ClCompile Include="innerfriend.pb.cc" />
     <ClCompile Include="itemcommon.pb.cc" />
     <ClCompile Include="map_cfg.pb.cc" />
-    <ClCompile Include="module.pb.cc" />
     <ClCompile Include="msg_module_ranker.pb.cc" />
     <ClCompile Include="record.pb.cc" />
     <ClCompile Include="recordfriend.pb.cc" />
@@ -28,6 +27,10 @@
     <ClCompile Include="scene.pb.cc" />
     <ClCompile Include="scenecommon.pb.cc" />
     <ClCompile Include="innerserver.pb.cc" />
+    <ClCompile Include="login.pb.cc" />
+    <ClCompile Include="logincommon.pb.cc" />
+    <ClCompile Include="client.pb.cc" />
+    <ClCompile Include="gatesvr.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -41,7 +44,6 @@
     <ClInclude Include="innerfriend.pb.h" />
     <ClInclude Include="itemcommon.pb.h" />
     <ClInclude Include="map_cfg.pb.h" />
-    <ClInclude Include="module.pb.h" />
     <ClInclude Include="msg_module_ranker.pb.h" />
     <ClInclude Include="record.pb.h" />
     <ClInclude Include="recordfriend.pb.h" />
@@ -57,6 +59,10 @@
     <ClInclude Include="scene.pb.h" />
     <ClInclude Include="scenecommon.pb.h" />
     <ClInclude Include="innerserver.pb.h" />
+    <ClInclude Include="login.pb.h" />
+    <ClInclude Include="logincommon.pb.h" />
+    <ClInclude Include="client.pb.h" />
+    <ClInclude Include="gatesvr.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

@@ -2,7 +2,7 @@
 #include <event2/event.h>
 #include "net_define.h"
 #include "time_event.h"
-#include "id_alloctor.h"
+#include "../platform/cIdAllocator.h"
 #include <map>
 #include <set>
 
@@ -98,7 +98,7 @@ protected:
     conn_oid_t _nMaxConns = 5000;
     CIoThread* _pIoThread = nullptr;
 
-    CIdAlloctor<> _IdAlloctor;
+    cIdAlloctor<uint16_t, UINT16_MAX> _IdAlloctor;
     std::set<uint16_t> _setID;
 
     CTimeEvent _tvdetect;

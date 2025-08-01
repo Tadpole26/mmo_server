@@ -1,11 +1,10 @@
 #pragma once
-#include "../protocol/result_code.pb.h"
-#include "../network/msg_parser.h"
 
 class CUser;
 class svr_reconn;
 class CPlayerProxy
 {
+	/*
 public:
 	static void CheckingSessionFromLoginSvr(CUser* pPlayer);
 	
@@ -26,5 +25,5 @@ public:
 		, ProtoMsg::ResultCode eCode, uint32_t uiReqId);
 
 	static void TransmitToServer(svr_reconn* pConn, CUser* pPlayer, const tagMsgHead* pMsg);
-	static void TransimitToClient(const tagMsgHead* pMsg);
+	static void TransimitToClient(const tagMsgHead* pMsg);*/
 };

@@ -30,16 +30,10 @@ public:
 	CLogicThread* m_pLogic = nullptr;
 	CCrossNetface* m_pCrossNetFace = nullptr;
 	CGateSession* m_pGateSession = nullptr;			//这里滚服服务器只有一个gate连接game
-
 	ArgOpt		 m_stArgOpt;						//命令行参数信息
-public:
-	CFriendNetface* GetFriendNetface() { return m_pFriendNetface; }
 private:
-	//CZkEvent*				m_pUpdateConfigEvent;
-	//ZkOperation				m_stZkOpt;
 	CSvrLogicFace* m_pInterface = nullptr;
 	CSvrLogicFace* m_pClientLIF = nullptr;
-	CFriendNetface* m_pFriendNetface = nullptr;
 
 };
 

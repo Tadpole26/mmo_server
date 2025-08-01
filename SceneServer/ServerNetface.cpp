@@ -1,6 +1,6 @@
 #include "ServerNetface.h"
 #include "msg_module_servercommon.pb.h"
-#include "module.pb.h"
+#include "client.pb.h"
 #include "parse_pb.h"
 #include "msg_make.h"
 #include "global_define.h"

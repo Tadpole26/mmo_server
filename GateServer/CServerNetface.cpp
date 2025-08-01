@@ -1,9 +1,9 @@
 #include "CServerNetface.h"
 #include "CGameNetface.h"
-#include "msg_module.pb.h"
-#include "log_mgr.h"
-#include "CUser.h"
-#include "msg_module_login.pb.h"
+#include "client.pb.h"
+#include "zLogMgr.h"
+#include "GateUser.h"
+#include "login.pb.h"
 #include "parse_pb.h"
 #include "CGateLogic.h"
 
@@ -19,13 +19,13 @@ void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 	if (pMsgHead == nullptr) return;
 
 	//客户端登录第一个消息(生成player加入player列表中)
-	if (pMsgHead->usModuleId == ProtoMsg::MsgModule::Login && pMsgHead->uiCmdId == ProtoMsg::MsgModule_Login::Msg_Login_VerifyAccount_Req)
+	if (pMsgHead->usModuleId == client::enModule_Login && pMsgHead->uiCmdId == client::enModuleLogin_Req_LoginGateway)
 	{
 		OnVerifyAccount(pMsgHead, pNetMsg->m_hd);
 		return;
 	}
 	//普通数据包,找都对应的client的bufferevent
-	else if (pMsgHead->usModuleId > ProtoMsg::MsgModule::Begin && pMsgHead->usModuleId < ProtoMsg::MsgModule::End)
+	else if (pMsgHead->usModuleId > client::enModule_None && pMsgHead->usModuleId < client::enModule_End)
 		CSvrLogicFace::handle_logic_msg(pNetMsg);
 	else
 		Log_Error("undefined module:%u!", pMsgHead->usModuleId);
@@ -33,26 +33,26 @@ void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 }
 
 //与客户端断开连接
-void CClientLogic::OnDisconnect(CUser* pUser)
+void CClientLogic::OnDisconnect(GateUser* pUser)
 {
 	kill_session(pUser);
 }
 
-void CClientLogic::OnKickConnect(CUser* pUser, bool bSysKill)
+void CClientLogic::OnKickConnect(GateUser* pUser, bool bSysKill)
 {
-	if (bSysKill)
-		pUser->UpdateStatus(CUser::eUserStatus::STATUS_SysKicking);
-	else
-		pUser->UpdateStatus(CUser::eUserStatus::STATUS_ReKicking);
+	//if (bSysKill)
+	//	pUser->UpdateStatus(GateUser::eUserStatus::STATUS_SysKicking);
+	//else
+	//	pUser->UpdateStatus(GateUser::eUserStatus::STATUS_ReKicking);
 	kill_session(pUser);
 }
 
 //登录验证
 void CClientLogic::OnVerifyAccount(const tagMsgHead* pHeadMsg, const tagHostHd& hd)
 {
-	Msg_Login_VerifyAccount_Req oLoginReq;
+	client::ModuleLogin_Req_LoginGateway oLoginReq;
 	PARSE_PTL_HEAD(oLoginReq, pHeadMsg);
-
+	/*
 	int64 llUserId = oLoginReq.lluserid();
 	if (llUserId == 0)
 	{
@@ -130,4 +130,5 @@ void CClientLogic::OnVerifyAccount(const tagMsgHead* pHeadMsg, const tagHostHd& 
 	{
 		GATE_LOGIC_INS->m_oUserMgr.AddWaitCheckPlayer(pUser);
 	}
+	*/
 }

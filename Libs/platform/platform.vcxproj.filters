@@ -183,7 +183,7 @@
     <ClInclude Include="zSceneMgr.h">
       <Filter>sdk</Filter>
     </ClInclude>
-    <ClInclude Include="cAutoIdAllocator.h">
+    <ClInclude Include="cIdAllocator.h">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="cLoadBase.h">

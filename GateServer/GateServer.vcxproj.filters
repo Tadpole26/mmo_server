@@ -4,10 +4,7 @@
     <ClCompile Include="CServerNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
-    <ClCompile Include="CUser.cpp">
-      <Filter>User</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerProxy.cpp">
+    <ClCompile Include="GateUser.cpp">
       <Filter>User</Filter>
     </ClCompile>
     <ClCompile Include="CGateLogic.cpp">
@@ -16,43 +13,28 @@
     <ClCompile Include="CGameNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
-    <ClCompile Include="CUserManager.cpp">
+    <ClCompile Include="GateUserMgr.cpp">
       <Filter>User</Filter>
-    </ClCompile>
-    <ClCompile Include="CConstConfig.cpp">
-      <Filter>Config</Filter>
     </ClCompile>
     <ClCompile Include="GateServer.cpp">
       <Filter>MainLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="CSysNetface.cpp">
-      <Filter>Netface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CServerNetface.h">
       <Filter>Netface</Filter>
     </ClInclude>
-    <ClInclude Include="CUser.h">
-      <Filter>User</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerProxy.h">
+    <ClInclude Include="GateUser.h">
       <Filter>User</Filter>
     </ClInclude>
     <ClInclude Include="CGateLogic.h">
       <Filter>MainLogic</Filter>
     </ClInclude>
-    <ClInclude Include="CSysNetface.h">
-      <Filter>Netface</Filter>
-    </ClInclude>
     <ClInclude Include="CGameNetface.h">
       <Filter>Netface</Filter>
     </ClInclude>
-    <ClInclude Include="CUserManager.h">
+    <ClInclude Include="GateUserMgr.h">
       <Filter>User</Filter>
-    </ClInclude>
-    <ClInclude Include="CConstConfig.h">
-      <Filter>Config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +43,6 @@
     </Filter>
     <Filter Include="MainLogic">
       <UniqueIdentifier>{3dfdbd90-ff40-449d-997f-6066663a1a9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Config">
-      <UniqueIdentifier>{9944070f-7069-446d-907c-632f7045b20d}</UniqueIdentifier>
     </Filter>
     <Filter Include="User">
       <UniqueIdentifier>{acdc524d-af2a-404f-ab61-22d51dbd5f99}</UniqueIdentifier>

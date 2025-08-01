@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ZoneConstConfig.cpp" />
     <ClCompile Include="MonsterConfig.cpp" />
     <ClCompile Include="NpcConfig.cpp" />
     <ClCompile Include="CopyConfig.cpp" />
@@ -28,9 +29,9 @@
     <ClCompile Include="ParamConfig.cpp" />
     <ClCompile Include="RobotConfig.cpp" />
     <ClCompile Include="TeamConfig.cpp" />
-    <ClCompile Include="ZoneConstConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ZoneConstConfig.h" />
     <ClInclude Include="MonsterConfig.h" />
     <ClInclude Include="NpcConfig.h" />
     <ClInclude Include="CopyConfig.h" />
@@ -40,7 +41,6 @@
     <ClInclude Include="ParamConfig.h" />
     <ClInclude Include="RobotConfig.h" />
     <ClInclude Include="TeamConfig.h" />
-    <ClInclude Include="ZoneConstConfig.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -1,0 +1,23 @@
+syntax = "proto3";
+package inner;
+
+message InnerGatesvr
+{
+    uint64 fromUser = 1;
+    oneof Fromscene
+    {
+        InnerGatesvr_Fromscene_Test         fromscene_test          = 101;
+        InnerGatesvr_Fromscene_ToMeMsg      fromscene_tomemsg       = 102;
+    }
+}
+
+message InnerGatesvr_Fromscene_Test
+{
+}
+
+message InnerGatesvr_Fromscene_ToMeMsg
+{
+    uint32 moduleId = 1;
+    uint32 cmdId    = 2;
+    bytes data      = 3;
+}
