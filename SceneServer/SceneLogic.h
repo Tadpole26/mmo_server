@@ -25,15 +25,20 @@ public:
 	void WritePidFile();
 public:
 	bool Arg(int argc, char* argv[]);
-
+public:
+	void addGateSvr(CGateSession* pGatesvr);
+	CGateSession *getGateSvr(uint32 serverId);
+	void destroyGateSvr(CGateSession* pGatesvr);
 public:
 	CLogicThread* m_pLogic = nullptr;
 	CCrossNetface* m_pCrossNetFace = nullptr;
-	CGateSession* m_pGateSession = nullptr;			//ÕâÀï¹ö·þ·þÎñÆ÷Ö»ÓÐÒ»¸ögateÁ¬½Ógame
-	ArgOpt		 m_stArgOpt;						//ÃüÁîÐÐ²ÎÊýÐÅÏ¢
+	//CGateSession* m_pGateSession = nullptr;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½gateï¿½ï¿½ï¿½ï¿½game
+	ArgOpt		 m_stArgOpt;						//ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 private:
 	CSvrLogicFace* m_pInterface = nullptr;
 	CSvrLogicFace* m_pClientLIF = nullptr;
+private:
+	std::unordered_map<uint32, CGateSession*> _allgates;
 
 };
 

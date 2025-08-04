@@ -1,6 +1,7 @@
 #include "scenesvr.pb.h"
 
 #include "CGateSession.h"
+#include "GameUserMgr.h"
 #include "parse_pb.h"
 
 CGateSession::CGateSession()
@@ -23,13 +24,14 @@ void CGateSession::handle_msg(const tagMsgHead* pNetMsg)
 	if (!pNetMsg) return;
 	uchar* pBuf = NET_DATA_BUF(pNetMsg);
 	uint32 uiLen = NET_DATA_SIZE(pNetMsg);
-
-	switch (pNetMsg->uiCmdId)
+	Inner::InnerScenesvr_Fromgateway_ClientMsg innerReq;
+	PARSE_PTL(innerReq, pBuf, uiLen);
+	switch (innerReq.Fromgate_case())
 	{
-	case 1:
+	case inner::kFromgatewayClientmsg:
 		break;
 	default:
-		Log_Error("undefined module %d!", pNetMsg->usModuleId);
+		Log_Error("undefined module %u!", innerReq.Fromgate_case());
 	break;
 	}
 }
@@ -48,27 +50,8 @@ void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode
 	*/
 }
 
-void CGateSession::OnAccountEnter(uchar* pMsg, uint32 uiLen)
-{/*
-	assert(pMsg);
-	Msg_ServerInner_GG_Login_Req oLoginReq;
-	PARSE_PTL(oLoginReq, pMsg, uiLen);
-	Log_Custom("enter",  "account name=%s, account id=%lld", oLoginReq.straccname().c_str()
-		, oLoginReq.llplayerid());
 
-	ResultCode eCode = ResultCode::Code_Common_Success;
-	CUserInfo* pUserInfo = CCommonUser::LoadUserInfo(oLoginReq.llplayerid(), eCode);
-	if (pUserInfo == nullptr)
-	{
-		SendLoginErrorRet(oLoginReq.llplayerid(), oLoginReq.uiseqid(), eCode);
-		return;
-	}
-	SendLoginErrorRet(oLoginReq.llplayerid(), oLoginReq.uiseqid(), eCode);
-	Log_Info("user account enter, user name=%s, user id=%lld", oLoginReq.straccname().c_str(), oLoginReq.llplayerid());*/
-	return;
-}
-
-void CGateSession::OnCreatePlayer(uchar* pMsg, uint32 uiLen)
+void CGateSession::OnCreateRole(uchar* pMsg, uint32 uiLen)
 {
 	/*
 	assert(pMsg);
@@ -99,48 +82,17 @@ void CGateSession::OnCreatePlayer(uchar* pMsg, uint32 uiLen)
 	*/
 }
 
-void CGateSession::OnSavePlayer(uchar* pMsg, uint32 uiLen)
+void CGateSession::handClientMsg(const InnerGatesvr& innerReq)
 {
-	/*
-	assert(pMsg);
-	Msg_ServerInner_GG_Save_Ntf oSaveReq;
-	PARSE_PTL(oSaveReq, pMsg, uiLen);
-	*/
-}
-
-bool CGateSession::netMsgFromGate(const tagMsgHead* pNetMsg)
-{
-	inner::InnerScenesvr innerReq;
-	PARSE_PTL_HEAD(innerReq, pNetMsg);
-
 	zRoleIdType roleId = innerReq.fromuser();
-	switch (innerReq.Fromgate_case())
+	auto &clientMsg = innerReq.fromgate_clientmsg();
+	auto *pUser = gGameUserMgrIns->getUser(roleId);
+	if (!pUser)
 	{
-	case inner::InnerScenesvr::FromgateCase::kFromgatewayClientmsg:
-	}
-}
-
-void CGateSession::HandleTransmitData(const tagMsgHead* pNetMsg)
-{
-	inner::InnerGatesvr innerReq;
-	PARSE_PTL_HEAD(innerReq, pNetMsg);
-
-	zRoleIdType roleId = innerReq.fromuser();
-	switch (innerReq.Fromscene_case())
-	{
-		case inner::InnersCENE
-	}
-	CUserInfo* pUserInfo = CCommonUser::GetInCacheUserInfo(oTransmit.lluid());
-	if (!pUserInfo)
-	{
-		Log_Error("user id %lld not find! moduleid:%u, cmdid:%u",oTransmit.lluid(), oTransmit.uimoduleid(), oTransmit.uicmd());
+		Log_Error("user id %lu not find! moduleid:%u, cmdid:%u",roleId, clientMsg.moduleid(), clientMsg.cmdid());
 		return;
 	}
-	pUserInfo->m_iSequence = oTransmit.uisequence();
-
-	//´¦ÀíÆÕÍ¨ÏûÏ¢°ü
-	processor_base_ptr_type pProcessor = PROCESSOR_FACTORY_INS.GetProcessor(oTransmit.uimoduleid());
-	pProcessor->SetUserBaseInfo(pUserInfo, oTransmit.uicmd());
-	pProcessor->DoProcess(oTransmit.strcmdmsg());
+	auto *pModule = pUser->
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Ï¢ï¿½ï¿½
 	return;
 }

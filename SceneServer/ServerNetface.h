@@ -5,7 +5,7 @@
 #include "server_logic_face.h"
 
 
-//¹ÜÀíËùÓÐÁ¬½ÓÉÏÀ´µÄ·þÎñ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
 class ClientLogic : public CSvrLogicFace
 {
 public:
@@ -13,7 +13,8 @@ public:
 	~ClientLogic(void);
 public:
 	virtual void handle_logic_msg(const tagNetMsg* pNetMsg);
-private:
-	void HandleServerCommon(tagMsgHead* pMsgHead, const tagHostHd& hd);
-	void OnRegisterServer(tagMsgHead* pMsgHead, const tagHostHd& hd);
+	//netMsgFromGate();
+	//netMsgFromFamily();
+	//netMsgFromFriend();
+	//netMsgFromMap();
 };

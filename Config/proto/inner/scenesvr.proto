@@ -7,8 +7,10 @@ message InnerScenesvr
 	uint64 fromUser = 1;
     oneof Fromgate
     {
-        InnerScenesvr_Fromgateway_Test                              fromgateway_test                    = 101;
-        InnerScenesvr_Fromgateway_ClientMsg                         fromgateway_clientmsg               = 102;
+        InnerScenesvr_Fromgate_Test                              fromgate_test                          = 101;
+        InnerScenesvr_Fromgate_serverRegister                    fromgate_serverRegister                = 102;
+        InnerScenesvr_Fromgate_createRole                        fromgate_createrole                    = 103; 
+        InnerScenesvr_Fromgate_ClientMsg                         fromgate_clientmsg                     = 104;
     }
 	oneof Fromfriend
 	{
@@ -23,14 +25,24 @@ message InnerScenesvr
 	}
 }
 
-message InnerScenesvr_Fromgateway_Test
+message InnerScenesvr_Fromgate_Test
 {
 }
 
-message InnerScenesvr_Fromgateway_ClientMsg
+message InnerScenesvr_Fromgate_serverRegister
 {
-    uint32 module = 1;
-    uint32 cmd = 2;
+    
+}
+
+message InnerScenesvr_Fromgate_createRole
+{
+    uint64 roleId   = 1;
+}
+
+message InnerScenesvr_Fromgate_ClientMsg
+{
+    uint32 moduleId = 1;
+    uint32 cmdId = 2;
     bytes data = 3;
 }
 

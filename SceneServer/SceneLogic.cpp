@@ -12,6 +12,32 @@
 #include "ServerNetface.h"
 #include <fstream>
 
+void SceneLogic::addGateSvr(CGateSession* pGatesvr)
+{
+	_allgates[pGatesvr->GetServerId()] = pGatesvr;
+	Log_Info("addGateSvr.%u", pGatesvr->GetServerId());
+}
+
+CGateSession *SceneLogic::getGateSvr(uint32 serverId)
+{
+	auto it = _allgates.find(serverId);
+	if (it == allgates.end())
+	{
+		return nullptr;
+	}
+	return it->second;
+}
+
+void SceneLogic::destroyGateSvr(CGateSession* pGatesvr)
+{
+	auto it = _allgates.find(pGatesvr->GetServerId());
+	if (it != allgates.end())
+	{
+		_allgates.erase(it);
+		SAFE_DELETE(pGatesvr);
+	}
+}
+
 bool SceneLogic::Arg(int argc, char* argv[])
 {
 	return m_stArgOpt.Argv(argc, argv);
@@ -43,18 +69,18 @@ bool SceneLogic::init()
 #else 
 	Log_Custom("start", "exe: %s begin...", get_exec_name().c_str());
 #endif
-	//ÉèÖÃcoredumpÎÄ¼þºÍcore»Øµ÷
+	//ï¿½ï¿½ï¿½ï¿½coredumpï¿½Ä¼ï¿½ï¿½ï¿½coreï¿½Øµï¿½
 	InstallCoreDumper();
 	SetConsoleInfo(std::bind(&SceneLogic::stop, this));
 
-	//¶ÁÈ¡±¾µØÅäÖÃ
+	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (!gZoneCfg->init())
 	{
 		Log_Error("load zone config error!");
 		return false;
 	}
 
-	//ÉèÖÃÈÕÖ¾µÈ¼¶
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½È¼ï¿½
 #ifdef _WIN32
 	GetLogMgrInstance()->SetTargetLevel(eTarConsole, eLevelDebug);
 #else 
@@ -67,7 +93,7 @@ bool SceneLogic::init()
 		return false;
 	}
 
-	//³õÊ¼»¯Á¬½Ómongo
+	//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mongo
 	MongoBase::initialize(gZoneCfg->m_uiGroupId);
 	if (!GAME_DB_INS->Init())
 	{
@@ -83,7 +109,7 @@ bool SceneLogic::init()
 
 	net_setting stNetConfig;
 	stNetConfig.m_nListenPort = gZoneCfg->m_uiGamePort;
-	//Ïß³ÌÊýÁ¿,Ã¿¸öÏß³Ì¿ÉÁ¬½ÓÊýÁ¿,½ÓÊÜ,ÊäÈë,Êä³ö°ü´óÐ¡ÏÞÖÆ
+	//ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½,Ã¿ï¿½ï¿½ï¿½ß³Ì¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½
 	stNetConfig.m_ioThread.Init(1, 4096, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
 	stNetConfig.m_reThread.Init(get_cpu_num(), 20, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
 
