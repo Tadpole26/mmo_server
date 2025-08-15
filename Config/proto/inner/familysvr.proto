@@ -1,0 +1,16 @@
+syntax = "proto3";
+package inner;
+
+message InnerFamilysvr
+{
+	uint64 fromuser = 1;
+	oneof Fromscene
+	{
+		InnerFamilysvr_Fromscene_Test 								fromscene_test 					= 101;
+	}
+}
+
+
+message InnerFamilysvr_Fromscene_Test
+{
+}

@@ -8,7 +8,6 @@ class GameUser : public cUser
 {
 public:
 	GameUser(const uint64 ullRoleId);
-private:
 	virtual ~GameUser();
 	virtual void final();
 private:
@@ -19,9 +18,9 @@ public:
 	bool init();
 	void saveNow();
 	void saveDelay(GameModule* pModule, uint32 uiEffect);
-private:
-	GameModule& __registerModule(GameModule* pModule);
-	GameModule* __getModule(const uint32 uiType);
+public:
+	GameModule& registerModule(GameModule* pModule);
+	GameModule* getModule(const uint32 uiType);
 public:
 	uint32 gateId = 0;
 	CSceneScene* scene = nullptr;

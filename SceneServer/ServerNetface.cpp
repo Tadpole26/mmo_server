@@ -2,7 +2,7 @@
 #include "scenesvr.pb.h"
 
 #include "ServerNetface.h"
-#include "msg_module_servercommon.pb.h"
+#include "SceneLogic.h"
 #include "parse_pb.h"
 #include "msg_make.h"
 #include "global_define.h"
@@ -11,16 +11,16 @@
 ClientLogic::ClientLogic() { }
 ClientLogic::~ClientLogic() { }
 
-void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
+void ClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 {
 	const tagHostHd& stHd = pNetMsg->m_hd;
 	tagMsgHead* pMsgHead = (tagMsgHead*)(pNetMsg->m_body);
-	inner::InnerGatesvr innerReq;
+	inner::InnerScenesvr innerReq;
 	PARSE_PTL_HEAD(innerReq, pMsgHead);
 	zRoleIdType roleId = innerReq.fromuser();
-	switch (innerReq.Fromscene_case())
+	switch (innerReq.Fromgate_case())
 	{
-	case inner:kFromgateServerregister:
+	case inner::InnerScenesvr::FromgateCase::kFromgateServerregister:
 	{
 		CGateSession* pServer = new CGateSession();
 		if (!pServer)
@@ -33,7 +33,7 @@ void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 		Log_Info("handle_logic_msg.svr connect me");
 	}
 	break;
-	case inner::kFromgateCreaterole:
+	case inner::InnerScenesvr::FromgateCase::kFromgateCreaterole:
 	{
 		if (!has_session(pNetMsg->m_hd)) return;
 		auto *pGatesvr = gSceneLogic->getGateSvr(1);
@@ -42,10 +42,10 @@ void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 			Log_Error("handle_logic_msg.!pServer");
 			return;
 		}
-		pGatesvr->OnCreateRole();
+		pGatesvr->OnCreateRole(innerReq);
 	}
 	break;
-	case inner::kFromgateClientmsg:
+	case inner::InnerScenesvr::FromgateCase::kFromgateClientmsg:
 	{
 		auto *pGatesvr = gSceneLogic->getGateSvr(1);
 		if (!pGatesvr)
@@ -53,7 +53,7 @@ void CClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
 			Log_Error("handle_logic_msg.!pServer");
 			return;
 		}
-		pGatesvr->OnCreateRole();
+		pGatesvr->handClientMsg(innerReq);
 	}
 	break;
 	default:

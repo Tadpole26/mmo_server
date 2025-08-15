@@ -6,7 +6,7 @@
 
 namespace inner
 {
-	class InnerGatesvr;
+	class InnerScenesvr;
 }
 
 class CGateSession : public svr_session
@@ -19,8 +19,7 @@ public:
 	//���ضϿ����ӻص�
 	virtual void on_disconnect();
 	void SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode);
-private:
-	void OnCreateRole(uchar* pMsg, uint32 uiLen);
 public:
-	bool handClientMsg(const InnerGatesvr& innerReq);
+	bool handClientMsg(const inner::InnerScenesvr& innerReq);
+	void OnCreateRole(const inner::InnerScenesvr& innerReq);
 };

@@ -48,7 +48,7 @@ enum SERVER_KIND
 	SERVER_KIND_NONE = 0,
 	SERVER_KIND_GATE = 1,					//网关服
 	SERVER_KIND_CROSS = 2,					//跨服
-	SERVER_KIND_GAME = 3,					//游戏服
+	SERVER_KIND_SCENE = 3,					//游戏服
 	SERVER_KIND_SYS = 4,					//登录、系统服
 	SERVER_KIND_LOG = 5,					//日志服
 	SERVER_KIND_BATTLE = 6,					//战斗服

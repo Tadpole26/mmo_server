@@ -1,3 +1,5 @@
+#include "ZoneConstConfig.h"
+
 #include "FamilyLogic.h"
 #include "coredump_x.h"
 #include "util_file.h"
@@ -16,7 +18,11 @@ bool FamilyLogic::init()
 	//设置coredump文件和core回调
 	InstallCoreDumper();
 	SetConsoleInfo(std::bind(&FamilyLogic::stop, this));
-
+	if (!gZoneCfg->init())
+	{
+		Log_Error("load zone config error!");
+		return false;
+	}
 	//设置日志等级
 #ifdef _WIN32
 	GetLogMgrInstance()->SetTargetLevel(eTarConsole, eLevelDebug);
@@ -24,20 +30,20 @@ bool FamilyLogic::init()
 	GetLogMgrInstance()->SetTargetLevel(eTarConsole, eLevelWarning);
 #endif
 	GetLogMgrInstance()->SetTargetLevel(eTarFile, eLevelDebug);
-	if (!GetLogMgrInstance()->Init(1, 1))
+	if (!GetLogMgrInstance()->Init(gZoneCfg->m_uiGroupId, m_stArgOpt.GetIndex()))
 	{
 		Log_Error("log init error!!!");
 		return false;
 	}
 
-	if (is_listen_port(2600))
+	if (is_listen_port(gZoneCfg->m_uiSysPort))
 	{
-		Log_Error("listen port exsit %u!!!", 2600);
+		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiSysPort);
 		return false;
 	}
 
 	net_setting stNetConfig;
-	stNetConfig.m_nListenPort = 2600;
+	stNetConfig.m_nListenPort = gZoneCfg->m_uiSysPort;
 	//线程数量,每个线程可连接数量,接受,输入,输出包大小限制
 	stNetConfig.m_ioThread.Init(1, 4096, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
 	stNetConfig.m_reThread.Init(get_cpu_num(), 20, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);

@@ -1,12 +1,14 @@
 #include "scenesvr.pb.h"
 
 #include "CGateSession.h"
+#include "GameModule.h"
+#include "GameUser.h"
 #include "GameUserMgr.h"
 #include "parse_pb.h"
 
 CGateSession::CGateSession()
 {
-	SetServerKind(SERVER_KIND_NONE);
+	SetServerKind(SERVER_KIND_GATE);
 	SetServerId(0);
 }
 
@@ -21,19 +23,8 @@ void CGateSession::on_disconnect()
 
 void CGateSession::handle_msg(const tagMsgHead* pNetMsg)
 {
-	if (!pNetMsg) return;
-	uchar* pBuf = NET_DATA_BUF(pNetMsg);
-	uint32 uiLen = NET_DATA_SIZE(pNetMsg);
-	Inner::InnerScenesvr_Fromgateway_ClientMsg innerReq;
-	PARSE_PTL(innerReq, pBuf, uiLen);
-	switch (innerReq.Fromgate_case())
-	{
-	case inner::kFromgatewayClientmsg:
-		break;
-	default:
-		Log_Error("undefined module %u!", innerReq.Fromgate_case());
-	break;
-	}
+	Log_Info("handle_msg");
+	return;
 }
 
 void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode)
@@ -51,48 +42,42 @@ void CGateSession::SendLoginErrorRet(int64_t llUid, uint32 uiSeqId, uint32 eCode
 }
 
 
-void CGateSession::OnCreateRole(uchar* pMsg, uint32 uiLen)
+void CGateSession::OnCreateRole(const inner::InnerScenesvr& innerReq)
 {
-	/*
-	assert(pMsg);
-	Msg_ServerInner_GG_Create_Req oCreateReq;
-	PARSE_PTL(oCreateReq, pMsg, uiLen);
-
-	ResultCode eCode = ResultCode::Code_Common_Success;
-	CUserInfo* pUserInfo = CCommonUser::LoadUserInfo(oCreateReq.llplayerid(), eCode);
-	if (pUserInfo != nullptr)
+	zRoleIdType roleId = innerReq.fromuser();
+	auto& createRole = innerReq.fromgate_createrole();
+	auto *pUser = gGameUserMgrIns->getUser(roleId);
+	if (pUser)
 	{
-		Log_Error("user is already exist in game server, user id:%lld", oCreateReq.llplayerid());
+		Log_Error("OnCreateRole.pUser.%lu", roleId);
 		return;
 	}
+	pUser = gGameUserMgrIns->createUser(roleId);
+	if (!pUser)
+	{
+		Log_Error("OnCreateRole.!pUser.%lu", roleId);
+		return;
+	}
+	Log_Info("create role, roleId%lu", roleId);
 
-	Log_Custom("create", "create user, user id:%lld", oCreateReq.llplayerid());
-
-	user_info_table_t stUserBaseInfo;
-	user_info_table_value_type stValue;
-	stValue.m_llUid = oCreateReq.llplayerid();
-	stValue.m_llCreateTime = GetCurrTime();
-	stValue.m_iUserLevel = 9999;
-	stValue.m_iVipLevel = 5;
-	stValue.m_iVipExp = 300;
-	stUserBaseInfo.Initialize(stValue);
-	SQL_TABLE_RECORD_CACHE_INS->ExecSQL();
-
-	//CNetProxy::OnGetUniqueIdReq(oCreateReq.llplayerid(), oCreateReq.strplayername(), CGameLogic::GetInstance()->GetAreanNo());
-	*/
 }
 
-void CGateSession::handClientMsg(const InnerGatesvr& innerReq)
+bool CGateSession::handClientMsg(const inner::InnerScenesvr& innerReq)
 {
 	zRoleIdType roleId = innerReq.fromuser();
 	auto &clientMsg = innerReq.fromgate_clientmsg();
 	auto *pUser = gGameUserMgrIns->getUser(roleId);
 	if (!pUser)
 	{
-		Log_Error("user id %lu not find! moduleid:%u, cmdid:%u",roleId, clientMsg.moduleid(), clientMsg.cmdid());
-		return;
+		Log_Error("user id %lu not find!moduleid:%u,cmdid:%u",roleId, clientMsg.moduleid(), clientMsg.cmdid());
+		return false;
 	}
-	auto *pModule = pUser->
-	//������ͨ��Ϣ��
-	return;
+	auto* pModule = pUser->getModule(clientMsg.moduleid());
+	if (!pModule)
+	{
+		Log_Error("moduleid not fund!moduleid:%u,cmdid:%u,roleId:%lu", roleId, clientMsg.moduleid(), clientMsg.cmdid());
+		return false;
+	}
+	pModule->handleClientMsg(clientMsg.cmdid(), clientMsg.data());
+	return true;
 }

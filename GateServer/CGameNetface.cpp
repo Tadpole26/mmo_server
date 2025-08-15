@@ -1,4 +1,4 @@
-#include "gatesvr.pb.h"
+#include "scenesvr.pb.h"
 
 #include "CGameNetface.h"
 #include "util_time.h"
@@ -32,13 +32,9 @@ void CGameNetface::handle_msg(const tagMsgHead* pMsg)
 
 void CGameNetface::on_connect()
 {
-	//Msg_ServerCommon_Register_Req oRegisterReq;
-	//oRegisterReq.set_uiserverid(GetServerID());
-	//oRegisterReq.set_uiserverkind(SERVER_KIND_GATE);
-	//oRegisterReq.set_uiplatid(GATE_LOGIC_INS->m_oConstConfig.m_uiPlatId);
-	//oRegisterReq.set_uiindex(GATE_LOGIC_INS->GetIndex());
-	//oRegisterReq.set_uigroupid(GATE_LOGIC_INS->m_oConstConfig.m_uiGroupId);
-	//Send_Msg(&oRegisterReq, MsgModule_ServerCommon::Msg_ServerCommon_Register_Req, MsgModule::ServerCommon);
+	inner::InnerScenesvr ntf;
+	auto& innerReq = *ntf.mutable_fromgate_serverregister();
+	Send_Msg(&ntf, 0, 0);
 	CTcpReconn::on_connect();
 }
 

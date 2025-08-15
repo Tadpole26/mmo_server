@@ -1,5 +1,5 @@
 #include "ModuleFriend.h"
-#include "module.pb.h"
+#include "client.pb.h"
 #include "recordfriend.pb.h"
 
 ModuleFriend::ModuleFriend() : GameModule(client::enModule_Friend)

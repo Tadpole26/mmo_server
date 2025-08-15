@@ -39,7 +39,7 @@ bool GameUser::init()
 	return true;
 }
 
-GameModule& GameUser::__registerModule(GameModule* pModule)
+GameModule& GameUser::registerModule(GameModule* pModule)
 {
 	assert(pModule != nullptr);
 	assert(pModule->getType() > 0 && pModule->getType() < client::enModule_End);
@@ -48,7 +48,7 @@ GameModule& GameUser::__registerModule(GameModule* pModule)
 	return *pModule;
 }
 
-GameModule* GameUser::__getModule(const uint32 uiType)
+GameModule* GameUser::getModule(const uint32 uiType)
 {
 	assert(uiType > 0 && uiType < client::enModule_End);
 	return _moduleMgr[uiType];

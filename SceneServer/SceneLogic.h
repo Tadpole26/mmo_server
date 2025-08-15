@@ -32,8 +32,7 @@ public:
 public:
 	CLogicThread* m_pLogic = nullptr;
 	CCrossNetface* m_pCrossNetFace = nullptr;
-	//CGateSession* m_pGateSession = nullptr;			//�������������ֻ��һ��gate����game
-	ArgOpt		 m_stArgOpt;						//�����в�����Ϣ
+	ArgOpt		 m_stArgOpt;						
 private:
 	CSvrLogicFace* m_pInterface = nullptr;
 	CSvrLogicFace* m_pClientLIF = nullptr;

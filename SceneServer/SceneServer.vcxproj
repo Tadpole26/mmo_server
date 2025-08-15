@@ -116,7 +116,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libprotobufd.lib;event.lib;event_core.lib;event_extra.lib;network_d.lib;platform_d.lib;serialize_d.lib;protocol_d.lib;tinyxml_d.lib;mongocxx.lib;mongoc-1.0.lib;bson-1.0.lib;bsoncxx.lib;hashtable.lib;zookeeper.lib;ws2_32.lib;jsoncpp_static.lib;Dbghelp.lib;libbehaviac.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libprotobufd.lib;event.lib;event_core.lib;event_extra.lib;network_d.lib;platform_d.lib;serialize_d.lib;protocol_d.lib;tinyxml_d.lib;mongocxx.lib;mongoc-1.0.lib;bson-1.0.lib;bsoncxx.lib;hashtable.lib;zookeeper.lib;ws2_32.lib;jsoncpp_static.lib;Dbghelp.lib;libbehaviac.lib;config_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Bin\Libs\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>expat_d.lib;LIBCMT.lib;LIBCMTD.lib;libcpmtd.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CDbInstance.cpp" />
+    <ClCompile Include="GameUserMgr.cpp" />
     <ClCompile Include="SceneLogic.cpp" />
     <ClCompile Include="GameUser.cpp" />
     <ClCompile Include="CGateSession.cpp" />
@@ -150,7 +150,7 @@
     <ClCompile Include="SceneServer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CDbInstance.h" />
+    <ClInclude Include="GameUserMgr.h" />
     <ClInclude Include="SceneLogic.h" />
     <ClInclude Include="GameUser.h" />
     <ClInclude Include="CGateSession.h" />

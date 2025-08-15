@@ -21,7 +21,7 @@ void SceneLogic::addGateSvr(CGateSession* pGatesvr)
 CGateSession *SceneLogic::getGateSvr(uint32 serverId)
 {
 	auto it = _allgates.find(serverId);
-	if (it == allgates.end())
+	if (it == _allgates.end())
 	{
 		return nullptr;
 	}
@@ -31,7 +31,7 @@ CGateSession *SceneLogic::getGateSvr(uint32 serverId)
 void SceneLogic::destroyGateSvr(CGateSession* pGatesvr)
 {
 	auto it = _allgates.find(pGatesvr->GetServerId());
-	if (it != allgates.end())
+	if (it != _allgates.end())
 	{
 		_allgates.erase(it);
 		SAFE_DELETE(pGatesvr);
@@ -69,18 +69,13 @@ bool SceneLogic::init()
 #else 
 	Log_Custom("start", "exe: %s begin...", get_exec_name().c_str());
 #endif
-	//����coredump�ļ���core�ص�
 	InstallCoreDumper();
 	SetConsoleInfo(std::bind(&SceneLogic::stop, this));
-
-	//��ȡ��������
 	if (!gZoneCfg->init())
 	{
 		Log_Error("load zone config error!");
 		return false;
 	}
-
-	//������־�ȼ�
 #ifdef _WIN32
 	GetLogMgrInstance()->SetTargetLevel(eTarConsole, eLevelDebug);
 #else 
@@ -93,14 +88,6 @@ bool SceneLogic::init()
 		return false;
 	}
 
-	//��ʼ������mongo
-	MongoBase::initialize(gZoneCfg->m_uiGroupId);
-	if (!GAME_DB_INS->Init())
-	{
-		Log_Error("init mongo db instance error!!!");
-		return false;
-	}
-	
 	if (is_listen_port(gZoneCfg->m_uiGamePort))
 	{
 		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiGamePort);
@@ -168,7 +155,6 @@ void SceneLogic::fini()
 {
 	//SAFE_DELETE(m_pSysNetFace);
 	//SAFE_DELETE(m_pCrossNetFace);
-	SAFE_DELETE(m_pGateSession);
 	SAFE_DELETE(m_pInterface);
 	
 	if (m_pLogic)

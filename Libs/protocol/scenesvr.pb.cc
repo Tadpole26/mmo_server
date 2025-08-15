@@ -34,31 +34,54 @@ struct InnerScenesvrDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvrDefaultTypeInternal _InnerScenesvr_default_instance_;
-PROTOBUF_CONSTEXPR InnerScenesvr_Fromgateway_Test::InnerScenesvr_Fromgateway_Test(
+PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_Test::InnerScenesvr_Fromgate_Test(
     ::_pbi::ConstantInitialized){}
-struct InnerScenesvr_Fromgateway_TestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgateway_TestDefaultTypeInternal()
+struct InnerScenesvr_Fromgate_TestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_TestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~InnerScenesvr_Fromgateway_TestDefaultTypeInternal() {}
+  ~InnerScenesvr_Fromgate_TestDefaultTypeInternal() {}
   union {
-    InnerScenesvr_Fromgateway_Test _instance;
+    InnerScenesvr_Fromgate_Test _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgateway_TestDefaultTypeInternal _InnerScenesvr_Fromgateway_Test_default_instance_;
-PROTOBUF_CONSTEXPR InnerScenesvr_Fromgateway_ClientMsg::InnerScenesvr_Fromgateway_ClientMsg(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgate_TestDefaultTypeInternal _InnerScenesvr_Fromgate_Test_default_instance_;
+PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_serverRegister::InnerScenesvr_Fromgate_serverRegister(
+    ::_pbi::ConstantInitialized){}
+struct InnerScenesvr_Fromgate_serverRegisterDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_serverRegisterDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerScenesvr_Fromgate_serverRegisterDefaultTypeInternal() {}
+  union {
+    InnerScenesvr_Fromgate_serverRegister _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgate_serverRegisterDefaultTypeInternal _InnerScenesvr_Fromgate_serverRegister_default_instance_;
+PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_createRole::InnerScenesvr_Fromgate_createRole(
+    ::_pbi::ConstantInitialized)
+  : roleid_(uint64_t{0u}){}
+struct InnerScenesvr_Fromgate_createRoleDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_createRoleDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerScenesvr_Fromgate_createRoleDefaultTypeInternal() {}
+  union {
+    InnerScenesvr_Fromgate_createRole _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgate_createRoleDefaultTypeInternal _InnerScenesvr_Fromgate_createRole_default_instance_;
+PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_ClientMsg::InnerScenesvr_Fromgate_ClientMsg(
     ::_pbi::ConstantInitialized)
   : data_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , module_(0u)
-  , cmd_(0u){}
-struct InnerScenesvr_Fromgateway_ClientMsgDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgateway_ClientMsgDefaultTypeInternal()
+  , moduleid_(0u)
+  , cmdid_(0u){}
+struct InnerScenesvr_Fromgate_ClientMsgDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerScenesvr_Fromgate_ClientMsgDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~InnerScenesvr_Fromgateway_ClientMsgDefaultTypeInternal() {}
+  ~InnerScenesvr_Fromgate_ClientMsgDefaultTypeInternal() {}
   union {
-    InnerScenesvr_Fromgateway_ClientMsg _instance;
+    InnerScenesvr_Fromgate_ClientMsg _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgateway_ClientMsgDefaultTypeInternal _InnerScenesvr_Fromgateway_ClientMsg_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromgate_ClientMsgDefaultTypeInternal _InnerScenesvr_Fromgate_ClientMsg_default_instance_;
 PROTOBUF_CONSTEXPR InnerScenesvr_Fromfriend_Test::InnerScenesvr_Fromfriend_Test(
     ::_pbi::ConstantInitialized){}
 struct InnerScenesvr_Fromfriend_TestDefaultTypeInternal {
@@ -174,7 +197,7 @@ struct InnerScenesvr_Fromfriend_FriendUpdateDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerScenesvr_Fromfriend_FriendUpdateDefaultTypeInternal _InnerScenesvr_Fromfriend_FriendUpdate_default_instance_;
 }  // namespace inner
-static ::_pb::Metadata file_level_metadata_scenesvr_2eproto[11];
+static ::_pb::Metadata file_level_metadata_scenesvr_2eproto[13];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_scenesvr_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_scenesvr_2eproto = nullptr;
 
@@ -196,23 +219,38 @@ const uint32_t TableStruct_scenesvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr, Fromgate_),
   PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr, Fromfriend_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgateway_Test, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_Test, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgateway_ClientMsg, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_serverRegister, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgateway_ClientMsg, module_),
-  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgateway_ClientMsg, cmd_),
-  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgateway_ClientMsg, data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_createRole, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_createRole, roleid_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_ClientMsg, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_ClientMsg, moduleid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_ClientMsg, cmdid_),
+  PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromgate_ClientMsg, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerScenesvr_Fromfriend_Test, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -289,22 +327,26 @@ const uint32_t TableStruct_scenesvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::inner::InnerScenesvr)},
-  { 19, -1, -1, sizeof(::inner::InnerScenesvr_Fromgateway_Test)},
-  { 25, -1, -1, sizeof(::inner::InnerScenesvr_Fromgateway_ClientMsg)},
-  { 34, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_Test)},
-  { 40, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_ReturnItem)},
-  { 50, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftReceived)},
-  { 61, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftEmail)},
-  { 72, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftExpire)},
-  { 83, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftVersion)},
-  { 91, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_FriendList)},
-  { 99, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_FriendUpdate)},
+  { 21, -1, -1, sizeof(::inner::InnerScenesvr_Fromgate_Test)},
+  { 27, -1, -1, sizeof(::inner::InnerScenesvr_Fromgate_serverRegister)},
+  { 33, -1, -1, sizeof(::inner::InnerScenesvr_Fromgate_createRole)},
+  { 40, -1, -1, sizeof(::inner::InnerScenesvr_Fromgate_ClientMsg)},
+  { 49, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_Test)},
+  { 55, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_ReturnItem)},
+  { 65, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftReceived)},
+  { 76, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftEmail)},
+  { 87, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftExpire)},
+  { 98, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_GiftVersion)},
+  { 106, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_FriendList)},
+  { 114, -1, -1, sizeof(::inner::InnerScenesvr_Fromfriend_FriendUpdate)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::inner::_InnerScenesvr_default_instance_._instance,
-  &::inner::_InnerScenesvr_Fromgateway_Test_default_instance_._instance,
-  &::inner::_InnerScenesvr_Fromgateway_ClientMsg_default_instance_._instance,
+  &::inner::_InnerScenesvr_Fromgate_Test_default_instance_._instance,
+  &::inner::_InnerScenesvr_Fromgate_serverRegister_default_instance_._instance,
+  &::inner::_InnerScenesvr_Fromgate_createRole_default_instance_._instance,
+  &::inner::_InnerScenesvr_Fromgate_ClientMsg_default_instance_._instance,
   &::inner::_InnerScenesvr_Fromfriend_Test_default_instance_._instance,
   &::inner::_InnerScenesvr_Fromfriend_ReturnItem_default_instance_._instance,
   &::inner::_InnerScenesvr_Fromfriend_GiftReceived_default_instance_._instance,
@@ -317,60 +359,66 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_scenesvr_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016scenesvr.proto\022\005inner\032\021innerfriend.pro"
-  "to\"\267\006\n\rInnerScenesvr\022\020\n\010fromUser\030\001 \001(\004\022A"
-  "\n\020fromgateway_test\030e \001(\0132%.inner.InnerSc"
-  "enesvr_Fromgateway_TestH\000\022K\n\025fromgateway"
-  "_clientmsg\030f \001(\0132*.inner.InnerScenesvr_F"
-  "romgateway_ClientMsgH\000\022@\n\017fromfriend_tes"
-  "t\030\311\001 \001(\0132$.inner.InnerScenesvr_Fromfrien"
-  "d_TestH\001\022L\n\025fromfriend_returnitem\030\312\001 \001(\013"
-  "2*.inner.InnerScenesvr_Fromfriend_Return"
-  "ItemH\001\022P\n\027fromfriend_giftreceived\030\313\001 \001(\013"
-  "2,.inner.InnerScenesvr_Fromfriend_GiftRe"
-  "ceivedH\001\022J\n\024fromfriend_giftemail\030\314\001 \001(\0132"
-  ").inner.InnerScenesvr_Fromfriend_GiftEma"
-  "ilH\001\022L\n\025fromfriend_giftexpire\030\315\001 \001(\0132*.i"
-  "nner.InnerScenesvr_Fromfriend_GiftExpire"
-  "H\001\022N\n\026fromfriend_giftversion\030\316\001 \001(\0132+.in"
-  "ner.InnerScenesvr_Fromfriend_GiftVersion"
-  "H\001\022L\n\025fromfriend_friendlist\030\317\001 \001(\0132*.inn"
-  "er.InnerScenesvr_Fromfriend_FriendListH\001"
-  "\022P\n\027fromfriend_friendupdate\030\320\001 \001(\0132,.inn"
-  "er.InnerScenesvr_Fromfriend_FriendUpdate"
-  "H\001B\n\n\010FromgateB\014\n\nFromfriend\" \n\036InnerSce"
-  "nesvr_Fromgateway_Test\"P\n#InnerScenesvr_"
-  "Fromgateway_ClientMsg\022\016\n\006module\030\001 \001(\r\022\013\n"
-  "\003cmd\030\002 \001(\r\022\014\n\004data\030\003 \001(\014\"\037\n\035InnerScenesv"
-  "r_Fromfriend_Test\"i\n#InnerScenesvr_Fromf"
-  "riend_ReturnItem\022\020\n\010llToUser\030\001 \001(\004\022\020\n\010ui"
-  "ItemId\030\002 \001(\r\022\017\n\007uiCount\030\003 \001(\r\022\r\n\005bBind\030\004"
-  " \001(\010\"\206\001\n%InnerScenesvr_Fromfriend_GiftRe"
-  "ceived\022\025\n\rvecToRoleList\030\001 \003(\004\022\021\n\tllGiftU"
-  "id\030\002 \001(\004\022\020\n\010llRecver\030\003 \001(\004\022\020\n\010uiItemId\030\004"
-  " \001(\r\022\017\n\007uiCount\030\005 \001(\r\"}\n\"InnerScenesvr_F"
-  "romfriend_GiftEmail\022\020\n\010llToUser\030\001 \001(\004\022\020\n"
-  "\010llSender\030\002 \001(\004\022\020\n\010uiItemId\030\003 \001(\r\022\017\n\007uiC"
-  "ount\030\004 \001(\r\022\020\n\010llGiftUd\030\005 \001(\004\"\177\n#InnerSce"
-  "nesvr_Fromfriend_GiftExpire\022\020\n\010llToUser\030"
-  "\001 \001(\004\022\020\n\010llRecver\030\002 \001(\004\022\020\n\010uiItemId\030\003 \001("
-  "\r\022\017\n\007uiCount\030\004 \001(\r\022\021\n\tllGiftUid\030\005 \001(\004\"M\n"
-  "$InnerScenesvr_Fromfriend_GiftVersion\022\020\n"
-  "\010llToUser\030\001 \001(\004\022\023\n\013uiVersionId\030\002 \001(\r\"f\n#"
-  "InnerScenesvr_Fromfriend_FriendList\022\020\n\010l"
-  "lToUser\030\001 \001(\004\022-\n\rvecFriendList\030\002 \001(\0132\026.i"
-  "nner.InnerFriendList\"a\n%InnerScenesvr_Fr"
-  "omfriend_FriendUpdate\022\020\n\010llToUser\030\001 \001(\004\022"
-  "&\n\noOneFriend\030\002 \001(\0132\022.inner.InnerFriendb"
-  "\006proto3"
+  "to\"\305\007\n\rInnerScenesvr\022\020\n\010fromUser\030\001 \001(\004\022;"
+  "\n\rfromgate_test\030e \001(\0132\".inner.InnerScene"
+  "svr_Fromgate_TestH\000\022O\n\027fromgate_serverre"
+  "gister\030f \001(\0132,.inner.InnerScenesvr_Fromg"
+  "ate_serverRegisterH\000\022G\n\023fromgate_creater"
+  "ole\030g \001(\0132(.inner.InnerScenesvr_Fromgate"
+  "_createRoleH\000\022E\n\022fromgate_clientmsg\030h \001("
+  "\0132\'.inner.InnerScenesvr_Fromgate_ClientM"
+  "sgH\000\022@\n\017fromfriend_test\030\311\001 \001(\0132$.inner.I"
+  "nnerScenesvr_Fromfriend_TestH\001\022L\n\025fromfr"
+  "iend_returnitem\030\312\001 \001(\0132*.inner.InnerScen"
+  "esvr_Fromfriend_ReturnItemH\001\022P\n\027fromfrie"
+  "nd_giftreceived\030\313\001 \001(\0132,.inner.InnerScen"
+  "esvr_Fromfriend_GiftReceivedH\001\022J\n\024fromfr"
+  "iend_giftemail\030\314\001 \001(\0132).inner.InnerScene"
+  "svr_Fromfriend_GiftEmailH\001\022L\n\025fromfriend"
+  "_giftexpire\030\315\001 \001(\0132*.inner.InnerScenesvr"
+  "_Fromfriend_GiftExpireH\001\022N\n\026fromfriend_g"
+  "iftversion\030\316\001 \001(\0132+.inner.InnerScenesvr_"
+  "Fromfriend_GiftVersionH\001\022L\n\025fromfriend_f"
+  "riendlist\030\317\001 \001(\0132*.inner.InnerScenesvr_F"
+  "romfriend_FriendListH\001\022P\n\027fromfriend_fri"
+  "endupdate\030\320\001 \001(\0132,.inner.InnerScenesvr_F"
+  "romfriend_FriendUpdateH\001B\n\n\010FromgateB\014\n\n"
+  "Fromfriend\"\035\n\033InnerScenesvr_Fromgate_Tes"
+  "t\"\'\n%InnerScenesvr_Fromgate_serverRegist"
+  "er\"3\n!InnerScenesvr_Fromgate_createRole\022"
+  "\016\n\006roleId\030\001 \001(\004\"Q\n InnerScenesvr_Fromgat"
+  "e_ClientMsg\022\020\n\010moduleId\030\001 \001(\r\022\r\n\005cmdId\030\002"
+  " \001(\r\022\014\n\004data\030\003 \001(\014\"\037\n\035InnerScenesvr_From"
+  "friend_Test\"i\n#InnerScenesvr_Fromfriend_"
+  "ReturnItem\022\020\n\010llToUser\030\001 \001(\004\022\020\n\010uiItemId"
+  "\030\002 \001(\r\022\017\n\007uiCount\030\003 \001(\r\022\r\n\005bBind\030\004 \001(\010\"\206"
+  "\001\n%InnerScenesvr_Fromfriend_GiftReceived"
+  "\022\025\n\rvecToRoleList\030\001 \003(\004\022\021\n\tllGiftUid\030\002 \001"
+  "(\004\022\020\n\010llRecver\030\003 \001(\004\022\020\n\010uiItemId\030\004 \001(\r\022\017"
+  "\n\007uiCount\030\005 \001(\r\"}\n\"InnerScenesvr_Fromfri"
+  "end_GiftEmail\022\020\n\010llToUser\030\001 \001(\004\022\020\n\010llSen"
+  "der\030\002 \001(\004\022\020\n\010uiItemId\030\003 \001(\r\022\017\n\007uiCount\030\004"
+  " \001(\r\022\020\n\010llGiftUd\030\005 \001(\004\"\177\n#InnerScenesvr_"
+  "Fromfriend_GiftExpire\022\020\n\010llToUser\030\001 \001(\004\022"
+  "\020\n\010llRecver\030\002 \001(\004\022\020\n\010uiItemId\030\003 \001(\r\022\017\n\007u"
+  "iCount\030\004 \001(\r\022\021\n\tllGiftUid\030\005 \001(\004\"M\n$Inner"
+  "Scenesvr_Fromfriend_GiftVersion\022\020\n\010llToU"
+  "ser\030\001 \001(\004\022\023\n\013uiVersionId\030\002 \001(\r\"f\n#InnerS"
+  "cenesvr_Fromfriend_FriendList\022\020\n\010llToUse"
+  "r\030\001 \001(\004\022-\n\rvecFriendList\030\002 \001(\0132\026.inner.I"
+  "nnerFriendList\"a\n%InnerScenesvr_Fromfrie"
+  "nd_FriendUpdate\022\020\n\010llToUser\030\001 \001(\004\022&\n\noOn"
+  "eFriend\030\002 \001(\0132\022.inner.InnerFriendb\006proto"
+  "3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_scenesvr_2eproto_deps[1] = {
   &::descriptor_table_innerfriend_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_scenesvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_scenesvr_2eproto = {
-    false, false, 1807, descriptor_table_protodef_scenesvr_2eproto,
+    false, false, 2041, descriptor_table_protodef_scenesvr_2eproto,
     "scenesvr.proto",
-    &descriptor_table_scenesvr_2eproto_once, descriptor_table_scenesvr_2eproto_deps, 1, 11,
+    &descriptor_table_scenesvr_2eproto_once, descriptor_table_scenesvr_2eproto_deps, 1, 13,
     schemas, file_default_instances, TableStruct_scenesvr_2eproto::offsets,
     file_level_metadata_scenesvr_2eproto, file_level_enum_descriptors_scenesvr_2eproto,
     file_level_service_descriptors_scenesvr_2eproto,
@@ -387,8 +435,10 @@ namespace inner {
 
 class InnerScenesvr::_Internal {
  public:
-  static const ::inner::InnerScenesvr_Fromgateway_Test& fromgateway_test(const InnerScenesvr* msg);
-  static const ::inner::InnerScenesvr_Fromgateway_ClientMsg& fromgateway_clientmsg(const InnerScenesvr* msg);
+  static const ::inner::InnerScenesvr_Fromgate_Test& fromgate_test(const InnerScenesvr* msg);
+  static const ::inner::InnerScenesvr_Fromgate_serverRegister& fromgate_serverregister(const InnerScenesvr* msg);
+  static const ::inner::InnerScenesvr_Fromgate_createRole& fromgate_createrole(const InnerScenesvr* msg);
+  static const ::inner::InnerScenesvr_Fromgate_ClientMsg& fromgate_clientmsg(const InnerScenesvr* msg);
   static const ::inner::InnerScenesvr_Fromfriend_Test& fromfriend_test(const InnerScenesvr* msg);
   static const ::inner::InnerScenesvr_Fromfriend_ReturnItem& fromfriend_returnitem(const InnerScenesvr* msg);
   static const ::inner::InnerScenesvr_Fromfriend_GiftReceived& fromfriend_giftreceived(const InnerScenesvr* msg);
@@ -399,13 +449,21 @@ class InnerScenesvr::_Internal {
   static const ::inner::InnerScenesvr_Fromfriend_FriendUpdate& fromfriend_friendupdate(const InnerScenesvr* msg);
 };
 
-const ::inner::InnerScenesvr_Fromgateway_Test&
-InnerScenesvr::_Internal::fromgateway_test(const InnerScenesvr* msg) {
-  return *msg->Fromgate_.fromgateway_test_;
+const ::inner::InnerScenesvr_Fromgate_Test&
+InnerScenesvr::_Internal::fromgate_test(const InnerScenesvr* msg) {
+  return *msg->Fromgate_.fromgate_test_;
 }
-const ::inner::InnerScenesvr_Fromgateway_ClientMsg&
-InnerScenesvr::_Internal::fromgateway_clientmsg(const InnerScenesvr* msg) {
-  return *msg->Fromgate_.fromgateway_clientmsg_;
+const ::inner::InnerScenesvr_Fromgate_serverRegister&
+InnerScenesvr::_Internal::fromgate_serverregister(const InnerScenesvr* msg) {
+  return *msg->Fromgate_.fromgate_serverregister_;
+}
+const ::inner::InnerScenesvr_Fromgate_createRole&
+InnerScenesvr::_Internal::fromgate_createrole(const InnerScenesvr* msg) {
+  return *msg->Fromgate_.fromgate_createrole_;
+}
+const ::inner::InnerScenesvr_Fromgate_ClientMsg&
+InnerScenesvr::_Internal::fromgate_clientmsg(const InnerScenesvr* msg) {
+  return *msg->Fromgate_.fromgate_clientmsg_;
 }
 const ::inner::InnerScenesvr_Fromfriend_Test&
 InnerScenesvr::_Internal::fromfriend_test(const InnerScenesvr* msg) {
@@ -439,35 +497,65 @@ const ::inner::InnerScenesvr_Fromfriend_FriendUpdate&
 InnerScenesvr::_Internal::fromfriend_friendupdate(const InnerScenesvr* msg) {
   return *msg->Fromfriend_.fromfriend_friendupdate_;
 }
-void InnerScenesvr::set_allocated_fromgateway_test(::inner::InnerScenesvr_Fromgateway_Test* fromgateway_test) {
+void InnerScenesvr::set_allocated_fromgate_test(::inner::InnerScenesvr_Fromgate_Test* fromgate_test) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_Fromgate();
-  if (fromgateway_test) {
+  if (fromgate_test) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgateway_test);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgate_test);
     if (message_arena != submessage_arena) {
-      fromgateway_test = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, fromgateway_test, submessage_arena);
+      fromgate_test = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromgate_test, submessage_arena);
     }
-    set_has_fromgateway_test();
-    Fromgate_.fromgateway_test_ = fromgateway_test;
+    set_has_fromgate_test();
+    Fromgate_.fromgate_test_ = fromgate_test;
   }
-  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgateway_test)
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgate_test)
 }
-void InnerScenesvr::set_allocated_fromgateway_clientmsg(::inner::InnerScenesvr_Fromgateway_ClientMsg* fromgateway_clientmsg) {
+void InnerScenesvr::set_allocated_fromgate_serverregister(::inner::InnerScenesvr_Fromgate_serverRegister* fromgate_serverregister) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_Fromgate();
-  if (fromgateway_clientmsg) {
+  if (fromgate_serverregister) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgateway_clientmsg);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgate_serverregister);
     if (message_arena != submessage_arena) {
-      fromgateway_clientmsg = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, fromgateway_clientmsg, submessage_arena);
+      fromgate_serverregister = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromgate_serverregister, submessage_arena);
     }
-    set_has_fromgateway_clientmsg();
-    Fromgate_.fromgateway_clientmsg_ = fromgateway_clientmsg;
+    set_has_fromgate_serverregister();
+    Fromgate_.fromgate_serverregister_ = fromgate_serverregister;
   }
-  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgateway_clientmsg)
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgate_serverregister)
+}
+void InnerScenesvr::set_allocated_fromgate_createrole(::inner::InnerScenesvr_Fromgate_createRole* fromgate_createrole) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromgate();
+  if (fromgate_createrole) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgate_createrole);
+    if (message_arena != submessage_arena) {
+      fromgate_createrole = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromgate_createrole, submessage_arena);
+    }
+    set_has_fromgate_createrole();
+    Fromgate_.fromgate_createrole_ = fromgate_createrole;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgate_createrole)
+}
+void InnerScenesvr::set_allocated_fromgate_clientmsg(::inner::InnerScenesvr_Fromgate_ClientMsg* fromgate_clientmsg) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromgate();
+  if (fromgate_clientmsg) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromgate_clientmsg);
+    if (message_arena != submessage_arena) {
+      fromgate_clientmsg = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromgate_clientmsg, submessage_arena);
+    }
+    set_has_fromgate_clientmsg();
+    Fromgate_.fromgate_clientmsg_ = fromgate_clientmsg;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerScenesvr.fromgate_clientmsg)
 }
 void InnerScenesvr::set_allocated_fromfriend_test(::inner::InnerScenesvr_Fromfriend_Test* fromfriend_test) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -601,12 +689,20 @@ InnerScenesvr::InnerScenesvr(const InnerScenesvr& from)
   fromuser_ = from.fromuser_;
   clear_has_Fromgate();
   switch (from.Fromgate_case()) {
-    case kFromgatewayTest: {
-      _internal_mutable_fromgateway_test()->::inner::InnerScenesvr_Fromgateway_Test::MergeFrom(from._internal_fromgateway_test());
+    case kFromgateTest: {
+      _internal_mutable_fromgate_test()->::inner::InnerScenesvr_Fromgate_Test::MergeFrom(from._internal_fromgate_test());
       break;
     }
-    case kFromgatewayClientmsg: {
-      _internal_mutable_fromgateway_clientmsg()->::inner::InnerScenesvr_Fromgateway_ClientMsg::MergeFrom(from._internal_fromgateway_clientmsg());
+    case kFromgateServerregister: {
+      _internal_mutable_fromgate_serverregister()->::inner::InnerScenesvr_Fromgate_serverRegister::MergeFrom(from._internal_fromgate_serverregister());
+      break;
+    }
+    case kFromgateCreaterole: {
+      _internal_mutable_fromgate_createrole()->::inner::InnerScenesvr_Fromgate_createRole::MergeFrom(from._internal_fromgate_createrole());
+      break;
+    }
+    case kFromgateClientmsg: {
+      _internal_mutable_fromgate_clientmsg()->::inner::InnerScenesvr_Fromgate_ClientMsg::MergeFrom(from._internal_fromgate_clientmsg());
       break;
     }
     case FROMGATE_NOT_SET: {
@@ -686,15 +782,27 @@ void InnerScenesvr::SetCachedSize(int size) const {
 void InnerScenesvr::clear_Fromgate() {
 // @@protoc_insertion_point(one_of_clear_start:inner.InnerScenesvr)
   switch (Fromgate_case()) {
-    case kFromgatewayTest: {
+    case kFromgateTest: {
       if (GetArenaForAllocation() == nullptr) {
-        delete Fromgate_.fromgateway_test_;
+        delete Fromgate_.fromgate_test_;
       }
       break;
     }
-    case kFromgatewayClientmsg: {
+    case kFromgateServerregister: {
       if (GetArenaForAllocation() == nullptr) {
-        delete Fromgate_.fromgateway_clientmsg_;
+        delete Fromgate_.fromgate_serverregister_;
+      }
+      break;
+    }
+    case kFromgateCreaterole: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromgate_.fromgate_createrole_;
+      }
+      break;
+    }
+    case kFromgateClientmsg: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromgate_.fromgate_clientmsg_;
       }
       break;
     }
@@ -790,18 +898,34 @@ const char* InnerScenesvr::_InternalParse(const char* ptr, ::_pbi::ParseContext*
         } else
           goto handle_unusual;
         continue;
-      // .inner.InnerScenesvr_Fromgateway_Test fromgateway_test = 101;
+      // .inner.InnerScenesvr_Fromgate_Test fromgate_test = 101;
       case 101:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_fromgateway_test(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_fromgate_test(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .inner.InnerScenesvr_Fromgateway_ClientMsg fromgateway_clientmsg = 102;
+      // .inner.InnerScenesvr_Fromgate_serverRegister fromgate_serverregister = 102;
       case 102:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_fromgateway_clientmsg(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_fromgate_serverregister(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerScenesvr_Fromgate_createRole fromgate_createrole = 103;
+      case 103:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromgate_createrole(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerScenesvr_Fromgate_ClientMsg fromgate_clientmsg = 104;
+      case 104:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromgate_clientmsg(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -905,18 +1029,32 @@ uint8_t* InnerScenesvr::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_fromuser(), target);
   }
 
-  // .inner.InnerScenesvr_Fromgateway_Test fromgateway_test = 101;
-  if (_internal_has_fromgateway_test()) {
+  // .inner.InnerScenesvr_Fromgate_Test fromgate_test = 101;
+  if (_internal_has_fromgate_test()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(101, _Internal::fromgateway_test(this),
-        _Internal::fromgateway_test(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(101, _Internal::fromgate_test(this),
+        _Internal::fromgate_test(this).GetCachedSize(), target, stream);
   }
 
-  // .inner.InnerScenesvr_Fromgateway_ClientMsg fromgateway_clientmsg = 102;
-  if (_internal_has_fromgateway_clientmsg()) {
+  // .inner.InnerScenesvr_Fromgate_serverRegister fromgate_serverregister = 102;
+  if (_internal_has_fromgate_serverregister()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(102, _Internal::fromgateway_clientmsg(this),
-        _Internal::fromgateway_clientmsg(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(102, _Internal::fromgate_serverregister(this),
+        _Internal::fromgate_serverregister(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerScenesvr_Fromgate_createRole fromgate_createrole = 103;
+  if (_internal_has_fromgate_createrole()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(103, _Internal::fromgate_createrole(this),
+        _Internal::fromgate_createrole(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerScenesvr_Fromgate_ClientMsg fromgate_clientmsg = 104;
+  if (_internal_has_fromgate_clientmsg()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(104, _Internal::fromgate_clientmsg(this),
+        _Internal::fromgate_clientmsg(this).GetCachedSize(), target, stream);
   }
 
   // .inner.InnerScenesvr_Fromfriend_Test fromfriend_test = 201;
@@ -997,18 +1135,32 @@ size_t InnerScenesvr::ByteSizeLong() const {
   }
 
   switch (Fromgate_case()) {
-    // .inner.InnerScenesvr_Fromgateway_Test fromgateway_test = 101;
-    case kFromgatewayTest: {
+    // .inner.InnerScenesvr_Fromgate_Test fromgate_test = 101;
+    case kFromgateTest: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Fromgate_.fromgateway_test_);
+          *Fromgate_.fromgate_test_);
       break;
     }
-    // .inner.InnerScenesvr_Fromgateway_ClientMsg fromgateway_clientmsg = 102;
-    case kFromgatewayClientmsg: {
+    // .inner.InnerScenesvr_Fromgate_serverRegister fromgate_serverregister = 102;
+    case kFromgateServerregister: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Fromgate_.fromgateway_clientmsg_);
+          *Fromgate_.fromgate_serverregister_);
+      break;
+    }
+    // .inner.InnerScenesvr_Fromgate_createRole fromgate_createrole = 103;
+    case kFromgateCreaterole: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromgate_.fromgate_createrole_);
+      break;
+    }
+    // .inner.InnerScenesvr_Fromgate_ClientMsg fromgate_clientmsg = 104;
+    case kFromgateClientmsg: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromgate_.fromgate_clientmsg_);
       break;
     }
     case FROMGATE_NOT_SET: {
@@ -1102,12 +1254,20 @@ void InnerScenesvr::MergeFrom(const InnerScenesvr& from) {
     _internal_set_fromuser(from._internal_fromuser());
   }
   switch (from.Fromgate_case()) {
-    case kFromgatewayTest: {
-      _internal_mutable_fromgateway_test()->::inner::InnerScenesvr_Fromgateway_Test::MergeFrom(from._internal_fromgateway_test());
+    case kFromgateTest: {
+      _internal_mutable_fromgate_test()->::inner::InnerScenesvr_Fromgate_Test::MergeFrom(from._internal_fromgate_test());
       break;
     }
-    case kFromgatewayClientmsg: {
-      _internal_mutable_fromgateway_clientmsg()->::inner::InnerScenesvr_Fromgateway_ClientMsg::MergeFrom(from._internal_fromgateway_clientmsg());
+    case kFromgateServerregister: {
+      _internal_mutable_fromgate_serverregister()->::inner::InnerScenesvr_Fromgate_serverRegister::MergeFrom(from._internal_fromgate_serverregister());
+      break;
+    }
+    case kFromgateCreaterole: {
+      _internal_mutable_fromgate_createrole()->::inner::InnerScenesvr_Fromgate_createRole::MergeFrom(from._internal_fromgate_createrole());
+      break;
+    }
+    case kFromgateClientmsg: {
+      _internal_mutable_fromgate_clientmsg()->::inner::InnerScenesvr_Fromgate_ClientMsg::MergeFrom(from._internal_fromgate_clientmsg());
       break;
     }
     case FROMGATE_NOT_SET: {
@@ -1183,30 +1343,30 @@ void InnerScenesvr::InternalSwap(InnerScenesvr* other) {
 
 // ===================================================================
 
-class InnerScenesvr_Fromgateway_Test::_Internal {
+class InnerScenesvr_Fromgate_Test::_Internal {
  public:
 };
 
-InnerScenesvr_Fromgateway_Test::InnerScenesvr_Fromgateway_Test(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+InnerScenesvr_Fromgate_Test::InnerScenesvr_Fromgate_Test(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgateway_Test)
+  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgate_Test)
 }
-InnerScenesvr_Fromgateway_Test::InnerScenesvr_Fromgateway_Test(const InnerScenesvr_Fromgateway_Test& from)
+InnerScenesvr_Fromgate_Test::InnerScenesvr_Fromgate_Test(const InnerScenesvr_Fromgate_Test& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgateway_Test)
+  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgate_Test)
 }
 
 
 
 
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgateway_Test::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgate_Test::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgateway_Test::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgate_Test::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1214,7 +1374,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgateway_Test
 
 
 
-::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgateway_Test::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgate_Test::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
       file_level_metadata_scenesvr_2eproto[1]);
@@ -1222,17 +1382,227 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgateway_Test
 
 // ===================================================================
 
-class InnerScenesvr_Fromgateway_ClientMsg::_Internal {
+class InnerScenesvr_Fromgate_serverRegister::_Internal {
  public:
 };
 
-InnerScenesvr_Fromgateway_ClientMsg::InnerScenesvr_Fromgateway_ClientMsg(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+InnerScenesvr_Fromgate_serverRegister::InnerScenesvr_Fromgate_serverRegister(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgate_serverRegister)
+}
+InnerScenesvr_Fromgate_serverRegister::InnerScenesvr_Fromgate_serverRegister(const InnerScenesvr_Fromgate_serverRegister& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgate_serverRegister)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgate_serverRegister::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgate_serverRegister::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgate_serverRegister::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
+      file_level_metadata_scenesvr_2eproto[2]);
+}
+
+// ===================================================================
+
+class InnerScenesvr_Fromgate_createRole::_Internal {
+ public:
+};
+
+InnerScenesvr_Fromgate_createRole::InnerScenesvr_Fromgate_createRole(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgateway_ClientMsg)
+  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgate_createRole)
 }
-InnerScenesvr_Fromgateway_ClientMsg::InnerScenesvr_Fromgateway_ClientMsg(const InnerScenesvr_Fromgateway_ClientMsg& from)
+InnerScenesvr_Fromgate_createRole::InnerScenesvr_Fromgate_createRole(const InnerScenesvr_Fromgate_createRole& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  roleid_ = from.roleid_;
+  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgate_createRole)
+}
+
+inline void InnerScenesvr_Fromgate_createRole::SharedCtor() {
+roleid_ = uint64_t{0u};
+}
+
+InnerScenesvr_Fromgate_createRole::~InnerScenesvr_Fromgate_createRole() {
+  // @@protoc_insertion_point(destructor:inner.InnerScenesvr_Fromgate_createRole)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerScenesvr_Fromgate_createRole::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void InnerScenesvr_Fromgate_createRole::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerScenesvr_Fromgate_createRole::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerScenesvr_Fromgate_createRole)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  roleid_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerScenesvr_Fromgate_createRole::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 roleId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          roleid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerScenesvr_Fromgate_createRole::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerScenesvr_Fromgate_createRole)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 roleId = 1;
+  if (this->_internal_roleid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_roleid(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerScenesvr_Fromgate_createRole)
+  return target;
+}
+
+size_t InnerScenesvr_Fromgate_createRole::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerScenesvr_Fromgate_createRole)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 roleId = 1;
+  if (this->_internal_roleid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_roleid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgate_createRole::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerScenesvr_Fromgate_createRole::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgate_createRole::GetClassData() const { return &_class_data_; }
+
+void InnerScenesvr_Fromgate_createRole::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerScenesvr_Fromgate_createRole *>(to)->MergeFrom(
+      static_cast<const InnerScenesvr_Fromgate_createRole &>(from));
+}
+
+
+void InnerScenesvr_Fromgate_createRole::MergeFrom(const InnerScenesvr_Fromgate_createRole& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerScenesvr_Fromgate_createRole)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_roleid() != 0) {
+    _internal_set_roleid(from._internal_roleid());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerScenesvr_Fromgate_createRole::CopyFrom(const InnerScenesvr_Fromgate_createRole& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerScenesvr_Fromgate_createRole)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerScenesvr_Fromgate_createRole::IsInitialized() const {
+  return true;
+}
+
+void InnerScenesvr_Fromgate_createRole::InternalSwap(InnerScenesvr_Fromgate_createRole* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(roleid_, other->roleid_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgate_createRole::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
+      file_level_metadata_scenesvr_2eproto[3]);
+}
+
+// ===================================================================
+
+class InnerScenesvr_Fromgate_ClientMsg::_Internal {
+ public:
+};
+
+InnerScenesvr_Fromgate_ClientMsg::InnerScenesvr_Fromgate_ClientMsg(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerScenesvr_Fromgate_ClientMsg)
+}
+InnerScenesvr_Fromgate_ClientMsg::InnerScenesvr_Fromgate_ClientMsg(const InnerScenesvr_Fromgate_ClientMsg& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.InitDefault();
@@ -1243,25 +1613,25 @@ InnerScenesvr_Fromgateway_ClientMsg::InnerScenesvr_Fromgateway_ClientMsg(const I
     data_.Set(from._internal_data(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&module_, &from.module_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cmd_) -
-    reinterpret_cast<char*>(&module_)) + sizeof(cmd_));
-  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgateway_ClientMsg)
+  ::memcpy(&moduleid_, &from.moduleid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&cmdid_) -
+    reinterpret_cast<char*>(&moduleid_)) + sizeof(cmdid_));
+  // @@protoc_insertion_point(copy_constructor:inner.InnerScenesvr_Fromgate_ClientMsg)
 }
 
-inline void InnerScenesvr_Fromgateway_ClientMsg::SharedCtor() {
+inline void InnerScenesvr_Fromgate_ClientMsg::SharedCtor() {
 data_.InitDefault();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   data_.Set("", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&module_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&cmd_) -
-    reinterpret_cast<char*>(&module_)) + sizeof(cmd_));
+    reinterpret_cast<char*>(&moduleid_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cmdid_) -
+    reinterpret_cast<char*>(&moduleid_)) + sizeof(cmdid_));
 }
 
-InnerScenesvr_Fromgateway_ClientMsg::~InnerScenesvr_Fromgateway_ClientMsg() {
-  // @@protoc_insertion_point(destructor:inner.InnerScenesvr_Fromgateway_ClientMsg)
+InnerScenesvr_Fromgate_ClientMsg::~InnerScenesvr_Fromgate_ClientMsg() {
+  // @@protoc_insertion_point(destructor:inner.InnerScenesvr_Fromgate_ClientMsg)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1269,46 +1639,46 @@ InnerScenesvr_Fromgateway_ClientMsg::~InnerScenesvr_Fromgateway_ClientMsg() {
   SharedDtor();
 }
 
-inline void InnerScenesvr_Fromgateway_ClientMsg::SharedDtor() {
+inline void InnerScenesvr_Fromgate_ClientMsg::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   data_.Destroy();
 }
 
-void InnerScenesvr_Fromgateway_ClientMsg::SetCachedSize(int size) const {
+void InnerScenesvr_Fromgate_ClientMsg::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void InnerScenesvr_Fromgateway_ClientMsg::Clear() {
-// @@protoc_insertion_point(message_clear_start:inner.InnerScenesvr_Fromgateway_ClientMsg)
+void InnerScenesvr_Fromgate_ClientMsg::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerScenesvr_Fromgate_ClientMsg)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   data_.ClearToEmpty();
-  ::memset(&module_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cmd_) -
-      reinterpret_cast<char*>(&module_)) + sizeof(cmd_));
+  ::memset(&moduleid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cmdid_) -
+      reinterpret_cast<char*>(&moduleid_)) + sizeof(cmdid_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* InnerScenesvr_Fromgateway_ClientMsg::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* InnerScenesvr_Fromgate_ClientMsg::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 module = 1;
+      // uint32 moduleId = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          module_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          moduleid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 cmd = 2;
+      // uint32 cmdId = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          cmd_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          cmdid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1345,22 +1715,22 @@ failure:
 #undef CHK_
 }
 
-uint8_t* InnerScenesvr_Fromgateway_ClientMsg::_InternalSerialize(
+uint8_t* InnerScenesvr_Fromgate_ClientMsg::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerScenesvr_Fromgateway_ClientMsg)
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerScenesvr_Fromgate_ClientMsg)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 module = 1;
-  if (this->_internal_module() != 0) {
+  // uint32 moduleId = 1;
+  if (this->_internal_moduleid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_module(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_moduleid(), target);
   }
 
-  // uint32 cmd = 2;
-  if (this->_internal_cmd() != 0) {
+  // uint32 cmdId = 2;
+  if (this->_internal_cmdid() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cmd(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cmdid(), target);
   }
 
   // bytes data = 3;
@@ -1373,12 +1743,12 @@ uint8_t* InnerScenesvr_Fromgateway_ClientMsg::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerScenesvr_Fromgateway_ClientMsg)
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerScenesvr_Fromgate_ClientMsg)
   return target;
 }
 
-size_t InnerScenesvr_Fromgateway_ClientMsg::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:inner.InnerScenesvr_Fromgateway_ClientMsg)
+size_t InnerScenesvr_Fromgate_ClientMsg::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerScenesvr_Fromgate_ClientMsg)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1392,34 +1762,34 @@ size_t InnerScenesvr_Fromgateway_ClientMsg::ByteSizeLong() const {
         this->_internal_data());
   }
 
-  // uint32 module = 1;
-  if (this->_internal_module() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_module());
+  // uint32 moduleId = 1;
+  if (this->_internal_moduleid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_moduleid());
   }
 
-  // uint32 cmd = 2;
-  if (this->_internal_cmd() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cmd());
+  // uint32 cmdId = 2;
+  if (this->_internal_cmdid() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cmdid());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgateway_ClientMsg::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerScenesvr_Fromgate_ClientMsg::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    InnerScenesvr_Fromgateway_ClientMsg::MergeImpl
+    InnerScenesvr_Fromgate_ClientMsg::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgateway_ClientMsg::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromgate_ClientMsg::GetClassData() const { return &_class_data_; }
 
-void InnerScenesvr_Fromgateway_ClientMsg::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void InnerScenesvr_Fromgate_ClientMsg::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<InnerScenesvr_Fromgateway_ClientMsg *>(to)->MergeFrom(
-      static_cast<const InnerScenesvr_Fromgateway_ClientMsg &>(from));
+  static_cast<InnerScenesvr_Fromgate_ClientMsg *>(to)->MergeFrom(
+      static_cast<const InnerScenesvr_Fromgate_ClientMsg &>(from));
 }
 
 
-void InnerScenesvr_Fromgateway_ClientMsg::MergeFrom(const InnerScenesvr_Fromgateway_ClientMsg& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerScenesvr_Fromgateway_ClientMsg)
+void InnerScenesvr_Fromgate_ClientMsg::MergeFrom(const InnerScenesvr_Fromgate_ClientMsg& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerScenesvr_Fromgate_ClientMsg)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1427,27 +1797,27 @@ void InnerScenesvr_Fromgateway_ClientMsg::MergeFrom(const InnerScenesvr_Fromgate
   if (!from._internal_data().empty()) {
     _internal_set_data(from._internal_data());
   }
-  if (from._internal_module() != 0) {
-    _internal_set_module(from._internal_module());
+  if (from._internal_moduleid() != 0) {
+    _internal_set_moduleid(from._internal_moduleid());
   }
-  if (from._internal_cmd() != 0) {
-    _internal_set_cmd(from._internal_cmd());
+  if (from._internal_cmdid() != 0) {
+    _internal_set_cmdid(from._internal_cmdid());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void InnerScenesvr_Fromgateway_ClientMsg::CopyFrom(const InnerScenesvr_Fromgateway_ClientMsg& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerScenesvr_Fromgateway_ClientMsg)
+void InnerScenesvr_Fromgate_ClientMsg::CopyFrom(const InnerScenesvr_Fromgate_ClientMsg& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerScenesvr_Fromgate_ClientMsg)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool InnerScenesvr_Fromgateway_ClientMsg::IsInitialized() const {
+bool InnerScenesvr_Fromgate_ClientMsg::IsInitialized() const {
   return true;
 }
 
-void InnerScenesvr_Fromgateway_ClientMsg::InternalSwap(InnerScenesvr_Fromgateway_ClientMsg* other) {
+void InnerScenesvr_Fromgate_ClientMsg::InternalSwap(InnerScenesvr_Fromgate_ClientMsg* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -1457,17 +1827,17 @@ void InnerScenesvr_Fromgateway_ClientMsg::InternalSwap(InnerScenesvr_Fromgateway
       &other->data_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(InnerScenesvr_Fromgateway_ClientMsg, cmd_)
-      + sizeof(InnerScenesvr_Fromgateway_ClientMsg::cmd_)
-      - PROTOBUF_FIELD_OFFSET(InnerScenesvr_Fromgateway_ClientMsg, module_)>(
-          reinterpret_cast<char*>(&module_),
-          reinterpret_cast<char*>(&other->module_));
+      PROTOBUF_FIELD_OFFSET(InnerScenesvr_Fromgate_ClientMsg, cmdid_)
+      + sizeof(InnerScenesvr_Fromgate_ClientMsg::cmdid_)
+      - PROTOBUF_FIELD_OFFSET(InnerScenesvr_Fromgate_ClientMsg, moduleid_)>(
+          reinterpret_cast<char*>(&moduleid_),
+          reinterpret_cast<char*>(&other->moduleid_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgateway_ClientMsg::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromgate_ClientMsg::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[2]);
+      file_level_metadata_scenesvr_2eproto[4]);
 }
 
 // ===================================================================
@@ -1506,7 +1876,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerScenesvr_Fromfriend_Test:
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_Test::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[3]);
+      file_level_metadata_scenesvr_2eproto[5]);
 }
 
 // ===================================================================
@@ -1755,7 +2125,7 @@ void InnerScenesvr_Fromfriend_ReturnItem::InternalSwap(InnerScenesvr_Fromfriend_
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_ReturnItem::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[4]);
+      file_level_metadata_scenesvr_2eproto[6]);
 }
 
 // ===================================================================
@@ -2043,7 +2413,7 @@ void InnerScenesvr_Fromfriend_GiftReceived::InternalSwap(InnerScenesvr_Fromfrien
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_GiftReceived::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[5]);
+      file_level_metadata_scenesvr_2eproto[7]);
 }
 
 // ===================================================================
@@ -2314,7 +2684,7 @@ void InnerScenesvr_Fromfriend_GiftEmail::InternalSwap(InnerScenesvr_Fromfriend_G
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_GiftEmail::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[6]);
+      file_level_metadata_scenesvr_2eproto[8]);
 }
 
 // ===================================================================
@@ -2585,7 +2955,7 @@ void InnerScenesvr_Fromfriend_GiftExpire::InternalSwap(InnerScenesvr_Fromfriend_
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_GiftExpire::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[7]);
+      file_level_metadata_scenesvr_2eproto[9]);
 }
 
 // ===================================================================
@@ -2790,7 +3160,7 @@ void InnerScenesvr_Fromfriend_GiftVersion::InternalSwap(InnerScenesvr_Fromfriend
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_GiftVersion::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[8]);
+      file_level_metadata_scenesvr_2eproto[10]);
 }
 
 // ===================================================================
@@ -3015,7 +3385,7 @@ void InnerScenesvr_Fromfriend_FriendList::InternalSwap(InnerScenesvr_Fromfriend_
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_FriendList::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[9]);
+      file_level_metadata_scenesvr_2eproto[11]);
 }
 
 // ===================================================================
@@ -3240,7 +3610,7 @@ void InnerScenesvr_Fromfriend_FriendUpdate::InternalSwap(InnerScenesvr_Fromfrien
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerScenesvr_Fromfriend_FriendUpdate::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_scenesvr_2eproto_getter, &descriptor_table_scenesvr_2eproto_once,
-      file_level_metadata_scenesvr_2eproto[10]);
+      file_level_metadata_scenesvr_2eproto[12]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -3250,13 +3620,21 @@ template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr*
 Arena::CreateMaybeMessage< ::inner::InnerScenesvr >(Arena* arena) {
   return Arena::CreateMessageInternal< ::inner::InnerScenesvr >(arena);
 }
-template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgateway_Test*
-Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgateway_Test >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgateway_Test >(arena);
+template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgate_Test*
+Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgate_Test >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgate_Test >(arena);
 }
-template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgateway_ClientMsg*
-Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgateway_ClientMsg >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgateway_ClientMsg >(arena);
+template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgate_serverRegister*
+Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgate_serverRegister >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgate_serverRegister >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgate_createRole*
+Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgate_createRole >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgate_createRole >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromgate_ClientMsg*
+Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromgate_ClientMsg >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerScenesvr_Fromgate_ClientMsg >(arena);
 }
 template<> PROTOBUF_NOINLINE ::inner::InnerScenesvr_Fromfriend_Test*
 Arena::CreateMaybeMessage< ::inner::InnerScenesvr_Fromfriend_Test >(Arena* arena) {

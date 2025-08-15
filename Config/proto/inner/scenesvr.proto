@@ -8,7 +8,7 @@ message InnerScenesvr
     oneof Fromgate
     {
         InnerScenesvr_Fromgate_Test                              fromgate_test                          = 101;
-        InnerScenesvr_Fromgate_serverRegister                    fromgate_serverRegister                = 102;
+        InnerScenesvr_Fromgate_serverRegister                    fromgate_serverregister                = 102;
         InnerScenesvr_Fromgate_createRole                        fromgate_createrole                    = 103; 
         InnerScenesvr_Fromgate_ClientMsg                         fromgate_clientmsg                     = 104;
     }

@@ -32,9 +32,9 @@ void GateUser::sendCmdToSceneSvr(const tagMsgHead* pNetMsgHead)
 {
 	inner::InnerScenesvr ntf;
 	ntf.set_fromuser(getRoleId());
-	auto& clientMsg = *ntf.mutable_fromgateway_clientmsg();
-	clientMsg.set_module(pNetMsgHead->usModuleId);
-	clientMsg.set_cmd(pNetMsgHead->uiCmdId);
+	auto& clientMsg = *ntf.mutable_fromgate_clientmsg();
+	clientMsg.set_moduleid(pNetMsgHead->usModuleId);
+	clientMsg.set_cmdid(pNetMsgHead->uiCmdId);
 	clientMsg.set_data(NET_DATA_BUF(pNetMsgHead), NET_DATA_SIZE(pNetMsgHead));
 	gGateLogicIns->m_pGameNetface->Send_Msg(&ntf,26);
 }

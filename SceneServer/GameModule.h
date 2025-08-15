@@ -10,8 +10,10 @@ public:
 	virtual ~GameModule();
 	virtual void final();
 	virtual bool init(GameUser* pGameUser);
-	virtual uint32 Serialize() = 0;
-	virtual bool Unserialize() = 0;
+	virtual uint32 serialize() = 0;
+	virtual bool unserialize() = 0;
+public:
+	virtual bool handleClientMsg(uint32 cmdId, const std::string& data) = 0;
 public:
 	inline uint32 getType() const { return _mtype; }
 	inline GameUser* GameUserPtr() { return _pUser; }
