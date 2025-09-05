@@ -11,6 +11,7 @@ message InnerScenesvr
         InnerScenesvr_Fromgate_serverRegister                    fromgate_serverregister                = 102;
         InnerScenesvr_Fromgate_createRole                        fromgate_createrole                    = 103; 
         InnerScenesvr_Fromgate_ClientMsg                         fromgate_clientmsg                     = 104;
+        InnerScenesvr_Fromgate_ClientData                        fromgate_clientdata                    = 105;
     }
 	oneof Fromfriend
 	{
@@ -44,6 +45,11 @@ message InnerScenesvr_Fromgate_ClientMsg
     uint32 moduleId = 1;
     uint32 cmdId = 2;
     bytes data = 3;
+}
+
+message InnerScenesvr_Fromgate_ClientData
+{
+    bytes data = 1;
 }
 
 message InnerScenesvr_Fromfriend_Test

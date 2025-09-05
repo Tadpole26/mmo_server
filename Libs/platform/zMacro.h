@@ -18,5 +18,7 @@
 #define SAFE_DELETE(ptr) if(ptr) {delete (ptr); (ptr) = NULL;}
 #define SAFE_FREE(ptr)	if(ptr) { free(ptr); (ptr) = NULL;}
 
+#define MSGBUF_MAX (63 * 1024)
+
 
 

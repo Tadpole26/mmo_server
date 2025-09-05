@@ -1,6 +1,5 @@
 #pragma once
-#include "client.pb.h"
-
+#include "sdk.h"
 #include "svr_client.h"
 #include "en_de_code.h"
 #include "cUser.h"
@@ -44,9 +43,9 @@ public:
 	virtual void on_disconnect();
 	virtual bool Send(const tagMsgHead* pMsg);
 
-	void sendCmdToMe(google::protobuf::Message* pMessage, uint32 module, msg_id_t cmd, uint32 uiSequence, uint32 eCode);
-	void sendCmdToMe(const std::string& strMsg, uint32 module, msg_id_t cmd, uint32 uiSequence, uint32 eCode);
-	void sendCmdToSceneSvr(const tagMsgHead* pNetMsgHead);
+	void sendCmdToMe(google::protobuf::Message* pMessage, uint32 module, msg_id_t cmd, uint32 eCode);
+	void sendCmdToMe(const std::string& strMsg, uint32 module, msg_id_t cmd, uint32 eCode);
+	void forwardSceneSvr(const tagMsgHead* pNetMsgHead);
 
 	eUserStatus GetStatus() { return m_stStat.m_eStatus; }
 	bool UpdateStatus(eUserStatus eStatus);

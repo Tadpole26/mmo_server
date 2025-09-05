@@ -16,19 +16,9 @@ public:
 	svr_session();
 	~svr_session();
 
-	virtual bool Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
-
-	virtual bool Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
-
-	virtual bool Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
-
-	virtual bool sendInnerMsg(google::protobuf::Message* pMsg);
+	virtual bool sendMsg(google::protobuf::Message* pMsg, msg_id_t moduleId, uint16 cmdId = 0);
+	virtual bool sendMsg(const std::string& strMsg, msg_id_t moduleId, uint16 cmdId = 0);
+	virtual bool sendMsg(const uchar* buf, size_t size, msg_id_t moduleId, uint16 cmdId = 0);
 
 	virtual void Init();
 	virtual void Release();
@@ -54,20 +44,11 @@ public:
 	svr_reconn(bool bCache = true, uint32 CacheSec = DEF_CACHE_SECOND);
 	~svr_reconn();
 
-	virtual bool Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
-
-	virtual bool Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
-
-	virtual bool Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
-		, uint32 seqid = 0);
+	virtual bool sendMsg(google::protobuf::Message* pMsg, msg_id_t moduleId, uint16 cmdId = 0);
+	virtual bool sendMsg(const std::string& strMsg, msg_id_t moduleId, uint16 cmdId = 0);
+	virtual bool sendMsg(const uchar* buf, size_t size, msg_id_t moduleId, uint16 cmdId = 0);
 
 	virtual bool Send(const tagMsgHead* pMsg);
-	virtual bool sendInnerMsg(google::protobuf::Message* pMsg);
 
 	uint32 GetServerID() const { return m_dwServerID; }
 	void SetServerID(uint32 val) { m_dwServerID = val; }

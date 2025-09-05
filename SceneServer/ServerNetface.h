@@ -12,9 +12,6 @@ public:
 	ClientLogic(void);
 	~ClientLogic(void);
 public:
-	virtual void handle_logic_msg(const tagNetMsg* pNetMsg);
-	//netMsgFromGate();
-	//netMsgFromFamily();
-	//netMsgFromFriend();
-	//netMsgFromMap();
+	bool netMsgFromGate(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq) final;
+	bool netMsgFromFriend(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq) final;
 };

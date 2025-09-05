@@ -31,6 +31,8 @@
     <ClCompile Include="logincommon.pb.cc" />
     <ClCompile Include="client.pb.cc" />
     <ClCompile Include="gatesvr.pb.cc" />
+    <ClCompile Include="familysvr.pb.cc" />
+    <ClCompile Include="inner.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -63,6 +65,8 @@
     <ClInclude Include="logincommon.pb.h" />
     <ClInclude Include="client.pb.h" />
     <ClInclude Include="gatesvr.pb.h" />
+    <ClInclude Include="familysvr.pb.h" />
+    <ClInclude Include="inner.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

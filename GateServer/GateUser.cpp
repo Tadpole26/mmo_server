@@ -1,6 +1,8 @@
 #include "client.pb.h"
+#include "inner.pb.h"
 #include "login.pb.h"
 #include "scenesvr.pb.h"
+#include "zNullCmd.h"
 
 #include "GateUser.h"
 #include "util_time.h"
@@ -28,16 +30,13 @@ void GateUser::final()
 	cUser::final();
 }
 
-void GateUser::sendCmdToSceneSvr(const tagMsgHead* pNetMsgHead)
+void GateUser::forwardSceneSvr(const tagMsgHead* pNetMsgHead)
 {
-	inner::InnerScenesvr ntf;
-	ntf.set_fromuser(getRoleId());
-	auto& clientMsg = *ntf.mutable_fromgate_clientmsg();
-	clientMsg.set_moduleid(pNetMsgHead->usModuleId);
-	clientMsg.set_cmdid(pNetMsgHead->uiCmdId);
-	clientMsg.set_data(NET_DATA_BUF(pNetMsgHead), NET_DATA_SIZE(pNetMsgHead));
-	gGateLogicIns->m_pGameNetface->Send_Msg(&ntf,26);
-	//gGateLogicIns->m_pGameNetface->sendInnerMsg(&ntf);
+	inner::InnerScenesvr innerNtf;
+	innerNtf.set_fromuser(getRoleId());
+	auto& ntf = *innerNtf.mutable_fromgate_clientdata();
+	ntf.set_data(NET_DATA_BUF(pNetMsgHead), NET_DATA_SIZE(pNetMsgHead));
+	gGateLogicIns->m_pGameNetface->sendMsg(&innerNtf, inner::enInnerFirst_Scenesvr);
 }
 
 void GateUser::handle_msg(const tagMsgHead* pNetMsg)
@@ -47,10 +46,10 @@ void GateUser::handle_msg(const tagMsgHead* pNetMsg)
 	{
 		static client::ModuleLogin_Ntf_KeepHeart ntf;
 		ntf.set_servertime(GetCurrTime());
-		sendCmdToMe(&ntf, client::enModule_Login,client::enModuleLogin_Ntf_KeepHeart, pNetMsg->uiSeqid, 0);
+		sendCmdToMe(&ntf, client::enModule_Login,client::enModuleLogin_Ntf_KeepHeart, 0);
 		return;
 	}
-	sendCmdToSceneSvr(pNetMsg);
+	forwardSceneSvr(pNetMsg);
 	return;
 }
 
@@ -78,13 +77,13 @@ bool GateUser::Send(const tagMsgHead* pMsg)
 	return svr_session::Send(pMsg);
 }
 
-void GateUser::sendCmdToMe(google::protobuf::Message* pMessage, uint32 module, msg_id_t cmd, uint32 uiSequence, uint32 eCode)
+void GateUser::sendCmdToMe(google::protobuf::Message* pMessage, uint32 module, msg_id_t cmd, uint32 eCode)
 {
 	//Send_Msg(pMessage, cmd, module, eCode, uiSequence);
 }
 
 
-void GateUser::sendCmdToMe(const std::string& strMsg, uint32 module, msg_id_t cmd, uint32 uiSequence, uint32 eCode)
+void GateUser::sendCmdToMe(const std::string& strMsg, uint32 module, msg_id_t cmd, uint32 eCode)
 {
 	//Send_Msg(strMsg, usProtocol, usModule, eCode, uiSequence);
 }

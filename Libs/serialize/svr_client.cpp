@@ -8,21 +8,18 @@
 svr_session::svr_session() {}
 svr_session::~svr_session() {}
 
-bool svr_session::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_session::sendMsg(google::protobuf::Message* pMsg, msg_id_t moduleId, uint16 cmdId)
 {
 	if (pMsg == nullptr)
 	{
-		Log_Error("module:%u, cmd:%u, class:%s", usModule, usProtocol, typeid(*this).name());
+		Log_Error("module:%u, cmd:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
 
-	tagMsgHead* pNetMsgHead = MakeHeadMsg(pMsg, usModule, usProtocol, seqid, code);
+	tagMsgHead* pNetMsgHead = makeHeadMsg(pMsg, moduleId, cmdId);
 	if (!pNetMsgHead)
 	{
-		Log_Error("pNetMsgHead is null!, module:%u, cmd:%u, class:%s"
-			, usModule, usProtocol, typeid(*this).name());
+		Log_Error("pNetMsgHead is null!, moduleId:%u, cmdId:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
 	bool res = Send(pNetMsgHead);
@@ -30,58 +27,21 @@ bool svr_session::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
 	return res;
 }
 
-bool svr_session::Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_session::sendMsg(const std::string& strMsg, msg_id_t moduleId, uint16 cmdId)
 {
-	return Send_Msg((const uchar*)strMsg.c_str(), strMsg.size(), usProtocol, usModule, code, seqid);
+	return sendMsg((const uchar*)strMsg.c_str(), strMsg.size(), moduleId, cmdId);
 }
 
-bool svr_session::Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_session::sendMsg(const uchar* buf, size_t size, msg_id_t moduleId, uint16 cmdId)
 {
-	tagMsgHead* pNetMsgHead = MakeHeadMsg((const char*)buf, size, usModule, usProtocol, seqid, code);
+	tagMsgHead* pNetMsgHead = makeHeadMsg((const char*)buf, size, moduleId, cmdId);
 	if (!pNetMsgHead)
 	{
-		Log_Error("pNetMsgHead is null!, module:%u, cmd:%u, class:%s"
-			, usModule, usProtocol, typeid(*this).name());
+		Log_Error("pNetMsgHead is null!, moduleId:%u, cmdId:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
 	bool res = Send(pNetMsgHead);
 	CMsgMake::ClearMakeCache();
-	return res;
-}
-
-bool svr_session::sendInnerMsg(google::protobuf::Message* pMsg)
-{
-	if (pMsg == nullptr)
-	{
-		Log_Error("sendInnerMsg.!pMsg.class:%s", typeid(*this).name());
-		return false;
-	}
-	size_t msgLen = pMsg->ByteSizeLong();
-	if (msgLen > MSG_MAX_LEN)
-	{
-		Log_Error("sendInnerMsg.!msg len too long:%s", pMsg->GetDescriptor()->full_name().c_str());
-		return false;
-	}
-	std::string sendString;
-	try
-	{
-		if (!pMsg->SerializeToString(&sendString))
-		{
-			Log_Error("ser %s proto, fields:%s!", typeid(*pMsg).name(), pMsg->InitializationErrorString().c_str());
-			return false;
-		}
-		return true;
-	}
-	catch (const std::string& e)
-	{
-		Log_Error("ser %s proto, fields:%s!, error:%s!", typeid(*pMsg).name(), pMsg->InitializationErrorString().c_str(), e.c_str());
-	}
-	char* pMsgData = (char*)(sendString.c_str());
-	bool res = __sendInnerMsg(pMsgData, msgLen);
 	return res;
 }
 
@@ -131,20 +91,17 @@ svr_reconn::~svr_reconn()
 {
 }
 
-bool svr_reconn::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_reconn::sendMsg(google::protobuf::Message* pMsg, msg_id_t moduleId, uint16 cmdId)
 {
 	if (pMsg == nullptr)
 	{
-		Log_Error("Moduleid:%u, cmd:%u, class:%s", usModule, usProtocol, typeid(*this).name());
+		Log_Error("Moduleid:%u, cmd:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
-	tagMsgHead* pNetMsgHead = MakeHeadMsg(pMsg, usModule, usProtocol, seqid, code);
+	tagMsgHead* pNetMsgHead = makeHeadMsg(pMsg, moduleId, cmdId);
 	if (!pNetMsgHead)
 	{
-		Log_Error("pNetMsgHead is null!, module:%u, cmd:%u, class:%s"
-			, usModule, usProtocol, typeid(*this).name());
+		Log_Error("pNetMsgHead is null!, moduleId:%u, cmdId:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
 	bool res = Send(pNetMsgHead);
@@ -152,23 +109,17 @@ bool svr_reconn::Send_Msg(google::protobuf::Message* pMsg, msg_id_t usProtocol
 	return res;
 }
 
-bool svr_reconn::Send_Msg(const std::string& strMsg, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_reconn::sendMsg(const std::string& strMsg, msg_id_t moduleId, uint16 cmdId)
 {
-	return Send_Msg((const uchar*)strMsg.c_str()
-		, strMsg.size(), usProtocol, usModule, code, seqid);
+	return sendMsg((const uchar*)strMsg.c_str(), strMsg.size(), moduleId, cmdId);
 }
 
-bool svr_reconn::Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
-	, msg_id_t usModule, uint32 code
-	, uint32 seqid)
+bool svr_reconn::sendMsg(const uchar* buf, size_t size, msg_id_t moduleId, uint16 cmdId)
 {
-	tagMsgHead* pNetMsgHead = MakeHeadMsg((const char*)buf, size, usModule, usProtocol, seqid, code);
+	tagMsgHead* pNetMsgHead = makeHeadMsg((const char*)buf, size, moduleId, cmdId);
 	if (!pNetMsgHead)
 	{
-		Log_Error("pNetMsgHead is null!, module:%u, cmd:%u, class:%s"
-			, usModule, usProtocol, typeid(*this).name());
+		Log_Error("pNetMsgHead is null!, module:%u, cmd:%u, class:%s", moduleId, cmdId, typeid(*this).name());
 		return false;
 	}
 	bool res = Send(pNetMsgHead);
@@ -186,38 +137,6 @@ bool svr_reconn::Send(const tagMsgHead* pMsg)
 		return false;
 	}
 	return bRes;
-}
-
-bool svr_reconn::sendInnerMsg(google::protobuf::Message* pMsg)
-{
-	if (pMsg == nullptr)
-	{
-		Log_Error("sendInnerMsg.!pMsg.class:%s", typeid(*this).name());
-		return false;
-	}
-	size_t msgLen = pMsg->ByteSizeLong();
-	if (msgLen > MSG_MAX_LEN)
-	{
-		Log_Error("sendInnerMsg.!msg len too long:%s", pMsg->GetDescriptor()->full_name().c_str());
-		return false;
-	}
-	std::string sendString;
-	try
-	{
-		if (!pMsg->SerializeToString(&sendString))
-		{
-			Log_Error("ser %s proto, fields:%s!", typeid(*pMsg).name(), pMsg->InitializationErrorString().c_str());
-			return false;
-		}
-		return true;
-	}
-	catch (const std::string& e)
-	{
-		Log_Error("ser %s proto, fields:%s!, error:%s!", typeid(*pMsg).name(), pMsg->InitializationErrorString().c_str(), e.c_str());
-	}
-	char* pMsgData = (char*)(sendString.c_str());
-	bool res = __sendInnerMsg(pMsgData, msgLen);
-	return res;
 }
 
 void svr_reconn::handle_msgv(const void* pMsg)

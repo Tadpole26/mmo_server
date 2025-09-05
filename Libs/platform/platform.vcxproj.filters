@@ -210,6 +210,12 @@
     <ClInclude Include="cNetService.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="zNullCmd.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="cNeterface.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="util_random.cpp">
@@ -315,6 +321,9 @@
       <Filter>sdk</Filter>
     </ClCompile>
     <ClCompile Include="cNetService.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="cNeterface.cpp">
       <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>

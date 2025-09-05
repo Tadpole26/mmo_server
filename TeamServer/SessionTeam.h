@@ -102,20 +102,20 @@ public:
 	void changeMemberIndex(uint32 index);
 	void cancelVote();
 public:
-	void addToSzQueueTarget();							//¶Ó³¤´´½¨¶ÓÎé,¾Í¼ÓÈëÏÔÊ¾Ãæ°å
+	void addToSzQueueTarget();							//ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½
 	void removeFromSzQueueTarget();
-	void addToSzQueueLevelAll();						//¶Ó³¤¿ªÆôÕÐÄ¼¶ÓÓÑ¼ÓÈëÆ¥Åä¶ÓÁÐ
+	void addToSzQueueLevelAll();						//ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ñ¼ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½
 	void removeFromSzQueueLevelAll();
 private:
 	TeamMember* __createMember(TeamUser* pUser);
 	void __addMember(TeamMember* pMember, uint32 index);
 	void __removeMember(TeamMember* pMember);
 public:
-	SizeQueueTargetPairT szQueueTargetPair;				//team¶ÔÓ¦target¶ÓÁÐ
-	SizeQueueLevelListT szQueueLevelList;				//team¶ÔÓ¦µÈ¼¶Çø¼ä,ËùÒÔÒ»¸öÆ¥Åä¶ÓÎé¶ÔÓ¦¶à¸ö¶ÓÁÐÖÐ
+	SizeQueueTargetPairT szQueueTargetPair;				//teamï¿½ï¿½Ó¦targetï¿½ï¿½ï¿½ï¿½
+	SizeQueueLevelListT szQueueLevelList;				//teamï¿½ï¿½Ó¦ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 private:
 	zTeamIdType _teamId = 0;
-	uint32 _targetId = 0;								//¶ÓÎéÄ¿±ê(pve¸±±¾ÀàÐÍ)
+	uint32 _targetId = 0;								//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½(pveï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	MemberListT _members;
 	MemberIndexListT _indexs;
 	TeamLeader* _leader = nullptr;

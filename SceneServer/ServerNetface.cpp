@@ -11,54 +11,54 @@
 ClientLogic::ClientLogic() { }
 ClientLogic::~ClientLogic() { }
 
-void ClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
+bool ClientLogic::netMsgFromGate(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq)
 {
-	const tagHostHd& stHd = pNetMsg->m_hd;
-	tagMsgHead* pMsgHead = (tagMsgHead*)(pNetMsg->m_body);
-	inner::InnerScenesvr innerReq;
-	PARSE_PTL_HEAD(innerReq, pMsgHead);
-	zRoleIdType roleId = innerReq.fromuser();
 	switch (innerReq.Fromgate_case())
 	{
 	case inner::InnerScenesvr::FromgateCase::kFromgateServerregister:
-	{
-		CGateSession* pServer = new CGateSession();
-		if (!pServer)
 		{
-			Log_Error("handle_logic_msg.!pServer");
-			return;
+			CGateSession* pServer = new CGateSession();
+			if (!pServer)
+			{
+				Log_Error("handle_logic_msg.!pServer");
+				return false;
+			}
+			add_session(pServer, hostHead, MAX_SIZE_512M);
+			pServer->SetServerId(hashId);
+			Log_Info("handle_logic_msg.svr connect me");
 		}
-		add_session(pServer, pNetMsg->m_hd, MAX_SIZE_512M);
-		pServer->SetServerId(1);
-		Log_Info("handle_logic_msg.svr connect me");
-	}
-	break;
+		break;
 	case inner::InnerScenesvr::FromgateCase::kFromgateCreaterole:
-	{
-		if (!has_session(pNetMsg->m_hd)) return;
-		auto *pGatesvr = gSceneLogic->getGateSvr(1);
-		if (!pGatesvr)
 		{
-			Log_Error("handle_logic_msg.!pServer");
-			return;
+			if (!has_session(hostHead)) return false;
+			auto* pGatesvr = gSceneLogic->getGateSvr(1);
+			if (!pGatesvr)
+			{
+				Log_Error("handle_logic_msg.!pServer");
+				return false;
+			}
+			pGatesvr->OnCreateRole(innerReq);
 		}
-		pGatesvr->OnCreateRole(innerReq);
-	}
-	break;
+		break;
 	case inner::InnerScenesvr::FromgateCase::kFromgateClientmsg:
-	{
-		auto *pGatesvr = gSceneLogic->getGateSvr(1);
-		if (!pGatesvr)
 		{
-			Log_Error("handle_logic_msg.!pServer");
-			return;
+			auto* pGatesvr = gSceneLogic->getGateSvr(0);
+			if (!pGatesvr)
+			{
+				Log_Error("handle_logic_msg.!pServer");
+				return false;
+			}
+			pGatesvr->handClientMsg(innerReq);
 		}
-		pGatesvr->handClientMsg(innerReq);
-	}
-	break;
+		break;
 	default:
-	{
-		CSvrLogicFace::handle_logic_msg(pNetMsg);
+		Log_Error("netMsgFromGate.%s", innerReq.ShortDebugString().c_str());
+		break;
 	}
-	}
+	return true;
+}
+
+bool ClientLogic::netMsgFromFriend(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq)
+{
+	return true;
 }

@@ -1,3 +1,4 @@
+#include "inner.pb.h"
 #include "scenesvr.pb.h"
 
 #include "CGameNetface.h"
@@ -34,7 +35,7 @@ void CGameNetface::on_connect()
 {
 	inner::InnerScenesvr ntf;
 	auto& innerReq = *ntf.mutable_fromgate_serverregister();
-	Send_Msg(&ntf, 0, 0);
+	sendMsg(&ntf, inner::enInnerFirst_Scenesvr, 0);
 	CTcpReconn::on_connect();
 }
 

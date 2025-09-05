@@ -8,18 +8,16 @@
 #include <event2/buffer.h>
 
 tagMsgHead* make_head_msg(const char* pBuf, size_t size
-    , char* arrBuffer, uint8_t usModule, uint32_t uiCmd
-    , uint32_t uiSequence, uint32_t eCode)
+    , char* arrBuffer, uint8_t moduleId, uint16_t cmdId, uint32_t eCode)
 {
     size_t len = NET_HEAD_SIZE + size;
 
     tagMsgHead* pNetMsgHead = (tagMsgHead*)(arrBuffer);
     if (pNetMsgHead == nullptr) return nullptr;
 
-    pNetMsgHead->usModuleId = usModule;
-    pNetMsgHead->uiCmdId = uiCmd;
+    pNetMsgHead->usModuleId = moduleId;
+    pNetMsgHead->uiCmdId = cmdId;
     pNetMsgHead->uiCode = eCode;
-    pNetMsgHead->uiSeqid = uiSequence;
     pNetMsgHead->uiFlag = GAME_BASE_FLAG;
     pNetMsgHead->uiLen = (uint32_t)len;
     pNetMsgHead->uiCrc = 0;
@@ -32,7 +30,7 @@ tagMsgHead* make_head_msg(const char* pBuf, size_t size
 
     if (len > MSG_MAX_LEN)
     {
-        Log_Error("msg size is too long! module:%u, len:%u", usModule, uiCmd, len);
+        Log_Error("msg size is too long! module:%u, len:%u", moduleId, cmdId, len);
         return nullptr;
     }
 
@@ -101,28 +99,6 @@ bool my_send_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
     , conn_oid_t coid, const tagMsgHead* pMsg)
 {
     return my_multicast_conn_msg(pDispatcher, toid, &coid, 1, pMsg);
-}
-
-bool my_send_inner_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
-    , conn_oid_t coid, const char* pMsg, size_t len)
-{
-    if (toid == invalid_thread_oid) return false;
-    if (pMsg == nullptr || !len) return false;
-    if (len > MSG_MAX_LEN)
-    {
-        Log_Error("msg size is too long! len:%u", len);
-        return false;
-    }
-    char* pBodyMsg = nullptr;
-    size_t pkgSize = (size_t)NET_HOST_SIZE + len;
-    tagNetMsg* pHostMsg = net_msg_alloc((uint32)pkgSize);
-    if (pHostMsg == nullptr) return false;
-    pHostMsg->m_hd.m_type = HMT_NET;
-    pHostMsg->m_hd.m_threadOid = toid;
-    pHostMsg->m_hd.m_connOid = coid;
-    pBodyMsg = (char*)pHostMsg->m_body;
-    memcpy(pBodyMsg, pMsg, len);
-    return pHostMsg;
 }
 
 bool my_multicast_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid

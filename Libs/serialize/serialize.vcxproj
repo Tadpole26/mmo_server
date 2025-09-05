@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClCompile Include="msg_make.cpp" />
     <ClCompile Include="parse_pb.cpp" />
+    <ClCompile Include="server_logic_face.cpp" />
     <ClCompile Include="svr_client.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

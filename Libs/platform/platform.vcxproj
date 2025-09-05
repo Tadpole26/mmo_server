@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="cGame.h" />
     <ClInclude Include="cMatch.h" />
+    <ClInclude Include="cNeterface.h" />
     <ClInclude Include="cNetService.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cServer.h" />
@@ -216,6 +217,7 @@
     <ClInclude Include="zMacro.h" />
     <ClInclude Include="zMap.h" />
     <ClInclude Include="zMisc.h" />
+    <ClInclude Include="zNullCmd.h" />
     <ClInclude Include="zPos.h" />
     <ClInclude Include="zRoleMgr.h" />
     <ClInclude Include="zSceneMgr.h" />
@@ -225,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cGame.cpp" />
+    <ClCompile Include="cNeterface.cpp" />
     <ClCompile Include="cNetService.cpp" />
     <ClCompile Include="cScene.cpp" />
     <ClCompile Include="cServerInfoMgr.cpp" />

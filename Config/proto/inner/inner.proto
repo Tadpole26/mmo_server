@@ -1,0 +1,12 @@
+syntax = "proto3";
+package inner;
+
+enum enInnerFirst
+{
+    enInnerFirst_None               = 0;
+    enInnerFirst_Scenesvr           = 1;
+    enInnerFirst_Gate               = 2;
+
+    enInnerFirst_RealMax            = 3;
+    enInnerFirst_Max                = 1024;
+}
