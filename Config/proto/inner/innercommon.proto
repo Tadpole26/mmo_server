@@ -171,6 +171,7 @@ message InnerGameEventLogin
 	{	
 		InnerGameEventLoginTeamsvr teamsvr = 1;
 		InnerGameEventLoginFriendsvr friendsvr = 2;
+		InnerGameEventLoginFamilysvr familysvr = 3;
 	}
 }
 
@@ -192,12 +193,18 @@ message InnerGameEventLoginFriendsvr
 	uint64 llTeamId = 3;
 }
 
+message InnerGameEventLoginFamilysvr
+{
+	common.RoleBrief brief = 1;
+}
+
 message InnerGameEventLogout
 {
 	oneof server
 	{
 		InnerGameEventLogoutTeamvr teamsvr = 1;
 		InnerGameEventLogoutFriendsvr friendsvr = 2;
+		InnerGameEventLogoutFamilysvr familysvr = 3;
 	}
 }
 
@@ -209,12 +216,17 @@ message InnerGameEventLogoutFriendsvr
 {
 }
 
+message InnerGameEventLogoutFamilysvr
+{
+}
+
 message InnerGameEventOnline
 {
 	oneof server
 	{
 		InnerGameEventOnlineTeamsvr teamsvr = 1;
 		InnerGameEventOnlineFriendsvr friendsvr = 2;
+		InnerGameEventOnlineFamilysvr familysvr = 3;
 	}
 }
 
@@ -231,12 +243,18 @@ message InnerGameEventOnlineFriendsvr
 	uint64 llTeamId = 3;
 }
 
+message InnerGameEventOnlineFamilysvr
+{
+	common.RoleBrief brief = 1;
+}
+
 message InnerGameEventOffline
 {
 	oneof server
 	{
 		InnerGameEventOfflineTeamsvr teamsvr = 1;
 		InnerGameEventOfflineFriendsvr friendsvr = 2;
+		InnerGameEventOfflineFamilysvr familysvr = 3;
 	}
 }
 
@@ -248,12 +266,18 @@ message InnerGameEventOfflineFriendsvr
 {
 }
 
+message InnerGameEventOfflineFamilysvr
+{
+
+}
+
 message InnerGameEventChangeMap
 {
 	oneof server
 	{
 		InnerGameEventChangeMapTeamsvr teamsvr = 1;
 		InnerGameEventChangeMapFriendsvr friendsvr = 2;
+		InnerGameEventChangeMapFamilysvr familysvr = 3;
 	}
 	uint32 uiProcDirect = 100;
 }
@@ -270,6 +294,10 @@ message InnerGameEventChangeMapTeamsvr
 }
 
 message InnerGameEventChangeMapFriendsvr
+{
+}
+
+message InnerGameEventChangeMapFamilysvr
 {
 }
 
@@ -316,6 +344,7 @@ message InnerGameEventWakeup
 	{
 		InnerGameEventWakeupTeamsvr teamsvr = 1;
 		InnerGameEventWakeupFriendsvr friendsvr = 2;
+		InnerGameEventWakeupFamilysvr familysvr = 3;
 	}
 }
 
@@ -335,4 +364,9 @@ message InnerGameEventWakeupFriendsvr
 	InnerFriendInfo oInfo = 1;
 	InnerFriendGiftList oGifts = 2;
 	uint64 llTeamId = 3;
+}
+
+message InnerGameEventWakeupFamilysvr
+{
+	common.RoleBrief brief = 1;
 }

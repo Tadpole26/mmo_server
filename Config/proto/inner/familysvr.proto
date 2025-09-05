@@ -7,10 +7,21 @@ message InnerFamilysvr
 	oneof Fromscene
 	{
 		InnerFamilysvr_Fromscene_Test 								fromscene_test 					= 101;
+		InnerFamilysvr_Fromscene_GameEvent							fromscene_gameevent 			= 102;
+		InnerFamilysvr_Fromscene_UpdateUserInfo						fromscene_updateuserinfo		= 103;
 	}
 }
 
-
 message InnerFamilysvr_Fromscene_Test
 {
+}
+
+message InnerFamilysvr_Fromscene_GameEvent
+{
+
+}
+
+message InnerFamilysvr_Fromscene_UpdateUserInfo
+{
+	
 }

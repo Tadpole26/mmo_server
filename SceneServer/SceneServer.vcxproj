@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FamilyNetface.cpp" />
     <ClCompile Include="GameUserMgr.cpp" />
     <ClCompile Include="SceneLogic.cpp" />
     <ClCompile Include="GameUser.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="SceneServer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FamilyNetface.h" />
     <ClInclude Include="GameUserMgr.h" />
     <ClInclude Include="SceneLogic.h" />
     <ClInclude Include="GameUser.h" />

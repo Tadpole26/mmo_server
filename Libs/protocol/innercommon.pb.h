@@ -104,6 +104,9 @@ extern InnerGameEventDefaultTypeInternal _InnerGameEvent_default_instance_;
 class InnerGameEventChangeMap;
 struct InnerGameEventChangeMapDefaultTypeInternal;
 extern InnerGameEventChangeMapDefaultTypeInternal _InnerGameEventChangeMap_default_instance_;
+class InnerGameEventChangeMapFamilysvr;
+struct InnerGameEventChangeMapFamilysvrDefaultTypeInternal;
+extern InnerGameEventChangeMapFamilysvrDefaultTypeInternal _InnerGameEventChangeMapFamilysvr_default_instance_;
 class InnerGameEventChangeMapFriendsvr;
 struct InnerGameEventChangeMapFriendsvrDefaultTypeInternal;
 extern InnerGameEventChangeMapFriendsvrDefaultTypeInternal _InnerGameEventChangeMapFriendsvr_default_instance_;
@@ -137,6 +140,9 @@ extern InnerGameEventDestryFriendsvrDefaultTypeInternal _InnerGameEventDestryFri
 class InnerGameEventLogin;
 struct InnerGameEventLoginDefaultTypeInternal;
 extern InnerGameEventLoginDefaultTypeInternal _InnerGameEventLogin_default_instance_;
+class InnerGameEventLoginFamilysvr;
+struct InnerGameEventLoginFamilysvrDefaultTypeInternal;
+extern InnerGameEventLoginFamilysvrDefaultTypeInternal _InnerGameEventLoginFamilysvr_default_instance_;
 class InnerGameEventLoginFriendsvr;
 struct InnerGameEventLoginFriendsvrDefaultTypeInternal;
 extern InnerGameEventLoginFriendsvrDefaultTypeInternal _InnerGameEventLoginFriendsvr_default_instance_;
@@ -146,6 +152,9 @@ extern InnerGameEventLoginTeamsvrDefaultTypeInternal _InnerGameEventLoginTeamsvr
 class InnerGameEventLogout;
 struct InnerGameEventLogoutDefaultTypeInternal;
 extern InnerGameEventLogoutDefaultTypeInternal _InnerGameEventLogout_default_instance_;
+class InnerGameEventLogoutFamilysvr;
+struct InnerGameEventLogoutFamilysvrDefaultTypeInternal;
+extern InnerGameEventLogoutFamilysvrDefaultTypeInternal _InnerGameEventLogoutFamilysvr_default_instance_;
 class InnerGameEventLogoutFriendsvr;
 struct InnerGameEventLogoutFriendsvrDefaultTypeInternal;
 extern InnerGameEventLogoutFriendsvrDefaultTypeInternal _InnerGameEventLogoutFriendsvr_default_instance_;
@@ -155,6 +164,9 @@ extern InnerGameEventLogoutTeamvrDefaultTypeInternal _InnerGameEventLogoutTeamvr
 class InnerGameEventOffline;
 struct InnerGameEventOfflineDefaultTypeInternal;
 extern InnerGameEventOfflineDefaultTypeInternal _InnerGameEventOffline_default_instance_;
+class InnerGameEventOfflineFamilysvr;
+struct InnerGameEventOfflineFamilysvrDefaultTypeInternal;
+extern InnerGameEventOfflineFamilysvrDefaultTypeInternal _InnerGameEventOfflineFamilysvr_default_instance_;
 class InnerGameEventOfflineFriendsvr;
 struct InnerGameEventOfflineFriendsvrDefaultTypeInternal;
 extern InnerGameEventOfflineFriendsvrDefaultTypeInternal _InnerGameEventOfflineFriendsvr_default_instance_;
@@ -164,6 +176,9 @@ extern InnerGameEventOfflineTeamsvrDefaultTypeInternal _InnerGameEventOfflineTea
 class InnerGameEventOnline;
 struct InnerGameEventOnlineDefaultTypeInternal;
 extern InnerGameEventOnlineDefaultTypeInternal _InnerGameEventOnline_default_instance_;
+class InnerGameEventOnlineFamilysvr;
+struct InnerGameEventOnlineFamilysvrDefaultTypeInternal;
+extern InnerGameEventOnlineFamilysvrDefaultTypeInternal _InnerGameEventOnlineFamilysvr_default_instance_;
 class InnerGameEventOnlineFriendsvr;
 struct InnerGameEventOnlineFriendsvrDefaultTypeInternal;
 extern InnerGameEventOnlineFriendsvrDefaultTypeInternal _InnerGameEventOnlineFriendsvr_default_instance_;
@@ -182,6 +197,9 @@ extern InnerGameEventRebirthTeamsvrDefaultTypeInternal _InnerGameEventRebirthTea
 class InnerGameEventWakeup;
 struct InnerGameEventWakeupDefaultTypeInternal;
 extern InnerGameEventWakeupDefaultTypeInternal _InnerGameEventWakeup_default_instance_;
+class InnerGameEventWakeupFamilysvr;
+struct InnerGameEventWakeupFamilysvrDefaultTypeInternal;
+extern InnerGameEventWakeupFamilysvrDefaultTypeInternal _InnerGameEventWakeupFamilysvr_default_instance_;
 class InnerGameEventWakeupFriendsvr;
 struct InnerGameEventWakeupFriendsvrDefaultTypeInternal;
 extern InnerGameEventWakeupFriendsvrDefaultTypeInternal _InnerGameEventWakeupFriendsvr_default_instance_;
@@ -211,6 +229,7 @@ template<> ::inner::InnerCopyWayByMatch* Arena::CreateMaybeMessage<::inner::Inne
 template<> ::inner::InnerCopyWayByTeam* Arena::CreateMaybeMessage<::inner::InnerCopyWayByTeam>(Arena*);
 template<> ::inner::InnerGameEvent* Arena::CreateMaybeMessage<::inner::InnerGameEvent>(Arena*);
 template<> ::inner::InnerGameEventChangeMap* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMap>(Arena*);
+template<> ::inner::InnerGameEventChangeMapFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMapFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventChangeMapFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMapFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventChangeMapTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventChangeMapTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventDeath* Arena::CreateMaybeMessage<::inner::InnerGameEventDeath>(Arena*);
@@ -222,21 +241,26 @@ template<> ::inner::InnerGameEventDestroyRanksvr* Arena::CreateMaybeMessage<::in
 template<> ::inner::InnerGameEventDestroyTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventDestroyTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventDestryFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventDestryFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventLogin* Arena::CreateMaybeMessage<::inner::InnerGameEventLogin>(Arena*);
+template<> ::inner::InnerGameEventLoginFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLoginFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventLoginFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLoginFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventLoginTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLoginTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventLogout* Arena::CreateMaybeMessage<::inner::InnerGameEventLogout>(Arena*);
+template<> ::inner::InnerGameEventLogoutFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLogoutFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventLogoutFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLogoutFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventLogoutTeamvr* Arena::CreateMaybeMessage<::inner::InnerGameEventLogoutTeamvr>(Arena*);
 template<> ::inner::InnerGameEventOffline* Arena::CreateMaybeMessage<::inner::InnerGameEventOffline>(Arena*);
+template<> ::inner::InnerGameEventOfflineFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOfflineFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventOfflineFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOfflineFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventOfflineTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOfflineTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventOnline* Arena::CreateMaybeMessage<::inner::InnerGameEventOnline>(Arena*);
+template<> ::inner::InnerGameEventOnlineFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOnlineFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventOnlineFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOnlineFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventOnlineTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventOnlineTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventRebirth* Arena::CreateMaybeMessage<::inner::InnerGameEventRebirth>(Arena*);
 template<> ::inner::InnerGameEventRebirthFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventRebirthFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventRebirthTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventRebirthTeamsvr>(Arena*);
 template<> ::inner::InnerGameEventWakeup* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeup>(Arena*);
+template<> ::inner::InnerGameEventWakeupFamilysvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupFamilysvr>(Arena*);
 template<> ::inner::InnerGameEventWakeupFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventWakeupTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupTeamsvr>(Arena*);
 template<> ::inner::InnerRoleIdList* Arena::CreateMaybeMessage<::inner::InnerRoleIdList>(Arena*);
@@ -4107,6 +4131,7 @@ class InnerGameEventLogin final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -4188,6 +4213,7 @@ class InnerGameEventLogin final :
   enum : int {
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // .inner.InnerGameEventLoginTeamsvr teamsvr = 1;
   bool has_teamsvr() const;
@@ -4225,6 +4251,24 @@ class InnerGameEventLogin final :
       ::inner::InnerGameEventLoginFriendsvr* friendsvr);
   ::inner::InnerGameEventLoginFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventLoginFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventLoginFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventLoginFamilysvr* release_familysvr();
+  ::inner::InnerGameEventLoginFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventLoginFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventLoginFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventLoginFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventLoginFamilysvr* familysvr);
+  ::inner::InnerGameEventLoginFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventLogin)
@@ -4232,6 +4276,7 @@ class InnerGameEventLogin final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -4244,6 +4289,7 @@ class InnerGameEventLogin final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventLoginTeamsvr* teamsvr_;
     ::inner::InnerGameEventLoginFriendsvr* friendsvr_;
+    ::inner::InnerGameEventLoginFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -4698,6 +4744,158 @@ class InnerGameEventLoginFriendsvr final :
 };
 // -------------------------------------------------------------------
 
+class InnerGameEventLoginFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventLoginFamilysvr) */ {
+ public:
+  inline InnerGameEventLoginFamilysvr() : InnerGameEventLoginFamilysvr(nullptr) {}
+  ~InnerGameEventLoginFamilysvr() override;
+  explicit PROTOBUF_CONSTEXPR InnerGameEventLoginFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventLoginFamilysvr(const InnerGameEventLoginFamilysvr& from);
+  InnerGameEventLoginFamilysvr(InnerGameEventLoginFamilysvr&& from) noexcept
+    : InnerGameEventLoginFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventLoginFamilysvr& operator=(const InnerGameEventLoginFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventLoginFamilysvr& operator=(InnerGameEventLoginFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventLoginFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventLoginFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventLoginFamilysvr*>(
+               &_InnerGameEventLoginFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(InnerGameEventLoginFamilysvr& a, InnerGameEventLoginFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventLoginFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventLoginFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventLoginFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventLoginFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerGameEventLoginFamilysvr& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerGameEventLoginFamilysvr& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerGameEventLoginFamilysvr* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventLoginFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventLoginFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBriefFieldNumber = 1,
+  };
+  // .common.RoleBrief brief = 1;
+  bool has_brief() const;
+  private:
+  bool _internal_has_brief() const;
+  public:
+  void clear_brief();
+  const ::common::RoleBrief& brief() const;
+  PROTOBUF_NODISCARD ::common::RoleBrief* release_brief();
+  ::common::RoleBrief* mutable_brief();
+  void set_allocated_brief(::common::RoleBrief* brief);
+  private:
+  const ::common::RoleBrief& _internal_brief() const;
+  ::common::RoleBrief* _internal_mutable_brief();
+  public:
+  void unsafe_arena_set_allocated_brief(
+      ::common::RoleBrief* brief);
+  ::common::RoleBrief* unsafe_arena_release_brief();
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventLoginFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::common::RoleBrief* brief_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerGameEventLogout final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventLogout) */ {
  public:
@@ -4744,6 +4942,7 @@ class InnerGameEventLogout final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -4752,7 +4951,7 @@ class InnerGameEventLogout final :
                &_InnerGameEventLogout_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(InnerGameEventLogout& a, InnerGameEventLogout& b) {
     a.Swap(&b);
@@ -4825,6 +5024,7 @@ class InnerGameEventLogout final :
   enum : int {
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // .inner.InnerGameEventLogoutTeamvr teamsvr = 1;
   bool has_teamsvr() const;
@@ -4862,6 +5062,24 @@ class InnerGameEventLogout final :
       ::inner::InnerGameEventLogoutFriendsvr* friendsvr);
   ::inner::InnerGameEventLogoutFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventLogoutFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventLogoutFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventLogoutFamilysvr* release_familysvr();
+  ::inner::InnerGameEventLogoutFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventLogoutFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventLogoutFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventLogoutFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventLogoutFamilysvr* familysvr);
+  ::inner::InnerGameEventLogoutFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventLogout)
@@ -4869,6 +5087,7 @@ class InnerGameEventLogout final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -4881,6 +5100,7 @@ class InnerGameEventLogout final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventLogoutTeamvr* teamsvr_;
     ::inner::InnerGameEventLogoutFriendsvr* friendsvr_;
+    ::inner::InnerGameEventLogoutFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -4936,7 +5156,7 @@ class InnerGameEventLogoutTeamvr final :
                &_InnerGameEventLogoutTeamvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(InnerGameEventLogoutTeamvr& a, InnerGameEventLogoutTeamvr& b) {
     a.Swap(&b);
@@ -5052,7 +5272,7 @@ class InnerGameEventLogoutFriendsvr final :
                &_InnerGameEventLogoutFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(InnerGameEventLogoutFriendsvr& a, InnerGameEventLogoutFriendsvr& b) {
     a.Swap(&b);
@@ -5121,6 +5341,122 @@ class InnerGameEventLogoutFriendsvr final :
 };
 // -------------------------------------------------------------------
 
+class InnerGameEventLogoutFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerGameEventLogoutFamilysvr) */ {
+ public:
+  inline InnerGameEventLogoutFamilysvr() : InnerGameEventLogoutFamilysvr(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerGameEventLogoutFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventLogoutFamilysvr(const InnerGameEventLogoutFamilysvr& from);
+  InnerGameEventLogoutFamilysvr(InnerGameEventLogoutFamilysvr&& from) noexcept
+    : InnerGameEventLogoutFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventLogoutFamilysvr& operator=(const InnerGameEventLogoutFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventLogoutFamilysvr& operator=(InnerGameEventLogoutFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventLogoutFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventLogoutFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventLogoutFamilysvr*>(
+               &_InnerGameEventLogoutFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(InnerGameEventLogoutFamilysvr& a, InnerGameEventLogoutFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventLogoutFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventLogoutFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventLogoutFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventLogoutFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerGameEventLogoutFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerGameEventLogoutFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventLogoutFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventLogoutFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventLogoutFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerGameEventOnline final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventOnline) */ {
  public:
@@ -5167,6 +5503,7 @@ class InnerGameEventOnline final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -5175,7 +5512,7 @@ class InnerGameEventOnline final :
                &_InnerGameEventOnline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(InnerGameEventOnline& a, InnerGameEventOnline& b) {
     a.Swap(&b);
@@ -5248,6 +5585,7 @@ class InnerGameEventOnline final :
   enum : int {
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // .inner.InnerGameEventOnlineTeamsvr teamsvr = 1;
   bool has_teamsvr() const;
@@ -5285,6 +5623,24 @@ class InnerGameEventOnline final :
       ::inner::InnerGameEventOnlineFriendsvr* friendsvr);
   ::inner::InnerGameEventOnlineFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventOnlineFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventOnlineFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventOnlineFamilysvr* release_familysvr();
+  ::inner::InnerGameEventOnlineFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventOnlineFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventOnlineFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventOnlineFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventOnlineFamilysvr* familysvr);
+  ::inner::InnerGameEventOnlineFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventOnline)
@@ -5292,6 +5648,7 @@ class InnerGameEventOnline final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -5304,6 +5661,7 @@ class InnerGameEventOnline final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventOnlineTeamsvr* teamsvr_;
     ::inner::InnerGameEventOnlineFriendsvr* friendsvr_;
+    ::inner::InnerGameEventOnlineFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -5360,7 +5718,7 @@ class InnerGameEventOnlineTeamsvr final :
                &_InnerGameEventOnlineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(InnerGameEventOnlineTeamsvr& a, InnerGameEventOnlineTeamsvr& b) {
     a.Swap(&b);
@@ -5532,7 +5890,7 @@ class InnerGameEventOnlineFriendsvr final :
                &_InnerGameEventOnlineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(InnerGameEventOnlineFriendsvr& a, InnerGameEventOnlineFriendsvr& b) {
     a.Swap(&b);
@@ -5667,6 +6025,158 @@ class InnerGameEventOnlineFriendsvr final :
 };
 // -------------------------------------------------------------------
 
+class InnerGameEventOnlineFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventOnlineFamilysvr) */ {
+ public:
+  inline InnerGameEventOnlineFamilysvr() : InnerGameEventOnlineFamilysvr(nullptr) {}
+  ~InnerGameEventOnlineFamilysvr() override;
+  explicit PROTOBUF_CONSTEXPR InnerGameEventOnlineFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventOnlineFamilysvr(const InnerGameEventOnlineFamilysvr& from);
+  InnerGameEventOnlineFamilysvr(InnerGameEventOnlineFamilysvr&& from) noexcept
+    : InnerGameEventOnlineFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventOnlineFamilysvr& operator=(const InnerGameEventOnlineFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventOnlineFamilysvr& operator=(InnerGameEventOnlineFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventOnlineFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventOnlineFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventOnlineFamilysvr*>(
+               &_InnerGameEventOnlineFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  friend void swap(InnerGameEventOnlineFamilysvr& a, InnerGameEventOnlineFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventOnlineFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventOnlineFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventOnlineFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventOnlineFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerGameEventOnlineFamilysvr& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerGameEventOnlineFamilysvr& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerGameEventOnlineFamilysvr* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventOnlineFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventOnlineFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBriefFieldNumber = 1,
+  };
+  // .common.RoleBrief brief = 1;
+  bool has_brief() const;
+  private:
+  bool _internal_has_brief() const;
+  public:
+  void clear_brief();
+  const ::common::RoleBrief& brief() const;
+  PROTOBUF_NODISCARD ::common::RoleBrief* release_brief();
+  ::common::RoleBrief* mutable_brief();
+  void set_allocated_brief(::common::RoleBrief* brief);
+  private:
+  const ::common::RoleBrief& _internal_brief() const;
+  ::common::RoleBrief* _internal_mutable_brief();
+  public:
+  void unsafe_arena_set_allocated_brief(
+      ::common::RoleBrief* brief);
+  ::common::RoleBrief* unsafe_arena_release_brief();
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventOnlineFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::common::RoleBrief* brief_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerGameEventOffline final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventOffline) */ {
  public:
@@ -5713,6 +6223,7 @@ class InnerGameEventOffline final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -5721,7 +6232,7 @@ class InnerGameEventOffline final :
                &_InnerGameEventOffline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    35;
 
   friend void swap(InnerGameEventOffline& a, InnerGameEventOffline& b) {
     a.Swap(&b);
@@ -5794,6 +6305,7 @@ class InnerGameEventOffline final :
   enum : int {
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // .inner.InnerGameEventOfflineTeamsvr teamsvr = 1;
   bool has_teamsvr() const;
@@ -5831,6 +6343,24 @@ class InnerGameEventOffline final :
       ::inner::InnerGameEventOfflineFriendsvr* friendsvr);
   ::inner::InnerGameEventOfflineFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventOfflineFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventOfflineFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventOfflineFamilysvr* release_familysvr();
+  ::inner::InnerGameEventOfflineFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventOfflineFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventOfflineFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventOfflineFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventOfflineFamilysvr* familysvr);
+  ::inner::InnerGameEventOfflineFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventOffline)
@@ -5838,6 +6368,7 @@ class InnerGameEventOffline final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -5850,6 +6381,7 @@ class InnerGameEventOffline final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventOfflineTeamsvr* teamsvr_;
     ::inner::InnerGameEventOfflineFriendsvr* friendsvr_;
+    ::inner::InnerGameEventOfflineFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -5905,7 +6437,7 @@ class InnerGameEventOfflineTeamsvr final :
                &_InnerGameEventOfflineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    36;
 
   friend void swap(InnerGameEventOfflineTeamsvr& a, InnerGameEventOfflineTeamsvr& b) {
     a.Swap(&b);
@@ -6021,7 +6553,7 @@ class InnerGameEventOfflineFriendsvr final :
                &_InnerGameEventOfflineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    37;
 
   friend void swap(InnerGameEventOfflineFriendsvr& a, InnerGameEventOfflineFriendsvr& b) {
     a.Swap(&b);
@@ -6090,6 +6622,122 @@ class InnerGameEventOfflineFriendsvr final :
 };
 // -------------------------------------------------------------------
 
+class InnerGameEventOfflineFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerGameEventOfflineFamilysvr) */ {
+ public:
+  inline InnerGameEventOfflineFamilysvr() : InnerGameEventOfflineFamilysvr(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerGameEventOfflineFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventOfflineFamilysvr(const InnerGameEventOfflineFamilysvr& from);
+  InnerGameEventOfflineFamilysvr(InnerGameEventOfflineFamilysvr&& from) noexcept
+    : InnerGameEventOfflineFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventOfflineFamilysvr& operator=(const InnerGameEventOfflineFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventOfflineFamilysvr& operator=(InnerGameEventOfflineFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventOfflineFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventOfflineFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventOfflineFamilysvr*>(
+               &_InnerGameEventOfflineFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  friend void swap(InnerGameEventOfflineFamilysvr& a, InnerGameEventOfflineFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventOfflineFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventOfflineFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventOfflineFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventOfflineFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerGameEventOfflineFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerGameEventOfflineFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventOfflineFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventOfflineFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventOfflineFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerGameEventChangeMap final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventChangeMap) */ {
  public:
@@ -6136,6 +6784,7 @@ class InnerGameEventChangeMap final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -6144,7 +6793,7 @@ class InnerGameEventChangeMap final :
                &_InnerGameEventChangeMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   friend void swap(InnerGameEventChangeMap& a, InnerGameEventChangeMap& b) {
     a.Swap(&b);
@@ -6218,6 +6867,7 @@ class InnerGameEventChangeMap final :
     kUiProcDirectFieldNumber = 100,
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // uint32 uiProcDirect = 100;
   void clear_uiprocdirect();
@@ -6264,6 +6914,24 @@ class InnerGameEventChangeMap final :
       ::inner::InnerGameEventChangeMapFriendsvr* friendsvr);
   ::inner::InnerGameEventChangeMapFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventChangeMapFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventChangeMapFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventChangeMapFamilysvr* release_familysvr();
+  ::inner::InnerGameEventChangeMapFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventChangeMapFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventChangeMapFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventChangeMapFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventChangeMapFamilysvr* familysvr);
+  ::inner::InnerGameEventChangeMapFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventChangeMap)
@@ -6271,6 +6939,7 @@ class InnerGameEventChangeMap final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -6284,6 +6953,7 @@ class InnerGameEventChangeMap final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventChangeMapTeamsvr* teamsvr_;
     ::inner::InnerGameEventChangeMapFriendsvr* friendsvr_;
+    ::inner::InnerGameEventChangeMapFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -6340,7 +7010,7 @@ class InnerGameEventChangeMapTeamsvr final :
                &_InnerGameEventChangeMapTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   friend void swap(InnerGameEventChangeMapTeamsvr& a, InnerGameEventChangeMapTeamsvr& b) {
     a.Swap(&b);
@@ -6602,7 +7272,7 @@ class InnerGameEventChangeMapFriendsvr final :
                &_InnerGameEventChangeMapFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   friend void swap(InnerGameEventChangeMapFriendsvr& a, InnerGameEventChangeMapFriendsvr& b) {
     a.Swap(&b);
@@ -6671,6 +7341,122 @@ class InnerGameEventChangeMapFriendsvr final :
 };
 // -------------------------------------------------------------------
 
+class InnerGameEventChangeMapFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerGameEventChangeMapFamilysvr) */ {
+ public:
+  inline InnerGameEventChangeMapFamilysvr() : InnerGameEventChangeMapFamilysvr(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR InnerGameEventChangeMapFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventChangeMapFamilysvr(const InnerGameEventChangeMapFamilysvr& from);
+  InnerGameEventChangeMapFamilysvr(InnerGameEventChangeMapFamilysvr&& from) noexcept
+    : InnerGameEventChangeMapFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventChangeMapFamilysvr& operator=(const InnerGameEventChangeMapFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventChangeMapFamilysvr& operator=(InnerGameEventChangeMapFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventChangeMapFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventChangeMapFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventChangeMapFamilysvr*>(
+               &_InnerGameEventChangeMapFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    42;
+
+  friend void swap(InnerGameEventChangeMapFamilysvr& a, InnerGameEventChangeMapFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventChangeMapFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventChangeMapFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventChangeMapFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventChangeMapFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InnerGameEventChangeMapFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InnerGameEventChangeMapFamilysvr& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventChangeMapFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventChangeMapFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventChangeMapFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerGameEventDeath final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventDeath) */ {
  public:
@@ -6725,7 +7511,7 @@ class InnerGameEventDeath final :
                &_InnerGameEventDeath_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    43;
 
   friend void swap(InnerGameEventDeath& a, InnerGameEventDeath& b) {
     a.Swap(&b);
@@ -6910,7 +7696,7 @@ class InnerGameEventDeathTeamsvr final :
                &_InnerGameEventDeathTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    44;
 
   friend void swap(InnerGameEventDeathTeamsvr& a, InnerGameEventDeathTeamsvr& b) {
     a.Swap(&b);
@@ -7061,7 +7847,7 @@ class InnerGameEventDeathFriendsvr final :
                &_InnerGameEventDeathFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    45;
 
   friend void swap(InnerGameEventDeathFriendsvr& a, InnerGameEventDeathFriendsvr& b) {
     a.Swap(&b);
@@ -7184,7 +7970,7 @@ class InnerGameEventRebirth final :
                &_InnerGameEventRebirth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    46;
 
   friend void swap(InnerGameEventRebirth& a, InnerGameEventRebirth& b) {
     a.Swap(&b);
@@ -7369,7 +8155,7 @@ class InnerGameEventRebirthTeamsvr final :
                &_InnerGameEventRebirthTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    47;
 
   friend void swap(InnerGameEventRebirthTeamsvr& a, InnerGameEventRebirthTeamsvr& b) {
     a.Swap(&b);
@@ -7540,7 +8326,7 @@ class InnerGameEventRebirthFriendsvr final :
                &_InnerGameEventRebirthFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    48;
 
   friend void swap(InnerGameEventRebirthFriendsvr& a, InnerGameEventRebirthFriendsvr& b) {
     a.Swap(&b);
@@ -7655,6 +8441,7 @@ class InnerGameEventWakeup final :
   enum ServerCase {
     kTeamsvr = 1,
     kFriendsvr = 2,
+    kFamilysvr = 3,
     SERVER_NOT_SET = 0,
   };
 
@@ -7663,7 +8450,7 @@ class InnerGameEventWakeup final :
                &_InnerGameEventWakeup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    49;
 
   friend void swap(InnerGameEventWakeup& a, InnerGameEventWakeup& b) {
     a.Swap(&b);
@@ -7736,6 +8523,7 @@ class InnerGameEventWakeup final :
   enum : int {
     kTeamsvrFieldNumber = 1,
     kFriendsvrFieldNumber = 2,
+    kFamilysvrFieldNumber = 3,
   };
   // .inner.InnerGameEventWakeupTeamsvr teamsvr = 1;
   bool has_teamsvr() const;
@@ -7773,6 +8561,24 @@ class InnerGameEventWakeup final :
       ::inner::InnerGameEventWakeupFriendsvr* friendsvr);
   ::inner::InnerGameEventWakeupFriendsvr* unsafe_arena_release_friendsvr();
 
+  // .inner.InnerGameEventWakeupFamilysvr familysvr = 3;
+  bool has_familysvr() const;
+  private:
+  bool _internal_has_familysvr() const;
+  public:
+  void clear_familysvr();
+  const ::inner::InnerGameEventWakeupFamilysvr& familysvr() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEventWakeupFamilysvr* release_familysvr();
+  ::inner::InnerGameEventWakeupFamilysvr* mutable_familysvr();
+  void set_allocated_familysvr(::inner::InnerGameEventWakeupFamilysvr* familysvr);
+  private:
+  const ::inner::InnerGameEventWakeupFamilysvr& _internal_familysvr() const;
+  ::inner::InnerGameEventWakeupFamilysvr* _internal_mutable_familysvr();
+  public:
+  void unsafe_arena_set_allocated_familysvr(
+      ::inner::InnerGameEventWakeupFamilysvr* familysvr);
+  ::inner::InnerGameEventWakeupFamilysvr* unsafe_arena_release_familysvr();
+
   void clear_server();
   ServerCase server_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerGameEventWakeup)
@@ -7780,6 +8586,7 @@ class InnerGameEventWakeup final :
   class _Internal;
   void set_has_teamsvr();
   void set_has_friendsvr();
+  void set_has_familysvr();
 
   inline bool has_server() const;
   inline void clear_has_server();
@@ -7792,6 +8599,7 @@ class InnerGameEventWakeup final :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::inner::InnerGameEventWakeupTeamsvr* teamsvr_;
     ::inner::InnerGameEventWakeupFriendsvr* friendsvr_;
+    ::inner::InnerGameEventWakeupFamilysvr* familysvr_;
   } server_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -7848,7 +8656,7 @@ class InnerGameEventWakeupTeamsvr final :
                &_InnerGameEventWakeupTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    50;
 
   friend void swap(InnerGameEventWakeupTeamsvr& a, InnerGameEventWakeupTeamsvr& b) {
     a.Swap(&b);
@@ -8111,7 +8919,7 @@ class InnerGameEventWakeupFriendsvr final :
                &_InnerGameEventWakeupFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    51;
 
   friend void swap(InnerGameEventWakeupFriendsvr& a, InnerGameEventWakeupFriendsvr& b) {
     a.Swap(&b);
@@ -8241,6 +9049,158 @@ class InnerGameEventWakeupFriendsvr final :
   ::inner::InnerFriendInfo* oinfo_;
   ::inner::InnerFriendGiftList* ogifts_;
   uint64_t llteamid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerGameEventWakeupFamilysvr final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerGameEventWakeupFamilysvr) */ {
+ public:
+  inline InnerGameEventWakeupFamilysvr() : InnerGameEventWakeupFamilysvr(nullptr) {}
+  ~InnerGameEventWakeupFamilysvr() override;
+  explicit PROTOBUF_CONSTEXPR InnerGameEventWakeupFamilysvr(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerGameEventWakeupFamilysvr(const InnerGameEventWakeupFamilysvr& from);
+  InnerGameEventWakeupFamilysvr(InnerGameEventWakeupFamilysvr&& from) noexcept
+    : InnerGameEventWakeupFamilysvr() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerGameEventWakeupFamilysvr& operator=(const InnerGameEventWakeupFamilysvr& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerGameEventWakeupFamilysvr& operator=(InnerGameEventWakeupFamilysvr&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerGameEventWakeupFamilysvr& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerGameEventWakeupFamilysvr* internal_default_instance() {
+    return reinterpret_cast<const InnerGameEventWakeupFamilysvr*>(
+               &_InnerGameEventWakeupFamilysvr_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    52;
+
+  friend void swap(InnerGameEventWakeupFamilysvr& a, InnerGameEventWakeupFamilysvr& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerGameEventWakeupFamilysvr* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerGameEventWakeupFamilysvr* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerGameEventWakeupFamilysvr* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerGameEventWakeupFamilysvr>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerGameEventWakeupFamilysvr& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerGameEventWakeupFamilysvr& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerGameEventWakeupFamilysvr* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerGameEventWakeupFamilysvr";
+  }
+  protected:
+  explicit InnerGameEventWakeupFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBriefFieldNumber = 1,
+  };
+  // .common.RoleBrief brief = 1;
+  bool has_brief() const;
+  private:
+  bool _internal_has_brief() const;
+  public:
+  void clear_brief();
+  const ::common::RoleBrief& brief() const;
+  PROTOBUF_NODISCARD ::common::RoleBrief* release_brief();
+  ::common::RoleBrief* mutable_brief();
+  void set_allocated_brief(::common::RoleBrief* brief);
+  private:
+  const ::common::RoleBrief& _internal_brief() const;
+  ::common::RoleBrief* _internal_mutable_brief();
+  public:
+  void unsafe_arena_set_allocated_brief(
+      ::common::RoleBrief* brief);
+  ::common::RoleBrief* unsafe_arena_release_brief();
+
+  // @@protoc_insertion_point(class_scope:inner.InnerGameEventWakeupFamilysvr)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::common::RoleBrief* brief_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_innercommon_2eproto;
 };
@@ -11060,6 +12020,80 @@ inline ::inner::InnerGameEventLoginFriendsvr* InnerGameEventLogin::mutable_frien
   return _msg;
 }
 
+// .inner.InnerGameEventLoginFamilysvr familysvr = 3;
+inline bool InnerGameEventLogin::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventLogin::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventLogin::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventLogin::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventLoginFamilysvr* InnerGameEventLogin::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventLogin.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventLoginFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventLoginFamilysvr& InnerGameEventLogin::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventLoginFamilysvr&>(::inner::_InnerGameEventLoginFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventLoginFamilysvr& InnerGameEventLogin::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventLogin.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventLoginFamilysvr* InnerGameEventLogin::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventLogin.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventLoginFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventLogin::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventLoginFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventLogin.familysvr)
+}
+inline ::inner::InnerGameEventLoginFamilysvr* InnerGameEventLogin::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventLoginFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventLoginFamilysvr* InnerGameEventLogin::mutable_familysvr() {
+  ::inner::InnerGameEventLoginFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventLogin.familysvr)
+  return _msg;
+}
+
 inline bool InnerGameEventLogin::has_server() const {
   return server_case() != SERVER_NOT_SET;
 }
@@ -11799,6 +12833,95 @@ inline void InnerGameEventLoginFriendsvr::set_llteamid(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// InnerGameEventLoginFamilysvr
+
+// .common.RoleBrief brief = 1;
+inline bool InnerGameEventLoginFamilysvr::_internal_has_brief() const {
+  return this != internal_default_instance() && brief_ != nullptr;
+}
+inline bool InnerGameEventLoginFamilysvr::has_brief() const {
+  return _internal_has_brief();
+}
+inline const ::common::RoleBrief& InnerGameEventLoginFamilysvr::_internal_brief() const {
+  const ::common::RoleBrief* p = brief_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::RoleBrief&>(
+      ::common::_RoleBrief_default_instance_);
+}
+inline const ::common::RoleBrief& InnerGameEventLoginFamilysvr::brief() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventLoginFamilysvr.brief)
+  return _internal_brief();
+}
+inline void InnerGameEventLoginFamilysvr::unsafe_arena_set_allocated_brief(
+    ::common::RoleBrief* brief) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  brief_ = brief;
+  if (brief) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventLoginFamilysvr.brief)
+}
+inline ::common::RoleBrief* InnerGameEventLoginFamilysvr::release_brief() {
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventLoginFamilysvr::unsafe_arena_release_brief() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventLoginFamilysvr.brief)
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventLoginFamilysvr::_internal_mutable_brief() {
+  
+  if (brief_ == nullptr) {
+    auto* p = CreateMaybeMessage<::common::RoleBrief>(GetArenaForAllocation());
+    brief_ = p;
+  }
+  return brief_;
+}
+inline ::common::RoleBrief* InnerGameEventLoginFamilysvr::mutable_brief() {
+  ::common::RoleBrief* _msg = _internal_mutable_brief();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventLoginFamilysvr.brief)
+  return _msg;
+}
+inline void InnerGameEventLoginFamilysvr::set_allocated_brief(::common::RoleBrief* brief) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  if (brief) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief));
+    if (message_arena != submessage_arena) {
+      brief = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, brief, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  brief_ = brief;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerGameEventLoginFamilysvr.brief)
+}
+
+// -------------------------------------------------------------------
+
 // InnerGameEventLogout
 
 // .inner.InnerGameEventLogoutTeamvr teamsvr = 1;
@@ -11949,6 +13072,80 @@ inline ::inner::InnerGameEventLogoutFriendsvr* InnerGameEventLogout::mutable_fri
   return _msg;
 }
 
+// .inner.InnerGameEventLogoutFamilysvr familysvr = 3;
+inline bool InnerGameEventLogout::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventLogout::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventLogout::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventLogout::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventLogoutFamilysvr* InnerGameEventLogout::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventLogout.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventLogoutFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventLogoutFamilysvr& InnerGameEventLogout::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventLogoutFamilysvr&>(::inner::_InnerGameEventLogoutFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventLogoutFamilysvr& InnerGameEventLogout::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventLogout.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventLogoutFamilysvr* InnerGameEventLogout::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventLogout.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventLogoutFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventLogout::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventLogoutFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventLogout.familysvr)
+}
+inline ::inner::InnerGameEventLogoutFamilysvr* InnerGameEventLogout::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventLogoutFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventLogoutFamilysvr* InnerGameEventLogout::mutable_familysvr() {
+  ::inner::InnerGameEventLogoutFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventLogout.familysvr)
+  return _msg;
+}
+
 inline bool InnerGameEventLogout::has_server() const {
   return server_case() != SERVER_NOT_SET;
 }
@@ -11965,6 +13162,10 @@ inline InnerGameEventLogout::ServerCase InnerGameEventLogout::server_case() cons
 // -------------------------------------------------------------------
 
 // InnerGameEventLogoutFriendsvr
+
+// -------------------------------------------------------------------
+
+// InnerGameEventLogoutFamilysvr
 
 // -------------------------------------------------------------------
 
@@ -12115,6 +13316,80 @@ inline ::inner::InnerGameEventOnlineFriendsvr* InnerGameEventOnline::_internal_m
 inline ::inner::InnerGameEventOnlineFriendsvr* InnerGameEventOnline::mutable_friendsvr() {
   ::inner::InnerGameEventOnlineFriendsvr* _msg = _internal_mutable_friendsvr();
   // @@protoc_insertion_point(field_mutable:inner.InnerGameEventOnline.friendsvr)
+  return _msg;
+}
+
+// .inner.InnerGameEventOnlineFamilysvr familysvr = 3;
+inline bool InnerGameEventOnline::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventOnline::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventOnline::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventOnline::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventOnlineFamilysvr* InnerGameEventOnline::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventOnline.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventOnlineFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventOnlineFamilysvr& InnerGameEventOnline::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventOnlineFamilysvr&>(::inner::_InnerGameEventOnlineFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventOnlineFamilysvr& InnerGameEventOnline::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventOnline.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventOnlineFamilysvr* InnerGameEventOnline::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventOnline.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventOnlineFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventOnline::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventOnlineFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventOnline.familysvr)
+}
+inline ::inner::InnerGameEventOnlineFamilysvr* InnerGameEventOnline::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventOnlineFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventOnlineFamilysvr* InnerGameEventOnline::mutable_familysvr() {
+  ::inner::InnerGameEventOnlineFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventOnline.familysvr)
   return _msg;
 }
 
@@ -12497,6 +13772,95 @@ inline void InnerGameEventOnlineFriendsvr::set_llteamid(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// InnerGameEventOnlineFamilysvr
+
+// .common.RoleBrief brief = 1;
+inline bool InnerGameEventOnlineFamilysvr::_internal_has_brief() const {
+  return this != internal_default_instance() && brief_ != nullptr;
+}
+inline bool InnerGameEventOnlineFamilysvr::has_brief() const {
+  return _internal_has_brief();
+}
+inline const ::common::RoleBrief& InnerGameEventOnlineFamilysvr::_internal_brief() const {
+  const ::common::RoleBrief* p = brief_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::RoleBrief&>(
+      ::common::_RoleBrief_default_instance_);
+}
+inline const ::common::RoleBrief& InnerGameEventOnlineFamilysvr::brief() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventOnlineFamilysvr.brief)
+  return _internal_brief();
+}
+inline void InnerGameEventOnlineFamilysvr::unsafe_arena_set_allocated_brief(
+    ::common::RoleBrief* brief) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  brief_ = brief;
+  if (brief) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventOnlineFamilysvr.brief)
+}
+inline ::common::RoleBrief* InnerGameEventOnlineFamilysvr::release_brief() {
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventOnlineFamilysvr::unsafe_arena_release_brief() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventOnlineFamilysvr.brief)
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventOnlineFamilysvr::_internal_mutable_brief() {
+  
+  if (brief_ == nullptr) {
+    auto* p = CreateMaybeMessage<::common::RoleBrief>(GetArenaForAllocation());
+    brief_ = p;
+  }
+  return brief_;
+}
+inline ::common::RoleBrief* InnerGameEventOnlineFamilysvr::mutable_brief() {
+  ::common::RoleBrief* _msg = _internal_mutable_brief();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventOnlineFamilysvr.brief)
+  return _msg;
+}
+inline void InnerGameEventOnlineFamilysvr::set_allocated_brief(::common::RoleBrief* brief) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  if (brief) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief));
+    if (message_arena != submessage_arena) {
+      brief = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, brief, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  brief_ = brief;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerGameEventOnlineFamilysvr.brief)
+}
+
+// -------------------------------------------------------------------
+
 // InnerGameEventOffline
 
 // .inner.InnerGameEventOfflineTeamsvr teamsvr = 1;
@@ -12647,6 +14011,80 @@ inline ::inner::InnerGameEventOfflineFriendsvr* InnerGameEventOffline::mutable_f
   return _msg;
 }
 
+// .inner.InnerGameEventOfflineFamilysvr familysvr = 3;
+inline bool InnerGameEventOffline::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventOffline::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventOffline::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventOffline::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventOfflineFamilysvr* InnerGameEventOffline::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventOffline.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventOfflineFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventOfflineFamilysvr& InnerGameEventOffline::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventOfflineFamilysvr&>(::inner::_InnerGameEventOfflineFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventOfflineFamilysvr& InnerGameEventOffline::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventOffline.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventOfflineFamilysvr* InnerGameEventOffline::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventOffline.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventOfflineFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventOffline::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventOfflineFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventOffline.familysvr)
+}
+inline ::inner::InnerGameEventOfflineFamilysvr* InnerGameEventOffline::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventOfflineFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventOfflineFamilysvr* InnerGameEventOffline::mutable_familysvr() {
+  ::inner::InnerGameEventOfflineFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventOffline.familysvr)
+  return _msg;
+}
+
 inline bool InnerGameEventOffline::has_server() const {
   return server_case() != SERVER_NOT_SET;
 }
@@ -12663,6 +14101,10 @@ inline InnerGameEventOffline::ServerCase InnerGameEventOffline::server_case() co
 // -------------------------------------------------------------------
 
 // InnerGameEventOfflineFriendsvr
+
+// -------------------------------------------------------------------
+
+// InnerGameEventOfflineFamilysvr
 
 // -------------------------------------------------------------------
 
@@ -12813,6 +14255,80 @@ inline ::inner::InnerGameEventChangeMapFriendsvr* InnerGameEventChangeMap::_inte
 inline ::inner::InnerGameEventChangeMapFriendsvr* InnerGameEventChangeMap::mutable_friendsvr() {
   ::inner::InnerGameEventChangeMapFriendsvr* _msg = _internal_mutable_friendsvr();
   // @@protoc_insertion_point(field_mutable:inner.InnerGameEventChangeMap.friendsvr)
+  return _msg;
+}
+
+// .inner.InnerGameEventChangeMapFamilysvr familysvr = 3;
+inline bool InnerGameEventChangeMap::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventChangeMap::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventChangeMap::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventChangeMap::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventChangeMapFamilysvr* InnerGameEventChangeMap::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventChangeMap.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventChangeMapFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventChangeMapFamilysvr& InnerGameEventChangeMap::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventChangeMapFamilysvr&>(::inner::_InnerGameEventChangeMapFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventChangeMapFamilysvr& InnerGameEventChangeMap::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventChangeMap.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventChangeMapFamilysvr* InnerGameEventChangeMap::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventChangeMap.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventChangeMapFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventChangeMap::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventChangeMapFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventChangeMap.familysvr)
+}
+inline ::inner::InnerGameEventChangeMapFamilysvr* InnerGameEventChangeMap::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventChangeMapFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventChangeMapFamilysvr* InnerGameEventChangeMap::mutable_familysvr() {
+  ::inner::InnerGameEventChangeMapFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventChangeMap.familysvr)
   return _msg;
 }
 
@@ -13382,6 +14898,10 @@ inline void InnerGameEventChangeMapTeamsvr::set_scenehashid(uint32_t value) {
 // -------------------------------------------------------------------
 
 // InnerGameEventChangeMapFriendsvr
+
+// -------------------------------------------------------------------
+
+// InnerGameEventChangeMapFamilysvr
 
 // -------------------------------------------------------------------
 
@@ -14128,6 +15648,80 @@ inline ::inner::InnerGameEventWakeupFriendsvr* InnerGameEventWakeup::mutable_fri
   return _msg;
 }
 
+// .inner.InnerGameEventWakeupFamilysvr familysvr = 3;
+inline bool InnerGameEventWakeup::_internal_has_familysvr() const {
+  return server_case() == kFamilysvr;
+}
+inline bool InnerGameEventWakeup::has_familysvr() const {
+  return _internal_has_familysvr();
+}
+inline void InnerGameEventWakeup::set_has_familysvr() {
+  _oneof_case_[0] = kFamilysvr;
+}
+inline void InnerGameEventWakeup::clear_familysvr() {
+  if (_internal_has_familysvr()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete server_.familysvr_;
+    }
+    clear_has_server();
+  }
+}
+inline ::inner::InnerGameEventWakeupFamilysvr* InnerGameEventWakeup::release_familysvr() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventWakeup.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventWakeupFamilysvr* temp = server_.familysvr_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerGameEventWakeupFamilysvr& InnerGameEventWakeup::_internal_familysvr() const {
+  return _internal_has_familysvr()
+      ? *server_.familysvr_
+      : reinterpret_cast< ::inner::InnerGameEventWakeupFamilysvr&>(::inner::_InnerGameEventWakeupFamilysvr_default_instance_);
+}
+inline const ::inner::InnerGameEventWakeupFamilysvr& InnerGameEventWakeup::familysvr() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventWakeup.familysvr)
+  return _internal_familysvr();
+}
+inline ::inner::InnerGameEventWakeupFamilysvr* InnerGameEventWakeup::unsafe_arena_release_familysvr() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerGameEventWakeup.familysvr)
+  if (_internal_has_familysvr()) {
+    clear_has_server();
+    ::inner::InnerGameEventWakeupFamilysvr* temp = server_.familysvr_;
+    server_.familysvr_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerGameEventWakeup::unsafe_arena_set_allocated_familysvr(::inner::InnerGameEventWakeupFamilysvr* familysvr) {
+  clear_server();
+  if (familysvr) {
+    set_has_familysvr();
+    server_.familysvr_ = familysvr;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventWakeup.familysvr)
+}
+inline ::inner::InnerGameEventWakeupFamilysvr* InnerGameEventWakeup::_internal_mutable_familysvr() {
+  if (!_internal_has_familysvr()) {
+    clear_server();
+    set_has_familysvr();
+    server_.familysvr_ = CreateMaybeMessage< ::inner::InnerGameEventWakeupFamilysvr >(GetArenaForAllocation());
+  }
+  return server_.familysvr_;
+}
+inline ::inner::InnerGameEventWakeupFamilysvr* InnerGameEventWakeup::mutable_familysvr() {
+  ::inner::InnerGameEventWakeupFamilysvr* _msg = _internal_mutable_familysvr();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventWakeup.familysvr)
+  return _msg;
+}
+
 inline bool InnerGameEventWakeup::has_server() const {
   return server_case() != SERVER_NOT_SET;
 }
@@ -14865,9 +16459,110 @@ inline void InnerGameEventWakeupFriendsvr::set_llteamid(uint64_t value) {
   // @@protoc_insertion_point(field_set:inner.InnerGameEventWakeupFriendsvr.llTeamId)
 }
 
+// -------------------------------------------------------------------
+
+// InnerGameEventWakeupFamilysvr
+
+// .common.RoleBrief brief = 1;
+inline bool InnerGameEventWakeupFamilysvr::_internal_has_brief() const {
+  return this != internal_default_instance() && brief_ != nullptr;
+}
+inline bool InnerGameEventWakeupFamilysvr::has_brief() const {
+  return _internal_has_brief();
+}
+inline const ::common::RoleBrief& InnerGameEventWakeupFamilysvr::_internal_brief() const {
+  const ::common::RoleBrief* p = brief_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::RoleBrief&>(
+      ::common::_RoleBrief_default_instance_);
+}
+inline const ::common::RoleBrief& InnerGameEventWakeupFamilysvr::brief() const {
+  // @@protoc_insertion_point(field_get:inner.InnerGameEventWakeupFamilysvr.brief)
+  return _internal_brief();
+}
+inline void InnerGameEventWakeupFamilysvr::unsafe_arena_set_allocated_brief(
+    ::common::RoleBrief* brief) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  brief_ = brief;
+  if (brief) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerGameEventWakeupFamilysvr.brief)
+}
+inline ::common::RoleBrief* InnerGameEventWakeupFamilysvr::release_brief() {
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventWakeupFamilysvr::unsafe_arena_release_brief() {
+  // @@protoc_insertion_point(field_release:inner.InnerGameEventWakeupFamilysvr.brief)
+  
+  ::common::RoleBrief* temp = brief_;
+  brief_ = nullptr;
+  return temp;
+}
+inline ::common::RoleBrief* InnerGameEventWakeupFamilysvr::_internal_mutable_brief() {
+  
+  if (brief_ == nullptr) {
+    auto* p = CreateMaybeMessage<::common::RoleBrief>(GetArenaForAllocation());
+    brief_ = p;
+  }
+  return brief_;
+}
+inline ::common::RoleBrief* InnerGameEventWakeupFamilysvr::mutable_brief() {
+  ::common::RoleBrief* _msg = _internal_mutable_brief();
+  // @@protoc_insertion_point(field_mutable:inner.InnerGameEventWakeupFamilysvr.brief)
+  return _msg;
+}
+inline void InnerGameEventWakeupFamilysvr::set_allocated_brief(::common::RoleBrief* brief) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief_);
+  }
+  if (brief) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(brief));
+    if (message_arena != submessage_arena) {
+      brief = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, brief, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  brief_ = brief;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerGameEventWakeupFamilysvr.brief)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

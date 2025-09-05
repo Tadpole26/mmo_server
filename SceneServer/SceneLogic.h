@@ -10,7 +10,7 @@
 
 
 class CGateSession;
-class CFriendNetface;
+class FamilyNetface;
 class SceneLogic
 {
 public:
@@ -36,6 +36,8 @@ public:
 private:
 	CSvrLogicFace* m_pInterface = nullptr;
 	CSvrLogicFace* m_pClientLIF = nullptr;
+private:
+	FamilyNetface* _familysvr = nullptr;
 private:
 	std::unordered_map<uint32, CGateSession*> _allgates;
 

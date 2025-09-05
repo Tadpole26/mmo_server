@@ -14,6 +14,7 @@ class CTcpSession : public CLogicSession
 {
 protected:
 	virtual bool _Send(const tagMsgHead* pMsg);
+	virtual bool __sendInnerMsg(const char* pMsg, size_t len);
 };
 
 class CTcpReconn : public CReconnSession
@@ -29,6 +30,7 @@ public:
 
 protected:
 	virtual bool _Send(const tagMsgHead* pMsg);
+	virtual bool __sendInnerMsg(const char* pMsg, size_t len);
 
 private:
 	bool _bCacheSend = false;

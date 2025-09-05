@@ -45,8 +45,30 @@ struct InnerFamilysvr_Fromscene_TestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_TestDefaultTypeInternal _InnerFamilysvr_Fromscene_Test_default_instance_;
+PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(
+    ::_pbi::ConstantInitialized){}
+struct InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal() {}
+  union {
+    InnerFamilysvr_Fromscene_GameEvent _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal _InnerFamilysvr_Fromscene_GameEvent_default_instance_;
+PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(
+    ::_pbi::ConstantInitialized){}
+struct InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal() {}
+  union {
+    InnerFamilysvr_Fromscene_UpdateUserInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal _InnerFamilysvr_Fromscene_UpdateUserInfo_default_instance_;
 }  // namespace inner
-static ::_pb::Metadata file_level_metadata_familysvr_2eproto[2];
+static ::_pb::Metadata file_level_metadata_familysvr_2eproto[4];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_familysvr_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_familysvr_2eproto = nullptr;
 
@@ -59,6 +81,8 @@ const uint32_t TableStruct_familysvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr, fromuser_),
   ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr, Fromscene_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_Test, _internal_metadata_),
@@ -66,29 +90,51 @@ const uint32_t TableStruct_familysvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_GameEvent, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::inner::InnerFamilysvr)},
-  { 9, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_Test)},
+  { 11, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_Test)},
+  { 17, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_GameEvent)},
+  { 23, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::inner::_InnerFamilysvr_default_instance_._instance,
   &::inner::_InnerFamilysvr_Fromscene_Test_default_instance_._instance,
+  &::inner::_InnerFamilysvr_Fromscene_GameEvent_default_instance_._instance,
+  &::inner::_InnerFamilysvr_Fromscene_UpdateUserInfo_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_familysvr_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017familysvr.proto\022\005inner\"o\n\016InnerFamilys"
-  "vr\022\020\n\010fromuser\030\001 \001(\004\022>\n\016fromscene_test\030e"
-  " \001(\0132$.inner.InnerFamilysvr_Fromscene_Te"
-  "stH\000B\013\n\tFromscene\"\037\n\035InnerFamilysvr_From"
-  "scene_Testb\006proto3"
+  "\n\017familysvr.proto\022\005inner\"\215\002\n\016InnerFamily"
+  "svr\022\020\n\010fromuser\030\001 \001(\004\022>\n\016fromscene_test\030"
+  "e \001(\0132$.inner.InnerFamilysvr_Fromscene_T"
+  "estH\000\022H\n\023fromscene_gameevent\030f \001(\0132).inn"
+  "er.InnerFamilysvr_Fromscene_GameEventH\000\022"
+  "R\n\030fromscene_updateuserinfo\030g \001(\0132..inne"
+  "r.InnerFamilysvr_Fromscene_UpdateUserInf"
+  "oH\000B\013\n\tFromscene\"\037\n\035InnerFamilysvr_Froms"
+  "cene_Test\"$\n\"InnerFamilysvr_Fromscene_Ga"
+  "meEvent\")\n\'InnerFamilysvr_Fromscene_Upda"
+  "teUserInfob\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_familysvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_familysvr_2eproto = {
-    false, false, 178, descriptor_table_protodef_familysvr_2eproto,
+    false, false, 418, descriptor_table_protodef_familysvr_2eproto,
     "familysvr.proto",
-    &descriptor_table_familysvr_2eproto_once, nullptr, 0, 2,
+    &descriptor_table_familysvr_2eproto_once, nullptr, 0, 4,
     schemas, file_default_instances, TableStruct_familysvr_2eproto::offsets,
     file_level_metadata_familysvr_2eproto, file_level_enum_descriptors_familysvr_2eproto,
     file_level_service_descriptors_familysvr_2eproto,
@@ -106,11 +152,21 @@ namespace inner {
 class InnerFamilysvr::_Internal {
  public:
   static const ::inner::InnerFamilysvr_Fromscene_Test& fromscene_test(const InnerFamilysvr* msg);
+  static const ::inner::InnerFamilysvr_Fromscene_GameEvent& fromscene_gameevent(const InnerFamilysvr* msg);
+  static const ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo& fromscene_updateuserinfo(const InnerFamilysvr* msg);
 };
 
 const ::inner::InnerFamilysvr_Fromscene_Test&
 InnerFamilysvr::_Internal::fromscene_test(const InnerFamilysvr* msg) {
   return *msg->Fromscene_.fromscene_test_;
+}
+const ::inner::InnerFamilysvr_Fromscene_GameEvent&
+InnerFamilysvr::_Internal::fromscene_gameevent(const InnerFamilysvr* msg) {
+  return *msg->Fromscene_.fromscene_gameevent_;
+}
+const ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo&
+InnerFamilysvr::_Internal::fromscene_updateuserinfo(const InnerFamilysvr* msg) {
+  return *msg->Fromscene_.fromscene_updateuserinfo_;
 }
 void InnerFamilysvr::set_allocated_fromscene_test(::inner::InnerFamilysvr_Fromscene_Test* fromscene_test) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -127,6 +183,36 @@ void InnerFamilysvr::set_allocated_fromscene_test(::inner::InnerFamilysvr_Fromsc
   }
   // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_test)
 }
+void InnerFamilysvr::set_allocated_fromscene_gameevent(::inner::InnerFamilysvr_Fromscene_GameEvent* fromscene_gameevent) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromscene();
+  if (fromscene_gameevent) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromscene_gameevent);
+    if (message_arena != submessage_arena) {
+      fromscene_gameevent = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromscene_gameevent, submessage_arena);
+    }
+    set_has_fromscene_gameevent();
+    Fromscene_.fromscene_gameevent_ = fromscene_gameevent;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_gameevent)
+}
+void InnerFamilysvr::set_allocated_fromscene_updateuserinfo(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo* fromscene_updateuserinfo) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromscene();
+  if (fromscene_updateuserinfo) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromscene_updateuserinfo);
+    if (message_arena != submessage_arena) {
+      fromscene_updateuserinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromscene_updateuserinfo, submessage_arena);
+    }
+    set_has_fromscene_updateuserinfo();
+    Fromscene_.fromscene_updateuserinfo_ = fromscene_updateuserinfo;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_updateuserinfo)
+}
 InnerFamilysvr::InnerFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -141,6 +227,14 @@ InnerFamilysvr::InnerFamilysvr(const InnerFamilysvr& from)
   switch (from.Fromscene_case()) {
     case kFromsceneTest: {
       _internal_mutable_fromscene_test()->::inner::InnerFamilysvr_Fromscene_Test::MergeFrom(from._internal_fromscene_test());
+      break;
+    }
+    case kFromsceneGameevent: {
+      _internal_mutable_fromscene_gameevent()->::inner::InnerFamilysvr_Fromscene_GameEvent::MergeFrom(from._internal_fromscene_gameevent());
+      break;
+    }
+    case kFromsceneUpdateuserinfo: {
+      _internal_mutable_fromscene_updateuserinfo()->::inner::InnerFamilysvr_Fromscene_UpdateUserInfo::MergeFrom(from._internal_fromscene_updateuserinfo());
       break;
     }
     case FROMSCENE_NOT_SET: {
@@ -184,6 +278,18 @@ void InnerFamilysvr::clear_Fromscene() {
       }
       break;
     }
+    case kFromsceneGameevent: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromscene_.fromscene_gameevent_;
+      }
+      break;
+    }
+    case kFromsceneUpdateuserinfo: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromscene_.fromscene_updateuserinfo_;
+      }
+      break;
+    }
     case FROMSCENE_NOT_SET: {
       break;
     }
@@ -221,6 +327,22 @@ const char* InnerFamilysvr::_InternalParse(const char* ptr, ::_pbi::ParseContext
       case 101:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_fromscene_test(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerFamilysvr_Fromscene_GameEvent fromscene_gameevent = 102;
+      case 102:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromscene_gameevent(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerFamilysvr_Fromscene_UpdateUserInfo fromscene_updateuserinfo = 103;
+      case 103:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromscene_updateuserinfo(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -267,6 +389,20 @@ uint8_t* InnerFamilysvr::_InternalSerialize(
         _Internal::fromscene_test(this).GetCachedSize(), target, stream);
   }
 
+  // .inner.InnerFamilysvr_Fromscene_GameEvent fromscene_gameevent = 102;
+  if (_internal_has_fromscene_gameevent()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(102, _Internal::fromscene_gameevent(this),
+        _Internal::fromscene_gameevent(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerFamilysvr_Fromscene_UpdateUserInfo fromscene_updateuserinfo = 103;
+  if (_internal_has_fromscene_updateuserinfo()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(103, _Internal::fromscene_updateuserinfo(this),
+        _Internal::fromscene_updateuserinfo(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -294,6 +430,20 @@ size_t InnerFamilysvr::ByteSizeLong() const {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *Fromscene_.fromscene_test_);
+      break;
+    }
+    // .inner.InnerFamilysvr_Fromscene_GameEvent fromscene_gameevent = 102;
+    case kFromsceneGameevent: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromscene_.fromscene_gameevent_);
+      break;
+    }
+    // .inner.InnerFamilysvr_Fromscene_UpdateUserInfo fromscene_updateuserinfo = 103;
+    case kFromsceneUpdateuserinfo: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromscene_.fromscene_updateuserinfo_);
       break;
     }
     case FROMSCENE_NOT_SET: {
@@ -328,6 +478,14 @@ void InnerFamilysvr::MergeFrom(const InnerFamilysvr& from) {
   switch (from.Fromscene_case()) {
     case kFromsceneTest: {
       _internal_mutable_fromscene_test()->::inner::InnerFamilysvr_Fromscene_Test::MergeFrom(from._internal_fromscene_test());
+      break;
+    }
+    case kFromsceneGameevent: {
+      _internal_mutable_fromscene_gameevent()->::inner::InnerFamilysvr_Fromscene_GameEvent::MergeFrom(from._internal_fromscene_gameevent());
+      break;
+    }
+    case kFromsceneUpdateuserinfo: {
+      _internal_mutable_fromscene_updateuserinfo()->::inner::InnerFamilysvr_Fromscene_UpdateUserInfo::MergeFrom(from._internal_fromscene_updateuserinfo());
       break;
     }
     case FROMSCENE_NOT_SET: {
@@ -401,6 +559,84 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_Test:
       file_level_metadata_familysvr_2eproto[1]);
 }
 
+// ===================================================================
+
+class InnerFamilysvr_Fromscene_GameEvent::_Internal {
+ public:
+};
+
+InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_GameEvent)
+}
+InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(const InnerFamilysvr_Fromscene_GameEvent& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_GameEvent)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_GameEvent::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_GameEvent::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_GameEvent::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_familysvr_2eproto_getter, &descriptor_table_familysvr_2eproto_once,
+      file_level_metadata_familysvr_2eproto[2]);
+}
+
+// ===================================================================
+
+class InnerFamilysvr_Fromscene_UpdateUserInfo::_Internal {
+ public:
+};
+
+InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+}
+InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(const InnerFamilysvr_Fromscene_UpdateUserInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_UpdateUserInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_UpdateUserInfo::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_UpdateUserInfo::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_familysvr_2eproto_getter, &descriptor_table_familysvr_2eproto_once,
+      file_level_metadata_familysvr_2eproto[3]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace inner
 PROTOBUF_NAMESPACE_OPEN
@@ -411,6 +647,14 @@ Arena::CreateMaybeMessage< ::inner::InnerFamilysvr >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_Test*
 Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_Test >(Arena* arena) {
   return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_Test >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_GameEvent*
+Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_GameEvent >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_GameEvent >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo*
+Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

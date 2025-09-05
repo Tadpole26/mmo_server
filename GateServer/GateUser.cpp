@@ -37,11 +37,12 @@ void GateUser::sendCmdToSceneSvr(const tagMsgHead* pNetMsgHead)
 	clientMsg.set_cmdid(pNetMsgHead->uiCmdId);
 	clientMsg.set_data(NET_DATA_BUF(pNetMsgHead), NET_DATA_SIZE(pNetMsgHead));
 	gGateLogicIns->m_pGameNetface->Send_Msg(&ntf,26);
+	//gGateLogicIns->m_pGameNetface->sendInnerMsg(&ntf);
 }
 
 void GateUser::handle_msg(const tagMsgHead* pNetMsg)
 {
-	//¿Í»§¶ËºÍ·þÎñÆ÷Ö®¼äµÄÐÄÌø°ü,ÔÚÍøÂç²ãÊÕµ½ÏûÏ¢¸üÐÂÊ±¼ä,ÍøÂç²ã³¤Ê±¼äÃ»ÓÐÊÕµ½°ü»á½«socket¶Ï¿ª
+	//ï¿½Í»ï¿½ï¿½ËºÍ·ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ã³¤Ê±ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½á½«socketï¿½Ï¿ï¿½
 	if (pNetMsg->usModuleId == client::enModule_Login && pNetMsg->uiCmdId == client::enModuleLogin_Req_KeepHeart)
 	{
 		static client::ModuleLogin_Ntf_KeepHeart ntf;

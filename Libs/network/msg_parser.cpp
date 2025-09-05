@@ -103,6 +103,28 @@ bool my_send_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
     return my_multicast_conn_msg(pDispatcher, toid, &coid, 1, pMsg);
 }
 
+bool my_send_inner_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
+    , conn_oid_t coid, const char* pMsg, size_t len)
+{
+    if (toid == invalid_thread_oid) return false;
+    if (pMsg == nullptr || !len) return false;
+    if (len > MSG_MAX_LEN)
+    {
+        Log_Error("msg size is too long! len:%u", len);
+        return false;
+    }
+    char* pBodyMsg = nullptr;
+    size_t pkgSize = (size_t)NET_HOST_SIZE + len;
+    tagNetMsg* pHostMsg = net_msg_alloc((uint32)pkgSize);
+    if (pHostMsg == nullptr) return false;
+    pHostMsg->m_hd.m_type = HMT_NET;
+    pHostMsg->m_hd.m_threadOid = toid;
+    pHostMsg->m_hd.m_connOid = coid;
+    pBodyMsg = (char*)pHostMsg->m_body;
+    memcpy(pBodyMsg, pMsg, len);
+    return pHostMsg;
+}
+
 bool my_multicast_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
     , const conn_oid_t* pCoids, uint16_t count, const tagMsgHead* pMsg)
 {

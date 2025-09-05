@@ -39,10 +39,10 @@ const int32_t CHECK_DETECT_INTERVAL = 10; // 10S
 
 enum E_Mq_Type
 {
-    EMQ_CAS = 0, //µ¥½øµ¥³ö
-    EMQ_MUL = 1, //¶à½øµ¥³ö
-    EMQ_GEN = 2, //¶àÏß³Ì
-    EMQ_NO = 3, //ÍøÂç²ãµ¥Ïß³Ì´¦Àí
+    EMQ_CAS = 0, //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    EMQ_MUL = 1, //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    EMQ_GEN = 2, //ï¿½ï¿½ï¿½ß³ï¿½
+    EMQ_NO = 3, //ï¿½ï¿½ï¿½ï¿½ãµ¥ï¿½ß³Ì´ï¿½ï¿½ï¿½
 };
 
 enum EParse_Msg_Relt
@@ -66,7 +66,7 @@ enum EConn_State
     cs_layer_connected = 5,
     cs_net_norecv = 6,
     cs_layer_kill = 7,
-    cs_net_exit = 8,   //½ø³ÌÍË³ö
+    cs_net_exit = 8,   //ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
 };
 
 enum EConn_Type
@@ -87,7 +87,7 @@ struct io_thread_setting
     int             m_nDetectSec = CHECK_DETECT_INTERVAL * 12;
     int             m_nSecRecvLimit = 1024 * 1024;
 
-    //ÏûÏ¢¶ÓÁÐµÄ·½Ê½
+    //ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ÐµÄ·ï¿½Ê½
     E_Mq_Type       m_syncType = EMQ_MUL;
 
     E_Mq_Type MqType() const { return m_syncType; }
@@ -123,13 +123,13 @@ struct net_setting
     std::string m_strListenIp = "0.0.0.0";
     uint16_t m_nListenPort = 0;
 
-    //¼àÌýIO
+    //ï¿½ï¿½ï¿½ï¿½IO
     io_thread_setting m_ioThread;
 
-    //Á¬½ÓIO
+    //ï¿½ï¿½ï¿½ï¿½IO
     io_thread_setting m_reThread;
 
-    //ÏûÏ¢¶ÓÁÐµÄ·½Ê½
+    //ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ÐµÄ·ï¿½Ê½
     E_Mq_Type       m_syncType = EMQ_MUL;
 
     uint32_t          m_ReconSec = 1;

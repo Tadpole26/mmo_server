@@ -4,9 +4,9 @@
 #include "msg_make.h"
 #include "global_define.h"
 /*
-client½á¹¹
-(¶ÔÓÚGateServerÀ´ËµÊÇÍæ¼Ò)
-(¶ÔÓÚGameServerÀ´ËµÊÇGateServer/WorldServerµÈµÈ)
+clientï¿½á¹¹
+(ï¿½ï¿½ï¿½ï¿½GateServerï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½)
+(ï¿½ï¿½ï¿½ï¿½GameServerï¿½ï¿½Ëµï¿½ï¿½GateServer/WorldServerï¿½Èµï¿½)
 */
 
 
@@ -27,6 +27,8 @@ public:
 	virtual bool Send_Msg(const uchar* buf, size_t size, msg_id_t usProtocol
 		, msg_id_t usModule = 0, uint32 code = client::ECode_Success
 		, uint32 seqid = 0);
+
+	virtual bool sendInnerMsg(google::protobuf::Message* pMsg);
 
 	virtual void Init();
 	virtual void Release();
@@ -65,6 +67,7 @@ public:
 		, uint32 seqid = 0);
 
 	virtual bool Send(const tagMsgHead* pMsg);
+	virtual bool sendInnerMsg(google::protobuf::Message* pMsg);
 
 	uint32 GetServerID() const { return m_dwServerID; }
 	void SetServerID(uint32 val) { m_dwServerID = val; }

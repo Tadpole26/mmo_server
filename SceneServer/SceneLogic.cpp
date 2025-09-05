@@ -10,7 +10,7 @@
 #include "mongo_base.h"
 #include "CDbInstance.h"
 #include "ServerNetface.h"
-#include <fstream>
+#include "FamilyNetface.h"
 
 void SceneLogic::addGateSvr(CGateSession* pGatesvr)
 {
@@ -115,17 +115,10 @@ bool SceneLogic::init()
 	assert(m_pInterface);
 	m_pLogic->reg_interface_reconn(m_pInterface);
 
-	//m_pSysNetFace = new CSysNetface();
-	//m_pSysNetFace->SetServerID(m_oConstCfg.m_uiGroupId);
-	//if (m_pLogic->add_reconn(m_pSysNetFace, m_oConstCfg.m_strSysIp, m_oConstCfg.m_uiSysPort,
-	//	SERVER_CON_SEC, MAX_SIZE_512M) < 0)
-	//	return false;
-
-	//m_pCrossNetFace = new CCrossNetface();
-	//m_pCrossNetFace->SetServerID(m_oConstCfg.m_uiGroupId);
-	//if (m_pLogic->add_reconn(m_pCrossNetFace, m_oConstCfg.m_strCrossIp, m_oConstCfg.m_uiCrossPort,
-	//	SERVER_CON_SEC, MAX_SIZE_512M) < 0)
-	//	return false;
+	_familysvr = new FamilyNetface();
+	_familysvr->SetServerID(gZoneCfg->m_uiGroupId);
+	if (m_pLogic->add_reconn(_familysvr, gZoneCfg->getFamilyIp(), gZoneCfg->getFamilyPort(), SERVER_CON_SEC, MAX_SIZE_512M) < 0)
+		return false;
 
 	regfn_io_recv_msg(my_io_recv_msg);
 	regfn_io_send_msg(my_io_send_msg);

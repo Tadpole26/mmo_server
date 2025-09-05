@@ -38,6 +38,9 @@ struct tagMsgHead
 //发送消息
 extern bool my_send_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
     , conn_oid_t coid, const tagMsgHead* pMsg);
+//发送内部消息(服务器内部不需要协议包头,通过protobuf oneof即可区分)
+extern bool my_send_inner_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid
+    , conn_oid_t coid, const char* pMsg, size_t len);
 
 //发送到多个连接上, 广播消息
 extern bool my_multicast_conn_msg(CThreadDispatcher* pDispatcher, thread_oid_t toid

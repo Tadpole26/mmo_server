@@ -11,6 +11,14 @@ bool CTcpSession::_Send(const tagMsgHead* pMsg)
 		return false;
 }
 
+bool CTcpSession::__sendInnerMsg(const char* pMsg, size_t len)
+{
+	if (m_pDispatcher != nullptr)
+		return my_send_inner_msg(m_pDispatcher, m_hd.m_threadOid, m_hd.m_connOid, pMsg, len);
+	else
+		return false;
+}
+
 CTcpReconn::CTcpReconn(bool bCache, uint32_t CacheSec)
 	: _bCacheSend(bCache)
 	, _CacheSec(CacheSec)
@@ -47,6 +55,14 @@ bool CTcpReconn::_Send(const tagMsgHead* pMsg)
 		return my_send_conn_msg(m_pDispatcher, m_hd.m_threadOid, m_hd.m_connOid, pMsg);
 	else
 		return AddCacheMsg((const char*)pMsg, pMsg->uiLen);
+}
+
+bool CTcpReconn::__sendInnerMsg(const char* pMsg, size_t len)
+{
+	if (m_pDispatcher != nullptr)
+		return my_send_inner_msg(m_pDispatcher, m_hd.m_threadOid, m_hd.m_connOid, pMsg, len);
+	else
+		return false;
 }
 
 void CTcpReconn::on_connect()

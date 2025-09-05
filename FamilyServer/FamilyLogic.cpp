@@ -6,7 +6,9 @@
 #include "func_proc.h"
 #include "global_define.h"
 #include "zMacro.h"
+#include "logic_thread.h"
 #include "ServerNetface.h"
+#include "SceneSession.h"
 
 bool FamilyLogic::init()
 {
@@ -36,14 +38,14 @@ bool FamilyLogic::init()
 		return false;
 	}
 
-	if (is_listen_port(gZoneCfg->m_uiSysPort))
+	if (is_listen_port(gZoneCfg->getFamilyPort()))
 	{
-		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiSysPort);
+		Log_Error("listen port exsit %u!!!", gZoneCfg->getFamilyPort());
 		return false;
 	}
 
 	net_setting stNetConfig;
-	stNetConfig.m_nListenPort = gZoneCfg->m_uiSysPort;
+	stNetConfig.m_nListenPort = gZoneCfg->getFamilyPort();
 	//线程数量,每个线程可连接数量,接受,输入,输出包大小限制
 	stNetConfig.m_ioThread.Init(1, 4096, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
 	stNetConfig.m_reThread.Init(get_cpu_num(), 20, ACCEPT_BUF_SIZE, SERVER_BUF_SIZE, SERVER_BUF_SIZE);
@@ -96,4 +98,21 @@ void FamilyLogic::fini()
 
 void FamilyLogic::tick(uint32 uiSec)
 {
+}
+
+SceneSession* FamilyLogic::getScene(uint32 serverId)
+{
+	auto it = _allscene.find(serverId);
+	if (it == _allscene.end()) return nullptr;
+	return it->second;
+}
+
+void  FamilyLogic::addScene(SceneSession* scenesvr)
+{
+	_allscene.emplace(scenesvr->GetServerId(), scenesvr);
+}
+
+void FamilyLogic::destroyScene(SceneSession*& scenesvr)
+{
+	_allscene.erase(scenesvr->GetServerId());
 }

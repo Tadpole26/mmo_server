@@ -1,4 +1,5 @@
 #pragma once
+#include "sdk.h"
 #include "logic_interface.h"
 #include "msg_interface.h"
 #include "msg_parser.h"

@@ -14,6 +14,9 @@ namespace config
 		bool addGameCfg();
 		bool addSysCfg();
 	public:
+		const std::string& getFamilyIp() const{ return _familyIp; }
+		uint32_t getFamilyPort() const { return _familyPort; }
+	public:
 		uint32_t					m_uiGroupId = 0;//Çø·þid
 
 		std::string					m_strGateIp = "";
@@ -26,9 +29,9 @@ namespace config
 
 		std::string					m_strGameIp = "";
 		uint32_t					m_uiGamePort = 0;
-
-		std::string					m_strSysIp = "";
-		uint32_t					m_uiSysPort = 0;
+	private:
+		std::string					_familyIp = "";
+		uint32_t					_familyPort = 0;
 	};
 }
 

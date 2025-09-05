@@ -20,6 +20,5 @@ public:
 	virtual void on_disconnect();
 public:
 	bool handClientMsg(const inner::InnerScenesvr& innerReq);
-	void OnCreateRole(const inner::InnerScenesvr& innerReq);
 };
 

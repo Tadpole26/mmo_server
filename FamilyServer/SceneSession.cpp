@@ -24,27 +24,6 @@ void SceneSession::handle_msg(const tagMsgHead* pNetMsg)
 	return;
 }
 
-
-void CGateSession::OnCreateRole(const inner::InnerScenesvr& innerReq)
-{
-	zRoleIdType roleId = innerReq.fromuser();
-	auto& createRole = innerReq.fromgate_createrole();
-	auto* pUser = gGameUserMgrIns->getUser(roleId);
-	if (pUser)
-	{
-		Log_Error("OnCreateRole.pUser.%lu", roleId);
-		return;
-	}
-	pUser = gGameUserMgrIns->createUser(roleId);
-	if (!pUser)
-	{
-		Log_Error("OnCreateRole.!pUser.%lu", roleId);
-		return;
-	}
-	Log_Info("create role, roleId%lu", roleId);
-
-}
-
 bool CGateSession::handClientMsg(const inner::InnerScenesvr& innerReq)
 {
 	zRoleIdType roleId = innerReq.fromuser();

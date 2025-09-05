@@ -43,8 +43,8 @@ namespace config
 
 	bool ZoneConstConfig::addSysCfg()
 	{
-		m_strSysIp = GetDataChr("ip");
-		m_uiSysPort = GetDataUInt("port");
+		_familyIp = GetDataChr("ip");
+		_familyPort = GetDataUInt("port");
 		return true;
 	}
 }

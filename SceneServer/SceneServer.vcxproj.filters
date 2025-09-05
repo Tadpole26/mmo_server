@@ -57,6 +57,9 @@
     <ClCompile Include="GameUserMgr.cpp">
       <Filter>User</Filter>
     </ClCompile>
+    <ClCompile Include="FamilyNetface.cpp">
+      <Filter>Netface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneLogic.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="GameUserMgr.h">
       <Filter>User</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyNetface.h">
+      <Filter>Netface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
