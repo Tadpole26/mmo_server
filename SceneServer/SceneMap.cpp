@@ -1,6 +1,7 @@
 #include "SceneMap.h"
-#include "CSceneMapMgr.h"
+#include "SceneMapMgr.h"
 #include "msg_cfg_ins.pb.h"
+#include "NavMeshContext.h"
 
 #include "NpcConfig.h"
 #include "MapConfig.h"
@@ -65,7 +66,13 @@ bool SceneMap::init()
 		Log_Error("加载地图失败,地编加载失败");
 		return false;
 	}
-	const auto& mapBrush = gSceneMapMgr->GetAllBrushFiles();
+	if (!__initNavMesh())
+	{
+		Log_Error("加载navmesh失败,地编加载失败");
+		return false;
+	}
+	if (!__initMNpc()) return false;
+	const auto& mapBrush = gSceneMapMgr->getAllBrushFiles();
 	auto iterMap = mapBrush.find(getMapId());
 	if (iterMap == mapBrush.end())
 	{
@@ -93,6 +100,7 @@ bool SceneMap::init()
 
 bool SceneMap::__initMapInfo()
 {
+	/*
 	std::string strFilePath = getMapId() + ".bin";
 	std::ifstream file(strFilePath, std::ios::binary | std::ios::in);
 	if (!file.is_open())
@@ -111,7 +119,14 @@ bool SceneMap::__initMapInfo()
 	setHeight(mapcfg.height());
 	_infos.resize(getWidth() * getHeight() + 1, 0);
 	file.close();
-	Log_Info("init map info, ok width:%u, height:%u, path:%s", mapcfg.width(), mapcfg.height(), strFilePath.c_str());
+	*/
+	packet::Map_Info mapcfg;
+	mapcfg.set_width(1024);
+	mapcfg.set_height(1024);
+	setWidth(mapcfg.width());
+	setHeight(mapcfg.height());
+	_infos.resize(getWidth() * getHeight() + 1, 0);
+	Log_Info("init map info, ok width:%u, height:%u", mapcfg.width(), mapcfg.height());
 	return true;
 }
 
@@ -324,6 +339,7 @@ void SceneMap::__finalTel()
 
 bool SceneMap::__initMNpc()
 {
+	/*
 	std::string strFilePath = std::to_string(getMapId()) + "_" + std::to_string(packet::BrushType_MonsterGroup) + ".bin";
 	std::ifstream file(strFilePath, std::ios::binary | std::ios::in);
 	if (!file.is_open())
@@ -338,6 +354,19 @@ bool SceneMap::__initMNpc()
 		file.close();
 		return false;
 	}
+	*/
+	packet::Map_AllTypes mapcfg;
+	auto& npcMGroup = *mapcfg.mutable_mapmonstergroup();
+	auto& npcGride = *npcMGroup.add_vecgrids();
+	auto& group = *npcGride.add_vecgroups();
+	group.set_monstergroupid(10240);
+	group.mutable_pos()->set_posx(8355000);
+	group.mutable_pos()->set_posy(795000);
+	group.mutable_createrect()->mutable_minpos()->set_posx(8280000);
+	group.mutable_createrect()->mutable_minpos()->set_posy(720000);
+	group.mutable_createrect()->mutable_maxpos()->set_posx(8430000);
+	group.mutable_createrect()->mutable_maxpos()->set_posy(870000);
+
 	bool bRet = true;
 	for (auto i = 0; i < mapcfg.mapmonstergroup().vecgrids_size(); ++i)
 	{
@@ -347,13 +376,13 @@ bool SceneMap::__initMNpc()
 			const auto& mnpcInfo = groupInfo.vecgroups(j);
 			if (!mnpcInfo.has_pos())
 			{
-				Log_Error("初始化怪物组:坐标不存在, %s", strFilePath.c_str());
+				Log_Error("初始化怪物组:坐标不存在");
 				bRet = false;
 				continue;
 			}
 			if (!mnpcInfo.has_createrect())
 			{
-				Log_Error("初始化怪物组:区域范围不存在, %s", strFilePath.c_str());
+				Log_Error("初始化怪物组:区域范围不存在");
 				bRet = false;
 				continue;
 			}
@@ -392,20 +421,35 @@ bool SceneMap::__initMNpc()
 			}
 			else
 			{
-				_dynamicMNpcGroups[mnpcInfo.monstergroupid()].push_back(pMnpc);
+				_staticMNpcGroups[mnpcInfo.monstergroupid()].push_back(pMnpc);
 			}
 			Log_Info("初始化怪物组: %u, [%u,%u], [%u,%u], [%u,%u], %u",
 				mnpcInfo.monstergroupid(), mnpcInfo.pos().posx(), mnpcInfo.pos().posy(), oRect.minpos().posx(), oRect.minpos().posy(),
 				oRect.maxpos().posx(), oRect.maxpos().posy());
 		}
 	}
-	file.close();
+	//file.close();
 	if (!bRet)
 	{
-		Log_Error("初始化怪物组:失败, %s", strFilePath.c_str());
+		Log_Error("初始化怪物组:失败");
 		return false;
 	}
-	Log_Info("初始化怪物组:成功, %s", strFilePath.c_str());
+	Log_Info("初始化怪物组:成功");
+	return true;
+}
+
+bool SceneMap::__initNavMesh()
+{
+	auto* pMapCfg = gMapCfg->getMapConfig(getMapId());
+	if (!pMapCfg) return false;
+	if (_navMeshContext != nullptr) return false;
+	_navMeshContext = gSceneMapMgr->getNavMesh(pMapCfg->navmesh);
+	if (!_navMeshContext)
+	{
+		Log_Error("!_navMeshContext.%u", pMapCfg->navmesh);
+		return false;
+	}
+	Log_Debug("__initNavMesh success.%u", pMapCfg->navmesh);
 	return true;
 }
 
@@ -434,6 +478,10 @@ void SceneMap::__finalMNpc()
 		}
 	}
 	_dynamicMNpcGroups.clear();
+}
+
+void SceneMap::__finalNavMesh()
+{
 }
 
 bool SceneMap::__checkPosValid(const packet::Grid_Rect& rect)
@@ -522,11 +570,15 @@ bool SceneMap::__fillMNpcGroupPos(map_mnpc_t& mnpc, const config::monster_group_
 	return true;
 }
 
+const NavMeshContext& SceneMap::getNavMeshContext() const
+{ 
+	return *_navMeshContext; 
+}
+
 bool SceneMap::isFullScreen() const
 {
-	config::map_info_t* pMapCfg = gMapCfg->GetMapConfig(getMapId());
-	if (pMapCfg == nullptr)
-		return true;
+	const config::map_info_t* pMapCfg = gMapCfg->getMapConfig(getMapId());
+	if (pMapCfg == nullptr) return true;
 	return pMapCfg->uiTiny;
 }
 

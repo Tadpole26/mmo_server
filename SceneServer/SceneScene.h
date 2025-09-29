@@ -40,7 +40,7 @@ public:
 	virtual void onNpcEnter(SceneNpc* pNpc);									//npc进入场景
 	virtual void onNpcLeave(SceneNpc* pNpc);									//npc离开场景
 public:
-	inline SceneScreen& getScreen() { return *_sceneScreen; }
+	//inline SceneScreen& getScreen() { return *_sceneScreen; }
 	inline SceneNpcFMgr& npcfMgr() { return *_npcfmgr; }
 	inline SceneNpcMMgr& npcmMgr() { return *_npcmmgr; }
 public:
@@ -78,7 +78,7 @@ public:
 public:
 	SceneMap* map = nullptr;
 private:
-	SceneScreen* _sceneScreen = nullptr;
+	//SceneScreen* _sceneScreen = nullptr;
 	SceneNpcFMgr* _npcfmgr = nullptr;
 	SceneNpcMMgr* _npcmmgr = nullptr;
 };

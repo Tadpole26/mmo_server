@@ -9,6 +9,13 @@ namespace config
 		return LoadCfgFromStr(strContent);
 	}
 
+	bool NpcConfig::LoadConfigByFile(const std::string& fileName)
+	{
+		InitSheet("item_info", std::bind(&NpcConfig::AddNpcInfo, this));
+
+		return LoadCfgFromXml(fileName.c_str());
+	}
+
 	const npc_info_t* NpcConfig::GetNpcInfoCfg(uint32 uiTid) const
 	{
 		auto iter = m_mapNpcInfoCfg.find(uiTid);

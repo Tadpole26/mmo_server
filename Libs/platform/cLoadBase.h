@@ -21,11 +21,12 @@ public:
 
 	void InitSheet(const char* pSheet, fn_read fn, bool bCanEmpty = false);
 	bool IsValid();
-	//从xml文件中读取
+	//从xml文件解析
 	bool LoadCfgFromXml(const char* pXmlFileName = nullptr);
 	//从string解析
 	bool LoadCfgFromStr(const std::string& strCfg);
-	virtual bool LoadConfig(const std::string& strContent);
+	virtual bool LoadConfig(const std::string& strContent) = 0;
+	virtual bool LoadConfigByFile(const std::string& fileName) = 0;
 
 	bool ReadString(const char* pField, std::string& strRet);
 	std::string GetDataChr(const char* pField, const std::string& strDef = "");

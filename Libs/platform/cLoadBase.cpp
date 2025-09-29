@@ -285,8 +285,7 @@ bool cLoadBase::LoadCfgFromXml(const char* pXmlFileName)
 
 bool cLoadBase::LoadCfgFromStr(const std::string& strCfg)
 {
-	if (strCfg.empty())
-		return false;
+	if (strCfg.empty()) return false;
 
 	std::unique_ptr<TiXmlDocument> pDoc(new TiXmlDocument());
 	if (!pDoc)
@@ -357,9 +356,4 @@ bool cLoadBase::LoadCfgFromStr(const std::string& strCfg)
 		pElem = pElem->NextSiblingElement();
 	}
 	return IsValid();
-}
-
-bool cLoadBase::LoadConfig(const std::string& strContent)
-{
-	return true;
 }

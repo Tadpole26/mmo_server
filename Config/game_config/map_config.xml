@@ -13,17 +13,4 @@
 		<reborn_direct>180.0</reborn_direct>
 		<navmesh>101.0</navmesh>
 	</map_info>
-	<map_info>
-		<id>10101.0</id>
-		<comment>日常副本-下水道</comment>
-		<level>1.0</level>
-		<static>0.0</static>
-		<width>256.0</width>
-		<height>256.0</height>
-		<born_point>149&amp;36</born_point>
-		<direct>0.0</direct>
-		<reborn_point>100&amp;100</reborn_point>
-		<reborn_direct>0.0</reborn_direct>
-		<navmesh>10101.0</navmesh>
-	</map_info>
 </xml>

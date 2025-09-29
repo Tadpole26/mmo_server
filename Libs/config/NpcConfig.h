@@ -21,6 +21,7 @@ namespace config
 	{
 	public:
 		bool LoadConfig(const std::string& strContent) override;
+		bool LoadConfigByFile(const std::string& fileName) override;
 
 		const npc_info_t* GetNpcInfoCfg(uint32 uiTid) const;
 

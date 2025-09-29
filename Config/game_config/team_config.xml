@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<team_info>
+		<id>1000.0</id>
+		<comment>时空裂缝</comment>
+		<type>10.0</type>
+		<team_min>1.0</team_min>
+		<team_max>5.0</team_max>
+		<level_min>30.0</level_min>
+		<level_max>99.0</level_max>
+	</team_info>
+	<team_info>
+		<id>1001.0</id>
+		<comment>时空裂缝</comment>
+		<type>10.0</type>
+		<team_min>1.0</team_min>
+		<team_max>5.0</team_max>
+		<level_min>40.0</level_min>
+		<level_max>99.0</level_max>
+	</team_info>
+	<team_info>
+		<id>1100.0</id>
+		<comment>冒险者试炼</comment>
+		<type>11.0</type>
+		<team_min>1.0</team_min>
+		<team_max>5.0</team_max>
+		<level_min>1.0</level_min>
+		<level_max>99.0</level_max>
+	</team_info>
+</xml>

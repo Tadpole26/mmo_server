@@ -43,6 +43,7 @@
     <ClCompile Include="match.pb.cc" />
     <ClCompile Include="matchcommon.pb.cc" />
     <ClCompile Include="matchsvr.pb.cc" />
+    <ClCompile Include="msg_cfg_ins.pb.cc" />
     <ClCompile Include="msg_module_ranker.pb.cc" />
     <ClCompile Include="record.pb.cc" />
     <ClCompile Include="recordfriend.pb.cc" />
@@ -77,6 +78,7 @@
     <ClInclude Include="match.pb.h" />
     <ClInclude Include="matchcommon.pb.h" />
     <ClInclude Include="matchsvr.pb.h" />
+    <ClInclude Include="msg_cfg_ins.pb.h" />
     <ClInclude Include="msg_module_ranker.pb.h" />
     <ClInclude Include="record.pb.h" />
     <ClInclude Include="recordfriend.pb.h" />

@@ -63,6 +63,7 @@ namespace config
 	{
 	public:
 		bool LoadConfig(const std::string& strContent) override;
+		bool LoadConfigByFile(const std::string& fileName) override;
 
 		monster_group_info_t* GetMonsterGroupConfig(const uint32 uiTid);
 		monster_param_t* GetMonsterParamConfig(const uint32 uiTid);

@@ -17,6 +17,7 @@ public:
 	virtual void handle_logic_msg(const tagNetMsg* pNetMsg);
 private:
 	bool __msgParseScenesvr(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq);
+	bool __msgParseFamilysvr();
 public:
 	virtual bool netMsgFromGate(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq);
 	virtual bool netMsgFromFriend(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq);

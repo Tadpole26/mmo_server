@@ -29,6 +29,7 @@ public:
 	void addGateSvr(CGateSession* pGatesvr);
 	CGateSession *getGateSvr(uint32 serverId);
 	void destroyGateSvr(CGateSession* pGatesvr);
+	bool loadConfig();
 public:
 	CLogicThread* m_pLogic = nullptr;
 	CCrossNetface* m_pCrossNetFace = nullptr;

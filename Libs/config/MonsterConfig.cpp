@@ -8,7 +8,14 @@ namespace config
 		InitSheet("monster_param", std::bind(&MonsterConfig::AddMonsterParam, this));
 		InitSheet("monster_info", std::bind(&MonsterConfig::AddMonsterInfo, this));
 		return LoadCfgFromStr(strContent);
+	}
 
+	bool MonsterConfig::LoadConfigByFile(const std::string& fileName)
+	{
+		InitSheet("monster_group_info", std::bind(&MonsterConfig::AddMonsterGroupInfo, this));
+		InitSheet("monster_param", std::bind(&MonsterConfig::AddMonsterParam, this));
+		InitSheet("monster_info", std::bind(&MonsterConfig::AddMonsterInfo, this));
+		return LoadCfgFromXml(fileName.c_str());
 	}
 
 	bool MonsterConfig::AddMonsterGroupInfo()

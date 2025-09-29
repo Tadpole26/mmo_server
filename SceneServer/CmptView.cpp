@@ -1,7 +1,6 @@
-#include "zPos.h"
-#include "SceneScene.h"
+//#include "SceneScene.h"
 #include "CmptView.h"
-#include "SceneMap.h"
+//#include "SceneMap.h"
 
 CmptView::CmptView() :
 	_curPos(),
@@ -21,6 +20,7 @@ void CmptView::final()
 
 bool CmptView::setPos(const zPos& newPos)
 {
+	/*
 	auto* pScene = getScene();
 	assert(pScene != nullptr);
 	if (zMap::oBigWH.x > newPos.x && zMap::oBigWH.y > newPos.y)
@@ -31,6 +31,8 @@ bool CmptView::setPos(const zPos& newPos)
 	}
 	else
 		return false;
+		*/
+	return true;
 }
 
 bool CmptView::isMovingWalking()
@@ -48,21 +50,25 @@ bool CmptView::moveTo(const zPos& oDst)
 
 bool CmptView::addScreen(const zPos& newpos, const WORD circledir)
 {
-	auto* scene = getScene();
-	assert(scene != nullptr);
-	if (!scene->)
+	//auto* scene = getScene();
+	//assert(scene != nullptr);
+	//if (!scene->)
+	return true;
 }
 
 bool CmptView::freshScreen(const zPos& newpos)
 {
+	return true;
 }
 
 bool CmptView::removeScreen()
 {
+	return true;
 }
 
 bool CmptView::changeScreen(const zPosI old)
 {
+	return true;
 }
 
 void CmptView::sendMeToView()
@@ -89,24 +95,28 @@ void CmptView::removeMeFromViewRDir(const zPosI old, const int direct)
 {
 }
 
-void CmptView::sendChgFieldToView(std::initializer_list<uint32> changes, bool isfight = false)
+void CmptView::sendChgFieldToView(std::initializer_list<uint32> changes, bool isfight)
 {
 }
 
 uint32 CmptView::sizeScreenRole()
 {
+	return 0;
 }
 
 uint32 CmptView::sizeScreenMonster()
 {
+	return 0;
 }
 
 uint32 CmptView::sizeNineRole()
 {
+	return 0;
 }
 
 uint32 CmptView::sizeNineMonster()
 {
+	return 0;
 }
 
 void CmptView::serverResetMove()

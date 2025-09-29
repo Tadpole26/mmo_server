@@ -5,15 +5,19 @@
 
 namespace config
 {
+	bool ZoneConstConfig::LoadConfig(const std::string& strContent)
+	{
+		return true;
+	}
 
-	bool ZoneConstConfig::init()
+	bool ZoneConstConfig::LoadConfigByFile(const std::string& fileName)
 	{
 		InitSheet("zone_config", std::bind(&ZoneConstConfig::addCommonCfg, this));
 		InitSheet("gate_config", std::bind(&ZoneConstConfig::addGateCfg, this));
 		InitSheet("game_config", std::bind(&ZoneConstConfig::addGameCfg, this));
 		InitSheet("sys_config", std::bind(&ZoneConstConfig::addSysCfg, this));
 
-		return LoadCfgFromXml(CONST_CONFIG);
+		return LoadCfgFromXml(fileName.c_str());
 	}
 
 	bool ZoneConstConfig::addCommonCfg()

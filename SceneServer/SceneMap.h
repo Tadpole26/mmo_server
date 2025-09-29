@@ -57,6 +57,7 @@ struct map_grid_t
 };
 
 struct monster_group_info_t;
+class NavMeshContext;
 class SceneMap : public zMap
 {
 public:
@@ -76,6 +77,8 @@ public:
 public:
 	bool isFullScreen() const;
 	zPosI pos2zPosI(const zPos& oPos) const;
+public:
+	const NavMeshContext& getNavMeshContext() const; 
 private:
 	bool __initMapInfo();
 	bool __initNpc();											//≥ı ºªØπÃ∂®npc
@@ -84,6 +87,8 @@ private:
 	void __finalTel();
 	bool __initMNpc();
 	void __finalMNpc();
+	bool __initNavMesh();
+	void __finalNavMesh();
 private:
 	map_grid_t* __createMapGrid(const uint32 x, const uint32 y);
 	map_grid_t* __getMapGrid(const uint32 uiGridId);
@@ -98,4 +103,6 @@ private:
 	MapFNpcMapT _fnpcs;
 	MapMNpcGroupIdMapT _staticMNpcGroups;
 	MapMNpcGroupIdMapT _dynamicMNpcGroups;
+private:
+	const NavMeshContext* _navMeshContext = nullptr;
 };

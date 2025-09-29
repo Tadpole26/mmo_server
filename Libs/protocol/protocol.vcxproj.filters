@@ -33,6 +33,7 @@
     <ClCompile Include="gatesvr.pb.cc" />
     <ClCompile Include="familysvr.pb.cc" />
     <ClCompile Include="inner.pb.cc" />
+    <ClCompile Include="msg_cfg_ins.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -67,6 +68,7 @@
     <ClInclude Include="gatesvr.pb.h" />
     <ClInclude Include="familysvr.pb.h" />
     <ClInclude Include="inner.pb.h" />
+    <ClInclude Include="msg_cfg_ins.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

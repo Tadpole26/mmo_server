@@ -60,6 +60,21 @@
     <ClCompile Include="FamilyNetface.cpp">
       <Filter>Netface</Filter>
     </ClCompile>
+    <ClCompile Include="CmptMovement.cpp">
+      <Filter>Managers\Cmpt</Filter>
+    </ClCompile>
+    <ClCompile Include="CmptView.cpp">
+      <Filter>Managers\Cmpt</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneScene.cpp">
+      <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMap.cpp">
+      <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMapMgr.cpp">
+      <Filter>Managers\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SceneLogic.h">
@@ -91,6 +106,21 @@
     </ClInclude>
     <ClInclude Include="FamilyNetface.h">
       <Filter>Netface</Filter>
+    </ClInclude>
+    <ClInclude Include="CmptMovement.h">
+      <Filter>Managers\Cmpt</Filter>
+    </ClInclude>
+    <ClInclude Include="CmptView.h">
+      <Filter>Managers\Cmpt</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneScene.h">
+      <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMap.h">
+      <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMapMgr.h">
+      <Filter>Managers\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

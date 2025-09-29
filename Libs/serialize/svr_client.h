@@ -1,11 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "logic_interface.h"
 #include "tcp_client.h"
 #include "msg_make.h"
 #include "global_define.h"
 /*
 client�ṹ
-(����GateServer��˵�����)
+(����GateServer��˵�����?
 (����GameServer��˵��GateServer/WorldServer�ȵ�)
 */
 

@@ -1,5 +1,8 @@
 #include "zMap.h"
 
+uint32 zMap::screenX = 69;
+uint32 zMap::screenY = 69;
+zPos2 zMap::bigWH(2048.500000, 2048.500000);
 zMap::zMap(uint32 uiMapId) : _mapId(uiMapId)
 {
 }

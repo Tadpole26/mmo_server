@@ -2,7 +2,7 @@
 
 #include "sdk.h"
 //视野组件基类
-class CSceneScene;
+//class CSceneScene;
 class CmptView
 {
 public:
@@ -34,7 +34,7 @@ public:
 	virtual uint64 getSceneId() = 0;				//场景id
 	virtual uint32 getMapID() = 0;					//地图id
 	virtual uint32 getSpeed() = 0;					//移动速度
-	virtual CSceneScene* getScene() = 0;
+	//virtual CSceneScene* getScene() = 0;
 	virtual void notifyGatewayFreshScreen() {}
 public:
 	inline bool hasInScene() { return _inserted; }

@@ -8,7 +8,8 @@ namespace config
 	class ZoneConstConfig : public cLoadBase
 	{
 	public:
-		bool init();
+		bool LoadConfig(const std::string& strContent) override;
+		bool LoadConfigByFile(const std::string& fileName) override;
 		bool addCommonCfg();
 		bool addGateCfg();
 		bool addGameCfg();

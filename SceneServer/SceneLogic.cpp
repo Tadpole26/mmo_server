@@ -1,4 +1,4 @@
-#include "ZoneConstConfig.h"
+﻿#include "ZoneConstConfig.h"
 
 #include "SceneLogic.h"
 #include "global_define.h"
@@ -11,6 +11,10 @@
 #include "CDbInstance.h"
 #include "ServerNetface.h"
 #include "FamilyNetface.h"
+
+#include "MapConfig.h"
+
+#include "SceneMapMgr.h"
 
 void SceneLogic::addGateSvr(CGateSession* pGatesvr)
 {
@@ -71,7 +75,7 @@ bool SceneLogic::init()
 #endif
 	InstallCoreDumper();
 	SetConsoleInfo(std::bind(&SceneLogic::stop, this));
-	if (!gZoneCfg->init())
+	if (!gZoneCfg->LoadConfigByFile("../Config/zone_const_config.xml"))
 	{
 		Log_Error("load zone config error!");
 		return false;
@@ -93,7 +97,16 @@ bool SceneLogic::init()
 		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiGamePort);
 		return false;
 	}
-
+	if (!loadConfig())
+	{
+		Log_Error("!loadConfig()");
+		return false;
+	}
+	if (!gSceneMapMgr->init())
+	{
+		Log_Error("!gSceneMapMgr->init()");
+		return false;
+	}
 	net_setting stNetConfig;
 	stNetConfig.m_nListenPort = gZoneCfg->m_uiGamePort;
 	//�߳�����,ÿ���߳̿���������,����,����,�������С����
@@ -161,3 +174,23 @@ void SceneLogic::OnTimer(uint32 uiSec)
 {
 }
 
+bool SceneLogic::loadConfig()
+{
+	if (!gMapCfg->LoadConfigByFile("../Config/game_config/map_config.xml")) return false;
+	Log_Info("map size:%u", gMapCfg->sizeMapCfg());
+	/*
+	auto* pAgent = new CmptMovement();
+	auto* pNaveMesh = new NavMeshContext();
+	pNaveMesh->load("../Config/map/solo_navmesh.bin");
+	Log_Info("寻路开始...");
+	if (!pNaveMesh->calculatePath(pAgent, 51.43, -1.82, 5.82))
+	{
+		return false;
+	}
+	auto listPath = pNaveMesh->getPath(pAgent);
+	for (auto& path : listPath)
+	{
+		Log_Info("x:%f, y:%f, z:%f", path.getFloatX(), path.getFloatY(), path.getFloatZ());
+	}*/
+	return true;
+}
