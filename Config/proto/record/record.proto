@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "recordfriend.proto";
+import "recorditem.proto";
 package record;
 
 
@@ -13,6 +14,7 @@ message RecordModule
 {
 	oneof oModule 
 	{
-		RecordModuleFriend oRecordFriend = 1;				//好友
+		RecordModuleItem item = 1;
+		RecordModuleFriend friend = 2;				//好友
 	}
 }

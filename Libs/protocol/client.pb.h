@@ -54,9 +54,7 @@ enum enModule : int {
   enModule_Friend = 3,
   enModule_Mall = 4,
   enModule_Mail = 5,
-  enModule_ServerCommon = 90,
-  enModule_ServerInner = 91,
-  enModule_ServerBattle = 92,
+  enModule_Item = 6,
   enModule_End = 100,
   enModule_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   enModule_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()

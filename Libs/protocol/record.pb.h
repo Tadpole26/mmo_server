@@ -34,6 +34,7 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "recordfriend.pb.h"
+#include "recorditem.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_record_2eproto
@@ -294,7 +295,8 @@ class RecordModule final :
     return *internal_default_instance();
   }
   enum OModuleCase {
-    kORecordFriend = 1,
+    kItem = 1,
+    kFriend = 2,
     OMODULE_NOT_SET = 0,
   };
 
@@ -374,32 +376,52 @@ class RecordModule final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kORecordFriendFieldNumber = 1,
+    kItemFieldNumber = 1,
+    kFriendFieldNumber = 2,
   };
-  // .record.RecordModuleFriend oRecordFriend = 1;
-  bool has_orecordfriend() const;
+  // .record.RecordModuleItem item = 1;
+  bool has_item() const;
   private:
-  bool _internal_has_orecordfriend() const;
+  bool _internal_has_item() const;
   public:
-  void clear_orecordfriend();
-  const ::record::RecordModuleFriend& orecordfriend() const;
-  PROTOBUF_NODISCARD ::record::RecordModuleFriend* release_orecordfriend();
-  ::record::RecordModuleFriend* mutable_orecordfriend();
-  void set_allocated_orecordfriend(::record::RecordModuleFriend* orecordfriend);
+  void clear_item();
+  const ::record::RecordModuleItem& item() const;
+  PROTOBUF_NODISCARD ::record::RecordModuleItem* release_item();
+  ::record::RecordModuleItem* mutable_item();
+  void set_allocated_item(::record::RecordModuleItem* item);
   private:
-  const ::record::RecordModuleFriend& _internal_orecordfriend() const;
-  ::record::RecordModuleFriend* _internal_mutable_orecordfriend();
+  const ::record::RecordModuleItem& _internal_item() const;
+  ::record::RecordModuleItem* _internal_mutable_item();
   public:
-  void unsafe_arena_set_allocated_orecordfriend(
-      ::record::RecordModuleFriend* orecordfriend);
-  ::record::RecordModuleFriend* unsafe_arena_release_orecordfriend();
+  void unsafe_arena_set_allocated_item(
+      ::record::RecordModuleItem* item);
+  ::record::RecordModuleItem* unsafe_arena_release_item();
+
+  // .record.RecordModuleFriend friend = 2;
+  bool has_friend_() const;
+  private:
+  bool _internal_has_friend_() const;
+  public:
+  void clear_friend_();
+  const ::record::RecordModuleFriend& friend_() const;
+  PROTOBUF_NODISCARD ::record::RecordModuleFriend* release_friend_();
+  ::record::RecordModuleFriend* mutable_friend_();
+  void set_allocated_friend_(::record::RecordModuleFriend* friend_);
+  private:
+  const ::record::RecordModuleFriend& _internal_friend_() const;
+  ::record::RecordModuleFriend* _internal_mutable_friend_();
+  public:
+  void unsafe_arena_set_allocated_friend_(
+      ::record::RecordModuleFriend* friend_);
+  ::record::RecordModuleFriend* unsafe_arena_release_friend_();
 
   void clear_oModule();
   OModuleCase oModule_case() const;
   // @@protoc_insertion_point(class_scope:record.RecordModule)
  private:
   class _Internal;
-  void set_has_orecordfriend();
+  void set_has_item();
+  void set_has_friend_();
 
   inline bool has_oModule() const;
   inline void clear_has_oModule();
@@ -410,7 +432,8 @@ class RecordModule final :
   union OModuleUnion {
     constexpr OModuleUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::record::RecordModuleFriend* orecordfriend_;
+    ::record::RecordModuleItem* item_;
+    ::record::RecordModuleFriend* friend__;
   } oModule_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -463,69 +486,135 @@ RecordModuleAll::mutable_modules() {
 
 // RecordModule
 
-// .record.RecordModuleFriend oRecordFriend = 1;
-inline bool RecordModule::_internal_has_orecordfriend() const {
-  return oModule_case() == kORecordFriend;
+// .record.RecordModuleItem item = 1;
+inline bool RecordModule::_internal_has_item() const {
+  return oModule_case() == kItem;
 }
-inline bool RecordModule::has_orecordfriend() const {
-  return _internal_has_orecordfriend();
+inline bool RecordModule::has_item() const {
+  return _internal_has_item();
 }
-inline void RecordModule::set_has_orecordfriend() {
-  _oneof_case_[0] = kORecordFriend;
+inline void RecordModule::set_has_item() {
+  _oneof_case_[0] = kItem;
 }
-inline ::record::RecordModuleFriend* RecordModule::release_orecordfriend() {
-  // @@protoc_insertion_point(field_release:record.RecordModule.oRecordFriend)
-  if (_internal_has_orecordfriend()) {
+inline ::record::RecordModuleItem* RecordModule::release_item() {
+  // @@protoc_insertion_point(field_release:record.RecordModule.item)
+  if (_internal_has_item()) {
     clear_has_oModule();
-    ::record::RecordModuleFriend* temp = oModule_.orecordfriend_;
+    ::record::RecordModuleItem* temp = oModule_.item_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    oModule_.orecordfriend_ = nullptr;
+    oModule_.item_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::record::RecordModuleFriend& RecordModule::_internal_orecordfriend() const {
-  return _internal_has_orecordfriend()
-      ? *oModule_.orecordfriend_
+inline const ::record::RecordModuleItem& RecordModule::_internal_item() const {
+  return _internal_has_item()
+      ? *oModule_.item_
+      : reinterpret_cast< ::record::RecordModuleItem&>(::record::_RecordModuleItem_default_instance_);
+}
+inline const ::record::RecordModuleItem& RecordModule::item() const {
+  // @@protoc_insertion_point(field_get:record.RecordModule.item)
+  return _internal_item();
+}
+inline ::record::RecordModuleItem* RecordModule::unsafe_arena_release_item() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:record.RecordModule.item)
+  if (_internal_has_item()) {
+    clear_has_oModule();
+    ::record::RecordModuleItem* temp = oModule_.item_;
+    oModule_.item_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void RecordModule::unsafe_arena_set_allocated_item(::record::RecordModuleItem* item) {
+  clear_oModule();
+  if (item) {
+    set_has_item();
+    oModule_.item_ = item;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:record.RecordModule.item)
+}
+inline ::record::RecordModuleItem* RecordModule::_internal_mutable_item() {
+  if (!_internal_has_item()) {
+    clear_oModule();
+    set_has_item();
+    oModule_.item_ = CreateMaybeMessage< ::record::RecordModuleItem >(GetArenaForAllocation());
+  }
+  return oModule_.item_;
+}
+inline ::record::RecordModuleItem* RecordModule::mutable_item() {
+  ::record::RecordModuleItem* _msg = _internal_mutable_item();
+  // @@protoc_insertion_point(field_mutable:record.RecordModule.item)
+  return _msg;
+}
+
+// .record.RecordModuleFriend friend = 2;
+inline bool RecordModule::_internal_has_friend_() const {
+  return oModule_case() == kFriend;
+}
+inline bool RecordModule::has_friend_() const {
+  return _internal_has_friend_();
+}
+inline void RecordModule::set_has_friend_() {
+  _oneof_case_[0] = kFriend;
+}
+inline ::record::RecordModuleFriend* RecordModule::release_friend_() {
+  // @@protoc_insertion_point(field_release:record.RecordModule.friend)
+  if (_internal_has_friend_()) {
+    clear_has_oModule();
+    ::record::RecordModuleFriend* temp = oModule_.friend__;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    oModule_.friend__ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::record::RecordModuleFriend& RecordModule::_internal_friend_() const {
+  return _internal_has_friend_()
+      ? *oModule_.friend__
       : reinterpret_cast< ::record::RecordModuleFriend&>(::record::_RecordModuleFriend_default_instance_);
 }
-inline const ::record::RecordModuleFriend& RecordModule::orecordfriend() const {
-  // @@protoc_insertion_point(field_get:record.RecordModule.oRecordFriend)
-  return _internal_orecordfriend();
+inline const ::record::RecordModuleFriend& RecordModule::friend_() const {
+  // @@protoc_insertion_point(field_get:record.RecordModule.friend)
+  return _internal_friend_();
 }
-inline ::record::RecordModuleFriend* RecordModule::unsafe_arena_release_orecordfriend() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:record.RecordModule.oRecordFriend)
-  if (_internal_has_orecordfriend()) {
+inline ::record::RecordModuleFriend* RecordModule::unsafe_arena_release_friend_() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:record.RecordModule.friend)
+  if (_internal_has_friend_()) {
     clear_has_oModule();
-    ::record::RecordModuleFriend* temp = oModule_.orecordfriend_;
-    oModule_.orecordfriend_ = nullptr;
+    ::record::RecordModuleFriend* temp = oModule_.friend__;
+    oModule_.friend__ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void RecordModule::unsafe_arena_set_allocated_orecordfriend(::record::RecordModuleFriend* orecordfriend) {
+inline void RecordModule::unsafe_arena_set_allocated_friend_(::record::RecordModuleFriend* friend_) {
   clear_oModule();
-  if (orecordfriend) {
-    set_has_orecordfriend();
-    oModule_.orecordfriend_ = orecordfriend;
+  if (friend_) {
+    set_has_friend_();
+    oModule_.friend__ = friend_;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:record.RecordModule.oRecordFriend)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:record.RecordModule.friend)
 }
-inline ::record::RecordModuleFriend* RecordModule::_internal_mutable_orecordfriend() {
-  if (!_internal_has_orecordfriend()) {
+inline ::record::RecordModuleFriend* RecordModule::_internal_mutable_friend_() {
+  if (!_internal_has_friend_()) {
     clear_oModule();
-    set_has_orecordfriend();
-    oModule_.orecordfriend_ = CreateMaybeMessage< ::record::RecordModuleFriend >(GetArenaForAllocation());
+    set_has_friend_();
+    oModule_.friend__ = CreateMaybeMessage< ::record::RecordModuleFriend >(GetArenaForAllocation());
   }
-  return oModule_.orecordfriend_;
+  return oModule_.friend__;
 }
-inline ::record::RecordModuleFriend* RecordModule::mutable_orecordfriend() {
-  ::record::RecordModuleFriend* _msg = _internal_mutable_orecordfriend();
-  // @@protoc_insertion_point(field_mutable:record.RecordModule.oRecordFriend)
+inline ::record::RecordModuleFriend* RecordModule::mutable_friend_() {
+  ::record::RecordModuleFriend* _msg = _internal_mutable_friend_();
+  // @@protoc_insertion_point(field_mutable:record.RecordModule.friend)
   return _msg;
 }
 

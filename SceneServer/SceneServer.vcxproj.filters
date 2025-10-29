@@ -31,6 +31,9 @@
     <Filter Include="Managers\Module">
       <UniqueIdentifier>{d508c39d-3fd6-4924-9d08-2d1cebe4ba15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{b1b30fce-7586-4da9-b95f-e72ff15d7dde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneServer.cpp">
@@ -74,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="SceneMapMgr.cpp">
       <Filter>Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleItem.cpp">
+      <Filter>Managers\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="RedisMgr.cpp">
+      <Filter>DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="SceneMapMgr.h">
       <Filter>Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleItem.h">
+      <Filter>Managers\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="RedisMgr.h">
+      <Filter>DB</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -216,6 +216,12 @@
     <ClInclude Include="cNeterface.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="cProperty.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="zWeightAllocator.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="util_random.cpp">
@@ -324,6 +330,9 @@
       <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="cNeterface.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="cProperty.cpp">
       <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>

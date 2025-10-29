@@ -1,6 +1,11 @@
 #pragma once
 #include "sdk.h"
 
+namespace record
+{
+	class RecordModule;
+}
+
 class GameUser;
 //场景服模块组件基类
 class GameModule
@@ -10,8 +15,8 @@ public:
 	virtual ~GameModule();
 	virtual void final();
 	virtual bool init(GameUser* pGameUser);
-	virtual uint32 serialize() = 0;
-	virtual bool unserialize() = 0;
+	virtual uint32 serialize(record::RecordModule &out) = 0;
+	virtual bool unserialize(const record::RecordModule &in) = 0;
 public:
 	virtual bool handleClientMsg(uint32 cmdId, const std::string& data) = 0;
 public:

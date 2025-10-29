@@ -10,11 +10,8 @@ enum enModule
 	enModule_Friend				= 3;		//好友
 	enModule_Mall				= 4;		//商城
 	enModule_Mail				= 5;		//邮件
-
-
-	enModule_ServerCommon        = 90;		
-	enModule_ServerInner			= 91;		//服务器之间消息
-	enModule_ServerBattle		= 92;		//战斗服之间协议
+	enModule_Item 				= 6;		//道具
+	enModule_RealMax			= 7;
 
 	enModule_End					= 100;		
 

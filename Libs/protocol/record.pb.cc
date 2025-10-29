@@ -86,6 +86,7 @@ const uint32_t TableStruct_record_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::record::RecordModule, oModule_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -102,21 +103,24 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_record_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014record.proto\022\006record\032\022recordfriend.pro"
-  "to\"\216\001\n\017RecordModuleAll\0225\n\007modules\030\001 \003(\0132"
-  "$.record.RecordModuleAll.ModulesEntry\032D\n"
-  "\014ModulesEntry\022\013\n\003key\030\001 \001(\r\022#\n\005value\030\002 \001("
-  "\0132\024.record.RecordModule:\0028\001\"N\n\014RecordMod"
-  "ule\0223\n\roRecordFriend\030\001 \001(\0132\032.record.Reco"
-  "rdModuleFriendH\000B\t\n\007oModuleb\006proto3"
+  "to\032\020recorditem.proto\"\216\001\n\017RecordModuleAll"
+  "\0225\n\007modules\030\001 \003(\0132$.record.RecordModuleA"
+  "ll.ModulesEntry\032D\n\014ModulesEntry\022\013\n\003key\030\001"
+  " \001(\r\022#\n\005value\030\002 \001(\0132\024.record.RecordModul"
+  "e:\0028\001\"q\n\014RecordModule\022(\n\004item\030\001 \001(\0132\030.re"
+  "cord.RecordModuleItemH\000\022,\n\006friend\030\002 \001(\0132"
+  "\032.record.RecordModuleFriendH\000B\t\n\007oModule"
+  "b\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_record_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_record_2eproto_deps[2] = {
   &::descriptor_table_recordfriend_2eproto,
+  &::descriptor_table_recorditem_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_record_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_record_2eproto = {
-    false, false, 275, descriptor_table_protodef_record_2eproto,
+    false, false, 328, descriptor_table_protodef_record_2eproto,
     "record.proto",
-    &descriptor_table_record_2eproto_once, descriptor_table_record_2eproto_deps, 1, 3,
+    &descriptor_table_record_2eproto_once, descriptor_table_record_2eproto_deps, 2, 3,
     schemas, file_default_instances, TableStruct_record_2eproto::offsets,
     file_level_metadata_record_2eproto, file_level_enum_descriptors_record_2eproto,
     file_level_service_descriptors_record_2eproto,
@@ -345,33 +349,62 @@ void RecordModuleAll::InternalSwap(RecordModuleAll* other) {
 
 class RecordModule::_Internal {
  public:
-  static const ::record::RecordModuleFriend& orecordfriend(const RecordModule* msg);
+  static const ::record::RecordModuleItem& item(const RecordModule* msg);
+  static const ::record::RecordModuleFriend& friend_(const RecordModule* msg);
 };
 
-const ::record::RecordModuleFriend&
-RecordModule::_Internal::orecordfriend(const RecordModule* msg) {
-  return *msg->oModule_.orecordfriend_;
+const ::record::RecordModuleItem&
+RecordModule::_Internal::item(const RecordModule* msg) {
+  return *msg->oModule_.item_;
 }
-void RecordModule::set_allocated_orecordfriend(::record::RecordModuleFriend* orecordfriend) {
+const ::record::RecordModuleFriend&
+RecordModule::_Internal::friend_(const RecordModule* msg) {
+  return *msg->oModule_.friend__;
+}
+void RecordModule::set_allocated_item(::record::RecordModuleItem* item) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_oModule();
-  if (orecordfriend) {
+  if (item) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(orecordfriend));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(item));
     if (message_arena != submessage_arena) {
-      orecordfriend = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, orecordfriend, submessage_arena);
+      item = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, item, submessage_arena);
     }
-    set_has_orecordfriend();
-    oModule_.orecordfriend_ = orecordfriend;
+    set_has_item();
+    oModule_.item_ = item;
   }
-  // @@protoc_insertion_point(field_set_allocated:record.RecordModule.oRecordFriend)
+  // @@protoc_insertion_point(field_set_allocated:record.RecordModule.item)
 }
-void RecordModule::clear_orecordfriend() {
-  if (_internal_has_orecordfriend()) {
+void RecordModule::clear_item() {
+  if (_internal_has_item()) {
     if (GetArenaForAllocation() == nullptr) {
-      delete oModule_.orecordfriend_;
+      delete oModule_.item_;
+    }
+    clear_has_oModule();
+  }
+}
+void RecordModule::set_allocated_friend_(::record::RecordModuleFriend* friend_) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_oModule();
+  if (friend_) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(friend_));
+    if (message_arena != submessage_arena) {
+      friend_ = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, friend_, submessage_arena);
+    }
+    set_has_friend_();
+    oModule_.friend__ = friend_;
+  }
+  // @@protoc_insertion_point(field_set_allocated:record.RecordModule.friend)
+}
+void RecordModule::clear_friend_() {
+  if (_internal_has_friend_()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete oModule_.friend__;
     }
     clear_has_oModule();
   }
@@ -387,8 +420,12 @@ RecordModule::RecordModule(const RecordModule& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   clear_has_oModule();
   switch (from.oModule_case()) {
-    case kORecordFriend: {
-      _internal_mutable_orecordfriend()->::record::RecordModuleFriend::MergeFrom(from._internal_orecordfriend());
+    case kItem: {
+      _internal_mutable_item()->::record::RecordModuleItem::MergeFrom(from._internal_item());
+      break;
+    }
+    case kFriend: {
+      _internal_mutable_friend_()->::record::RecordModuleFriend::MergeFrom(from._internal_friend_());
       break;
     }
     case OMODULE_NOT_SET: {
@@ -425,9 +462,15 @@ void RecordModule::SetCachedSize(int size) const {
 void RecordModule::clear_oModule() {
 // @@protoc_insertion_point(one_of_clear_start:record.RecordModule)
   switch (oModule_case()) {
-    case kORecordFriend: {
+    case kItem: {
       if (GetArenaForAllocation() == nullptr) {
-        delete oModule_.orecordfriend_;
+        delete oModule_.item_;
+      }
+      break;
+    }
+    case kFriend: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete oModule_.friend__;
       }
       break;
     }
@@ -455,10 +498,18 @@ const char* RecordModule::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .record.RecordModuleFriend oRecordFriend = 1;
+      // .record.RecordModuleItem item = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_orecordfriend(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_item(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .record.RecordModuleFriend friend = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_friend_(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -492,11 +543,18 @@ uint8_t* RecordModule::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .record.RecordModuleFriend oRecordFriend = 1;
-  if (_internal_has_orecordfriend()) {
+  // .record.RecordModuleItem item = 1;
+  if (_internal_has_item()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::orecordfriend(this),
-        _Internal::orecordfriend(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(1, _Internal::item(this),
+        _Internal::item(this).GetCachedSize(), target, stream);
+  }
+
+  // .record.RecordModuleFriend friend = 2;
+  if (_internal_has_friend_()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::friend_(this),
+        _Internal::friend_(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -516,11 +574,18 @@ size_t RecordModule::ByteSizeLong() const {
   (void) cached_has_bits;
 
   switch (oModule_case()) {
-    // .record.RecordModuleFriend oRecordFriend = 1;
-    case kORecordFriend: {
+    // .record.RecordModuleItem item = 1;
+    case kItem: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *oModule_.orecordfriend_);
+          *oModule_.item_);
+      break;
+    }
+    // .record.RecordModuleFriend friend = 2;
+    case kFriend: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *oModule_.friend__);
       break;
     }
     case OMODULE_NOT_SET: {
@@ -550,8 +615,12 @@ void RecordModule::MergeFrom(const RecordModule& from) {
   (void) cached_has_bits;
 
   switch (from.oModule_case()) {
-    case kORecordFriend: {
-      _internal_mutable_orecordfriend()->::record::RecordModuleFriend::MergeFrom(from._internal_orecordfriend());
+    case kItem: {
+      _internal_mutable_item()->::record::RecordModuleItem::MergeFrom(from._internal_item());
+      break;
+    }
+    case kFriend: {
+      _internal_mutable_friend_()->::record::RecordModuleFriend::MergeFrom(from._internal_friend_());
       break;
     }
     case OMODULE_NOT_SET: {

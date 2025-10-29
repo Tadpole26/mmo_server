@@ -11,30 +11,6 @@
 #include "util_random.h"
 #include "md5.h"
 
-int rand_x(int range_max)
-{
-	if (range_max == 0) return 0;
-
-	return ((((unsigned int)rand() << 24) & 0xFF000000)
-		| (((unsigned int)rand() << 12) & 0x00FFF000)
-		| (((unsigned int)rand()) & 0x00000FFF)) % range_max;
-}
-
-int rand_range(int range_min, int range_max)
-{
-	if (range_min == range_max)
-		return range_min;
-	else 
-		return ((((unsigned int)rand() << 24) & 0xFF000000)
-			| (((unsigned int)rand() << 12) & 0x00FFF000)
-			| (((unsigned int)rand()) & 0x00000FFF)) % (range_max - range_min) + range_min;
-}
-
-double rand_float(double range_min, double range_max)
-{
-	return ((double(rand()) / double(RAND_MAX)) * (range_max - range_min)) + range_min;
-}
-
 int64_t GenId()
 {
 	static uint32_t g_id = 0;

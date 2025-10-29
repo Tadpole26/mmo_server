@@ -18,6 +18,7 @@ public:
 	bool init();
 	void saveNow();
 	void saveDelay(GameModule* pModule, uint32 uiEffect);
+	void saveForce();
 public:
 	GameModule& registerModule(GameModule* pModule);
 	GameModule* getModule(const uint32 uiType);

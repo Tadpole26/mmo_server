@@ -130,7 +130,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../3rdlibs/zookeeper/win64;../3rdlibs/libevent/win64/include;../3rdlibs/libevent/win64/WIN32-Code/nmake;../3rdlibs/mongo/win64/mongocxx/v_noabi;../3rdlibs/mysqlpp/win64;../3rdlibs/mysql/win64;../3rdlibs/curl/win64;../3rdlibs/boost/win64;../tinyxml;../network;../3rdlibs/mongo/win64/libmongoc-1.0;../3rdlibs/mongo/win64/bsoncxx/v_noabi;../3rdlibs/libevent/win64/compat/sys;../3rdlibs/mongo/win64/libbson-1.0;../mysql;../protocol;../3rdlibs/protobuf/win64/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../3rdlibs/zookeeper/win64;../3rdlibs/libevent/win64/include;../3rdlibs/libevent/win64/WIN32-Code/nmake;../3rdlibs/mongo/win64/mongocxx/v_noabi;../3rdlibs/mysqlpp/win64;../3rdlibs/mysql/win64;../3rdlibs/curl/win64;../3rdlibs/boost/win64;../tinyxml;../network;../3rdlibs/mongo/win64/libmongoc-1.0;../3rdlibs/mongo/win64/bsoncxx/v_noabi;../3rdlibs/libevent/win64/compat/sys;../3rdlibs/mongo/win64/libbson-1.0;../mysql;../protocol;../3rdlibs/protobuf/win64/;../3rdlibs/hiredis/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -165,6 +165,7 @@
     <ClInclude Include="cMatch.h" />
     <ClInclude Include="cNeterface.h" />
     <ClInclude Include="cNetService.h" />
+    <ClInclude Include="cProperty.h" />
     <ClInclude Include="cScene.h" />
     <ClInclude Include="cServer.h" />
     <ClInclude Include="cServerInfoMgr.h" />
@@ -224,11 +225,13 @@
     <ClInclude Include="zScreenIndex.h" />
     <ClInclude Include="zSTL.h" />
     <ClInclude Include="zType.h" />
+    <ClInclude Include="zWeightAllocator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cGame.cpp" />
     <ClCompile Include="cNeterface.cpp" />
     <ClCompile Include="cNetService.cpp" />
+    <ClCompile Include="cProperty.cpp" />
     <ClCompile Include="cScene.cpp" />
     <ClCompile Include="cServerInfoMgr.cpp" />
     <ClCompile Include="cUser.cpp" />

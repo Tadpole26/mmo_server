@@ -1,5 +1,7 @@
 #include "GameUser.h"
 #include "GameModule.h"
+
+#include "record.pb.h"
 #include "client.pb.h"
 
 GameUser::GameUser(const uint64 ullRoleId) :
@@ -60,4 +62,15 @@ void GameUser::saveNow()
 
 void GameUser::saveDelay(GameModule* pModule, uint32 uiEffect)
 {
+}
+
+void GameUser::saveForce()
+{
+	record::RecordModuleAll all;
+	auto& allmap = *(all.mutable_modules());
+	for (auto* pModule : _moduleMgr)
+	{
+		pModule->serialize(allmap[pModule->getType()]);
+	}
+
 }

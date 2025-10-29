@@ -11,6 +11,7 @@
 #include "CDbInstance.h"
 #include "ServerNetface.h"
 #include "FamilyNetface.h"
+#include "cGame.h"
 
 #include "MapConfig.h"
 
@@ -91,12 +92,12 @@ bool SceneLogic::init()
 		Log_Error("log init error!!!");
 		return false;
 	}
-
 	if (is_listen_port(gZoneCfg->m_uiGamePort))
 	{
 		Log_Error("listen port exsit %u!!!", gZoneCfg->m_uiGamePort);
 		return false;
 	}
+	cGame::initGlobal();
 	if (!loadConfig())
 	{
 		Log_Error("!loadConfig()");

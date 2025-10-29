@@ -8,7 +8,7 @@ namespace packet
 
 namespace config
 {
-	class monster_group_info_t;
+	struct monster_group_info_t;
 }
 
 enum

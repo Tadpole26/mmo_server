@@ -110,13 +110,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;STATIC_LIBMONGOCLIENT;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;USE_STATIC_LIB;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;../Libs/protocol/client;../Libs/protocol/record;./;../Libs/config;../Libs/3rdlibs/recastnavigation/win64;../Libs/navigation;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Libs/serialize;../Libs/tinyxml;../Libs/protocol;../Libs/3rdlibs/mongo/win64/libbson-1.0;../Libs/3rdlibs/mongo/win64/libmongoc-1.0;../Libs/3rdlibs/zookeeper/win64;../Libs/network;../Libs/3rdlibs/libevent/win64/WIN32-Code/nmake;../Libs/3rdlibs/protobuf/win64;../Libs/3rdlibs/mongo/win64/mongocxx/v_noabi;../Libs/3rdlibs/mongo/win64/bsoncxx/v_noabi;../Libs/3rdlibs/boost/win64;../Libs/3rdlibs/libevent/win64/include;../Libs/3rdlibs/json/win64;../Libs/platform;../Libs/3rdlibs/behaviac/win64;../Libs/protocol/client;../Libs/protocol/record;./;../Libs/config;../Libs/3rdlibs/recastnavigation/win64;../Libs/navigation;../Libs/3rdlibs/hiredis/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libprotobufd.lib;event.lib;event_core.lib;event_extra.lib;network_d.lib;platform_d.lib;serialize_d.lib;protocol_d.lib;tinyxml_d.lib;mongocxx.lib;mongoc-1.0.lib;bson-1.0.lib;bsoncxx.lib;hashtable.lib;zookeeper.lib;ws2_32.lib;jsoncpp_static.lib;Dbghelp.lib;libbehaviac.lib;config_d.lib;DebugUtils.lib;Detour.lib;DetourCrowd.lib;DetourTileCache.lib;Recast.lib;navigation_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;hiredis.lib;win32_interop.lib;libprotobufd.lib;event.lib;event_core.lib;event_extra.lib;network_d.lib;platform_d.lib;serialize_d.lib;protocol_d.lib;tinyxml_d.lib;mongocxx.lib;mongoc-1.0.lib;bson-1.0.lib;bsoncxx.lib;hashtable.lib;zookeeper.lib;jsoncpp_static.lib;Dbghelp.lib;libbehaviac.lib;config_d.lib;DebugUtils.lib;Detour.lib;DetourCrowd.lib;DetourTileCache.lib;Recast.lib;navigation_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\Bin\Libs\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>expat_d.lib;LIBCMT.lib;LIBCMTD.lib;libcpmtd.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -142,6 +142,8 @@
   <ItemGroup>
     <ClCompile Include="CmptMovement.cpp" />
     <ClCompile Include="CmptView.cpp" />
+    <ClCompile Include="ModuleItem.cpp" />
+    <ClCompile Include="RedisMgr.cpp" />
     <ClCompile Include="SceneMapMgr.cpp" />
     <ClCompile Include="FamilyNetface.cpp" />
     <ClCompile Include="GameUserMgr.cpp" />
@@ -158,6 +160,8 @@
   <ItemGroup>
     <ClInclude Include="CmptMovement.h" />
     <ClInclude Include="CmptView.h" />
+    <ClInclude Include="ModuleItem.h" />
+    <ClInclude Include="RedisMgr.h" />
     <ClInclude Include="SceneMapMgr.h" />
     <ClInclude Include="FamilyNetface.h" />
     <ClInclude Include="GameUserMgr.h" />

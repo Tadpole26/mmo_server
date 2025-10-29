@@ -23,6 +23,7 @@ namespace cGame
 	static const uint32 roleNumIdValMax = 0x7;
 	static const uint32 autoIdBitMax = accIdBitMax - tblIdBitMax;
 
+	void initGlobal();
 	//dbid «∑Ò”––ß
 	inline bool DBIdValid(const uint32 uiDBId)
 	{
@@ -177,4 +178,9 @@ namespace cGame
 	{
 		return (((zRoleIdType)zoneId) << (accIdBitMax + roleNumIdBitMax)) + autoId;
 	}
+
+	std::map<std::string, uint32>& allTypeIdsRef();
+	std::map<uint32, std::string>& allENamesRef();
+	uint32 ename2typeId(const std::string &ename);
+	const std::string& typeId2ename(uint32 typeId);
 }
