@@ -222,6 +222,12 @@
     <ClInclude Include="zWeightAllocator.h">
       <Filter>sdk</Filter>
     </ClInclude>
+    <ClInclude Include="cFamily.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="cAuction.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="util_random.cpp">

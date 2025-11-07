@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "innercommon.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_familysvr_2eproto
@@ -410,9 +411,10 @@ class InnerFamilysvr_Fromscene_Test final :
 // -------------------------------------------------------------------
 
 class InnerFamilysvr_Fromscene_GameEvent final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerFamilysvr_Fromscene_GameEvent) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerFamilysvr_Fromscene_GameEvent) */ {
  public:
   inline InnerFamilysvr_Fromscene_GameEvent() : InnerFamilysvr_Fromscene_GameEvent(nullptr) {}
+  ~InnerFamilysvr_Fromscene_GameEvent() override;
   explicit PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_GameEvent(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   InnerFamilysvr_Fromscene_GameEvent(const InnerFamilysvr_Fromscene_GameEvent& from);
@@ -485,15 +487,27 @@ class InnerFamilysvr_Fromscene_GameEvent final :
   InnerFamilysvr_Fromscene_GameEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerFamilysvr_Fromscene_GameEvent>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerFamilysvr_Fromscene_GameEvent& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerFamilysvr_Fromscene_GameEvent& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerFamilysvr_Fromscene_GameEvent& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerFamilysvr_Fromscene_GameEvent& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerFamilysvr_Fromscene_GameEvent* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -514,6 +528,27 @@ class InnerFamilysvr_Fromscene_GameEvent final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kGameEventFieldNumber = 1,
+  };
+  // .inner.InnerGameEvent gameEvent = 1;
+  bool has_gameevent() const;
+  private:
+  bool _internal_has_gameevent() const;
+  public:
+  void clear_gameevent();
+  const ::inner::InnerGameEvent& gameevent() const;
+  PROTOBUF_NODISCARD ::inner::InnerGameEvent* release_gameevent();
+  ::inner::InnerGameEvent* mutable_gameevent();
+  void set_allocated_gameevent(::inner::InnerGameEvent* gameevent);
+  private:
+  const ::inner::InnerGameEvent& _internal_gameevent() const;
+  ::inner::InnerGameEvent* _internal_mutable_gameevent();
+  public:
+  void unsafe_arena_set_allocated_gameevent(
+      ::inner::InnerGameEvent* gameevent);
+  ::inner::InnerGameEvent* unsafe_arena_release_gameevent();
+
   // @@protoc_insertion_point(class_scope:inner.InnerFamilysvr_Fromscene_GameEvent)
  private:
   class _Internal;
@@ -521,14 +556,17 @@ class InnerFamilysvr_Fromscene_GameEvent final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::inner::InnerGameEvent* gameevent_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_familysvr_2eproto;
 };
 // -------------------------------------------------------------------
 
 class InnerFamilysvr_Fromscene_UpdateUserInfo final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerFamilysvr_Fromscene_UpdateUserInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerFamilysvr_Fromscene_UpdateUserInfo) */ {
  public:
   inline InnerFamilysvr_Fromscene_UpdateUserInfo() : InnerFamilysvr_Fromscene_UpdateUserInfo(nullptr) {}
+  ~InnerFamilysvr_Fromscene_UpdateUserInfo() override;
   explicit PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_UpdateUserInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   InnerFamilysvr_Fromscene_UpdateUserInfo(const InnerFamilysvr_Fromscene_UpdateUserInfo& from);
@@ -567,6 +605,14 @@ class InnerFamilysvr_Fromscene_UpdateUserInfo final :
   static const InnerFamilysvr_Fromscene_UpdateUserInfo& default_instance() {
     return *internal_default_instance();
   }
+  enum TypeCase {
+    kNickName = 1,
+    kHeadIcon = 2,
+    kHeadFrame = 3,
+    kLevel = 4,
+    TYPE_NOT_SET = 0,
+  };
+
   static inline const InnerFamilysvr_Fromscene_UpdateUserInfo* internal_default_instance() {
     return reinterpret_cast<const InnerFamilysvr_Fromscene_UpdateUserInfo*>(
                &_InnerFamilysvr_Fromscene_UpdateUserInfo_default_instance_);
@@ -601,15 +647,27 @@ class InnerFamilysvr_Fromscene_UpdateUserInfo final :
   InnerFamilysvr_Fromscene_UpdateUserInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerFamilysvr_Fromscene_UpdateUserInfo>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerFamilysvr_Fromscene_UpdateUserInfo* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -630,13 +688,96 @@ class InnerFamilysvr_Fromscene_UpdateUserInfo final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kNickNameFieldNumber = 1,
+    kHeadIconFieldNumber = 2,
+    kHeadFrameFieldNumber = 3,
+    kLevelFieldNumber = 4,
+  };
+  // string nickName = 1;
+  bool has_nickname() const;
+  private:
+  bool _internal_has_nickname() const;
+  public:
+  void clear_nickname();
+  const std::string& nickname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nickname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nickname();
+  PROTOBUF_NODISCARD std::string* release_nickname();
+  void set_allocated_nickname(std::string* nickname);
+  private:
+  const std::string& _internal_nickname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nickname(const std::string& value);
+  std::string* _internal_mutable_nickname();
+  public:
+
+  // uint32 headIcon = 2;
+  bool has_headicon() const;
+  private:
+  bool _internal_has_headicon() const;
+  public:
+  void clear_headicon();
+  uint32_t headicon() const;
+  void set_headicon(uint32_t value);
+  private:
+  uint32_t _internal_headicon() const;
+  void _internal_set_headicon(uint32_t value);
+  public:
+
+  // uint32 headFrame = 3;
+  bool has_headframe() const;
+  private:
+  bool _internal_has_headframe() const;
+  public:
+  void clear_headframe();
+  uint32_t headframe() const;
+  void set_headframe(uint32_t value);
+  private:
+  uint32_t _internal_headframe() const;
+  void _internal_set_headframe(uint32_t value);
+  public:
+
+  // uint32 level = 4;
+  bool has_level() const;
+  private:
+  bool _internal_has_level() const;
+  public:
+  void clear_level();
+  uint32_t level() const;
+  void set_level(uint32_t value);
+  private:
+  uint32_t _internal_level() const;
+  void _internal_set_level(uint32_t value);
+  public:
+
+  void clear_type();
+  TypeCase type_case() const;
   // @@protoc_insertion_point(class_scope:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
  private:
   class _Internal;
+  void set_has_nickname();
+  void set_has_headicon();
+  void set_has_headframe();
+  void set_has_level();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nickname_;
+    uint32_t headicon_;
+    uint32_t headframe_;
+    uint32_t level_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
   friend struct ::TableStruct_familysvr_2eproto;
 };
 // ===================================================================
@@ -909,10 +1050,295 @@ inline InnerFamilysvr::FromsceneCase InnerFamilysvr::Fromscene_case() const {
 
 // InnerFamilysvr_Fromscene_GameEvent
 
+// .inner.InnerGameEvent gameEvent = 1;
+inline bool InnerFamilysvr_Fromscene_GameEvent::_internal_has_gameevent() const {
+  return this != internal_default_instance() && gameevent_ != nullptr;
+}
+inline bool InnerFamilysvr_Fromscene_GameEvent::has_gameevent() const {
+  return _internal_has_gameevent();
+}
+inline const ::inner::InnerGameEvent& InnerFamilysvr_Fromscene_GameEvent::_internal_gameevent() const {
+  const ::inner::InnerGameEvent* p = gameevent_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerGameEvent&>(
+      ::inner::_InnerGameEvent_default_instance_);
+}
+inline const ::inner::InnerGameEvent& InnerFamilysvr_Fromscene_GameEvent::gameevent() const {
+  // @@protoc_insertion_point(field_get:inner.InnerFamilysvr_Fromscene_GameEvent.gameEvent)
+  return _internal_gameevent();
+}
+inline void InnerFamilysvr_Fromscene_GameEvent::unsafe_arena_set_allocated_gameevent(
+    ::inner::InnerGameEvent* gameevent) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(gameevent_);
+  }
+  gameevent_ = gameevent;
+  if (gameevent) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerFamilysvr_Fromscene_GameEvent.gameEvent)
+}
+inline ::inner::InnerGameEvent* InnerFamilysvr_Fromscene_GameEvent::release_gameevent() {
+  
+  ::inner::InnerGameEvent* temp = gameevent_;
+  gameevent_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerGameEvent* InnerFamilysvr_Fromscene_GameEvent::unsafe_arena_release_gameevent() {
+  // @@protoc_insertion_point(field_release:inner.InnerFamilysvr_Fromscene_GameEvent.gameEvent)
+  
+  ::inner::InnerGameEvent* temp = gameevent_;
+  gameevent_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerGameEvent* InnerFamilysvr_Fromscene_GameEvent::_internal_mutable_gameevent() {
+  
+  if (gameevent_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerGameEvent>(GetArenaForAllocation());
+    gameevent_ = p;
+  }
+  return gameevent_;
+}
+inline ::inner::InnerGameEvent* InnerFamilysvr_Fromscene_GameEvent::mutable_gameevent() {
+  ::inner::InnerGameEvent* _msg = _internal_mutable_gameevent();
+  // @@protoc_insertion_point(field_mutable:inner.InnerFamilysvr_Fromscene_GameEvent.gameEvent)
+  return _msg;
+}
+inline void InnerFamilysvr_Fromscene_GameEvent::set_allocated_gameevent(::inner::InnerGameEvent* gameevent) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(gameevent_);
+  }
+  if (gameevent) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(gameevent));
+    if (message_arena != submessage_arena) {
+      gameevent = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, gameevent, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  gameevent_ = gameevent;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr_Fromscene_GameEvent.gameEvent)
+}
+
 // -------------------------------------------------------------------
 
 // InnerFamilysvr_Fromscene_UpdateUserInfo
 
+// string nickName = 1;
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_has_nickname() const {
+  return type_case() == kNickName;
+}
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::has_nickname() const {
+  return _internal_has_nickname();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_has_nickname() {
+  _oneof_case_[0] = kNickName;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_nickname() {
+  if (_internal_has_nickname()) {
+    type_.nickname_.Destroy();
+    clear_has_type();
+  }
+}
+inline const std::string& InnerFamilysvr_Fromscene_UpdateUserInfo::nickname() const {
+  // @@protoc_insertion_point(field_get:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName)
+  return _internal_nickname();
+}
+template <typename ArgT0, typename... ArgT>
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_nickname(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_nickname()) {
+    clear_type();
+    set_has_nickname();
+    type_.nickname_.InitDefault();
+  }
+  type_.nickname_.Set( static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName)
+}
+inline std::string* InnerFamilysvr_Fromscene_UpdateUserInfo::mutable_nickname() {
+  std::string* _s = _internal_mutable_nickname();
+  // @@protoc_insertion_point(field_mutable:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName)
+  return _s;
+}
+inline const std::string& InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_nickname() const {
+  if (_internal_has_nickname()) {
+    return type_.nickname_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_set_nickname(const std::string& value) {
+  if (!_internal_has_nickname()) {
+    clear_type();
+    set_has_nickname();
+    type_.nickname_.InitDefault();
+  }
+  type_.nickname_.Set(value, GetArenaForAllocation());
+}
+inline std::string* InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_mutable_nickname() {
+  if (!_internal_has_nickname()) {
+    clear_type();
+    set_has_nickname();
+    type_.nickname_.InitDefault();
+  }
+  return type_.nickname_.Mutable(      GetArenaForAllocation());
+}
+inline std::string* InnerFamilysvr_Fromscene_UpdateUserInfo::release_nickname() {
+  // @@protoc_insertion_point(field_release:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName)
+  if (_internal_has_nickname()) {
+    clear_has_type();
+    return type_.nickname_.Release();
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_allocated_nickname(std::string* nickname) {
+  if (has_type()) {
+    clear_type();
+  }
+  if (nickname != nullptr) {
+    set_has_nickname();
+    type_.nickname_.InitAllocated(nickname, GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName)
+}
+
+// uint32 headIcon = 2;
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_has_headicon() const {
+  return type_case() == kHeadIcon;
+}
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::has_headicon() const {
+  return _internal_has_headicon();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_has_headicon() {
+  _oneof_case_[0] = kHeadIcon;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_headicon() {
+  if (_internal_has_headicon()) {
+    type_.headicon_ = 0u;
+    clear_has_type();
+  }
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_headicon() const {
+  if (_internal_has_headicon()) {
+    return type_.headicon_;
+  }
+  return 0u;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_set_headicon(uint32_t value) {
+  if (!_internal_has_headicon()) {
+    clear_type();
+    set_has_headicon();
+  }
+  type_.headicon_ = value;
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::headicon() const {
+  // @@protoc_insertion_point(field_get:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.headIcon)
+  return _internal_headicon();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_headicon(uint32_t value) {
+  _internal_set_headicon(value);
+  // @@protoc_insertion_point(field_set:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.headIcon)
+}
+
+// uint32 headFrame = 3;
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_has_headframe() const {
+  return type_case() == kHeadFrame;
+}
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::has_headframe() const {
+  return _internal_has_headframe();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_has_headframe() {
+  _oneof_case_[0] = kHeadFrame;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_headframe() {
+  if (_internal_has_headframe()) {
+    type_.headframe_ = 0u;
+    clear_has_type();
+  }
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_headframe() const {
+  if (_internal_has_headframe()) {
+    return type_.headframe_;
+  }
+  return 0u;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_set_headframe(uint32_t value) {
+  if (!_internal_has_headframe()) {
+    clear_type();
+    set_has_headframe();
+  }
+  type_.headframe_ = value;
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::headframe() const {
+  // @@protoc_insertion_point(field_get:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.headFrame)
+  return _internal_headframe();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_headframe(uint32_t value) {
+  _internal_set_headframe(value);
+  // @@protoc_insertion_point(field_set:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.headFrame)
+}
+
+// uint32 level = 4;
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_has_level() const {
+  return type_case() == kLevel;
+}
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::has_level() const {
+  return _internal_has_level();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_has_level() {
+  _oneof_case_[0] = kLevel;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_level() {
+  if (_internal_has_level()) {
+    type_.level_ = 0u;
+    clear_has_type();
+  }
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_level() const {
+  if (_internal_has_level()) {
+    return type_.level_;
+  }
+  return 0u;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::_internal_set_level(uint32_t value) {
+  if (!_internal_has_level()) {
+    clear_type();
+    set_has_level();
+  }
+  type_.level_ = value;
+}
+inline uint32_t InnerFamilysvr_Fromscene_UpdateUserInfo::level() const {
+  // @@protoc_insertion_point(field_get:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.level)
+  return _internal_level();
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::set_level(uint32_t value) {
+  _internal_set_level(value);
+  // @@protoc_insertion_point(field_set:inner.InnerFamilysvr_Fromscene_UpdateUserInfo.level)
+}
+
+inline bool InnerFamilysvr_Fromscene_UpdateUserInfo::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerFamilysvr_Fromscene_UpdateUserInfo::TypeCase InnerFamilysvr_Fromscene_UpdateUserInfo::type_case() const {
+  return InnerFamilysvr_Fromscene_UpdateUserInfo::TypeCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__

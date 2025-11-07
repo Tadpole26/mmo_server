@@ -161,6 +161,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cAuction.h" />
+    <ClInclude Include="cFamily.h" />
     <ClInclude Include="cGame.h" />
     <ClInclude Include="cMatch.h" />
     <ClInclude Include="cNeterface.h" />

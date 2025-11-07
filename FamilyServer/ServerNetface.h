@@ -1,8 +1,5 @@
 #pragma once
 #include "sdk.h"
-#include "logic_interface.h"
-#include "msg_interface.h"
-#include "msg_parser.h"
 #include "server_logic_face.h"
 
 //管理所有连接上来的服务
@@ -12,8 +9,5 @@ public:
 	ClientLogic(void);
 	~ClientLogic(void);
 public:
-	virtual void handle_logic_msg(const tagNetMsg* pNetMsg);
-private:
-	void HandleServerCommon(tagMsgHead* pMsgHead, const tagHostHd& hd);
-	void OnRegisterServer(tagMsgHead* pMsgHead, const tagHostHd& hd);
+	bool netMsgFromScene(DWORD hashId, const tagHostHd& hostHead, inner::InnerFamilysvr innerReq) final;
 };

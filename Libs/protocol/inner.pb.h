@@ -51,7 +51,8 @@ enum enInnerFirst : int {
   enInnerFirst_None = 0,
   enInnerFirst_Scenesvr = 1,
   enInnerFirst_Gate = 2,
-  enInnerFirst_RealMax = 3,
+  enInnerFirst_Family = 3,
+  enInnerFirst_RealMax = 4,
   enInnerFirst_Max = 1024,
   enInnerFirst_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   enInnerFirst_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()

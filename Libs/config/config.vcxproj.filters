@@ -12,6 +12,7 @@
     <ClCompile Include="SkillConfig.cpp" />
     <ClCompile Include="ZoneConstConfig.cpp" />
     <ClCompile Include="ItemConfig.cpp" />
+    <ClCompile Include="ActionConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MapConfig.h" />
@@ -25,5 +26,6 @@
     <ClInclude Include="SkillConfig.h" />
     <ClInclude Include="ZoneConstConfig.h" />
     <ClInclude Include="ItemConfig.h" />
+    <ClInclude Include="AuctionConfig.h" />
   </ItemGroup>
 </Project>

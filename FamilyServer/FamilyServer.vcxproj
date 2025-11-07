@@ -134,6 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AuctionFilter.cpp" />
+    <ClCompile Include="AuctionFilterMenu.cpp" />
+    <ClCompile Include="AuctionFilterSearch.cpp" />
+    <ClCompile Include="AuctionMenu.cpp" />
+    <ClCompile Include="AuctionMenuMgr.cpp" />
     <ClCompile Include="FamilyUser.cpp" />
     <ClCompile Include="FamilyUserMgr.cpp" />
     <ClCompile Include="SceneSession.cpp" />
@@ -142,6 +147,11 @@
     <ClCompile Include="FamilyLogic.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AuctionFilter.h" />
+    <ClInclude Include="AuctionFilterMenu.h" />
+    <ClInclude Include="AuctionFilterSearch.h" />
+    <ClInclude Include="AuctionMenu.h" />
+    <ClInclude Include="AuctionMenuMgr.h" />
     <ClInclude Include="FamilyUser.h" />
     <ClInclude Include="FamilyUserMgr.h" />
     <ClInclude Include="SceneSession.h" />

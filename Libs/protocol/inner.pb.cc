@@ -29,15 +29,15 @@ static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
 static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_inner_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013inner.proto\022\005inner*\210\001\n\014enInnerFirst\022\025\n"
+  "\n\013inner.proto\022\005inner*\241\001\n\014enInnerFirst\022\025\n"
   "\021enInnerFirst_None\020\000\022\031\n\025enInnerFirst_Sce"
-  "nesvr\020\001\022\025\n\021enInnerFirst_Gate\020\002\022\030\n\024enInne"
-  "rFirst_RealMax\020\003\022\025\n\020enInnerFirst_Max\020\200\010b"
-  "\006proto3"
+  "nesvr\020\001\022\025\n\021enInnerFirst_Gate\020\002\022\027\n\023enInne"
+  "rFirst_Family\020\003\022\030\n\024enInnerFirst_RealMax\020"
+  "\004\022\025\n\020enInnerFirst_Max\020\200\010b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_inner_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_inner_2eproto = {
-    false, false, 167, descriptor_table_protodef_inner_2eproto,
+    false, false, 192, descriptor_table_protodef_inner_2eproto,
     "inner.proto",
     &descriptor_table_inner_2eproto_once, nullptr, 0, 0,
     schemas, file_default_instances, TableStruct_inner_2eproto::offsets,
@@ -61,6 +61,7 @@ bool enInnerFirst_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
     case 1024:
       return true;
     default:

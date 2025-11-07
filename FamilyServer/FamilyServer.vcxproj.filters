@@ -28,6 +28,21 @@
     <ClCompile Include="SceneSession.cpp">
       <Filter>MainLogic</Filter>
     </ClCompile>
+    <ClCompile Include="AuctionMenu.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionMenuMgr.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionFilter.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionFilterMenu.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionFilterSearch.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerNetface.h">
@@ -36,8 +51,29 @@
     <ClInclude Include="FamilyLogic.h">
       <Filter>MainLogic</Filter>
     </ClInclude>
-    <ClInclude Include="FamilyUser.h" />
-    <ClInclude Include="FamilyUserMgr.h" />
-    <ClInclude Include="SceneSession.h" />
+    <ClInclude Include="SceneSession.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyUser.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyUserMgr.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionMenu.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionMenuMgr.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionFilter.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionFilterMenu.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionFilterSearch.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

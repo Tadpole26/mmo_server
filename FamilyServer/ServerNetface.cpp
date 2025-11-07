@@ -3,46 +3,43 @@
 #include "client.pb.h"
 #include "parse_pb.h"
 #include "msg_make.h"
-#include "zLogMgr.h"
 #include "global_define.h"
 #include "SceneSession.h"
 #include "FamilyLogic.h"
 
+#include "FamilyUserMgr.h"
+
 ClientLogic::ClientLogic() { }
 ClientLogic::~ClientLogic() { }
 
-void ClientLogic::handle_logic_msg(const tagNetMsg* pNetMsg)
+bool ClientLogic::netMsgFromScene(DWORD hashId, const tagHostHd& hostHead, inner::InnerFamilysvr innerReq)
 {
-	const tagHostHd& stHd = pNetMsg->m_hd;
-	tagMsgHead* pMsgHead = (tagMsgHead*)(pNetMsg->m_body);
-	inner::InnerFamilysvr innerReq;
-	PARSE_PTL_HEAD(innerReq, pMsgHead);
-	zRoleIdType roleId = innerReq.fromuser();
+	Log_Debug("%s,%s",innerReq.GetTypeName().c_str(), innerReq.ShortDebugString().c_str());
+	auto fromUser = innerReq.fromuser();
+	auto* pUser = gFamilyUserMgr->tryCreateUser(fromUser);
+	if (!pUser)
+	{
+		Log_Error("netMsgFromScene.!pUser.%lu", fromUser);
+		return false;
+	}
 	switch (innerReq.Fromscene_case())
 	{
 	case inner::InnerFamilysvr::FromsceneCase::kFromsceneGameevent:
 	{
-		auto* pScenesvr = gFamilyLogic->getScene(1);
-		if (!pScenesvr)
+		const auto& req = innerReq.fromscene_gameevent();
+		switch (req.gameevent().type_case())
 		{
-			Log_Error("handle_logic_msg.!pScenesvr");
-			return;
+		case inner::InnerGameEvent::kLogin: pUser->evGameLogin(req.gameevent()); break;
 		}
 	}
 	break;
 	case inner::InnerFamilysvr::FromsceneCase::kFromsceneUpdateuserinfo:
 	{
-		auto* pScenesvr = gFamilyLogic->getScene(1);
-		if (!pScenesvr)
-		{
-			Log_Error("handle_logic_msg.!pScenesvr");
-			return;
-		}
 	}
 	break;
 	default:
-	{
-		CSvrLogicFace::handle_logic_msg(pNetMsg);
+		Log_Error("undefined case:%u", innerReq.Fromscene_case());
+		break;
 	}
-	}
+	return true;
 }

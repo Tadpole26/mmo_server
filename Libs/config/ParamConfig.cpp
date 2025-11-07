@@ -36,9 +36,10 @@ namespace config
 			index = matchRobotWaitTime.size();
 		}
 		const auto& p = matchRobotWaitTime[index];
-		auto diff = rand_range(p.first, p.second) - getMatchRobotWaitTimeMax();
-		if (diff < getMinIdRobot()) return getMinIdRobot();
-		else if (diff > getMaxIdRobot()) return getMaxIdRobot();
-		else return diff;
+		//auto diff = rand_range(p.first, p.second) - getMatchRobotWaitTimeMax();
+		//if (diff < getMinIdRobot()) return getMinIdRobot();
+		//else if (diff > getMaxIdRobot()) return getMaxIdRobot();
+		//else return diff;
+		return 0;
 	}
 }

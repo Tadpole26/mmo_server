@@ -46,7 +46,8 @@ struct InnerFamilysvr_Fromscene_TestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_TestDefaultTypeInternal _InnerFamilysvr_Fromscene_Test_default_instance_;
 PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(
-    ::_pbi::ConstantInitialized){}
+    ::_pbi::ConstantInitialized)
+  : gameevent_(nullptr){}
 struct InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -57,7 +58,8 @@ struct InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_GameEventDefaultTypeInternal _InnerFamilysvr_Fromscene_GameEvent_default_instance_;
 PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(
-    ::_pbi::ConstantInitialized){}
+    ::_pbi::ConstantInitialized)
+  : _oneof_case_{}{}
 struct InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -96,18 +98,24 @@ const uint32_t TableStruct_familysvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_GameEvent, gameevent_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo, type_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::inner::InnerFamilysvr)},
   { 11, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_Test)},
   { 17, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_GameEvent)},
-  { 23, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo)},
+  { 24, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -118,23 +126,30 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_familysvr_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017familysvr.proto\022\005inner\"\215\002\n\016InnerFamily"
-  "svr\022\020\n\010fromuser\030\001 \001(\004\022>\n\016fromscene_test\030"
-  "e \001(\0132$.inner.InnerFamilysvr_Fromscene_T"
-  "estH\000\022H\n\023fromscene_gameevent\030f \001(\0132).inn"
-  "er.InnerFamilysvr_Fromscene_GameEventH\000\022"
-  "R\n\030fromscene_updateuserinfo\030g \001(\0132..inne"
-  "r.InnerFamilysvr_Fromscene_UpdateUserInf"
-  "oH\000B\013\n\tFromscene\"\037\n\035InnerFamilysvr_Froms"
-  "cene_Test\"$\n\"InnerFamilysvr_Fromscene_Ga"
-  "meEvent\")\n\'InnerFamilysvr_Fromscene_Upda"
-  "teUserInfob\006proto3"
+  "\n\017familysvr.proto\022\005inner\032\021innercommon.pr"
+  "oto\"\215\002\n\016InnerFamilysvr\022\020\n\010fromuser\030\001 \001(\004"
+  "\022>\n\016fromscene_test\030e \001(\0132$.inner.InnerFa"
+  "milysvr_Fromscene_TestH\000\022H\n\023fromscene_ga"
+  "meevent\030f \001(\0132).inner.InnerFamilysvr_Fro"
+  "mscene_GameEventH\000\022R\n\030fromscene_updateus"
+  "erinfo\030g \001(\0132..inner.InnerFamilysvr_From"
+  "scene_UpdateUserInfoH\000B\013\n\tFromscene\"\037\n\035I"
+  "nnerFamilysvr_Fromscene_Test\"N\n\"InnerFam"
+  "ilysvr_Fromscene_GameEvent\022(\n\tgameEvent\030"
+  "\001 \001(\0132\025.inner.InnerGameEvent\"\177\n\'InnerFam"
+  "ilysvr_Fromscene_UpdateUserInfo\022\022\n\010nickN"
+  "ame\030\001 \001(\tH\000\022\022\n\010headIcon\030\002 \001(\rH\000\022\023\n\theadF"
+  "rame\030\003 \001(\rH\000\022\017\n\005level\030\004 \001(\rH\000B\006\n\004typeb\006p"
+  "roto3"
   ;
+static const ::_pbi::DescriptorTable* const descriptor_table_familysvr_2eproto_deps[1] = {
+  &::descriptor_table_innercommon_2eproto,
+};
 static ::_pbi::once_flag descriptor_table_familysvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_familysvr_2eproto = {
-    false, false, 418, descriptor_table_protodef_familysvr_2eproto,
+    false, false, 565, descriptor_table_protodef_familysvr_2eproto,
     "familysvr.proto",
-    &descriptor_table_familysvr_2eproto_once, nullptr, 0, 4,
+    &descriptor_table_familysvr_2eproto_once, descriptor_table_familysvr_2eproto_deps, 1, 4,
     schemas, file_default_instances, TableStruct_familysvr_2eproto::offsets,
     file_level_metadata_familysvr_2eproto, file_level_enum_descriptors_familysvr_2eproto,
     file_level_service_descriptors_familysvr_2eproto,
@@ -563,34 +578,188 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_Test:
 
 class InnerFamilysvr_Fromscene_GameEvent::_Internal {
  public:
+  static const ::inner::InnerGameEvent& gameevent(const InnerFamilysvr_Fromscene_GameEvent* msg);
 };
 
+const ::inner::InnerGameEvent&
+InnerFamilysvr_Fromscene_GameEvent::_Internal::gameevent(const InnerFamilysvr_Fromscene_GameEvent* msg) {
+  return *msg->gameevent_;
+}
+void InnerFamilysvr_Fromscene_GameEvent::clear_gameevent() {
+  if (GetArenaForAllocation() == nullptr && gameevent_ != nullptr) {
+    delete gameevent_;
+  }
+  gameevent_ = nullptr;
+}
 InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_GameEvent)
 }
 InnerFamilysvr_Fromscene_GameEvent::InnerFamilysvr_Fromscene_GameEvent(const InnerFamilysvr_Fromscene_GameEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_gameevent()) {
+    gameevent_ = new ::inner::InnerGameEvent(*from.gameevent_);
+  } else {
+    gameevent_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_GameEvent)
 }
 
+inline void InnerFamilysvr_Fromscene_GameEvent::SharedCtor() {
+gameevent_ = nullptr;
+}
 
+InnerFamilysvr_Fromscene_GameEvent::~InnerFamilysvr_Fromscene_GameEvent() {
+  // @@protoc_insertion_point(destructor:inner.InnerFamilysvr_Fromscene_GameEvent)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
 
+inline void InnerFamilysvr_Fromscene_GameEvent::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete gameevent_;
+}
 
+void InnerFamilysvr_Fromscene_GameEvent::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerFamilysvr_Fromscene_GameEvent::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerFamilysvr_Fromscene_GameEvent)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && gameevent_ != nullptr) {
+    delete gameevent_;
+  }
+  gameevent_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerFamilysvr_Fromscene_GameEvent::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .inner.InnerGameEvent gameEvent = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_gameevent(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerFamilysvr_Fromscene_GameEvent::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerFamilysvr_Fromscene_GameEvent)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .inner.InnerGameEvent gameEvent = 1;
+  if (this->_internal_has_gameevent()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::gameevent(this),
+        _Internal::gameevent(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerFamilysvr_Fromscene_GameEvent)
+  return target;
+}
+
+size_t InnerFamilysvr_Fromscene_GameEvent::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerFamilysvr_Fromscene_GameEvent)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerGameEvent gameEvent = 1;
+  if (this->_internal_has_gameevent()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *gameevent_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_GameEvent::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerFamilysvr_Fromscene_GameEvent::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_GameEvent::GetClassData() const { return &_class_data_; }
 
+void InnerFamilysvr_Fromscene_GameEvent::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerFamilysvr_Fromscene_GameEvent *>(to)->MergeFrom(
+      static_cast<const InnerFamilysvr_Fromscene_GameEvent &>(from));
+}
 
 
+void InnerFamilysvr_Fromscene_GameEvent::MergeFrom(const InnerFamilysvr_Fromscene_GameEvent& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerFamilysvr_Fromscene_GameEvent)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (from._internal_has_gameevent()) {
+    _internal_mutable_gameevent()->::inner::InnerGameEvent::MergeFrom(from._internal_gameevent());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void InnerFamilysvr_Fromscene_GameEvent::CopyFrom(const InnerFamilysvr_Fromscene_GameEvent& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerFamilysvr_Fromscene_GameEvent)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool InnerFamilysvr_Fromscene_GameEvent::IsInitialized() const {
+  return true;
+}
+
+void InnerFamilysvr_Fromscene_GameEvent::InternalSwap(InnerFamilysvr_Fromscene_GameEvent* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(gameevent_, other->gameevent_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_GameEvent::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
@@ -606,30 +775,302 @@ class InnerFamilysvr_Fromscene_UpdateUserInfo::_Internal {
 
 InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
 }
 InnerFamilysvr_Fromscene_UpdateUserInfo::InnerFamilysvr_Fromscene_UpdateUserInfo(const InnerFamilysvr_Fromscene_UpdateUserInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_type();
+  switch (from.type_case()) {
+    case kNickName: {
+      _internal_set_nickname(from._internal_nickname());
+      break;
+    }
+    case kHeadIcon: {
+      _internal_set_headicon(from._internal_headicon());
+      break;
+    }
+    case kHeadFrame: {
+      _internal_set_headframe(from._internal_headframe());
+      break;
+    }
+    case kLevel: {
+      _internal_set_level(from._internal_level());
+      break;
+    }
+    case TYPE_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
 }
 
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::SharedCtor() {
+clear_has_type();
+}
+
+InnerFamilysvr_Fromscene_UpdateUserInfo::~InnerFamilysvr_Fromscene_UpdateUserInfo() {
+  // @@protoc_insertion_point(destructor:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerFamilysvr_Fromscene_UpdateUserInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_type()) {
+    clear_type();
+  }
+}
+
+void InnerFamilysvr_Fromscene_UpdateUserInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerFamilysvr_Fromscene_UpdateUserInfo::clear_type() {
+// @@protoc_insertion_point(one_of_clear_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  switch (type_case()) {
+    case kNickName: {
+      type_.nickname_.Destroy();
+      break;
+    }
+    case kHeadIcon: {
+      // No need to clear
+      break;
+    }
+    case kHeadFrame: {
+      // No need to clear
+      break;
+    }
+    case kLevel: {
+      // No need to clear
+      break;
+    }
+    case TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
 
 
+void InnerFamilysvr_Fromscene_UpdateUserInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  clear_type();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerFamilysvr_Fromscene_UpdateUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string nickName = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_nickname();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName"));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 headIcon = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _internal_set_headicon(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 headFrame = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _internal_set_headframe(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 level = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _internal_set_level(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerFamilysvr_Fromscene_UpdateUserInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string nickName = 1;
+  if (_internal_has_nickname()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_nickname().data(), static_cast<int>(this->_internal_nickname().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "inner.InnerFamilysvr_Fromscene_UpdateUserInfo.nickName");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_nickname(), target);
+  }
+
+  // uint32 headIcon = 2;
+  if (_internal_has_headicon()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_headicon(), target);
+  }
+
+  // uint32 headFrame = 3;
+  if (_internal_has_headframe()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_headframe(), target);
+  }
+
+  // uint32 level = 4;
+  if (_internal_has_level()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_level(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  return target;
+}
+
+size_t InnerFamilysvr_Fromscene_UpdateUserInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (type_case()) {
+    // string nickName = 1;
+    case kNickName: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_nickname());
+      break;
+    }
+    // uint32 headIcon = 2;
+    case kHeadIcon: {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_headicon());
+      break;
+    }
+    // uint32 headFrame = 3;
+    case kHeadFrame: {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_headframe());
+      break;
+    }
+    // uint32 level = 4;
+    case kLevel: {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_level());
+      break;
+    }
+    case TYPE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_UpdateUserInfo::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerFamilysvr_Fromscene_UpdateUserInfo::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_UpdateUserInfo::GetClassData() const { return &_class_data_; }
 
+void InnerFamilysvr_Fromscene_UpdateUserInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerFamilysvr_Fromscene_UpdateUserInfo *>(to)->MergeFrom(
+      static_cast<const InnerFamilysvr_Fromscene_UpdateUserInfo &>(from));
+}
 
 
+void InnerFamilysvr_Fromscene_UpdateUserInfo::MergeFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  switch (from.type_case()) {
+    case kNickName: {
+      _internal_set_nickname(from._internal_nickname());
+      break;
+    }
+    case kHeadIcon: {
+      _internal_set_headicon(from._internal_headicon());
+      break;
+    }
+    case kHeadFrame: {
+      _internal_set_headframe(from._internal_headframe());
+      break;
+    }
+    case kLevel: {
+      _internal_set_level(from._internal_level());
+      break;
+    }
+    case TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void InnerFamilysvr_Fromscene_UpdateUserInfo::CopyFrom(const InnerFamilysvr_Fromscene_UpdateUserInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerFamilysvr_Fromscene_UpdateUserInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool InnerFamilysvr_Fromscene_UpdateUserInfo::IsInitialized() const {
+  return true;
+}
+
+void InnerFamilysvr_Fromscene_UpdateUserInfo::InternalSwap(InnerFamilysvr_Fromscene_UpdateUserInfo* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(type_, other->type_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_UpdateUserInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(

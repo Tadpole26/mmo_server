@@ -1,5 +1,6 @@
 #include "inner.pb.h"
 #include "scenesvr.pb.h"
+#include "familysvr.pb.h"
 
 #include "zNullCmd.h"
 #include "zLogMgr.h"
@@ -13,13 +14,20 @@ void CSvrLogicFace::handle_logic_msg(const tagNetMsg* pNetMsg)
 	tagMsgHead* pMsgHead = (tagMsgHead*)(pNetMsg->m_body);
 	switch (pMsgHead->usModuleId)
 	{
-	case inner::enInnerFirst_Scenesvr:
+	case inner::enInnerFirst_Scenesvr:		//to scenesvr
 		{
 			inner::InnerScenesvr innerReq;
 			PARSE_PTL_HEAD(innerReq, pMsgHead);
 			__msgParseScenesvr(0, hostHead, std::move(innerReq));
 		}
 		break;
+	case inner::enInnerFirst_Family:		//to familysvr
+		{
+			inner::InnerFamilysvr innerReq;
+			PARSE_PTL_HEAD(innerReq, pMsgHead);
+			__msgParseFamilysvr(0, hostHead, std::move(innerReq));
+		}
+		break;			
 	default:
 		Log_Error("handle_logic_msg.moduleId:%u,cmdId:%u", pMsgHead->usModuleId, pMsgHead->uiCmdId);
 		break;
@@ -36,5 +44,12 @@ bool CSvrLogicFace::__msgParseScenesvr(DWORD hashId, const tagHostHd& hostHead, 
 	return false;
 }
 
+bool CSvrLogicFace::__msgParseFamilysvr(DWORD hashId, const tagHostHd& hostHead, inner::InnerFamilysvr innerReq)
+{
+	if (innerReq.Fromscene_case() != inner::InnerFamilysvr::FromsceneCase::FROMSCENE_NOT_SET)
+		return netMsgFromScene(std::move(hashId), hostHead, std::move(innerReq));
+}
+
 bool CSvrLogicFace::netMsgFromGate(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq) { return false; }
 bool CSvrLogicFace::netMsgFromFriend(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq) { return false; }
+bool CSvrLogicFace::netMsgFromScene(DWORD hashId, const tagHostHd& hostHead, inner::InnerFamilysvr innerReq) { return false; }

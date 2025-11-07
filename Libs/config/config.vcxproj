@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ActionConfig.cpp" />
     <ClCompile Include="ItemConfig.cpp" />
     <ClCompile Include="ZoneConstConfig.cpp" />
     <ClCompile Include="MonsterConfig.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="TeamConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AuctionConfig.h" />
     <ClInclude Include="ItemConfig.h" />
     <ClInclude Include="ZoneConstConfig.h" />
     <ClInclude Include="MonsterConfig.h" />
