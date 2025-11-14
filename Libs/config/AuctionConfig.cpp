@@ -35,6 +35,13 @@ namespace config
 		return true;
 	}
 
+	const acution_goods_t* AuctionConfig::getGoodsConfig(uint32 goodsId)
+	{
+		auto it = _auctonGoods.find(goodsId);
+		if (it == _auctonGoods.end()) return nullptr;
+		return it->second;
+	}
+
 	bool AuctionConfig::__addAuctionMenu()
 	{
 		auto* pMenuCfg = new auction_menu_t;

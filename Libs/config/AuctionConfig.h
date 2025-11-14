@@ -17,6 +17,14 @@ namespace config
 		std::vector<uint32> optionContent;
 	};
 
+	struct acution_goods_t
+	{
+		uint32 tid = 0;
+		uint32 itemId = 0;
+		uint32 lowPrice = 0;//起拍价最低
+		uint32 highPrice = 0;//起拍价最高
+	};
+
 	class AuctionConfig : public cLoadBase
 	{
 	public:
@@ -37,12 +45,14 @@ namespace config
 		const auction_menu_t* getMenuConfig(uint32 menuId);
 		const auction_filter_t* getFilterConfig(uint32 filterId);
 		bool foreachMenu(std::function<bool (const auction_menu_t& menu)> func);
+		const acution_goods_t* getGoodsConfig(uint32 goodsId);
 	private:
 		bool __addAuctionMenu();
 		bool __addAuctionFilter();
 	private:
 		std::unordered_map<uint32_t, const auction_menu_t*> _auctionMenu;
 		std::unordered_map<uint32_t, const auction_filter_t*> _auctionFilter;
+		std::unordered_map<uint32_t, const acution_goods_t*> _auctonGoods;
 	};
 }
 

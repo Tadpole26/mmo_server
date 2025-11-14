@@ -20,7 +20,8 @@ public:
 	bool foreachMenu(MenuVisitFuncT &&func);
 private:
 	AuctionMenu* __createMenu(uint32 menuId);
-
+private:
+	std::unordered_map<uint32, AuctionMenu*> _menus;
 };
 
 #define gAuctionMenuMgr Singleton<AuctionMenuMgr>::getInstance()
