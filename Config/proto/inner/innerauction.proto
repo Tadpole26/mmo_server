@@ -1,0 +1,53 @@
+syntax = "proto3";
+package inner;
+
+
+message InnerAuctionGoodsUp
+{
+    uint32 goodsId = 1;
+    uint32 price = 2;
+    InnerObject object = 3;
+    uint64 charge = 5;
+}
+
+message InnerAuctionGoodsUpRet
+{
+    goodsSize = 1;
+}
+
+message InnerAuctionGoodsBid 
+{
+    uint64 objectId = 1;
+    InnerAuctionBidPrice price = 2;
+}
+
+mesage InnerAuctionGoodsBidRet
+{
+    InnerObjectList objectList = 1;
+}
+
+message InnerAuctionOperationReq
+{   
+    uint64 seq = 1;
+    oneof op 
+    {
+        InnerAuctionGoodsUp goodsup = 10;
+        InnerAuctionGoodsBid = 11;
+    }
+}
+
+message InnerAuctionOperationRes
+{
+    uint64 seq = 1;
+    bool success = 2;
+    oneof op 
+    {
+        InnerAuctionGoodsUpRet goodsup = 10;
+        InnerAuctionGoodsBidRet = 11;
+    }
+}
+
+message InnerAuctionOperationNtf
+{
+    uint64 seq = 1;
+}

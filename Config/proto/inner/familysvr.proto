@@ -10,6 +10,8 @@ message InnerFamilysvr
 		InnerFamilysvr_Fromscene_Test 								fromscene_test 					= 101;
 		InnerFamilysvr_Fromscene_GameEvent							fromscene_gameevent 			= 102;
 		InnerFamilysvr_Fromscene_UpdateUserInfo						fromscene_updateuserinfo		= 103;
+		InnerFamilysvr_Fromscene_OperationReq						fromscene_operationreq			= 104;
+		InnerFamilysvr_Fromscene_OperationNtf						fromscene_operationntf			= 105
 	}
 }
 
@@ -31,4 +33,14 @@ message InnerFamilysvr_Fromscene_UpdateUserInfo
 		uint32 headFrame = 3;
 		uint32 level = 4;
 	}
+}
+
+message InnerFamilysvr_Fromscene_OperationReq
+{
+	InnerAuctionOperation req = 1;
+}
+
+message InnerFamilysvr_Fromscene_OperationNtf
+{
+	InnerAuctionOperation ntf = 1;
 }

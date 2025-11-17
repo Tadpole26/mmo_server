@@ -43,6 +43,18 @@
     <ClCompile Include="AuctionFilterSearch.cpp">
       <Filter>MainLogic</Filter>
     </ClCompile>
+    <ClCompile Include="AuctionEntity.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionGoods.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionObject.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="AuctionGoodsMgr.cpp">
+      <Filter>MainLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerNetface.h">
@@ -73,6 +85,18 @@
       <Filter>MainLogic</Filter>
     </ClInclude>
     <ClInclude Include="AuctionFilterSearch.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionEntity.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionGoods.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionObject.h">
+      <Filter>MainLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="AuctionGoodsMgr.h">
       <Filter>MainLogic</Filter>
     </ClInclude>
   </ItemGroup>

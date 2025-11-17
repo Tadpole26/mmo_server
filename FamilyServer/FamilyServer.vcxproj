@@ -142,6 +142,7 @@
     <ClCompile Include="AuctionGoods.cpp" />
     <ClCompile Include="AuctionMenu.cpp" />
     <ClCompile Include="AuctionMenuMgr.cpp" />
+    <ClCompile Include="AuctionObject.cpp" />
     <ClCompile Include="FamilyUser.cpp" />
     <ClCompile Include="FamilyUserMgr.cpp" />
     <ClCompile Include="SceneSession.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="AuctionGoods.h" />
     <ClInclude Include="AuctionMenu.h" />
     <ClInclude Include="AuctionMenuMgr.h" />
+    <ClInclude Include="AuctionObject.h" />
     <ClInclude Include="FamilyUser.h" />
     <ClInclude Include="FamilyUserMgr.h" />
     <ClInclude Include="SceneSession.h" />

@@ -27,6 +27,13 @@ public:
 	uint32 getTickGroup() { return _tickGroup; }
 public:
 	void setTickGroup(uint32 val) { _tickGroup = val; }
+public:
+	bool innerOperationReq(const inner::InnerAuctionOperationReq &op);
+	bool innerOperationReq(consg inner::InnerAuctionOperatinNtf &op);
+
+	bool innerGoodsUp(const inner::InnerAuctionGoodsUp &goodsUp);
 private:
 	uint32 _tickGroup = 0;
+	uint64 _seqRecv = 0;
+	std::list<inner::InnerAuctionOperationRes*> _resCache;
 };
