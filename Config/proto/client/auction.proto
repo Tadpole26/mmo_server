@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "auctioncommon.proto";
+package client;
+
+enum enModuleAuction
+{
+	enModuleAuction_None								= 0;
+	enModuleAuction_GoodsUp_Req							= 1;				
+	enModuleAuction_GoodsUp_Ntf							= 2;		
+	enModuleAuction_RealMax								= 21;   //实际最大
+}

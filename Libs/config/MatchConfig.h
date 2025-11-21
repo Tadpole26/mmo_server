@@ -10,7 +10,11 @@ namespace config
 		uint32 tid = 0;
 		uint32 firstTime = 0;		//第一赛季开始时间
 		uint32 lastTime = 0;		//赛季持续时间
+		uint32 dayBegin = 0;		//相对于每日5点偏移量
+		uint32 dayEnd = 0;			
 		uint32 confirmTime = 0;		//匹配确认时间
+		uint32 kuafuId = 0;			//跨服玩法id
+		uint32 copyId = 0;			//匹配的副本id
 	};
 
 	struct match_dan_t
@@ -32,6 +36,7 @@ namespace config
 	{
 	public:
 		bool LoadConfig(const std::string& strContent) override;
+		bool LoadConfigByFile(const std::string& fileName) override;
 
 		match_info_t* getMatchConfig(const uint32 tid);
 		match_dan_t* getDanByScore(const uint32 score);

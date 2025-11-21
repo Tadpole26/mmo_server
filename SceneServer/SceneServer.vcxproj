@@ -142,7 +142,9 @@
   <ItemGroup>
     <ClCompile Include="CmptMovement.cpp" />
     <ClCompile Include="CmptView.cpp" />
+    <ClCompile Include="ModuleAcution.cpp" />
     <ClCompile Include="ModuleItem.cpp" />
+    <ClCompile Include="ModuleMatch.cpp" />
     <ClCompile Include="RedisMgr.cpp" />
     <ClCompile Include="SceneMapMgr.cpp" />
     <ClCompile Include="FamilyNetface.cpp" />
@@ -156,11 +158,14 @@
     <ClCompile Include="SceneScene.cpp" />
     <ClCompile Include="ServerNetface.cpp" />
     <ClCompile Include="SceneServer.cpp" />
+    <ClCompile Include="SysvarCopyMatchF33.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmptMovement.h" />
     <ClInclude Include="CmptView.h" />
+    <ClInclude Include="ModuleAuction.h" />
     <ClInclude Include="ModuleItem.h" />
+    <ClInclude Include="ModuleMatch.h" />
     <ClInclude Include="RedisMgr.h" />
     <ClInclude Include="SceneMapMgr.h" />
     <ClInclude Include="FamilyNetface.h" />
@@ -175,6 +180,7 @@
     <ClInclude Include="SceneMap.h" />
     <ClInclude Include="SceneScene.h" />
     <ClInclude Include="ServerNetface.h" />
+    <ClInclude Include="SysvarCopyMatchF33.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

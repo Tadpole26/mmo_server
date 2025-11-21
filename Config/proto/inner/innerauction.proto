@@ -4,26 +4,26 @@ package inner;
 
 message InnerAuctionGoodsUp
 {
-    uint32 goodsId = 1;
-    uint32 price = 2;
-    InnerObject object = 3;
+    uint32 goodsId = 1;         //商品配置tid
+    uint32 price = 2;           //上架价格
+    //InnerObject object = 3;
     uint64 charge = 5;
 }
 
 message InnerAuctionGoodsUpRet
 {
-    goodsSize = 1;
+    uint32 goodsSize = 1;
 }
 
 message InnerAuctionGoodsBid 
 {
     uint64 objectId = 1;
-    InnerAuctionBidPrice price = 2;
+    //InnerAuctionBidPrice price = 2;
 }
 
-mesage InnerAuctionGoodsBidRet
+message InnerAuctionGoodsBidRet
 {
-    InnerObjectList objectList = 1;
+    //InnerObjectList objectList = 1;
 }
 
 message InnerAuctionOperationReq
@@ -32,7 +32,7 @@ message InnerAuctionOperationReq
     oneof op 
     {
         InnerAuctionGoodsUp goodsup = 10;
-        InnerAuctionGoodsBid = 11;
+        InnerAuctionGoodsBid goodsbid = 11;
     }
 }
 
@@ -43,7 +43,7 @@ message InnerAuctionOperationRes
     oneof op 
     {
         InnerAuctionGoodsUpRet goodsup = 10;
-        InnerAuctionGoodsBidRet = 11;
+        InnerAuctionGoodsBidRet goodsbid = 11;
     }
 }
 

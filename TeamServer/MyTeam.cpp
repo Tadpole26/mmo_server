@@ -2,6 +2,8 @@
 #include "team.pb.h"
 #include "innerteam.pb.h"
 
+#include "TeamConfig.h"
+
 #include "TeamApply.h"
 #include "TeamUser.h"
 #include "TeamUserMgr.h"
@@ -9,7 +11,6 @@
 #include "TeamLeader.h"
 #include "SessionTeam.h"
 #include "TeamMgr.h"
-#include "TeamConfig.h"
 
 bool TeamUser::isTeamPersonMatching()
 {
@@ -822,5 +823,31 @@ bool TeamUser::innerReplaceLeader()
 
 bool TeamUser::innerJumpToLeader(uint32 sceneHashId, uint32 eJumpTo)
 {
+	return true;
+}
+
+bool TeamUser::tryCreateTeam(uint32 targetId)
+{
+	//单人进入可能没有组队,尝试给他创队
+	if (pMem)
+	{
+		return true;
+	}
+	auto* pTeamCfg = gTeamCfg->getTeamConfig(targetId);
+	if (!pTeamCfg)
+	{
+		Log_Error("!pTeamCfg");
+		return false;
+	}
+	auto* pTeam = gTeamMgr->createTeam();
+	if (!pTeam)
+	{
+		Log_Error("!pTeam");
+		return false;
+	}
+	pTeam->setTarget(targetId);
+	pTeam->setMinLevel(pTeamCfg->lvMin);
+	pTeam->setMaxLevel(pTeamCfg->lvMax);
+	pTeam->createLeader(this);
 	return true;
 }

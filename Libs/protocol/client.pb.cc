@@ -29,16 +29,17 @@ static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
 static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_client_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\014client.proto\022\006client*\272\001\n\010enModule\022\021\n\re"
+  "\n\014client.proto\022\006client*\344\001\n\010enModule\022\021\n\re"
   "nModule_None\020\000\022\022\n\016enModule_Login\020\001\022\021\n\ren"
   "Module_Hero\020\002\022\023\n\017enModule_Friend\020\003\022\021\n\ren"
   "Module_Mall\020\004\022\021\n\renModule_Mail\020\005\022\021\n\renMo"
-  "dule_Item\020\006\022\024\n\020enModule_RealMax\020\007\022\020\n\014enM"
-  "odule_End\020db\006proto3"
+  "dule_Item\020\006\022\024\n\020enModule_Auction\020\007\022\022\n\016enM"
+  "odule_Match\020\010\022\024\n\020enModule_RealMax\020\t\022\020\n\014e"
+  "nModule_End\020db\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_client_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_client_2eproto = {
-    false, false, 219, descriptor_table_protodef_client_2eproto,
+    false, false, 261, descriptor_table_protodef_client_2eproto,
     "client.proto",
     &descriptor_table_client_2eproto_once, nullptr, 0, 0,
     schemas, file_default_instances, TableStruct_client_2eproto::offsets,
@@ -66,6 +67,8 @@ bool enModule_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
+    case 9:
     case 100:
       return true;
     default:

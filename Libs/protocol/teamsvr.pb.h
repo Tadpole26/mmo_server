@@ -6938,9 +6938,10 @@ class InnerTeamsvr_Fromscene_PersonVote final :
 // -------------------------------------------------------------------
 
 class InnerTeamsvr_Fromscene_EnterByVote final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_EnterByVote) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerTeamsvr_Fromscene_EnterByVote) */ {
  public:
   inline InnerTeamsvr_Fromscene_EnterByVote() : InnerTeamsvr_Fromscene_EnterByVote(nullptr) {}
+  ~InnerTeamsvr_Fromscene_EnterByVote() override;
   explicit PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_EnterByVote(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   InnerTeamsvr_Fromscene_EnterByVote(const InnerTeamsvr_Fromscene_EnterByVote& from);
@@ -7013,15 +7014,27 @@ class InnerTeamsvr_Fromscene_EnterByVote final :
   InnerTeamsvr_Fromscene_EnterByVote* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<InnerTeamsvr_Fromscene_EnterByVote>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerTeamsvr_Fromscene_EnterByVote& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerTeamsvr_Fromscene_EnterByVote& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerTeamsvr_Fromscene_EnterByVote& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerTeamsvr_Fromscene_EnterByVote& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerTeamsvr_Fromscene_EnterByVote* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -7042,6 +7055,27 @@ class InnerTeamsvr_Fromscene_EnterByVote final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kVoteFieldNumber = 1,
+  };
+  // .inner.InnerVoteInfo vote = 1;
+  bool has_vote() const;
+  private:
+  bool _internal_has_vote() const;
+  public:
+  void clear_vote();
+  const ::inner::InnerVoteInfo& vote() const;
+  PROTOBUF_NODISCARD ::inner::InnerVoteInfo* release_vote();
+  ::inner::InnerVoteInfo* mutable_vote();
+  void set_allocated_vote(::inner::InnerVoteInfo* vote);
+  private:
+  const ::inner::InnerVoteInfo& _internal_vote() const;
+  ::inner::InnerVoteInfo* _internal_mutable_vote();
+  public:
+  void unsafe_arena_set_allocated_vote(
+      ::inner::InnerVoteInfo* vote);
+  ::inner::InnerVoteInfo* unsafe_arena_release_vote();
+
   // @@protoc_insertion_point(class_scope:inner.InnerTeamsvr_Fromscene_EnterByVote)
  private:
   class _Internal;
@@ -7049,6 +7083,8 @@ class InnerTeamsvr_Fromscene_EnterByVote final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::inner::InnerVoteInfo* vote_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_teamsvr_2eproto;
 };
 // -------------------------------------------------------------------
@@ -12993,6 +13029,91 @@ inline void InnerTeamsvr_Fromscene_PersonVote::set_agree(bool value) {
 // -------------------------------------------------------------------
 
 // InnerTeamsvr_Fromscene_EnterByVote
+
+// .inner.InnerVoteInfo vote = 1;
+inline bool InnerTeamsvr_Fromscene_EnterByVote::_internal_has_vote() const {
+  return this != internal_default_instance() && vote_ != nullptr;
+}
+inline bool InnerTeamsvr_Fromscene_EnterByVote::has_vote() const {
+  return _internal_has_vote();
+}
+inline const ::inner::InnerVoteInfo& InnerTeamsvr_Fromscene_EnterByVote::_internal_vote() const {
+  const ::inner::InnerVoteInfo* p = vote_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerVoteInfo&>(
+      ::inner::_InnerVoteInfo_default_instance_);
+}
+inline const ::inner::InnerVoteInfo& InnerTeamsvr_Fromscene_EnterByVote::vote() const {
+  // @@protoc_insertion_point(field_get:inner.InnerTeamsvr_Fromscene_EnterByVote.vote)
+  return _internal_vote();
+}
+inline void InnerTeamsvr_Fromscene_EnterByVote::unsafe_arena_set_allocated_vote(
+    ::inner::InnerVoteInfo* vote) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+  }
+  vote_ = vote;
+  if (vote) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerTeamsvr_Fromscene_EnterByVote.vote)
+}
+inline ::inner::InnerVoteInfo* InnerTeamsvr_Fromscene_EnterByVote::release_vote() {
+  
+  ::inner::InnerVoteInfo* temp = vote_;
+  vote_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::inner::InnerVoteInfo* InnerTeamsvr_Fromscene_EnterByVote::unsafe_arena_release_vote() {
+  // @@protoc_insertion_point(field_release:inner.InnerTeamsvr_Fromscene_EnterByVote.vote)
+  
+  ::inner::InnerVoteInfo* temp = vote_;
+  vote_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerVoteInfo* InnerTeamsvr_Fromscene_EnterByVote::_internal_mutable_vote() {
+  
+  if (vote_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerVoteInfo>(GetArenaForAllocation());
+    vote_ = p;
+  }
+  return vote_;
+}
+inline ::inner::InnerVoteInfo* InnerTeamsvr_Fromscene_EnterByVote::mutable_vote() {
+  ::inner::InnerVoteInfo* _msg = _internal_mutable_vote();
+  // @@protoc_insertion_point(field_mutable:inner.InnerTeamsvr_Fromscene_EnterByVote.vote)
+  return _msg;
+}
+inline void InnerTeamsvr_Fromscene_EnterByVote::set_allocated_vote(::inner::InnerVoteInfo* vote) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+  }
+  if (vote) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote));
+    if (message_arena != submessage_arena) {
+      vote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, vote, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  vote_ = vote;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerTeamsvr_Fromscene_EnterByVote.vote)
+}
 
 // -------------------------------------------------------------------
 

@@ -48,6 +48,7 @@ bool CSvrLogicFace::__msgParseFamilysvr(DWORD hashId, const tagHostHd& hostHead,
 {
 	if (innerReq.Fromscene_case() != inner::InnerFamilysvr::FromsceneCase::FROMSCENE_NOT_SET)
 		return netMsgFromScene(std::move(hashId), hostHead, std::move(innerReq));
+	return false;
 }
 
 bool CSvrLogicFace::netMsgFromGate(DWORD hashId, const tagHostHd& hostHead, inner::InnerScenesvr innerReq) { return false; }

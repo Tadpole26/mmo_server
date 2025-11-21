@@ -46,6 +46,9 @@
     <ClCompile Include="MatchUnitMgr.cpp" />
     <ClCompile Include="MatchRoomMgr.cpp" />
     <ClCompile Include="MyMatch.cpp" />
+    <ClCompile Include="MyVote.cpp">
+      <Filter>User</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NetMsgFromScene.h">

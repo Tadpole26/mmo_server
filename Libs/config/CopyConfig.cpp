@@ -8,7 +8,14 @@ namespace config
 		InitSheet("copy_level_info", std::bind(&CopyConfig::addCopyLevelInfo, this));
 
 		return LoadCfgFromStr(strContent);
+	}
 
+	bool CopyConfig::LoadConfigByFile(const std::string& fileName)
+	{
+		InitSheet("copy_info", std::bind(&CopyConfig::addCopyInfo, this));
+		InitSheet("copy_level_info", std::bind(&CopyConfig::addCopyLevelInfo, this));
+
+		return LoadCfgFromXml(fileName.c_str());
 	}
 
 	bool CopyConfig::addCopyInfo()
@@ -34,7 +41,15 @@ namespace config
 		auto iter = _copyLevelInfos.find(tid);
 		if (iter == _copyLevelInfos.end())
 			return nullptr;
-		return &(iter->second);
+		return iter->second;
+	}
+
+	copy_level_info_t* CopyConfig::getFirstLevelConfig(const uint32 copyTid)
+	{
+		auto it = _typeLevelInfos.find(copyTid);
+		if (it == _typeLevelInfos.end()) return nullptr;
+		if (it->second.empty()) return nullptr;
+		return (*it->second.begin());
 	}
 
 	bool CopyConfig::foreachCopyId(uint32 eCopyType, std::function<bool(const copy_info_t&)> f)

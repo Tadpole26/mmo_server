@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MyVote.cpp" />
     <ClCompile Include="ServerNetface.cpp" />
     <ClCompile Include="EventGameUser.cpp" />
     <ClCompile Include="MatchRoomMgr.cpp" />

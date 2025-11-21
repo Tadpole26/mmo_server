@@ -287,7 +287,7 @@ uint32 AuctionObject::getPopularity() const
 
 uint32 AuctionObject::getPriceRank() const
 {
-	return cAuciton::getPriceRank(getPriceShown());
+	return cAuction::getPriceRank(getPriceShown());
 }
 
 uint32 AuctionObject::getPriceShown() const

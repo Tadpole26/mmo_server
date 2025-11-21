@@ -69,8 +69,32 @@ struct InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_UpdateUserInfoDefaultTypeInternal _InnerFamilysvr_Fromscene_UpdateUserInfo_default_instance_;
+PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_OperationReq::InnerFamilysvr_Fromscene_OperationReq(
+    ::_pbi::ConstantInitialized)
+  : req_(nullptr){}
+struct InnerFamilysvr_Fromscene_OperationReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_OperationReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerFamilysvr_Fromscene_OperationReqDefaultTypeInternal() {}
+  union {
+    InnerFamilysvr_Fromscene_OperationReq _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_OperationReqDefaultTypeInternal _InnerFamilysvr_Fromscene_OperationReq_default_instance_;
+PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_OperationNtf::InnerFamilysvr_Fromscene_OperationNtf(
+    ::_pbi::ConstantInitialized)
+  : ntf_(nullptr){}
+struct InnerFamilysvr_Fromscene_OperationNtfDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InnerFamilysvr_Fromscene_OperationNtfDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InnerFamilysvr_Fromscene_OperationNtfDefaultTypeInternal() {}
+  union {
+    InnerFamilysvr_Fromscene_OperationNtf _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerFamilysvr_Fromscene_OperationNtfDefaultTypeInternal _InnerFamilysvr_Fromscene_OperationNtf_default_instance_;
 }  // namespace inner
-static ::_pb::Metadata file_level_metadata_familysvr_2eproto[4];
+static ::_pb::Metadata file_level_metadata_familysvr_2eproto[6];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_familysvr_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_familysvr_2eproto = nullptr;
 
@@ -82,6 +106,8 @@ const uint32_t TableStruct_familysvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr, fromuser_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
@@ -110,12 +136,28 @@ const uint32_t TableStruct_familysvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo, type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_OperationReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_OperationReq, req_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_OperationNtf, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerFamilysvr_Fromscene_OperationNtf, ntf_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::inner::InnerFamilysvr)},
-  { 11, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_Test)},
-  { 17, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_GameEvent)},
-  { 24, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo)},
+  { 13, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_Test)},
+  { 19, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_GameEvent)},
+  { 26, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_UpdateUserInfo)},
+  { 37, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_OperationReq)},
+  { 44, -1, -1, sizeof(::inner::InnerFamilysvr_Fromscene_OperationNtf)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -123,33 +165,44 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::inner::_InnerFamilysvr_Fromscene_Test_default_instance_._instance,
   &::inner::_InnerFamilysvr_Fromscene_GameEvent_default_instance_._instance,
   &::inner::_InnerFamilysvr_Fromscene_UpdateUserInfo_default_instance_._instance,
+  &::inner::_InnerFamilysvr_Fromscene_OperationReq_default_instance_._instance,
+  &::inner::_InnerFamilysvr_Fromscene_OperationNtf_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_familysvr_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\017familysvr.proto\022\005inner\032\021innercommon.pr"
-  "oto\"\215\002\n\016InnerFamilysvr\022\020\n\010fromuser\030\001 \001(\004"
-  "\022>\n\016fromscene_test\030e \001(\0132$.inner.InnerFa"
-  "milysvr_Fromscene_TestH\000\022H\n\023fromscene_ga"
-  "meevent\030f \001(\0132).inner.InnerFamilysvr_Fro"
-  "mscene_GameEventH\000\022R\n\030fromscene_updateus"
-  "erinfo\030g \001(\0132..inner.InnerFamilysvr_From"
-  "scene_UpdateUserInfoH\000B\013\n\tFromscene\"\037\n\035I"
-  "nnerFamilysvr_Fromscene_Test\"N\n\"InnerFam"
-  "ilysvr_Fromscene_GameEvent\022(\n\tgameEvent\030"
-  "\001 \001(\0132\025.inner.InnerGameEvent\"\177\n\'InnerFam"
-  "ilysvr_Fromscene_UpdateUserInfo\022\022\n\010nickN"
-  "ame\030\001 \001(\tH\000\022\022\n\010headIcon\030\002 \001(\rH\000\022\023\n\theadF"
-  "rame\030\003 \001(\rH\000\022\017\n\005level\030\004 \001(\rH\000B\006\n\004typeb\006p"
-  "roto3"
+  "oto\032\022innerauction.proto\"\255\003\n\016InnerFamilys"
+  "vr\022\020\n\010fromuser\030\001 \001(\004\022>\n\016fromscene_test\030e"
+  " \001(\0132$.inner.InnerFamilysvr_Fromscene_Te"
+  "stH\000\022H\n\023fromscene_gameevent\030f \001(\0132).inne"
+  "r.InnerFamilysvr_Fromscene_GameEventH\000\022R"
+  "\n\030fromscene_updateuserinfo\030g \001(\0132..inner"
+  ".InnerFamilysvr_Fromscene_UpdateUserInfo"
+  "H\000\022N\n\026fromscene_operationreq\030h \001(\0132,.inn"
+  "er.InnerFamilysvr_Fromscene_OperationReq"
+  "H\000\022N\n\026fromscene_operationntf\030i \001(\0132,.inn"
+  "er.InnerFamilysvr_Fromscene_OperationNtf"
+  "H\000B\013\n\tFromscene\"\037\n\035InnerFamilysvr_Fromsc"
+  "ene_Test\"N\n\"InnerFamilysvr_Fromscene_Gam"
+  "eEvent\022(\n\tgameEvent\030\001 \001(\0132\025.inner.InnerG"
+  "ameEvent\"\177\n\'InnerFamilysvr_Fromscene_Upd"
+  "ateUserInfo\022\022\n\010nickName\030\001 \001(\tH\000\022\022\n\010headI"
+  "con\030\002 \001(\rH\000\022\023\n\theadFrame\030\003 \001(\rH\000\022\017\n\005leve"
+  "l\030\004 \001(\rH\000B\006\n\004type\"U\n%InnerFamilysvr_From"
+  "scene_OperationReq\022,\n\003req\030\001 \001(\0132\037.inner."
+  "InnerAuctionOperationReq\"U\n%InnerFamilys"
+  "vr_Fromscene_OperationNtf\022,\n\003ntf\030\001 \001(\0132\037"
+  ".inner.InnerAuctionOperationResb\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_familysvr_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_familysvr_2eproto_deps[2] = {
+  &::descriptor_table_innerauction_2eproto,
   &::descriptor_table_innercommon_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_familysvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_familysvr_2eproto = {
-    false, false, 565, descriptor_table_protodef_familysvr_2eproto,
+    false, false, 919, descriptor_table_protodef_familysvr_2eproto,
     "familysvr.proto",
-    &descriptor_table_familysvr_2eproto_once, descriptor_table_familysvr_2eproto_deps, 1, 4,
+    &descriptor_table_familysvr_2eproto_once, descriptor_table_familysvr_2eproto_deps, 2, 6,
     schemas, file_default_instances, TableStruct_familysvr_2eproto::offsets,
     file_level_metadata_familysvr_2eproto, file_level_enum_descriptors_familysvr_2eproto,
     file_level_service_descriptors_familysvr_2eproto,
@@ -169,6 +222,8 @@ class InnerFamilysvr::_Internal {
   static const ::inner::InnerFamilysvr_Fromscene_Test& fromscene_test(const InnerFamilysvr* msg);
   static const ::inner::InnerFamilysvr_Fromscene_GameEvent& fromscene_gameevent(const InnerFamilysvr* msg);
   static const ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo& fromscene_updateuserinfo(const InnerFamilysvr* msg);
+  static const ::inner::InnerFamilysvr_Fromscene_OperationReq& fromscene_operationreq(const InnerFamilysvr* msg);
+  static const ::inner::InnerFamilysvr_Fromscene_OperationNtf& fromscene_operationntf(const InnerFamilysvr* msg);
 };
 
 const ::inner::InnerFamilysvr_Fromscene_Test&
@@ -182,6 +237,14 @@ InnerFamilysvr::_Internal::fromscene_gameevent(const InnerFamilysvr* msg) {
 const ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo&
 InnerFamilysvr::_Internal::fromscene_updateuserinfo(const InnerFamilysvr* msg) {
   return *msg->Fromscene_.fromscene_updateuserinfo_;
+}
+const ::inner::InnerFamilysvr_Fromscene_OperationReq&
+InnerFamilysvr::_Internal::fromscene_operationreq(const InnerFamilysvr* msg) {
+  return *msg->Fromscene_.fromscene_operationreq_;
+}
+const ::inner::InnerFamilysvr_Fromscene_OperationNtf&
+InnerFamilysvr::_Internal::fromscene_operationntf(const InnerFamilysvr* msg) {
+  return *msg->Fromscene_.fromscene_operationntf_;
 }
 void InnerFamilysvr::set_allocated_fromscene_test(::inner::InnerFamilysvr_Fromscene_Test* fromscene_test) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -228,6 +291,36 @@ void InnerFamilysvr::set_allocated_fromscene_updateuserinfo(::inner::InnerFamily
   }
   // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_updateuserinfo)
 }
+void InnerFamilysvr::set_allocated_fromscene_operationreq(::inner::InnerFamilysvr_Fromscene_OperationReq* fromscene_operationreq) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromscene();
+  if (fromscene_operationreq) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromscene_operationreq);
+    if (message_arena != submessage_arena) {
+      fromscene_operationreq = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromscene_operationreq, submessage_arena);
+    }
+    set_has_fromscene_operationreq();
+    Fromscene_.fromscene_operationreq_ = fromscene_operationreq;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_operationreq)
+}
+void InnerFamilysvr::set_allocated_fromscene_operationntf(::inner::InnerFamilysvr_Fromscene_OperationNtf* fromscene_operationntf) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_Fromscene();
+  if (fromscene_operationntf) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(fromscene_operationntf);
+    if (message_arena != submessage_arena) {
+      fromscene_operationntf = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fromscene_operationntf, submessage_arena);
+    }
+    set_has_fromscene_operationntf();
+    Fromscene_.fromscene_operationntf_ = fromscene_operationntf;
+  }
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerFamilysvr.fromscene_operationntf)
+}
 InnerFamilysvr::InnerFamilysvr(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -250,6 +343,14 @@ InnerFamilysvr::InnerFamilysvr(const InnerFamilysvr& from)
     }
     case kFromsceneUpdateuserinfo: {
       _internal_mutable_fromscene_updateuserinfo()->::inner::InnerFamilysvr_Fromscene_UpdateUserInfo::MergeFrom(from._internal_fromscene_updateuserinfo());
+      break;
+    }
+    case kFromsceneOperationreq: {
+      _internal_mutable_fromscene_operationreq()->::inner::InnerFamilysvr_Fromscene_OperationReq::MergeFrom(from._internal_fromscene_operationreq());
+      break;
+    }
+    case kFromsceneOperationntf: {
+      _internal_mutable_fromscene_operationntf()->::inner::InnerFamilysvr_Fromscene_OperationNtf::MergeFrom(from._internal_fromscene_operationntf());
       break;
     }
     case FROMSCENE_NOT_SET: {
@@ -302,6 +403,18 @@ void InnerFamilysvr::clear_Fromscene() {
     case kFromsceneUpdateuserinfo: {
       if (GetArenaForAllocation() == nullptr) {
         delete Fromscene_.fromscene_updateuserinfo_;
+      }
+      break;
+    }
+    case kFromsceneOperationreq: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromscene_.fromscene_operationreq_;
+      }
+      break;
+    }
+    case kFromsceneOperationntf: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete Fromscene_.fromscene_operationntf_;
       }
       break;
     }
@@ -362,6 +475,22 @@ const char* InnerFamilysvr::_InternalParse(const char* ptr, ::_pbi::ParseContext
         } else
           goto handle_unusual;
         continue;
+      // .inner.InnerFamilysvr_Fromscene_OperationReq fromscene_operationreq = 104;
+      case 104:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromscene_operationreq(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .inner.InnerFamilysvr_Fromscene_OperationNtf fromscene_operationntf = 105;
+      case 105:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_fromscene_operationntf(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -418,6 +547,20 @@ uint8_t* InnerFamilysvr::_InternalSerialize(
         _Internal::fromscene_updateuserinfo(this).GetCachedSize(), target, stream);
   }
 
+  // .inner.InnerFamilysvr_Fromscene_OperationReq fromscene_operationreq = 104;
+  if (_internal_has_fromscene_operationreq()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(104, _Internal::fromscene_operationreq(this),
+        _Internal::fromscene_operationreq(this).GetCachedSize(), target, stream);
+  }
+
+  // .inner.InnerFamilysvr_Fromscene_OperationNtf fromscene_operationntf = 105;
+  if (_internal_has_fromscene_operationntf()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(105, _Internal::fromscene_operationntf(this),
+        _Internal::fromscene_operationntf(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -461,6 +604,20 @@ size_t InnerFamilysvr::ByteSizeLong() const {
           *Fromscene_.fromscene_updateuserinfo_);
       break;
     }
+    // .inner.InnerFamilysvr_Fromscene_OperationReq fromscene_operationreq = 104;
+    case kFromsceneOperationreq: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromscene_.fromscene_operationreq_);
+      break;
+    }
+    // .inner.InnerFamilysvr_Fromscene_OperationNtf fromscene_operationntf = 105;
+    case kFromsceneOperationntf: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *Fromscene_.fromscene_operationntf_);
+      break;
+    }
     case FROMSCENE_NOT_SET: {
       break;
     }
@@ -501,6 +658,14 @@ void InnerFamilysvr::MergeFrom(const InnerFamilysvr& from) {
     }
     case kFromsceneUpdateuserinfo: {
       _internal_mutable_fromscene_updateuserinfo()->::inner::InnerFamilysvr_Fromscene_UpdateUserInfo::MergeFrom(from._internal_fromscene_updateuserinfo());
+      break;
+    }
+    case kFromsceneOperationreq: {
+      _internal_mutable_fromscene_operationreq()->::inner::InnerFamilysvr_Fromscene_OperationReq::MergeFrom(from._internal_fromscene_operationreq());
+      break;
+    }
+    case kFromsceneOperationntf: {
+      _internal_mutable_fromscene_operationntf()->::inner::InnerFamilysvr_Fromscene_OperationNtf::MergeFrom(from._internal_fromscene_operationntf());
       break;
     }
     case FROMSCENE_NOT_SET: {
@@ -1078,6 +1243,392 @@ void InnerFamilysvr_Fromscene_UpdateUserInfo::InternalSwap(InnerFamilysvr_Fromsc
       file_level_metadata_familysvr_2eproto[3]);
 }
 
+// ===================================================================
+
+class InnerFamilysvr_Fromscene_OperationReq::_Internal {
+ public:
+  static const ::inner::InnerAuctionOperationReq& req(const InnerFamilysvr_Fromscene_OperationReq* msg);
+};
+
+const ::inner::InnerAuctionOperationReq&
+InnerFamilysvr_Fromscene_OperationReq::_Internal::req(const InnerFamilysvr_Fromscene_OperationReq* msg) {
+  return *msg->req_;
+}
+void InnerFamilysvr_Fromscene_OperationReq::clear_req() {
+  if (GetArenaForAllocation() == nullptr && req_ != nullptr) {
+    delete req_;
+  }
+  req_ = nullptr;
+}
+InnerFamilysvr_Fromscene_OperationReq::InnerFamilysvr_Fromscene_OperationReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_OperationReq)
+}
+InnerFamilysvr_Fromscene_OperationReq::InnerFamilysvr_Fromscene_OperationReq(const InnerFamilysvr_Fromscene_OperationReq& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_req()) {
+    req_ = new ::inner::InnerAuctionOperationReq(*from.req_);
+  } else {
+    req_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_OperationReq)
+}
+
+inline void InnerFamilysvr_Fromscene_OperationReq::SharedCtor() {
+req_ = nullptr;
+}
+
+InnerFamilysvr_Fromscene_OperationReq::~InnerFamilysvr_Fromscene_OperationReq() {
+  // @@protoc_insertion_point(destructor:inner.InnerFamilysvr_Fromscene_OperationReq)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerFamilysvr_Fromscene_OperationReq::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete req_;
+}
+
+void InnerFamilysvr_Fromscene_OperationReq::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerFamilysvr_Fromscene_OperationReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerFamilysvr_Fromscene_OperationReq)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && req_ != nullptr) {
+    delete req_;
+  }
+  req_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerFamilysvr_Fromscene_OperationReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .inner.InnerAuctionOperationReq req = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_req(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerFamilysvr_Fromscene_OperationReq::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerFamilysvr_Fromscene_OperationReq)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .inner.InnerAuctionOperationReq req = 1;
+  if (this->_internal_has_req()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::req(this),
+        _Internal::req(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerFamilysvr_Fromscene_OperationReq)
+  return target;
+}
+
+size_t InnerFamilysvr_Fromscene_OperationReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerFamilysvr_Fromscene_OperationReq)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerAuctionOperationReq req = 1;
+  if (this->_internal_has_req()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *req_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_OperationReq::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerFamilysvr_Fromscene_OperationReq::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_OperationReq::GetClassData() const { return &_class_data_; }
+
+void InnerFamilysvr_Fromscene_OperationReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerFamilysvr_Fromscene_OperationReq *>(to)->MergeFrom(
+      static_cast<const InnerFamilysvr_Fromscene_OperationReq &>(from));
+}
+
+
+void InnerFamilysvr_Fromscene_OperationReq::MergeFrom(const InnerFamilysvr_Fromscene_OperationReq& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerFamilysvr_Fromscene_OperationReq)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_req()) {
+    _internal_mutable_req()->::inner::InnerAuctionOperationReq::MergeFrom(from._internal_req());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerFamilysvr_Fromscene_OperationReq::CopyFrom(const InnerFamilysvr_Fromscene_OperationReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerFamilysvr_Fromscene_OperationReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerFamilysvr_Fromscene_OperationReq::IsInitialized() const {
+  return true;
+}
+
+void InnerFamilysvr_Fromscene_OperationReq::InternalSwap(InnerFamilysvr_Fromscene_OperationReq* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(req_, other->req_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_OperationReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_familysvr_2eproto_getter, &descriptor_table_familysvr_2eproto_once,
+      file_level_metadata_familysvr_2eproto[4]);
+}
+
+// ===================================================================
+
+class InnerFamilysvr_Fromscene_OperationNtf::_Internal {
+ public:
+  static const ::inner::InnerAuctionOperationRes& ntf(const InnerFamilysvr_Fromscene_OperationNtf* msg);
+};
+
+const ::inner::InnerAuctionOperationRes&
+InnerFamilysvr_Fromscene_OperationNtf::_Internal::ntf(const InnerFamilysvr_Fromscene_OperationNtf* msg) {
+  return *msg->ntf_;
+}
+void InnerFamilysvr_Fromscene_OperationNtf::clear_ntf() {
+  if (GetArenaForAllocation() == nullptr && ntf_ != nullptr) {
+    delete ntf_;
+  }
+  ntf_ = nullptr;
+}
+InnerFamilysvr_Fromscene_OperationNtf::InnerFamilysvr_Fromscene_OperationNtf(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:inner.InnerFamilysvr_Fromscene_OperationNtf)
+}
+InnerFamilysvr_Fromscene_OperationNtf::InnerFamilysvr_Fromscene_OperationNtf(const InnerFamilysvr_Fromscene_OperationNtf& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_ntf()) {
+    ntf_ = new ::inner::InnerAuctionOperationRes(*from.ntf_);
+  } else {
+    ntf_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:inner.InnerFamilysvr_Fromscene_OperationNtf)
+}
+
+inline void InnerFamilysvr_Fromscene_OperationNtf::SharedCtor() {
+ntf_ = nullptr;
+}
+
+InnerFamilysvr_Fromscene_OperationNtf::~InnerFamilysvr_Fromscene_OperationNtf() {
+  // @@protoc_insertion_point(destructor:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void InnerFamilysvr_Fromscene_OperationNtf::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete ntf_;
+}
+
+void InnerFamilysvr_Fromscene_OperationNtf::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerFamilysvr_Fromscene_OperationNtf::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && ntf_ != nullptr) {
+    delete ntf_;
+  }
+  ntf_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerFamilysvr_Fromscene_OperationNtf::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .inner.InnerAuctionOperationRes ntf = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ntf(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerFamilysvr_Fromscene_OperationNtf::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .inner.InnerAuctionOperationRes ntf = 1;
+  if (this->_internal_has_ntf()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::ntf(this),
+        _Internal::ntf(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  return target;
+}
+
+size_t InnerFamilysvr_Fromscene_OperationNtf::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerAuctionOperationRes ntf = 1;
+  if (this->_internal_has_ntf()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *ntf_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerFamilysvr_Fromscene_OperationNtf::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerFamilysvr_Fromscene_OperationNtf::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerFamilysvr_Fromscene_OperationNtf::GetClassData() const { return &_class_data_; }
+
+void InnerFamilysvr_Fromscene_OperationNtf::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerFamilysvr_Fromscene_OperationNtf *>(to)->MergeFrom(
+      static_cast<const InnerFamilysvr_Fromscene_OperationNtf &>(from));
+}
+
+
+void InnerFamilysvr_Fromscene_OperationNtf::MergeFrom(const InnerFamilysvr_Fromscene_OperationNtf& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_ntf()) {
+    _internal_mutable_ntf()->::inner::InnerAuctionOperationRes::MergeFrom(from._internal_ntf());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void InnerFamilysvr_Fromscene_OperationNtf::CopyFrom(const InnerFamilysvr_Fromscene_OperationNtf& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerFamilysvr_Fromscene_OperationNtf)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool InnerFamilysvr_Fromscene_OperationNtf::IsInitialized() const {
+  return true;
+}
+
+void InnerFamilysvr_Fromscene_OperationNtf::InternalSwap(InnerFamilysvr_Fromscene_OperationNtf* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(ntf_, other->ntf_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata InnerFamilysvr_Fromscene_OperationNtf::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_familysvr_2eproto_getter, &descriptor_table_familysvr_2eproto_once,
+      file_level_metadata_familysvr_2eproto[5]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace inner
 PROTOBUF_NAMESPACE_OPEN
@@ -1096,6 +1647,14 @@ Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_GameEvent >(Arena* 
 template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo*
 Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo >(Arena* arena) {
   return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_UpdateUserInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_OperationReq*
+Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_OperationReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_OperationReq >(arena);
+}
+template<> PROTOBUF_NOINLINE ::inner::InnerFamilysvr_Fromscene_OperationNtf*
+Arena::CreateMaybeMessage< ::inner::InnerFamilysvr_Fromscene_OperationNtf >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::inner::InnerFamilysvr_Fromscene_OperationNtf >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

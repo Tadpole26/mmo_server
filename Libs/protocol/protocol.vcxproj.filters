@@ -35,6 +35,9 @@
     <ClCompile Include="inner.pb.cc" />
     <ClCompile Include="msg_cfg_ins.pb.cc" />
     <ClCompile Include="recorditem.pb.cc" />
+    <ClCompile Include="auction.pb.cc" />
+    <ClCompile Include="auctioncommon.pb.cc" />
+    <ClCompile Include="innerauction.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chatcommon.pb.h" />
@@ -71,6 +74,9 @@
     <ClInclude Include="inner.pb.h" />
     <ClInclude Include="msg_cfg_ins.pb.h" />
     <ClInclude Include="recorditem.pb.h" />
+    <ClInclude Include="auction.pb.h" />
+    <ClInclude Include="auctioncommon.pb.h" />
+    <ClInclude Include="innerauction.pb.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

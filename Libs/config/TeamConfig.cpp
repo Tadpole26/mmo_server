@@ -13,7 +13,7 @@ namespace config
 	bool TeamConfig::AddTeamInfo()
 	{
 		uint32 uiUid = GetDataUInt("id");
-		team_info_t& stElem = _teamInfoCfg[uiUid];
+		//team_info_t& stElem = _teamInfoCfg[uiUid];
 		return true;
 	}
 
@@ -22,7 +22,7 @@ namespace config
 		auto iter = _teamInfoCfg.find(tid);
 		if (iter == _teamInfoCfg.end())
 			return nullptr;
-		return &(iter->second);
+		return iter->second;
 	}
 
 	vote_info_t* TeamConfig::getVoteConfig(const uint32 tid)
@@ -30,14 +30,14 @@ namespace config
 		auto iter = _voteInfoCfg.find(tid);
 		if (iter == _voteInfoCfg.end())
 			return nullptr;
-		return &(iter->second);
+		return iter->second;
 	}
 
 	bool TeamConfig::foreach(std::function<bool(team_info_t&)> func)
 	{
 		for (auto& pair : _teamInfoCfg)
 		{
-			if (!func(pair.second))
+			if (!func(*pair.second))
 				return false;
 		}
 		return true;

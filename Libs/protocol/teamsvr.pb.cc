@@ -497,7 +497,8 @@ struct InnerTeamsvr_Fromscene_PersonVoteDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InnerTeamsvr_Fromscene_PersonVoteDefaultTypeInternal _InnerTeamsvr_Fromscene_PersonVote_default_instance_;
 PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_EnterByVote::InnerTeamsvr_Fromscene_EnterByVote(
-    ::_pbi::ConstantInitialized){}
+    ::_pbi::ConstantInitialized)
+  : vote_(nullptr){}
 struct InnerTeamsvr_Fromscene_EnterByVoteDefaultTypeInternal {
   PROTOBUF_CONSTEXPR InnerTeamsvr_Fromscene_EnterByVoteDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -902,6 +903,7 @@ const uint32_t TableStruct_teamsvr_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Fromscene_EnterByVote, vote_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::inner::InnerTeamsvr_Fromscene_ChatTeam, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -971,10 +973,10 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 322, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ReplaceLeader)},
   { 328, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_PersonVote)},
   { 335, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_EnterByVote)},
-  { 341, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ChatTeam)},
-  { 348, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatCreateTeam)},
-  { 354, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatDstroyTeam)},
-  { 361, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_JumpToLeader)},
+  { 342, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_ChatTeam)},
+  { 349, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatCreateTeam)},
+  { 355, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_BatDstroyTeam)},
+  { 362, -1, -1, sizeof(::inner::InnerTeamsvr_Fromscene_JumpToLeader)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1185,14 +1187,15 @@ const char descriptor_table_protodef_teamsvr_2eproto[] PROTOBUF_SECTION_VARIABLE
   "cene_AgreeTogether\"\'\n%InnerTeamsvr_Froms"
   "cene_RefuseTogether\"&\n$InnerTeamsvr_From"
   "scene_ReplaceLeader\"2\n!InnerTeamsvr_From"
-  "scene_PersonVote\022\r\n\005agree\030\001 \001(\010\"$\n\"Inner"
-  "Teamsvr_Fromscene_EnterByVote\"O\n\037InnerTe"
-  "amsvr_Fromscene_ChatTeam\022,\n\007context\030\001 \001("
-  "\0132\033.common.ChatTypeContextDown\"&\n$InnerT"
-  "eamsvr_Fromscene_BatCreateTeam\"7\n$InnerT"
-  "eamsvr_Fromscene_BatDstroyTeam\022\017\n\007teamId"
-  "s\030\001 \003(\004\"6\n#InnerTeamsvr_Fromscene_JumpTo"
-  "Leader\022\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
+  "scene_PersonVote\022\r\n\005agree\030\001 \001(\010\"H\n\"Inner"
+  "Teamsvr_Fromscene_EnterByVote\022\"\n\004vote\030\001 "
+  "\001(\0132\024.inner.InnerVoteInfo\"O\n\037InnerTeamsv"
+  "r_Fromscene_ChatTeam\022,\n\007context\030\001 \001(\0132\033."
+  "common.ChatTypeContextDown\"&\n$InnerTeams"
+  "vr_Fromscene_BatCreateTeam\"7\n$InnerTeams"
+  "vr_Fromscene_BatDstroyTeam\022\017\n\007teamIds\030\001 "
+  "\003(\004\"6\n#InnerTeamsvr_Fromscene_JumpToLead"
+  "er\022\017\n\007eJumpTo\030\001 \001(\rb\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_deps[6] = {
   &::descriptor_table_chatcommon_2eproto,
@@ -1204,7 +1207,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_teamsvr_2eproto_dep
 };
 static ::_pbi::once_flag descriptor_table_teamsvr_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_teamsvr_2eproto = {
-    false, false, 6711, descriptor_table_protodef_teamsvr_2eproto,
+    false, false, 6747, descriptor_table_protodef_teamsvr_2eproto,
     "teamsvr.proto",
     &descriptor_table_teamsvr_2eproto_once, descriptor_table_teamsvr_2eproto_deps, 6, 44,
     schemas, file_default_instances, TableStruct_teamsvr_2eproto::offsets,
@@ -9925,34 +9928,188 @@ void InnerTeamsvr_Fromscene_PersonVote::InternalSwap(InnerTeamsvr_Fromscene_Pers
 
 class InnerTeamsvr_Fromscene_EnterByVote::_Internal {
  public:
+  static const ::inner::InnerVoteInfo& vote(const InnerTeamsvr_Fromscene_EnterByVote* msg);
 };
 
+const ::inner::InnerVoteInfo&
+InnerTeamsvr_Fromscene_EnterByVote::_Internal::vote(const InnerTeamsvr_Fromscene_EnterByVote* msg) {
+  return *msg->vote_;
+}
+void InnerTeamsvr_Fromscene_EnterByVote::clear_vote() {
+  if (GetArenaForAllocation() == nullptr && vote_ != nullptr) {
+    delete vote_;
+  }
+  vote_ = nullptr;
+}
 InnerTeamsvr_Fromscene_EnterByVote::InnerTeamsvr_Fromscene_EnterByVote(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:inner.InnerTeamsvr_Fromscene_EnterByVote)
 }
 InnerTeamsvr_Fromscene_EnterByVote::InnerTeamsvr_Fromscene_EnterByVote(const InnerTeamsvr_Fromscene_EnterByVote& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_vote()) {
+    vote_ = new ::inner::InnerVoteInfo(*from.vote_);
+  } else {
+    vote_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:inner.InnerTeamsvr_Fromscene_EnterByVote)
 }
 
+inline void InnerTeamsvr_Fromscene_EnterByVote::SharedCtor() {
+vote_ = nullptr;
+}
 
+InnerTeamsvr_Fromscene_EnterByVote::~InnerTeamsvr_Fromscene_EnterByVote() {
+  // @@protoc_insertion_point(destructor:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
 
+inline void InnerTeamsvr_Fromscene_EnterByVote::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete vote_;
+}
 
+void InnerTeamsvr_Fromscene_EnterByVote::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void InnerTeamsvr_Fromscene_EnterByVote::Clear() {
+// @@protoc_insertion_point(message_clear_start:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && vote_ != nullptr) {
+    delete vote_;
+  }
+  vote_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* InnerTeamsvr_Fromscene_EnterByVote::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .inner.InnerVoteInfo vote = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_vote(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* InnerTeamsvr_Fromscene_EnterByVote::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .inner.InnerVoteInfo vote = 1;
+  if (this->_internal_has_vote()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::vote(this),
+        _Internal::vote(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  return target;
+}
+
+size_t InnerTeamsvr_Fromscene_EnterByVote::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .inner.InnerVoteInfo vote = 1;
+  if (this->_internal_has_vote()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *vote_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InnerTeamsvr_Fromscene_EnterByVote::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    InnerTeamsvr_Fromscene_EnterByVote::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InnerTeamsvr_Fromscene_EnterByVote::GetClassData() const { return &_class_data_; }
 
+void InnerTeamsvr_Fromscene_EnterByVote::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<InnerTeamsvr_Fromscene_EnterByVote *>(to)->MergeFrom(
+      static_cast<const InnerTeamsvr_Fromscene_EnterByVote &>(from));
+}
 
 
+void InnerTeamsvr_Fromscene_EnterByVote::MergeFrom(const InnerTeamsvr_Fromscene_EnterByVote& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  if (from._internal_has_vote()) {
+    _internal_mutable_vote()->::inner::InnerVoteInfo::MergeFrom(from._internal_vote());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void InnerTeamsvr_Fromscene_EnterByVote::CopyFrom(const InnerTeamsvr_Fromscene_EnterByVote& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:inner.InnerTeamsvr_Fromscene_EnterByVote)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool InnerTeamsvr_Fromscene_EnterByVote::IsInitialized() const {
+  return true;
+}
+
+void InnerTeamsvr_Fromscene_EnterByVote::InternalSwap(InnerTeamsvr_Fromscene_EnterByVote* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(vote_, other->vote_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InnerTeamsvr_Fromscene_EnterByVote::GetMetadata() const {
   return ::_pbi::AssignDescriptors(

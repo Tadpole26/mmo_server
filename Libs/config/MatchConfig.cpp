@@ -7,7 +7,13 @@ namespace config
 		InitSheet("match_info", std::bind(&MatchConfig::AddMatchInfo, this));
 
 		return LoadCfgFromStr(strContent);
+	}
 
+	bool MatchConfig::LoadConfigByFile(const std::string& fileName)
+	{
+		InitSheet("match_info", std::bind(&MatchConfig::AddMatchInfo, this));
+
+		return LoadCfgFromXml(fileName.c_str());
 	}
 
 	bool MatchConfig::AddMatchInfo()

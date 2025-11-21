@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="auction.pb.cc" />
+    <ClCompile Include="auctioncommon.pb.cc" />
     <ClCompile Include="chatcommon.pb.cc" />
     <ClCompile Include="client.pb.cc" />
     <ClCompile Include="common.pb.cc" />
@@ -31,6 +33,7 @@
     <ClCompile Include="friendsvr.pb.cc" />
     <ClCompile Include="gatesvr.pb.cc" />
     <ClCompile Include="inner.pb.cc" />
+    <ClCompile Include="innerauction.pb.cc" />
     <ClCompile Include="innercommon.pb.cc" />
     <ClCompile Include="innerfriend.pb.cc" />
     <ClCompile Include="innermatch.pb.cc" />
@@ -55,6 +58,8 @@
     <ClCompile Include="teamsvr.pb.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="auction.pb.h" />
+    <ClInclude Include="auctioncommon.pb.h" />
     <ClInclude Include="chatcommon.pb.h" />
     <ClInclude Include="client.pb.h" />
     <ClInclude Include="common.pb.h" />
@@ -67,6 +72,7 @@
     <ClInclude Include="friendsvr.pb.h" />
     <ClInclude Include="gatesvr.pb.h" />
     <ClInclude Include="inner.pb.h" />
+    <ClInclude Include="innerauction.pb.h" />
     <ClInclude Include="innercommon.pb.h" />
     <ClInclude Include="innerfriend.pb.h" />
     <ClInclude Include="innermatch.pb.h" />

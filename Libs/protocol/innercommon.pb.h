@@ -71,6 +71,15 @@ extern InnerCopyEnterByTeamDefaultTypeInternal _InnerCopyEnterByTeam_default_ins
 class InnerCopyPve;
 struct InnerCopyPveDefaultTypeInternal;
 extern InnerCopyPveDefaultTypeInternal _InnerCopyPve_default_instance_;
+class InnerCopyPveF33;
+struct InnerCopyPveF33DefaultTypeInternal;
+extern InnerCopyPveF33DefaultTypeInternal _InnerCopyPveF33_default_instance_;
+class InnerCopyPveHouse;
+struct InnerCopyPveHouseDefaultTypeInternal;
+extern InnerCopyPveHouseDefaultTypeInternal _InnerCopyPveHouse_default_instance_;
+class InnerCopyPveManor;
+struct InnerCopyPveManorDefaultTypeInternal;
+extern InnerCopyPveManorDefaultTypeInternal _InnerCopyPveManor_default_instance_;
 class InnerCopyPvp;
 struct InnerCopyPvpDefaultTypeInternal;
 extern InnerCopyPvpDefaultTypeInternal _InnerCopyPvp_default_instance_;
@@ -209,6 +218,9 @@ extern InnerGameEventWakeupTeamsvrDefaultTypeInternal _InnerGameEventWakeupTeams
 class InnerRoleIdList;
 struct InnerRoleIdListDefaultTypeInternal;
 extern InnerRoleIdListDefaultTypeInternal _InnerRoleIdList_default_instance_;
+class InnerVoteInfo;
+struct InnerVoteInfoDefaultTypeInternal;
+extern InnerVoteInfoDefaultTypeInternal _InnerVoteInfo_default_instance_;
 }  // namespace inner
 PROTOBUF_NAMESPACE_OPEN
 template<> ::inner::InnerCopyCreateBy* Arena::CreateMaybeMessage<::inner::InnerCopyCreateBy>(Arena*);
@@ -218,6 +230,9 @@ template<> ::inner::InnerCopyEnterByChgLvId* Arena::CreateMaybeMessage<::inner::
 template<> ::inner::InnerCopyEnterByHome* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByHome>(Arena*);
 template<> ::inner::InnerCopyEnterByTeam* Arena::CreateMaybeMessage<::inner::InnerCopyEnterByTeam>(Arena*);
 template<> ::inner::InnerCopyPve* Arena::CreateMaybeMessage<::inner::InnerCopyPve>(Arena*);
+template<> ::inner::InnerCopyPveF33* Arena::CreateMaybeMessage<::inner::InnerCopyPveF33>(Arena*);
+template<> ::inner::InnerCopyPveHouse* Arena::CreateMaybeMessage<::inner::InnerCopyPveHouse>(Arena*);
+template<> ::inner::InnerCopyPveManor* Arena::CreateMaybeMessage<::inner::InnerCopyPveManor>(Arena*);
 template<> ::inner::InnerCopyPvp* Arena::CreateMaybeMessage<::inner::InnerCopyPvp>(Arena*);
 template<> ::inner::InnerCopyPvpF55* Arena::CreateMaybeMessage<::inner::InnerCopyPvpF55>(Arena*);
 template<> ::inner::InnerCopyTeam* Arena::CreateMaybeMessage<::inner::InnerCopyTeam>(Arena*);
@@ -264,6 +279,7 @@ template<> ::inner::InnerGameEventWakeupFamilysvr* Arena::CreateMaybeMessage<::i
 template<> ::inner::InnerGameEventWakeupFriendsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupFriendsvr>(Arena*);
 template<> ::inner::InnerGameEventWakeupTeamsvr* Arena::CreateMaybeMessage<::inner::InnerGameEventWakeupTeamsvr>(Arena*);
 template<> ::inner::InnerRoleIdList* Arena::CreateMaybeMessage<::inner::InnerRoleIdList>(Arena*);
+template<> ::inner::InnerVoteInfo* Arena::CreateMaybeMessage<::inner::InnerVoteInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace inner {
 
@@ -2032,6 +2048,951 @@ class InnerCopyWay final :
 };
 // -------------------------------------------------------------------
 
+class InnerVoteInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerVoteInfo) */ {
+ public:
+  inline InnerVoteInfo() : InnerVoteInfo(nullptr) {}
+  ~InnerVoteInfo() override;
+  explicit PROTOBUF_CONSTEXPR InnerVoteInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerVoteInfo(const InnerVoteInfo& from);
+  InnerVoteInfo(InnerVoteInfo&& from) noexcept
+    : InnerVoteInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerVoteInfo& operator=(const InnerVoteInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerVoteInfo& operator=(InnerVoteInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerVoteInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerVoteInfo* internal_default_instance() {
+    return reinterpret_cast<const InnerVoteInfo*>(
+               &_InnerVoteInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(InnerVoteInfo& a, InnerVoteInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerVoteInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerVoteInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerVoteInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerVoteInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerVoteInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerVoteInfo& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerVoteInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerVoteInfo";
+  }
+  protected:
+  explicit InnerVoteInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCopyFieldNumber = 3,
+    kMtypeFieldNumber = 1,
+    kEnterFieldNumber = 2,
+  };
+  // .inner.InnerCopyType copy = 3;
+  bool has_copy() const;
+  private:
+  bool _internal_has_copy() const;
+  public:
+  void clear_copy();
+  const ::inner::InnerCopyType& copy() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyType* release_copy();
+  ::inner::InnerCopyType* mutable_copy();
+  void set_allocated_copy(::inner::InnerCopyType* copy);
+  private:
+  const ::inner::InnerCopyType& _internal_copy() const;
+  ::inner::InnerCopyType* _internal_mutable_copy();
+  public:
+  void unsafe_arena_set_allocated_copy(
+      ::inner::InnerCopyType* copy);
+  ::inner::InnerCopyType* unsafe_arena_release_copy();
+
+  // uint32 mtype = 1;
+  void clear_mtype();
+  uint32_t mtype() const;
+  void set_mtype(uint32_t value);
+  private:
+  uint32_t _internal_mtype() const;
+  void _internal_set_mtype(uint32_t value);
+  public:
+
+  // uint32 enter = 2;
+  void clear_enter();
+  uint32_t enter() const;
+  void set_enter(uint32_t value);
+  private:
+  uint32_t _internal_enter() const;
+  void _internal_set_enter(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerVoteInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::inner::InnerCopyType* copy_;
+  uint32_t mtype_;
+  uint32_t enter_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyType final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyType) */ {
+ public:
+  inline InnerCopyType() : InnerCopyType(nullptr) {}
+  ~InnerCopyType() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyType(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyType(const InnerCopyType& from);
+  InnerCopyType(InnerCopyType&& from) noexcept
+    : InnerCopyType() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyType& operator=(const InnerCopyType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyType& operator=(InnerCopyType&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyType& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kPvp = 11,
+    kPve = 12,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyType* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyType*>(
+               &_InnerCopyType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(InnerCopyType& a, InnerCopyType& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyType* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyType* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyType* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyType>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyType& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyType& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyType* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyType";
+  }
+  protected:
+  explicit InnerCopyType(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCopyIdFieldNumber = 1,
+    kCopyLvIdFieldNumber = 2,
+    kProcFiveFieldNumber = 3,
+    kFiveIdFieldNumber = 4,
+    kCopyLevelFieldNumber = 5,
+    kPvpFieldNumber = 11,
+    kPveFieldNumber = 12,
+  };
+  // uint32 copyId = 1;
+  void clear_copyid();
+  uint32_t copyid() const;
+  void set_copyid(uint32_t value);
+  private:
+  uint32_t _internal_copyid() const;
+  void _internal_set_copyid(uint32_t value);
+  public:
+
+  // uint32 copyLvId = 2;
+  void clear_copylvid();
+  uint32_t copylvid() const;
+  void set_copylvid(uint32_t value);
+  private:
+  uint32_t _internal_copylvid() const;
+  void _internal_set_copylvid(uint32_t value);
+  public:
+
+  // uint32 procFive = 3;
+  void clear_procfive();
+  uint32_t procfive() const;
+  void set_procfive(uint32_t value);
+  private:
+  uint32_t _internal_procfive() const;
+  void _internal_set_procfive(uint32_t value);
+  public:
+
+  // uint32 fiveId = 4;
+  void clear_fiveid();
+  uint32_t fiveid() const;
+  void set_fiveid(uint32_t value);
+  private:
+  uint32_t _internal_fiveid() const;
+  void _internal_set_fiveid(uint32_t value);
+  public:
+
+  // uint32 copyLevel = 5;
+  void clear_copylevel();
+  uint32_t copylevel() const;
+  void set_copylevel(uint32_t value);
+  private:
+  uint32_t _internal_copylevel() const;
+  void _internal_set_copylevel(uint32_t value);
+  public:
+
+  // .inner.InnerCopyPvp pvp = 11;
+  bool has_pvp() const;
+  private:
+  bool _internal_has_pvp() const;
+  public:
+  void clear_pvp();
+  const ::inner::InnerCopyPvp& pvp() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPvp* release_pvp();
+  ::inner::InnerCopyPvp* mutable_pvp();
+  void set_allocated_pvp(::inner::InnerCopyPvp* pvp);
+  private:
+  const ::inner::InnerCopyPvp& _internal_pvp() const;
+  ::inner::InnerCopyPvp* _internal_mutable_pvp();
+  public:
+  void unsafe_arena_set_allocated_pvp(
+      ::inner::InnerCopyPvp* pvp);
+  ::inner::InnerCopyPvp* unsafe_arena_release_pvp();
+
+  // .inner.InnerCopyPve pve = 12;
+  bool has_pve() const;
+  private:
+  bool _internal_has_pve() const;
+  public:
+  void clear_pve();
+  const ::inner::InnerCopyPve& pve() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPve* release_pve();
+  ::inner::InnerCopyPve* mutable_pve();
+  void set_allocated_pve(::inner::InnerCopyPve* pve);
+  private:
+  const ::inner::InnerCopyPve& _internal_pve() const;
+  ::inner::InnerCopyPve* _internal_mutable_pve();
+  public:
+  void unsafe_arena_set_allocated_pve(
+      ::inner::InnerCopyPve* pve);
+  ::inner::InnerCopyPve* unsafe_arena_release_pve();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyType)
+ private:
+  class _Internal;
+  void set_has_pvp();
+  void set_has_pve();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t copyid_;
+  uint32_t copylvid_;
+  uint32_t procfive_;
+  uint32_t fiveid_;
+  uint32_t copylevel_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyPvp* pvp_;
+    ::inner::InnerCopyPve* pve_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyPvp final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvp) */ {
+ public:
+  inline InnerCopyPvp() : InnerCopyPvp(nullptr) {}
+  ~InnerCopyPvp() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPvp(const InnerCopyPvp& from);
+  InnerCopyPvp(InnerCopyPvp&& from) noexcept
+    : InnerCopyPvp() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPvp& operator=(const InnerCopyPvp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPvp& operator=(InnerCopyPvp&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPvp& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kF33 = 11,
+    kF55 = 12,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyPvp* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPvp*>(
+               &_InnerCopyPvp_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(InnerCopyPvp& a, InnerCopyPvp& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPvp* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPvp* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPvp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPvp>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyPvp& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyPvp& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyPvp* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPvp";
+  }
+  protected:
+  explicit InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kF33FieldNumber = 11,
+    kF55FieldNumber = 12,
+  };
+  // .inner.InnerCopyPveF33 f33 = 11;
+  bool has_f33() const;
+  private:
+  bool _internal_has_f33() const;
+  public:
+  void clear_f33();
+  const ::inner::InnerCopyPveF33& f33() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPveF33* release_f33();
+  ::inner::InnerCopyPveF33* mutable_f33();
+  void set_allocated_f33(::inner::InnerCopyPveF33* f33);
+  private:
+  const ::inner::InnerCopyPveF33& _internal_f33() const;
+  ::inner::InnerCopyPveF33* _internal_mutable_f33();
+  public:
+  void unsafe_arena_set_allocated_f33(
+      ::inner::InnerCopyPveF33* f33);
+  ::inner::InnerCopyPveF33* unsafe_arena_release_f33();
+
+  // .inner.InnerCopyPvpF55 f55 = 12;
+  bool has_f55() const;
+  private:
+  bool _internal_has_f55() const;
+  public:
+  void clear_f55();
+  const ::inner::InnerCopyPvpF55& f55() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPvpF55* release_f55();
+  ::inner::InnerCopyPvpF55* mutable_f55();
+  void set_allocated_f55(::inner::InnerCopyPvpF55* f55);
+  private:
+  const ::inner::InnerCopyPvpF55& _internal_f55() const;
+  ::inner::InnerCopyPvpF55* _internal_mutable_f55();
+  public:
+  void unsafe_arena_set_allocated_f55(
+      ::inner::InnerCopyPvpF55* f55);
+  ::inner::InnerCopyPvpF55* unsafe_arena_release_f55();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPvp)
+ private:
+  class _Internal;
+  void set_has_f33();
+  void set_has_f55();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyPveF33* f33_;
+    ::inner::InnerCopyPvpF55* f55_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyPve final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPve) */ {
+ public:
+  inline InnerCopyPve() : InnerCopyPve(nullptr) {}
+  ~InnerCopyPve() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPve(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPve(const InnerCopyPve& from);
+  InnerCopyPve(InnerCopyPve&& from) noexcept
+    : InnerCopyPve() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPve& operator=(const InnerCopyPve& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPve& operator=(InnerCopyPve&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPve& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TypeCase {
+    kHouse = 11,
+    kManor = 12,
+    TYPE_NOT_SET = 0,
+  };
+
+  static inline const InnerCopyPve* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPve*>(
+               &_InnerCopyPve_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(InnerCopyPve& a, InnerCopyPve& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPve* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPve* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPve* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPve>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyPve& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyPve& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyPve* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPve";
+  }
+  protected:
+  explicit InnerCopyPve(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHouseFieldNumber = 11,
+    kManorFieldNumber = 12,
+  };
+  // .inner.InnerCopyPveHouse house = 11;
+  bool has_house() const;
+  private:
+  bool _internal_has_house() const;
+  public:
+  void clear_house();
+  const ::inner::InnerCopyPveHouse& house() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPveHouse* release_house();
+  ::inner::InnerCopyPveHouse* mutable_house();
+  void set_allocated_house(::inner::InnerCopyPveHouse* house);
+  private:
+  const ::inner::InnerCopyPveHouse& _internal_house() const;
+  ::inner::InnerCopyPveHouse* _internal_mutable_house();
+  public:
+  void unsafe_arena_set_allocated_house(
+      ::inner::InnerCopyPveHouse* house);
+  ::inner::InnerCopyPveHouse* unsafe_arena_release_house();
+
+  // .inner.InnerCopyPveManor manor = 12;
+  bool has_manor() const;
+  private:
+  bool _internal_has_manor() const;
+  public:
+  void clear_manor();
+  const ::inner::InnerCopyPveManor& manor() const;
+  PROTOBUF_NODISCARD ::inner::InnerCopyPveManor* release_manor();
+  ::inner::InnerCopyPveManor* mutable_manor();
+  void set_allocated_manor(::inner::InnerCopyPveManor* manor);
+  private:
+  const ::inner::InnerCopyPveManor& _internal_manor() const;
+  ::inner::InnerCopyPveManor* _internal_mutable_manor();
+  public:
+  void unsafe_arena_set_allocated_manor(
+      ::inner::InnerCopyPveManor* manor);
+  ::inner::InnerCopyPveManor* unsafe_arena_release_manor();
+
+  void clear_type();
+  TypeCase type_case() const;
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPve)
+ private:
+  class _Internal;
+  void set_has_house();
+  void set_has_manor();
+
+  inline bool has_type() const;
+  inline void clear_has_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union TypeUnion {
+    constexpr TypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::inner::InnerCopyPveHouse* house_;
+    ::inner::InnerCopyPveManor* manor_;
+  } type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class InnerCopyPveF33 final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPveF33) */ {
+ public:
+  inline InnerCopyPveF33() : InnerCopyPveF33(nullptr) {}
+  ~InnerCopyPveF33() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPveF33(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InnerCopyPveF33(const InnerCopyPveF33& from);
+  InnerCopyPveF33(InnerCopyPveF33&& from) noexcept
+    : InnerCopyPveF33() {
+    *this = ::std::move(from);
+  }
+
+  inline InnerCopyPveF33& operator=(const InnerCopyPveF33& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InnerCopyPveF33& operator=(InnerCopyPveF33&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InnerCopyPveF33& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InnerCopyPveF33* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPveF33*>(
+               &_InnerCopyPveF33_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(InnerCopyPveF33& a, InnerCopyPveF33& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InnerCopyPveF33* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InnerCopyPveF33* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InnerCopyPveF33* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPveF33>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InnerCopyPveF33& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const InnerCopyPveF33& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InnerCopyPveF33* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "inner.InnerCopyPveF33";
+  }
+  protected:
+  explicit InnerCopyPveF33(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCopyIdFieldNumber = 1,
+  };
+  // uint32 copyId = 1;
+  void clear_copyid();
+  uint32_t copyid() const;
+  void set_copyid(uint32_t value);
+  private:
+  uint32_t _internal_copyid() const;
+  void _internal_set_copyid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPveF33)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t copyid_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_innercommon_2eproto;
+};
+// -------------------------------------------------------------------
+
 class InnerCopyPvpF55 final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvpF55) */ {
  public:
@@ -2080,7 +3041,7 @@ class InnerCopyPvpF55 final :
                &_InnerCopyPvpF55_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    16;
 
   friend void swap(InnerCopyPvpF55& a, InnerCopyPvpF55& b) {
     a.Swap(&b);
@@ -2175,24 +3136,24 @@ class InnerCopyPvpF55 final :
 };
 // -------------------------------------------------------------------
 
-class InnerCopyPvp final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPvp) */ {
+class InnerCopyPveHouse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPveHouse) */ {
  public:
-  inline InnerCopyPvp() : InnerCopyPvp(nullptr) {}
-  ~InnerCopyPvp() override;
-  explicit PROTOBUF_CONSTEXPR InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline InnerCopyPveHouse() : InnerCopyPveHouse(nullptr) {}
+  ~InnerCopyPveHouse() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPveHouse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  InnerCopyPvp(const InnerCopyPvp& from);
-  InnerCopyPvp(InnerCopyPvp&& from) noexcept
-    : InnerCopyPvp() {
+  InnerCopyPveHouse(const InnerCopyPveHouse& from);
+  InnerCopyPveHouse(InnerCopyPveHouse&& from) noexcept
+    : InnerCopyPveHouse() {
     *this = ::std::move(from);
   }
 
-  inline InnerCopyPvp& operator=(const InnerCopyPvp& from) {
+  inline InnerCopyPveHouse& operator=(const InnerCopyPveHouse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline InnerCopyPvp& operator=(InnerCopyPvp&& from) noexcept {
+  inline InnerCopyPveHouse& operator=(InnerCopyPveHouse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -2215,25 +3176,20 @@ class InnerCopyPvp final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const InnerCopyPvp& default_instance() {
+  static const InnerCopyPveHouse& default_instance() {
     return *internal_default_instance();
   }
-  enum TypeCase {
-    kF55 = 11,
-    TYPE_NOT_SET = 0,
-  };
-
-  static inline const InnerCopyPvp* internal_default_instance() {
-    return reinterpret_cast<const InnerCopyPvp*>(
-               &_InnerCopyPvp_default_instance_);
+  static inline const InnerCopyPveHouse* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPveHouse*>(
+               &_InnerCopyPveHouse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    17;
 
-  friend void swap(InnerCopyPvp& a, InnerCopyPvp& b) {
+  friend void swap(InnerCopyPveHouse& a, InnerCopyPveHouse& b) {
     a.Swap(&b);
   }
-  inline void Swap(InnerCopyPvp* other) {
+  inline void Swap(InnerCopyPveHouse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -2246,7 +3202,7 @@ class InnerCopyPvp final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(InnerCopyPvp* other) {
+  void UnsafeArenaSwap(InnerCopyPveHouse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2254,13 +3210,13 @@ class InnerCopyPvp final :
 
   // implements Message ----------------------------------------------
 
-  InnerCopyPvp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<InnerCopyPvp>(arena);
+  InnerCopyPveHouse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPveHouse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const InnerCopyPvp& from);
+  void CopyFrom(const InnerCopyPveHouse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const InnerCopyPvp& from);
+  void MergeFrom(const InnerCopyPveHouse& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -2277,15 +3233,15 @@ class InnerCopyPvp final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(InnerCopyPvp* other);
+  void InternalSwap(InnerCopyPveHouse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "inner.InnerCopyPvp";
+    return "inner.InnerCopyPveHouse";
   }
   protected:
-  explicit InnerCopyPvp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit InnerCopyPveHouse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2299,68 +3255,70 @@ class InnerCopyPvp final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kF55FieldNumber = 11,
+    kRoleIdFieldNumber = 2,
+    kSuitIdFieldNumber = 3,
+    kCopyIdFieldNumber = 1,
   };
-  // .inner.InnerCopyPvpF55 f55 = 11;
-  bool has_f55() const;
+  // uint64 roleId = 2;
+  void clear_roleid();
+  uint64_t roleid() const;
+  void set_roleid(uint64_t value);
   private:
-  bool _internal_has_f55() const;
+  uint64_t _internal_roleid() const;
+  void _internal_set_roleid(uint64_t value);
   public:
-  void clear_f55();
-  const ::inner::InnerCopyPvpF55& f55() const;
-  PROTOBUF_NODISCARD ::inner::InnerCopyPvpF55* release_f55();
-  ::inner::InnerCopyPvpF55* mutable_f55();
-  void set_allocated_f55(::inner::InnerCopyPvpF55* f55);
-  private:
-  const ::inner::InnerCopyPvpF55& _internal_f55() const;
-  ::inner::InnerCopyPvpF55* _internal_mutable_f55();
-  public:
-  void unsafe_arena_set_allocated_f55(
-      ::inner::InnerCopyPvpF55* f55);
-  ::inner::InnerCopyPvpF55* unsafe_arena_release_f55();
 
-  void clear_type();
-  TypeCase type_case() const;
-  // @@protoc_insertion_point(class_scope:inner.InnerCopyPvp)
+  // uint64 suitId = 3;
+  void clear_suitid();
+  uint64_t suitid() const;
+  void set_suitid(uint64_t value);
+  private:
+  uint64_t _internal_suitid() const;
+  void _internal_set_suitid(uint64_t value);
+  public:
+
+  // uint32 copyId = 1;
+  void clear_copyid();
+  uint32_t copyid() const;
+  void set_copyid(uint32_t value);
+  private:
+  uint32_t _internal_copyid() const;
+  void _internal_set_copyid(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPveHouse)
  private:
   class _Internal;
-  void set_has_f55();
-
-  inline bool has_type() const;
-  inline void clear_has_type();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  union TypeUnion {
-    constexpr TypeUnion() : _constinit_{} {}
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::inner::InnerCopyPvpF55* f55_;
-  } type_;
+  uint64_t roleid_;
+  uint64_t suitid_;
+  uint32_t copyid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  uint32_t _oneof_case_[1];
-
   friend struct ::TableStruct_innercommon_2eproto;
 };
 // -------------------------------------------------------------------
 
-class InnerCopyPve final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:inner.InnerCopyPve) */ {
+class InnerCopyPveManor final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyPveManor) */ {
  public:
-  inline InnerCopyPve() : InnerCopyPve(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR InnerCopyPve(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline InnerCopyPveManor() : InnerCopyPveManor(nullptr) {}
+  ~InnerCopyPveManor() override;
+  explicit PROTOBUF_CONSTEXPR InnerCopyPveManor(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  InnerCopyPve(const InnerCopyPve& from);
-  InnerCopyPve(InnerCopyPve&& from) noexcept
-    : InnerCopyPve() {
+  InnerCopyPveManor(const InnerCopyPveManor& from);
+  InnerCopyPveManor(InnerCopyPveManor&& from) noexcept
+    : InnerCopyPveManor() {
     *this = ::std::move(from);
   }
 
-  inline InnerCopyPve& operator=(const InnerCopyPve& from) {
+  inline InnerCopyPveManor& operator=(const InnerCopyPveManor& from) {
     CopyFrom(from);
     return *this;
   }
-  inline InnerCopyPve& operator=(InnerCopyPve&& from) noexcept {
+  inline InnerCopyPveManor& operator=(InnerCopyPveManor&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -2383,20 +3341,20 @@ class InnerCopyPve final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const InnerCopyPve& default_instance() {
+  static const InnerCopyPveManor& default_instance() {
     return *internal_default_instance();
   }
-  static inline const InnerCopyPve* internal_default_instance() {
-    return reinterpret_cast<const InnerCopyPve*>(
-               &_InnerCopyPve_default_instance_);
+  static inline const InnerCopyPveManor* internal_default_instance() {
+    return reinterpret_cast<const InnerCopyPveManor*>(
+               &_InnerCopyPveManor_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    18;
 
-  friend void swap(InnerCopyPve& a, InnerCopyPve& b) {
+  friend void swap(InnerCopyPveManor& a, InnerCopyPveManor& b) {
     a.Swap(&b);
   }
-  inline void Swap(InnerCopyPve* other) {
+  inline void Swap(InnerCopyPveManor* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -2409,7 +3367,7 @@ class InnerCopyPve final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(InnerCopyPve* other) {
+  void UnsafeArenaSwap(InnerCopyPveManor* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2417,136 +3375,13 @@ class InnerCopyPve final :
 
   // implements Message ----------------------------------------------
 
-  InnerCopyPve* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<InnerCopyPve>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const InnerCopyPve& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const InnerCopyPve& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
-  public:
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "inner.InnerCopyPve";
-  }
-  protected:
-  explicit InnerCopyPve(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:inner.InnerCopyPve)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  friend struct ::TableStruct_innercommon_2eproto;
-};
-// -------------------------------------------------------------------
-
-class InnerCopyType final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:inner.InnerCopyType) */ {
- public:
-  inline InnerCopyType() : InnerCopyType(nullptr) {}
-  ~InnerCopyType() override;
-  explicit PROTOBUF_CONSTEXPR InnerCopyType(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  InnerCopyType(const InnerCopyType& from);
-  InnerCopyType(InnerCopyType&& from) noexcept
-    : InnerCopyType() {
-    *this = ::std::move(from);
-  }
-
-  inline InnerCopyType& operator=(const InnerCopyType& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline InnerCopyType& operator=(InnerCopyType&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const InnerCopyType& default_instance() {
-    return *internal_default_instance();
-  }
-  enum TypeCase {
-    kPvp = 11,
-    kPve = 12,
-    TYPE_NOT_SET = 0,
-  };
-
-  static inline const InnerCopyType* internal_default_instance() {
-    return reinterpret_cast<const InnerCopyType*>(
-               &_InnerCopyType_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(InnerCopyType& a, InnerCopyType& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(InnerCopyType* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(InnerCopyType* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  InnerCopyType* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<InnerCopyType>(arena);
+  InnerCopyPveManor* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InnerCopyPveManor>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const InnerCopyType& from);
+  void CopyFrom(const InnerCopyPveManor& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const InnerCopyType& from);
+  void MergeFrom(const InnerCopyPveManor& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -2563,15 +3398,15 @@ class InnerCopyType final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(InnerCopyType* other);
+  void InternalSwap(InnerCopyPveManor* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "inner.InnerCopyType";
+    return "inner.InnerCopyPveManor";
   }
   protected:
-  explicit InnerCopyType(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit InnerCopyPveManor(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2585,101 +3420,37 @@ class InnerCopyType final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCopyLvIdFieldNumber = 1,
-    kEProcFieldNumber = 2,
-    kThreeIdFieldNumber = 3,
-    kPvpFieldNumber = 11,
-    kPveFieldNumber = 12,
+    kRoleIdFieldNumber = 2,
+    kCopyIdFieldNumber = 1,
   };
-  // uint32 copyLvId = 1;
-  void clear_copylvid();
-  uint32_t copylvid() const;
-  void set_copylvid(uint32_t value);
+  // uint64 roleId = 2;
+  void clear_roleid();
+  uint64_t roleid() const;
+  void set_roleid(uint64_t value);
   private:
-  uint32_t _internal_copylvid() const;
-  void _internal_set_copylvid(uint32_t value);
+  uint64_t _internal_roleid() const;
+  void _internal_set_roleid(uint64_t value);
   public:
 
-  // uint32 eProc = 2;
-  void clear_eproc();
-  uint32_t eproc() const;
-  void set_eproc(uint32_t value);
+  // uint32 copyId = 1;
+  void clear_copyid();
+  uint32_t copyid() const;
+  void set_copyid(uint32_t value);
   private:
-  uint32_t _internal_eproc() const;
-  void _internal_set_eproc(uint32_t value);
+  uint32_t _internal_copyid() const;
+  void _internal_set_copyid(uint32_t value);
   public:
 
-  // uint32 threeId = 3;
-  void clear_threeid();
-  uint32_t threeid() const;
-  void set_threeid(uint32_t value);
-  private:
-  uint32_t _internal_threeid() const;
-  void _internal_set_threeid(uint32_t value);
-  public:
-
-  // .inner.InnerCopyPvp pvp = 11;
-  bool has_pvp() const;
-  private:
-  bool _internal_has_pvp() const;
-  public:
-  void clear_pvp();
-  const ::inner::InnerCopyPvp& pvp() const;
-  PROTOBUF_NODISCARD ::inner::InnerCopyPvp* release_pvp();
-  ::inner::InnerCopyPvp* mutable_pvp();
-  void set_allocated_pvp(::inner::InnerCopyPvp* pvp);
-  private:
-  const ::inner::InnerCopyPvp& _internal_pvp() const;
-  ::inner::InnerCopyPvp* _internal_mutable_pvp();
-  public:
-  void unsafe_arena_set_allocated_pvp(
-      ::inner::InnerCopyPvp* pvp);
-  ::inner::InnerCopyPvp* unsafe_arena_release_pvp();
-
-  // .inner.InnerCopyPve pve = 12;
-  bool has_pve() const;
-  private:
-  bool _internal_has_pve() const;
-  public:
-  void clear_pve();
-  const ::inner::InnerCopyPve& pve() const;
-  PROTOBUF_NODISCARD ::inner::InnerCopyPve* release_pve();
-  ::inner::InnerCopyPve* mutable_pve();
-  void set_allocated_pve(::inner::InnerCopyPve* pve);
-  private:
-  const ::inner::InnerCopyPve& _internal_pve() const;
-  ::inner::InnerCopyPve* _internal_mutable_pve();
-  public:
-  void unsafe_arena_set_allocated_pve(
-      ::inner::InnerCopyPve* pve);
-  ::inner::InnerCopyPve* unsafe_arena_release_pve();
-
-  void clear_type();
-  TypeCase type_case() const;
-  // @@protoc_insertion_point(class_scope:inner.InnerCopyType)
+  // @@protoc_insertion_point(class_scope:inner.InnerCopyPveManor)
  private:
   class _Internal;
-  void set_has_pvp();
-  void set_has_pve();
-
-  inline bool has_type() const;
-  inline void clear_has_type();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t copylvid_;
-  uint32_t eproc_;
-  uint32_t threeid_;
-  union TypeUnion {
-    constexpr TypeUnion() : _constinit_{} {}
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::inner::InnerCopyPvp* pvp_;
-    ::inner::InnerCopyPve* pve_;
-  } type_;
+  uint64_t roleid_;
+  uint32_t copyid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  uint32_t _oneof_case_[1];
-
   friend struct ::TableStruct_innercommon_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2732,7 +3503,7 @@ class InnerCopyCreateBy final :
                &_InnerCopyCreateBy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(InnerCopyCreateBy& a, InnerCopyCreateBy& b) {
     a.Swap(&b);
@@ -2924,7 +3695,7 @@ class InnerCopyCrit final :
                &_InnerCopyCrit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(InnerCopyCrit& a, InnerCopyCrit& b) {
     a.Swap(&b);
@@ -3102,7 +3873,7 @@ class InnerGameEvent final :
                &_InnerGameEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(InnerGameEvent& a, InnerGameEvent& b) {
     a.Swap(&b);
@@ -3442,7 +4213,7 @@ class InnerGameEventDestroy final :
                &_InnerGameEventDestroy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(InnerGameEventDestroy& a, InnerGameEventDestroy& b) {
     a.Swap(&b);
@@ -3668,7 +4439,7 @@ class InnerGameEventDestroyTeamsvr final :
                &_InnerGameEventDestroyTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(InnerGameEventDestroyTeamsvr& a, InnerGameEventDestroyTeamsvr& b) {
     a.Swap(&b);
@@ -3784,7 +4555,7 @@ class InnerGameEventDestryFriendsvr final :
                &_InnerGameEventDestryFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(InnerGameEventDestryFriendsvr& a, InnerGameEventDestryFriendsvr& b) {
     a.Swap(&b);
@@ -3900,7 +4671,7 @@ class InnerGameEventDestroyFamilysvr final :
                &_InnerGameEventDestroyFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(InnerGameEventDestroyFamilysvr& a, InnerGameEventDestroyFamilysvr& b) {
     a.Swap(&b);
@@ -4016,7 +4787,7 @@ class InnerGameEventDestroyRanksvr final :
                &_InnerGameEventDestroyRanksvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(InnerGameEventDestroyRanksvr& a, InnerGameEventDestroyRanksvr& b) {
     a.Swap(&b);
@@ -4140,7 +4911,7 @@ class InnerGameEventLogin final :
                &_InnerGameEventLogin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(InnerGameEventLogin& a, InnerGameEventLogin& b) {
     a.Swap(&b);
@@ -4346,7 +5117,7 @@ class InnerGameEventLoginTeamsvr final :
                &_InnerGameEventLoginTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(InnerGameEventLoginTeamsvr& a, InnerGameEventLoginTeamsvr& b) {
     a.Swap(&b);
@@ -4609,7 +5380,7 @@ class InnerGameEventLoginFriendsvr final :
                &_InnerGameEventLoginFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   friend void swap(InnerGameEventLoginFriendsvr& a, InnerGameEventLoginFriendsvr& b) {
     a.Swap(&b);
@@ -4792,7 +5563,7 @@ class InnerGameEventLoginFamilysvr final :
                &_InnerGameEventLoginFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   friend void swap(InnerGameEventLoginFamilysvr& a, InnerGameEventLoginFamilysvr& b) {
     a.Swap(&b);
@@ -4951,7 +5722,7 @@ class InnerGameEventLogout final :
                &_InnerGameEventLogout_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(InnerGameEventLogout& a, InnerGameEventLogout& b) {
     a.Swap(&b);
@@ -5156,7 +5927,7 @@ class InnerGameEventLogoutTeamvr final :
                &_InnerGameEventLogoutTeamvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(InnerGameEventLogoutTeamvr& a, InnerGameEventLogoutTeamvr& b) {
     a.Swap(&b);
@@ -5272,7 +6043,7 @@ class InnerGameEventLogoutFriendsvr final :
                &_InnerGameEventLogoutFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(InnerGameEventLogoutFriendsvr& a, InnerGameEventLogoutFriendsvr& b) {
     a.Swap(&b);
@@ -5388,7 +6159,7 @@ class InnerGameEventLogoutFamilysvr final :
                &_InnerGameEventLogoutFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   friend void swap(InnerGameEventLogoutFamilysvr& a, InnerGameEventLogoutFamilysvr& b) {
     a.Swap(&b);
@@ -5512,7 +6283,7 @@ class InnerGameEventOnline final :
                &_InnerGameEventOnline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    35;
 
   friend void swap(InnerGameEventOnline& a, InnerGameEventOnline& b) {
     a.Swap(&b);
@@ -5718,7 +6489,7 @@ class InnerGameEventOnlineTeamsvr final :
                &_InnerGameEventOnlineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   friend void swap(InnerGameEventOnlineTeamsvr& a, InnerGameEventOnlineTeamsvr& b) {
     a.Swap(&b);
@@ -5890,7 +6661,7 @@ class InnerGameEventOnlineFriendsvr final :
                &_InnerGameEventOnlineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   friend void swap(InnerGameEventOnlineFriendsvr& a, InnerGameEventOnlineFriendsvr& b) {
     a.Swap(&b);
@@ -6073,7 +6844,7 @@ class InnerGameEventOnlineFamilysvr final :
                &_InnerGameEventOnlineFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   friend void swap(InnerGameEventOnlineFamilysvr& a, InnerGameEventOnlineFamilysvr& b) {
     a.Swap(&b);
@@ -6232,7 +7003,7 @@ class InnerGameEventOffline final :
                &_InnerGameEventOffline_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   friend void swap(InnerGameEventOffline& a, InnerGameEventOffline& b) {
     a.Swap(&b);
@@ -6437,7 +7208,7 @@ class InnerGameEventOfflineTeamsvr final :
                &_InnerGameEventOfflineTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   friend void swap(InnerGameEventOfflineTeamsvr& a, InnerGameEventOfflineTeamsvr& b) {
     a.Swap(&b);
@@ -6553,7 +7324,7 @@ class InnerGameEventOfflineFriendsvr final :
                &_InnerGameEventOfflineFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   friend void swap(InnerGameEventOfflineFriendsvr& a, InnerGameEventOfflineFriendsvr& b) {
     a.Swap(&b);
@@ -6669,7 +7440,7 @@ class InnerGameEventOfflineFamilysvr final :
                &_InnerGameEventOfflineFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    42;
 
   friend void swap(InnerGameEventOfflineFamilysvr& a, InnerGameEventOfflineFamilysvr& b) {
     a.Swap(&b);
@@ -6793,7 +7564,7 @@ class InnerGameEventChangeMap final :
                &_InnerGameEventChangeMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    43;
 
   friend void swap(InnerGameEventChangeMap& a, InnerGameEventChangeMap& b) {
     a.Swap(&b);
@@ -7010,7 +7781,7 @@ class InnerGameEventChangeMapTeamsvr final :
                &_InnerGameEventChangeMapTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    44;
 
   friend void swap(InnerGameEventChangeMapTeamsvr& a, InnerGameEventChangeMapTeamsvr& b) {
     a.Swap(&b);
@@ -7272,7 +8043,7 @@ class InnerGameEventChangeMapFriendsvr final :
                &_InnerGameEventChangeMapFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    45;
 
   friend void swap(InnerGameEventChangeMapFriendsvr& a, InnerGameEventChangeMapFriendsvr& b) {
     a.Swap(&b);
@@ -7388,7 +8159,7 @@ class InnerGameEventChangeMapFamilysvr final :
                &_InnerGameEventChangeMapFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   friend void swap(InnerGameEventChangeMapFamilysvr& a, InnerGameEventChangeMapFamilysvr& b) {
     a.Swap(&b);
@@ -7511,7 +8282,7 @@ class InnerGameEventDeath final :
                &_InnerGameEventDeath_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    47;
 
   friend void swap(InnerGameEventDeath& a, InnerGameEventDeath& b) {
     a.Swap(&b);
@@ -7696,7 +8467,7 @@ class InnerGameEventDeathTeamsvr final :
                &_InnerGameEventDeathTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   friend void swap(InnerGameEventDeathTeamsvr& a, InnerGameEventDeathTeamsvr& b) {
     a.Swap(&b);
@@ -7847,7 +8618,7 @@ class InnerGameEventDeathFriendsvr final :
                &_InnerGameEventDeathFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    49;
 
   friend void swap(InnerGameEventDeathFriendsvr& a, InnerGameEventDeathFriendsvr& b) {
     a.Swap(&b);
@@ -7970,7 +8741,7 @@ class InnerGameEventRebirth final :
                &_InnerGameEventRebirth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    50;
 
   friend void swap(InnerGameEventRebirth& a, InnerGameEventRebirth& b) {
     a.Swap(&b);
@@ -8155,7 +8926,7 @@ class InnerGameEventRebirthTeamsvr final :
                &_InnerGameEventRebirthTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    51;
 
   friend void swap(InnerGameEventRebirthTeamsvr& a, InnerGameEventRebirthTeamsvr& b) {
     a.Swap(&b);
@@ -8326,7 +9097,7 @@ class InnerGameEventRebirthFriendsvr final :
                &_InnerGameEventRebirthFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    52;
 
   friend void swap(InnerGameEventRebirthFriendsvr& a, InnerGameEventRebirthFriendsvr& b) {
     a.Swap(&b);
@@ -8450,7 +9221,7 @@ class InnerGameEventWakeup final :
                &_InnerGameEventWakeup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    53;
 
   friend void swap(InnerGameEventWakeup& a, InnerGameEventWakeup& b) {
     a.Swap(&b);
@@ -8656,7 +9427,7 @@ class InnerGameEventWakeupTeamsvr final :
                &_InnerGameEventWakeupTeamsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    54;
 
   friend void swap(InnerGameEventWakeupTeamsvr& a, InnerGameEventWakeupTeamsvr& b) {
     a.Swap(&b);
@@ -8919,7 +9690,7 @@ class InnerGameEventWakeupFriendsvr final :
                &_InnerGameEventWakeupFriendsvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    55;
 
   friend void swap(InnerGameEventWakeupFriendsvr& a, InnerGameEventWakeupFriendsvr& b) {
     a.Swap(&b);
@@ -9102,7 +9873,7 @@ class InnerGameEventWakeupFamilysvr final :
                &_InnerGameEventWakeupFamilysvr_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    56;
 
   friend void swap(InnerGameEventWakeupFamilysvr& a, InnerGameEventWakeupFamilysvr& b) {
     a.Swap(&b);
@@ -10192,124 +10963,163 @@ inline InnerCopyWay::TypeCase InnerCopyWay::type_case() const {
 }
 // -------------------------------------------------------------------
 
-// InnerCopyPvpF55
+// InnerVoteInfo
 
-// uint32 copyId = 1;
-inline void InnerCopyPvpF55::clear_copyid() {
-  copyid_ = 0u;
+// uint32 mtype = 1;
+inline void InnerVoteInfo::clear_mtype() {
+  mtype_ = 0u;
 }
-inline uint32_t InnerCopyPvpF55::_internal_copyid() const {
-  return copyid_;
+inline uint32_t InnerVoteInfo::_internal_mtype() const {
+  return mtype_;
 }
-inline uint32_t InnerCopyPvpF55::copyid() const {
-  // @@protoc_insertion_point(field_get:inner.InnerCopyPvpF55.copyId)
-  return _internal_copyid();
+inline uint32_t InnerVoteInfo::mtype() const {
+  // @@protoc_insertion_point(field_get:inner.InnerVoteInfo.mtype)
+  return _internal_mtype();
 }
-inline void InnerCopyPvpF55::_internal_set_copyid(uint32_t value) {
+inline void InnerVoteInfo::_internal_set_mtype(uint32_t value) {
   
-  copyid_ = value;
+  mtype_ = value;
 }
-inline void InnerCopyPvpF55::set_copyid(uint32_t value) {
-  _internal_set_copyid(value);
-  // @@protoc_insertion_point(field_set:inner.InnerCopyPvpF55.copyId)
+inline void InnerVoteInfo::set_mtype(uint32_t value) {
+  _internal_set_mtype(value);
+  // @@protoc_insertion_point(field_set:inner.InnerVoteInfo.mtype)
 }
 
-// -------------------------------------------------------------------
+// uint32 enter = 2;
+inline void InnerVoteInfo::clear_enter() {
+  enter_ = 0u;
+}
+inline uint32_t InnerVoteInfo::_internal_enter() const {
+  return enter_;
+}
+inline uint32_t InnerVoteInfo::enter() const {
+  // @@protoc_insertion_point(field_get:inner.InnerVoteInfo.enter)
+  return _internal_enter();
+}
+inline void InnerVoteInfo::_internal_set_enter(uint32_t value) {
+  
+  enter_ = value;
+}
+inline void InnerVoteInfo::set_enter(uint32_t value) {
+  _internal_set_enter(value);
+  // @@protoc_insertion_point(field_set:inner.InnerVoteInfo.enter)
+}
 
-// InnerCopyPvp
-
-// .inner.InnerCopyPvpF55 f55 = 11;
-inline bool InnerCopyPvp::_internal_has_f55() const {
-  return type_case() == kF55;
+// .inner.InnerCopyType copy = 3;
+inline bool InnerVoteInfo::_internal_has_copy() const {
+  return this != internal_default_instance() && copy_ != nullptr;
 }
-inline bool InnerCopyPvp::has_f55() const {
-  return _internal_has_f55();
+inline bool InnerVoteInfo::has_copy() const {
+  return _internal_has_copy();
 }
-inline void InnerCopyPvp::set_has_f55() {
-  _oneof_case_[0] = kF55;
-}
-inline void InnerCopyPvp::clear_f55() {
-  if (_internal_has_f55()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete type_.f55_;
-    }
-    clear_has_type();
+inline void InnerVoteInfo::clear_copy() {
+  if (GetArenaForAllocation() == nullptr && copy_ != nullptr) {
+    delete copy_;
   }
+  copy_ = nullptr;
 }
-inline ::inner::InnerCopyPvpF55* InnerCopyPvp::release_f55() {
-  // @@protoc_insertion_point(field_release:inner.InnerCopyPvp.f55)
-  if (_internal_has_f55()) {
-    clear_has_type();
-    ::inner::InnerCopyPvpF55* temp = type_.f55_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    type_.f55_ = nullptr;
-    return temp;
+inline const ::inner::InnerCopyType& InnerVoteInfo::_internal_copy() const {
+  const ::inner::InnerCopyType* p = copy_;
+  return p != nullptr ? *p : reinterpret_cast<const ::inner::InnerCopyType&>(
+      ::inner::_InnerCopyType_default_instance_);
+}
+inline const ::inner::InnerCopyType& InnerVoteInfo::copy() const {
+  // @@protoc_insertion_point(field_get:inner.InnerVoteInfo.copy)
+  return _internal_copy();
+}
+inline void InnerVoteInfo::unsafe_arena_set_allocated_copy(
+    ::inner::InnerCopyType* copy) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(copy_);
+  }
+  copy_ = copy;
+  if (copy) {
+    
   } else {
-    return nullptr;
+    
   }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerVoteInfo.copy)
 }
-inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::_internal_f55() const {
-  return _internal_has_f55()
-      ? *type_.f55_
-      : reinterpret_cast< ::inner::InnerCopyPvpF55&>(::inner::_InnerCopyPvpF55_default_instance_);
-}
-inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::f55() const {
-  // @@protoc_insertion_point(field_get:inner.InnerCopyPvp.f55)
-  return _internal_f55();
-}
-inline ::inner::InnerCopyPvpF55* InnerCopyPvp::unsafe_arena_release_f55() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPvp.f55)
-  if (_internal_has_f55()) {
-    clear_has_type();
-    ::inner::InnerCopyPvpF55* temp = type_.f55_;
-    type_.f55_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
+inline ::inner::InnerCopyType* InnerVoteInfo::release_copy() {
+  
+  ::inner::InnerCopyType* temp = copy_;
+  copy_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline void InnerCopyPvp::unsafe_arena_set_allocated_f55(::inner::InnerCopyPvpF55* f55) {
-  clear_type();
-  if (f55) {
-    set_has_f55();
-    type_.f55_ = f55;
+inline ::inner::InnerCopyType* InnerVoteInfo::unsafe_arena_release_copy() {
+  // @@protoc_insertion_point(field_release:inner.InnerVoteInfo.copy)
+  
+  ::inner::InnerCopyType* temp = copy_;
+  copy_ = nullptr;
+  return temp;
+}
+inline ::inner::InnerCopyType* InnerVoteInfo::_internal_mutable_copy() {
+  
+  if (copy_ == nullptr) {
+    auto* p = CreateMaybeMessage<::inner::InnerCopyType>(GetArenaForAllocation());
+    copy_ = p;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPvp.f55)
+  return copy_;
 }
-inline ::inner::InnerCopyPvpF55* InnerCopyPvp::_internal_mutable_f55() {
-  if (!_internal_has_f55()) {
-    clear_type();
-    set_has_f55();
-    type_.f55_ = CreateMaybeMessage< ::inner::InnerCopyPvpF55 >(GetArenaForAllocation());
-  }
-  return type_.f55_;
-}
-inline ::inner::InnerCopyPvpF55* InnerCopyPvp::mutable_f55() {
-  ::inner::InnerCopyPvpF55* _msg = _internal_mutable_f55();
-  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPvp.f55)
+inline ::inner::InnerCopyType* InnerVoteInfo::mutable_copy() {
+  ::inner::InnerCopyType* _msg = _internal_mutable_copy();
+  // @@protoc_insertion_point(field_mutable:inner.InnerVoteInfo.copy)
   return _msg;
 }
-
-inline bool InnerCopyPvp::has_type() const {
-  return type_case() != TYPE_NOT_SET;
+inline void InnerVoteInfo::set_allocated_copy(::inner::InnerCopyType* copy) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete copy_;
+  }
+  if (copy) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(copy);
+    if (message_arena != submessage_arena) {
+      copy = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, copy, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  copy_ = copy;
+  // @@protoc_insertion_point(field_set_allocated:inner.InnerVoteInfo.copy)
 }
-inline void InnerCopyPvp::clear_has_type() {
-  _oneof_case_[0] = TYPE_NOT_SET;
-}
-inline InnerCopyPvp::TypeCase InnerCopyPvp::type_case() const {
-  return InnerCopyPvp::TypeCase(_oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
-// InnerCopyPve
 
 // -------------------------------------------------------------------
 
 // InnerCopyType
 
-// uint32 copyLvId = 1;
+// uint32 copyId = 1;
+inline void InnerCopyType::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyType::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyType::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyType::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyType::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.copyId)
+}
+
+// uint32 copyLvId = 2;
 inline void InnerCopyType::clear_copylvid() {
   copylvid_ = 0u;
 }
@@ -10329,44 +11139,64 @@ inline void InnerCopyType::set_copylvid(uint32_t value) {
   // @@protoc_insertion_point(field_set:inner.InnerCopyType.copyLvId)
 }
 
-// uint32 eProc = 2;
-inline void InnerCopyType::clear_eproc() {
-  eproc_ = 0u;
+// uint32 procFive = 3;
+inline void InnerCopyType::clear_procfive() {
+  procfive_ = 0u;
 }
-inline uint32_t InnerCopyType::_internal_eproc() const {
-  return eproc_;
+inline uint32_t InnerCopyType::_internal_procfive() const {
+  return procfive_;
 }
-inline uint32_t InnerCopyType::eproc() const {
-  // @@protoc_insertion_point(field_get:inner.InnerCopyType.eProc)
-  return _internal_eproc();
+inline uint32_t InnerCopyType::procfive() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.procFive)
+  return _internal_procfive();
 }
-inline void InnerCopyType::_internal_set_eproc(uint32_t value) {
+inline void InnerCopyType::_internal_set_procfive(uint32_t value) {
   
-  eproc_ = value;
+  procfive_ = value;
 }
-inline void InnerCopyType::set_eproc(uint32_t value) {
-  _internal_set_eproc(value);
-  // @@protoc_insertion_point(field_set:inner.InnerCopyType.eProc)
+inline void InnerCopyType::set_procfive(uint32_t value) {
+  _internal_set_procfive(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.procFive)
 }
 
-// uint32 threeId = 3;
-inline void InnerCopyType::clear_threeid() {
-  threeid_ = 0u;
+// uint32 fiveId = 4;
+inline void InnerCopyType::clear_fiveid() {
+  fiveid_ = 0u;
 }
-inline uint32_t InnerCopyType::_internal_threeid() const {
-  return threeid_;
+inline uint32_t InnerCopyType::_internal_fiveid() const {
+  return fiveid_;
 }
-inline uint32_t InnerCopyType::threeid() const {
-  // @@protoc_insertion_point(field_get:inner.InnerCopyType.threeId)
-  return _internal_threeid();
+inline uint32_t InnerCopyType::fiveid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.fiveId)
+  return _internal_fiveid();
 }
-inline void InnerCopyType::_internal_set_threeid(uint32_t value) {
+inline void InnerCopyType::_internal_set_fiveid(uint32_t value) {
   
-  threeid_ = value;
+  fiveid_ = value;
 }
-inline void InnerCopyType::set_threeid(uint32_t value) {
-  _internal_set_threeid(value);
-  // @@protoc_insertion_point(field_set:inner.InnerCopyType.threeId)
+inline void InnerCopyType::set_fiveid(uint32_t value) {
+  _internal_set_fiveid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.fiveId)
+}
+
+// uint32 copyLevel = 5;
+inline void InnerCopyType::clear_copylevel() {
+  copylevel_ = 0u;
+}
+inline uint32_t InnerCopyType::_internal_copylevel() const {
+  return copylevel_;
+}
+inline uint32_t InnerCopyType::copylevel() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyType.copyLevel)
+  return _internal_copylevel();
+}
+inline void InnerCopyType::_internal_set_copylevel(uint32_t value) {
+  
+  copylevel_ = value;
+}
+inline void InnerCopyType::set_copylevel(uint32_t value) {
+  _internal_set_copylevel(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyType.copyLevel)
 }
 
 // .inner.InnerCopyPvp pvp = 11;
@@ -10526,6 +11356,484 @@ inline void InnerCopyType::clear_has_type() {
 inline InnerCopyType::TypeCase InnerCopyType::type_case() const {
   return InnerCopyType::TypeCase(_oneof_case_[0]);
 }
+// -------------------------------------------------------------------
+
+// InnerCopyPvp
+
+// .inner.InnerCopyPveF33 f33 = 11;
+inline bool InnerCopyPvp::_internal_has_f33() const {
+  return type_case() == kF33;
+}
+inline bool InnerCopyPvp::has_f33() const {
+  return _internal_has_f33();
+}
+inline void InnerCopyPvp::set_has_f33() {
+  _oneof_case_[0] = kF33;
+}
+inline void InnerCopyPvp::clear_f33() {
+  if (_internal_has_f33()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.f33_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPveF33* InnerCopyPvp::release_f33() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyPvp.f33)
+  if (_internal_has_f33()) {
+    clear_has_type();
+    ::inner::InnerCopyPveF33* temp = type_.f33_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.f33_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPveF33& InnerCopyPvp::_internal_f33() const {
+  return _internal_has_f33()
+      ? *type_.f33_
+      : reinterpret_cast< ::inner::InnerCopyPveF33&>(::inner::_InnerCopyPveF33_default_instance_);
+}
+inline const ::inner::InnerCopyPveF33& InnerCopyPvp::f33() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPvp.f33)
+  return _internal_f33();
+}
+inline ::inner::InnerCopyPveF33* InnerCopyPvp::unsafe_arena_release_f33() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPvp.f33)
+  if (_internal_has_f33()) {
+    clear_has_type();
+    ::inner::InnerCopyPveF33* temp = type_.f33_;
+    type_.f33_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyPvp::unsafe_arena_set_allocated_f33(::inner::InnerCopyPveF33* f33) {
+  clear_type();
+  if (f33) {
+    set_has_f33();
+    type_.f33_ = f33;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPvp.f33)
+}
+inline ::inner::InnerCopyPveF33* InnerCopyPvp::_internal_mutable_f33() {
+  if (!_internal_has_f33()) {
+    clear_type();
+    set_has_f33();
+    type_.f33_ = CreateMaybeMessage< ::inner::InnerCopyPveF33 >(GetArenaForAllocation());
+  }
+  return type_.f33_;
+}
+inline ::inner::InnerCopyPveF33* InnerCopyPvp::mutable_f33() {
+  ::inner::InnerCopyPveF33* _msg = _internal_mutable_f33();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPvp.f33)
+  return _msg;
+}
+
+// .inner.InnerCopyPvpF55 f55 = 12;
+inline bool InnerCopyPvp::_internal_has_f55() const {
+  return type_case() == kF55;
+}
+inline bool InnerCopyPvp::has_f55() const {
+  return _internal_has_f55();
+}
+inline void InnerCopyPvp::set_has_f55() {
+  _oneof_case_[0] = kF55;
+}
+inline void InnerCopyPvp::clear_f55() {
+  if (_internal_has_f55()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.f55_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::release_f55() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyPvp.f55)
+  if (_internal_has_f55()) {
+    clear_has_type();
+    ::inner::InnerCopyPvpF55* temp = type_.f55_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.f55_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::_internal_f55() const {
+  return _internal_has_f55()
+      ? *type_.f55_
+      : reinterpret_cast< ::inner::InnerCopyPvpF55&>(::inner::_InnerCopyPvpF55_default_instance_);
+}
+inline const ::inner::InnerCopyPvpF55& InnerCopyPvp::f55() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPvp.f55)
+  return _internal_f55();
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::unsafe_arena_release_f55() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPvp.f55)
+  if (_internal_has_f55()) {
+    clear_has_type();
+    ::inner::InnerCopyPvpF55* temp = type_.f55_;
+    type_.f55_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyPvp::unsafe_arena_set_allocated_f55(::inner::InnerCopyPvpF55* f55) {
+  clear_type();
+  if (f55) {
+    set_has_f55();
+    type_.f55_ = f55;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPvp.f55)
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::_internal_mutable_f55() {
+  if (!_internal_has_f55()) {
+    clear_type();
+    set_has_f55();
+    type_.f55_ = CreateMaybeMessage< ::inner::InnerCopyPvpF55 >(GetArenaForAllocation());
+  }
+  return type_.f55_;
+}
+inline ::inner::InnerCopyPvpF55* InnerCopyPvp::mutable_f55() {
+  ::inner::InnerCopyPvpF55* _msg = _internal_mutable_f55();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPvp.f55)
+  return _msg;
+}
+
+inline bool InnerCopyPvp::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyPvp::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyPvp::TypeCase InnerCopyPvp::type_case() const {
+  return InnerCopyPvp::TypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// InnerCopyPve
+
+// .inner.InnerCopyPveHouse house = 11;
+inline bool InnerCopyPve::_internal_has_house() const {
+  return type_case() == kHouse;
+}
+inline bool InnerCopyPve::has_house() const {
+  return _internal_has_house();
+}
+inline void InnerCopyPve::set_has_house() {
+  _oneof_case_[0] = kHouse;
+}
+inline void InnerCopyPve::clear_house() {
+  if (_internal_has_house()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.house_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPveHouse* InnerCopyPve::release_house() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyPve.house)
+  if (_internal_has_house()) {
+    clear_has_type();
+    ::inner::InnerCopyPveHouse* temp = type_.house_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.house_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPveHouse& InnerCopyPve::_internal_house() const {
+  return _internal_has_house()
+      ? *type_.house_
+      : reinterpret_cast< ::inner::InnerCopyPveHouse&>(::inner::_InnerCopyPveHouse_default_instance_);
+}
+inline const ::inner::InnerCopyPveHouse& InnerCopyPve::house() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPve.house)
+  return _internal_house();
+}
+inline ::inner::InnerCopyPveHouse* InnerCopyPve::unsafe_arena_release_house() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPve.house)
+  if (_internal_has_house()) {
+    clear_has_type();
+    ::inner::InnerCopyPveHouse* temp = type_.house_;
+    type_.house_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyPve::unsafe_arena_set_allocated_house(::inner::InnerCopyPveHouse* house) {
+  clear_type();
+  if (house) {
+    set_has_house();
+    type_.house_ = house;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPve.house)
+}
+inline ::inner::InnerCopyPveHouse* InnerCopyPve::_internal_mutable_house() {
+  if (!_internal_has_house()) {
+    clear_type();
+    set_has_house();
+    type_.house_ = CreateMaybeMessage< ::inner::InnerCopyPveHouse >(GetArenaForAllocation());
+  }
+  return type_.house_;
+}
+inline ::inner::InnerCopyPveHouse* InnerCopyPve::mutable_house() {
+  ::inner::InnerCopyPveHouse* _msg = _internal_mutable_house();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPve.house)
+  return _msg;
+}
+
+// .inner.InnerCopyPveManor manor = 12;
+inline bool InnerCopyPve::_internal_has_manor() const {
+  return type_case() == kManor;
+}
+inline bool InnerCopyPve::has_manor() const {
+  return _internal_has_manor();
+}
+inline void InnerCopyPve::set_has_manor() {
+  _oneof_case_[0] = kManor;
+}
+inline void InnerCopyPve::clear_manor() {
+  if (_internal_has_manor()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete type_.manor_;
+    }
+    clear_has_type();
+  }
+}
+inline ::inner::InnerCopyPveManor* InnerCopyPve::release_manor() {
+  // @@protoc_insertion_point(field_release:inner.InnerCopyPve.manor)
+  if (_internal_has_manor()) {
+    clear_has_type();
+    ::inner::InnerCopyPveManor* temp = type_.manor_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    type_.manor_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::inner::InnerCopyPveManor& InnerCopyPve::_internal_manor() const {
+  return _internal_has_manor()
+      ? *type_.manor_
+      : reinterpret_cast< ::inner::InnerCopyPveManor&>(::inner::_InnerCopyPveManor_default_instance_);
+}
+inline const ::inner::InnerCopyPveManor& InnerCopyPve::manor() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPve.manor)
+  return _internal_manor();
+}
+inline ::inner::InnerCopyPveManor* InnerCopyPve::unsafe_arena_release_manor() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:inner.InnerCopyPve.manor)
+  if (_internal_has_manor()) {
+    clear_has_type();
+    ::inner::InnerCopyPveManor* temp = type_.manor_;
+    type_.manor_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void InnerCopyPve::unsafe_arena_set_allocated_manor(::inner::InnerCopyPveManor* manor) {
+  clear_type();
+  if (manor) {
+    set_has_manor();
+    type_.manor_ = manor;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:inner.InnerCopyPve.manor)
+}
+inline ::inner::InnerCopyPveManor* InnerCopyPve::_internal_mutable_manor() {
+  if (!_internal_has_manor()) {
+    clear_type();
+    set_has_manor();
+    type_.manor_ = CreateMaybeMessage< ::inner::InnerCopyPveManor >(GetArenaForAllocation());
+  }
+  return type_.manor_;
+}
+inline ::inner::InnerCopyPveManor* InnerCopyPve::mutable_manor() {
+  ::inner::InnerCopyPveManor* _msg = _internal_mutable_manor();
+  // @@protoc_insertion_point(field_mutable:inner.InnerCopyPve.manor)
+  return _msg;
+}
+
+inline bool InnerCopyPve::has_type() const {
+  return type_case() != TYPE_NOT_SET;
+}
+inline void InnerCopyPve::clear_has_type() {
+  _oneof_case_[0] = TYPE_NOT_SET;
+}
+inline InnerCopyPve::TypeCase InnerCopyPve::type_case() const {
+  return InnerCopyPve::TypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// InnerCopyPveF33
+
+// uint32 copyId = 1;
+inline void InnerCopyPveF33::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyPveF33::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyPveF33::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveF33.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyPveF33::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyPveF33::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveF33.copyId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyPvpF55
+
+// uint32 copyId = 1;
+inline void InnerCopyPvpF55::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyPvpF55::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyPvpF55::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPvpF55.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyPvpF55::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyPvpF55::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPvpF55.copyId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyPveHouse
+
+// uint32 copyId = 1;
+inline void InnerCopyPveHouse::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyPveHouse::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyPveHouse::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveHouse.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyPveHouse::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyPveHouse::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveHouse.copyId)
+}
+
+// uint64 roleId = 2;
+inline void InnerCopyPveHouse::clear_roleid() {
+  roleid_ = uint64_t{0u};
+}
+inline uint64_t InnerCopyPveHouse::_internal_roleid() const {
+  return roleid_;
+}
+inline uint64_t InnerCopyPveHouse::roleid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveHouse.roleId)
+  return _internal_roleid();
+}
+inline void InnerCopyPveHouse::_internal_set_roleid(uint64_t value) {
+  
+  roleid_ = value;
+}
+inline void InnerCopyPveHouse::set_roleid(uint64_t value) {
+  _internal_set_roleid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveHouse.roleId)
+}
+
+// uint64 suitId = 3;
+inline void InnerCopyPveHouse::clear_suitid() {
+  suitid_ = uint64_t{0u};
+}
+inline uint64_t InnerCopyPveHouse::_internal_suitid() const {
+  return suitid_;
+}
+inline uint64_t InnerCopyPveHouse::suitid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveHouse.suitId)
+  return _internal_suitid();
+}
+inline void InnerCopyPveHouse::_internal_set_suitid(uint64_t value) {
+  
+  suitid_ = value;
+}
+inline void InnerCopyPveHouse::set_suitid(uint64_t value) {
+  _internal_set_suitid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveHouse.suitId)
+}
+
+// -------------------------------------------------------------------
+
+// InnerCopyPveManor
+
+// uint32 copyId = 1;
+inline void InnerCopyPveManor::clear_copyid() {
+  copyid_ = 0u;
+}
+inline uint32_t InnerCopyPveManor::_internal_copyid() const {
+  return copyid_;
+}
+inline uint32_t InnerCopyPveManor::copyid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveManor.copyId)
+  return _internal_copyid();
+}
+inline void InnerCopyPveManor::_internal_set_copyid(uint32_t value) {
+  
+  copyid_ = value;
+}
+inline void InnerCopyPveManor::set_copyid(uint32_t value) {
+  _internal_set_copyid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveManor.copyId)
+}
+
+// uint64 roleId = 2;
+inline void InnerCopyPveManor::clear_roleid() {
+  roleid_ = uint64_t{0u};
+}
+inline uint64_t InnerCopyPveManor::_internal_roleid() const {
+  return roleid_;
+}
+inline uint64_t InnerCopyPveManor::roleid() const {
+  // @@protoc_insertion_point(field_get:inner.InnerCopyPveManor.roleId)
+  return _internal_roleid();
+}
+inline void InnerCopyPveManor::_internal_set_roleid(uint64_t value) {
+  
+  roleid_ = value;
+}
+inline void InnerCopyPveManor::set_roleid(uint64_t value) {
+  _internal_set_roleid(value);
+  // @@protoc_insertion_point(field_set:inner.InnerCopyPveManor.roleId)
+}
+
 // -------------------------------------------------------------------
 
 // InnerCopyCreateBy
@@ -16551,6 +17859,14 @@ inline void InnerGameEventWakeupFamilysvr::set_allocated_brief(::common::RoleBri
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

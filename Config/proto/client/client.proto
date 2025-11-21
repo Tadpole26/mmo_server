@@ -5,13 +5,15 @@ package client;
 enum enModule 
 {
 	enModule_None				= 0;		
-	enModule_Login				= 1;		//登录
-	enModule_Hero				= 2;		//英雄角色
-	enModule_Friend				= 3;		//好友
-	enModule_Mall				= 4;		//商城
-	enModule_Mail				= 5;		//邮件
-	enModule_Item 				= 6;		//道具
-	enModule_RealMax			= 7;
+	enModule_Login				= 1;	//登录
+	enModule_Hero				= 2;	//英雄角色
+	enModule_Friend				= 3;	//好友
+	enModule_Mall				= 4;	//商城
+	enModule_Mail				= 5;	//邮件
+	enModule_Item 				= 6;	//道具
+	enModule_Auction			= 7;	//拍卖
+	enModule_Match				= 8;	//匹配
+	enModule_RealMax			= 9;
 
 	enModule_End					= 100;		
 

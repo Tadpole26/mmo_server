@@ -34,6 +34,9 @@
     <Filter Include="DB">
       <UniqueIdentifier>{b1b30fce-7586-4da9-b95f-e72ff15d7dde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Managers\Sysvar">
+      <UniqueIdentifier>{52035da9-24ff-4d5e-987b-6b8d51ebeceb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneServer.cpp">
@@ -83,6 +86,15 @@
     </ClCompile>
     <ClCompile Include="RedisMgr.cpp">
       <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleAcution.cpp">
+      <Filter>Managers\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleMatch.cpp">
+      <Filter>Managers\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="SysvarCopyMatchF33.cpp">
+      <Filter>Managers\Sysvar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +148,15 @@
     </ClInclude>
     <ClInclude Include="RedisMgr.h">
       <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleAuction.h">
+      <Filter>Managers\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleMatch.h">
+      <Filter>Managers\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="SysvarCopyMatchF33.h">
+      <Filter>Managers\Sysvar</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

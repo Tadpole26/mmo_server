@@ -226,7 +226,9 @@ void NetMsgFromScene::handle_msg(const tagMsgHead* pNetMsg)
 	break;
 	case inner::InnerTeamsvr::FromsceneCase::kFromsceneEnterbyvote:
 	{
+		//投票进入副本
 		const auto& req = innerReq.fromscene_enterbyvote();
+
 	}
 	break;
 	case inner::InnerTeamsvr::FromsceneCase::kFromsceneChatteam:

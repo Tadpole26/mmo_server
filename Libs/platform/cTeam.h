@@ -33,4 +33,11 @@ namespace cTeam
 		eJumpToLeaderFollow,
 		eJumpToLeaderTogether,
 	};
+	enum
+	{
+		eEnterByNone = 0,
+		eEnterByMatch,	//匹配(队员投票)
+		eEtnerByHome,	//家园方式进入(直接进入)
+		eEnterByTeam,	//组队进入(队员投票)
+	};
 }

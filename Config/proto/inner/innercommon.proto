@@ -76,36 +76,70 @@ message InnerCopyWay
 		InnerCopyWayByTeam byTeam = 12;				//队伍服
 	}
 }
-
-message InnerCopyPvpF55
+////////////////////////////////////////////////////////////////////////
+message InnerVoteInfo
 {
-	uint32 copyId = 1;
+	uint32 mtype = 1;
+	uint32 enter = 2;
+	InnerCopyType copy = 3;
 }
 
-message InnerCopyPvp
+message InnerCopyType 
 {
-	oneof type 
-	{
-		InnerCopyPvpF55 f55 = 11;					//5v5
-	}
-}
-
-message InnerCopyPve
-{
-}
-
-//进入副本带入副本基础信息
-message InnerCopyType
-{
-	uint32 copyLvId = 1;		//副本关卡
-	uint32 eProc = 2;			//玩法范围
-	uint32 threeId = 3;			//副本范围
+	uint32 copyId = 1;		//副本id
+	uint32 copyLvId = 2;	//关卡id
+	uint32 procFive = 3;	//玩法范围
+	uint32 fiveId = 4;		//副本范围
+	uint32 copyLevel = 5;	//副本等级
 	oneof type
 	{
 		InnerCopyPvp pvp = 11;
 		InnerCopyPve pve = 12;
 	}
 }
+
+message InnerCopyPvp	//pvp副本
+{
+	oneof type 
+	{
+		InnerCopyPveF33 f33 = 11;	//3v3
+		InnerCopyPvpF55 f55 = 12;	//5v5
+	}
+}
+
+message InnerCopyPve	//pve副本
+{
+	oneof type 
+	{
+		InnerCopyPveHouse house = 11;
+		InnerCopyPveManor manor = 12;
+	}
+}
+
+message InnerCopyPveF33
+{
+	uint32 copyId = 1;
+}
+
+message InnerCopyPvpF55
+{
+	uint32 copyId = 1;
+}
+
+message InnerCopyPveHouse
+{
+	uint32 copyId = 1;
+	uint64 roleId = 2;	//为了让同一玩家不同suit副本分配在同一进程上
+	uint64 suitId = 3;	//每套房屋的唯一id
+}
+
+message InnerCopyPveManor
+{
+	uint32 copyId = 1;
+	uint64 roleId = 2;
+}
+
+////////////////////////////////////////////////////////////////////////
 
 message InnerCopyCreateBy
 {

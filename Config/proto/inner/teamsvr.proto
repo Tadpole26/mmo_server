@@ -272,6 +272,7 @@ message InnerTeamsvr_Fromscene_PersonVote
 
 message InnerTeamsvr_Fromscene_EnterByVote	
 {
+	inner.InnerVoteInfo vote = 1;	//投票进入副本
 }
 
 message InnerTeamsvr_Fromscene_ChatTeam			

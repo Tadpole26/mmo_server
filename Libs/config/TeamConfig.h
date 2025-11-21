@@ -45,8 +45,8 @@ namespace config
 	public:
 		uint32 maxTeamPlayer = 5;
 	private:
-		std::unordered_map<uint32, team_info_t> _teamInfoCfg;
-		std::unordered_map<uint32, vote_info_t> _voteInfoCfg;
+		std::unordered_map<uint32, team_info_t*> _teamInfoCfg;
+		std::unordered_map<uint32, vote_info_t*> _voteInfoCfg;
 	};
 }
 #define gTeamCfg Singleton<config::TeamConfig>::getInstance()

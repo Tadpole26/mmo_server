@@ -10,6 +10,7 @@ namespace inner
 	class InnerCopyPve;
 	class InnerCopyEnter;
 	class InnterCopyType;
+	class InnerVoteInfo;
 }
 
 namespace common
@@ -144,6 +145,7 @@ public:
 	void removeFromLvQueue();
 	void startMatchPerson(const config::team_info_t& cfg);
 	void cancelMatchPerson();
+	bool tryCreateTeam(uint32 targetId);	//¥¥Ω®∂”ŒÈ
 public:
 	void evGameDestroy(const inner::InnerGameEvent& in);
 	void evGameLogin(const inner::InnerGameEvent& in);
@@ -199,6 +201,6 @@ public:
 	bool innerRefuseTogether();
 	bool innerReplaceLeader();
 	bool innerJumpToLeader(uint32 sceneHashId, uint32 eJumpTo);
-	bool innerEnterByVote(const inner::InnerCopyPve& pve, const inner::InnerCopyEnter& enter);
+	bool innerEnterByVote(const inner::InnerVoteInfo &vote);
 	bool innerPersonVote(bool agree);
 };
